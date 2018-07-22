@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+<html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+    <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>JohnnyTan</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" type="text/css" href="../css/screen.css"/>
+    <!-- script
+    ================================================== -->
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+</head>
+<body class="top">
+<header class="site-head"
+        style="background-image: url(http://wx1.sinaimg.cn/mw690/005TG3l2ly1fhh87jgt9ij33341qgnnz.jpg)">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <a class="blog-logo" type="image/jpg"><img src="../images/flower.jpg" alt="Blog Logo"/></a>
+            <h1 class="blog-title">JohnnyTan's blog</h1>
+            <h2 class="blog-description">Never underestimate your power to change yourself!</h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+        <header class="post-header">
+            <span class="post-meta">
+                <time>
+                    2017-12-19
+                </time>
+            </span>
+        </header>
+        <section class="post-excerpt">
+            <h1>数组的搜索与查找查询</h1>
+
+            <ul>
+                <li>二分查找（Binary Search）:</li>
+            </ul>
+
+            <h4>注：</h4>
+
+            <ul>
+                <li>需要被查找的数据必须是有序的。</li>
+                <li><p>按照中间的元素来进行比较：</p>
+                    <ul>
+                        <li>若中间的元素大于的话，就直接将中间数后面的元素全部排除掉</li>
+                        <li><p>然后中间元素前面的元素再取中间的值进行比较</p></li>
+                        <li><p>……</p></li>
+                        <li><p>不断的取中间的值进行比较</p></li>
+                        <li><p>代码如下:</p></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <pre><code>public class ArraySearchText
+                {
+                public static int BinarySearch(int [] Array,int value)//这里直接认为传入方法中的数组就已经是排序好了的
+            {
+                int low = 0;
+                int high = array.length - 1;
+                int middle;
+                while(low &lt;= high)
+                {
+                    middle = (low + high) / 2;
+                    for(int i = 0 ; i&lt; array.length; i++)
+                    {
+                        System.out.print(array[i]);
+                        if (i == middle) {
+                            System.out.print(&quot;#&quot;);
+                        }
+                        System.out.print(&quot; &quot;);
+                    }
+                    if (array[middle] == value ) {
+                        return middle;
+                }
+                if(value &lt; array[middle] ){
+                    high = middle - 1;
+                }
+                if(value &gt; array[middle]){
+                    low = middle + 1;
+                }
+            }
+            return -1;
+            }
+            public static void main(String[] args) {
+                int [] b = new int []{1,2,3,4,5,6,7,8,9};
+                int index2 = BinarySearch(b,10);
+                System.out.print(index2);
+            }
+            }</code></pre>
+
+            <p><code></code>`</p>
+        </section>
+
+    </article>
+</main>
+
+<footer class="site-footer">
+
+    <div class="inner">
+        <section class="copyright">All content copyright <a href="http://kentanvictor.github.io">JohnnyTan's blog</a> &copy; 2017 &bull; All rights reserved.</section>
+    </div>
+</footer>
+
+</body>
+</html>

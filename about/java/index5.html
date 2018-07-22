@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+<html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+    <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>JohnnyTan</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" type="text/css" href="../css/screen.css"/>
+    <!-- script
+    ================================================== -->
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+</head>
+<body class="top">
+<header class="site-head"
+        style="background-image: url(http://wx1.sinaimg.cn/mw690/005TG3l2ly1fhh87jgt9ij33341qgnnz.jpg)">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <a class="blog-logo" type="image/jpg"><img src="../images/flower.jpg" alt="Blog Logo"/></a>
+            <h1 class="blog-title">JohnnyTan's blog</h1>
+            <h2 class="blog-description">Never underestimate your power to change yourself!</h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+        <header class="post-header">
+            <span class="post-meta">
+                <time>
+                    2017-12-02
+                </time>
+            </span>
+        </header>
+        <section class="post-excerpt">
+            <h1 id="hashcode与equals详解">hashCode与equals详解</h1>
+            <p><strong>注：构造方法与普通方法之间的区别在于：构造方法的名称与类名相同、不需要定义返回值类型和不可以写renturn语句。
+                其作用只在于给对象起到初始化的效果。</strong></p>
+            <p><strong><em>构造方法与一般方法在写法上的不同：</em></strong></p>
+            <h5>构造方法：</h5>
+            <pre><code>public(修饰符) class（定义类的关键字） Test（类名）()
+{
+//无参
+ Test（类名）（）
+ {
+
+
+ }
+     //带一个参数
+     Test（类名）（String(变量类型) name（变量名））
+     {
+
+
+     }
+
+}</code></pre>
+            <h5> 一般方法：</h5>
+            <p>定义类：</p>
+            <pre><code>public(修饰符) class（定义类的关键字） Test（类名）()
+{
+      private(修饰符) static(修饰符) String(变量类型) s（变量名） = &quot;hello world&quot;;
+  // 下面是方法的定义
+      public(修饰符)  static(修饰符)  void(返回值类型)  main（方法名）（String[] args（参数）)
+      {
+             System.out.println(s);（代码语句）
+      }
+}</code></pre>
+            <blockquote>
+                <h4 id="构造方法与一般方法在运行上的不同">构造方法与一般方法在运行上的不同：</h4>
+                <ul>
+                    <li>构造方法： 构造方法在创建的时候就给对象初始化； 一个对象建立构造方法只能运行一次；</li>
+                    <li>一般方法： 一般方法是对象调用才执行，给对象添加对象具备的功能； 一般方法可以被对象多次调用；</li>
+                </ul>
+            </blockquote>
+            <h1 id="interface-set-e">Interface Set &lt; E &gt;</h1>
+            <ul>
+                <li>实现Set接口的类有：</li>
+                <li>AbstractSet、ConcurrentSkipListSet、CopyOnWriteArraySet、EnumSet、HashSet、JobStateReasons</li>
+                <li>LinkedHashSet、TreeSet</li>
+            </ul>
+            <h2 id="在interfere-set-e-接口中使用的最多的继承的类就是hashset">在Interfere Set&lt; E &gt;接口中，使用的最多的继承的类就是HashSet</h2>
+            <ul>
+                <li>HashSet的构造方法一共有四个：</li>
+                <li>HashSet()</li>
+                <li>HashSet(Collection&lt;? extends E&gt; c)</li>
+                <li>HashSet(int initialCapacity)</li>
+                <li><p>HashSet(int initialCapacity,float loadFactor)</p></li>
+                <li>Method Summary</li>
+                <li><p>boolean add(E e) </p>
+                    <p>Add the specified element to this set if it is not already
+                    present.(如果不存在，则将指定的元素添加到该集合中) </p>
+                    <p>If this set already contains the element, the call leaves the set
+                    unchanged and renturns false.(如果集合中包含这个元素，则集合不会被修改，返回值为假。)</p></li>
+                <li><p>void clear()</p>
+                    <p>Removes all of the elements from this set.(移除此集合中的所有元素。)</p></li>
+                <li><p>Object clone() </p>
+                    <p>Returns a shallow copy of this HashSet instance: the elements themselves are
+                    not cloned.(返回此HashSet实例浅拷贝：元素本身不是克隆。)</p></li>
+                <li><p>boolean contains(Object o)</p>
+                    <p>Returns true if this set contains the specified
+                    element.(如果此集合包含指定元素，则返回true。)</p></li>
+                <li><p>boolean isEmpty()</p>
+                    <p>Returns true if this set contains no element.(如果此集合不包含元素，返回true。)</p></li>
+                <li><p>Interator&lt; E &gt; interator()</p>
+                    <p>Returns an iterator over the elements in this
+                    set.(返回此集合中元素的迭代器。)</p></li>
+                <li><p>boolean remove(Object o) </p>
+                    <p>Removes the specified element from this set if it’s
+                    present.(如果此集合存在，则从该集合中移除指定元素。)</p></li>
+                <li><p>int size() </p>
+                    <p>Returns the number of elements in this set(its cardinality)(返回此集合中的元素数（它的基数）</p>
+                </li>
+            </ul>
+            <h3 id="关于object类的equals方法的特点">关于Object类的equals方法的特点</h3>
+            <ul>
+                <li>自反性：x.equals(x)应该返回true</li>
+                <li>对称性：x.equals(y)为true，那么y.equals(x)返回值也为true</li>
+                <li>可传递性：x.equals(y)为true并且y.equals(z)为true，那么x.equals(z)也应该为true。</li>
+                <li>一致性：x.equals(y)的第一次调用为true，那么x.equals(y)的第二次、第三次、第n次调用也应该为true，前提条件是在比较之间没有修改x也沒有修改y。</li>
+                <li>对于任何的非空引用x，x。equals(null)返回false。 <strong>当我们需要重写hashcode()方法的时候也需要重写equals()方法，同样的道理，当重写了equals()方法也需要重写equals()方法</strong>
+                </li>
+            </ul>
+            <h2 id="关于object类中的hashccode方法的特点">关于Object类中的hashcCode()方法的特点：</h2>
+            <ul>
+                <li>在Java应用的一次执行过程当中，对于同一个对象的hashcCode方法的多次调用，他們应该返回同样的值。</li>
+            </ul>
+
+        </section>
+
+    </article>
+</main>
+
+<footer class="site-footer">
+
+    <div class="inner">
+        <section class="copyright">All content copyright <a href="http://kentanvictor.github.io">JohnnyTan's blog</a>
+            &copy; 2017 &bull; All rights reserved.
+        </section>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+<html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+    <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>JohnnyTan</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" type="text/css" href="../css/screen.css"/>
+    <!-- script
+    ================================================== -->
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+</head>
+<body class="top">
+<header class="site-head"
+        style="background-image: url(http://wx1.sinaimg.cn/mw690/005TG3l2ly1fhh87jgt9ij33341qgnnz.jpg)">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <a class="blog-logo" type="image/jpg"><img src="../images/flower.jpg" alt="Blog Logo"/></a>
+            <h1 class="blog-title">JohnnyTan's blog</h1>
+            <h2 class="blog-description">Never underestimate your power to change yourself!</h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+        <header class="post-header">
+            <span class="post-meta">
+                <time>
+                    2017-12-08
+                </time>
+            </span>
+        </header>
+        <section class="post-excerpt">
+            <h1 id="htmlcss">HTML+CSS</h1>
+            <ul>
+                <li>外壳的框架</li>
+            </ul>
+            <pre class="sourceCode html" id="cb1"><code class="sourceCode html"><div class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">&lt;html&gt;</span></div>
+<div class="sourceLine" id="cb1-2" data-line-number="2"> <span class="kw">&lt;head&gt;</span></div>
+<div class="sourceLine" id="cb1-3" data-line-number="3"> <span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;Content-Type&quot;</span><span class="ot"> content=</span><span class="st">&quot;text/html; charset=utf-8&quot;</span><span class="kw">/&gt;</span></div>
+<div class="sourceLine" id="cb1-4" data-line-number="4"> <span class="co">&lt;!--下面的title写的是你的标签名--&gt;</span></div>
+<div class="sourceLine" id="cb1-5" data-line-number="5"> <span class="kw">&lt;title&gt;&lt;/title&gt;</span></div>
+<div class="sourceLine" id="cb1-6" data-line-number="6"> <span class="kw">&lt;/head&gt;</span></div>
+<div class="sourceLine" id="cb1-7" data-line-number="7"> <span class="kw">&lt;body&gt;</span></div>
+<div class="sourceLine" id="cb1-8" data-line-number="8">   <span class="co">&lt;!--这里面写的是你想要显示的东西--&gt;</span></div>
+<div class="sourceLine" id="cb1-9" data-line-number="9"> <span class="kw">&lt;/body&gt;</span></div>
+<div class="sourceLine" id="cb1-10" data-line-number="10"><span class="kw">&lt;/html&gt;</span></div></code></pre>
+            <ul>
+                <li>&lt; p &gt;段落文本&lt; /p &gt;</li>
+            </ul>
+            <p><strong>一个&lt; p &gt;代表一个段落，这个是插入段落文本用的</strong> **** * &lt; hx &gt;标题文本&lt; /hx &gt;(x为1~6)</p>
+            <p><strong>hx中的x表示标签字号的大小，h1位最大，h6为最小</strong> **** * &lt; em &gt;斜体标签&lt; /em &gt; * &lt; strong &gt;粗体标签&lt; /strong &gt;</p>
+            <p><strong>在这两个标签中都是需要强调的文本，只不过这两种标签所强调出来的样式不一样，但是可以两者结合在一起使用</strong></p>
+            <hr />
+            <ul>
+                <li>&lt; span &gt;标签&lt; /span &gt;</li>
+            </ul>
+            <p><strong>&lt; span &gt;标签是没有语义的，它的作用就是为了设计单独的样式用的，相当于自定义CSS</strong> &gt;* aqua 浅绿色 * black 黑色 * blue 蓝色 * fuchsia 紫红色 * gray 灰色 * green 绿色 * lime 绿黄色 * maroon 栗色 * navy 深蓝色 * olive 橄榄色 * purple 紫色 * red 红色 * silver 银白色 * teal 蓝绿色 * white 白色 * yellow 黄色</p>
+            <blockquote>
+                <p><strong><em>如果使用其它颜色的话，就应该使用十六进制的颜色值</em></strong></p>
+            </blockquote>
+            <p><strong>&lt; em &gt;&lt; /em &gt;和&lt; strong &gt;&lt; /strong &gt;标签是为了强调一句话中的关键作用，它们的语义是强调</strong></p>
+            <p><strong>&lt; strong &gt;&lt; /strong &gt;和&lt; b &gt;&lt; /b &gt; 一样用法，语义是强调</strong></p>
+            <hr />
+            <ul>
+                <li>&lt; q &gt;标签，短文本引用</li>
+            </ul>
+            <pre class="sourceCode html" id="cb2"><code class="sourceCode html"><div class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">&lt;q&gt;</span>引用文本<span class="kw">&lt;/q&gt;</span></div></code></pre>
+            <p><strong>就像引用别人说的话一样，为了标注，则需要加双引号，但是需要&lt; q &gt;&lt; /q &gt;这样的引用</strong></p>
+            <p><strong>并且这种引用的文本是不需要加</strong>双引号<strong>的，浏览器会对q标签自动添加双引号</strong></p>
+            <blockquote>
+                <p>添加&lt; q &gt;之前，浏览器只知道一段文字和一些双引号在里面。 &gt;添加&lt; q &gt;之后，浏览器知道这里是一段引用。 &gt;&gt;如果浏览器有自己的优化(如对老人增大引用的字体及对其加粗)，或者你在CSS中安排了格式，这部分就有意义了。</p>
+            </blockquote>
+            <hr />
+            <ul>
+                <li>&lt; blockquote &gt;&lt; /blockquote &gt; &gt;转指对长文本的引用，这个标签的解析是<strong>缩进样式</strong></li>
+            </ul>
+            <p><strong>这个与上面的&lt; q &gt;&lt; /q &gt;不一样的地方是：第一、这个是用来表示引用长文本的；第二、这个是不会自动添加双引号，但是会缩进样式。(而&lt; q &gt;&lt; /q &gt;是不会缩进样式的)</strong></p>
+            <hr />
+            <ul>
+                <li>&lt; br &gt;标签分行显示文本 &gt;用一个&lt; br &gt;&lt; /br &gt;就像是回车一样，进行了换行。<br/> &gt;<em><strong>这就意味着你在HTML代码中输入回车、空格都是没有作用的。在HTML文本中想要输入回车换行就必须输入&lt; br &gt;</strong></em><br/> &gt;<em><strong>而&lt; pre &gt;&lt; /pre &gt;可以保留文本中的空格和回车</strong></em></li>
+            </ul>
+            <hr />
+            <ul>
+                <li>输入 &amp; n b s p；就会在html中显示空格 ****</li>
+                <li>输入&lt; hr/ &gt;就是用来添加水平线的 ****</li>
+                <li>&lt; address &gt;标签，为网页加入地址信息 &gt;一般网页中会有一些网站的联系地址信息需要在网页中展示出来，这些联系地址信息如公司的地址就可以&lt; address &gt;标签。也可以定义一个地址（比如电子邮件地址）、签名或者文档的作者身份。 ****</li>
+                <li>&lt; code &gt;&lt; /code &gt;进行添加代码 &gt;<em><strong>目的是防止浏览器误认为是需要执行的代码，加了标签，浏览器就不会执行了<br/><strong>这种只能添加一行代码，如果需要添加多行，就不能使用&lt; code &gt;标签，而需要使用&lt; pre &gt;</strong> ****</li>
+                <li>使用&lt; ul &gt;添加新闻信息列表 &gt;模板：</li>
+            </ul>
+            <pre class="sourceCode html" id="cb3"><code class="sourceCode html"><div class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">&lt;ul&gt;</span></div>
+<div class="sourceLine" id="cb3-2" data-line-number="2">      <span class="kw">&lt;li&gt;</span>信息<span class="kw">&lt;/li&gt;</span></div>
+<div class="sourceLine" id="cb3-3" data-line-number="3">      <span class="kw">&lt;li&gt;</span>信息<span class="kw">&lt;/li&gt;</span></div>
+<div class="sourceLine" id="cb3-4" data-line-number="4">      <span class="kw">&lt;li&gt;</span>信息<span class="kw">&lt;/li&gt;</span></div>
+<div class="sourceLine" id="cb3-5" data-line-number="5">  ……</div>
+<div class="sourceLine" id="cb3-6" data-line-number="6"><span class="kw">&lt;/ul&gt;</span></div></code></pre>
+            <hr />
+            <ul>
+                <li>使用&lt; ol &gt;添加列表标签序号 &gt;<strong>这种与上面的区别就在于，下面的这一种就是由序号的，而上面的只有一个点</strong><br/></li>
+            </ul>
+            <pre class="sourceCode html" id="cb4"><code class="sourceCode html"><div class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">&lt;ol&gt;</span></div>
+<div class="sourceLine" id="cb4-2" data-line-number="2">   <span class="kw">&lt;li&gt;</span>信息<span class="kw">&lt;/li&gt;</span></div>
+<div class="sourceLine" id="cb4-3" data-line-number="3">   <span class="kw">&lt;li&gt;</span>信息<span class="kw">&lt;/li&gt;</span></div>
+<div class="sourceLine" id="cb4-4" data-line-number="4">   ......</div>
+<div class="sourceLine" id="cb4-5" data-line-number="5"><span class="kw">&lt;/ol&gt;</span></div></code></pre>
+            <hr />
+            <ul>
+                <li>&lt; div &gt;&lt; /div &gt;标签在排版中的作用 &gt;一个html页面可以看成一个家，而一个div你们可以看成家的每个小房间，房间有了当然没什么效果，但是一个家必须分成一个个小房间才能多姿多彩，但每个房间里怎么装饰就得你们自己放东西，当然装饰就得交给css了。 ****</li>
+                <li>table标签写表格 &gt;用如下代码实现表格：</li>
+            </ul>
+            <pre class="sourceCode html" id="cb5"><code class="sourceCode html"><div class="sourceLine" id="cb5-1" data-line-number="1"><span class="dt">&lt;!DOCTYPE </span>HTML<span class="dt">&gt;</span></div>
+<div class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">&lt;html&gt;</span></div>
+<div class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw">&lt;head&gt;</span></div>
+<div class="sourceLine" id="cb5-4" data-line-number="4"><span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;Content-Type&quot;</span><span class="ot"> content=</span><span class="st">&quot;text/html; charset=utf-8&quot;</span> <span class="kw">/&gt;</span></div>
+<div class="sourceLine" id="cb5-5" data-line-number="5"><span class="kw">&lt;title&gt;</span>认识table表标签<span class="kw">&lt;/title&gt;</span></div>
+<div class="sourceLine" id="cb5-6" data-line-number="6"><span class="kw">&lt;/head&gt;</span></div>
+<div class="sourceLine" id="cb5-7" data-line-number="7"><span class="kw">&lt;body&gt;</span></div>
+<div class="sourceLine" id="cb5-8" data-line-number="8"><span class="kw">&lt;table&gt;</span></div>
+<div class="sourceLine" id="cb5-9" data-line-number="9">  <span class="kw">&lt;tbody&gt;</span></div>
+<div class="sourceLine" id="cb5-10" data-line-number="10">    <span class="kw">&lt;tr&gt;</span></div>
+<div class="sourceLine" id="cb5-11" data-line-number="11">      <span class="kw">&lt;th&gt;</span>班级&lt;/th&gt;</div>
+<div class="sourceLine" id="cb5-12" data-line-number="12">      <span class="kw">&lt;th&gt;</span>学生数<span class="kw">&lt;/th&gt;</span></div>
+<div class="sourceLine" id="cb5-13" data-line-number="13">      <span class="kw">&lt;th&gt;</span>平均成绩<span class="kw">&lt;/th&gt;</span></div>
+<div class="sourceLine" id="cb5-14" data-line-number="14">    <span class="kw">&lt;/tr&gt;</span></div>
+<div class="sourceLine" id="cb5-15" data-line-number="15">    <span class="kw">&lt;tr&gt;</span></div>
+<div class="sourceLine" id="cb5-16" data-line-number="16">      <span class="kw">&lt;td&gt;</span>一班<span class="kw">&lt;/td&gt;</span></div>
+<div class="sourceLine" id="cb5-17" data-line-number="17">      <span class="kw">&lt;td&gt;</span>30<span class="kw">&lt;/td&gt;</span></div>
+<div class="sourceLine" id="cb5-18" data-line-number="18">      <span class="kw">&lt;td&gt;</span>89<span class="kw">&lt;/td&gt;</span></div>
+<div class="sourceLine" id="cb5-19" data-line-number="19">    <span class="kw">&lt;/tr&gt;</span></div>
+<div class="sourceLine" id="cb5-20" data-line-number="20">    <span class="kw">&lt;tr&gt;</span></div>
+<div class="sourceLine" id="cb5-21" data-line-number="21">      <span class="kw">&lt;td&gt;</span>二班<span class="kw">&lt;/td&gt;</span></div>
+<div class="sourceLine" id="cb5-22" data-line-number="22">      <span class="kw">&lt;td&gt;</span>35<span class="kw">&lt;/td&gt;</span></div>
+<div class="sourceLine" id="cb5-23" data-line-number="23">      <span class="kw">&lt;td&gt;</span>85<span class="kw">&lt;/td&gt;</span></div>
+<div class="sourceLine" id="cb5-24" data-line-number="24">    <span class="kw">&lt;/tr&gt;</span></div>
+<div class="sourceLine" id="cb5-25" data-line-number="25"><span class="kw">&lt;tr&gt;</span></div>
+<div class="sourceLine" id="cb5-26" data-line-number="26"><span class="kw">&lt;td&gt;</span>三班<span class="kw">&lt;/td&gt;</span></div>
+<div class="sourceLine" id="cb5-27" data-line-number="27"><span class="kw">&lt;td&gt;</span>32<span class="kw">&lt;/td&gt;</span></div>
+<div class="sourceLine" id="cb5-28" data-line-number="28"><span class="kw">&lt;td&gt;</span>80<span class="kw">&lt;/td&gt;</span></div>
+<div class="sourceLine" id="cb5-29" data-line-number="29"><span class="kw">&lt;/tr&gt;</span></div>
+<div class="sourceLine" id="cb5-30" data-line-number="30">  <span class="kw">&lt;/tbody&gt;</span></div>
+<div class="sourceLine" id="cb5-31" data-line-number="31"><span class="kw">&lt;/table&gt;</span></div>
+<div class="sourceLine" id="cb5-32" data-line-number="32"><span class="kw">&lt;/body&gt;</span></div>
+<div class="sourceLine" id="cb5-33" data-line-number="33"><span class="kw">&lt;/html&gt;</span></div></code></pre>
+            <p>上面的代码实现的样子就像下面的样子一样：</p>
+            <img src="./image/table.png" alt="table" /> **** *
+            <h3>
+                上面的代码可以添加一个CSS样式进行表格的变换
+            </h3>
+            <pre class="sourceCode html" id="cb6"><code class="sourceCode html"><div class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">&lt;title&gt;</span>为表格添加边框&lt;/title&gt;</div>
+<div class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw">&lt;style</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span></div>
+<div class="sourceLine" id="cb6-3" data-line-number="3">table tr td,th{<span class="kw">border</span>:<span class="dv">2px</span> <span class="dv">solid</span> <span class="dv">#342</span>;}</div>
+<div class="sourceLine" id="cb6-4" data-line-number="4"><span class="kw">&lt;/style&gt;</span></div></code></pre>
+            <hr />
+            <ul>
+                <li>summary与caption用来添加标题与摘要 &gt;<strong>&lt; table summary=“摘要的内容”&gt;</strong><br/> &gt;上面的summary添加的摘要与在html中添加注释的效果是一样的，目的是为了给程序员看，防止表格太多改错了。<br/> &gt;<strong>&lt; caption &gt;标题文本&lt; /caption &gt;</strong><br/> &gt;上面的就是给表格添加标题(表头)的 ****</li>
+                <li>&lt; a &gt;标签使用的超链接 &gt;使用</li>
+            </ul>
+            <pre class="sourceCode html" id="cb7"><code class="sourceCode html"><div class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;目标地址&quot;</span><span class="ot"> title=</span><span class="st">&quot;鼠标滑过显示的文本&quot;</span><span class="kw">&gt;</span>连接显示的文本<span class="kw">&lt;/a&gt;</span></div></code></pre>
+            <blockquote>
+                <p><em>href：Hypertext Reference的缩写。意思是超文本引用。</em><br/> title属性的作用，鼠标滑过链接文字时会显示这个属性的文本内容。<br/> <em><strong>注：只要文本加入a标签之后，文字的颜色就会自动变成蓝色（点击之后的文本颜色会变成紫色）</strong></em></p>
+            </blockquote>
+
+        </section>
+
+    </article>
+</main>
+
+<footer class="site-footer">
+
+    <div class="inner">
+        <section class="copyright">All content copyright <a href="http://kentanvictor.github.io">JohnnyTan's blog</a> &copy; 2017 &bull; All rights reserved.</section>
+    </div>
+</footer>
+
+</body>
+</html>

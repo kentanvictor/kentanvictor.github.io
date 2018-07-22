@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+<html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+    <script type="text/javascript" src="../js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>JohnnyTan</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" type="text/css" href="../css/screen.css"/>
+    <!-- script
+    ================================================== -->
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+</head>
+<body class="top">
+<header class="site-head"
+        style="background-image: url(http://wx1.sinaimg.cn/mw690/005TG3l2ly1fhh87jgt9ij33341qgnnz.jpg)">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <a class="blog-logo" type="image/jpg"><img src="../images/flower.jpg" alt="Blog Logo"/></a>
+            <h1 class="blog-title">JohnnyTan's blog</h1>
+            <h2 class="blog-description">Never underestimate your power to change yourself!</h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+        <header class="post-header">
+            <span class="post-meta">
+                <time>
+                    2017-12-02
+                </time>
+            </span>
+        </header>
+        <section class="post-excerpt">
+            <h1>原生数据类型</h1>
+
+            <h2>1.Java 中的原生数据类型共有 8 种：</h2>
+
+            <h4>1） 整型：使用 int 表示。（32 位）</h4>
+
+            <h4>2） 字节型：使用 byte 表示。（表示-128～127 之间的 256 个整数， 8 位）。</h4>
+
+            <h4>3）短整型：使用 short 表示。（16 位）</h4>
+
+            <h4>4）长整型：使用 long 表示。（64 位）</h4>
+
+            <h4>5）单精度浮点型：使用 float 表示。所谓浮点型，指的就是小数，也叫做实数，例如 1.2。</h4>
+
+            <h4>6）双精度浮点型：使用 double 表示。双精度浮点型表示的数据范围要比单精度浮点型大。</h4>
+
+            <h4>7）字符型：使用 char 表示（char 是 character 的缩写）。所谓字符，就是单个的字符表示，比如字母 a，或者中文张，外面用单引号包围上。比如 char a = ‘B’; char b =
+                ‘张’;</h4>
+
+            <h4>8）布尔类型，使用 boolean 表示。布尔类型只有两种可能值，分别是 true 与 false。</h4>
+
+            <h2>2.Java 中的所有浮点类型默认情况下都是 double。不能将 double 类型的值赋给 float 类型的变量，即便该 double 类型的值处于 float
+                类型的范围内也是不可以的。总之，能否成功赋值取决于等号右边的值类型与等号左边的变量类型是否一致。</h2>
+
+            <h2>3.如何将 double 类型的值赋给 float 类型的变量？答案就是(1)强制类型转换，将 double 类型的值强制转换为 float 类型。(2)使用 java 预言的支持。</h2>
+
+            <h3>强制转换的语法： 类型 变量名 = （类型）变量值;</h3>
+
+            <h2>4.变量在使用前必须要赋值；变量必须要声明其类型方可使用；变量在使用前必须要定义，并且只能定义一次。</h2>
+
+            <h2>5.如下代码无法通过编译：</h2>
+
+            <p><code>
+                int a = 1; short b = a;
+            </code></p>
+            <p> a 是 int 类型，b 是 short 类型，int 类型表示的数据范围要比 short 类型大，不能将表示
+                范围大的值赋给表示范围小的变量。</p>
+
+            <h2>6. 如下代码可以通过编译：</h2>
+
+            <p><code>
+                short a = 1; int b = a;
+            </code></p>
+            <p> a 是 short 类型，b 是 int 类型，int 类型表示的数据范围要比 short 类型大，可以将表示
+                范围小的值赋给表示范围大的变量。</p>
+
+            <h2>7.总结：可以将表示范围小的值赋给表示范围大的变量；但不能直接将表示范围大的值赋给表示范围小的变量，只能通过强制类型转换实现。</h2>
+        </section>
+
+    </article>
+</main>
+
+<footer class="site-footer">
+
+    <div class="inner">
+        <section class="copyright">All content copyright <a href="http://kentanvictor.github.io">JohnnyTan's blog</a>
+            &copy; 2017 &bull; All rights reserved.
+        </section>
+    </div>
+</footer>
+
+</body>
+</html>
