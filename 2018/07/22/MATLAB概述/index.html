@@ -4,21 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World | JohnnyTan&#39;s Blog</title>
+    <title>MATLAB概述 | JohnnyTan&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="JohnnyTan">
     
 
     
-    <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/07/21/Hello-World/index.html">
+    <meta name="description" content="MATLAB概述 主要包括MATLAB和Simulink两大部分。  MATLAB基于矩阵(Matrix)的运算，全称为:MATreix LABoratory      MATLAB主要功能  技术计算–&amp;gt;数学计算、分析、可视化和算法开发 控制系统设计–&amp;gt;控制系统基于模型的设计，包括嵌入式系统仿真、快速原型及代码生成等 信号处理和通信–&amp;gt;信号处理和通信系统基于模型的设计，包括仿真">
+<meta name="keywords" content="Matlab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MATLAB概述">
+<meta property="og:url" content="http://yoursite.com/2018/07/22/MATLAB概述/index.html">
 <meta property="og:site_name" content="JohnnyTan&#39;s Blog">
+<meta property="og:description" content="MATLAB概述 主要包括MATLAB和Simulink两大部分。  MATLAB基于矩阵(Matrix)的运算，全称为:MATreix LABoratory      MATLAB主要功能  技术计算–&amp;gt;数学计算、分析、可视化和算法开发 控制系统设计–&amp;gt;控制系统基于模型的设计，包括嵌入式系统仿真、快速原型及代码生成等 信号处理和通信–&amp;gt;信号处理和通信系统基于模型的设计，包括仿真">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-21T13:33:51.116Z">
+<meta property="og:updated_time" content="2018-07-22T02:47:30.547Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
+<meta name="twitter:title" content="MATLAB概述">
+<meta name="twitter:description" content="MATLAB概述 主要包括MATLAB和Simulink两大部分。  MATLAB基于矩阵(Matrix)的运算，全称为:MATreix LABoratory      MATLAB主要功能  技术计算–&amp;gt;数学计算、分析、可视化和算法开发 控制系统设计–&amp;gt;控制系统基于模型的设计，包括嵌入式系统仿真、快速原型及代码生成等 信号处理和通信–&amp;gt;信号处理和通信系统基于模型的设计，包括仿真">
 
     
     <link rel="alternative" href="/atom.xml" title="JohnnyTan&#39;s Blog" type="application/atom+xml">
@@ -78,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/07/21/Hello-World/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2018/07/22/MATLAB概述/" title="MATLAB概述" itemprop="url">MATLAB概述</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="JohnnyTan" target="_blank" itemprop="author">JohnnyTan</a>
 		
   <p class="article-time">
-    <time datetime="2018-07-21T13:33:51.000Z" itemprop="datePublished"> Published 2018-07-21</time>
+    <time datetime="2018-07-22T02:45:26.496Z" itemprop="datePublished"> Published 2018-07-22</time>
     
   </p>
 </header>
@@ -94,15 +98,130 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MATLAB概述"><span class="toc-number">1.</span> <span class="toc-text">MATLAB概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MATLAB的安装"><span class="toc-number">1.0.1.</span> <span class="toc-text">MATLAB的安装</span></a></li></ol></li></ol></li></ol>
 		
 		</div>
 		
-		  
+		<h1 id="MATLAB概述"><a href="#MATLAB概述" class="headerlink" title="MATLAB概述"></a>MATLAB概述</h1><ul>
+<li>主要包括MATLAB和Simulink两大部分。<blockquote>
+<ul>
+<li>MATLAB基于矩阵(Matrix)的运算，全称为:MATreix LABoratory</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>MATLAB主要功能<blockquote>
+<ul>
+<li>技术计算–&gt;数学计算、分析、可视化和算法开发</li>
+<li>控制系统设计–&gt;控制系统基于模型的设计，包括嵌入式系统仿真、快速原型及代码生成等</li>
+<li>信号处理和通信–&gt;信号处理和通信系统基于模型的设计，包括仿真、代码生成和验证等</li>
+<li>图像处理–&gt;图像采集、分析、可视化和算法开发</li>
+<li>测试和测量–&gt;测试和测量应用中硬件连接性和数据分析</li>
+<li>计算你生物学–&gt;生物数据和系统分析、可视化与仿真</li>
+<li>计算金融–&gt;金融建模、分析及应用程序开发</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>MATLAB分析和访问数据</p>
+<ul>
+<li>数据分析</li>
+</ul>
+<blockquote>
+<p>MATLAB提供有一下一些用于数据分析运算的交互式工具和命令行函数</p>
+<ul>
+<li>内插和抽取</li>
+<li>抽取数据段、缩放和求平均值</li>
+<li>阈值和平滑处理</li>
+<li>相关性、傅里叶分析和筛选</li>
+<li>一维峰值、谷值以及零点查找</li>
+<li>基本统计数据和曲线拟合</li>
+<li>矩阵分析</li>
+</ul>
+</blockquote>
+<ul>
+<li>数据访问</li>
+</ul>
+<blockquote>
+<p>可以从各种常用文件格式(如Microsoft Excel)、ASCII文本或者二进制文件、图像、语音和视频文件，以及诸如HDF和HDF5等科学文件中读取数据</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>MATLAB实现数据可视化</p>
+<ul>
+<li><p>二维绘图</p>
+<blockquote>
+<p>使用二维绘图函数将数据向量可视化</p>
+<ul>
+<li>线图、区域图、条形图以及饼图</li>
+<li>方向图及速率图</li>
+<li>直方图</li>
+<li>多边形图和曲面图</li>
+<li>散点图/气泡图</li>
+<li>动画</li>
+</ul>
+</blockquote>
+</li>
+<li><p>三维绘图和卷可视化</p>
+<blockquote>
+<p>提供有将二维矩阵、三维向量和三维标量数据可视化的函数；还可以指定图形特性，例如：相机取景角度、透视图、灯光效果、光源位置以及透明度等等。<strong>三维绘图函数包括：</strong></p>
+<ul>
+<li>曲面图、轮廓图和网状图</li>
+<li>成像图</li>
+<li>锥形图、切割图、流程图以及等值面图</li>
+</ul>
+</blockquote>
+</li>
+<li><p>交互式创建和编译图形</p>
+<blockquote>
+<p>具有一些设计和修改图形的交互式工具。<strong>可执行的操作有：</strong></p>
+<ul>
+<li>将新的数据集拖放到图形上</li>
+<li>更改图形上任意对象的属性</li>
+<li>缩放、旋转、平移以及更改相机角度和灯光</li>
+<li>添加批注和数据提示</li>
+<li>绘制形状</li>
+<li>生成可供各种数据重复使用的MATLAB自带函数</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>MATLAB进行数值计算</p>
+<blockquote>
+<p>MATLAB提供以下类型函数用于数值计算与数值分析：</p>
+<ul>
+<li>矩阵操作和线性代数</li>
+<li>多项式和内插</li>
+<li>傅里叶分析和筛选</li>
+<li>数据分析和统计</li>
+<li>优化和数值积分</li>
+<li>常微分方程(ODE)</li>
+<li>偏微分方程(PDE)</li>
+<li>稀疏矩阵运算</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="MATLAB的安装"><a href="#MATLAB的安装" class="headerlink" title="MATLAB的安装"></a>MATLAB的安装</h3><blockquote>
+<p>感谢百度经验提供的教程</p>
+</blockquote>
+<blockquote>
+<p><a href="http://jingyan.baidu.com/article/3d69c551a2dbd7f0cf02d731.html" target="_blank" rel="noopener">MATLAB安装教程</a></p>
+</blockquote>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Matlab/">Matlab</a>
+  </div>
 
 </div>
 
@@ -110,7 +229,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2018/07/21/Hello-World/" data-title="Hello World | JohnnyTan&#39;s Blog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2018/07/22/MATLAB概述/" data-title="MATLAB概述 | JohnnyTan&#39;s Blog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -123,14 +242,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2018/07/22/MATLAB概述/" title="MATLAB概述">
-  <strong>上一篇：</strong><br/>
-  <span>
-  MATLAB概述</span>
+
+<div class="next">
+<a href="/2018/07/21/Hello-World/"  title="Hello World">
+ <strong>下一篇：</strong><br/> 
+ <span>Hello World
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -144,7 +263,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MATLAB概述"><span class="toc-number">1.</span> <span class="toc-text">MATLAB概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MATLAB的安装"><span class="toc-number">1.0.1.</span> <span class="toc-text">MATLAB的安装</span></a></li></ol></li></ol></li></ol>
  
   </div>
 
