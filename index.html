@@ -80,6 +80,85 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2018/07/23/Git/" title="" itemprop="url"></a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="JohnnyTan" target="_blank" itemprop="author">JohnnyTan</a>
+		
+  <p class="article-time">
+    <time datetime="2018-07-23T02:39:33.034Z" itemprop="datePublished"> 发表于 2018-07-23</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="What-is-Git"><a href="#What-is-Git" class="headerlink" title="What is Git?"></a>What is Git?</h2><ul>
+<li>Git is the most advanced distributed version control system in the world.<h2 id="What-is-the-different-between-the-SVN-Subversion-and-the-Git"><a href="#What-is-the-different-between-the-SVN-Subversion-and-the-Git" class="headerlink" title="What is the different between the SVN(Subversion) and the Git?"></a>What is the different between the SVN(Subversion) and the Git?</h2></li>
+<li>SVN is a centralized version control system which version library  centralized packed in the central server.So if you need to do your work,you must go to the central server to download the latest version.When you finished your work,you have to push on the central server.It’s so inconvenient.Actually the centralized version control system must accessible networking.<h5 id="just-like-this-photo"><a href="#just-like-this-photo" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/subversion.png?raw=true" alt=""></p>
+<ul>
+<li>Git is a distributed version control system,which advantaged is if it has not a central version,the LapTop is a rounded version library.because of this, you can work without using network.<h5 id="just-like-this-photo-1"><a href="#just-like-this-photo-1" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/git.png?raw=true" alt=""></p>
+<h2 id="there-are-some-useful-command-lines"><a href="#there-are-some-useful-command-lines" class="headerlink" title="there are some useful command lines :"></a>there are some useful command lines :</h2><ul>
+<li>mkdir: XX (Create an empty directory)/<em>XX refer to directory name</em>/</li>
+<li>pwd: (Show the path to the current directory)</li>
+<li>git: init (Change the current directory to a managed  Git repository,create a hidden file)</li>
+<li>git add XX (Add  XX file to working-storage section)</li>
+<li>git commit -m “XX” (Add a comment to a file)/<em>XX is the comment</em>/</li>
+<li>git status (View warehouse status)</li>
+<li>git log (View history)</li>
+<li>git diff XX (View XX file what are modified)</li>
+<li>git rm XX (Delete XX file)</li>
+<li>cat XX (View file contents)</li>
+<li>git checkout -b A  (Create a A branch and switch to A branch)</li>
+<li>git checkout master (back to master branch)</li>
+<li>git clone HTTPS (clone from online warehouse)</li>
+<li>git branch name (create a branch)</li>
+<li>git branch -d A (Delete A branch)</li>
+<li>git push origin master (push master branch to online warehouse)<h1 id="如何使用Git-Bash"><a href="#如何使用Git-Bash" class="headerlink" title="如何使用Git Bash"></a>如何使用Git Bash</h1><h2 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h2>當需要上傳一個項目到Github時，這個時候你需要在自己的Github上新建一個項目<br>New repository<br>然後在右下角有一個Clone or download<br>點擊之後有一個Clone with HTTPS<br>Use Git or checkout with SVN using the web URL.<br>複製地址之後<br>在需要上傳的項目文件中<br>右鍵，點擊Git Bash Here之後<br>先輸入 git clone + 地址<br>會出現一個項目名稱的文件夾<br>裡面有隱藏文件.git與ReadMe.md<br>將具有項目名稱的文件夾中的全部內容剪切到需要上傳的項目的根目錄下<br>之後在Git Bash中輸入<br>git add .<br>然後在本地執行提交操作<br>git commit -m “//在這裡面輸入你的內容，比如：First commit.”<br>最後將提交的內容同步到遠程版本庫，也就是GitHub上面：<br>git push origin master<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2>當需要更新已經上傳的項目時<br>直接在已經寫好的更新過的項目中<br>右鍵，點擊Git Bash Here<br>然後在命令行中輸入<br>git pull + 地址<br>上傳跟新過之後，需要在命令行中輸入<br>git add .<br>之後的步驟又是重複著之前的了<br>然後在本地執行提交操作<br>git commit -m “//在這裡面輸入你的內容，比如：First commit.”<br>最後將提交的內容同步到遠程版本庫，也就是Github上面：<br>git push origin master</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2018/07/23/Git/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2018/07/23/Android自定义控件/" title="Android自定义控件" itemprop="url">Android自定义控件</a>
   </h1>
   <p class="article-author">By
@@ -284,11 +363,11 @@
 			
 		
 			
-				<li><a href="/tags/Matlab/" title="Matlab">Matlab<sup>1</sup></a></li>
+				<li><a href="/tags/QT/" title="QT">QT<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/QT/" title="QT">QT<sup>1</sup></a></li>
+				<li><a href="/tags/Matlab/" title="Matlab">Matlab<sup>1</sup></a></li>
 			
 		
 		</ul>
