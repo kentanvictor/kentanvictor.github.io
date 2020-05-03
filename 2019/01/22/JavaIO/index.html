@@ -20,7 +20,7 @@
 <meta property="og:description" content="javaIO标签： javaIO  Contents  什么是IO流 IO流的分类 字符流和字节流   文件字节、字符IO 文件字节IO流 文件字符IO流">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/JavaIO.jpg">
-<meta property="og:updated_time" content="2019-01-22T01:47:51.521Z">
+<meta property="og:updated_time" content="2020-05-03T13:54:56.686Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaIO">
 <meta name="twitter:description" content="javaIO标签： javaIO  Contents  什么是IO流 IO流的分类 字符流和字节流   文件字节、字符IO 文件字节IO流 文件字符IO流">
@@ -197,12 +197,10 @@
 <li><p>使用输入流读取字节</p>
 <p>  文件字节流可以调用从父类继承的<code>read方法</code>顺序地读取文件，只要不关闭流，每次调用read方法就顺序地读取文件中的其余内容，直到文件的末尾或文件字节输入流被关闭。</p>
 <p>  字节输入流的read方法以字节为单位读取源中的数据。</p>
-  <pre>
-  int read()                              //输入流调用该方法从源中读取单个字节的数据，该方法返回字节值（0~255之间的一个整数），如果未读出字节就返回-1
-  int read(byte b[])                      //输入流调用该方法从源中试图读取b.length个字节到字节数组中，返回实际读取的字节数目，如果到达文件末尾则返回-1
-  int read(byte b[],int off,int len)      //输入流调用该方法从源中试图读取b.length个字节到字节数组中，返回实际读取的字节数目，如果到达文件末尾则返回-1，参数off指定从字节数组的某个位置开始存放读取的数据
-  </pre></li>
-<li>关闭流<br>  输入流都提供了关闭方法<code>close()</code>，尽管程序结束时会自动关闭所打开的流，但是当程序使用完流后，显式地关闭任何打开的流仍是一个好习惯。</li>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span>                              <span class="comment">//输入流调用该方法从源中读取单个字节的数据，该方法返回字节值（0~255之间的一个整数），如果未读出字节就返回-1</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">byte</span> b[])</span>                      <span class="comment">//输入流调用该方法从源中试图读取b.length个字节到字节数组中，返回实际读取的字节数目，如果到达文件末尾则返回-1</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">byte</span> b[],<span class="keyword">int</span> off,<span class="keyword">int</span> len)</span>      <span class="comment">//输入流调用该方法从源中试图读取b.length个字节到字节数组中，返回实际读取的字节数目，如果到达文件末尾则返回-1，参数off指定从字节数组的某个位置开始存放读取的数据</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关闭流<br>  输入流都提供了关闭方法<code>close()</code>，尽管程序结束时会自动关闭所打开的流，但是当程序使用完流后，显式地关闭任何打开的流仍是一个好习惯。</p>
+</li>
 </ul>
 <p><strong>例子：使用文件字节流读文件内容：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">byte</span>[] a = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            File f = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\Singleton_pattern\\src\\com\\dell\\example\\IODemo\\InputStreamTest\\InputTest.java"</span>);</span><br><span class="line">            InputStream in = <span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">            <span class="keyword">while</span> ((n = in.read(a,<span class="number">0</span>,<span class="number">100</span>)) != -<span class="number">1</span>)&#123;</span><br><span class="line">                String s = <span class="keyword">new</span> String(a,<span class="number">0</span>,n);</span><br><span class="line">                System.out.println(s);</span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="文件字节输出流"><a href="#文件字节输出流" class="headerlink" title="文件字节输出流"></a>文件字节输出流</h3><p><code>使用输出流通常包括4个基本步骤：</code></p>
@@ -315,11 +313,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/前端/" title="前端">前端<sup>2</sup></a></li>
+				<li><a href="/tags/Android/" title="Android">Android<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Android/" title="Android">Android<sup>2</sup></a></li>
+				<li><a href="/tags/前端/" title="前端">前端<sup>2</sup></a></li>
 			
 		
 			
@@ -331,11 +329,11 @@
 			
 		
 			
-				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
+				<li><a href="/tags/Matlab/" title="Matlab">Matlab<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Matlab/" title="Matlab">Matlab<sup>1</sup></a></li>
+				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
 			
 		
 			
