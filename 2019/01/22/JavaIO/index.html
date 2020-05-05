@@ -1,0 +1,664 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>JavaIO | JohnnyTan&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="JohnnyTan">
+    
+
+    
+    <meta name="description" content="javaIO标签： javaIO  Contents  什么是IO流 IO流的分类 字符流和字节流   文件字节、字符IO 文件字节IO流 文件字符IO流">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaIO">
+<meta property="og:url" content="https://kentanvictor.github.io/2019/01/22/JavaIO/index.html">
+<meta property="og:site_name" content="JohnnyTan&#39;s Blog">
+<meta property="og:description" content="javaIO标签： javaIO  Contents  什么是IO流 IO流的分类 字符流和字节流   文件字节、字符IO 文件字节IO流 文件字符IO流">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/JavaIO.jpg">
+<meta property="og:updated_time" content="2020-05-03T13:54:56.686Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaIO">
+<meta name="twitter:description" content="javaIO标签： javaIO  Contents  什么是IO流 IO流的分类 字符流和字节流   文件字节、字符IO 文件字节IO流 文件字符IO流">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/JavaIO.jpg">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="JohnnyTan&#39;s Blog" title="JohnnyTan&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="JohnnyTan&#39;s Blog">JohnnyTan&#39;s Blog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:kentanvictor.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2019/01/22/JavaIO/" title="JavaIO" itemprop="url">JavaIO</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="JohnnyTan" target="_blank" itemprop="author">JohnnyTan</a>
+		
+  <p class="article-time">
+    <time datetime="2019-01-22T01:47:51.000Z" itemprop="datePublished"> 发表于 2019-01-22</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#javaIO"><span class="toc-number">1.</span> <span class="toc-text">javaIO</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java流图结构"><span class="toc-number">2.</span> <span class="toc-text">Java流图结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#流的概念和作用"><span class="toc-number">3.</span> <span class="toc-text">流的概念和作用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#IO流的分类"><span class="toc-number">3.1.</span> <span class="toc-text">IO流的分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符流和字节流"><span class="toc-number">3.2.</span> <span class="toc-text">字符流和字节流</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件字节、字符IO"><span class="toc-number">4.</span> <span class="toc-text">文件字节、字符IO</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个File对象的构造方法有3个："><span class="toc-number">4.0.1.</span> <span class="toc-text">创建一个File对象的构造方法有3个：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件的属性："><span class="toc-number">4.0.2.</span> <span class="toc-text">文件的属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#目录："><span class="toc-number">4.0.3.</span> <span class="toc-text">目录：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件字节IO流"><span class="toc-number">4.1.</span> <span class="toc-text">文件字节IO流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件字节输入流"><span class="toc-number">4.1.1.</span> <span class="toc-text">文件字节输入流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件字节输出流"><span class="toc-number">4.1.2.</span> <span class="toc-text">文件字节输出流</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件字符IO流"><span class="toc-number">4.2.</span> <span class="toc-text">文件字符IO流</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="javaIO"><a href="#javaIO" class="headerlink" title="javaIO"></a>javaIO</h1><p>标签： javaIO</p>
+<hr>
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="#流的概念和作用">什么是IO流</a><ul>
+<li><a href="#IO流的分类">IO流的分类</a></li>
+<li><a href="#字符流和字节流">字符流和字节流</a></li>
+</ul>
+</li>
+<li><a href="#文件字节、字符IO">文件字节、字符IO</a><ul>
+<li><a href="#文件字节IO流">文件字节IO流</a></li>
+<li><a href="#文件字符IO流">文件字符IO流</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<a id="more"></a>
+<h1 id="Java流图结构"><a href="#Java流图结构" class="headerlink" title="Java流图结构"></a>Java流图结构</h1><p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/JavaIO.jpg" alt=""></p>
+<h1 id="流的概念和作用"><a href="#流的概念和作用" class="headerlink" title="流的概念和作用"></a>流的概念和作用</h1><blockquote>
+<p>流是一组有顺序的，有起点和终点的字节集合，是对数据传输的总称或抽象。即数据在两设备间的传输称为流，流的本质是数据传输，根据数据传输特性将流抽象为各种类，方便更直观的进行数据操作。</p>
+</blockquote>
+<h2 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h2><ul>
+<li>根据处理数据类型的不同可以分为：字符流和字节流</li>
+<li>根据数据流向不同分为：输入流和输出流</li>
+</ul>
+<h2 id="字符流和字节流"><a href="#字符流和字节流" class="headerlink" title="字符流和字节流"></a>字符流和字节流</h2><blockquote>
+<p>字符流的由来： 因为数据编码的不同，而有了对字符进行高效操作的流对象。本质其实就是基于字节流读取时，去查了指定的码表。 字节流和字符流的区别：</p>
+<ul>
+<li><p>读写单位不同：字节流以字节（8bit）为单位，字符流以字符为单位，根据码表映射字符，一次可能读多个字节。</p>
+</li>
+<li><p>处理对象不同：字节流能处理所有类型的数据（如图片、avi等），而字符流只能处理字符类型的数据。</p>
+</li>
+<li><p>字节流：一次读入或读出是8位二进制。</p>
+</li>
+<li><p>字符流：一次读入或读出是16位二进制。</p>
+</li>
+</ul>
+<p><strong>设备上的数据无论是图片或者视频，文字，它们都以二进制存储的。二进制的最终都是以一个8位为数据单元进行体现，所以计算机中的最小数据单元就是字节。意味着，字节流可以处理设备上的所有数据，所以字节流一样可以处理字符数据。</strong></p>
+<p><strong><code>结论：只要是处理纯文本数据，就优先考虑使用字符流。 除此之外都使用字节流。</code></strong></p>
+</blockquote>
+<h1 id="文件字节、字符IO"><a href="#文件字节、字符IO" class="headerlink" title="文件字节、字符IO"></a>文件字节、字符IO</h1><blockquote>
+<p>Java程序可能经常需要获取磁盘上文件的有关信息或在磁盘上创建新的文件等，这就需要用到<code>File类</code>。</p>
+<h3 id="创建一个File对象的构造方法有3个："><a href="#创建一个File对象的构造方法有3个：" class="headerlink" title="创建一个File对象的构造方法有3个："></a>创建一个File对象的构造方法有3个：</h3><ul>
+<li>File(String filename);</li>
+<li>File(String directoryPath,String filename);</li>
+<li>File(File dir,String filename);</li>
+</ul>
+<p><em>filename–文件名字；directoryPath–文件路径；dir–一个目录；<code>使用File(String filename)创建文件时，该文件被认为与当前应用程序在同一个目录中。</code></em></p>
+</blockquote>
+<h3 id="文件的属性："><a href="#文件的属性：" class="headerlink" title="文件的属性："></a><strong>文件的属性：</strong></h3><p><pre><br>public String getName();            //获取文件的名字<br>public boolean canRead();           //判断文件是否是可读的<br>public boolean canWrite();          //判断文件是否可被写入<br>public boolean exists();            //判断文件是否存在<br>public long length();               //获取文件的长度（单位是字节）<br>public String getAbsolutePath();    //获取文件的绝对路径<br>public String getParent();          //获取文件的父目录<br>public boolean isFile();            //判断文件是否是一个普通文件，而不是目录<br>public boolean isDirectory();       //判断文件是否是一个目录<br>public boolean isHidden();          //判断文件是否是隐藏文件<br>public long lastModified();         //获取文件最后修改的时间（时间是从1970年午夜至文件最后修改时刻的毫秒数）<br></pre><br><strong>例子：使用上述方法获取某些文件的信息：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File f = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\IOTest"</span>,<span class="string">"newIO.txt"</span>);</span><br><span class="line">        System.out.println(f.getName() + <span class="string">"是可读的吗："</span> + f.canRead());</span><br><span class="line">        System.out.println(f.getName() + <span class="string">"的长度："</span> + f.length());</span><br><span class="line">        System.out.println(f.getName() + <span class="string">"的绝对路径："</span> + f.getAbsolutePath());</span><br><span class="line"></span><br><span class="line">        File newFile = <span class="keyword">new</span> File(<span class="string">"new.txt"</span>);</span><br><span class="line">        System.out.println(<span class="string">"在当前目录下创建新文件："</span> + newFile.getName());</span><br><span class="line">        <span class="keyword">if</span> (!newFile.exists())&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                newFile.createNewFile();    <span class="comment">//如果没有new.txt则创建一个</span></span><br><span class="line">                System.out.println(<span class="string">"创建成功！"</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a><strong>目录：</strong></h3><blockquote>
+</blockquote>
+<ul>
+<li>创建目录<blockquote>
+<p>File对象调用方法public boolean mkdir()创建一个目录，如果创建成功返回true，否则返回false（如果该目录已经存在将返回false）。</p>
+</blockquote>
+</li>
+<li>列出目录中的文件<blockquote>
+<p>如果File对象是一个目录，那么该对象调用下述方法列出目录下的文件和目录。</p>
+</blockquote>
+<pre><br>public String[] list();             //用字符串形式返回目录下的全部文件<br>public File[] listFiles();          //用File对象形式返回目录下的全部文件<br></pre><blockquote>
+<p>有时候需要列出目录下指定类型的文件，比如.java、.txt等扩展名的文件。可以使用File类的下述两个方法，列出指定类型的文件：</p>
+</blockquote>
+<pre><br>public String[] list(FilenameFilter obj);           //该方法用字符串形式返回目录下的指定类型的所有文件<br>public File[] listFiles(FilenameFilter obj);        //该方法用File对象形式返回目录下的指定类型的所有文件<br></pre><blockquote>
+<p>上述两个方法的参数FIlenameFilter是一个接口，该接口有个方法：</p>
+</blockquote>
+<pre><br>public boolean accept(File dir,String name);<br></pre><blockquote>
+<p>File对象dirFile调用list方法时，需向该方法传递一个实现FilenameFilter接口的对象，list方法执行时，参数obj不断回调接口方法accept(File dir,String name)，该方法中的参数dir为调用list的当前目录dirFile，参数name被实例化为dirFile，参数name被实例化为dirFile目录中的一个文件名，当接口方法返回true时，list方法就将名字为name的文件存放到返回的数组中。</p>
+</blockquote>
+<strong>例子：列出当前目录下（应用程序所在的目录）下全部.java文件的名字：</strong><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DirFileTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File dirFile = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\Singleton_pattern\\src\\com\\dell\\example\\IODemo\\FileTest"</span>);</span><br><span class="line">        FileAccept fileAccept = <span class="keyword">new</span> FileAccept();</span><br><span class="line">        fileAccept.setExtendName(<span class="string">"java"</span>);</span><br><span class="line">        String fileName[] = dirFile.list(fileAccept);</span><br><span class="line">        <span class="keyword">for</span> (String name : fileName)&#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileAccept</span> <span class="keyword">implements</span> <span class="title">FilenameFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String extendName;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setExtendName</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        extendName = <span class="string">"."</span> + s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">accept</span><span class="params">(File dir, String name)</span> </span>&#123;  <span class="comment">//重写接口中的方法</span></span><br><span class="line">        <span class="keyword">return</span> name.endsWith(extendName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="文件字节IO流"><a href="#文件字节IO流" class="headerlink" title="文件字节IO流"></a><strong>文件字节IO流</strong></h2><h3 id="文件字节输入流"><a href="#文件字节输入流" class="headerlink" title="文件字节输入流"></a>文件字节输入流</h3><p><code>使用输入流通常包括4个基本步骤：</code></p>
+<ul>
+<li>设定输入流的源</li>
+<li>创建指向源的输入流</li>
+<li>让输入流读取源中的数据</li>
+<li>关闭输入流</li>
+</ul>
+<p>如果对文件读取需求比较简单，那么可以使用<code>FileInputStream类（文件字节输入流）</code>，该类是InputStream类的子类（以字节为单位读取文件），该类的实例方法都是从InputStream继承来的。</p>
+<ul>
+<li><p>构造方法：</p>
+<p>  可以使用FileInputStream类的下列构造方法创建指向文件的输入流。</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FileInputStream(String name);</span><br><span class="line">FileInputStream(File file);</span><br></pre></td></tr></table></figure>
+<p>  第一个构造方法使用给定的文件名name创建FileInputStream流，第二个构造方法使用File对象创建FileInputStream流。参数name和file指定的文件称为输入流的源。</p>
+<p>  <strong>注意：</strong> FileInputStream输入流打开一个到达文件的通道。当创建输入流的时候，可能会出现异常。</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileInputStream in = <span class="keyword">new</span> FileInputStream(<span class="string">"hello.txt"</span>);<span class="comment">//创建指向文件hello.txt的输入流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  或</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(<span class="string">"hello.txt"</span>); <span class="comment">//指定输入流的源</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileInputStream in = <span class="keyword">new</span> FileInputStream(f);    <span class="comment">//创建指向源的输入流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOEception e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用输入流读取字节</p>
+<p>  文件字节流可以调用从父类继承的<code>read方法</code>顺序地读取文件，只要不关闭流，每次调用read方法就顺序地读取文件中的其余内容，直到文件的末尾或文件字节输入流被关闭。</p>
+<p>  字节输入流的read方法以字节为单位读取源中的数据。</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span>                              <span class="comment">//输入流调用该方法从源中读取单个字节的数据，该方法返回字节值（0~255之间的一个整数），如果未读出字节就返回-1</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">byte</span> b[])</span>                      <span class="comment">//输入流调用该方法从源中试图读取b.length个字节到字节数组中，返回实际读取的字节数目，如果到达文件末尾则返回-1</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">byte</span> b[],<span class="keyword">int</span> off,<span class="keyword">int</span> len)</span>      <span class="comment">//输入流调用该方法从源中试图读取b.length个字节到字节数组中，返回实际读取的字节数目，如果到达文件末尾则返回-1，参数off指定从字节数组的某个位置开始存放读取的数据</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关闭流<br>  输入流都提供了关闭方法<code>close()</code>，尽管程序结束时会自动关闭所打开的流，但是当程序使用完流后，显式地关闭任何打开的流仍是一个好习惯。</p>
+</li>
+</ul>
+<p><strong>例子：使用文件字节流读文件内容：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">byte</span>[] a = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            File f = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\Singleton_pattern\\src\\com\\dell\\example\\IODemo\\InputStreamTest\\InputTest.java"</span>);</span><br><span class="line">            InputStream in = <span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">            <span class="keyword">while</span> ((n = in.read(a,<span class="number">0</span>,<span class="number">100</span>)) != -<span class="number">1</span>)&#123;</span><br><span class="line">                String s = <span class="keyword">new</span> String(a,<span class="number">0</span>,n);</span><br><span class="line">                System.out.println(s);</span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="文件字节输出流"><a href="#文件字节输出流" class="headerlink" title="文件字节输出流"></a>文件字节输出流</h3><p><code>使用输出流通常包括4个基本步骤：</code></p>
+<ul>
+<li>给出输出流的目的地</li>
+<li>创建指向目的地的输出流</li>
+<li>让输出流把数据写入到目的地</li>
+<li>关闭输出流</li>
+</ul>
+<p>如果对文件写入需求比较简单，那么可以使用<code>FileOutputStream类（文件字节输出流）</code>，该类是OutputStream类的子类（以字节为单位写入文件），该类的实例方法都是从OutputStream继承来的。</p>
+<ul>
+<li><p>构造方法：</p>
+<p>  可以使用FileOutputStream类的下列具有刷新功能的构造方法创建指向文件的输出流。</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FileOutputStream(String name);</span><br><span class="line">FileOutputStream(File file);</span><br></pre></td></tr></table></figure>
+<p>  第一个构造方法使用给定的文件名name创建FileOutputStream流，第二个构造方法使用File对象创建FileOutputStream流。参数name和file指定的文件称为输出流的目的地。</p>
+<p>  <strong>注意：</strong> FileOutputStream输出流指向的文件不存在，java就会创建该文件，如果指向的文件是已存在的文件，输入流会刷新该文件（使文件长度为0）。创建输出流可能会出现异常。</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileOutputStream out = <span class="keyword">new</span> FileOutputStream(<span class="string">"androidlab.txt"</span>);<span class="comment">//创建指向文件androidlab.txt的输出流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  或</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(<span class="string">"androidlab.txt"</span>);                <span class="comment">//指定输出流的目的地</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileOutputStream in = <span class="keyword">new</span> FileOutputStream(f);    <span class="comment">//创建指向目的地的输出流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOEception e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用输出流写字节</p>
+<p>  文件字节流可以调用从父类继承的<code>write方法</code>顺序地写文件，只要不关闭流，每次调用write方法就顺序地写文件，直到流被关闭。</p>
+<p>  字节输出流的write方法以字节为单位向目的地写入数据。</p>
+  <pre>
+  void write(int n)                       //输出流调用该方法向目的地写入单个字节
+  void write(byte b[])                     //输出流调用该方法向目的地写入一个字节数组
+  void write(byte b[],int off,int len)     //给定字节数组中起始于偏移量off处取len个字节写入目的地
+  void close()                             //关闭输出流
+  </pre></li>
+<li>关闭流<br>  需要注意的是，在操作系统把程序所写到输出流上的那些字节保存到磁盘上之前，有时被存放在缓冲区中，通过调用<code>close()</code>方法，可以保证操作系统把缓冲区的内容写到它的目的地。</li>
+</ul>
+<p><strong>例子：使用文件字节流写入文件：</strong> 使用具有刷新功能的构造方法指向文件android.txt的输出流，并向里面写入“Android”，然后再选择使用不刷新文件的构造方法指向android.txt，并向文件中追加“Lab”。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OutputTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span>[] a = <span class="string">"Android"</span>.getBytes();</span><br><span class="line">        <span class="keyword">byte</span>[] b = <span class="string">"Lab"</span>.getBytes();</span><br><span class="line">        File newFile = <span class="keyword">new</span> File(<span class="string">"android.txt"</span>);     <span class="comment">//输出目的地</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            OutputStream out = <span class="keyword">new</span> FileOutputStream(newFile);   <span class="comment">//指向目的地的输出流</span></span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">"的大小:"</span> + newFile.length() + <span class="string">"字节"</span>);</span><br><span class="line">            out.write(a);   <span class="comment">//向目的地写入数据</span></span><br><span class="line">            out.close();</span><br><span class="line">            out = <span class="keyword">new</span> FileOutputStream(newFile,<span class="keyword">true</span>);   <span class="comment">//准备向文件尾追加内容</span></span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">"的大小:"</span> + newFile.length() + <span class="string">"字节"</span>);</span><br><span class="line">            out.write(b,<span class="number">0</span>,b.length);</span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">"的大小:"</span> + newFile.length() + <span class="string">"字节"</span>);</span><br><span class="line">            out.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="文件字符IO流"><a href="#文件字符IO流" class="headerlink" title="文件字符IO流"></a><strong>文件字符IO流</strong></h2><p>文件字节输入、输出流的read和write方法使用字节数组读写数据，即以字节为单位处理数据。因此字节流不能很好地操作Unicode字符。<strong>一个汉字在文件中占两个字节，如果使用字节流读取不当会出现“乱码”现象。</strong></p>
+<p><pre><br>    字节            ——          字符<br>FileInputStream     ——      FileReader<br>FileOutputStream    ——      FileWriter<br></pre><br>FileReader和FileWriter分别是Reader和Writer的子类，其构造方法分别是：</p>
+<p><pre><br>FileReader(String filename);    FileReader(File filename);<br>FileWriter(String filename);    FileWriter(File filename);<br>FileWriter(String filename,boolean append);<br>FileWriter(File filename,boolean append);<br></pre><br><strong>字符输入流和输出流的<code>read</code>和<code>write</code>方法使用字符数组读写数据，即以字符为基本单位处理数据。</strong></p>
+<ul>
+<li><strong>例子：用文件字符输入、输出流将文件“NotHelloWorld.txt”中的内容尾加到“AndroidLab.txt”中</strong><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RWTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File sourceFile = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\IOTest\\NotHelloWorld.txt"</span>);<span class="comment">//读取的文件</span></span><br><span class="line">        File targetFile = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\IOTest\\AndroidLab.txt"</span>);<span class="comment">//写入的文件</span></span><br><span class="line">        <span class="keyword">char</span> c[] = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            Writer out = <span class="keyword">new</span> FileWriter(targetFile,<span class="keyword">true</span>);   <span class="comment">//指向目的地的输出流</span></span><br><span class="line">            Reader in = <span class="keyword">new</span> FileReader(sourceFile);                 <span class="comment">//指向源的输入流</span></span><br><span class="line">            <span class="keyword">int</span> n = -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> ((n = in.read(c)) != -<span class="number">1</span>)&#123;</span><br><span class="line">                out.write(c,<span class="number">0</span>,n);</span><br><span class="line">            &#125;</span><br><span class="line">            out.flush();</span><br><span class="line">            out.close();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">            System.out.println(<span class="string">"Error "</span> + e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Java/">Java</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="https://kentanvictor.github.io/2019/01/22/JavaIO/" data-title="JavaIO | JohnnyTan&#39;s Blog" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2020/05/05/Ubuntu-Windows双系统安装指南/" title="Ubuntu+Windows双系统安装指南">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Ubuntu+Windows双系统安装指南</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2018/10/18/基于双目摄像头的障碍物检测/"  title="基于双目摄像头的障碍物检测">
+ <strong>下一篇：</strong><br/> 
+ <span>基于双目摄像头的障碍物检测
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#javaIO"><span class="toc-number">1.</span> <span class="toc-text">javaIO</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java流图结构"><span class="toc-number">2.</span> <span class="toc-text">Java流图结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#流的概念和作用"><span class="toc-number">3.</span> <span class="toc-text">流的概念和作用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#IO流的分类"><span class="toc-number">3.1.</span> <span class="toc-text">IO流的分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符流和字节流"><span class="toc-number">3.2.</span> <span class="toc-text">字符流和字节流</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件字节、字符IO"><span class="toc-number">4.</span> <span class="toc-text">文件字节、字符IO</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个File对象的构造方法有3个："><span class="toc-number">4.0.1.</span> <span class="toc-text">创建一个File对象的构造方法有3个：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件的属性："><span class="toc-number">4.0.2.</span> <span class="toc-text">文件的属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#目录："><span class="toc-number">4.0.3.</span> <span class="toc-text">目录：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件字节IO流"><span class="toc-number">4.1.</span> <span class="toc-text">文件字节IO流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件字节输入流"><span class="toc-number">4.1.1.</span> <span class="toc-text">文件字节输入流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件字节输出流"><span class="toc-number">4.1.2.</span> <span class="toc-text">文件字节输出流</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件字符IO流"><span class="toc-number">4.2.</span> <span class="toc-text">文件字符IO流</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Android/" title="Android">Android<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/前端/" title="前端">前端<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/后端/" title="后端">后端<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Matlab/" title="Matlab">Matlab<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/QT/" title="QT">QT<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux/" title="Linux">Linux<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/OpenCV/" title="OpenCV">OpenCV<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://www.cnblogs.com/johnnytan/" target="_blank" title="博客园">博客园</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://github.com/kentanvictor" target="_blank" title="Github">Github</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.jianshu.com/u/9ece250a35ae" target="_blank" title="简书">简书</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=&verifier=fe5f84f0&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2607634554" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/kentanvictor" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		<a href="http://www.zhihu.com/people/tan-zhuo-24/activities" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		
+		<a href="mailto:kentanvictor@foxmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2020 
+		
+		<a href="/about" target="_blank" title="JohnnyTan">JohnnyTan</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'Johnny Tan';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
