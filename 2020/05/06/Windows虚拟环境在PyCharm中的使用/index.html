@@ -4,25 +4,27 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>CSS | JohnnyTan&#39;s Blog</title>
+    <title>Windows虚拟环境在PyCharm中的使用 | JohnnyTan&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="JohnnyTan">
     
 
     
-    <meta name="description" content="CSS选择器 选择器的样式：   选择器{ 属性:值; 属性:值 }   选择器：选择标签的过程  选择器的种类：">
-<meta name="keywords" content="前端">
+    <meta name="description" content="Anaconda 网上对于Anaconda的安装是教程有很多，这里会为各位提供的是一个我当时安装时候所参考的链接地址。Anaconda的介绍、安装及使用教程">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS">
-<meta property="og:url" content="https://kentanvictor.github.io/2018/09/08/CSS/index.html">
+<meta property="og:title" content="Windows虚拟环境在PyCharm中的使用">
+<meta property="og:url" content="https://kentanvictor.github.io/2020/05/06/Windows虚拟环境在PyCharm中的使用/index.html">
 <meta property="og:site_name" content="JohnnyTan&#39;s Blog">
-<meta property="og:description" content="CSS选择器 选择器的样式：   选择器{ 属性:值; 属性:值 }   选择器：选择标签的过程  选择器的种类：">
+<meta property="og:description" content="Anaconda 网上对于Anaconda的安装是教程有很多，这里会为各位提供的是一个我当时安装时候所参考的链接地址。Anaconda的介绍、安装及使用教程">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-08T13:41:41.637Z">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1410558/201807/1410558-20180715214011743-297214195.png">
+<meta property="og:updated_time" content="2020-05-06T03:12:47.279Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS">
-<meta name="twitter:description" content="CSS选择器 选择器的样式：   选择器{ 属性:值; 属性:值 }   选择器：选择标签的过程  选择器的种类：">
+<meta name="twitter:title" content="Windows虚拟环境在PyCharm中的使用">
+<meta name="twitter:description" content="Anaconda 网上对于Anaconda的安装是教程有很多，这里会为各位提供的是一个我当时安装时候所参考的链接地址。Anaconda的介绍、安装及使用教程">
+<meta name="twitter:image" content="https://images2018.cnblogs.com/blog/1410558/201807/1410558-20180715214011743-297214195.png">
 
     
     
@@ -80,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/09/08/CSS/" title="CSS" itemprop="url">CSS</a>
+      <a href="/2020/05/06/Windows虚拟环境在PyCharm中的使用/" title="Windows虚拟环境在PyCharm中的使用" itemprop="url">Windows虚拟环境在PyCharm中的使用</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="JohnnyTan" target="_blank" itemprop="author">JohnnyTan</a>
 		
   <p class="article-time">
-    <time datetime="2018-09-08T13:54:20.000Z" itemprop="datePublished"> 发表于 2018-09-08</time>
+    <time datetime="2020-05-06T03:09:42.000Z" itemprop="datePublished"> 发表于 2020-05-06</time>
     
   </p>
 </header>
@@ -96,60 +98,79 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS"><span class="toc-number">1.</span> <span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#选择器"><span class="toc-number">1.1.</span> <span class="toc-text">选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#标签选择器"><span class="toc-number">1.1.1.</span> <span class="toc-text">标签选择器</span></a></li></ol></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Anaconda"><span class="toc-number">1.</span> <span class="toc-text">Anaconda</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Anaconda中创建虚拟环境（命令行模式）"><span class="toc-number">1.1.</span> <span class="toc-text">Anaconda中创建虚拟环境（命令行模式）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Anaconda中创建虚拟环境（GUI模式）"><span class="toc-number">1.2.</span> <span class="toc-text">Anaconda中创建虚拟环境（GUI模式）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PyCharm"><span class="toc-number">2.</span> <span class="toc-text">PyCharm</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
-<li>选择器的样式：</li>
-</ul>
-<blockquote>
-<p><strong>选择器{ 属性:值; 属性:值 }</strong></p>
+		<h1 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h1><blockquote>
+<p>网上对于Anaconda的安装是教程有很多，这里会为各位提供的是一个我当时安装时候所参考的链接地址。<a href="https://zhuanlan.zhihu.com/p/32925500" target="_blank" rel="noopener">Anaconda的介绍、安装及使用教程</a></p>
 </blockquote>
-<ul>
-<li><p>选择器：<strong>选择标签的过程</strong></p>
-</li>
-<li><p>选择器的种类：</p>
-</li>
-</ul>
 <a id="more"></a>
+<h2 id="Anaconda中创建虚拟环境（命令行模式）"><a href="#Anaconda中创建虚拟环境（命令行模式）" class="headerlink" title="Anaconda中创建虚拟环境（命令行模式）"></a>Anaconda中创建虚拟环境（命令行模式）</h2><blockquote>
+<p>在Anaconda中创建虚拟环境的方式：</p>
+<p>下面是创建python=3.6版本的环境，取名叫py36</p>
+<p>conda create -n py36 python=3.6</p>
+<p>删除环境</p>
+<p>conda remove -n py36 –all</p>
+<p>激活环境</p>
+<p>source activate py36</p>
+<p>退出环境</p>
+<p>source deactivate</p>
+</blockquote>
+<ul>
+<li><p>在创建虚拟环境的过程中，我遇到了一个问题，这个问题就是：<code>如果创建了多个python版本的环境，那么我应该如何去管理当中所安装的不同的包呢？并且与本机原本安装的python环境不起到冲突？</code></p>
+</li>
+<li><p>我解决Anaconda与本机办法是这样的：</p>
 <blockquote>
 <ul>
-<li>标签选择器</li>
-<li>类选择器</li>
-<li>ID选择器</li>
-<li>通配符选择器</li>
-<li>交集选择器（标签指定式）</li>
-<li>子代选择器</li>
-<li>并集选择器<blockquote>
-<ul>
-<li>补充选择器（C3）：</li>
-<li>伪类选择器</li>
-<li>属性选择器</li>
-<li>伪元素选择器</li>
+<li>解决办法一：</li>
 </ul>
+<p>其实python 在安装的时候就为我们提供了两个版本的解决方案</p>
+<p>在C盘的windows 目录下有个 py.exe</p>
+<p>我们用py.exe 这个工具启动就能分辨出python的版本</p>
+<p>启动python2.7的pip</p>
+<p>直接在cmd 窗口里输入：py -2 -m pip install XXXX</p>
+<p>启动python3.6的pip</p>
+<p>直接在cmd 窗口里输入：py -3 -m pip install XXXX</p>
+<ul>
+<li>解决办法二：</li>
+</ul>
+<p>找到自己本机安装的Python路径（在Path中可以直接找到），然后找到自己的Python.exe文件，然后重命名即可。</p>
+<p>如：我对我本机的Python重命名为Python3，然后对Anaconda中安装的Python不重命名。</p>
+<p>之后需要对Anaconda中的python进行pip安装的时候，就输入：</p>
+<p>python -m pip install XXX</p>
+<p>然后对本机的python进行安装的时候，就输入：</p>
+<p>python3 -m pip install XXX</p>
+</blockquote>
+</li>
+<li><p>我解决Anaconda进入虚拟环境之后与Anaconda自身的Python冲突的问题：</p>
+<blockquote>
+<p>根据上面启动虚拟环境的方法，我们能够启动已经创建的虚拟环境</p>
+<p>进入虚拟环境之后，输入：</p>
+<p>python -V</p>
+<p>就能够看到当前的虚拟环境中的python的版本号</p>
+<p>这个时候，输入：</p>
+<p>pip list</p>
+<p>你所看到的就是你当前环境下的pip所安装的包。</p>
+<p><code>如果你发现你的list还是Anaconda自带的list的话，就输入：</code></p>
+<p><code>python -m pip list</code></p>
 </blockquote>
 </li>
 </ul>
-</blockquote>
-<h3 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h3><ul>
-<li><p>标签选择器的样式：</p>
-<blockquote>
-<p><strong>Html 标签名 { 属性:值;}</strong></p>
-</blockquote>
+<h2 id="Anaconda中创建虚拟环境（GUI模式）"><a href="#Anaconda中创建虚拟环境（GUI模式）" class="headerlink" title="Anaconda中创建虚拟环境（GUI模式）"></a>Anaconda中创建虚拟环境（GUI模式）</h2><p><code>当你安装好Anaconda之后，会出现一个Anaconda Mavigator，点击之后在里面也可以创建虚拟环境。</code></p>
+<p><img src="https://images2018.cnblogs.com/blog/1410558/201807/1410558-20180715214011743-297214195.png" alt="AnacondaMavigator"></p>
+<h1 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a>PyCharm</h1><ul>
+<li><p>在PyCharm中的<code>Settings</code>中的<code>Project Interpreter</code>进行python版本的选择。</p>
 </li>
-<li><p>常用的属性：</p>
+<li><p>找到你的<code>Anaconda</code>的<code>安装路径</code>。</p>
+</li>
+<li><p>然后在里面找到一个文件夹叫<code>envs</code>。</p>
+</li>
+<li><p>在这个文件夹里面有你创建的所有的虚拟环境。</p>
+</li>
+<li><p>选择你需要用到的虚拟环境，然后找到<code>python.exe</code>即可。</p>
 </li>
 </ul>
-<blockquote>
-<ul>
-<li>color –&gt; 前景色（文字颜色）</li>
-<li>background-color –&gt; 背景色</li>
-<li>font-size –&gt; 字体大小</li>
-<li>width –&gt; 设置宽度</li>
-<li>height –&gt; 设置高度</li>
-</ul>
-</blockquote>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -158,7 +179,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/前端/">前端</a>
+  <span></span> <a href="/tags/Python/">Python</a>
   </div>
 
 </div>
@@ -167,7 +188,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://kentanvictor.github.io/2018/09/08/CSS/" data-title="CSS | JohnnyTan&#39;s Blog" data-tsina="" class="share clearfix">
+	  <div data-url="https://kentanvictor.github.io/2020/05/06/Windows虚拟环境在PyCharm中的使用/" data-title="Windows虚拟环境在PyCharm中的使用 | JohnnyTan&#39;s Blog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -180,19 +201,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2018/10/18/基于双目摄像头的障碍物检测/" title="基于双目摄像头的障碍物检测">
-  <strong>上一篇：</strong><br/>
-  <span>
-  基于双目摄像头的障碍物检测</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2018/09/04/生命周期的分析/"  title="Android生命周期的分析">
+<a href="/2020/05/05/Ubuntu-Windows双系统安装指南/"  title="Ubuntu+Windows双系统安装指南">
  <strong>下一篇：</strong><br/> 
- <span>Android生命周期的分析
+ <span>Ubuntu+Windows双系统安装指南
 </span>
 </a>
 </div>
@@ -215,7 +228,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS"><span class="toc-number">1.</span> <span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#选择器"><span class="toc-number">1.1.</span> <span class="toc-text">选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#标签选择器"><span class="toc-number">1.1.1.</span> <span class="toc-text">标签选择器</span></a></li></ol></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Anaconda"><span class="toc-number">1.</span> <span class="toc-text">Anaconda</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Anaconda中创建虚拟环境（命令行模式）"><span class="toc-number">1.1.</span> <span class="toc-text">Anaconda中创建虚拟环境（命令行模式）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Anaconda中创建虚拟环境（GUI模式）"><span class="toc-number">1.2.</span> <span class="toc-text">Anaconda中创建虚拟环境（GUI模式）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PyCharm"><span class="toc-number">2.</span> <span class="toc-text">PyCharm</span></a></li></ol>
  
   </div>
 
