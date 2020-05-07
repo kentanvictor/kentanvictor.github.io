@@ -100,11 +100,11 @@
 </ul>
 <blockquote>
 <ul>
-<li>color –&gt; 前景色（文字颜色）</li>
-<li>background-color –&gt; 背景色</li>
-<li>font-size –&gt; 字体大小</li>
-<li>width –&gt; 设置宽度</li>
-<li>height –&gt; 设置高度</li>
+<li>color —&gt; 前景色（文字颜色）</li>
+<li>background-color —&gt; 背景色</li>
+<li>font-size —&gt; 字体大小</li>
+<li>width —&gt; 设置宽度</li>
+<li>height —&gt; 设置高度</li>
 </ul>
 </blockquote>
 ]]></content>
@@ -113,51 +113,6 @@
       </categories>
       <tags>
         <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Django服务器部署到腾讯云</title>
-    <url>/2018/08/06/Django%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<h1 id="Django服务器部署到腾讯云"><a href="#Django服务器部署到腾讯云" class="headerlink" title="Django服务器部署到腾讯云"></a>Django服务器部署到腾讯云</h1><ul>
-<li><p>配置腾讯云的服务器</p>
-<a id="more"></a>
-<ul>
-<li>配置的系统是Ubuntu Server 16.04.1 LTS 64位</li>
-<li>登录后界面如图：</li>
-</ul>
-<ul>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/TencentServerLogin.png?raw=true" alt=""></li>
-<li>之后进行django的安装<strong>注意版本号要和你在本地开发的一致</strong></li>
-<li>使用screen进行后台的django项目的运行。<strong>注意runserver后设置：0.0.0.0:端口号</strong></li>
-</ul>
-</li>
-<li><p>使用PyCharm进行远程连接腾讯云服务器</p>
-<ul>
-<li>Tools–&gt;Deployment–&gt;config呈现下面的界面</li>
-</ul>
-<ul>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAddServer.png?raw=true" alt=""><br>-<br>选择<strong>sftp</strong></li>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmDeployment.png?raw=true" alt=""></li>
-<li>在这里设置你的IP地址，然后点击<code>Test SFTP connection</code></li>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmTestConnection.png?raw=true" alt=""></li>
-<li>在这里设置你的<code>用户名</code>和<code>密码</code><strong>用户名与密码可以在腾讯云的更多中重置与设置</strong></li>
-<li>然后这个时候就连接上了</li>
-</ul>
-<ul>
-<li>此时，在你的PyCharm的右边，会出现服务器上的树目录结构(如图所示)</li>
-</ul>
-<ul>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAdmin.png?raw=true" alt=""></li>
-<li>进入到home–&gt;ubuntu下，在这里面，你具有权限，此时就可以将你的整个项目拖进去，然后在服务器端进入到项目中<strong>创建screen后台</strong>，运行<strong>manage.py runserver 0.0.0.0:端口号</strong>就可以使你的django一直保持运行的状态了。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>后端</tag>
       </tags>
   </entry>
   <entry>
@@ -197,6 +152,220 @@
       </categories>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Django服务器部署到腾讯云</title>
+    <url>/2018/08/06/Django%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h1 id="Django服务器部署到腾讯云"><a href="#Django服务器部署到腾讯云" class="headerlink" title="Django服务器部署到腾讯云"></a>Django服务器部署到腾讯云</h1><ul>
+<li><p>配置腾讯云的服务器</p>
+<a id="more"></a>
+<ul>
+<li>配置的系统是Ubuntu Server 16.04.1 LTS 64位</li>
+<li>登录后界面如图：</li>
+</ul>
+<ul>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/TencentServerLogin.png?raw=true" alt=""></li>
+<li>之后进行django的安装<strong>注意版本号要和你在本地开发的一致</strong></li>
+<li>使用screen进行后台的django项目的运行。<strong>注意runserver后设置：0.0.0.0:端口号</strong></li>
+</ul>
+</li>
+<li><p>使用PyCharm进行远程连接腾讯云服务器</p>
+<ul>
+<li>Tools—&gt;Deployment—&gt;config呈现下面的界面</li>
+</ul>
+<ul>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAddServer.png?raw=true" alt=""><br>-<br>选择<strong>sftp</strong></li>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmDeployment.png?raw=true" alt=""></li>
+<li>在这里设置你的IP地址，然后点击<code>Test SFTP connection</code></li>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmTestConnection.png?raw=true" alt=""></li>
+<li>在这里设置你的<code>用户名</code>和<code>密码</code><strong>用户名与密码可以在腾讯云的更多中重置与设置</strong></li>
+<li>然后这个时候就连接上了</li>
+</ul>
+<ul>
+<li>此时，在你的PyCharm的右边，会出现服务器上的树目录结构(如图所示)</li>
+</ul>
+<ul>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAdmin.png?raw=true" alt=""></li>
+<li>进入到home—&gt;ubuntu下，在这里面，你具有权限，此时就可以将你的整个项目拖进去，然后在服务器端进入到项目中<strong>创建screen后台</strong>，运行<strong>manage.py runserver 0.0.0.0:端口号</strong>就可以使你的django一直保持运行的状态了。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>后端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaIO</title>
+    <url>/2019/01/22/JavaIO/</url>
+    <content><![CDATA[<h1 id="javaIO"><a href="#javaIO" class="headerlink" title="javaIO"></a>javaIO</h1><p>标签： javaIO</p>
+<hr>
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="#流的概念和作用">什么是IO流</a><ul>
+<li><a href="#IO流的分类">IO流的分类</a></li>
+<li><a href="#字符流和字节流">字符流和字节流</a></li>
+</ul>
+</li>
+<li><a href="#文件字节、字符IO">文件字节、字符IO</a><ul>
+<li><a href="#文件字节IO流">文件字节IO流</a></li>
+<li><a href="#文件字符IO流">文件字符IO流</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<a id="more"></a>
+<h1 id="Java流图结构"><a href="#Java流图结构" class="headerlink" title="Java流图结构"></a>Java流图结构</h1><p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/JavaIO.jpg" alt=""></p>
+<h1 id="流的概念和作用"><a href="#流的概念和作用" class="headerlink" title="流的概念和作用"></a>流的概念和作用</h1><blockquote>
+<p>流是一组有顺序的，有起点和终点的字节集合，是对数据传输的总称或抽象。即数据在两设备间的传输称为流，流的本质是数据传输，根据数据传输特性将流抽象为各种类，方便更直观的进行数据操作。</p>
+</blockquote>
+<h2 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h2><ul>
+<li>根据处理数据类型的不同可以分为：字符流和字节流</li>
+<li>根据数据流向不同分为：输入流和输出流</li>
+</ul>
+<h2 id="字符流和字节流"><a href="#字符流和字节流" class="headerlink" title="字符流和字节流"></a>字符流和字节流</h2><blockquote>
+<p>字符流的由来： 因为数据编码的不同，而有了对字符进行高效操作的流对象。本质其实就是基于字节流读取时，去查了指定的码表。 字节流和字符流的区别：</p>
+<ul>
+<li><p>读写单位不同：字节流以字节（8bit）为单位，字符流以字符为单位，根据码表映射字符，一次可能读多个字节。</p>
+</li>
+<li><p>处理对象不同：字节流能处理所有类型的数据（如图片、avi等），而字符流只能处理字符类型的数据。</p>
+</li>
+<li><p>字节流：一次读入或读出是8位二进制。</p>
+</li>
+<li><p>字符流：一次读入或读出是16位二进制。</p>
+</li>
+</ul>
+<p><strong>设备上的数据无论是图片或者视频，文字，它们都以二进制存储的。二进制的最终都是以一个8位为数据单元进行体现，所以计算机中的最小数据单元就是字节。意味着，字节流可以处理设备上的所有数据，所以字节流一样可以处理字符数据。</strong></p>
+<p><strong><code>结论：只要是处理纯文本数据，就优先考虑使用字符流。 除此之外都使用字节流。</code></strong></p>
+</blockquote>
+<h1 id="文件字节、字符IO"><a href="#文件字节、字符IO" class="headerlink" title="文件字节、字符IO"></a>文件字节、字符IO</h1><blockquote>
+<p>Java程序可能经常需要获取磁盘上文件的有关信息或在磁盘上创建新的文件等，这就需要用到<code>File类</code>。</p>
+<h3 id="创建一个File对象的构造方法有3个："><a href="#创建一个File对象的构造方法有3个：" class="headerlink" title="创建一个File对象的构造方法有3个："></a>创建一个File对象的构造方法有3个：</h3><ul>
+<li>File(String filename);</li>
+<li>File(String directoryPath,String filename);</li>
+<li>File(File dir,String filename);</li>
+</ul>
+<p><em>filename—文件名字；directoryPath—文件路径；dir—一个目录；<code>使用File(String filename)创建文件时，该文件被认为与当前应用程序在同一个目录中。</code></em></p>
+<h3 id="文件的属性："><a href="#文件的属性：" class="headerlink" title="文件的属性："></a><strong>文件的属性：</strong></h3><p><pre>
+public String getName();            //获取文件的名字
+public boolean canRead();           //判断文件是否是可读的
+public boolean canWrite();          //判断文件是否可被写入
+public boolean exists();            //判断文件是否存在
+public long length();               //获取文件的长度（单位是字节）
+public String getAbsolutePath();    //获取文件的绝对路径
+public String getParent();          //获取文件的父目录
+public boolean isFile();            //判断文件是否是一个普通文件，而不是目录
+public boolean isDirectory();       //判断文件是否是一个目录
+public boolean isHidden();          //判断文件是否是隐藏文件
+public long lastModified();         //获取文件最后修改的时间（时间是从1970年午夜至文件最后修改时刻的毫秒数）
+</pre><br><strong>例子：使用上述方法获取某些文件的信息：</strong></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File f = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\IOTest"</span>,<span class="string">"newIO.txt"</span>);</span><br><span class="line">        System.out.println(f.getName() + <span class="string">"是可读的吗："</span> + f.canRead());</span><br><span class="line">        System.out.println(f.getName() + <span class="string">"的长度："</span> + f.length());</span><br><span class="line">        System.out.println(f.getName() + <span class="string">"的绝对路径："</span> + f.getAbsolutePath());</span><br><span class="line"></span><br><span class="line">        File newFile = <span class="keyword">new</span> File(<span class="string">"new.txt"</span>);</span><br><span class="line">        System.out.println(<span class="string">"在当前目录下创建新文件："</span> + newFile.getName());</span><br><span class="line">        <span class="keyword">if</span> (!newFile.exists())&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                newFile.createNewFile();    <span class="comment">//如果没有new.txt则创建一个</span></span><br><span class="line">                System.out.println(<span class="string">"创建成功！"</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a><strong>目录：</strong></h3><p>&gt;</p>
+<ul>
+<li>创建目录<blockquote>
+<p>File对象调用方法public boolean mkdir()创建一个目录，如果创建成功返回true，否则返回false（如果该目录已经存在将返回false）。</p>
+</blockquote>
+</li>
+<li>列出目录中的文件<blockquote>
+<p>如果File对象是一个目录，那么该对象调用下述方法列出目录下的文件和目录。<br><pre>
+public String[] list();             //用字符串形式返回目录下的全部文件
+public File[] listFiles();          //用File对象形式返回目录下的全部文件
+</pre><br>有时候需要列出目录下指定类型的文件，比如.java、.txt等扩展名的文件。可以使用File类的下述两个方法，列出指定类型的文件：<br><pre>
+public String[] list(FilenameFilter obj);           //该方法用字符串形式返回目录下的指定类型的所有文件
+public File[] listFiles(FilenameFilter obj);        //该方法用File对象形式返回目录下的指定类型的所有文件
+</pre><br>上述两个方法的参数FIlenameFilter是一个接口，该接口有个方法：<br><pre>
+public boolean accept(File dir,String name);
+</pre><br>File对象dirFile调用list方法时，需向该方法传递一个实现FilenameFilter接口的对象，list方法执行时，参数obj不断回调接口方法accept(File dir,String name)，该方法中的参数dir为调用list的当前目录dirFile，参数name被实例化为dirFile，参数name被实例化为dirFile目录中的一个文件名，当接口方法返回true时，list方法就将名字为name的文件存放到返回的数组中。</p>
+<p><strong>例子：列出当前目录下（应用程序所在的目录）下全部.java文件的名字：</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DirFileTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File dirFile = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\Singleton_pattern\\src\\com\\dell\\example\\IODemo\\FileTest"</span>);</span><br><span class="line">        FileAccept fileAccept = <span class="keyword">new</span> FileAccept();</span><br><span class="line">        fileAccept.setExtendName(<span class="string">"java"</span>);</span><br><span class="line">        String fileName[] = dirFile.list(fileAccept);</span><br><span class="line">        <span class="keyword">for</span> (String name : fileName)&#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileAccept</span> <span class="keyword">implements</span> <span class="title">FilenameFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String extendName;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setExtendName</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        extendName = <span class="string">"."</span> + s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">accept</span><span class="params">(File dir, String name)</span> </span>&#123;  <span class="comment">//重写接口中的方法</span></span><br><span class="line">        <span class="keyword">return</span> name.endsWith(extendName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="文件字节IO流"><a href="#文件字节IO流" class="headerlink" title="文件字节IO流"></a><strong>文件字节IO流</strong></h2><h3 id="文件字节输入流"><a href="#文件字节输入流" class="headerlink" title="文件字节输入流"></a>文件字节输入流</h3><p><code>使用输入流通常包括4个基本步骤：</code></p>
+<ul>
+<li>设定输入流的源</li>
+<li>创建指向源的输入流</li>
+<li>让输入流读取源中的数据</li>
+<li>关闭输入流</li>
+</ul>
+<p>如果对文件读取需求比较简单，那么可以使用<code>FileInputStream类（文件字节输入流）</code>，该类是InputStream类的子类（以字节为单位读取文件），该类的实例方法都是从InputStream继承来的。</p>
+<ul>
+<li><p>构造方法：</p>
+<p>  可以使用FileInputStream类的下列构造方法创建指向文件的输入流。</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">FileInputStream(String name);</span><br><span class="line">FileInputStream(File file);</span><br></pre></td></tr></table></figure>
+<p>  第一个构造方法使用给定的文件名name创建FileInputStream流，第二个构造方法使用File对象创建FileInputStream流。参数name和file指定的文件称为输入流的源。</p>
+<p>  <strong>注意：</strong> FileInputStream输入流打开一个到达文件的通道。当创建输入流的时候，可能会出现异常。</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileInputStream in = <span class="keyword">new</span> FileInputStream(<span class="string">"hello.txt"</span>);<span class="comment">//创建指向文件hello.txt的输入流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  或</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(<span class="string">"hello.txt"</span>); <span class="comment">//指定输入流的源</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileInputStream in = <span class="keyword">new</span> FileInputStream(f);    <span class="comment">//创建指向源的输入流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOEception e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用输入流读取字节</p>
+<p>  文件字节流可以调用从父类继承的<code>read方法</code>顺序地读取文件，只要不关闭流，每次调用read方法就顺序地读取文件中的其余内容，直到文件的末尾或文件字节输入流被关闭。</p>
+<p>  字节输入流的read方法以字节为单位读取源中的数据。</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span>                              <span class="comment">//输入流调用该方法从源中读取单个字节的数据，该方法返回字节值（0~255之间的一个整数），如果未读出字节就返回-1</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">byte</span> b[])</span>                      <span class="comment">//输入流调用该方法从源中试图读取b.length个字节到字节数组中，返回实际读取的字节数目，如果到达文件末尾则返回-1</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">byte</span> b[],<span class="keyword">int</span> off,<span class="keyword">int</span> len)</span>      <span class="comment">//输入流调用该方法从源中试图读取b.length个字节到字节数组中，返回实际读取的字节数目，如果到达文件末尾则返回-1，参数off指定从字节数组的某个位置开始存放读取的数据</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关闭流<br>  输入流都提供了关闭方法<code>close()</code>，尽管程序结束时会自动关闭所打开的流，但是当程序使用完流后，显式地关闭任何打开的流仍是一个好习惯。</p>
+</li>
+</ul>
+<p><strong>例子：使用文件字节流读文件内容：</strong><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">byte</span>[] a = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            File f = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\Singleton_pattern\\src\\com\\dell\\example\\IODemo\\InputStreamTest\\InputTest.java"</span>);</span><br><span class="line">            InputStream in = <span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">            <span class="keyword">while</span> ((n = in.read(a,<span class="number">0</span>,<span class="number">100</span>)) != -<span class="number">1</span>)&#123;</span><br><span class="line">                String s = <span class="keyword">new</span> String(a,<span class="number">0</span>,n);</span><br><span class="line">                System.out.println(s);</span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="文件字节输出流"><a href="#文件字节输出流" class="headerlink" title="文件字节输出流"></a>文件字节输出流</h3><p><code>使用输出流通常包括4个基本步骤：</code></p>
+<ul>
+<li>给出输出流的目的地</li>
+<li>创建指向目的地的输出流</li>
+<li>让输出流把数据写入到目的地</li>
+<li>关闭输出流</li>
+</ul>
+<p>如果对文件写入需求比较简单，那么可以使用<code>FileOutputStream类（文件字节输出流）</code>，该类是OutputStream类的子类（以字节为单位写入文件），该类的实例方法都是从OutputStream继承来的。</p>
+<ul>
+<li><p>构造方法：</p>
+<p>  可以使用FileOutputStream类的下列具有刷新功能的构造方法创建指向文件的输出流。</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">FileOutputStream(String name);</span><br><span class="line">FileOutputStream(File file);</span><br></pre></td></tr></table></figure>
+<p>  第一个构造方法使用给定的文件名name创建FileOutputStream流，第二个构造方法使用File对象创建FileOutputStream流。参数name和file指定的文件称为输出流的目的地。</p>
+<p>  <strong>注意：</strong> FileOutputStream输出流指向的文件不存在，java就会创建该文件，如果指向的文件是已存在的文件，输入流会刷新该文件（使文件长度为0）。创建输出流可能会出现异常。</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileOutputStream out = <span class="keyword">new</span> FileOutputStream(<span class="string">"androidlab.txt"</span>);<span class="comment">//创建指向文件androidlab.txt的输出流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  或</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(<span class="string">"androidlab.txt"</span>);                <span class="comment">//指定输出流的目的地</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileOutputStream in = <span class="keyword">new</span> FileOutputStream(f);    <span class="comment">//创建指向目的地的输出流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOEception e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用输出流写字节</p>
+<p>  文件字节流可以调用从父类继承的<code>write方法</code>顺序地写文件，只要不关闭流，每次调用write方法就顺序地写文件，直到流被关闭。</p>
+<p>  字节输出流的write方法以字节为单位向目的地写入数据。</p>
+  <pre>
+  void write(int n)                       //输出流调用该方法向目的地写入单个字节
+  void write(byte b[])                     //输出流调用该方法向目的地写入一个字节数组
+  void write(byte b[],int off,int len)     //给定字节数组中起始于偏移量off处取len个字节写入目的地
+  void close()                             //关闭输出流
+  </pre></li>
+<li>关闭流<br>  需要注意的是，在操作系统把程序所写到输出流上的那些字节保存到磁盘上之前，有时被存放在缓冲区中，通过调用<code>close()</code>方法，可以保证操作系统把缓冲区的内容写到它的目的地。</li>
+</ul>
+<p><strong>例子：使用文件字节流写入文件：</strong> 使用具有刷新功能的构造方法指向文件android.txt的输出流，并向里面写入“Android”，然后再选择使用不刷新文件的构造方法指向android.txt，并向文件中追加“Lab”。<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OutputTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span>[] a = <span class="string">"Android"</span>.getBytes();</span><br><span class="line">        <span class="keyword">byte</span>[] b = <span class="string">"Lab"</span>.getBytes();</span><br><span class="line">        File newFile = <span class="keyword">new</span> File(<span class="string">"android.txt"</span>);     <span class="comment">//输出目的地</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            OutputStream out = <span class="keyword">new</span> FileOutputStream(newFile);   <span class="comment">//指向目的地的输出流</span></span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">"的大小:"</span> + newFile.length() + <span class="string">"字节"</span>);</span><br><span class="line">            out.write(a);   <span class="comment">//向目的地写入数据</span></span><br><span class="line">            out.close();</span><br><span class="line">            out = <span class="keyword">new</span> FileOutputStream(newFile,<span class="keyword">true</span>);   <span class="comment">//准备向文件尾追加内容</span></span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">"的大小:"</span> + newFile.length() + <span class="string">"字节"</span>);</span><br><span class="line">            out.write(b,<span class="number">0</span>,b.length);</span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">"的大小:"</span> + newFile.length() + <span class="string">"字节"</span>);</span><br><span class="line">            out.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="文件字符IO流"><a href="#文件字符IO流" class="headerlink" title="文件字符IO流"></a><strong>文件字符IO流</strong></h2><p>文件字节输入、输出流的read和write方法使用字节数组读写数据，即以字节为单位处理数据。因此字节流不能很好地操作Unicode字符。<strong>一个汉字在文件中占两个字节，如果使用字节流读取不当会出现“乱码”现象。</strong></p>
+<p><pre>
+    字节            ------          字符
+FileInputStream     ------      FileReader
+FileOutputStream    ------      FileWriter
+</pre><br>FileReader和FileWriter分别是Reader和Writer的子类，其构造方法分别是：</p>
+<p><pre>
+FileReader(String filename);    FileReader(File filename);
+FileWriter(String filename);    FileWriter(File filename);
+FileWriter(String filename,boolean append);
+FileWriter(File filename,boolean append);
+</pre><br><strong>字符输入流和输出流的<code>read</code>和<code>write</code>方法使用字符数组读写数据，即以字符为基本单位处理数据。</strong></p>
+<ul>
+<li><strong>例子：用文件字符输入、输出流将文件“NotHelloWorld.txt”中的内容尾加到“AndroidLab.txt”中</strong><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RWTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File sourceFile = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\IOTest\\NotHelloWorld.txt"</span>);<span class="comment">//读取的文件</span></span><br><span class="line">        File targetFile = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\IOTest\\AndroidLab.txt"</span>);<span class="comment">//写入的文件</span></span><br><span class="line">        <span class="keyword">char</span> c[] = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            Writer out = <span class="keyword">new</span> FileWriter(targetFile,<span class="keyword">true</span>);   <span class="comment">//指向目的地的输出流</span></span><br><span class="line">            Reader in = <span class="keyword">new</span> FileReader(sourceFile);                 <span class="comment">//指向源的输入流</span></span><br><span class="line">            <span class="keyword">int</span> n = -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> ((n = in.read(c)) != -<span class="number">1</span>)&#123;</span><br><span class="line">                out.write(c,<span class="number">0</span>,n);</span><br><span class="line">            &#125;</span><br><span class="line">            out.flush();</span><br><span class="line">            out.close();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">            System.out.println(<span class="string">"Error "</span> + e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -246,8 +415,6 @@
 <li>white 白色</li>
 <li>yellow 黄色</li>
 </ul>
-</blockquote>
-<blockquote>
 <p><strong><em>如果使用其它颜色的话，就应该使用十六进制的颜色值</em></strong></p>
 </blockquote>
 <p><strong>&lt; em &gt;&lt; /em &gt;和&lt; strong &gt;&lt; /strong &gt;标签是为了强调一句话中的关键作用，它们的语义是强调</strong></p>
@@ -370,155 +537,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaIO</title>
-    <url>/2019/01/22/JavaIO/</url>
-    <content><![CDATA[<h1 id="javaIO"><a href="#javaIO" class="headerlink" title="javaIO"></a>javaIO</h1><p>标签： javaIO</p>
-<hr>
-<p><strong>Contents</strong></p>
-<ul>
-<li><a href="#流的概念和作用">什么是IO流</a><ul>
-<li><a href="#IO流的分类">IO流的分类</a></li>
-<li><a href="#字符流和字节流">字符流和字节流</a></li>
-</ul>
-</li>
-<li><a href="#文件字节、字符IO">文件字节、字符IO</a><ul>
-<li><a href="#文件字节IO流">文件字节IO流</a></li>
-<li><a href="#文件字符IO流">文件字符IO流</a></li>
-</ul>
-</li>
-</ul>
-<hr>
-<a id="more"></a>
-<h1 id="Java流图结构"><a href="#Java流图结构" class="headerlink" title="Java流图结构"></a>Java流图结构</h1><p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/JavaIO.jpg" alt=""></p>
-<h1 id="流的概念和作用"><a href="#流的概念和作用" class="headerlink" title="流的概念和作用"></a>流的概念和作用</h1><blockquote>
-<p>流是一组有顺序的，有起点和终点的字节集合，是对数据传输的总称或抽象。即数据在两设备间的传输称为流，流的本质是数据传输，根据数据传输特性将流抽象为各种类，方便更直观的进行数据操作。</p>
-</blockquote>
-<h2 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h2><ul>
-<li>根据处理数据类型的不同可以分为：字符流和字节流</li>
-<li>根据数据流向不同分为：输入流和输出流</li>
-</ul>
-<h2 id="字符流和字节流"><a href="#字符流和字节流" class="headerlink" title="字符流和字节流"></a>字符流和字节流</h2><blockquote>
-<p>字符流的由来： 因为数据编码的不同，而有了对字符进行高效操作的流对象。本质其实就是基于字节流读取时，去查了指定的码表。 字节流和字符流的区别：</p>
-<ul>
-<li><p>读写单位不同：字节流以字节（8bit）为单位，字符流以字符为单位，根据码表映射字符，一次可能读多个字节。</p>
-</li>
-<li><p>处理对象不同：字节流能处理所有类型的数据（如图片、avi等），而字符流只能处理字符类型的数据。</p>
-</li>
-<li><p>字节流：一次读入或读出是8位二进制。</p>
-</li>
-<li><p>字符流：一次读入或读出是16位二进制。</p>
-</li>
-</ul>
-<p><strong>设备上的数据无论是图片或者视频，文字，它们都以二进制存储的。二进制的最终都是以一个8位为数据单元进行体现，所以计算机中的最小数据单元就是字节。意味着，字节流可以处理设备上的所有数据，所以字节流一样可以处理字符数据。</strong></p>
-<p><strong><code>结论：只要是处理纯文本数据，就优先考虑使用字符流。 除此之外都使用字节流。</code></strong></p>
-</blockquote>
-<h1 id="文件字节、字符IO"><a href="#文件字节、字符IO" class="headerlink" title="文件字节、字符IO"></a>文件字节、字符IO</h1><blockquote>
-<p>Java程序可能经常需要获取磁盘上文件的有关信息或在磁盘上创建新的文件等，这就需要用到<code>File类</code>。</p>
-<h3 id="创建一个File对象的构造方法有3个："><a href="#创建一个File对象的构造方法有3个：" class="headerlink" title="创建一个File对象的构造方法有3个："></a>创建一个File对象的构造方法有3个：</h3><ul>
-<li>File(String filename);</li>
-<li>File(String directoryPath,String filename);</li>
-<li>File(File dir,String filename);</li>
-</ul>
-<p><em>filename–文件名字；directoryPath–文件路径；dir–一个目录；<code>使用File(String filename)创建文件时，该文件被认为与当前应用程序在同一个目录中。</code></em></p>
-</blockquote>
-<h3 id="文件的属性："><a href="#文件的属性：" class="headerlink" title="文件的属性："></a><strong>文件的属性：</strong></h3><p><pre><br>public String getName();            //获取文件的名字<br>public boolean canRead();           //判断文件是否是可读的<br>public boolean canWrite();          //判断文件是否可被写入<br>public boolean exists();            //判断文件是否存在<br>public long length();               //获取文件的长度（单位是字节）<br>public String getAbsolutePath();    //获取文件的绝对路径<br>public String getParent();          //获取文件的父目录<br>public boolean isFile();            //判断文件是否是一个普通文件，而不是目录<br>public boolean isDirectory();       //判断文件是否是一个目录<br>public boolean isHidden();          //判断文件是否是隐藏文件<br>public long lastModified();         //获取文件最后修改的时间（时间是从1970年午夜至文件最后修改时刻的毫秒数）<br></pre><br><strong>例子：使用上述方法获取某些文件的信息：</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File f = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\IOTest"</span>,<span class="string">"newIO.txt"</span>);</span><br><span class="line">        System.out.println(f.getName() + <span class="string">"是可读的吗："</span> + f.canRead());</span><br><span class="line">        System.out.println(f.getName() + <span class="string">"的长度："</span> + f.length());</span><br><span class="line">        System.out.println(f.getName() + <span class="string">"的绝对路径："</span> + f.getAbsolutePath());</span><br><span class="line"></span><br><span class="line">        File newFile = <span class="keyword">new</span> File(<span class="string">"new.txt"</span>);</span><br><span class="line">        System.out.println(<span class="string">"在当前目录下创建新文件："</span> + newFile.getName());</span><br><span class="line">        <span class="keyword">if</span> (!newFile.exists())&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                newFile.createNewFile();    <span class="comment">//如果没有new.txt则创建一个</span></span><br><span class="line">                System.out.println(<span class="string">"创建成功！"</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a><strong>目录：</strong></h3><blockquote>
-</blockquote>
-<ul>
-<li>创建目录<blockquote>
-<p>File对象调用方法public boolean mkdir()创建一个目录，如果创建成功返回true，否则返回false（如果该目录已经存在将返回false）。</p>
-</blockquote>
-</li>
-<li>列出目录中的文件<blockquote>
-<p>如果File对象是一个目录，那么该对象调用下述方法列出目录下的文件和目录。</p>
-</blockquote>
-<pre><br>public String[] list();             //用字符串形式返回目录下的全部文件<br>public File[] listFiles();          //用File对象形式返回目录下的全部文件<br></pre><blockquote>
-<p>有时候需要列出目录下指定类型的文件，比如.java、.txt等扩展名的文件。可以使用File类的下述两个方法，列出指定类型的文件：</p>
-</blockquote>
-<pre><br>public String[] list(FilenameFilter obj);           //该方法用字符串形式返回目录下的指定类型的所有文件<br>public File[] listFiles(FilenameFilter obj);        //该方法用File对象形式返回目录下的指定类型的所有文件<br></pre><blockquote>
-<p>上述两个方法的参数FIlenameFilter是一个接口，该接口有个方法：</p>
-</blockquote>
-<pre><br>public boolean accept(File dir,String name);<br></pre><blockquote>
-<p>File对象dirFile调用list方法时，需向该方法传递一个实现FilenameFilter接口的对象，list方法执行时，参数obj不断回调接口方法accept(File dir,String name)，该方法中的参数dir为调用list的当前目录dirFile，参数name被实例化为dirFile，参数name被实例化为dirFile目录中的一个文件名，当接口方法返回true时，list方法就将名字为name的文件存放到返回的数组中。</p>
-</blockquote>
-<strong>例子：列出当前目录下（应用程序所在的目录）下全部.java文件的名字：</strong><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DirFileTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File dirFile = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\Singleton_pattern\\src\\com\\dell\\example\\IODemo\\FileTest"</span>);</span><br><span class="line">        FileAccept fileAccept = <span class="keyword">new</span> FileAccept();</span><br><span class="line">        fileAccept.setExtendName(<span class="string">"java"</span>);</span><br><span class="line">        String fileName[] = dirFile.list(fileAccept);</span><br><span class="line">        <span class="keyword">for</span> (String name : fileName)&#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileAccept</span> <span class="keyword">implements</span> <span class="title">FilenameFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String extendName;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setExtendName</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        extendName = <span class="string">"."</span> + s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">accept</span><span class="params">(File dir, String name)</span> </span>&#123;  <span class="comment">//重写接口中的方法</span></span><br><span class="line">        <span class="keyword">return</span> name.endsWith(extendName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="文件字节IO流"><a href="#文件字节IO流" class="headerlink" title="文件字节IO流"></a><strong>文件字节IO流</strong></h2><h3 id="文件字节输入流"><a href="#文件字节输入流" class="headerlink" title="文件字节输入流"></a>文件字节输入流</h3><p><code>使用输入流通常包括4个基本步骤：</code></p>
-<ul>
-<li>设定输入流的源</li>
-<li>创建指向源的输入流</li>
-<li>让输入流读取源中的数据</li>
-<li>关闭输入流</li>
-</ul>
-<p>如果对文件读取需求比较简单，那么可以使用<code>FileInputStream类（文件字节输入流）</code>，该类是InputStream类的子类（以字节为单位读取文件），该类的实例方法都是从InputStream继承来的。</p>
-<ul>
-<li><p>构造方法：</p>
-<p>  可以使用FileInputStream类的下列构造方法创建指向文件的输入流。</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">FileInputStream(String name);</span><br><span class="line">FileInputStream(File file);</span><br></pre></td></tr></table></figure>
-<p>  第一个构造方法使用给定的文件名name创建FileInputStream流，第二个构造方法使用File对象创建FileInputStream流。参数name和file指定的文件称为输入流的源。</p>
-<p>  <strong>注意：</strong> FileInputStream输入流打开一个到达文件的通道。当创建输入流的时候，可能会出现异常。</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileInputStream in = <span class="keyword">new</span> FileInputStream(<span class="string">"hello.txt"</span>);<span class="comment">//创建指向文件hello.txt的输入流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  或</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(<span class="string">"hello.txt"</span>); <span class="comment">//指定输入流的源</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileInputStream in = <span class="keyword">new</span> FileInputStream(f);    <span class="comment">//创建指向源的输入流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOEception e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用输入流读取字节</p>
-<p>  文件字节流可以调用从父类继承的<code>read方法</code>顺序地读取文件，只要不关闭流，每次调用read方法就顺序地读取文件中的其余内容，直到文件的末尾或文件字节输入流被关闭。</p>
-<p>  字节输入流的read方法以字节为单位读取源中的数据。</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span>                              <span class="comment">//输入流调用该方法从源中读取单个字节的数据，该方法返回字节值（0~255之间的一个整数），如果未读出字节就返回-1</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">byte</span> b[])</span>                      <span class="comment">//输入流调用该方法从源中试图读取b.length个字节到字节数组中，返回实际读取的字节数目，如果到达文件末尾则返回-1</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">byte</span> b[],<span class="keyword">int</span> off,<span class="keyword">int</span> len)</span>      <span class="comment">//输入流调用该方法从源中试图读取b.length个字节到字节数组中，返回实际读取的字节数目，如果到达文件末尾则返回-1，参数off指定从字节数组的某个位置开始存放读取的数据</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>关闭流<br>  输入流都提供了关闭方法<code>close()</code>，尽管程序结束时会自动关闭所打开的流，但是当程序使用完流后，显式地关闭任何打开的流仍是一个好习惯。</p>
-</li>
-</ul>
-<p><strong>例子：使用文件字节流读文件内容：</strong><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">byte</span>[] a = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            File f = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\Singleton_pattern\\src\\com\\dell\\example\\IODemo\\InputStreamTest\\InputTest.java"</span>);</span><br><span class="line">            InputStream in = <span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">            <span class="keyword">while</span> ((n = in.read(a,<span class="number">0</span>,<span class="number">100</span>)) != -<span class="number">1</span>)&#123;</span><br><span class="line">                String s = <span class="keyword">new</span> String(a,<span class="number">0</span>,n);</span><br><span class="line">                System.out.println(s);</span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="文件字节输出流"><a href="#文件字节输出流" class="headerlink" title="文件字节输出流"></a>文件字节输出流</h3><p><code>使用输出流通常包括4个基本步骤：</code></p>
-<ul>
-<li>给出输出流的目的地</li>
-<li>创建指向目的地的输出流</li>
-<li>让输出流把数据写入到目的地</li>
-<li>关闭输出流</li>
-</ul>
-<p>如果对文件写入需求比较简单，那么可以使用<code>FileOutputStream类（文件字节输出流）</code>，该类是OutputStream类的子类（以字节为单位写入文件），该类的实例方法都是从OutputStream继承来的。</p>
-<ul>
-<li><p>构造方法：</p>
-<p>  可以使用FileOutputStream类的下列具有刷新功能的构造方法创建指向文件的输出流。</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">FileOutputStream(String name);</span><br><span class="line">FileOutputStream(File file);</span><br></pre></td></tr></table></figure>
-<p>  第一个构造方法使用给定的文件名name创建FileOutputStream流，第二个构造方法使用File对象创建FileOutputStream流。参数name和file指定的文件称为输出流的目的地。</p>
-<p>  <strong>注意：</strong> FileOutputStream输出流指向的文件不存在，java就会创建该文件，如果指向的文件是已存在的文件，输入流会刷新该文件（使文件长度为0）。创建输出流可能会出现异常。</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileOutputStream out = <span class="keyword">new</span> FileOutputStream(<span class="string">"androidlab.txt"</span>);<span class="comment">//创建指向文件androidlab.txt的输出流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  或</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(<span class="string">"androidlab.txt"</span>);                <span class="comment">//指定输出流的目的地</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileOutputStream in = <span class="keyword">new</span> FileOutputStream(f);    <span class="comment">//创建指向目的地的输出流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOEception e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用输出流写字节</p>
-<p>  文件字节流可以调用从父类继承的<code>write方法</code>顺序地写文件，只要不关闭流，每次调用write方法就顺序地写文件，直到流被关闭。</p>
-<p>  字节输出流的write方法以字节为单位向目的地写入数据。</p>
-  <pre>
-  void write(int n)                       //输出流调用该方法向目的地写入单个字节
-  void write(byte b[])                     //输出流调用该方法向目的地写入一个字节数组
-  void write(byte b[],int off,int len)     //给定字节数组中起始于偏移量off处取len个字节写入目的地
-  void close()                             //关闭输出流
-  </pre></li>
-<li>关闭流<br>  需要注意的是，在操作系统把程序所写到输出流上的那些字节保存到磁盘上之前，有时被存放在缓冲区中，通过调用<code>close()</code>方法，可以保证操作系统把缓冲区的内容写到它的目的地。</li>
-</ul>
-<p><strong>例子：使用文件字节流写入文件：</strong> 使用具有刷新功能的构造方法指向文件android.txt的输出流，并向里面写入“Android”，然后再选择使用不刷新文件的构造方法指向android.txt，并向文件中追加“Lab”。<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OutputTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span>[] a = <span class="string">"Android"</span>.getBytes();</span><br><span class="line">        <span class="keyword">byte</span>[] b = <span class="string">"Lab"</span>.getBytes();</span><br><span class="line">        File newFile = <span class="keyword">new</span> File(<span class="string">"android.txt"</span>);     <span class="comment">//输出目的地</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            OutputStream out = <span class="keyword">new</span> FileOutputStream(newFile);   <span class="comment">//指向目的地的输出流</span></span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">"的大小:"</span> + newFile.length() + <span class="string">"字节"</span>);</span><br><span class="line">            out.write(a);   <span class="comment">//向目的地写入数据</span></span><br><span class="line">            out.close();</span><br><span class="line">            out = <span class="keyword">new</span> FileOutputStream(newFile,<span class="keyword">true</span>);   <span class="comment">//准备向文件尾追加内容</span></span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">"的大小:"</span> + newFile.length() + <span class="string">"字节"</span>);</span><br><span class="line">            out.write(b,<span class="number">0</span>,b.length);</span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">"的大小:"</span> + newFile.length() + <span class="string">"字节"</span>);</span><br><span class="line">            out.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="文件字符IO流"><a href="#文件字符IO流" class="headerlink" title="文件字符IO流"></a><strong>文件字符IO流</strong></h2><p>文件字节输入、输出流的read和write方法使用字节数组读写数据，即以字节为单位处理数据。因此字节流不能很好地操作Unicode字符。<strong>一个汉字在文件中占两个字节，如果使用字节流读取不当会出现“乱码”现象。</strong></p>
-<p><pre><br>    字节            ——          字符<br>FileInputStream     ——      FileReader<br>FileOutputStream    ——      FileWriter<br></pre><br>FileReader和FileWriter分别是Reader和Writer的子类，其构造方法分别是：</p>
-<p><pre><br>FileReader(String filename);    FileReader(File filename);<br>FileWriter(String filename);    FileWriter(File filename);<br>FileWriter(String filename,boolean append);<br>FileWriter(File filename,boolean append);<br></pre><br><strong>字符输入流和输出流的<code>read</code>和<code>write</code>方法使用字符数组读写数据，即以字符为基本单位处理数据。</strong></p>
-<ul>
-<li><strong>例子：用文件字符输入、输出流将文件“NotHelloWorld.txt”中的内容尾加到“AndroidLab.txt”中</strong><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RWTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File sourceFile = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\IOTest\\NotHelloWorld.txt"</span>);<span class="comment">//读取的文件</span></span><br><span class="line">        File targetFile = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\IOTest\\AndroidLab.txt"</span>);<span class="comment">//写入的文件</span></span><br><span class="line">        <span class="keyword">char</span> c[] = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            Writer out = <span class="keyword">new</span> FileWriter(targetFile,<span class="keyword">true</span>);   <span class="comment">//指向目的地的输出流</span></span><br><span class="line">            Reader in = <span class="keyword">new</span> FileReader(sourceFile);                 <span class="comment">//指向源的输入流</span></span><br><span class="line">            <span class="keyword">int</span> n = -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> ((n = in.read(c)) != -<span class="number">1</span>)&#123;</span><br><span class="line">                out.write(c,<span class="number">0</span>,n);</span><br><span class="line">            &#125;</span><br><span class="line">            out.flush();</span><br><span class="line">            out.close();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">            System.out.println(<span class="string">"Error "</span> + e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MATLAB概述</title>
     <url>/2018/07/22/MATLAB%E6%A6%82%E8%BF%B0/</url>
     <content><![CDATA[<h1 id="MATLAB概述"><a href="#MATLAB概述" class="headerlink" title="MATLAB概述"></a>MATLAB概述</h1><ul>
@@ -533,13 +551,13 @@
 <ul>
 <li>MATLAB主要功能<blockquote>
 <ul>
-<li>技术计算–&gt;数学计算、分析、可视化和算法开发</li>
-<li>控制系统设计–&gt;控制系统基于模型的设计，包括嵌入式系统仿真、快速原型及代码生成等</li>
-<li>信号处理和通信–&gt;信号处理和通信系统基于模型的设计，包括仿真、代码生成和验证等</li>
-<li>图像处理–&gt;图像采集、分析、可视化和算法开发</li>
-<li>测试和测量–&gt;测试和测量应用中硬件连接性和数据分析</li>
-<li>计算你生物学–&gt;生物数据和系统分析、可视化与仿真</li>
-<li>计算金融–&gt;金融建模、分析及应用程序开发</li>
+<li>技术计算—&gt;数学计算、分析、可视化和算法开发</li>
+<li>控制系统设计—&gt;控制系统基于模型的设计，包括嵌入式系统仿真、快速原型及代码生成等</li>
+<li>信号处理和通信—&gt;信号处理和通信系统基于模型的设计，包括仿真、代码生成和验证等</li>
+<li>图像处理—&gt;图像采集、分析、可视化和算法开发</li>
+<li>测试和测量—&gt;测试和测量应用中硬件连接性和数据分析</li>
+<li>计算你生物学—&gt;生物数据和系统分析、可视化与仿真</li>
+<li>计算金融—&gt;金融建模、分析及应用程序开发</li>
 </ul>
 </blockquote>
 </li>
@@ -628,8 +646,6 @@
 </ul>
 <h3 id="MATLAB的安装"><a href="#MATLAB的安装" class="headerlink" title="MATLAB的安装"></a>MATLAB的安装</h3><blockquote>
 <p>感谢百度经验提供的教程</p>
-</blockquote>
-<blockquote>
 <p><a href="http://jingyan.baidu.com/article/3d69c551a2dbd7f0cf02d731.html" target="_blank" rel="noopener">MATLAB安装教程</a></p>
 </blockquote>
 ]]></content>
@@ -799,7 +815,7 @@
 <p>下面是创建python=3.6版本的环境，取名叫py36</p>
 <p>conda create -n py36 python=3.6</p>
 <p>删除环境</p>
-<p>conda remove -n py36 –all</p>
+<p>conda remove -n py36 —all</p>
 <p>激活环境</p>
 <p>source activate py36</p>
 <p>退出环境</p>
@@ -831,7 +847,7 @@
 <p>python3 -m pip install XXX</p>
 </blockquote>
 </li>
-<li><p>我解决Anaconda进入虚拟环境之后与Anaconda自身的Python冲突的问题：</p>
+<li><p>我解决Anaconda进入虚拟环境之后与Anaconda自身的Python冲突的问题：<br>&gt;</p>
 <blockquote>
 <p>根据上面启动虚拟环境的方法，我们能够启动已经创建的虚拟环境</p>
 <p>进入虚拟环境之后，输入：</p>
@@ -949,7 +965,7 @@
 </ul>
 </li>
 <li><ul>
-<li>第二种：使用Python+OpenCV生成棋盘格图片：<blockquote>
+<li>第二种：使用Python+OpenCV生成棋盘格图片：<br>&gt;<blockquote>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;<span class="keyword">import</span> cv2 </span><br><span class="line">&gt;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">&gt;</span><br><span class="line">&gt;width = <span class="number">350</span></span><br><span class="line">&gt;height = <span class="number">500</span></span><br><span class="line">&gt;length = <span class="number">50</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;image = np.zeros((width,height),dtype = np.uint8)</span><br><span class="line">&gt;print(image.shape[<span class="number">0</span>],image.shape[<span class="number">1</span>])</span><br><span class="line">&gt;</span><br><span class="line">&gt;<span class="keyword">for</span> j <span class="keyword">in</span> range(height):</span><br><span class="line">&gt;    <span class="keyword">for</span> i <span class="keyword">in</span> range(width):</span><br><span class="line">&gt;        <span class="keyword">if</span>((int)(i/length) + (int)(j/length))%<span class="number">2</span>:</span><br><span class="line">&gt;            image[i,j] = <span class="number">255</span>;</span><br><span class="line">&gt;cv2.imwrite(<span class="string">"pic/chess.jpg"</span>,image)</span><br><span class="line">&gt;cv2.imshow(<span class="string">"chess"</span>,image)</span><br><span class="line">&gt;cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
@@ -1167,11 +1183,7 @@
 <li>将下载的工具箱文件toolbox_calib.zip解压缩，将目录toolbox_calib拷贝到Matlab的目录下，也可以放在其他目录。</li>
 <li>运行Matlab并添加文件夹TOOLBOX_calib的位置到matlab路径path中。</li>
 <li>具体操作为：File-&gt;SetPath-&gt;Add Folder To Path，然后找到刚刚存放的文件夹<br>TOOLBOX_calib，save一下就OK了。</li>
-<li>采集图像：采集的图像统一命名后，拷贝到toolbox_calib目录中。命名规则为基本名和编号，基本名在前，后面直接跟着数字编号。编号最多为3位十进制数字。</li>
-</ul>
-</blockquote>
-<h4 id="单目标定"><a href="#单目标定" class="headerlink" title="单目标定"></a>单目标定</h4><blockquote>
-<ul>
+<li>采集图像：采集的图像统一命名后，拷贝到toolbox_calib目录中。命名规则为基本名和编号，基本名在前，后面直接跟着数字编号。编号最多为3位十进制数字。<h4 id="单目标定"><a href="#单目标定" class="headerlink" title="单目标定"></a>单目标定</h4></li>
 <li>准备工作</li>
 </ul>
 <p>将双目摄像机拍摄的左右图像的文件夹作为matlab的当前文件夹：我的图像名称类似L1，L2……，R1，R2……（注：图像的命名格式：字母+数字，即字母在前，数字在后。）</p>
@@ -1339,9 +1351,7 @@
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/UndistortImage.jpg" alt=""></p>
-</blockquote>
-<h4 id="双目测定"><a href="#双目测定" class="headerlink" title="双目测定"></a>双目测定</h4><blockquote>
-<ul>
+<h4 id="双目测定"><a href="#双目测定" class="headerlink" title="双目测定"></a>双目测定</h4><ul>
 <li>用同样的办法处理右相机拍摄的图像。</li>
 </ul>
 <p>标定结果：</p>
@@ -1411,7 +1421,6 @@
 </ul>
 </li>
 </ul>
-</blockquote>
 <h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p><code>Matlab工具箱标定，注意问题：</code></p>
 <ul>
 <li>内参数标定需要注意的问题 </li>
@@ -1478,6 +1487,7 @@
 </ul>
 </li>
 </ul>
+</blockquote>
 <h2 id="OpenCV获取图片"><a href="#OpenCV获取图片" class="headerlink" title="OpenCV获取图片"></a>OpenCV获取图片</h2><blockquote>
 <p>使用OpenCV获取图片有两种代码，一种是使用Python，另外一种是使用C++，但是道理其实是一样的。<code>先读取视频，然后再取帧</code>。</p>
 </blockquote>

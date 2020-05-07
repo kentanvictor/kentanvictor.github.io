@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"kentanvictor.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"kentanvictor.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="基于双目摄像头的障碍物检测 前言：关于双目摄像头的障碍物检测以及基于OpenCV的障碍物检测在CSDN以及博客园上都有几篇相关的文章。然而，相当一部分的关于障碍物检测的文章多偏向于理论，而有实践的文章却少之又少。在这里，我将按照我从网上学习到的例子进行整合并加入了我自己的理解。希望能为大家在障碍物检测方面起到一定的参考作用。">
@@ -25,7 +25,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于双目摄像头的障碍物检测">
 <meta property="og:url" content="https://kentanvictor.github.io/2018/10/18/基于双目摄像头的障碍物检测/index.html">
-<meta property="og:site_name" content="JohnnyTan&#39;s Blog">
+<meta property="og:site_name" content="ZoeTam&#39;s Blog">
 <meta property="og:description" content="基于双目摄像头的障碍物检测 前言：关于双目摄像头的障碍物检测以及基于OpenCV的障碍物检测在CSDN以及博客园上都有几篇相关的文章。然而，相当一部分的关于障碍物检测的文章多偏向于理论，而有实践的文章却少之又少。在这里，我将按照我从网上学习到的例子进行整合并加入了我自己的理解。希望能为大家在障碍物检测方面起到一定的参考作用。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/camera.png">
@@ -89,7 +89,7 @@
   };
 </script>
 
-  <title>基于双目摄像头的障碍物检测 | JohnnyTan's Blog</title>
+  <title>基于双目摄像头的障碍物检测 | ZoeTam's Blog</title>
   
 
 
@@ -140,7 +140,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">JohnnyTan's Blog</h1>
+      <h1 class="site-title">ZoeTam's Blog</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -223,6 +223,10 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/kentanvictor" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
     <main class="main">
@@ -241,12 +245,12 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://github.com/kentanvictor/STUDY/blob/Image/logo.png?raw=true">
-      <meta itemprop="name" content="JohnnyTan">
-      <meta itemprop="description" content="Software is like sex;it's better when it's free.">
+      <meta itemprop="name" content="ZoeTam">
+      <meta itemprop="description" content="Sometimes life is going to hit you in the head with a brick. Don't lose faith.">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JohnnyTan's Blog">
+      <meta itemprop="name" content="ZoeTam's Blog">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -390,7 +394,7 @@
 </ul>
 </li>
 <li><ul>
-<li>第二种：使用Python+OpenCV生成棋盘格图片：<blockquote>
+<li>第二种：使用Python+OpenCV生成棋盘格图片：<br>&gt;<blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="keyword">import</span> cv2 </span><br><span class="line">&gt;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">&gt;</span><br><span class="line">&gt;width = <span class="number">350</span></span><br><span class="line">&gt;height = <span class="number">500</span></span><br><span class="line">&gt;length = <span class="number">50</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;image = np.zeros((width,height),dtype = np.uint8)</span><br><span class="line">&gt;print(image.shape[<span class="number">0</span>],image.shape[<span class="number">1</span>])</span><br><span class="line">&gt;</span><br><span class="line">&gt;<span class="keyword">for</span> j <span class="keyword">in</span> range(height):</span><br><span class="line">&gt;    <span class="keyword">for</span> i <span class="keyword">in</span> range(width):</span><br><span class="line">&gt;        <span class="keyword">if</span>((int)(i/length) + (int)(j/length))%<span class="number">2</span>:</span><br><span class="line">&gt;            image[i,j] = <span class="number">255</span>;</span><br><span class="line">&gt;cv2.imwrite(<span class="string">"pic/chess.jpg"</span>,image)</span><br><span class="line">&gt;cv2.imshow(<span class="string">"chess"</span>,image)</span><br><span class="line">&gt;cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
@@ -608,11 +612,7 @@
 <li>将下载的工具箱文件toolbox_calib.zip解压缩，将目录toolbox_calib拷贝到Matlab的目录下，也可以放在其他目录。</li>
 <li>运行Matlab并添加文件夹TOOLBOX_calib的位置到matlab路径path中。</li>
 <li>具体操作为：File-&gt;SetPath-&gt;Add Folder To Path，然后找到刚刚存放的文件夹<br>TOOLBOX_calib，save一下就OK了。</li>
-<li>采集图像：采集的图像统一命名后，拷贝到toolbox_calib目录中。命名规则为基本名和编号，基本名在前，后面直接跟着数字编号。编号最多为3位十进制数字。</li>
-</ul>
-</blockquote>
-<h4 id="单目标定"><a href="#单目标定" class="headerlink" title="单目标定"></a>单目标定</h4><blockquote>
-<ul>
+<li>采集图像：采集的图像统一命名后，拷贝到toolbox_calib目录中。命名规则为基本名和编号，基本名在前，后面直接跟着数字编号。编号最多为3位十进制数字。<h4 id="单目标定"><a href="#单目标定" class="headerlink" title="单目标定"></a>单目标定</h4></li>
 <li>准备工作</li>
 </ul>
 <p>将双目摄像机拍摄的左右图像的文件夹作为matlab的当前文件夹：我的图像名称类似L1，L2……，R1，R2……（注：图像的命名格式：字母+数字，即字母在前，数字在后。）</p>
@@ -780,9 +780,7 @@
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/UndistortImage.jpg" alt=""></p>
-</blockquote>
-<h4 id="双目测定"><a href="#双目测定" class="headerlink" title="双目测定"></a>双目测定</h4><blockquote>
-<ul>
+<h4 id="双目测定"><a href="#双目测定" class="headerlink" title="双目测定"></a>双目测定</h4><ul>
 <li>用同样的办法处理右相机拍摄的图像。</li>
 </ul>
 <p>标定结果：</p>
@@ -852,7 +850,6 @@
 </ul>
 </li>
 </ul>
-</blockquote>
 <h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p><code>Matlab工具箱标定，注意问题：</code></p>
 <ul>
 <li>内参数标定需要注意的问题 </li>
@@ -919,6 +916,7 @@
 </ul>
 </li>
 </ul>
+</blockquote>
 <h2 id="OpenCV获取图片"><a href="#OpenCV获取图片" class="headerlink" title="OpenCV获取图片"></a>OpenCV获取图片</h2><blockquote>
 <p>使用OpenCV获取图片有两种代码，一种是使用Python，另外一种是使用C++，但是道理其实是一样的。<code>先读取视频，然后再取帧</code>。</p>
 </blockquote>
@@ -1088,10 +1086,10 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="JohnnyTan"
+    <img class="site-author-image" itemprop="image" alt="ZoeTam"
       src="https://github.com/kentanvictor/STUDY/blob/Image/logo.png?raw=true">
-  <p class="site-author-name" itemprop="name">JohnnyTan</p>
-  <div class="site-description" itemprop="description">Software is like sex;it's better when it's free.</div>
+  <p class="site-author-name" itemprop="name">ZoeTam</p>
+  <div class="site-description" itemprop="description">Sometimes life is going to hit you in the head with a brick. Don't lose faith.</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -1149,15 +1147,13 @@
 
 <div class="copyright">
   
-  &copy; 
+  &copy; 2016 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">JohnnyTan</span>
+  <span class="author" itemprop="copyrightHolder">ZoeTam</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
 
         
 
@@ -1178,7 +1174,7 @@
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script>
 <script src="/js/schemes/pisces.js"></script>
-<script src="/js/next-boot.js"></script>
+<script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
 
 
@@ -1219,6 +1215,8 @@
 
 
 
+
+  
 
   
 
