@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="ZoeTam&#39;s Blog">
 <meta property="og:description" content="Android开发岗个人面经2020-05-13 字节跳动一面 这也是我人生中第一次经历的面试，也是第一次的线上面试，总的来说，真的很慌张，而且其实自己也知道准备的是不充分的，但是还是硬着头皮参加了，也算是一种人生经历吧。下面是字节跳动一面时候问到的问题，先列举出来，然后进行一个知识总结与概括：  操作系统中死锁的概念 产生死锁的方式 Java中 synchronized 与 Lock 区别 单例">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-13T13:11:28.896Z">
+<meta property="og:updated_time" content="2020-05-13T14:02:24.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android面经">
 <meta name="twitter:description" content="Android开发岗个人面经2020-05-13 字节跳动一面 这也是我人生中第一次经历的面试，也是第一次的线上面试，总的来说，真的很慌张，而且其实自己也知道准备的是不充分的，但是还是硬着头皮参加了，也算是一种人生经历吧。下面是字节跳动一面时候问到的问题，先列举出来，然后进行一个知识总结与概括：  操作系统中死锁的概念 产生死锁的方式 Java中 synchronized 与 Lock 区别 单例">
@@ -222,7 +222,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-13 17:05:23 / 修改时间：21:11:28" itemprop="dateCreated datePublished" datetime="2020-05-13T17:05:23+08:00">2020-05-13</time>
+              <time title="创建时间：2020-05-13 17:05:23 / 修改时间：22:02:24" itemprop="dateCreated datePublished" datetime="2020-05-13T17:05:23+08:00">2020-05-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -317,6 +317,26 @@
 </ul>
 </li>
 <li><p>进程回退策略，即让参与死锁的进程回退到没有发生死锁前某一点处，并由此点继续执行，以求再次执行时不发生死锁。</p>
+</li>
+</ul>
+<h3 id="synchronized详解、Lock详解"><a href="#synchronized详解、Lock详解" class="headerlink" title="synchronized详解、Lock详解"></a>synchronized详解、Lock详解</h3><h4 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h4><p><strong>作用：</strong> 利用锁的机制来实现同步的。</p>
+<p><code>锁机制特性：</code></p>
+<p>互斥性：同一时间只允许一个线程持有某个对象锁。————往往称为操作的原子性。</p>
+<p>可见性：必须确保在锁被释放之前，对共享变量所做的修改，对于随后获得该锁的另一个线程是可见的（即在获得锁时应获得最新共享变量的值），否则另一个线程可能是在本地缓存的某个副本上继续操作从而引起不一致。</p>
+<h5 id="对象锁和类锁"><a href="#对象锁和类锁" class="headerlink" title="对象锁和类锁"></a>对象锁和类锁</h5><ul>
+<li><p>对象锁：在Java中，每个对象都会有一个monitor对象，这个就是Java对象的锁————又叫内置锁/对象锁。每个对象都有一个独立的内置锁，互不干扰。</p>
+</li>
+<li><p>类锁：每个类都有一个类锁。</p>
+</li>
+</ul>
+<h5 id="synchronized用法"><a href="#synchronized用法" class="headerlink" title="synchronized用法"></a>synchronized用法</h5><ul>
+<li><p>根据修饰对象分类：</p>
+<ul>
+<li>修饰代码块</li>
+<li>修饰方法</li>
+</ul>
+</li>
+<li><p>根据获取的锁分类：</p>
 </li>
 </ul>
 
@@ -418,7 +438,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android开发岗个人面经"><span class="nav-number">1.</span> <span class="nav-text">Android开发岗个人面经</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2020-05-13-字节跳动一面"><span class="nav-number">1.1.</span> <span class="nav-text">2020-05-13 字节跳动一面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#死锁"><span class="nav-number">1.1.1.</span> <span class="nav-text">死锁</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android开发岗个人面经"><span class="nav-number">1.</span> <span class="nav-text">Android开发岗个人面经</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2020-05-13-字节跳动一面"><span class="nav-number">1.1.</span> <span class="nav-text">2020-05-13 字节跳动一面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#死锁"><span class="nav-number">1.1.1.</span> <span class="nav-text">死锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized详解、Lock详解"><span class="nav-number">1.1.2.</span> <span class="nav-text">synchronized详解、Lock详解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#synchronized"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">synchronized</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对象锁和类锁"><span class="nav-number">1.1.2.1.1.</span> <span class="nav-text">对象锁和类锁</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#synchronized用法"><span class="nav-number">1.1.2.1.2.</span> <span class="nav-text">synchronized用法</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
