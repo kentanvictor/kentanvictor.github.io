@@ -28,19 +28,19 @@
 <meta property="og:site_name" content="ZoeTam&#39;s Blog">
 <meta property="og:description" content="Ubuntu+Windows双系统安装指南 写在前面：非常感谢Linux探索之旅在最初的时候给我的安装教程的指南，自己按照这篇教程安装双系统折腾了将近一个月，期间更是将Windows也给装炸了。。。于是乎重装系统，直到现在可以稳定的使用Ubuntu和Windows双系统。    Windows和Linux的区别 观念 发布 内核API   Ubuntu系统安装 下载 烧录 使用USB方式进行安装">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305083814221-945937821.jpg">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305083947874-1701950222.jpg">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305090804692-434581225.png">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305091852832-1065563335.png">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305092511043-1063454481.jpg">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305092636657-1945689688.jpg">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305093615846-1061830699.jpg">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305094404291-535649607.jpg">
-<meta property="og:updated_time" content="2020-05-06T16:15:46.142Z">
+<meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/Unix_Windows.jpg?raw=true">
+<meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/LinuxBranch.jpg?raw=true">
+<meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/UbuntuDownLoad.png?raw=true">
+<meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/Universal_Installer.png?raw=true">
+<meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/USB_Storage_Device.jpg?raw=true">
+<meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/SecureBootControl.jpg?raw=true">
+<meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/EFIBoot.jpg?raw=true">
+<meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/UbuntuNoModeSet.jpg?raw=true">
+<meta property="og:updated_time" content="2020-05-14T15:20:38.991Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu+Windows双系统安装指南">
 <meta name="twitter:description" content="Ubuntu+Windows双系统安装指南 写在前面：非常感谢Linux探索之旅在最初的时候给我的安装教程的指南，自己按照这篇教程安装双系统折腾了将近一个月，期间更是将Windows也给装炸了。。。于是乎重装系统，直到现在可以稳定的使用Ubuntu和Windows双系统。    Windows和Linux的区别 观念 发布 内核API   Ubuntu系统安装 下载 烧录 使用USB方式进行安装">
-<meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305083814221-945937821.jpg">
+<meta name="twitter:image" content="https://github.com/kentanvictor/STUDY/blob/Image/Unix_Windows.jpg?raw=true">
 
 <link rel="canonical" href="https://kentanvictor.github.io/2020/05/05/Ubuntu-Windows双系统安装指南/">
 
@@ -237,7 +237,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-07 00:15:46" itemprop="dateModified" datetime="2020-05-07T00:15:46+08:00">2020-05-07</time>
+                <time title="修改时间：2020-05-14 23:20:38" itemprop="dateModified" datetime="2020-05-14T23:20:38+08:00">2020-05-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -302,7 +302,7 @@
 <hr>
 <a id="more"></a>
 <h2 id="Windows-和-Linux-的区别"><a href="#Windows-和-Linux-的区别" class="headerlink" title="Windows 和 Linux 的区别"></a>Windows 和 Linux 的区别</h2><p>对于 Windows 和 Linux 的区别，我在这里先使用一张直观的图让大家看一下。</p>
-<p><img src="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305083814221-945937821.jpg" alt="内核区别"></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Unix_Windows.jpg?raw=true" alt="内核区别"></p>
 <p>从上图中可以看到，Linux 与苹果的 Mac OS 是基于 Unix 系统下的操作系统，而 Windows 是基于MS-DOS的操作系统。下面的几个部分的内容，将分析 Windows 和 Linux 系统的区别。</p>
 <h3 id="观念"><a href="#观念" class="headerlink" title="观念"></a>观念</h3><p>商业模式与开源运作：</p>
 <p>众所周知，Windows 是一款商业级的操作系统，它的源代码是保密的，这也就导致想要看到Windows的源代码变成了一件十分困难的事情。这使得微软授权过的《WINDOWS INTERNALS》一书变得十分的畅销，因为这里面涉及到了部分 Windows 操作系统内部的构建细节。</p>
@@ -317,26 +317,26 @@
 <ul>
 <li>下面展示的是基于开源的 Linux 所分化出来的不同的分支系统。</li>
 </ul>
-<p><img src="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305083947874-1701950222.jpg" alt="Linux分支"></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/LinuxBranch.jpg?raw=true" alt="Linux分支"></p>
 <hr>
 <h2 id="Ubuntu系统安装"><a href="#Ubuntu系统安装" class="headerlink" title="Ubuntu系统安装"></a>Ubuntu系统安装</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>Ubuntu的英文下载页面：<a href="http://www.ubuntu.com/download" target="_blank" rel="noopener">Ubuntu</a></p>
 <p>Ubuntu的中文下载页面：<a href="https://cn.ubuntu.com/" target="_blank" rel="noopener">Ubuntu国内官网</a></p>
 <p>优麒麟的下载页面：<a href="http://www.ubuntukylin.com/downloads/" target="_blank" rel="noopener">优麒麟</a></p>
-<p>在这里，能够下载到的最新版本是18.04.2LTS(Long Term Support)版本。<br><img src="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305090804692-434581225.png" alt="Ubuntu18.04下载"></p>
+<p>在这里，能够下载到的最新版本是18.04.2LTS(Long Term Support)版本。<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/UbuntuDownLoad.png?raw=true" alt="Ubuntu18.04下载"></p>
 <h3 id="烧录"><a href="#烧录" class="headerlink" title="烧录"></a>烧录</h3><p>在电脑中插入一个空白的U盘（不空白也行，反正之后要格式化的），大小至少8GB。</p>
 <p>Universal USB Installer：<a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/" target="_blank" rel="noopener">下载</a></p>
 <p>下载好Universal USB Installer之后，打开它，在”Device”下拉菜单中选择你的U盘。然后点击创建。<code>对于右侧NTFS格式和Fat32格式，个人建议选择FAT32。</code></p>
-<p><img src="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305091852832-1065563335.png" alt="选择ISOs和Drive"></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Universal_Installer.png?raw=true" alt="选择ISOs和Drive"></p>
 <h3 id="使用USB方式进行安装"><a href="#使用USB方式进行安装" class="headerlink" title="使用USB方式进行安装"></a>使用USB方式进行安装</h3><blockquote>
-<p>前提：你需要先进入你的Boot Menu中，选择USB Storage Device。如下图所示：<br><img src="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305092511043-1063454481.jpg" alt="USB Storage Device"></p>
+<p>前提：你需要先进入你的Boot Menu中，选择USB Storage Device。如下图所示：<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/USB_Storage_Device.jpg?raw=true" alt="USB Storage Device"></p>
 <p>如果发现没有USB Storage Device，那么选择Setup进入BIOS，或者重启按F2进入BIOS。切换到Boot，选择Secure Boot Control回车，改成Disabled，USB Boot Support设置成Enabled，Boot Mode改成Legacy。如下图所示：</p>
-<p><img src="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305092636657-1945689688.jpg" alt="Secure Boot Control"></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/SecureBootControl.jpg?raw=true" alt="Secure Boot Control"></p>
 </blockquote>
 <p>在进入到下图所示界面的时候（pure EFI Boot），这里就出现了一个坑。</p>
-<p><img src="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305093615846-1061830699.jpg" alt="EFIBoot"></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/EFIBoot.jpg?raw=true" alt="EFIBoot"></p>
 <p>在这个时候，可以选择第一项，你可以先体验一下Ubuntu，也可不体验，直接Install Ubuntu。但是，在具有<code>独立显卡</code>的笔记本或者是台式机上，你会发现界面是能够进去的，但是很快就会卡死。这是因为独立显卡与Ubuntu的集成显卡不兼容所产生的问题。</p>
 <p>这个时候，你需要再次回到pure EFI Boot界面，然后在<code>按E</code>进入到如图所示的界面：</p>
-<p><img src="https://img2018.cnblogs.com/blog/1410558/201903/1410558-20190305094404291-535649607.jpg" alt="UbuntuNoModeSet"></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/UbuntuNoModeSet.jpg?raw=true" alt="UbuntuNoModeSet"></p>
 <p>将原本<code>quiet splash</code>后面的内容修改为<code>nomodeset</code>。然后再<code>按F10</code>进入到安装界面安装即可。</p>
 <p>在到 <code>安装类型</code> 这一步骤时，如果你在上一步压缩完分区后，没有新建简单卷（保持未分配状态），那么就只需选择 安装 Ubuntu，与 Windows boot manager 共存 这一选项，将分区相关事宜交由 Ubuntu 处理。</p>
 
