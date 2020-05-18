@@ -20,18 +20,18 @@
     var CONFIG = {"hostname":"kentanvictor.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Android开发岗个人面经2020-05-13 字节跳动一面 这也是我人生中第一次经历的面试，也是第一次的线上面试，总的来说，真的很慌张，而且其实自己也知道准备的是不充分的，但是还是硬着头皮参加了，也算是一种人生经历吧。下面是字节跳动一面时候问到的问题，先列举出来，然后进行一个知识总结与概括：  操作系统中死锁的概念 产生死锁的方式 Java中 synchronized 与 Lock 区别 单例">
+  <meta name="description" content="Android开发岗个人面经2020-05-13 字节跳动一面 这也是我人生中第一次经历的面试，也是第一次的线上面试，总的来说，真的很慌张，而且其实自己也知道准备的是不充分的，但是还是硬着头皮参加了，也算是一种人生经历吧。下面是字节跳动一面时候问到的问题，先列举出来，然后进行一个知识总结与概括：  操作系统中死锁的概念 产生死锁的方式 排序，谈谈有什么排序算法，讲一讲时间复杂度，以及排序的“稳定性">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android面经">
 <meta property="og:url" content="https://kentanvictor.github.io/2020/05/13/字节跳动Android一面面经/index.html">
 <meta property="og:site_name" content="ZoeTam&#39;s Blog">
-<meta property="og:description" content="Android开发岗个人面经2020-05-13 字节跳动一面 这也是我人生中第一次经历的面试，也是第一次的线上面试，总的来说，真的很慌张，而且其实自己也知道准备的是不充分的，但是还是硬着头皮参加了，也算是一种人生经历吧。下面是字节跳动一面时候问到的问题，先列举出来，然后进行一个知识总结与概括：  操作系统中死锁的概念 产生死锁的方式 Java中 synchronized 与 Lock 区别 单例">
+<meta property="og:description" content="Android开发岗个人面经2020-05-13 字节跳动一面 这也是我人生中第一次经历的面试，也是第一次的线上面试，总的来说，真的很慌张，而且其实自己也知道准备的是不充分的，但是还是硬着头皮参加了，也算是一种人生经历吧。下面是字节跳动一面时候问到的问题，先列举出来，然后进行一个知识总结与概括：  操作系统中死锁的概念 产生死锁的方式 排序，谈谈有什么排序算法，讲一讲时间复杂度，以及排序的“稳定性">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-13T14:02:24.367Z">
+<meta property="og:updated_time" content="2020-05-18T16:25:50.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android面经">
-<meta name="twitter:description" content="Android开发岗个人面经2020-05-13 字节跳动一面 这也是我人生中第一次经历的面试，也是第一次的线上面试，总的来说，真的很慌张，而且其实自己也知道准备的是不充分的，但是还是硬着头皮参加了，也算是一种人生经历吧。下面是字节跳动一面时候问到的问题，先列举出来，然后进行一个知识总结与概括：  操作系统中死锁的概念 产生死锁的方式 Java中 synchronized 与 Lock 区别 单例">
+<meta name="twitter:description" content="Android开发岗个人面经2020-05-13 字节跳动一面 这也是我人生中第一次经历的面试，也是第一次的线上面试，总的来说，真的很慌张，而且其实自己也知道准备的是不充分的，但是还是硬着头皮参加了，也算是一种人生经历吧。下面是字节跳动一面时候问到的问题，先列举出来，然后进行一个知识总结与概括：  操作系统中死锁的概念 产生死锁的方式 排序，谈谈有什么排序算法，讲一讲时间复杂度，以及排序的“稳定性">
 
 <link rel="canonical" href="https://kentanvictor.github.io/2020/05/13/字节跳动Android一面面经/">
 
@@ -220,10 +220,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-13 17:05:23 / 修改时间：22:02:24" itemprop="dateCreated datePublished" datetime="2020-05-13T17:05:23+08:00">2020-05-13</time>
+              <time title="创建时间：2020-05-13 17:05:23" itemprop="dateCreated datePublished" datetime="2020-05-13T17:05:23+08:00">2020-05-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-19 00:25:50" itemprop="dateModified" datetime="2020-05-19T00:25:50+08:00">2020-05-19</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -271,6 +277,7 @@
 <ul>
 <li>操作系统中死锁的概念</li>
 <li>产生死锁的方式</li>
+<li>排序，谈谈有什么排序算法，讲一讲时间复杂度，以及排序的“稳定性”</li>
 <li>Java中 synchronized 与 Lock 区别</li>
 <li>单例模式实现，两种，多线程情况下的考虑</li>
 <li>Android生命周期解析</li>
@@ -337,6 +344,10 @@
 </ul>
 </li>
 <li><p>根据获取的锁分类：</p>
+<ul>
+<li>获取对象锁</li>
+<li>获取类锁</li>
+</ul>
 </li>
 </ul>
 
