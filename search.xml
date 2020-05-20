@@ -116,90 +116,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Django服务器部署到腾讯云</title>
-    <url>/2018/08/06/Django%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<h1 id="Django服务器部署到腾讯云"><a href="#Django服务器部署到腾讯云" class="headerlink" title="Django服务器部署到腾讯云"></a>Django服务器部署到腾讯云</h1><ul>
-<li><p>配置腾讯云的服务器</p>
-<a id="more"></a>
-<ul>
-<li>配置的系统是Ubuntu Server 16.04.1 LTS 64位</li>
-<li>登录后界面如图：</li>
-</ul>
-<ul>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/TencentServerLogin.png?raw=true" alt=""></li>
-<li>之后进行django的安装<strong>注意版本号要和你在本地开发的一致</strong></li>
-<li>使用screen进行后台的django项目的运行。<strong>注意runserver后设置：0.0.0.0:端口号</strong></li>
-</ul>
-</li>
-<li><p>使用PyCharm进行远程连接腾讯云服务器</p>
-<ul>
-<li>Tools—&gt;Deployment—&gt;config呈现下面的界面</li>
-</ul>
-<ul>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAddServer.png?raw=true" alt=""><br>-<br>选择<strong>sftp</strong></li>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmDeployment.png?raw=true" alt=""></li>
-<li>在这里设置你的IP地址，然后点击<code>Test SFTP connection</code></li>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmTestConnection.png?raw=true" alt=""></li>
-<li>在这里设置你的<code>用户名</code>和<code>密码</code><strong>用户名与密码可以在腾讯云的更多中重置与设置</strong></li>
-<li>然后这个时候就连接上了</li>
-</ul>
-<ul>
-<li>此时，在你的PyCharm的右边，会出现服务器上的树目录结构(如图所示)</li>
-</ul>
-<ul>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAdmin.png?raw=true" alt=""></li>
-<li>进入到home—&gt;ubuntu下，在这里面，你具有权限，此时就可以将你的整个项目拖进去，然后在服务器端进入到项目中<strong>创建screen后台</strong>，运行<strong>manage.py runserver 0.0.0.0:端口号</strong>就可以使你的django一直保持运行的状态了。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>后端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git</title>
-    <url>/2018/07/23/Git/</url>
-    <content><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="What-is-Git"><a href="#What-is-Git" class="headerlink" title="What is Git?"></a>What is Git?</h2><ul>
-<li>Git is the most advanced distributed version control system in the world.<a id="more"></a>
-<h2 id="What-is-the-different-between-the-SVN-Subversion-and-the-Git"><a href="#What-is-the-different-between-the-SVN-Subversion-and-the-Git" class="headerlink" title="What is the different between the SVN(Subversion) and the Git?"></a>What is the different between the SVN(Subversion) and the Git?</h2></li>
-<li>SVN is a centralized version control system which version library  centralized packed in the central server.So if you need to do your work,you must go to the central server to download the latest version.When you finished your work,you have to push on the central server.It’s so inconvenient.Actually the centralized version control system must accessible networking.<h5 id="just-like-this-photo"><a href="#just-like-this-photo" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/subversion.png?raw=true" alt=""></p>
-<ul>
-<li>Git is a distributed version control system,which advantaged is if it has not a central version,the LapTop is a rounded version library.because of this, you can work without using network.<h5 id="just-like-this-photo-1"><a href="#just-like-this-photo-1" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/git.png?raw=true" alt=""></p>
-<h2 id="there-are-some-useful-command-lines"><a href="#there-are-some-useful-command-lines" class="headerlink" title="there are some useful command lines :"></a>there are some useful command lines :</h2><ul>
-<li>mkdir: XX (Create an empty directory)/<em>XX refer to directory name</em>/</li>
-<li>pwd: (Show the path to the current directory)</li>
-<li>git: init (Change the current directory to a managed  Git repository,create a hidden file)</li>
-<li>git add XX (Add  XX file to working-storage section)</li>
-<li>git commit -m “XX” (Add a comment to a file)/<em>XX is the comment</em>/</li>
-<li>git status (View warehouse status)</li>
-<li>git log (View history)</li>
-<li>git diff XX (View XX file what are modified)</li>
-<li>git rm XX (Delete XX file)</li>
-<li>cat XX (View file contents)</li>
-<li>git checkout -b A  (Create a A branch and switch to A branch)</li>
-<li>git checkout master (back to master branch)</li>
-<li>git clone HTTPS (clone from online warehouse)</li>
-<li>git branch name (create a branch)</li>
-<li>git branch -d A (Delete A branch)</li>
-<li>git push origin master (push master branch to online warehouse)<h1 id="如何使用Git-Bash"><a href="#如何使用Git-Bash" class="headerlink" title="如何使用Git Bash"></a>如何使用Git Bash</h1><h2 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h2>当需要上传一个项目到Github时，这个时候你需要在自己的Github上新建一个项目<br>New repository<br>然后在右下角有一个Clone or download<br>点击之后有一个Clone with HTTPS<br>Use Git or checkout with SVN using the web URL.<br>复制地址之后<br>在需要上传的项目文件中<br>右键，点击Git Bash Here之后<br>先输入 git clone + 地址<br>会出现一个项目名称的文件夹<br>里面有隐藏文件.git与ReadMe.md<br>将具有项目名称的文件夹中的全部内容剪切到需要上传的项目的根目录下<br>之后在Git Bash中输入<br>git add .<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是GitHub上面：<br>git push origin master<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2>当需要更新已经上传的项目时<br>直接在已经写好的更新过的项目中<br>右键，点击Git Bash Here<br>然后在命令行中输入<br>git pull + 地址<br>上传跟新过之后，需要在命令行中输入<br>git add .<br>之后的步骤又是重复着之前的了<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是Github上面：<br>git push origin master</li>
-</ul>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTML</title>
     <url>/2018/08/19/HTML/</url>
     <content><![CDATA[<h1 id="HTML-CSS"><a href="#HTML-CSS" class="headerlink" title="HTML+CSS"></a>HTML+CSS</h1><ul>
@@ -365,6 +281,51 @@
       </categories>
       <tags>
         <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Django服务器部署到腾讯云</title>
+    <url>/2018/08/06/Django%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h1 id="Django服务器部署到腾讯云"><a href="#Django服务器部署到腾讯云" class="headerlink" title="Django服务器部署到腾讯云"></a>Django服务器部署到腾讯云</h1><ul>
+<li><p>配置腾讯云的服务器</p>
+<a id="more"></a>
+<ul>
+<li>配置的系统是Ubuntu Server 16.04.1 LTS 64位</li>
+<li>登录后界面如图：</li>
+</ul>
+<ul>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/TencentServerLogin.png?raw=true" alt=""></li>
+<li>之后进行django的安装<strong>注意版本号要和你在本地开发的一致</strong></li>
+<li>使用screen进行后台的django项目的运行。<strong>注意runserver后设置：0.0.0.0:端口号</strong></li>
+</ul>
+</li>
+<li><p>使用PyCharm进行远程连接腾讯云服务器</p>
+<ul>
+<li>Tools—&gt;Deployment—&gt;config呈现下面的界面</li>
+</ul>
+<ul>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAddServer.png?raw=true" alt=""><br>-<br>选择<strong>sftp</strong></li>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmDeployment.png?raw=true" alt=""></li>
+<li>在这里设置你的IP地址，然后点击<code>Test SFTP connection</code></li>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmTestConnection.png?raw=true" alt=""></li>
+<li>在这里设置你的<code>用户名</code>和<code>密码</code><strong>用户名与密码可以在腾讯云的更多中重置与设置</strong></li>
+<li>然后这个时候就连接上了</li>
+</ul>
+<ul>
+<li>此时，在你的PyCharm的右边，会出现服务器上的树目录结构(如图所示)</li>
+</ul>
+<ul>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAdmin.png?raw=true" alt=""></li>
+<li>进入到home—&gt;ubuntu下，在这里面，你具有权限，此时就可以将你的整个项目拖进去，然后在服务器端进入到项目中<strong>创建screen后台</strong>，运行<strong>manage.py runserver 0.0.0.0:端口号</strong>就可以使你的django一直保持运行的状态了。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>后端</tag>
       </tags>
   </entry>
   <entry>
@@ -537,236 +498,6 @@ FileWriter(File filename,boolean append);
       </tags>
   </entry>
   <entry>
-    <title>Java原生数据类型与表达式</title>
-    <url>/2020/05/12/Java%E5%8E%9F%E7%94%9F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<h1 id="原生数据类型与表达式"><a href="#原生数据类型与表达式" class="headerlink" title="原生数据类型与表达式"></a>原生数据类型与表达式</h1><h2 id="原生数据类型"><a href="#原生数据类型" class="headerlink" title="原生数据类型"></a>原生数据类型</h2><ul>
-<li><p>1.Java 中的原生数据类型共有 8 种：</p>
-<ul>
-<li><p>1） 整型：使用 int 表示。（32 位）</p>
-</li>
-<li><p>2） 字节型：使用 byte 表示。（表示-128～127 之间的 256 个整数， 8 位）。</p>
-</li>
-<li><p>3）短整型：使用 short 表示。（16 位）</p>
-</li>
-<li><p>4）长整型：使用 long 表示。（64 位）</p>
-<a id="more"></a></li>
-<li><p>5）单精度浮点型：使用 float 表示。所谓浮点型，指的就是小数，也叫做实数，例如 1.2。</p>
-</li>
-<li><p>6）双精度浮点型：使用 double 表示。双精度浮点型表示的数据范围要比单精度浮点型大。</p>
-</li>
-<li><p>7）字符型：使用 char 表示（char 是 character 的缩写）。所谓字符，就是单个的字符表示，比如字母 a，或者中文张，外面用单引号包围上。比如 char a = ‘B’; char b = ‘张’;</p>
-</li>
-<li><p>8）布尔类型，使用 boolean 表示。布尔类型只有两种可能值，分别是 true 与 false。</p>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>2.Java 中的所有浮点类型默认情况下都是 double。不能将 double 类型的值赋给 float 类型的变量，即便该 double 类型的值处于 float 类型的范围内也是不可以的。总之，能否成功赋值取决于等号右边的值类型与等号左边的变量类型是否一致。</p>
-</li>
-<li><p>3.如何将 double 类型的值赋给 float 类型的变量？答案就是(1)强制类型转换，将 double 类型的值强制转换为 float 类型。(2)使用 java 预言的支持。</p>
-</li>
-</ul>
-<p><code>强制转换的语法： 类型 变量名 = （类型）变量值;</code></p>
-<ul>
-<li><p>4.变量在使用前必须要赋值；变量必须要声明其类型方可使用；变量在使用前必须要定义，并且只能定义一次。</p>
-</li>
-<li><p>5.如下代码无法通过编译：</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>; <span class="keyword">short</span> b = a;</span><br></pre></td></tr></table></figure>
-<p>a 是 int 类型，b 是 short 类型，int 类型表示的数据范围要比 short 类型大，不能将表示<br>范围大的值赋给表示范围小的变量。</p>
-<ul>
-<li>6.如下代码可以通过编译：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">short</span> a = <span class="number">1</span>; <span class="keyword">int</span> b = a;</span><br></pre></td></tr></table></figure>
-<p>a 是 short 类型，b 是 int 类型，int 类型表示的数据范围要比 short 类型大，可以将表示<br>范围小的值赋给表示范围大的变量。</p>
-<ul>
-<li>7.总结：可以将表示范围小的值赋给表示范围大的变量；但不能直接将表示范围大的值赋给表示范围小的变量，只能通过强制类型转换实现。</li>
-</ul>
-<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><blockquote>
-<p>Java中使用的是<code>中缀表达式</code>——其实就是和数学上的函数表达式的道理是一样的。</p>
-</blockquote>
-<p><strong>注意：</strong></p>
-<ul>
-<li><p>在<code>初级运算</code>中运算产生的数据的数据类型和参与运算的数据的数据类型是相同的。</p>
-</li>
-<li><p>‘+’、’-‘、’*’、’/‘ 都是被重载过的。</p>
-</li>
-<li><p><code>逻辑运算符</code>中，’！’优先级最高，之后是 ‘&amp;&amp;’ ，最后是 ‘||’ 。</p>
-</li>
-<li><p>相同优先级运算顺序从左往右。</p>
-</li>
-<li><p>在<code>类型转换</code>中，如果不损失信息，数值会自动提升为高等级的数据类型。前提是，你的运算中含有高等级的运算符。当需要向低类型转换时，会<strong>截断取整</strong>，而不是四舍五入。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>QTDesigner</title>
-    <url>/2018/07/22/QTDesigner/</url>
-    <content><![CDATA[<h2 id="QT的安装"><a href="#QT的安装" class="headerlink" title="QT的安装"></a>QT的安装</h2><ul>
-<li>对于QT的安装，个人的推荐是参考<a href="http://blog.csdn.net/liang19890820/article/details/53931813" target="_blank" rel="noopener">QT5.7+VS2015安装教程</a>。这个教程写的很详细，而且也非常的nice。</li>
-</ul>
-<a id="more"></a>
-<h2 id="QT在VS2015中的使用"><a href="#QT在VS2015中的使用" class="headerlink" title="QT在VS2015中的使用"></a>QT在VS2015中的使用</h2><ul>
-<li><p>现在我们正式在VS2015中去使用QT，使用前，先需要创建一个QT的项目。</p>
-</li>
-<li><p>使用VS2015中文件——&gt;新建——&gt;项目。点击之后，会出现如下界面：</p>
-</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTCreate.png?raw=true" alt=""></p>
-<ul>
-<li>模板选择VisualC++下的Qt，选择QT GUI Application，上方的.NET Framework直接选择默认即可。</li>
-<li>选择之后点击下一步，会出现如下界面：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT1.png?raw=true" alt=""></p>
-<ul>
-<li>点击next之后会出现如下界面：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT2.png?raw=true" alt=""><br><strong>这里根据需要可以自己选择，如果是新手可以先直接下一步。</strong></p>
-<ul>
-<li>点击next之后会出现如下界面：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT3.png?raw=true" alt=""><br><strong>这里默认直接finish就可以，如果有什么需要的可以自行设置。</strong></p>
-<ul>
-<li>当创建好之后就会出现如下画面：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTFinish.png?raw=true" alt=""></p>
-<ul>
-<li>上面的画面就是我们需要进行操作的界面了。此时，<code>双击</code>QTTest.ui【位于:解决方案资源管理器-&gt;Form Files】</li>
-<li>双击进去之后就是我们需要进行ui设计的界面了（如下图所示）：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTDesigner.png?raw=true" alt=""></p>
-<ul>
-<li>在这里，你可以进行控件的拖动，直接拖到方框中去，然后再对象查看器（如下图所示）可以看到你控件所对应的类以及生成的对象。</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest1.png?raw=true" alt=""></p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest2.png?raw=true" alt=""></p>
-<ul>
-<li>创建好对象之后，点击左上角的文件-&gt;保存（Ctrl+S）</li>
-<li>然后关闭QT Designer，回到VS2015中，<code>右键QTTest.ui，选择编译（Ctrl+F7）</code>，如下图所示：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest3.png?raw=true" alt=""></p>
-<ul>
-<li>编译成功之后（一般情况下都是会编译成功的），<code>双击打开QTTest.cpp</code>,里面的代码是这样的：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>这个时候，在<code>ui.setupUi下输入ui.pushButton</code>即可获取到刚刚创建的button的实例。代码如下所示：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">	ui.pushButton;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>在QT中，控件与控件之间的数据传输是通过<code>信号与槽</code>的方式进行的，下面就演示其中一种的数据传输的方式：（代码如下：）</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">	connect(ui.pushButton, &amp;QPushButton::clicked, [this] &#123;</span><br><span class="line">		ui.label-&gt;setText(ui.label-&gt;text().replace(QRegExp(&quot;\\d+&quot;), &quot;25&quot;));</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>实现之后的效果为：</p>
-<ul>
-<li>未点击button之前：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/ClickBefore.png?raw=true" alt=""></p>
-<ul>
-<li>点击button之后：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/ClickAfter.png?raw=true" alt=""></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>QT</category>
-      </categories>
-      <tags>
-        <tag>QT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows虚拟环境在PyCharm中的使用</title>
-    <url>/2020/05/06/Windows%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%9C%A8PyCharm%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h1><blockquote>
-<p>网上对于Anaconda的安装是教程有很多，这里会为各位提供的是一个我当时安装时候所参考的链接地址。<a href="https://zhuanlan.zhihu.com/p/32925500" target="_blank" rel="noopener">Anaconda的介绍、安装及使用教程</a></p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Anaconda中创建虚拟环境（命令行模式）"><a href="#Anaconda中创建虚拟环境（命令行模式）" class="headerlink" title="Anaconda中创建虚拟环境（命令行模式）"></a>Anaconda中创建虚拟环境（命令行模式）</h2><blockquote>
-<p>在Anaconda中创建虚拟环境的方式：</p>
-<p>下面是创建python=3.6版本的环境，取名叫py36</p>
-<p>conda create -n py36 python=3.6</p>
-<p>删除环境</p>
-<p>conda remove -n py36 —all</p>
-<p>激活环境</p>
-<p>source activate py36</p>
-<p>退出环境</p>
-<p>source deactivate</p>
-</blockquote>
-<ul>
-<li><p>在创建虚拟环境的过程中，我遇到了一个问题，这个问题就是：<code>如果创建了多个python版本的环境，那么我应该如何去管理当中所安装的不同的包呢？并且与本机原本安装的python环境不起到冲突？</code></p>
-</li>
-<li><p>我解决Anaconda与本机办法是这样的：</p>
-<blockquote>
-<ul>
-<li>解决办法一：</li>
-</ul>
-<p>其实python 在安装的时候就为我们提供了两个版本的解决方案</p>
-<p>在C盘的windows 目录下有个 py.exe</p>
-<p>我们用py.exe 这个工具启动就能分辨出python的版本</p>
-<p>启动python2.7的pip</p>
-<p>直接在cmd 窗口里输入：py -2 -m pip install XXXX</p>
-<p>启动python3.6的pip</p>
-<p>直接在cmd 窗口里输入：py -3 -m pip install XXXX</p>
-<ul>
-<li>解决办法二：</li>
-</ul>
-<p>找到自己本机安装的Python路径（在Path中可以直接找到），然后找到自己的Python.exe文件，然后重命名即可。</p>
-<p>如：我对我本机的Python重命名为Python3，然后对Anaconda中安装的Python不重命名。</p>
-<p>之后需要对Anaconda中的python进行pip安装的时候，就输入：</p>
-<p>python -m pip install XXX</p>
-<p>然后对本机的python进行安装的时候，就输入：</p>
-<p>python3 -m pip install XXX</p>
-</blockquote>
-</li>
-<li><p>我解决Anaconda进入虚拟环境之后与Anaconda自身的Python冲突的问题：<br>&gt;</p>
-<blockquote>
-<p>根据上面启动虚拟环境的方法，我们能够启动已经创建的虚拟环境</p>
-<p>进入虚拟环境之后，输入：</p>
-<p>python -V</p>
-<p>就能够看到当前的虚拟环境中的python的版本号</p>
-<p>这个时候，输入：</p>
-<p>pip list</p>
-<p>你所看到的就是你当前环境下的pip所安装的包。</p>
-<p><code>如果你发现你的list还是Anaconda自带的list的话，就输入：</code></p>
-<p><code>python -m pip list</code></p>
-</blockquote>
-</li>
-</ul>
-<h2 id="Anaconda中创建虚拟环境（GUI模式）"><a href="#Anaconda中创建虚拟环境（GUI模式）" class="headerlink" title="Anaconda中创建虚拟环境（GUI模式）"></a>Anaconda中创建虚拟环境（GUI模式）</h2><p><code>当你安装好Anaconda之后，会出现一个Anaconda Mavigator，点击之后在里面也可以创建虚拟环境。</code></p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/AnacondaNavigator.png?raw=true" alt="AnacondaMavigator"></p>
-<h1 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a>PyCharm</h1><ul>
-<li><p>在PyCharm中的<code>Settings</code>中的<code>Project Interpreter</code>进行python版本的选择。</p>
-</li>
-<li><p>找到你的<code>Anaconda</code>的<code>安装路径</code>。</p>
-</li>
-<li><p>然后在里面找到一个文件夹叫<code>envs</code>。</p>
-</li>
-<li><p>在这个文件夹里面有你创建的所有的虚拟环境。</p>
-</li>
-<li><p>选择你需要用到的虚拟环境，然后找到<code>python.exe</code>即可。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MATLAB概述</title>
     <url>/2018/07/22/MATLAB%E6%A6%82%E8%BF%B0/</url>
     <content><![CDATA[<h1 id="MATLAB概述"><a href="#MATLAB概述" class="headerlink" title="MATLAB概述"></a>MATLAB概述</h1><ul>
@@ -887,6 +618,212 @@ FileWriter(File filename,boolean append);
       </tags>
   </entry>
   <entry>
+    <title>QTDesigner</title>
+    <url>/2018/07/22/QTDesigner/</url>
+    <content><![CDATA[<h2 id="QT的安装"><a href="#QT的安装" class="headerlink" title="QT的安装"></a>QT的安装</h2><ul>
+<li>对于QT的安装，个人的推荐是参考<a href="http://blog.csdn.net/liang19890820/article/details/53931813" target="_blank" rel="noopener">QT5.7+VS2015安装教程</a>。这个教程写的很详细，而且也非常的nice。</li>
+</ul>
+<a id="more"></a>
+<h2 id="QT在VS2015中的使用"><a href="#QT在VS2015中的使用" class="headerlink" title="QT在VS2015中的使用"></a>QT在VS2015中的使用</h2><ul>
+<li><p>现在我们正式在VS2015中去使用QT，使用前，先需要创建一个QT的项目。</p>
+</li>
+<li><p>使用VS2015中文件——&gt;新建——&gt;项目。点击之后，会出现如下界面：</p>
+</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTCreate.png?raw=true" alt=""></p>
+<ul>
+<li>模板选择VisualC++下的Qt，选择QT GUI Application，上方的.NET Framework直接选择默认即可。</li>
+<li>选择之后点击下一步，会出现如下界面：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT1.png?raw=true" alt=""></p>
+<ul>
+<li>点击next之后会出现如下界面：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT2.png?raw=true" alt=""><br><strong>这里根据需要可以自己选择，如果是新手可以先直接下一步。</strong></p>
+<ul>
+<li>点击next之后会出现如下界面：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT3.png?raw=true" alt=""><br><strong>这里默认直接finish就可以，如果有什么需要的可以自行设置。</strong></p>
+<ul>
+<li>当创建好之后就会出现如下画面：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTFinish.png?raw=true" alt=""></p>
+<ul>
+<li>上面的画面就是我们需要进行操作的界面了。此时，<code>双击</code>QTTest.ui【位于:解决方案资源管理器-&gt;Form Files】</li>
+<li>双击进去之后就是我们需要进行ui设计的界面了（如下图所示）：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTDesigner.png?raw=true" alt=""></p>
+<ul>
+<li>在这里，你可以进行控件的拖动，直接拖到方框中去，然后再对象查看器（如下图所示）可以看到你控件所对应的类以及生成的对象。</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest1.png?raw=true" alt=""></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest2.png?raw=true" alt=""></p>
+<ul>
+<li>创建好对象之后，点击左上角的文件-&gt;保存（Ctrl+S）</li>
+<li>然后关闭QT Designer，回到VS2015中，<code>右键QTTest.ui，选择编译（Ctrl+F7）</code>，如下图所示：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest3.png?raw=true" alt=""></p>
+<ul>
+<li>编译成功之后（一般情况下都是会编译成功的），<code>双击打开QTTest.cpp</code>,里面的代码是这样的：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这个时候，在<code>ui.setupUi下输入ui.pushButton</code>即可获取到刚刚创建的button的实例。代码如下所示：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">	ui.pushButton;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>在QT中，控件与控件之间的数据传输是通过<code>信号与槽</code>的方式进行的，下面就演示其中一种的数据传输的方式：（代码如下：）</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">	connect(ui.pushButton, &amp;QPushButton::clicked, [this] &#123;</span><br><span class="line">		ui.label-&gt;setText(ui.label-&gt;text().replace(QRegExp(&quot;\\d+&quot;), &quot;25&quot;));</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>实现之后的效果为：</p>
+<ul>
+<li>未点击button之前：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/ClickBefore.png?raw=true" alt=""></p>
+<ul>
+<li>点击button之后：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/ClickAfter.png?raw=true" alt=""></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>QT</category>
+      </categories>
+      <tags>
+        <tag>QT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android面经</title>
+    <url>/2020/05/13/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8Android%E4%B8%80%E9%9D%A2%E9%9D%A2%E7%BB%8F/</url>
+    <content><![CDATA[<h1 id="Android开发岗个人面经"><a href="#Android开发岗个人面经" class="headerlink" title="Android开发岗个人面经"></a>Android开发岗个人面经</h1><h2 id="2020-05-13-字节跳动一面"><a href="#2020-05-13-字节跳动一面" class="headerlink" title="2020-05-13 字节跳动一面"></a>2020-05-13 字节跳动一面</h2><blockquote>
+<p>这也是我人生中第一次经历的面试，也是第一次的线上面试，总的来说，真的很慌张，而且其实自己也知道准备的是不充分的，但是还是硬着头皮参加了，也算是一种人生经历吧。下面是字节跳动一面时候问到的问题，先列举出来，然后进行一个知识总结与概括：</p>
+<ul>
+<li>操作系统中死锁的概念</li>
+<li>产生死锁的方式</li>
+<li>排序，谈谈有什么排序算法，讲一讲时间复杂度，以及排序的“稳定性”</li>
+<li>Java中 synchronized 与 Lock 区别</li>
+<li>单例模式实现，两种，多线程情况下的考虑</li>
+<li>Android生命周期解析</li>
+<li>Activity 之间的跳转生命周期是怎么变化的</li>
+<li>Android中Handler与Message机制在多线程环境下的消息传输</li>
+<li>算法题：排序，有序的数组中找到某一目标值首次出现的下标，如：111122223334455666，问6第一次出现的数组下标为？（不可以用暴力）</li>
+</ul>
+</blockquote>
+<p><strong>下面是针对面试中提出的问题进行的知识上的储备。</strong><br><a id="more"></a></p>
+<h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><p>两个或多个进程被无限期地阻塞、相互等待的一种状态。</p>
+<p>产生的<code>主要原因</code>：</p>
+<ul>
+<li>系统资源不足</li>
+<li>进程推进顺序非法</li>
+</ul>
+<p>产生死锁的<code>必要条件</code>：</p>
+<ul>
+<li>1、互斥条件，一个资源每次只能被一个进程使用。</li>
+<li>2、不可抢占条件，进程已获得资源，在未使用完之前不被强行剥夺。</li>
+<li>3、占有并等待条件，一个进程因请求资源而阻塞时，对已获得的资源保持不放。</li>
+<li>4、环形等待条件，若干进程之间形成一种首尾相接的循环等待资源关系。</li>
+</ul>
+<p><code>注：</code>这四个条件缺一不可，只有都满足了，才能够发生死锁。</p>
+<p>所以，如何解除死锁的问题，就是只需要破坏上述四个条件中其中一个就可以解决了。</p>
+<p><code>解决方案</code>：</p>
+<ul>
+<li><p>打破互斥条件：允许进程同时访问某些资源。————这个方法受制于实际场景，不推荐。</p>
+</li>
+<li><p>打破不可抢占条件：允许进程强行从占有者进程夺取某些资源。简单理解：占有资源的进程不能再申请占有其他资源，必须释放了手上拥有的资源后才能够发起申请。————相同的，不容易找到适用场景。</p>
+</li>
+<li><p>进程再运行前申请得到所有的资源，否则该进程不能进入准备执行状态。————缺点：资源利用率低，并发性低。</p>
+</li>
+<li><p>避免资源申请环路，即事先对资源进行分类编号，按号分配。————优点：有效提高资源的利用率和系统的吞吐量。缺点：加大系统开销，增大了进程对资源的占用时间。</p>
+</li>
+</ul>
+<p><code>消除死锁的方式</code>：</p>
+<ul>
+<li><p>重启系统。————这个代价太大了…………</p>
+</li>
+<li><p>撤销进程，剥夺资源。终止参与死锁的进程，收回他们的资源。这里又分两种情况：</p>
+<ul>
+<li>一次性撤销参与死锁的全部进程，剥夺全部资源。</li>
+<li>逐步撤销参与的进程，逐步回收死锁进程占有的资源。</li>
+</ul>
+</li>
+<li><p>进程回退策略，即让参与死锁的进程回退到没有发生死锁前某一点处，并由此点继续执行，以求再次执行时不发生死锁。</p>
+</li>
+</ul>
+<h3 id="synchronized详解、Lock详解"><a href="#synchronized详解、Lock详解" class="headerlink" title="synchronized详解、Lock详解"></a>synchronized详解、Lock详解</h3><h4 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h4><p><strong>作用：</strong> 利用锁的机制来实现同步的。</p>
+<p><code>锁机制特性：</code></p>
+<p>互斥性：同一时间只允许一个线程持有某个对象锁。————往往称为操作的原子性。</p>
+<p>可见性：必须确保在锁被释放之前，对共享变量所做的修改，对于随后获得该锁的另一个线程是可见的（即在获得锁时应获得最新共享变量的值），否则另一个线程可能是在本地缓存的某个副本上继续操作从而引起不一致。</p>
+<h5 id="对象锁和类锁"><a href="#对象锁和类锁" class="headerlink" title="对象锁和类锁"></a>对象锁和类锁</h5><ul>
+<li><p>对象锁：在Java中，每个对象都会有一个monitor对象，这个就是Java对象的锁————又叫内置锁/对象锁。每个对象都有一个独立的内置锁，互不干扰。</p>
+</li>
+<li><p>类锁：每个类都有一个类锁。</p>
+</li>
+</ul>
+<h5 id="synchronized用法"><a href="#synchronized用法" class="headerlink" title="synchronized用法"></a>synchronized用法</h5><ul>
+<li><p>根据修饰对象分类：</p>
+<ul>
+<li>修饰代码块</li>
+<li>修饰方法</li>
+</ul>
+</li>
+<li><p>根据获取的锁分类：</p>
+<ul>
+<li>获取对象锁</li>
+<li>获取类锁</li>
+</ul>
+</li>
+</ul>
+<h4 id="synchronized用法详解"><a href="#synchronized用法详解" class="headerlink" title="synchronized用法详解"></a>synchronized用法详解</h4><h3 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h3>]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git</title>
+    <url>/2018/07/23/Git/</url>
+    <content><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="What-is-Git"><a href="#What-is-Git" class="headerlink" title="What is Git?"></a>What is Git?</h2><ul>
+<li>Git is the most advanced distributed version control system in the world.<a id="more"></a>
+<h2 id="What-is-the-different-between-the-SVN-Subversion-and-the-Git"><a href="#What-is-the-different-between-the-SVN-Subversion-and-the-Git" class="headerlink" title="What is the different between the SVN(Subversion) and the Git?"></a>What is the different between the SVN(Subversion) and the Git?</h2></li>
+<li>SVN is a centralized version control system which version library  centralized packed in the central server.So if you need to do your work,you must go to the central server to download the latest version.When you finished your work,you have to push on the central server.It’s so inconvenient.Actually the centralized version control system must accessible networking.<h5 id="just-like-this-photo"><a href="#just-like-this-photo" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/subversion.png?raw=true" alt=""></p>
+<ul>
+<li>Git is a distributed version control system,which advantaged is if it has not a central version,the LapTop is a rounded version library.because of this, you can work without using network.<h5 id="just-like-this-photo-1"><a href="#just-like-this-photo-1" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/git.png?raw=true" alt=""></p>
+<h2 id="there-are-some-useful-command-lines"><a href="#there-are-some-useful-command-lines" class="headerlink" title="there are some useful command lines :"></a>there are some useful command lines :</h2><ul>
+<li>mkdir: XX (Create an empty directory)/<em>XX refer to directory name</em>/</li>
+<li>pwd: (Show the path to the current directory)</li>
+<li>git: init (Change the current directory to a managed  Git repository,create a hidden file)</li>
+<li>git add XX (Add  XX file to working-storage section)</li>
+<li>git commit -m “XX” (Add a comment to a file)/<em>XX is the comment</em>/</li>
+<li>git status (View warehouse status)</li>
+<li>git log (View history)</li>
+<li>git diff XX (View XX file what are modified)</li>
+<li>git rm XX (Delete XX file)</li>
+<li>cat XX (View file contents)</li>
+<li>git checkout -b A  (Create a A branch and switch to A branch)</li>
+<li>git checkout master (back to master branch)</li>
+<li>git clone HTTPS (clone from online warehouse)</li>
+<li>git branch name (create a branch)</li>
+<li>git branch -d A (Delete A branch)</li>
+<li>git push origin master (push master branch to online warehouse)<h1 id="如何使用Git-Bash"><a href="#如何使用Git-Bash" class="headerlink" title="如何使用Git Bash"></a>如何使用Git Bash</h1><h2 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h2>当需要上传一个项目到Github时，这个时候你需要在自己的Github上新建一个项目<br>New repository<br>然后在右下角有一个Clone or download<br>点击之后有一个Clone with HTTPS<br>Use Git or checkout with SVN using the web URL.<br>复制地址之后<br>在需要上传的项目文件中<br>右键，点击Git Bash Here之后<br>先输入 git clone + 地址<br>会出现一个项目名称的文件夹<br>里面有隐藏文件.git与ReadMe.md<br>将具有项目名称的文件夹中的全部内容剪切到需要上传的项目的根目录下<br>之后在Git Bash中输入<br>git add .<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是GitHub上面：<br>git push origin master<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2>当需要更新已经上传的项目时<br>直接在已经写好的更新过的项目中<br>右键，点击Git Bash Here<br>然后在命令行中输入<br>git pull + 地址<br>上传跟新过之后，需要在命令行中输入<br>git add .<br>之后的步骤又是重复着之前的了<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是Github上面：<br>git push origin master</li>
+</ul>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ubuntu+Windows双系统安装指南</title>
     <url>/2020/05/05/Ubuntu-Windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<h1 id="Ubuntu-Windows双系统安装指南"><a href="#Ubuntu-Windows双系统安装指南" class="headerlink" title="Ubuntu+Windows双系统安装指南"></a>Ubuntu+Windows双系统安装指南</h1><blockquote>
@@ -953,6 +890,158 @@ FileWriter(File filename,boolean append);
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows虚拟环境在PyCharm中的使用</title>
+    <url>/2020/05/06/Windows%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%9C%A8PyCharm%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h1><blockquote>
+<p>网上对于Anaconda的安装是教程有很多，这里会为各位提供的是一个我当时安装时候所参考的链接地址。<a href="https://zhuanlan.zhihu.com/p/32925500" target="_blank" rel="noopener">Anaconda的介绍、安装及使用教程</a></p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Anaconda中创建虚拟环境（命令行模式）"><a href="#Anaconda中创建虚拟环境（命令行模式）" class="headerlink" title="Anaconda中创建虚拟环境（命令行模式）"></a>Anaconda中创建虚拟环境（命令行模式）</h2><blockquote>
+<p>在Anaconda中创建虚拟环境的方式：</p>
+<p>下面是创建python=3.6版本的环境，取名叫py36</p>
+<p>conda create -n py36 python=3.6</p>
+<p>删除环境</p>
+<p>conda remove -n py36 —all</p>
+<p>激活环境</p>
+<p>source activate py36</p>
+<p>退出环境</p>
+<p>source deactivate</p>
+</blockquote>
+<ul>
+<li><p>在创建虚拟环境的过程中，我遇到了一个问题，这个问题就是：<code>如果创建了多个python版本的环境，那么我应该如何去管理当中所安装的不同的包呢？并且与本机原本安装的python环境不起到冲突？</code></p>
+</li>
+<li><p>我解决Anaconda与本机办法是这样的：</p>
+<blockquote>
+<ul>
+<li>解决办法一：</li>
+</ul>
+<p>其实python 在安装的时候就为我们提供了两个版本的解决方案</p>
+<p>在C盘的windows 目录下有个 py.exe</p>
+<p>我们用py.exe 这个工具启动就能分辨出python的版本</p>
+<p>启动python2.7的pip</p>
+<p>直接在cmd 窗口里输入：py -2 -m pip install XXXX</p>
+<p>启动python3.6的pip</p>
+<p>直接在cmd 窗口里输入：py -3 -m pip install XXXX</p>
+<ul>
+<li>解决办法二：</li>
+</ul>
+<p>找到自己本机安装的Python路径（在Path中可以直接找到），然后找到自己的Python.exe文件，然后重命名即可。</p>
+<p>如：我对我本机的Python重命名为Python3，然后对Anaconda中安装的Python不重命名。</p>
+<p>之后需要对Anaconda中的python进行pip安装的时候，就输入：</p>
+<p>python -m pip install XXX</p>
+<p>然后对本机的python进行安装的时候，就输入：</p>
+<p>python3 -m pip install XXX</p>
+</blockquote>
+</li>
+<li><p>我解决Anaconda进入虚拟环境之后与Anaconda自身的Python冲突的问题：<br>&gt;</p>
+<blockquote>
+<p>根据上面启动虚拟环境的方法，我们能够启动已经创建的虚拟环境</p>
+<p>进入虚拟环境之后，输入：</p>
+<p>python -V</p>
+<p>就能够看到当前的虚拟环境中的python的版本号</p>
+<p>这个时候，输入：</p>
+<p>pip list</p>
+<p>你所看到的就是你当前环境下的pip所安装的包。</p>
+<p><code>如果你发现你的list还是Anaconda自带的list的话，就输入：</code></p>
+<p><code>python -m pip list</code></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Anaconda中创建虚拟环境（GUI模式）"><a href="#Anaconda中创建虚拟环境（GUI模式）" class="headerlink" title="Anaconda中创建虚拟环境（GUI模式）"></a>Anaconda中创建虚拟环境（GUI模式）</h2><p><code>当你安装好Anaconda之后，会出现一个Anaconda Mavigator，点击之后在里面也可以创建虚拟环境。</code></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/AnacondaNavigator.png?raw=true" alt="AnacondaMavigator"></p>
+<h1 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a>PyCharm</h1><ul>
+<li><p>在PyCharm中的<code>Settings</code>中的<code>Project Interpreter</code>进行python版本的选择。</p>
+</li>
+<li><p>找到你的<code>Anaconda</code>的<code>安装路径</code>。</p>
+</li>
+<li><p>然后在里面找到一个文件夹叫<code>envs</code>。</p>
+</li>
+<li><p>在这个文件夹里面有你创建的所有的虚拟环境。</p>
+</li>
+<li><p>选择你需要用到的虚拟环境，然后找到<code>python.exe</code>即可。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java原生数据类型与表达式</title>
+    <url>/2020/05/12/Java%E5%8E%9F%E7%94%9F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<h1 id="原生数据类型与表达式"><a href="#原生数据类型与表达式" class="headerlink" title="原生数据类型与表达式"></a>原生数据类型与表达式</h1><h2 id="原生数据类型"><a href="#原生数据类型" class="headerlink" title="原生数据类型"></a>原生数据类型</h2><ul>
+<li><p>1.Java 中的原生数据类型共有 8 种：</p>
+<ul>
+<li><p>1） 整型：使用 int 表示。（32 位）</p>
+</li>
+<li><p>2） 字节型：使用 byte 表示。（表示-128～127 之间的 256 个整数， 8 位）。</p>
+</li>
+<li><p>3）短整型：使用 short 表示。（16 位）</p>
+</li>
+<li><p>4）长整型：使用 long 表示。（64 位）</p>
+<a id="more"></a></li>
+<li><p>5）单精度浮点型：使用 float 表示。所谓浮点型，指的就是小数，也叫做实数，例如 1.2。</p>
+</li>
+<li><p>6）双精度浮点型：使用 double 表示。双精度浮点型表示的数据范围要比单精度浮点型大。</p>
+</li>
+<li><p>7）字符型：使用 char 表示（char 是 character 的缩写）。所谓字符，就是单个的字符表示，比如字母 a，或者中文张，外面用单引号包围上。比如 char a = ‘B’; char b = ‘张’;</p>
+</li>
+<li><p>8）布尔类型，使用 boolean 表示。布尔类型只有两种可能值，分别是 true 与 false。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>2.Java 中的所有浮点类型默认情况下都是 double。不能将 double 类型的值赋给 float 类型的变量，即便该 double 类型的值处于 float 类型的范围内也是不可以的。总之，能否成功赋值取决于等号右边的值类型与等号左边的变量类型是否一致。</p>
+</li>
+<li><p>3.如何将 double 类型的值赋给 float 类型的变量？答案就是(1)强制类型转换，将 double 类型的值强制转换为 float 类型。(2)使用 java 预言的支持。</p>
+</li>
+</ul>
+<p><code>强制转换的语法： 类型 变量名 = （类型）变量值;</code></p>
+<ul>
+<li><p>4.变量在使用前必须要赋值；变量必须要声明其类型方可使用；变量在使用前必须要定义，并且只能定义一次。</p>
+</li>
+<li><p>5.如下代码无法通过编译：</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>; <span class="keyword">short</span> b = a;</span><br></pre></td></tr></table></figure>
+<p>a 是 int 类型，b 是 short 类型，int 类型表示的数据范围要比 short 类型大，不能将表示<br>范围大的值赋给表示范围小的变量。</p>
+<ul>
+<li>6.如下代码可以通过编译：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">short</span> a = <span class="number">1</span>; <span class="keyword">int</span> b = a;</span><br></pre></td></tr></table></figure>
+<p>a 是 short 类型，b 是 int 类型，int 类型表示的数据范围要比 short 类型大，可以将表示<br>范围小的值赋给表示范围大的变量。</p>
+<ul>
+<li>7.总结：可以将表示范围小的值赋给表示范围大的变量；但不能直接将表示范围大的值赋给表示范围小的变量，只能通过强制类型转换实现。</li>
+</ul>
+<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><blockquote>
+<p>Java中使用的是<code>中缀表达式</code>——其实就是和数学上的函数表达式的道理是一样的。</p>
+</blockquote>
+<p><strong>注意：</strong></p>
+<ul>
+<li><p>在<code>初级运算</code>中运算产生的数据的数据类型和参与运算的数据的数据类型是相同的。</p>
+</li>
+<li><p>‘+’、’-‘、’*’、’/‘ 都是被重载过的。</p>
+</li>
+<li><p><code>逻辑运算符</code>中，’！’优先级最高，之后是 ‘&amp;&amp;’ ，最后是 ‘||’ 。</p>
+</li>
+<li><p>相同优先级运算顺序从左往右。</p>
+</li>
+<li><p>在<code>类型转换</code>中，如果不损失信息，数值会自动提升为高等级的数据类型。前提是，你的运算中含有高等级的运算符。当需要向低类型转换时，会<strong>截断取整</strong>，而不是四舍五入。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1627,95 +1716,6 @@ FileWriter(File filename,boolean append);
       </categories>
       <tags>
         <tag>计算机视觉</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Android面经</title>
-    <url>/2020/05/13/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8Android%E4%B8%80%E9%9D%A2%E9%9D%A2%E7%BB%8F/</url>
-    <content><![CDATA[<h1 id="Android开发岗个人面经"><a href="#Android开发岗个人面经" class="headerlink" title="Android开发岗个人面经"></a>Android开发岗个人面经</h1><h2 id="2020-05-13-字节跳动一面"><a href="#2020-05-13-字节跳动一面" class="headerlink" title="2020-05-13 字节跳动一面"></a>2020-05-13 字节跳动一面</h2><blockquote>
-<p>这也是我人生中第一次经历的面试，也是第一次的线上面试，总的来说，真的很慌张，而且其实自己也知道准备的是不充分的，但是还是硬着头皮参加了，也算是一种人生经历吧。下面是字节跳动一面时候问到的问题，先列举出来，然后进行一个知识总结与概括：</p>
-<ul>
-<li>操作系统中死锁的概念</li>
-<li>产生死锁的方式</li>
-<li>排序，谈谈有什么排序算法，讲一讲时间复杂度，以及排序的“稳定性”</li>
-<li>Java中 synchronized 与 Lock 区别</li>
-<li>单例模式实现，两种，多线程情况下的考虑</li>
-<li>Android生命周期解析</li>
-<li>Activity 之间的跳转生命周期是怎么变化的</li>
-<li>Android中Handler与Message机制在多线程环境下的消息传输</li>
-<li>算法题：排序，有序的数组中找到某一目标值首次出现的下标，如：111122223334455666，问6第一次出现的数组下标为？（不可以用暴力）</li>
-</ul>
-</blockquote>
-<p><strong>下面是针对面试中提出的问题进行的知识上的储备。</strong><br><a id="more"></a></p>
-<h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><p>两个或多个进程被无限期地阻塞、相互等待的一种状态。</p>
-<p>产生的<code>主要原因</code>：</p>
-<ul>
-<li>系统资源不足</li>
-<li>进程推进顺序非法</li>
-</ul>
-<p>产生死锁的<code>必要条件</code>：</p>
-<ul>
-<li>1、互斥条件，一个资源每次只能被一个进程使用。</li>
-<li>2、不可抢占条件，进程已获得资源，在未使用完之前不被强行剥夺。</li>
-<li>3、占有并等待条件，一个进程因请求资源而阻塞时，对已获得的资源保持不放。</li>
-<li>4、环形等待条件，若干进程之间形成一种首尾相接的循环等待资源关系。</li>
-</ul>
-<p><code>注：</code>这四个条件缺一不可，只有都满足了，才能够发生死锁。</p>
-<p>所以，如何解除死锁的问题，就是只需要破坏上述四个条件中其中一个就可以解决了。</p>
-<p><code>解决方案</code>：</p>
-<ul>
-<li><p>打破互斥条件：允许进程同时访问某些资源。————这个方法受制于实际场景，不推荐。</p>
-</li>
-<li><p>打破不可抢占条件：允许进程强行从占有者进程夺取某些资源。简单理解：占有资源的进程不能再申请占有其他资源，必须释放了手上拥有的资源后才能够发起申请。————相同的，不容易找到适用场景。</p>
-</li>
-<li><p>进程再运行前申请得到所有的资源，否则该进程不能进入准备执行状态。————缺点：资源利用率低，并发性低。</p>
-</li>
-<li><p>避免资源申请环路，即事先对资源进行分类编号，按号分配。————优点：有效提高资源的利用率和系统的吞吐量。缺点：加大系统开销，增大了进程对资源的占用时间。</p>
-</li>
-</ul>
-<p><code>消除死锁的方式</code>：</p>
-<ul>
-<li><p>重启系统。————这个代价太大了…………</p>
-</li>
-<li><p>撤销进程，剥夺资源。终止参与死锁的进程，收回他们的资源。这里又分两种情况：</p>
-<ul>
-<li>一次性撤销参与死锁的全部进程，剥夺全部资源。</li>
-<li>逐步撤销参与的进程，逐步回收死锁进程占有的资源。</li>
-</ul>
-</li>
-<li><p>进程回退策略，即让参与死锁的进程回退到没有发生死锁前某一点处，并由此点继续执行，以求再次执行时不发生死锁。</p>
-</li>
-</ul>
-<h3 id="synchronized详解、Lock详解"><a href="#synchronized详解、Lock详解" class="headerlink" title="synchronized详解、Lock详解"></a>synchronized详解、Lock详解</h3><h4 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h4><p><strong>作用：</strong> 利用锁的机制来实现同步的。</p>
-<p><code>锁机制特性：</code></p>
-<p>互斥性：同一时间只允许一个线程持有某个对象锁。————往往称为操作的原子性。</p>
-<p>可见性：必须确保在锁被释放之前，对共享变量所做的修改，对于随后获得该锁的另一个线程是可见的（即在获得锁时应获得最新共享变量的值），否则另一个线程可能是在本地缓存的某个副本上继续操作从而引起不一致。</p>
-<h5 id="对象锁和类锁"><a href="#对象锁和类锁" class="headerlink" title="对象锁和类锁"></a>对象锁和类锁</h5><ul>
-<li><p>对象锁：在Java中，每个对象都会有一个monitor对象，这个就是Java对象的锁————又叫内置锁/对象锁。每个对象都有一个独立的内置锁，互不干扰。</p>
-</li>
-<li><p>类锁：每个类都有一个类锁。</p>
-</li>
-</ul>
-<h5 id="synchronized用法"><a href="#synchronized用法" class="headerlink" title="synchronized用法"></a>synchronized用法</h5><ul>
-<li><p>根据修饰对象分类：</p>
-<ul>
-<li>修饰代码块</li>
-<li>修饰方法</li>
-</ul>
-</li>
-<li><p>根据获取的锁分类：</p>
-<ul>
-<li>获取对象锁</li>
-<li>获取类锁</li>
-</ul>
-</li>
-</ul>
-<h4 id="synchronized用法详解"><a href="#synchronized用法详解" class="headerlink" title="synchronized用法详解"></a>synchronized用法详解</h4>]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
