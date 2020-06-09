@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/old_image/activity.png?raw=true">
 <meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/Android%E5%BC%80%E5%8F%91%E6%8E%A2%E7%B4%A2/%E5%BC%82%E5%B8%B8%E6%83%85%E5%86%B5%E4%B8%8Bactivity%E9%87%8D%E5%BB%BA%E8%BF%87%E7%A8%8B.png?raw=true">
-<meta property="og:updated_time" content="2020-06-09T10:30:03.958Z">
+<meta property="og:updated_time" content="2020-06-09T13:01:15.039Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android生命周期的分析">
 <meta name="twitter:description" content="activity的生命周期分析 activity的生命周期分为两部分内容  典型情况下的生命周期  在有用户参与的情况下，activity所经历过的生命周期的改变   异常情况下的生命周期  指activity被系统回收或由于当前设备的Configuration发生改变从而导致activity被销毁重建">
@@ -231,7 +231,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-09 18:30:03" itemprop="dateModified" datetime="2020-06-09T18:30:03+08:00">2020-06-09</time>
+                <time title="修改时间：2020-06-09 21:01:15" itemprop="dateModified" datetime="2020-06-09T21:01:15+08:00">2020-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -344,7 +344,15 @@
 </ul>
 </li>
 </ul>
-<h3 id="资源内存不足导致低优先级activity被杀死"><a href="#资源内存不足导致低优先级activity被杀死" class="headerlink" title="资源内存不足导致低优先级activity被杀死"></a>资源内存不足导致低优先级activity被杀死</h3>
+<h3 id="资源内存不足导致低优先级activity被杀死"><a href="#资源内存不足导致低优先级activity被杀死" class="headerlink" title="资源内存不足导致低优先级activity被杀死"></a>资源内存不足导致低优先级activity被杀死</h3><blockquote>
+<p>Activity优先级情况，从高到低可分为：</p>
+</blockquote>
+<ul>
+<li>前台activity——正在和用户交互的activity——优先级最高</li>
+<li>可见但非前台activity——比如弹出一个Dialog导致activity可见但不可交互</li>
+<li>后台activity——已被暂停的activity——优先级最低</li>
+</ul>
+
     </div>
 
     

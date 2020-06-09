@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Android自定义控件</title>
+    <url>/2018/07/23/Android%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/</url>
+    <content><![CDATA[<h3 id="Android属性动画的分类"><a href="#Android属性动画的分类" class="headerlink" title="Android属性动画的分类"></a>Android属性动画的分类</h3><ul>
+<li>View Animation(补间)</li>
+<li>Drawable Animation(帧动画)</li>
+<li>Property Animation(Android3.0新引入)</li>
+</ul>
+<a id="more"></a>
+<h4 id="View-Animation"><a href="#View-Animation" class="headerlink" title="View Animation"></a>View Animation</h4><ul>
+<li>基于view的渐变动画，只改变view的绘制效果，而实际属性值未该改变。</li>
+<li>比如：动画移动一个按钮位置，但按钮点击的实际位置仍未改变。</li>
+<li>代码中定义动画，可以参考<code>AnimationSet</code>类和<code>Animation</code>的子类。</li>
+<li>而如果使用XML，可以在res/anim/文件夹中定义XML文件。</li>
+<li>下面是一个实例<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">TranslateAnimation animation = <span class="keyword">new</span> TranslateAnimation(<span class="number">0</span>,iv_animation.getWidth(),<span class="number">0</span>,iv_animation.getHight());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">iv_animation是需要移动的图片的id</span></span><br><span class="line"><span class="comment">使用TranslateAnimation的构造方法，将图片从0(原始位置)移动图片长度的长度(iv_animation.getWidth);</span></span><br><span class="line"><span class="comment">高度的移动也是同样的道理</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">animation.setDuration(<span class="number">3000</span>);<span class="comment">//设置延迟效果</span></span><br><span class="line">animation.setFillAfter(<span class="keyword">true</span>);<span class="comment">//使得view不再复位</span></span><br><span class="line">iv_animation.startAnimation(animation);<span class="comment">//开始移动</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Drawable-Animation"><a href="#Drawable-Animation" class="headerlink" title="Drawable Animation"></a>Drawable Animation</h4><ul>
+<li>加载一系列Drawable资源来创建动画，这种传统动画某种程度上就是创建不同图片序列，顺序播放，就像电影胶片。</li>
+<li>在代码中定义动画帧，使用<code>AnimationDrawable</code>类。</li>
+<li>XML文件能更简单的组成动画帧，在<code>res/drawable</code>文件夹，使用<code>&lt;animation-list&gt;</code>采用<code>&lt;item&gt;</code>来定义不同的帧。</li>
+<li>注：感觉只能设置的属性是动画间隔时间。</li>
+</ul>
+<h4 id="Property-Animation-属性动画"><a href="#Property-Animation-属性动画" class="headerlink" title="Property Animation(属性动画)"></a>Property Animation(属性动画)</h4><ul>
+<li>动画的对象除了传统的view对象，还可以是Object对象，动画之后，Object对象的属性值就实实在在的改变了。</li>
+<li>Property Animation能够通过改变view对象的实际属性来实现view动画。</li>
+<li>任何时候view属性的改变，view能够自动调用invalidate()来试试刷新。</li>
+<li><p>下面是一个实例</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ObjectAnimator animator = ObjectAnimator.ofFloat(iv_animation,<span class="string">"translationX"</span>,<span class="number">0</span>,iv_animation.getWidth());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">使用ObjectAnimator的ofFloat进行平移</span></span><br><span class="line"><span class="comment">ofFloat(平移的id,“如何平移，如：(水平-&gt;translationX)”,初始位置,平移距离);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">ObjectAnimator animator2 = ObjectAnimator.ofFloat(iv_animation,<span class="string">"translationY"</span>,<span class="number">0</span>,iv_animation.getHight());</span><br><span class="line">AnimatorSet animatorSet = <span class="keyword">new</span> AnimatorSet();</span><br><span class="line">AnimatorSet.setDuration(<span class="number">2000</span>);</span><br><span class="line">AnimatorSet.setInterpolator(<span class="keyword">new</span> BounceInterpolator());</span><br><span class="line"><span class="comment">//两个动画一起播放</span></span><br><span class="line">animatorSet.playTogether(animator,animator2);</span><br><span class="line"><span class="comment">//开始播放</span></span><br><span class="line">animatorSet.start();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>另一种写法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">iv_animation.animate()</span><br><span class="line">            .translationXBy(iv_animation.getWidth())</span><br><span class="line">            .translationYBy(iv_animation.getHight())</span><br><span class="line">            .setDuration(<span class="number">2000</span>)</span><br><span class="line">            .setInterpolator(<span class="keyword">new</span> BounceInterpolator())</span><br><span class="line">            .start();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="ViewPager-广告条效果"><a href="#ViewPager-广告条效果" class="headerlink" title="ViewPager(广告条效果)"></a>ViewPager(广告条效果)</h3><ul>
+<li>ViewPager的使用</li>
+<li>广告条的基本功能</li>
+<li>ViewPager拓展</li>
+<li>改进成引导页面</li>
+</ul>
+<h4 id="ViewPager的使用"><a href="#ViewPager的使用" class="headerlink" title="ViewPager的使用"></a>ViewPager的使用</h4><ul>
+<li>第一：使用<code>android.support.v4.view.ViewPager</code>在布局文件中定义</li>
+<li>第二：在代码中实例化ViewPager</li>
+<li>第三：准备数据</li>
+<li>第四：设置适配器(PagerAdapter)-item-布局-绑定数据</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Android生命周期的分析</title>
     <url>/2018/09/04/Android%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<h1 id="activity的生命周期分析"><a href="#activity的生命周期分析" class="headerlink" title="activity的生命周期分析"></a>activity的生命周期分析</h1><ul>
@@ -72,105 +126,20 @@
 </ul>
 </li>
 </ul>
-<h3 id="资源内存不足导致低优先级activity被杀死"><a href="#资源内存不足导致低优先级activity被杀死" class="headerlink" title="资源内存不足导致低优先级activity被杀死"></a>资源内存不足导致低优先级activity被杀死</h3>]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Android自定义控件</title>
-    <url>/2018/07/23/Android%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/</url>
-    <content><![CDATA[<h3 id="Android属性动画的分类"><a href="#Android属性动画的分类" class="headerlink" title="Android属性动画的分类"></a>Android属性动画的分类</h3><ul>
-<li>View Animation(补间)</li>
-<li>Drawable Animation(帧动画)</li>
-<li>Property Animation(Android3.0新引入)</li>
-</ul>
-<a id="more"></a>
-<h4 id="View-Animation"><a href="#View-Animation" class="headerlink" title="View Animation"></a>View Animation</h4><ul>
-<li>基于view的渐变动画，只改变view的绘制效果，而实际属性值未该改变。</li>
-<li>比如：动画移动一个按钮位置，但按钮点击的实际位置仍未改变。</li>
-<li>代码中定义动画，可以参考<code>AnimationSet</code>类和<code>Animation</code>的子类。</li>
-<li>而如果使用XML，可以在res/anim/文件夹中定义XML文件。</li>
-<li>下面是一个实例<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">TranslateAnimation animation = <span class="keyword">new</span> TranslateAnimation(<span class="number">0</span>,iv_animation.getWidth(),<span class="number">0</span>,iv_animation.getHight());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">iv_animation是需要移动的图片的id</span></span><br><span class="line"><span class="comment">使用TranslateAnimation的构造方法，将图片从0(原始位置)移动图片长度的长度(iv_animation.getWidth);</span></span><br><span class="line"><span class="comment">高度的移动也是同样的道理</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">animation.setDuration(<span class="number">3000</span>);<span class="comment">//设置延迟效果</span></span><br><span class="line">animation.setFillAfter(<span class="keyword">true</span>);<span class="comment">//使得view不再复位</span></span><br><span class="line">iv_animation.startAnimation(animation);<span class="comment">//开始移动</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="Drawable-Animation"><a href="#Drawable-Animation" class="headerlink" title="Drawable Animation"></a>Drawable Animation</h4><ul>
-<li>加载一系列Drawable资源来创建动画，这种传统动画某种程度上就是创建不同图片序列，顺序播放，就像电影胶片。</li>
-<li>在代码中定义动画帧，使用<code>AnimationDrawable</code>类。</li>
-<li>XML文件能更简单的组成动画帧，在<code>res/drawable</code>文件夹，使用<code>&lt;animation-list&gt;</code>采用<code>&lt;item&gt;</code>来定义不同的帧。</li>
-<li>注：感觉只能设置的属性是动画间隔时间。</li>
-</ul>
-<h4 id="Property-Animation-属性动画"><a href="#Property-Animation-属性动画" class="headerlink" title="Property Animation(属性动画)"></a>Property Animation(属性动画)</h4><ul>
-<li>动画的对象除了传统的view对象，还可以是Object对象，动画之后，Object对象的属性值就实实在在的改变了。</li>
-<li>Property Animation能够通过改变view对象的实际属性来实现view动画。</li>
-<li>任何时候view属性的改变，view能够自动调用invalidate()来试试刷新。</li>
-<li><p>下面是一个实例</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ObjectAnimator animator = ObjectAnimator.ofFloat(iv_animation,<span class="string">"translationX"</span>,<span class="number">0</span>,iv_animation.getWidth());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">使用ObjectAnimator的ofFloat进行平移</span></span><br><span class="line"><span class="comment">ofFloat(平移的id,“如何平移，如：(水平-&gt;translationX)”,初始位置,平移距离);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">ObjectAnimator animator2 = ObjectAnimator.ofFloat(iv_animation,<span class="string">"translationY"</span>,<span class="number">0</span>,iv_animation.getHight());</span><br><span class="line">AnimatorSet animatorSet = <span class="keyword">new</span> AnimatorSet();</span><br><span class="line">AnimatorSet.setDuration(<span class="number">2000</span>);</span><br><span class="line">AnimatorSet.setInterpolator(<span class="keyword">new</span> BounceInterpolator());</span><br><span class="line"><span class="comment">//两个动画一起播放</span></span><br><span class="line">animatorSet.playTogether(animator,animator2);</span><br><span class="line"><span class="comment">//开始播放</span></span><br><span class="line">animatorSet.start();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>另一种写法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">iv_animation.animate()</span><br><span class="line">            .translationXBy(iv_animation.getWidth())</span><br><span class="line">            .translationYBy(iv_animation.getHight())</span><br><span class="line">            .setDuration(<span class="number">2000</span>)</span><br><span class="line">            .setInterpolator(<span class="keyword">new</span> BounceInterpolator())</span><br><span class="line">            .start();</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="ViewPager-广告条效果"><a href="#ViewPager-广告条效果" class="headerlink" title="ViewPager(广告条效果)"></a>ViewPager(广告条效果)</h3><ul>
-<li>ViewPager的使用</li>
-<li>广告条的基本功能</li>
-<li>ViewPager拓展</li>
-<li>改进成引导页面</li>
-</ul>
-<h4 id="ViewPager的使用"><a href="#ViewPager的使用" class="headerlink" title="ViewPager的使用"></a>ViewPager的使用</h4><ul>
-<li>第一：使用<code>android.support.v4.view.ViewPager</code>在布局文件中定义</li>
-<li>第二：在代码中实例化ViewPager</li>
-<li>第三：准备数据</li>
-<li>第四：设置适配器(PagerAdapter)-item-布局-绑定数据</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git</title>
-    <url>/2018/07/23/Git/</url>
-    <content><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="What-is-Git"><a href="#What-is-Git" class="headerlink" title="What is Git?"></a>What is Git?</h2><ul>
-<li>Git is the most advanced distributed version control system in the world.<a id="more"></a>
-<h2 id="What-is-the-different-between-the-SVN-Subversion-and-the-Git"><a href="#What-is-the-different-between-the-SVN-Subversion-and-the-Git" class="headerlink" title="What is the different between the SVN(Subversion) and the Git?"></a>What is the different between the SVN(Subversion) and the Git?</h2></li>
-<li>SVN is a centralized version control system which version library  centralized packed in the central server.So if you need to do your work,you must go to the central server to download the latest version.When you finished your work,you have to push on the central server.It’s so inconvenient.Actually the centralized version control system must accessible networking.<h5 id="just-like-this-photo"><a href="#just-like-this-photo" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/subversion.png?raw=true" alt=""></p>
+<h3 id="资源内存不足导致低优先级activity被杀死"><a href="#资源内存不足导致低优先级activity被杀死" class="headerlink" title="资源内存不足导致低优先级activity被杀死"></a>资源内存不足导致低优先级activity被杀死</h3><blockquote>
+<p>Activity优先级情况，从高到低可分为：</p>
+</blockquote>
 <ul>
-<li>Git is a distributed version control system,which advantaged is if it has not a central version,the LapTop is a rounded version library.because of this, you can work without using network.<h5 id="just-like-this-photo-1"><a href="#just-like-this-photo-1" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/git.png?raw=true" alt=""></p>
-<h2 id="there-are-some-useful-command-lines"><a href="#there-are-some-useful-command-lines" class="headerlink" title="there are some useful command lines :"></a>there are some useful command lines :</h2><ul>
-<li>mkdir: XX (Create an empty directory)/<em>XX refer to directory name</em>/</li>
-<li>pwd: (Show the path to the current directory)</li>
-<li>git: init (Change the current directory to a managed  Git repository,create a hidden file)</li>
-<li>git add XX (Add  XX file to working-storage section)</li>
-<li>git commit -m “XX” (Add a comment to a file)/<em>XX is the comment</em>/</li>
-<li>git status (View warehouse status)</li>
-<li>git log (View history)</li>
-<li>git diff XX (View XX file what are modified)</li>
-<li>git rm XX (Delete XX file)</li>
-<li>cat XX (View file contents)</li>
-<li>git checkout -b A  (Create a A branch and switch to A branch)</li>
-<li>git checkout master (back to master branch)</li>
-<li>git clone HTTPS (clone from online warehouse)</li>
-<li>git branch name (create a branch)</li>
-<li>git branch -d A (Delete A branch)</li>
-<li>git push origin master (push master branch to online warehouse)<h1 id="如何使用Git-Bash"><a href="#如何使用Git-Bash" class="headerlink" title="如何使用Git Bash"></a>如何使用Git Bash</h1><h2 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h2>当需要上传一个项目到Github时，这个时候你需要在自己的Github上新建一个项目<br>New repository<br>然后在右下角有一个Clone or download<br>点击之后有一个Clone with HTTPS<br>Use Git or checkout with SVN using the web URL.<br>复制地址之后<br>在需要上传的项目文件中<br>右键，点击Git Bash Here之后<br>先输入 git clone + 地址<br>会出现一个项目名称的文件夹<br>里面有隐藏文件.git与ReadMe.md<br>将具有项目名称的文件夹中的全部内容剪切到需要上传的项目的根目录下<br>之后在Git Bash中输入<br>git add .<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是GitHub上面：<br>git push origin master<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2>当需要更新已经上传的项目时<br>直接在已经写好的更新过的项目中<br>右键，点击Git Bash Here<br>然后在命令行中输入<br>git pull + 地址<br>上传跟新过之后，需要在命令行中输入<br>git add .<br>之后的步骤又是重复着之前的了<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是Github上面：<br>git push origin master</li>
+<li>前台activity——正在和用户交互的activity——优先级最高</li>
+<li>可见但非前台activity——比如弹出一个Dialog导致activity可见但不可交互</li>
+<li>后台activity——已被暂停的activity——优先级最低</li>
 </ul>
 ]]></content>
       <categories>
-        <category>git</category>
+        <category>Android</category>
       </categories>
       <tags>
-        <tag>git</tag>
+        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
@@ -235,78 +204,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java原生数据类型与表达式</title>
-    <url>/2020/05/12/Java%E5%8E%9F%E7%94%9F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<h1 id="原生数据类型与表达式"><a href="#原生数据类型与表达式" class="headerlink" title="原生数据类型与表达式"></a>原生数据类型与表达式</h1><h2 id="原生数据类型"><a href="#原生数据类型" class="headerlink" title="原生数据类型"></a>原生数据类型</h2><ul>
-<li><p>1.Java 中的原生数据类型共有 8 种：</p>
-<ul>
-<li><p>1） 整型：使用 int 表示。（32 位）</p>
-</li>
-<li><p>2） 字节型：使用 byte 表示。（表示-128～127 之间的 256 个整数， 8 位）。</p>
-</li>
-<li><p>3）短整型：使用 short 表示。（16 位）</p>
-</li>
-<li><p>4）长整型：使用 long 表示。（64 位）</p>
-<a id="more"></a></li>
-<li><p>5）单精度浮点型：使用 float 表示。所谓浮点型，指的就是小数，也叫做实数，例如 1.2。</p>
-</li>
-<li><p>6）双精度浮点型：使用 double 表示。双精度浮点型表示的数据范围要比单精度浮点型大。</p>
-</li>
-<li><p>7）字符型：使用 char 表示（char 是 character 的缩写）。所谓字符，就是单个的字符表示，比如字母 a，或者中文张，外面用单引号包围上。比如 char a = ‘B’; char b = ‘张’;</p>
-</li>
-<li><p>8）布尔类型，使用 boolean 表示。布尔类型只有两种可能值，分别是 true 与 false。</p>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>2.Java 中的所有浮点类型默认情况下都是 double。不能将 double 类型的值赋给 float 类型的变量，即便该 double 类型的值处于 float 类型的范围内也是不可以的。总之，能否成功赋值取决于等号右边的值类型与等号左边的变量类型是否一致。</p>
-</li>
-<li><p>3.如何将 double 类型的值赋给 float 类型的变量？答案就是(1)强制类型转换，将 double 类型的值强制转换为 float 类型。(2)使用 java 预言的支持。</p>
-</li>
-</ul>
-<p><code>强制转换的语法： 类型 变量名 = （类型）变量值;</code></p>
-<ul>
-<li><p>4.变量在使用前必须要赋值；变量必须要声明其类型方可使用；变量在使用前必须要定义，并且只能定义一次。</p>
-</li>
-<li><p>5.如下代码无法通过编译：</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>; <span class="keyword">short</span> b = a;</span><br></pre></td></tr></table></figure>
-<p>a 是 int 类型，b 是 short 类型，int 类型表示的数据范围要比 short 类型大，不能将表示<br>范围大的值赋给表示范围小的变量。</p>
-<ul>
-<li>6.如下代码可以通过编译：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">short</span> a = <span class="number">1</span>; <span class="keyword">int</span> b = a;</span><br></pre></td></tr></table></figure>
-<p>a 是 short 类型，b 是 int 类型，int 类型表示的数据范围要比 short 类型大，可以将表示<br>范围小的值赋给表示范围大的变量。</p>
-<ul>
-<li>7.总结：可以将表示范围小的值赋给表示范围大的变量；但不能直接将表示范围大的值赋给表示范围小的变量，只能通过强制类型转换实现。</li>
-</ul>
-<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><blockquote>
-<p>Java中使用的是<code>中缀表达式</code>——其实就是和数学上的函数表达式的道理是一样的。</p>
-</blockquote>
-<p><strong>注意：</strong></p>
-<ul>
-<li><p>在<code>初级运算</code>中运算产生的数据的数据类型和参与运算的数据的数据类型是相同的。</p>
-</li>
-<li><p>‘+’、’-‘、’*’、’/‘ 都是被重载过的。</p>
-</li>
-<li><p><code>逻辑运算符</code>中，’！’优先级最高，之后是 ‘&amp;&amp;’ ，最后是 ‘||’ 。</p>
-</li>
-<li><p>相同优先级运算顺序从左往右。</p>
-</li>
-<li><p>在<code>类型转换</code>中，如果不损失信息，数值会自动提升为高等级的数据类型。前提是，你的运算中含有高等级的运算符。当需要向低类型转换时，会<strong>截断取整</strong>，而不是四舍五入。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Django服务器部署到腾讯云</title>
     <url>/2018/08/06/Django%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<h1 id="Django服务器部署到腾讯云"><a href="#Django服务器部署到腾讯云" class="headerlink" title="Django服务器部署到腾讯云"></a>Django服务器部署到腾讯云</h1><ul>
@@ -349,6 +246,45 @@
       </categories>
       <tags>
         <tag>后端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git</title>
+    <url>/2018/07/23/Git/</url>
+    <content><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="What-is-Git"><a href="#What-is-Git" class="headerlink" title="What is Git?"></a>What is Git?</h2><ul>
+<li>Git is the most advanced distributed version control system in the world.<a id="more"></a>
+<h2 id="What-is-the-different-between-the-SVN-Subversion-and-the-Git"><a href="#What-is-the-different-between-the-SVN-Subversion-and-the-Git" class="headerlink" title="What is the different between the SVN(Subversion) and the Git?"></a>What is the different between the SVN(Subversion) and the Git?</h2></li>
+<li>SVN is a centralized version control system which version library  centralized packed in the central server.So if you need to do your work,you must go to the central server to download the latest version.When you finished your work,you have to push on the central server.It’s so inconvenient.Actually the centralized version control system must accessible networking.<h5 id="just-like-this-photo"><a href="#just-like-this-photo" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/subversion.png?raw=true" alt=""></p>
+<ul>
+<li>Git is a distributed version control system,which advantaged is if it has not a central version,the LapTop is a rounded version library.because of this, you can work without using network.<h5 id="just-like-this-photo-1"><a href="#just-like-this-photo-1" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/git.png?raw=true" alt=""></p>
+<h2 id="there-are-some-useful-command-lines"><a href="#there-are-some-useful-command-lines" class="headerlink" title="there are some useful command lines :"></a>there are some useful command lines :</h2><ul>
+<li>mkdir: XX (Create an empty directory)/<em>XX refer to directory name</em>/</li>
+<li>pwd: (Show the path to the current directory)</li>
+<li>git: init (Change the current directory to a managed  Git repository,create a hidden file)</li>
+<li>git add XX (Add  XX file to working-storage section)</li>
+<li>git commit -m “XX” (Add a comment to a file)/<em>XX is the comment</em>/</li>
+<li>git status (View warehouse status)</li>
+<li>git log (View history)</li>
+<li>git diff XX (View XX file what are modified)</li>
+<li>git rm XX (Delete XX file)</li>
+<li>cat XX (View file contents)</li>
+<li>git checkout -b A  (Create a A branch and switch to A branch)</li>
+<li>git checkout master (back to master branch)</li>
+<li>git clone HTTPS (clone from online warehouse)</li>
+<li>git branch name (create a branch)</li>
+<li>git branch -d A (Delete A branch)</li>
+<li>git push origin master (push master branch to online warehouse)<h1 id="如何使用Git-Bash"><a href="#如何使用Git-Bash" class="headerlink" title="如何使用Git Bash"></a>如何使用Git Bash</h1><h2 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h2>当需要上传一个项目到Github时，这个时候你需要在自己的Github上新建一个项目<br>New repository<br>然后在右下角有一个Clone or download<br>点击之后有一个Clone with HTTPS<br>Use Git or checkout with SVN using the web URL.<br>复制地址之后<br>在需要上传的项目文件中<br>右键，点击Git Bash Here之后<br>先输入 git clone + 地址<br>会出现一个项目名称的文件夹<br>里面有隐藏文件.git与ReadMe.md<br>将具有项目名称的文件夹中的全部内容剪切到需要上传的项目的根目录下<br>之后在Git Bash中输入<br>git add .<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是GitHub上面：<br>git push origin master<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2>当需要更新已经上传的项目时<br>直接在已经写好的更新过的项目中<br>右键，点击Git Bash Here<br>然后在命令行中输入<br>git pull + 地址<br>上传跟新过之后，需要在命令行中输入<br>git add .<br>之后的步骤又是重复着之前的了<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是Github上面：<br>git push origin master</li>
+</ul>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -521,273 +457,6 @@ FileWriter(File filename,boolean append);
       </tags>
   </entry>
   <entry>
-    <title>QTDesigner</title>
-    <url>/2018/07/22/QTDesigner/</url>
-    <content><![CDATA[<h2 id="QT的安装"><a href="#QT的安装" class="headerlink" title="QT的安装"></a>QT的安装</h2><ul>
-<li>对于QT的安装，个人的推荐是参考<a href="http://blog.csdn.net/liang19890820/article/details/53931813" target="_blank" rel="noopener">QT5.7+VS2015安装教程</a>。这个教程写的很详细，而且也非常的nice。</li>
-</ul>
-<a id="more"></a>
-<h2 id="QT在VS2015中的使用"><a href="#QT在VS2015中的使用" class="headerlink" title="QT在VS2015中的使用"></a>QT在VS2015中的使用</h2><ul>
-<li><p>现在我们正式在VS2015中去使用QT，使用前，先需要创建一个QT的项目。</p>
-</li>
-<li><p>使用VS2015中文件——&gt;新建——&gt;项目。点击之后，会出现如下界面：</p>
-</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTCreate.png?raw=true" alt=""></p>
-<ul>
-<li>模板选择VisualC++下的Qt，选择QT GUI Application，上方的.NET Framework直接选择默认即可。</li>
-<li>选择之后点击下一步，会出现如下界面：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT1.png?raw=true" alt=""></p>
-<ul>
-<li>点击next之后会出现如下界面：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT2.png?raw=true" alt=""><br><strong>这里根据需要可以自己选择，如果是新手可以先直接下一步。</strong></p>
-<ul>
-<li>点击next之后会出现如下界面：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT3.png?raw=true" alt=""><br><strong>这里默认直接finish就可以，如果有什么需要的可以自行设置。</strong></p>
-<ul>
-<li>当创建好之后就会出现如下画面：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTFinish.png?raw=true" alt=""></p>
-<ul>
-<li>上面的画面就是我们需要进行操作的界面了。此时，<code>双击</code>QTTest.ui【位于:解决方案资源管理器-&gt;Form Files】</li>
-<li>双击进去之后就是我们需要进行ui设计的界面了（如下图所示）：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTDesigner.png?raw=true" alt=""></p>
-<ul>
-<li>在这里，你可以进行控件的拖动，直接拖到方框中去，然后再对象查看器（如下图所示）可以看到你控件所对应的类以及生成的对象。</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest1.png?raw=true" alt=""></p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest2.png?raw=true" alt=""></p>
-<ul>
-<li>创建好对象之后，点击左上角的文件-&gt;保存（Ctrl+S）</li>
-<li>然后关闭QT Designer，回到VS2015中，<code>右键QTTest.ui，选择编译（Ctrl+F7）</code>，如下图所示：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest3.png?raw=true" alt=""></p>
-<ul>
-<li>编译成功之后（一般情况下都是会编译成功的），<code>双击打开QTTest.cpp</code>,里面的代码是这样的：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>这个时候，在<code>ui.setupUi下输入ui.pushButton</code>即可获取到刚刚创建的button的实例。代码如下所示：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">	ui.pushButton;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>在QT中，控件与控件之间的数据传输是通过<code>信号与槽</code>的方式进行的，下面就演示其中一种的数据传输的方式：（代码如下：）</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">	connect(ui.pushButton, &amp;QPushButton::clicked, [this] &#123;</span><br><span class="line">		ui.label-&gt;setText(ui.label-&gt;text().replace(QRegExp(&quot;\\d+&quot;), &quot;25&quot;));</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>实现之后的效果为：</p>
-<ul>
-<li>未点击button之前：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/ClickBefore.png?raw=true" alt=""></p>
-<ul>
-<li>点击button之后：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/ClickAfter.png?raw=true" alt=""></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>QT</category>
-      </categories>
-      <tags>
-        <tag>QT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MATLAB概述</title>
-    <url>/2018/07/22/MATLAB%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h1 id="MATLAB概述"><a href="#MATLAB概述" class="headerlink" title="MATLAB概述"></a>MATLAB概述</h1><ul>
-<li>主要包括MATLAB和Simulink两大部分。<blockquote>
-<ul>
-<li>MATLAB基于矩阵(Matrix)的运算，全称为:MATreix LABoratory</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>MATLAB主要功能<blockquote>
-<ul>
-<li>技术计算—&gt;数学计算、分析、可视化和算法开发</li>
-<li>控制系统设计—&gt;控制系统基于模型的设计，包括嵌入式系统仿真、快速原型及代码生成等</li>
-<li>信号处理和通信—&gt;信号处理和通信系统基于模型的设计，包括仿真、代码生成和验证等</li>
-<li>图像处理—&gt;图像采集、分析、可视化和算法开发</li>
-<li>测试和测量—&gt;测试和测量应用中硬件连接性和数据分析</li>
-<li>计算你生物学—&gt;生物数据和系统分析、可视化与仿真</li>
-<li>计算金融—&gt;金融建模、分析及应用程序开发</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li><p>MATLAB分析和访问数据</p>
-<ul>
-<li>数据分析</li>
-</ul>
-<blockquote>
-<p>MATLAB提供有一下一些用于数据分析运算的交互式工具和命令行函数</p>
-<ul>
-<li>内插和抽取</li>
-<li>抽取数据段、缩放和求平均值</li>
-<li>阈值和平滑处理</li>
-<li>相关性、傅里叶分析和筛选</li>
-<li>一维峰值、谷值以及零点查找</li>
-<li>基本统计数据和曲线拟合</li>
-<li>矩阵分析</li>
-</ul>
-</blockquote>
-<ul>
-<li>数据访问</li>
-</ul>
-<blockquote>
-<p>可以从各种常用文件格式(如Microsoft Excel)、ASCII文本或者二进制文件、图像、语音和视频文件，以及诸如HDF和HDF5等科学文件中读取数据</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li><p>MATLAB实现数据可视化</p>
-<ul>
-<li><p>二维绘图</p>
-<blockquote>
-<p>使用二维绘图函数将数据向量可视化</p>
-<ul>
-<li>线图、区域图、条形图以及饼图</li>
-<li>方向图及速率图</li>
-<li>直方图</li>
-<li>多边形图和曲面图</li>
-<li>散点图/气泡图</li>
-<li>动画</li>
-</ul>
-</blockquote>
-</li>
-<li><p>三维绘图和卷可视化</p>
-<blockquote>
-<p>提供有将二维矩阵、三维向量和三维标量数据可视化的函数；还可以指定图形特性，例如：相机取景角度、透视图、灯光效果、光源位置以及透明度等等。<strong>三维绘图函数包括：</strong></p>
-<ul>
-<li>曲面图、轮廓图和网状图</li>
-<li>成像图</li>
-<li>锥形图、切割图、流程图以及等值面图</li>
-</ul>
-</blockquote>
-</li>
-<li><p>交互式创建和编译图形</p>
-<blockquote>
-<p>具有一些设计和修改图形的交互式工具。<strong>可执行的操作有：</strong></p>
-<ul>
-<li>将新的数据集拖放到图形上</li>
-<li>更改图形上任意对象的属性</li>
-<li>缩放、旋转、平移以及更改相机角度和灯光</li>
-<li>添加批注和数据提示</li>
-<li>绘制形状</li>
-<li>生成可供各种数据重复使用的MATLAB自带函数</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>MATLAB进行数值计算</p>
-<blockquote>
-<p>MATLAB提供以下类型函数用于数值计算与数值分析：</p>
-<ul>
-<li>矩阵操作和线性代数</li>
-<li>多项式和内插</li>
-<li>傅里叶分析和筛选</li>
-<li>数据分析和统计</li>
-<li>优化和数值积分</li>
-<li>常微分方程(ODE)</li>
-<li>偏微分方程(PDE)</li>
-<li>稀疏矩阵运算</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h3 id="MATLAB的安装"><a href="#MATLAB的安装" class="headerlink" title="MATLAB的安装"></a>MATLAB的安装</h3><blockquote>
-<p>感谢百度经验提供的教程</p>
-<p><a href="http://jingyan.baidu.com/article/3d69c551a2dbd7f0cf02d731.html" target="_blank" rel="noopener">MATLAB安装教程</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu+Windows双系统安装指南</title>
-    <url>/2020/05/05/Ubuntu-Windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="Ubuntu-Windows双系统安装指南"><a href="#Ubuntu-Windows双系统安装指南" class="headerlink" title="Ubuntu+Windows双系统安装指南"></a>Ubuntu+Windows双系统安装指南</h1><blockquote>
-<p>写在前面：非常感谢<a href="https://www.jianshu.com/c/01390ac22fa9" target="_blank" rel="noopener">Linux探索之旅</a>在最初的时候给我的安装教程的指南，自己按照这篇教程安装双系统折腾了将近一个月，期间更是将Windows也给装炸了。。。于是乎重装系统，直到现在可以稳定的使用Ubuntu和Windows双系统。</p>
-</blockquote>
-<hr>
-<ul>
-<li><a href="#Windows和Linux的区别">Windows和Linux的区别</a><ul>
-<li><a href="#观念">观念</a></li>
-<li><a href="#发布">发布</a></li>
-<li><a href="#内核API">内核API</a></li>
-</ul>
-</li>
-<li><a href="#Ubuntu系统安装">Ubuntu系统安装</a><ul>
-<li><a href="#下载">下载</a></li>
-<li><a href="#烧录">烧录</a></li>
-<li><a href="#使用USB方式进行安装">使用USB方式进行安装</a></li>
-</ul>
-</li>
-</ul>
-<hr>
-<a id="more"></a>
-<h2 id="Windows-和-Linux-的区别"><a href="#Windows-和-Linux-的区别" class="headerlink" title="Windows 和 Linux 的区别"></a>Windows 和 Linux 的区别</h2><p>对于 Windows 和 Linux 的区别，我在这里先使用一张直观的图让大家看一下。</p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Unix_Windows.jpg?raw=true" alt="内核区别"></p>
-<p>从上图中可以看到，Linux 与苹果的 Mac OS 是基于 Unix 系统下的操作系统，而 Windows 是基于MS-DOS的操作系统。下面的几个部分的内容，将分析 Windows 和 Linux 系统的区别。</p>
-<h3 id="观念"><a href="#观念" class="headerlink" title="观念"></a>观念</h3><p>商业模式与开源运作：</p>
-<p>众所周知，Windows 是一款商业级的操作系统，它的源代码是保密的，这也就导致想要看到Windows的源代码变成了一件十分困难的事情。这使得微软授权过的《WINDOWS INTERNALS》一书变得十分的畅销，因为这里面涉及到了部分 Windows 操作系统内部的构建细节。</p>
-<p>相对于 Linux 来说，Linux 是开源的,代码随时可见. 这对刚从 Windows 世界转过来的我是十分震撼的. 虽然我一直都知道这个事实, 但是当你发现了以前需要用尽各种方法,采用各种手段才可以得到只言片语的信息现在完全呈献在你面前的时候,你才能真正体会开源确实是一件伟大的工程。</p>
-<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>2进制与源代码：</p>
-<p>这里所指的2进制与源代码是集中在两者操作系统中在安装程序中的不同之处。</p>
-<p>在 Windows 世界，安装程序几乎全部都是以二进制形式发布的。也就是说，用户下载了一个程序，然后双击，一路 next 就可以了。这个方法很适合初学者。</p>
-<p>在 Linux 世界也有类似的机制，比如 YUM , APT-GET 等。不过 YUM 和 APT-GET 都是比较晚才出现的，在那之前，在 Linux 世界安装程序要更麻烦些。</p>
-<h3 id="内核API"><a href="#内核API" class="headerlink" title="内核API"></a>内核API</h3><p>固定与非固定：</p>
-<p> Windows 内核有一套固定的 API ，而且向后兼容。这使得 Windows 驱动的开发人员在不同版本之间移植时变得很容易。</p>
-<p>而 Linux 没有固定的内核API。2.4版本的内核模块在2.6几乎很大可能是不能兼容的。</p>
-<ul>
-<li>下面展示的是基于开源的 Linux 所分化出来的不同的分支系统。</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/LinuxBranch.jpg?raw=true" alt="Linux分支"></p>
-<hr>
-<h2 id="Ubuntu系统安装"><a href="#Ubuntu系统安装" class="headerlink" title="Ubuntu系统安装"></a>Ubuntu系统安装</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>Ubuntu的英文下载页面：<a href="http://www.ubuntu.com/download" target="_blank" rel="noopener">Ubuntu</a></p>
-<p>Ubuntu的中文下载页面：<a href="https://cn.ubuntu.com/" target="_blank" rel="noopener">Ubuntu国内官网</a></p>
-<p>优麒麟的下载页面：<a href="http://www.ubuntukylin.com/downloads/" target="_blank" rel="noopener">优麒麟</a></p>
-<p>在这里，能够下载到的最新版本是18.04.2LTS(Long Term Support)版本。<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/UbuntuDownLoad.png?raw=true" alt="Ubuntu18.04下载"></p>
-<h3 id="烧录"><a href="#烧录" class="headerlink" title="烧录"></a>烧录</h3><p>在电脑中插入一个空白的U盘（不空白也行，反正之后要格式化的），大小至少8GB。</p>
-<p>Universal USB Installer：<a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/" target="_blank" rel="noopener">下载</a></p>
-<p>下载好Universal USB Installer之后，打开它，在”Device”下拉菜单中选择你的U盘。然后点击创建。<code>对于右侧NTFS格式和Fat32格式，个人建议选择FAT32。</code></p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Universal_Installer.png?raw=true" alt="选择ISOs和Drive"></p>
-<h3 id="使用USB方式进行安装"><a href="#使用USB方式进行安装" class="headerlink" title="使用USB方式进行安装"></a>使用USB方式进行安装</h3><blockquote>
-<p>前提：你需要先进入你的Boot Menu中，选择USB Storage Device。如下图所示：<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/USB_Storage_Device.jpg?raw=true" alt="USB Storage Device"></p>
-<p>如果发现没有USB Storage Device，那么选择Setup进入BIOS，或者重启按F2进入BIOS。切换到Boot，选择Secure Boot Control回车，改成Disabled，USB Boot Support设置成Enabled，Boot Mode改成Legacy。如下图所示：</p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/SecureBootControl.jpg?raw=true" alt="Secure Boot Control"></p>
-</blockquote>
-<p>在进入到下图所示界面的时候（pure EFI Boot），这里就出现了一个坑。</p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/EFIBoot.jpg?raw=true" alt="EFIBoot"></p>
-<p>在这个时候，可以选择第一项，你可以先体验一下Ubuntu，也可不体验，直接Install Ubuntu。但是，在具有<code>独立显卡</code>的笔记本或者是台式机上，你会发现界面是能够进去的，但是很快就会卡死。这是因为独立显卡与Ubuntu的集成显卡不兼容所产生的问题。</p>
-<p>这个时候，你需要再次回到pure EFI Boot界面，然后在<code>按E</code>进入到如图所示的界面：</p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/UbuntuNoModeSet.jpg?raw=true" alt="UbuntuNoModeSet"></p>
-<p>将原本<code>quiet splash</code>后面的内容修改为<code>nomodeset</code>。然后再<code>按F10</code>进入到安装界面安装即可。</p>
-<p>在到 <code>安装类型</code> 这一步骤时，如果你在上一步压缩完分区后，没有新建简单卷（保持未分配状态），那么就只需选择 安装 Ubuntu，与 Windows boot manager 共存 这一选项，将分区相关事宜交由 Ubuntu 处理。</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTML</title>
     <url>/2018/08/19/HTML/</url>
     <content><![CDATA[<h1 id="HTML-CSS"><a href="#HTML-CSS" class="headerlink" title="HTML+CSS"></a>HTML+CSS</h1><ul>
@@ -953,6 +622,514 @@ FileWriter(File filename,boolean append);
       </categories>
       <tags>
         <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MATLAB概述</title>
+    <url>/2018/07/22/MATLAB%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<h1 id="MATLAB概述"><a href="#MATLAB概述" class="headerlink" title="MATLAB概述"></a>MATLAB概述</h1><ul>
+<li>主要包括MATLAB和Simulink两大部分。<blockquote>
+<ul>
+<li>MATLAB基于矩阵(Matrix)的运算，全称为:MATreix LABoratory</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>MATLAB主要功能<blockquote>
+<ul>
+<li>技术计算—&gt;数学计算、分析、可视化和算法开发</li>
+<li>控制系统设计—&gt;控制系统基于模型的设计，包括嵌入式系统仿真、快速原型及代码生成等</li>
+<li>信号处理和通信—&gt;信号处理和通信系统基于模型的设计，包括仿真、代码生成和验证等</li>
+<li>图像处理—&gt;图像采集、分析、可视化和算法开发</li>
+<li>测试和测量—&gt;测试和测量应用中硬件连接性和数据分析</li>
+<li>计算你生物学—&gt;生物数据和系统分析、可视化与仿真</li>
+<li>计算金融—&gt;金融建模、分析及应用程序开发</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>MATLAB分析和访问数据</p>
+<ul>
+<li>数据分析</li>
+</ul>
+<blockquote>
+<p>MATLAB提供有一下一些用于数据分析运算的交互式工具和命令行函数</p>
+<ul>
+<li>内插和抽取</li>
+<li>抽取数据段、缩放和求平均值</li>
+<li>阈值和平滑处理</li>
+<li>相关性、傅里叶分析和筛选</li>
+<li>一维峰值、谷值以及零点查找</li>
+<li>基本统计数据和曲线拟合</li>
+<li>矩阵分析</li>
+</ul>
+</blockquote>
+<ul>
+<li>数据访问</li>
+</ul>
+<blockquote>
+<p>可以从各种常用文件格式(如Microsoft Excel)、ASCII文本或者二进制文件、图像、语音和视频文件，以及诸如HDF和HDF5等科学文件中读取数据</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>MATLAB实现数据可视化</p>
+<ul>
+<li><p>二维绘图</p>
+<blockquote>
+<p>使用二维绘图函数将数据向量可视化</p>
+<ul>
+<li>线图、区域图、条形图以及饼图</li>
+<li>方向图及速率图</li>
+<li>直方图</li>
+<li>多边形图和曲面图</li>
+<li>散点图/气泡图</li>
+<li>动画</li>
+</ul>
+</blockquote>
+</li>
+<li><p>三维绘图和卷可视化</p>
+<blockquote>
+<p>提供有将二维矩阵、三维向量和三维标量数据可视化的函数；还可以指定图形特性，例如：相机取景角度、透视图、灯光效果、光源位置以及透明度等等。<strong>三维绘图函数包括：</strong></p>
+<ul>
+<li>曲面图、轮廓图和网状图</li>
+<li>成像图</li>
+<li>锥形图、切割图、流程图以及等值面图</li>
+</ul>
+</blockquote>
+</li>
+<li><p>交互式创建和编译图形</p>
+<blockquote>
+<p>具有一些设计和修改图形的交互式工具。<strong>可执行的操作有：</strong></p>
+<ul>
+<li>将新的数据集拖放到图形上</li>
+<li>更改图形上任意对象的属性</li>
+<li>缩放、旋转、平移以及更改相机角度和灯光</li>
+<li>添加批注和数据提示</li>
+<li>绘制形状</li>
+<li>生成可供各种数据重复使用的MATLAB自带函数</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>MATLAB进行数值计算</p>
+<blockquote>
+<p>MATLAB提供以下类型函数用于数值计算与数值分析：</p>
+<ul>
+<li>矩阵操作和线性代数</li>
+<li>多项式和内插</li>
+<li>傅里叶分析和筛选</li>
+<li>数据分析和统计</li>
+<li>优化和数值积分</li>
+<li>常微分方程(ODE)</li>
+<li>偏微分方程(PDE)</li>
+<li>稀疏矩阵运算</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="MATLAB的安装"><a href="#MATLAB的安装" class="headerlink" title="MATLAB的安装"></a>MATLAB的安装</h3><blockquote>
+<p>感谢百度经验提供的教程</p>
+<p><a href="http://jingyan.baidu.com/article/3d69c551a2dbd7f0cf02d731.html" target="_blank" rel="noopener">MATLAB安装教程</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java原生数据类型与表达式</title>
+    <url>/2020/05/12/Java%E5%8E%9F%E7%94%9F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<h1 id="原生数据类型与表达式"><a href="#原生数据类型与表达式" class="headerlink" title="原生数据类型与表达式"></a>原生数据类型与表达式</h1><h2 id="原生数据类型"><a href="#原生数据类型" class="headerlink" title="原生数据类型"></a>原生数据类型</h2><ul>
+<li><p>1.Java 中的原生数据类型共有 8 种：</p>
+<ul>
+<li><p>1） 整型：使用 int 表示。（32 位）</p>
+</li>
+<li><p>2） 字节型：使用 byte 表示。（表示-128～127 之间的 256 个整数， 8 位）。</p>
+</li>
+<li><p>3）短整型：使用 short 表示。（16 位）</p>
+</li>
+<li><p>4）长整型：使用 long 表示。（64 位）</p>
+<a id="more"></a></li>
+<li><p>5）单精度浮点型：使用 float 表示。所谓浮点型，指的就是小数，也叫做实数，例如 1.2。</p>
+</li>
+<li><p>6）双精度浮点型：使用 double 表示。双精度浮点型表示的数据范围要比单精度浮点型大。</p>
+</li>
+<li><p>7）字符型：使用 char 表示（char 是 character 的缩写）。所谓字符，就是单个的字符表示，比如字母 a，或者中文张，外面用单引号包围上。比如 char a = ‘B’; char b = ‘张’;</p>
+</li>
+<li><p>8）布尔类型，使用 boolean 表示。布尔类型只有两种可能值，分别是 true 与 false。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>2.Java 中的所有浮点类型默认情况下都是 double。不能将 double 类型的值赋给 float 类型的变量，即便该 double 类型的值处于 float 类型的范围内也是不可以的。总之，能否成功赋值取决于等号右边的值类型与等号左边的变量类型是否一致。</p>
+</li>
+<li><p>3.如何将 double 类型的值赋给 float 类型的变量？答案就是(1)强制类型转换，将 double 类型的值强制转换为 float 类型。(2)使用 java 预言的支持。</p>
+</li>
+</ul>
+<p><code>强制转换的语法： 类型 变量名 = （类型）变量值;</code></p>
+<ul>
+<li><p>4.变量在使用前必须要赋值；变量必须要声明其类型方可使用；变量在使用前必须要定义，并且只能定义一次。</p>
+</li>
+<li><p>5.如下代码无法通过编译：</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>; <span class="keyword">short</span> b = a;</span><br></pre></td></tr></table></figure>
+<p>a 是 int 类型，b 是 short 类型，int 类型表示的数据范围要比 short 类型大，不能将表示<br>范围大的值赋给表示范围小的变量。</p>
+<ul>
+<li>6.如下代码可以通过编译：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">short</span> a = <span class="number">1</span>; <span class="keyword">int</span> b = a;</span><br></pre></td></tr></table></figure>
+<p>a 是 short 类型，b 是 int 类型，int 类型表示的数据范围要比 short 类型大，可以将表示<br>范围小的值赋给表示范围大的变量。</p>
+<ul>
+<li>7.总结：可以将表示范围小的值赋给表示范围大的变量；但不能直接将表示范围大的值赋给表示范围小的变量，只能通过强制类型转换实现。</li>
+</ul>
+<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><blockquote>
+<p>Java中使用的是<code>中缀表达式</code>——其实就是和数学上的函数表达式的道理是一样的。</p>
+</blockquote>
+<p><strong>注意：</strong></p>
+<ul>
+<li><p>在<code>初级运算</code>中运算产生的数据的数据类型和参与运算的数据的数据类型是相同的。</p>
+</li>
+<li><p>‘+’、’-‘、’*’、’/‘ 都是被重载过的。</p>
+</li>
+<li><p><code>逻辑运算符</code>中，’！’优先级最高，之后是 ‘&amp;&amp;’ ，最后是 ‘||’ 。</p>
+</li>
+<li><p>相同优先级运算顺序从左往右。</p>
+</li>
+<li><p>在<code>类型转换</code>中，如果不损失信息，数值会自动提升为高等级的数据类型。前提是，你的运算中含有高等级的运算符。当需要向低类型转换时，会<strong>截断取整</strong>，而不是四舍五入。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu+Windows双系统安装指南</title>
+    <url>/2020/05/05/Ubuntu-Windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1 id="Ubuntu-Windows双系统安装指南"><a href="#Ubuntu-Windows双系统安装指南" class="headerlink" title="Ubuntu+Windows双系统安装指南"></a>Ubuntu+Windows双系统安装指南</h1><blockquote>
+<p>写在前面：非常感谢<a href="https://www.jianshu.com/c/01390ac22fa9" target="_blank" rel="noopener">Linux探索之旅</a>在最初的时候给我的安装教程的指南，自己按照这篇教程安装双系统折腾了将近一个月，期间更是将Windows也给装炸了。。。于是乎重装系统，直到现在可以稳定的使用Ubuntu和Windows双系统。</p>
+</blockquote>
+<hr>
+<ul>
+<li><a href="#Windows和Linux的区别">Windows和Linux的区别</a><ul>
+<li><a href="#观念">观念</a></li>
+<li><a href="#发布">发布</a></li>
+<li><a href="#内核API">内核API</a></li>
+</ul>
+</li>
+<li><a href="#Ubuntu系统安装">Ubuntu系统安装</a><ul>
+<li><a href="#下载">下载</a></li>
+<li><a href="#烧录">烧录</a></li>
+<li><a href="#使用USB方式进行安装">使用USB方式进行安装</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<a id="more"></a>
+<h2 id="Windows-和-Linux-的区别"><a href="#Windows-和-Linux-的区别" class="headerlink" title="Windows 和 Linux 的区别"></a>Windows 和 Linux 的区别</h2><p>对于 Windows 和 Linux 的区别，我在这里先使用一张直观的图让大家看一下。</p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Unix_Windows.jpg?raw=true" alt="内核区别"></p>
+<p>从上图中可以看到，Linux 与苹果的 Mac OS 是基于 Unix 系统下的操作系统，而 Windows 是基于MS-DOS的操作系统。下面的几个部分的内容，将分析 Windows 和 Linux 系统的区别。</p>
+<h3 id="观念"><a href="#观念" class="headerlink" title="观念"></a>观念</h3><p>商业模式与开源运作：</p>
+<p>众所周知，Windows 是一款商业级的操作系统，它的源代码是保密的，这也就导致想要看到Windows的源代码变成了一件十分困难的事情。这使得微软授权过的《WINDOWS INTERNALS》一书变得十分的畅销，因为这里面涉及到了部分 Windows 操作系统内部的构建细节。</p>
+<p>相对于 Linux 来说，Linux 是开源的,代码随时可见. 这对刚从 Windows 世界转过来的我是十分震撼的. 虽然我一直都知道这个事实, 但是当你发现了以前需要用尽各种方法,采用各种手段才可以得到只言片语的信息现在完全呈献在你面前的时候,你才能真正体会开源确实是一件伟大的工程。</p>
+<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>2进制与源代码：</p>
+<p>这里所指的2进制与源代码是集中在两者操作系统中在安装程序中的不同之处。</p>
+<p>在 Windows 世界，安装程序几乎全部都是以二进制形式发布的。也就是说，用户下载了一个程序，然后双击，一路 next 就可以了。这个方法很适合初学者。</p>
+<p>在 Linux 世界也有类似的机制，比如 YUM , APT-GET 等。不过 YUM 和 APT-GET 都是比较晚才出现的，在那之前，在 Linux 世界安装程序要更麻烦些。</p>
+<h3 id="内核API"><a href="#内核API" class="headerlink" title="内核API"></a>内核API</h3><p>固定与非固定：</p>
+<p> Windows 内核有一套固定的 API ，而且向后兼容。这使得 Windows 驱动的开发人员在不同版本之间移植时变得很容易。</p>
+<p>而 Linux 没有固定的内核API。2.4版本的内核模块在2.6几乎很大可能是不能兼容的。</p>
+<ul>
+<li>下面展示的是基于开源的 Linux 所分化出来的不同的分支系统。</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/LinuxBranch.jpg?raw=true" alt="Linux分支"></p>
+<hr>
+<h2 id="Ubuntu系统安装"><a href="#Ubuntu系统安装" class="headerlink" title="Ubuntu系统安装"></a>Ubuntu系统安装</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>Ubuntu的英文下载页面：<a href="http://www.ubuntu.com/download" target="_blank" rel="noopener">Ubuntu</a></p>
+<p>Ubuntu的中文下载页面：<a href="https://cn.ubuntu.com/" target="_blank" rel="noopener">Ubuntu国内官网</a></p>
+<p>优麒麟的下载页面：<a href="http://www.ubuntukylin.com/downloads/" target="_blank" rel="noopener">优麒麟</a></p>
+<p>在这里，能够下载到的最新版本是18.04.2LTS(Long Term Support)版本。<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/UbuntuDownLoad.png?raw=true" alt="Ubuntu18.04下载"></p>
+<h3 id="烧录"><a href="#烧录" class="headerlink" title="烧录"></a>烧录</h3><p>在电脑中插入一个空白的U盘（不空白也行，反正之后要格式化的），大小至少8GB。</p>
+<p>Universal USB Installer：<a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/" target="_blank" rel="noopener">下载</a></p>
+<p>下载好Universal USB Installer之后，打开它，在”Device”下拉菜单中选择你的U盘。然后点击创建。<code>对于右侧NTFS格式和Fat32格式，个人建议选择FAT32。</code></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Universal_Installer.png?raw=true" alt="选择ISOs和Drive"></p>
+<h3 id="使用USB方式进行安装"><a href="#使用USB方式进行安装" class="headerlink" title="使用USB方式进行安装"></a>使用USB方式进行安装</h3><blockquote>
+<p>前提：你需要先进入你的Boot Menu中，选择USB Storage Device。如下图所示：<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/USB_Storage_Device.jpg?raw=true" alt="USB Storage Device"></p>
+<p>如果发现没有USB Storage Device，那么选择Setup进入BIOS，或者重启按F2进入BIOS。切换到Boot，选择Secure Boot Control回车，改成Disabled，USB Boot Support设置成Enabled，Boot Mode改成Legacy。如下图所示：</p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/SecureBootControl.jpg?raw=true" alt="Secure Boot Control"></p>
+</blockquote>
+<p>在进入到下图所示界面的时候（pure EFI Boot），这里就出现了一个坑。</p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/EFIBoot.jpg?raw=true" alt="EFIBoot"></p>
+<p>在这个时候，可以选择第一项，你可以先体验一下Ubuntu，也可不体验，直接Install Ubuntu。但是，在具有<code>独立显卡</code>的笔记本或者是台式机上，你会发现界面是能够进去的，但是很快就会卡死。这是因为独立显卡与Ubuntu的集成显卡不兼容所产生的问题。</p>
+<p>这个时候，你需要再次回到pure EFI Boot界面，然后在<code>按E</code>进入到如图所示的界面：</p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/UbuntuNoModeSet.jpg?raw=true" alt="UbuntuNoModeSet"></p>
+<p>将原本<code>quiet splash</code>后面的内容修改为<code>nomodeset</code>。然后再<code>按F10</code>进入到安装界面安装即可。</p>
+<p>在到 <code>安装类型</code> 这一步骤时，如果你在上一步压缩完分区后，没有新建简单卷（保持未分配状态），那么就只需选择 安装 Ubuntu，与 Windows boot manager 共存 这一选项，将分区相关事宜交由 Ubuntu 处理。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>QTDesigner</title>
+    <url>/2018/07/22/QTDesigner/</url>
+    <content><![CDATA[<h2 id="QT的安装"><a href="#QT的安装" class="headerlink" title="QT的安装"></a>QT的安装</h2><ul>
+<li>对于QT的安装，个人的推荐是参考<a href="http://blog.csdn.net/liang19890820/article/details/53931813" target="_blank" rel="noopener">QT5.7+VS2015安装教程</a>。这个教程写的很详细，而且也非常的nice。</li>
+</ul>
+<a id="more"></a>
+<h2 id="QT在VS2015中的使用"><a href="#QT在VS2015中的使用" class="headerlink" title="QT在VS2015中的使用"></a>QT在VS2015中的使用</h2><ul>
+<li><p>现在我们正式在VS2015中去使用QT，使用前，先需要创建一个QT的项目。</p>
+</li>
+<li><p>使用VS2015中文件——&gt;新建——&gt;项目。点击之后，会出现如下界面：</p>
+</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTCreate.png?raw=true" alt=""></p>
+<ul>
+<li>模板选择VisualC++下的Qt，选择QT GUI Application，上方的.NET Framework直接选择默认即可。</li>
+<li>选择之后点击下一步，会出现如下界面：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT1.png?raw=true" alt=""></p>
+<ul>
+<li>点击next之后会出现如下界面：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT2.png?raw=true" alt=""><br><strong>这里根据需要可以自己选择，如果是新手可以先直接下一步。</strong></p>
+<ul>
+<li>点击next之后会出现如下界面：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT3.png?raw=true" alt=""><br><strong>这里默认直接finish就可以，如果有什么需要的可以自行设置。</strong></p>
+<ul>
+<li>当创建好之后就会出现如下画面：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTFinish.png?raw=true" alt=""></p>
+<ul>
+<li>上面的画面就是我们需要进行操作的界面了。此时，<code>双击</code>QTTest.ui【位于:解决方案资源管理器-&gt;Form Files】</li>
+<li>双击进去之后就是我们需要进行ui设计的界面了（如下图所示）：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTDesigner.png?raw=true" alt=""></p>
+<ul>
+<li>在这里，你可以进行控件的拖动，直接拖到方框中去，然后再对象查看器（如下图所示）可以看到你控件所对应的类以及生成的对象。</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest1.png?raw=true" alt=""></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest2.png?raw=true" alt=""></p>
+<ul>
+<li>创建好对象之后，点击左上角的文件-&gt;保存（Ctrl+S）</li>
+<li>然后关闭QT Designer，回到VS2015中，<code>右键QTTest.ui，选择编译（Ctrl+F7）</code>，如下图所示：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest3.png?raw=true" alt=""></p>
+<ul>
+<li>编译成功之后（一般情况下都是会编译成功的），<code>双击打开QTTest.cpp</code>,里面的代码是这样的：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这个时候，在<code>ui.setupUi下输入ui.pushButton</code>即可获取到刚刚创建的button的实例。代码如下所示：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">	ui.pushButton;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>在QT中，控件与控件之间的数据传输是通过<code>信号与槽</code>的方式进行的，下面就演示其中一种的数据传输的方式：（代码如下：）</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">	connect(ui.pushButton, &amp;QPushButton::clicked, [this] &#123;</span><br><span class="line">		ui.label-&gt;setText(ui.label-&gt;text().replace(QRegExp(&quot;\\d+&quot;), &quot;25&quot;));</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>实现之后的效果为：</p>
+<ul>
+<li>未点击button之前：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/ClickBefore.png?raw=true" alt=""></p>
+<ul>
+<li>点击button之后：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/ClickAfter.png?raw=true" alt=""></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>QT</category>
+      </categories>
+      <tags>
+        <tag>QT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows虚拟环境在PyCharm中的使用</title>
+    <url>/2020/05/06/Windows%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%9C%A8PyCharm%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h1><blockquote>
+<p>网上对于Anaconda的安装是教程有很多，这里会为各位提供的是一个我当时安装时候所参考的链接地址。<a href="https://zhuanlan.zhihu.com/p/32925500" target="_blank" rel="noopener">Anaconda的介绍、安装及使用教程</a></p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Anaconda中创建虚拟环境（命令行模式）"><a href="#Anaconda中创建虚拟环境（命令行模式）" class="headerlink" title="Anaconda中创建虚拟环境（命令行模式）"></a>Anaconda中创建虚拟环境（命令行模式）</h2><blockquote>
+<p>在Anaconda中创建虚拟环境的方式：</p>
+<p>下面是创建python=3.6版本的环境，取名叫py36</p>
+<p>conda create -n py36 python=3.6</p>
+<p>删除环境</p>
+<p>conda remove -n py36 —all</p>
+<p>激活环境</p>
+<p>source activate py36</p>
+<p>退出环境</p>
+<p>source deactivate</p>
+</blockquote>
+<ul>
+<li><p>在创建虚拟环境的过程中，我遇到了一个问题，这个问题就是：<code>如果创建了多个python版本的环境，那么我应该如何去管理当中所安装的不同的包呢？并且与本机原本安装的python环境不起到冲突？</code></p>
+</li>
+<li><p>我解决Anaconda与本机办法是这样的：</p>
+<blockquote>
+<ul>
+<li>解决办法一：</li>
+</ul>
+<p>其实python 在安装的时候就为我们提供了两个版本的解决方案</p>
+<p>在C盘的windows 目录下有个 py.exe</p>
+<p>我们用py.exe 这个工具启动就能分辨出python的版本</p>
+<p>启动python2.7的pip</p>
+<p>直接在cmd 窗口里输入：py -2 -m pip install XXXX</p>
+<p>启动python3.6的pip</p>
+<p>直接在cmd 窗口里输入：py -3 -m pip install XXXX</p>
+<ul>
+<li>解决办法二：</li>
+</ul>
+<p>找到自己本机安装的Python路径（在Path中可以直接找到），然后找到自己的Python.exe文件，然后重命名即可。</p>
+<p>如：我对我本机的Python重命名为Python3，然后对Anaconda中安装的Python不重命名。</p>
+<p>之后需要对Anaconda中的python进行pip安装的时候，就输入：</p>
+<p>python -m pip install XXX</p>
+<p>然后对本机的python进行安装的时候，就输入：</p>
+<p>python3 -m pip install XXX</p>
+</blockquote>
+</li>
+<li><p>我解决Anaconda进入虚拟环境之后与Anaconda自身的Python冲突的问题：<br>&gt;</p>
+<blockquote>
+<p>根据上面启动虚拟环境的方法，我们能够启动已经创建的虚拟环境</p>
+<p>进入虚拟环境之后，输入：</p>
+<p>python -V</p>
+<p>就能够看到当前的虚拟环境中的python的版本号</p>
+<p>这个时候，输入：</p>
+<p>pip list</p>
+<p>你所看到的就是你当前环境下的pip所安装的包。</p>
+<p><code>如果你发现你的list还是Anaconda自带的list的话，就输入：</code></p>
+<p><code>python -m pip list</code></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Anaconda中创建虚拟环境（GUI模式）"><a href="#Anaconda中创建虚拟环境（GUI模式）" class="headerlink" title="Anaconda中创建虚拟环境（GUI模式）"></a>Anaconda中创建虚拟环境（GUI模式）</h2><p><code>当你安装好Anaconda之后，会出现一个Anaconda Mavigator，点击之后在里面也可以创建虚拟环境。</code></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/AnacondaNavigator.png?raw=true" alt="AnacondaMavigator"></p>
+<h1 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a>PyCharm</h1><ul>
+<li><p>在PyCharm中的<code>Settings</code>中的<code>Project Interpreter</code>进行python版本的选择。</p>
+</li>
+<li><p>找到你的<code>Anaconda</code>的<code>安装路径</code>。</p>
+</li>
+<li><p>然后在里面找到一个文件夹叫<code>envs</code>。</p>
+</li>
+<li><p>在这个文件夹里面有你创建的所有的虚拟环境。</p>
+</li>
+<li><p>选择你需要用到的虚拟环境，然后找到<code>python.exe</code>即可。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android面经</title>
+    <url>/2020/05/13/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8Android%E4%B8%80%E9%9D%A2%E9%9D%A2%E7%BB%8F/</url>
+    <content><![CDATA[<h1 id="Android开发岗个人面经"><a href="#Android开发岗个人面经" class="headerlink" title="Android开发岗个人面经"></a>Android开发岗个人面经</h1><h2 id="2020-05-13-字节跳动一面"><a href="#2020-05-13-字节跳动一面" class="headerlink" title="2020-05-13 字节跳动一面"></a>2020-05-13 字节跳动一面</h2><blockquote>
+<p>这也是我人生中第一次经历的面试，也是第一次的线上面试，总的来说，真的很慌张，而且其实自己也知道准备的是不充分的，但是还是硬着头皮参加了，也算是一种人生经历吧。下面是字节跳动一面时候问到的问题，先列举出来，然后进行一个知识总结与概括：</p>
+<ul>
+<li>操作系统中死锁的概念</li>
+<li>产生死锁的方式</li>
+<li>排序，谈谈有什么排序算法，讲一讲时间复杂度，以及排序的“稳定性”</li>
+<li>Java中 synchronized 与 Lock 区别</li>
+<li>单例模式实现，两种，多线程情况下的考虑</li>
+<li>Android生命周期解析</li>
+<li>Activity 之间的跳转生命周期是怎么变化的</li>
+<li>Android中Handler与Message机制在多线程环境下的消息传输</li>
+<li>算法题：排序，有序的数组中找到某一目标值首次出现的下标，如：111122223334455666，问6第一次出现的数组下标为？（不可以用暴力）</li>
+</ul>
+</blockquote>
+<p><strong>下面是针对面试中提出的问题进行的知识上的储备。</strong><br><a id="more"></a></p>
+<h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><p>两个或多个进程被无限期地阻塞、相互等待的一种状态。</p>
+<p>产生的<code>主要原因</code>：</p>
+<ul>
+<li>系统资源不足</li>
+<li>进程推进顺序非法</li>
+</ul>
+<p>产生死锁的<code>必要条件</code>：</p>
+<ul>
+<li>1、互斥条件，一个资源每次只能被一个进程使用。</li>
+<li>2、不可抢占条件，进程已获得资源，在未使用完之前不被强行剥夺。</li>
+<li>3、占有并等待条件，一个进程因请求资源而阻塞时，对已获得的资源保持不放。</li>
+<li>4、环形等待条件，若干进程之间形成一种首尾相接的循环等待资源关系。</li>
+</ul>
+<p><code>注：</code>这四个条件缺一不可，只有都满足了，才能够发生死锁。</p>
+<p>所以，如何解除死锁的问题，就是只需要破坏上述四个条件中其中一个就可以解决了。</p>
+<p><code>解决方案</code>：</p>
+<ul>
+<li><p>打破互斥条件：允许进程同时访问某些资源。————这个方法受制于实际场景，不推荐。</p>
+</li>
+<li><p>打破不可抢占条件：允许进程强行从占有者进程夺取某些资源。简单理解：占有资源的进程不能再申请占有其他资源，必须释放了手上拥有的资源后才能够发起申请。————相同的，不容易找到适用场景。</p>
+</li>
+<li><p>进程再运行前申请得到所有的资源，否则该进程不能进入准备执行状态。————缺点：资源利用率低，并发性低。</p>
+</li>
+<li><p>避免资源申请环路，即事先对资源进行分类编号，按号分配。————优点：有效提高资源的利用率和系统的吞吐量。缺点：加大系统开销，增大了进程对资源的占用时间。</p>
+</li>
+</ul>
+<p><code>消除死锁的方式</code>：</p>
+<ul>
+<li><p>重启系统。————这个代价太大了…………</p>
+</li>
+<li><p>撤销进程，剥夺资源。终止参与死锁的进程，收回他们的资源。这里又分两种情况：</p>
+<ul>
+<li>一次性撤销参与死锁的全部进程，剥夺全部资源。</li>
+<li>逐步撤销参与的进程，逐步回收死锁进程占有的资源。</li>
+</ul>
+</li>
+<li><p>进程回退策略，即让参与死锁的进程回退到没有发生死锁前某一点处，并由此点继续执行，以求再次执行时不发生死锁。</p>
+</li>
+</ul>
+<h3 id="synchronized详解、Lock详解"><a href="#synchronized详解、Lock详解" class="headerlink" title="synchronized详解、Lock详解"></a>synchronized详解、Lock详解</h3><h4 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h4><p><strong>作用：</strong> 利用锁的机制来实现同步的。</p>
+<p><code>锁机制特性：</code></p>
+<p>互斥性：同一时间只允许一个线程持有某个对象锁。————往往称为操作的原子性。</p>
+<p>可见性：必须确保在锁被释放之前，对共享变量所做的修改，对于随后获得该锁的另一个线程是可见的（即在获得锁时应获得最新共享变量的值），否则另一个线程可能是在本地缓存的某个副本上继续操作从而引起不一致。</p>
+<h5 id="对象锁和类锁"><a href="#对象锁和类锁" class="headerlink" title="对象锁和类锁"></a>对象锁和类锁</h5><ul>
+<li><p>对象锁：在Java中，每个对象都会有一个monitor对象，这个就是Java对象的锁————又叫内置锁/对象锁。每个对象都有一个独立的内置锁，互不干扰。</p>
+</li>
+<li><p>类锁：每个类都有一个类锁。</p>
+</li>
+</ul>
+<h5 id="synchronized用法"><a href="#synchronized用法" class="headerlink" title="synchronized用法"></a>synchronized用法</h5><ul>
+<li><p>根据修饰对象分类：</p>
+<ul>
+<li>修饰代码块</li>
+<li>修饰方法</li>
+</ul>
+</li>
+<li><p>根据获取的锁分类：</p>
+<ul>
+<li>获取对象锁</li>
+<li>获取类锁</li>
+</ul>
+</li>
+</ul>
+<h4 id="synchronized用法详解"><a href="#synchronized用法详解" class="headerlink" title="synchronized用法详解"></a>synchronized用法详解</h4><h3 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h3>]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
@@ -1627,175 +1804,6 @@ FileWriter(File filename,boolean append);
       </categories>
       <tags>
         <tag>计算机视觉</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Android面经</title>
-    <url>/2020/05/13/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8Android%E4%B8%80%E9%9D%A2%E9%9D%A2%E7%BB%8F/</url>
-    <content><![CDATA[<h1 id="Android开发岗个人面经"><a href="#Android开发岗个人面经" class="headerlink" title="Android开发岗个人面经"></a>Android开发岗个人面经</h1><h2 id="2020-05-13-字节跳动一面"><a href="#2020-05-13-字节跳动一面" class="headerlink" title="2020-05-13 字节跳动一面"></a>2020-05-13 字节跳动一面</h2><blockquote>
-<p>这也是我人生中第一次经历的面试，也是第一次的线上面试，总的来说，真的很慌张，而且其实自己也知道准备的是不充分的，但是还是硬着头皮参加了，也算是一种人生经历吧。下面是字节跳动一面时候问到的问题，先列举出来，然后进行一个知识总结与概括：</p>
-<ul>
-<li>操作系统中死锁的概念</li>
-<li>产生死锁的方式</li>
-<li>排序，谈谈有什么排序算法，讲一讲时间复杂度，以及排序的“稳定性”</li>
-<li>Java中 synchronized 与 Lock 区别</li>
-<li>单例模式实现，两种，多线程情况下的考虑</li>
-<li>Android生命周期解析</li>
-<li>Activity 之间的跳转生命周期是怎么变化的</li>
-<li>Android中Handler与Message机制在多线程环境下的消息传输</li>
-<li>算法题：排序，有序的数组中找到某一目标值首次出现的下标，如：111122223334455666，问6第一次出现的数组下标为？（不可以用暴力）</li>
-</ul>
-</blockquote>
-<p><strong>下面是针对面试中提出的问题进行的知识上的储备。</strong><br><a id="more"></a></p>
-<h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><p>两个或多个进程被无限期地阻塞、相互等待的一种状态。</p>
-<p>产生的<code>主要原因</code>：</p>
-<ul>
-<li>系统资源不足</li>
-<li>进程推进顺序非法</li>
-</ul>
-<p>产生死锁的<code>必要条件</code>：</p>
-<ul>
-<li>1、互斥条件，一个资源每次只能被一个进程使用。</li>
-<li>2、不可抢占条件，进程已获得资源，在未使用完之前不被强行剥夺。</li>
-<li>3、占有并等待条件，一个进程因请求资源而阻塞时，对已获得的资源保持不放。</li>
-<li>4、环形等待条件，若干进程之间形成一种首尾相接的循环等待资源关系。</li>
-</ul>
-<p><code>注：</code>这四个条件缺一不可，只有都满足了，才能够发生死锁。</p>
-<p>所以，如何解除死锁的问题，就是只需要破坏上述四个条件中其中一个就可以解决了。</p>
-<p><code>解决方案</code>：</p>
-<ul>
-<li><p>打破互斥条件：允许进程同时访问某些资源。————这个方法受制于实际场景，不推荐。</p>
-</li>
-<li><p>打破不可抢占条件：允许进程强行从占有者进程夺取某些资源。简单理解：占有资源的进程不能再申请占有其他资源，必须释放了手上拥有的资源后才能够发起申请。————相同的，不容易找到适用场景。</p>
-</li>
-<li><p>进程再运行前申请得到所有的资源，否则该进程不能进入准备执行状态。————缺点：资源利用率低，并发性低。</p>
-</li>
-<li><p>避免资源申请环路，即事先对资源进行分类编号，按号分配。————优点：有效提高资源的利用率和系统的吞吐量。缺点：加大系统开销，增大了进程对资源的占用时间。</p>
-</li>
-</ul>
-<p><code>消除死锁的方式</code>：</p>
-<ul>
-<li><p>重启系统。————这个代价太大了…………</p>
-</li>
-<li><p>撤销进程，剥夺资源。终止参与死锁的进程，收回他们的资源。这里又分两种情况：</p>
-<ul>
-<li>一次性撤销参与死锁的全部进程，剥夺全部资源。</li>
-<li>逐步撤销参与的进程，逐步回收死锁进程占有的资源。</li>
-</ul>
-</li>
-<li><p>进程回退策略，即让参与死锁的进程回退到没有发生死锁前某一点处，并由此点继续执行，以求再次执行时不发生死锁。</p>
-</li>
-</ul>
-<h3 id="synchronized详解、Lock详解"><a href="#synchronized详解、Lock详解" class="headerlink" title="synchronized详解、Lock详解"></a>synchronized详解、Lock详解</h3><h4 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h4><p><strong>作用：</strong> 利用锁的机制来实现同步的。</p>
-<p><code>锁机制特性：</code></p>
-<p>互斥性：同一时间只允许一个线程持有某个对象锁。————往往称为操作的原子性。</p>
-<p>可见性：必须确保在锁被释放之前，对共享变量所做的修改，对于随后获得该锁的另一个线程是可见的（即在获得锁时应获得最新共享变量的值），否则另一个线程可能是在本地缓存的某个副本上继续操作从而引起不一致。</p>
-<h5 id="对象锁和类锁"><a href="#对象锁和类锁" class="headerlink" title="对象锁和类锁"></a>对象锁和类锁</h5><ul>
-<li><p>对象锁：在Java中，每个对象都会有一个monitor对象，这个就是Java对象的锁————又叫内置锁/对象锁。每个对象都有一个独立的内置锁，互不干扰。</p>
-</li>
-<li><p>类锁：每个类都有一个类锁。</p>
-</li>
-</ul>
-<h5 id="synchronized用法"><a href="#synchronized用法" class="headerlink" title="synchronized用法"></a>synchronized用法</h5><ul>
-<li><p>根据修饰对象分类：</p>
-<ul>
-<li>修饰代码块</li>
-<li>修饰方法</li>
-</ul>
-</li>
-<li><p>根据获取的锁分类：</p>
-<ul>
-<li>获取对象锁</li>
-<li>获取类锁</li>
-</ul>
-</li>
-</ul>
-<h4 id="synchronized用法详解"><a href="#synchronized用法详解" class="headerlink" title="synchronized用法详解"></a>synchronized用法详解</h4><h3 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h3>]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows虚拟环境在PyCharm中的使用</title>
-    <url>/2020/05/06/Windows%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%9C%A8PyCharm%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h1><blockquote>
-<p>网上对于Anaconda的安装是教程有很多，这里会为各位提供的是一个我当时安装时候所参考的链接地址。<a href="https://zhuanlan.zhihu.com/p/32925500" target="_blank" rel="noopener">Anaconda的介绍、安装及使用教程</a></p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Anaconda中创建虚拟环境（命令行模式）"><a href="#Anaconda中创建虚拟环境（命令行模式）" class="headerlink" title="Anaconda中创建虚拟环境（命令行模式）"></a>Anaconda中创建虚拟环境（命令行模式）</h2><blockquote>
-<p>在Anaconda中创建虚拟环境的方式：</p>
-<p>下面是创建python=3.6版本的环境，取名叫py36</p>
-<p>conda create -n py36 python=3.6</p>
-<p>删除环境</p>
-<p>conda remove -n py36 —all</p>
-<p>激活环境</p>
-<p>source activate py36</p>
-<p>退出环境</p>
-<p>source deactivate</p>
-</blockquote>
-<ul>
-<li><p>在创建虚拟环境的过程中，我遇到了一个问题，这个问题就是：<code>如果创建了多个python版本的环境，那么我应该如何去管理当中所安装的不同的包呢？并且与本机原本安装的python环境不起到冲突？</code></p>
-</li>
-<li><p>我解决Anaconda与本机办法是这样的：</p>
-<blockquote>
-<ul>
-<li>解决办法一：</li>
-</ul>
-<p>其实python 在安装的时候就为我们提供了两个版本的解决方案</p>
-<p>在C盘的windows 目录下有个 py.exe</p>
-<p>我们用py.exe 这个工具启动就能分辨出python的版本</p>
-<p>启动python2.7的pip</p>
-<p>直接在cmd 窗口里输入：py -2 -m pip install XXXX</p>
-<p>启动python3.6的pip</p>
-<p>直接在cmd 窗口里输入：py -3 -m pip install XXXX</p>
-<ul>
-<li>解决办法二：</li>
-</ul>
-<p>找到自己本机安装的Python路径（在Path中可以直接找到），然后找到自己的Python.exe文件，然后重命名即可。</p>
-<p>如：我对我本机的Python重命名为Python3，然后对Anaconda中安装的Python不重命名。</p>
-<p>之后需要对Anaconda中的python进行pip安装的时候，就输入：</p>
-<p>python -m pip install XXX</p>
-<p>然后对本机的python进行安装的时候，就输入：</p>
-<p>python3 -m pip install XXX</p>
-</blockquote>
-</li>
-<li><p>我解决Anaconda进入虚拟环境之后与Anaconda自身的Python冲突的问题：<br>&gt;</p>
-<blockquote>
-<p>根据上面启动虚拟环境的方法，我们能够启动已经创建的虚拟环境</p>
-<p>进入虚拟环境之后，输入：</p>
-<p>python -V</p>
-<p>就能够看到当前的虚拟环境中的python的版本号</p>
-<p>这个时候，输入：</p>
-<p>pip list</p>
-<p>你所看到的就是你当前环境下的pip所安装的包。</p>
-<p><code>如果你发现你的list还是Anaconda自带的list的话，就输入：</code></p>
-<p><code>python -m pip list</code></p>
-</blockquote>
-</li>
-</ul>
-<h2 id="Anaconda中创建虚拟环境（GUI模式）"><a href="#Anaconda中创建虚拟环境（GUI模式）" class="headerlink" title="Anaconda中创建虚拟环境（GUI模式）"></a>Anaconda中创建虚拟环境（GUI模式）</h2><p><code>当你安装好Anaconda之后，会出现一个Anaconda Mavigator，点击之后在里面也可以创建虚拟环境。</code></p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/AnacondaNavigator.png?raw=true" alt="AnacondaMavigator"></p>
-<h1 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a>PyCharm</h1><ul>
-<li><p>在PyCharm中的<code>Settings</code>中的<code>Project Interpreter</code>进行python版本的选择。</p>
-</li>
-<li><p>找到你的<code>Anaconda</code>的<code>安装路径</code>。</p>
-</li>
-<li><p>然后在里面找到一个文件夹叫<code>envs</code>。</p>
-</li>
-<li><p>在这个文件夹里面有你创建的所有的虚拟环境。</p>
-</li>
-<li><p>选择你需要用到的虚拟环境，然后找到<code>python.exe</code>即可。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
       </tags>
   </entry>
 </search>
