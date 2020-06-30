@@ -20,18 +20,18 @@
     var CONFIG = {"hostname":"kentanvictor.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="正则表达式正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等 注：在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 #include&amp;lt;regex&amp;gt;  正则表达式中匹配的字符特殊字符    特别字符 描述     $ 匹配输入字符串的结尾位置   ( ) 标记一个子表达式的开始和结束位">
+  <meta name="description" content="正则表达式正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等 注：在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 #include&amp;lt;regex&amp;gt;">
 <meta name="keywords" content="C&amp;C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++_正则表达式">
 <meta property="og:url" content="https://kentanvictor.github.io/2020/06/30/C++正则表达式/index.html">
 <meta property="og:site_name" content="ZoeTam&#39;s Blog">
-<meta property="og:description" content="正则表达式正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等 注：在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 #include&amp;lt;regex&amp;gt;  正则表达式中匹配的字符特殊字符    特别字符 描述     $ 匹配输入字符串的结尾位置   ( ) 标记一个子表达式的开始和结束位">
+<meta property="og:description" content="正则表达式正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等 注：在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 #include&amp;lt;regex&amp;gt;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-06-30T09:18:27.480Z">
+<meta property="og:updated_time" content="2020-06-30T09:21:32.181Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++_正则表达式">
-<meta name="twitter:description" content="正则表达式正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等 注：在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 #include&amp;lt;regex&amp;gt;  正则表达式中匹配的字符特殊字符    特别字符 描述     $ 匹配输入字符串的结尾位置   ( ) 标记一个子表达式的开始和结束位">
+<meta name="twitter:description" content="正则表达式正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等 注：在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 #include&amp;lt;regex&amp;gt;">
 
 <link rel="canonical" href="https://kentanvictor.github.io/2020/06/30/C++正则表达式/">
 
@@ -222,7 +222,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-06-30 17:13:55 / 修改时间：17:18:27" itemprop="dateCreated datePublished" datetime="2020-06-30T17:13:55+08:00">2020-06-30</time>
+              <time title="创建时间：2020-06-30 17:13:55 / 修改时间：17:21:32" itemprop="dateCreated datePublished" datetime="2020-06-30T17:13:55+08:00">2020-06-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -268,6 +268,7 @@
       
         <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等</p>
 <p><code>注：</code>在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 <code>#include&lt;regex&gt;</code> </p>
+<a id="more"></a>
 <h2 id="正则表达式中匹配的字符"><a href="#正则表达式中匹配的字符" class="headerlink" title="正则表达式中匹配的字符"></a>正则表达式中匹配的字符</h2><h3 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h3><div class="table-container">
 <table>
 <thead>
