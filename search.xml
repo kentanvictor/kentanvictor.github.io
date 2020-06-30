@@ -1,60 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Android自定义控件</title>
-    <url>/2018/07/23/Android%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/</url>
-    <content><![CDATA[<h3 id="Android属性动画的分类"><a href="#Android属性动画的分类" class="headerlink" title="Android属性动画的分类"></a>Android属性动画的分类</h3><ul>
-<li>View Animation(补间)</li>
-<li>Drawable Animation(帧动画)</li>
-<li>Property Animation(Android3.0新引入)</li>
-</ul>
-<a id="more"></a>
-<h4 id="View-Animation"><a href="#View-Animation" class="headerlink" title="View Animation"></a>View Animation</h4><ul>
-<li>基于view的渐变动画，只改变view的绘制效果，而实际属性值未该改变。</li>
-<li>比如：动画移动一个按钮位置，但按钮点击的实际位置仍未改变。</li>
-<li>代码中定义动画，可以参考<code>AnimationSet</code>类和<code>Animation</code>的子类。</li>
-<li>而如果使用XML，可以在res/anim/文件夹中定义XML文件。</li>
-<li>下面是一个实例<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">TranslateAnimation animation = <span class="keyword">new</span> TranslateAnimation(<span class="number">0</span>,iv_animation.getWidth(),<span class="number">0</span>,iv_animation.getHight());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">iv_animation是需要移动的图片的id</span></span><br><span class="line"><span class="comment">使用TranslateAnimation的构造方法，将图片从0(原始位置)移动图片长度的长度(iv_animation.getWidth);</span></span><br><span class="line"><span class="comment">高度的移动也是同样的道理</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">animation.setDuration(<span class="number">3000</span>);<span class="comment">//设置延迟效果</span></span><br><span class="line">animation.setFillAfter(<span class="keyword">true</span>);<span class="comment">//使得view不再复位</span></span><br><span class="line">iv_animation.startAnimation(animation);<span class="comment">//开始移动</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="Drawable-Animation"><a href="#Drawable-Animation" class="headerlink" title="Drawable Animation"></a>Drawable Animation</h4><ul>
-<li>加载一系列Drawable资源来创建动画，这种传统动画某种程度上就是创建不同图片序列，顺序播放，就像电影胶片。</li>
-<li>在代码中定义动画帧，使用<code>AnimationDrawable</code>类。</li>
-<li>XML文件能更简单的组成动画帧，在<code>res/drawable</code>文件夹，使用<code>&lt;animation-list&gt;</code>采用<code>&lt;item&gt;</code>来定义不同的帧。</li>
-<li>注：感觉只能设置的属性是动画间隔时间。</li>
-</ul>
-<h4 id="Property-Animation-属性动画"><a href="#Property-Animation-属性动画" class="headerlink" title="Property Animation(属性动画)"></a>Property Animation(属性动画)</h4><ul>
-<li>动画的对象除了传统的view对象，还可以是Object对象，动画之后，Object对象的属性值就实实在在的改变了。</li>
-<li>Property Animation能够通过改变view对象的实际属性来实现view动画。</li>
-<li>任何时候view属性的改变，view能够自动调用invalidate()来试试刷新。</li>
-<li><p>下面是一个实例</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ObjectAnimator animator = ObjectAnimator.ofFloat(iv_animation,<span class="string">"translationX"</span>,<span class="number">0</span>,iv_animation.getWidth());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">使用ObjectAnimator的ofFloat进行平移</span></span><br><span class="line"><span class="comment">ofFloat(平移的id,“如何平移，如：(水平-&gt;translationX)”,初始位置,平移距离);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">ObjectAnimator animator2 = ObjectAnimator.ofFloat(iv_animation,<span class="string">"translationY"</span>,<span class="number">0</span>,iv_animation.getHight());</span><br><span class="line">AnimatorSet animatorSet = <span class="keyword">new</span> AnimatorSet();</span><br><span class="line">AnimatorSet.setDuration(<span class="number">2000</span>);</span><br><span class="line">AnimatorSet.setInterpolator(<span class="keyword">new</span> BounceInterpolator());</span><br><span class="line"><span class="comment">//两个动画一起播放</span></span><br><span class="line">animatorSet.playTogether(animator,animator2);</span><br><span class="line"><span class="comment">//开始播放</span></span><br><span class="line">animatorSet.start();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>另一种写法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">iv_animation.animate()</span><br><span class="line">            .translationXBy(iv_animation.getWidth())</span><br><span class="line">            .translationYBy(iv_animation.getHight())</span><br><span class="line">            .setDuration(<span class="number">2000</span>)</span><br><span class="line">            .setInterpolator(<span class="keyword">new</span> BounceInterpolator())</span><br><span class="line">            .start();</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="ViewPager-广告条效果"><a href="#ViewPager-广告条效果" class="headerlink" title="ViewPager(广告条效果)"></a>ViewPager(广告条效果)</h3><ul>
-<li>ViewPager的使用</li>
-<li>广告条的基本功能</li>
-<li>ViewPager拓展</li>
-<li>改进成引导页面</li>
-</ul>
-<h4 id="ViewPager的使用"><a href="#ViewPager的使用" class="headerlink" title="ViewPager的使用"></a>ViewPager的使用</h4><ul>
-<li>第一：使用<code>android.support.v4.view.ViewPager</code>在布局文件中定义</li>
-<li>第二：在代码中实例化ViewPager</li>
-<li>第三：准备数据</li>
-<li>第四：设置适配器(PagerAdapter)-item-布局-绑定数据</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Android生命周期的分析</title>
     <url>/2018/09/04/Android%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<h1 id="activity的生命周期分析"><a href="#activity的生命周期分析" class="headerlink" title="activity的生命周期分析"></a>activity的生命周期分析</h1><ul>
@@ -143,6 +89,131 @@
       </tags>
   </entry>
   <entry>
+    <title>Android自定义控件</title>
+    <url>/2018/07/23/Android%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/</url>
+    <content><![CDATA[<h3 id="Android属性动画的分类"><a href="#Android属性动画的分类" class="headerlink" title="Android属性动画的分类"></a>Android属性动画的分类</h3><ul>
+<li>View Animation(补间)</li>
+<li>Drawable Animation(帧动画)</li>
+<li>Property Animation(Android3.0新引入)</li>
+</ul>
+<a id="more"></a>
+<h4 id="View-Animation"><a href="#View-Animation" class="headerlink" title="View Animation"></a>View Animation</h4><ul>
+<li>基于view的渐变动画，只改变view的绘制效果，而实际属性值未该改变。</li>
+<li>比如：动画移动一个按钮位置，但按钮点击的实际位置仍未改变。</li>
+<li>代码中定义动画，可以参考<code>AnimationSet</code>类和<code>Animation</code>的子类。</li>
+<li>而如果使用XML，可以在res/anim/文件夹中定义XML文件。</li>
+<li>下面是一个实例<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">TranslateAnimation animation = <span class="keyword">new</span> TranslateAnimation(<span class="number">0</span>,iv_animation.getWidth(),<span class="number">0</span>,iv_animation.getHight());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">iv_animation是需要移动的图片的id</span></span><br><span class="line"><span class="comment">使用TranslateAnimation的构造方法，将图片从0(原始位置)移动图片长度的长度(iv_animation.getWidth);</span></span><br><span class="line"><span class="comment">高度的移动也是同样的道理</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">animation.setDuration(<span class="number">3000</span>);<span class="comment">//设置延迟效果</span></span><br><span class="line">animation.setFillAfter(<span class="keyword">true</span>);<span class="comment">//使得view不再复位</span></span><br><span class="line">iv_animation.startAnimation(animation);<span class="comment">//开始移动</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Drawable-Animation"><a href="#Drawable-Animation" class="headerlink" title="Drawable Animation"></a>Drawable Animation</h4><ul>
+<li>加载一系列Drawable资源来创建动画，这种传统动画某种程度上就是创建不同图片序列，顺序播放，就像电影胶片。</li>
+<li>在代码中定义动画帧，使用<code>AnimationDrawable</code>类。</li>
+<li>XML文件能更简单的组成动画帧，在<code>res/drawable</code>文件夹，使用<code>&lt;animation-list&gt;</code>采用<code>&lt;item&gt;</code>来定义不同的帧。</li>
+<li>注：感觉只能设置的属性是动画间隔时间。</li>
+</ul>
+<h4 id="Property-Animation-属性动画"><a href="#Property-Animation-属性动画" class="headerlink" title="Property Animation(属性动画)"></a>Property Animation(属性动画)</h4><ul>
+<li>动画的对象除了传统的view对象，还可以是Object对象，动画之后，Object对象的属性值就实实在在的改变了。</li>
+<li>Property Animation能够通过改变view对象的实际属性来实现view动画。</li>
+<li>任何时候view属性的改变，view能够自动调用invalidate()来试试刷新。</li>
+<li><p>下面是一个实例</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ObjectAnimator animator = ObjectAnimator.ofFloat(iv_animation,<span class="string">"translationX"</span>,<span class="number">0</span>,iv_animation.getWidth());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">使用ObjectAnimator的ofFloat进行平移</span></span><br><span class="line"><span class="comment">ofFloat(平移的id,“如何平移，如：(水平-&gt;translationX)”,初始位置,平移距离);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">ObjectAnimator animator2 = ObjectAnimator.ofFloat(iv_animation,<span class="string">"translationY"</span>,<span class="number">0</span>,iv_animation.getHight());</span><br><span class="line">AnimatorSet animatorSet = <span class="keyword">new</span> AnimatorSet();</span><br><span class="line">AnimatorSet.setDuration(<span class="number">2000</span>);</span><br><span class="line">AnimatorSet.setInterpolator(<span class="keyword">new</span> BounceInterpolator());</span><br><span class="line"><span class="comment">//两个动画一起播放</span></span><br><span class="line">animatorSet.playTogether(animator,animator2);</span><br><span class="line"><span class="comment">//开始播放</span></span><br><span class="line">animatorSet.start();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>另一种写法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">iv_animation.animate()</span><br><span class="line">            .translationXBy(iv_animation.getWidth())</span><br><span class="line">            .translationYBy(iv_animation.getHight())</span><br><span class="line">            .setDuration(<span class="number">2000</span>)</span><br><span class="line">            .setInterpolator(<span class="keyword">new</span> BounceInterpolator())</span><br><span class="line">            .start();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="ViewPager-广告条效果"><a href="#ViewPager-广告条效果" class="headerlink" title="ViewPager(广告条效果)"></a>ViewPager(广告条效果)</h3><ul>
+<li>ViewPager的使用</li>
+<li>广告条的基本功能</li>
+<li>ViewPager拓展</li>
+<li>改进成引导页面</li>
+</ul>
+<h4 id="ViewPager的使用"><a href="#ViewPager的使用" class="headerlink" title="ViewPager的使用"></a>ViewPager的使用</h4><ul>
+<li>第一：使用<code>android.support.v4.view.ViewPager</code>在布局文件中定义</li>
+<li>第二：在代码中实例化ViewPager</li>
+<li>第三：准备数据</li>
+<li>第四：设置适配器(PagerAdapter)-item-布局-绑定数据</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++_正则表达式</title>
+    <url>/2020/06/30/C++%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等</p>
+<p><code>注：</code>在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 **<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">## 正则表达式中匹配的字符</span><br><span class="line"></span><br><span class="line">### 特殊字符</span><br><span class="line"></span><br><span class="line">| 特别字符 | 描述 |</span><br><span class="line">|  ----  | ----  |</span><br><span class="line">| $  | 匹配输入字符串的结尾位置 |</span><br><span class="line">| ( )  | 标记一个子表达式的开始和结束位置 |</span><br><span class="line">| * | 匹配前面的子表达式零次或多次 |</span><br><span class="line">| + | 匹配前面的子表达式一次或多次 |</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 限定符</span><br><span class="line"></span><br><span class="line">| 字符 | 描述 |</span><br><span class="line">|  ----  | ----  |</span><br><span class="line">| * | 匹配前面的子表达式零次或多次。例如，zo* 能匹配 &quot;z&quot; 以及 &quot;zoo&quot;。* 等价于&#123;0,&#125; |</span><br><span class="line">| + | 匹配前面的子表达式一次或多次。例如，&apos;zo+&apos; 能匹配 &quot;zo&quot; 以及 &quot;zoo&quot;，但不能匹配 &quot;z&quot;。+ 等价于 &#123;1,&#125; |</span><br><span class="line">| ? | 匹配前面的子表达式零次或一次。例如，&quot;do(es)?&quot; 可以匹配 &quot;do&quot; 、 &quot;does&quot; 中的 &quot;does&quot; 、 &quot;doxy&quot; 中的 &quot;do&quot; 。? 等价于 &#123;0,1&#125; |</span><br><span class="line">| &#123;n&#125; | n 是一个非负整数。匹配确定的 n 次。例如，&apos;o&#123;2&#125;&apos; 不能匹配 &quot;Bob&quot; 中的 &apos;o&apos;，但是能匹配 &quot;food&quot; 中的两个 o |</span><br><span class="line">| &#123;n,&#125; | n 是一个非负整数。至少匹配n 次。例如，&apos;o&#123;2,&#125;&apos; 不能匹配 &quot;Bob&quot; 中的 &apos;o&apos;，但能匹配 &quot;foooood&quot; 中的所有 o。&apos;o&#123;1,&#125;&apos; 等价于 &apos;o+&apos;。&apos;o&#123;0,&#125;&apos; 则等价于 &apos;o*&apos; |</span><br><span class="line">| &#123;n,m&#125; | m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，&quot;o&#123;1,3&#125;&quot; 将匹配 &quot;fooooood&quot; 中的前三个 o。&apos;o&#123;0,1&#125;&apos; 等价于 &apos;o?&apos;。请注意在逗号和两个数之间不能有空格 |</span><br><span class="line"></span><br><span class="line">## regex_match</span><br><span class="line">+ match为全文匹配，要求整个字符串符合匹配规则。</span><br><span class="line">+ 返回值为bool值，匹配成功返回1。</span><br><span class="line">  </span><br><span class="line">```C++</span><br><span class="line">#include&lt;iosteam&gt;</span><br><span class="line">#include&lt;regrex&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    cout &lt;&lt; regex_match(&quot;123&quot;, regex(&quot;\\d&quot;)) &lt;&lt; endl;		//结果为0</span><br><span class="line">    cout &lt;&lt; regex_match(&quot;123&quot;, regex(&quot;\\d+&quot;)) &lt;&lt; endl;		//结果为1</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">+ `\d`：匹配一个数字字符</span><br><span class="line">+ `+` ：匹配一次或多次</span><br><span class="line"></span><br><span class="line">regex_match函数还有一种重载方式：regex_match(str, result, pattern)。示例如下所示：</span><br><span class="line">```C++</span><br><span class="line">#include&lt;iosteam&gt;</span><br><span class="line">#include&lt;regrex&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    string str = &quot;Hello_2018&quot;;</span><br><span class="line">    smatch result;</span><br><span class="line">    regex pattern(&quot;(.&#123;5&#125;)_(\\d&#123;4&#125;)&quot;);	//匹配5个任意单字符 + 下划线 + 4个数字</span><br><span class="line"></span><br><span class="line">    if (regex_match(str, result, pattern))</span><br><span class="line">    &#123;</span><br><span class="line">	    cout &lt;&lt; result[0] &lt;&lt; endl;		//完整匹配结果，Hello_2018</span><br><span class="line">	    cout &lt;&lt; result[1] &lt;&lt; endl;		//第一组匹配的数据，Hello</span><br><span class="line">	    cout &lt;&lt; result[2] &lt;&lt; endl;		//第二组匹配的数据，2018</span><br><span class="line">	    cout&lt;&lt;&quot;结果显示形式2&quot;&lt;&lt;endl;</span><br><span class="line">	    cout&lt;&lt; result.str() &lt;&lt; endl;	//完整结果，Hello_2018</span><br><span class="line">	    cout&lt;&lt; result.str(1) &lt;&lt; endl;	//第一组匹配的数据，Hello</span><br><span class="line">	    cout &lt;&lt; result.str(2) &lt;&lt; endl;	//第二组匹配的数据，2018</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //遍历结果</span><br><span class="line">    for (int i = 0; i &lt; result.size(); ++i)</span><br><span class="line">    &#123;</span><br><span class="line">	    cout &lt;&lt; result[i] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="regex-search"><a href="#regex-search" class="headerlink" title="regex_search"></a>regex_search</h2><ul>
+<li>search是搜索匹配，即搜索字符串中存在符合规则的子字符串<br>具体例子如下所示：<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">"Hello 2018, Bye 2017"</span>;</span><br><span class="line">    smatch result;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">"\\d&#123;4&#125;"</span>)</span></span>;	<span class="comment">//匹配四个数字</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//迭代器声明</span></span><br><span class="line">    <span class="built_in">string</span>::const_iterator iterStart = str.begin();</span><br><span class="line">    <span class="built_in">string</span>::const_iterator iterEnd = str.end();</span><br><span class="line">    <span class="built_in">string</span> temp;</span><br><span class="line">    <span class="keyword">while</span> (regex_search(iterStart, iterEnd, result, pattern))</span><br><span class="line">    &#123;</span><br><span class="line">	    temp = result[<span class="number">0</span>];</span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; temp &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	    iterStart = result[<span class="number">0</span>].second;	<span class="comment">//更新搜索起始位置,搜索剩下的字符串</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">输出结果：<span class="number">2018</span> <span class="number">2017</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="regex-replace"><a href="#regex-replace" class="headerlink" title="regex_replace"></a>regex_replace</h2><ul>
+<li><p>replace是替换匹配，即可以将符合匹配规则的子字符串替换为其他字符串</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">"Hello_2018!"</span>;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">"Hello"</span>)</span></span>;	</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_replace(str, pattern, <span class="string">""</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//输出：_2018，将Hello替换为""</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_replace(str, pattern, <span class="string">"Hi"</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//输出：Hi_2018，将Hello替换为Hi</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>除了直接替换以外，还有可以用来调整字符串内容（缩短、顺序等）</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">"Hello_2018!"</span>;	</span><br><span class="line">    <span class="function">regex <span class="title">pattern2</span><span class="params">(<span class="string">"(.&#123;3&#125;)(.&#123;2&#125;)_(\\d&#123;4&#125;)"</span>)</span></span>;				<span class="comment">//匹配3个任意字符+2个任意字符+下划线+4个数字</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_replace(str, pattern2, <span class="string">"$1$3"</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//输出：Hel2018，将字符串替换为第一个和第三个表达式匹配的内容</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_replace(str, pattern2, <span class="string">"$1$3$2"</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//输出：Hel2018lo，交换位置顺序</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>注：</code> $n用于表示第n组匹配数据</p>
+]]></content>
+      <categories>
+        <category>C&amp;C++</category>
+      </categories>
+      <tags>
+        <tag>C&amp;C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Django服务器部署到腾讯云</title>
+    <url>/2018/08/06/Django%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h1 id="Django服务器部署到腾讯云"><a href="#Django服务器部署到腾讯云" class="headerlink" title="Django服务器部署到腾讯云"></a>Django服务器部署到腾讯云</h1><ul>
+<li><p>配置腾讯云的服务器</p>
+<a id="more"></a>
+<ul>
+<li>配置的系统是Ubuntu Server 16.04.1 LTS 64位</li>
+<li>登录后界面如图：</li>
+</ul>
+<ul>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/TencentServerLogin.png?raw=true" alt=""></li>
+<li>之后进行django的安装<strong>注意版本号要和你在本地开发的一致</strong></li>
+<li>使用screen进行后台的django项目的运行。<strong>注意runserver后设置：0.0.0.0:端口号</strong></li>
+</ul>
+</li>
+<li><p>使用PyCharm进行远程连接腾讯云服务器</p>
+<ul>
+<li>Tools—&gt;Deployment—&gt;config呈现下面的界面</li>
+</ul>
+<ul>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAddServer.png?raw=true" alt=""><br>-<br>选择<strong>sftp</strong></li>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmDeployment.png?raw=true" alt=""></li>
+<li>在这里设置你的IP地址，然后点击<code>Test SFTP connection</code></li>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmTestConnection.png?raw=true" alt=""></li>
+<li>在这里设置你的<code>用户名</code>和<code>密码</code><strong>用户名与密码可以在腾讯云的更多中重置与设置</strong></li>
+<li>然后这个时候就连接上了</li>
+</ul>
+<ul>
+<li>此时，在你的PyCharm的右边，会出现服务器上的树目录结构(如图所示)</li>
+</ul>
+<ul>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAdmin.png?raw=true" alt=""></li>
+<li>进入到home—&gt;ubuntu下，在这里面，你具有权限，此时就可以将你的整个项目拖进去，然后在服务器端进入到项目中<strong>创建screen后台</strong>，运行<strong>manage.py runserver 0.0.0.0:端口号</strong>就可以使你的django一直保持运行的状态了。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>后端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS</title>
     <url>/2018/09/08/CSS/</url>
     <content><![CDATA[<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
@@ -204,51 +275,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Django服务器部署到腾讯云</title>
-    <url>/2018/08/06/Django%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<h1 id="Django服务器部署到腾讯云"><a href="#Django服务器部署到腾讯云" class="headerlink" title="Django服务器部署到腾讯云"></a>Django服务器部署到腾讯云</h1><ul>
-<li><p>配置腾讯云的服务器</p>
-<a id="more"></a>
-<ul>
-<li>配置的系统是Ubuntu Server 16.04.1 LTS 64位</li>
-<li>登录后界面如图：</li>
-</ul>
-<ul>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/TencentServerLogin.png?raw=true" alt=""></li>
-<li>之后进行django的安装<strong>注意版本号要和你在本地开发的一致</strong></li>
-<li>使用screen进行后台的django项目的运行。<strong>注意runserver后设置：0.0.0.0:端口号</strong></li>
-</ul>
-</li>
-<li><p>使用PyCharm进行远程连接腾讯云服务器</p>
-<ul>
-<li>Tools—&gt;Deployment—&gt;config呈现下面的界面</li>
-</ul>
-<ul>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAddServer.png?raw=true" alt=""><br>-<br>选择<strong>sftp</strong></li>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmDeployment.png?raw=true" alt=""></li>
-<li>在这里设置你的IP地址，然后点击<code>Test SFTP connection</code></li>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmTestConnection.png?raw=true" alt=""></li>
-<li>在这里设置你的<code>用户名</code>和<code>密码</code><strong>用户名与密码可以在腾讯云的更多中重置与设置</strong></li>
-<li>然后这个时候就连接上了</li>
-</ul>
-<ul>
-<li>此时，在你的PyCharm的右边，会出现服务器上的树目录结构(如图所示)</li>
-</ul>
-<ul>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAdmin.png?raw=true" alt=""></li>
-<li>进入到home—&gt;ubuntu下，在这里面，你具有权限，此时就可以将你的整个项目拖进去，然后在服务器端进入到项目中<strong>创建screen后台</strong>，运行<strong>manage.py runserver 0.0.0.0:端口号</strong>就可以使你的django一直保持运行的状态了。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>后端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git</title>
     <url>/2018/07/23/Git/</url>
     <content><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="What-is-Git"><a href="#What-is-Git" class="headerlink" title="What is Git?"></a>What is Git?</h2><ul>
@@ -285,6 +311,174 @@
       </categories>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML</title>
+    <url>/2018/08/19/HTML/</url>
+    <content><![CDATA[<h1 id="HTML-CSS"><a href="#HTML-CSS" class="headerlink" title="HTML+CSS"></a>HTML+CSS</h1><ul>
+<li><p>外壳的框架</p>
+<a id="more"></a>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>/&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--下面的title写的是你的标签名--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--这里面写的是你想要显示的东西--&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&lt; p &gt;段落文本&lt; /p &gt;</p>
+</li>
+</ul>
+<p><strong>一个&lt; p &gt;代表一个段落，这个是插入段落文本用的</strong></p>
+<hr>
+<ul>
+<li>&lt; hx &gt;标题文本&lt; /hx &gt;(x为1~6)</li>
+</ul>
+<p><strong>hx中的x表示标签字号的大小，h1位最大，h6为最小</strong></p>
+<hr>
+<ul>
+<li>&lt; em &gt;斜体标签&lt; /em &gt;</li>
+<li>&lt; strong &gt;粗体标签&lt; /strong &gt;</li>
+</ul>
+<p><strong>在这两个标签中都是需要强调的文本，只不过这两种标签所强调出来的样式不一样，但是可以两者结合在一起使用</strong></p>
+<hr>
+<ul>
+<li>&lt; span &gt;标签&lt; /span &gt;</li>
+</ul>
+<p><strong>&lt; span &gt;标签是没有语义的，它的作用就是为了设计单独的样式用的，相当于自定义CSS</strong></p>
+<blockquote>
+<ul>
+<li>aqua 浅绿色</li>
+<li>black 黑色</li>
+<li>blue 蓝色</li>
+<li>fuchsia 紫红色</li>
+<li>gray 灰色</li>
+<li>green 绿色</li>
+<li>lime 绿黄色</li>
+<li>maroon 栗色</li>
+<li>navy 深蓝色</li>
+<li>olive 橄榄色</li>
+<li>purple 紫色</li>
+<li>red 红色</li>
+<li>silver 银白色</li>
+<li>teal 蓝绿色</li>
+<li>white 白色</li>
+<li>yellow 黄色</li>
+</ul>
+<p><strong><em>如果使用其它颜色的话，就应该使用十六进制的颜色值</em></strong></p>
+</blockquote>
+<p><strong>&lt; em &gt;&lt; /em &gt;和&lt; strong &gt;&lt; /strong &gt;标签是为了强调一句话中的关键作用，它们的语义是强调</strong></p>
+<p><strong>&lt; strong &gt;&lt; /strong &gt;和&lt; b &gt;&lt; /b &gt; 一样用法，语义是强调</strong></p>
+<hr>
+<ul>
+<li>&lt; q &gt;标签，短文本引用<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q</span>&gt;</span>引用文本<span class="tag">&lt;/<span class="name">q</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>就像引用别人说的话一样，为了标注，则需要加双引号，但是需要&lt; q &gt;&lt; /q &gt;这样的引用</strong></p>
+<p><strong>并且这种引用的文本是不需要加</strong>双引号<strong>的，浏览器会对q标签自动添加双引号</strong></p>
+<blockquote>
+<p>添加&lt; q &gt;之前，浏览器只知道一段文字和一些双引号在里面。</p>
+<blockquote>
+<p>添加&lt; q &gt;之后，浏览器知道这里是一段引用。</p>
+<blockquote>
+<p>如果浏览器有自己的优化(如对老人增大引用的字体及对其加粗)，或者你在CSS中安排了格式，这部分就有意义了。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr>
+<ul>
+<li>&lt; blockquote &gt;&lt; /blockquote &gt;<blockquote>
+<p>转指对长文本的引用，这个标签的解析是<strong>缩进样式</strong></p>
+</blockquote>
+</li>
+</ul>
+<p><strong>这个与上面的&lt; q &gt;&lt; /q &gt;不一样的地方是：第一、这个是用来表示引用长文本的；第二、这个是不会自动添加双引号，但是会缩进样式。(而&lt; q &gt;&lt; /q &gt;是不会缩进样式的)</strong></p>
+<hr>
+<ul>
+<li>&lt; br &gt;标签分行显示文本<blockquote>
+<p>用一个&lt; br &gt;&lt; /br &gt;就像是回车一样，进行了换行。<br><br><em><strong>这就意味着你在HTML代码中输入回车、空格都是没有作用的。在HTML文本中想要输入回车换行就必须输入&lt; br &gt;</strong></em><br><br><em><strong>而&lt; pre &gt;&lt; /pre &gt;可以保留文本中的空格和回车</strong></em></p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>输入 &amp; n b s p；就会在html中显示空格</li>
+</ul>
+<hr>
+<ul>
+<li>输入&lt; hr/ &gt;就是用来添加水平线的</li>
+</ul>
+<hr>
+<ul>
+<li>&lt; address &gt;标签，为网页加入地址信息<blockquote>
+<p>一般网页中会有一些网站的联系地址信息需要在网页中展示出来，这些联系地址信息如公司的地址就可以&lt; address &gt;标签。也可以定义一个地址（比如电子邮件地址）、签名或者文档的作者身份。</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>&lt; code &gt;&lt; /code &gt;进行添加代码<blockquote>
+<p><em><strong>目的是防止浏览器误认为是需要执行的代码，加了标签，浏览器就不会执行了<br><strong>这种只能添加一行代码，如果需要添加多行，就不能使用&lt; code &gt;标签，而需要使用&lt; pre &gt;</strong></strong></em></p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>使用&lt; ul &gt;添加新闻信息列表<blockquote>
+<p>模板：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  ……</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>使用&lt; ol &gt;添加列表标签序号<blockquote>
+<p><strong>这种与上面的区别就在于，下面的这一种就是由序号的，而上面的只有一个点</strong><br></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   ......</span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>&lt; div &gt;&lt; /div &gt;标签在排版中的作用<blockquote>
+<p>一个html页面可以看成一个家，而一个div你们可以看成家的每个小房间，房间有了当然没什么效果，但是一个家必须分成一个个小房间才能多姿多彩，但每个房间里怎么装饰就得你们自己放东西，当然装饰就得交给css了。</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>table标签写表格<blockquote>
+<p>用如下代码实现表格：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>认识table表标签<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>班级<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>学生数<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>平均成绩<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>一班<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>30<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>89<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>二班<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>35<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>85<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>三班<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>32<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>80<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p>上面的代码实现的样子就像下面的样子一样：</p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/table.png?raw=true" alt="table"></p>
+<hr>
+<ul>
+<li><h3>上面的代码可以添加一个CSS样式进行表格的变换</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>为表格添加边框<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">table tr td,th&#123;border:2px solid #342;&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li>summary与caption用来添加标题与摘要<blockquote>
+<p><strong>&lt; table summary=”摘要的内容”&gt;</strong><br><br>上面的summary添加的摘要与在html中添加注释的效果是一样的，目的是为了给程序员看，防止表格太多改错了。<br><br><strong>&lt; caption &gt;标题文本&lt; /caption &gt;</strong><br><br>上面的就是给表格添加标题(表头)的</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>&lt; a &gt;标签使用的超链接<blockquote>
+<p>使用</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"目标地址"</span> <span class="attr">title</span>=<span class="string">"鼠标滑过显示的文本"</span>&gt;</span>连接显示的文本<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><em>href：Hypertext Reference的缩写。意思是超文本引用。</em><br><br>title属性的作用，鼠标滑过链接文字时会显示这个属性的文本内容。<br><br><em><strong>注：只要文本加入a标签之后，文字的颜色就会自动变成蓝色（点击之后的文本颜色会变成紫色）</strong></em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -457,171 +651,81 @@ FileWriter(File filename,boolean append);
       </tags>
   </entry>
   <entry>
-    <title>HTML</title>
-    <url>/2018/08/19/HTML/</url>
-    <content><![CDATA[<h1 id="HTML-CSS"><a href="#HTML-CSS" class="headerlink" title="HTML+CSS"></a>HTML+CSS</h1><ul>
-<li><p>外壳的框架</p>
+    <title>QTDesigner</title>
+    <url>/2018/07/22/QTDesigner/</url>
+    <content><![CDATA[<h2 id="QT的安装"><a href="#QT的安装" class="headerlink" title="QT的安装"></a>QT的安装</h2><ul>
+<li>对于QT的安装，个人的推荐是参考<a href="http://blog.csdn.net/liang19890820/article/details/53931813" target="_blank" rel="noopener">QT5.7+VS2015安装教程</a>。这个教程写的很详细，而且也非常的nice。</li>
+</ul>
 <a id="more"></a>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>/&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--下面的title写的是你的标签名--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--这里面写的是你想要显示的东西--&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="QT在VS2015中的使用"><a href="#QT在VS2015中的使用" class="headerlink" title="QT在VS2015中的使用"></a>QT在VS2015中的使用</h2><ul>
+<li><p>现在我们正式在VS2015中去使用QT，使用前，先需要创建一个QT的项目。</p>
 </li>
-<li><p>&lt; p &gt;段落文本&lt; /p &gt;</p>
-</li>
-</ul>
-<p><strong>一个&lt; p &gt;代表一个段落，这个是插入段落文本用的</strong></p>
-<hr>
-<ul>
-<li>&lt; hx &gt;标题文本&lt; /hx &gt;(x为1~6)</li>
-</ul>
-<p><strong>hx中的x表示标签字号的大小，h1位最大，h6为最小</strong></p>
-<hr>
-<ul>
-<li>&lt; em &gt;斜体标签&lt; /em &gt;</li>
-<li>&lt; strong &gt;粗体标签&lt; /strong &gt;</li>
-</ul>
-<p><strong>在这两个标签中都是需要强调的文本，只不过这两种标签所强调出来的样式不一样，但是可以两者结合在一起使用</strong></p>
-<hr>
-<ul>
-<li>&lt; span &gt;标签&lt; /span &gt;</li>
-</ul>
-<p><strong>&lt; span &gt;标签是没有语义的，它的作用就是为了设计单独的样式用的，相当于自定义CSS</strong></p>
-<blockquote>
-<ul>
-<li>aqua 浅绿色</li>
-<li>black 黑色</li>
-<li>blue 蓝色</li>
-<li>fuchsia 紫红色</li>
-<li>gray 灰色</li>
-<li>green 绿色</li>
-<li>lime 绿黄色</li>
-<li>maroon 栗色</li>
-<li>navy 深蓝色</li>
-<li>olive 橄榄色</li>
-<li>purple 紫色</li>
-<li>red 红色</li>
-<li>silver 银白色</li>
-<li>teal 蓝绿色</li>
-<li>white 白色</li>
-<li>yellow 黄色</li>
-</ul>
-<p><strong><em>如果使用其它颜色的话，就应该使用十六进制的颜色值</em></strong></p>
-</blockquote>
-<p><strong>&lt; em &gt;&lt; /em &gt;和&lt; strong &gt;&lt; /strong &gt;标签是为了强调一句话中的关键作用，它们的语义是强调</strong></p>
-<p><strong>&lt; strong &gt;&lt; /strong &gt;和&lt; b &gt;&lt; /b &gt; 一样用法，语义是强调</strong></p>
-<hr>
-<ul>
-<li>&lt; q &gt;标签，短文本引用<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q</span>&gt;</span>引用文本<span class="tag">&lt;/<span class="name">q</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li><p>使用VS2015中文件——&gt;新建——&gt;项目。点击之后，会出现如下界面：</p>
 </li>
 </ul>
-<p><strong>就像引用别人说的话一样，为了标注，则需要加双引号，但是需要&lt; q &gt;&lt; /q &gt;这样的引用</strong></p>
-<p><strong>并且这种引用的文本是不需要加</strong>双引号<strong>的，浏览器会对q标签自动添加双引号</strong></p>
-<blockquote>
-<p>添加&lt; q &gt;之前，浏览器只知道一段文字和一些双引号在里面。</p>
-<blockquote>
-<p>添加&lt; q &gt;之后，浏览器知道这里是一段引用。</p>
-<blockquote>
-<p>如果浏览器有自己的优化(如对老人增大引用的字体及对其加粗)，或者你在CSS中安排了格式，这部分就有意义了。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<hr>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTCreate.png?raw=true" alt=""></p>
 <ul>
-<li>&lt; blockquote &gt;&lt; /blockquote &gt;<blockquote>
-<p>转指对长文本的引用，这个标签的解析是<strong>缩进样式</strong></p>
-</blockquote>
+<li>模板选择VisualC++下的Qt，选择QT GUI Application，上方的.NET Framework直接选择默认即可。</li>
+<li>选择之后点击下一步，会出现如下界面：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT1.png?raw=true" alt=""></p>
+<ul>
+<li>点击next之后会出现如下界面：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT2.png?raw=true" alt=""><br><strong>这里根据需要可以自己选择，如果是新手可以先直接下一步。</strong></p>
+<ul>
+<li>点击next之后会出现如下界面：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT3.png?raw=true" alt=""><br><strong>这里默认直接finish就可以，如果有什么需要的可以自行设置。</strong></p>
+<ul>
+<li>当创建好之后就会出现如下画面：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTFinish.png?raw=true" alt=""></p>
+<ul>
+<li>上面的画面就是我们需要进行操作的界面了。此时，<code>双击</code>QTTest.ui【位于:解决方案资源管理器-&gt;Form Files】</li>
+<li>双击进去之后就是我们需要进行ui设计的界面了（如下图所示）：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTDesigner.png?raw=true" alt=""></p>
+<ul>
+<li>在这里，你可以进行控件的拖动，直接拖到方框中去，然后再对象查看器（如下图所示）可以看到你控件所对应的类以及生成的对象。</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest1.png?raw=true" alt=""></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest2.png?raw=true" alt=""></p>
+<ul>
+<li>创建好对象之后，点击左上角的文件-&gt;保存（Ctrl+S）</li>
+<li>然后关闭QT Designer，回到VS2015中，<code>右键QTTest.ui，选择编译（Ctrl+F7）</code>，如下图所示：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest3.png?raw=true" alt=""></p>
+<ul>
+<li>编译成功之后（一般情况下都是会编译成功的），<code>双击打开QTTest.cpp</code>,里面的代码是这样的：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这个时候，在<code>ui.setupUi下输入ui.pushButton</code>即可获取到刚刚创建的button的实例。代码如下所示：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">	ui.pushButton;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>在QT中，控件与控件之间的数据传输是通过<code>信号与槽</code>的方式进行的，下面就演示其中一种的数据传输的方式：（代码如下：）</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">	connect(ui.pushButton, &amp;QPushButton::clicked, [this] &#123;</span><br><span class="line">		ui.label-&gt;setText(ui.label-&gt;text().replace(QRegExp(&quot;\\d+&quot;), &quot;25&quot;));</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>实现之后的效果为：</p>
+<ul>
+<li>未点击button之前：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/ClickBefore.png?raw=true" alt=""></p>
+<ul>
+<li>点击button之后：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/ClickAfter.png?raw=true" alt=""></p>
 </li>
 </ul>
-<p><strong>这个与上面的&lt; q &gt;&lt; /q &gt;不一样的地方是：第一、这个是用来表示引用长文本的；第二、这个是不会自动添加双引号，但是会缩进样式。(而&lt; q &gt;&lt; /q &gt;是不会缩进样式的)</strong></p>
-<hr>
-<ul>
-<li>&lt; br &gt;标签分行显示文本<blockquote>
-<p>用一个&lt; br &gt;&lt; /br &gt;就像是回车一样，进行了换行。<br><br><em><strong>这就意味着你在HTML代码中输入回车、空格都是没有作用的。在HTML文本中想要输入回车换行就必须输入&lt; br &gt;</strong></em><br><br><em><strong>而&lt; pre &gt;&lt; /pre &gt;可以保留文本中的空格和回车</strong></em></p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<ul>
-<li>输入 &amp; n b s p；就会在html中显示空格</li>
-</ul>
-<hr>
-<ul>
-<li>输入&lt; hr/ &gt;就是用来添加水平线的</li>
-</ul>
-<hr>
-<ul>
-<li>&lt; address &gt;标签，为网页加入地址信息<blockquote>
-<p>一般网页中会有一些网站的联系地址信息需要在网页中展示出来，这些联系地址信息如公司的地址就可以&lt; address &gt;标签。也可以定义一个地址（比如电子邮件地址）、签名或者文档的作者身份。</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<ul>
-<li>&lt; code &gt;&lt; /code &gt;进行添加代码<blockquote>
-<p><em><strong>目的是防止浏览器误认为是需要执行的代码，加了标签，浏览器就不会执行了<br><strong>这种只能添加一行代码，如果需要添加多行，就不能使用&lt; code &gt;标签，而需要使用&lt; pre &gt;</strong></strong></em></p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<ul>
-<li>使用&lt; ul &gt;添加新闻信息列表<blockquote>
-<p>模板：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  ……</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<hr>
-<ul>
-<li>使用&lt; ol &gt;添加列表标签序号<blockquote>
-<p><strong>这种与上面的区别就在于，下面的这一种就是由序号的，而上面的只有一个点</strong><br></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   ......</span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<hr>
-<ul>
-<li>&lt; div &gt;&lt; /div &gt;标签在排版中的作用<blockquote>
-<p>一个html页面可以看成一个家，而一个div你们可以看成家的每个小房间，房间有了当然没什么效果，但是一个家必须分成一个个小房间才能多姿多彩，但每个房间里怎么装饰就得你们自己放东西，当然装饰就得交给css了。</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<ul>
-<li>table标签写表格<blockquote>
-<p>用如下代码实现表格：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>认识table表标签<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>班级<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>学生数<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>平均成绩<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>一班<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>30<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>89<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>二班<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>35<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>85<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>三班<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>32<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>80<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<p>上面的代码实现的样子就像下面的样子一样：</p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/table.png?raw=true" alt="table"></p>
-<hr>
-<ul>
-<li><h3>上面的代码可以添加一个CSS样式进行表格的变换</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>为表格添加边框<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">table tr td,th&#123;border:2px solid #342;&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<ul>
-<li>summary与caption用来添加标题与摘要<blockquote>
-<p><strong>&lt; table summary=”摘要的内容”&gt;</strong><br><br>上面的summary添加的摘要与在html中添加注释的效果是一样的，目的是为了给程序员看，防止表格太多改错了。<br><br><strong>&lt; caption &gt;标题文本&lt; /caption &gt;</strong><br><br>上面的就是给表格添加标题(表头)的</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<ul>
-<li>&lt; a &gt;标签使用的超链接<blockquote>
-<p>使用</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"目标地址"</span> <span class="attr">title</span>=<span class="string">"鼠标滑过显示的文本"</span>&gt;</span>连接显示的文本<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p><em>href：Hypertext Reference的缩写。意思是超文本引用。</em><br><br>title属性的作用，鼠标滑过链接文字时会显示这个属性的文本内容。<br><br><em><strong>注：只要文本加入a标签之后，文字的颜色就会自动变成蓝色（点击之后的文本颜色会变成紫色）</strong></em></p>
-</blockquote>
 ]]></content>
       <categories>
-        <category>前端</category>
+        <category>QT</category>
       </categories>
       <tags>
-        <tag>前端</tag>
+        <tag>QT</tag>
       </tags>
   </entry>
   <entry>
@@ -745,78 +849,6 @@ FileWriter(File filename,boolean append);
       </tags>
   </entry>
   <entry>
-    <title>Java原生数据类型与表达式</title>
-    <url>/2020/05/12/Java%E5%8E%9F%E7%94%9F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<h1 id="原生数据类型与表达式"><a href="#原生数据类型与表达式" class="headerlink" title="原生数据类型与表达式"></a>原生数据类型与表达式</h1><h2 id="原生数据类型"><a href="#原生数据类型" class="headerlink" title="原生数据类型"></a>原生数据类型</h2><ul>
-<li><p>1.Java 中的原生数据类型共有 8 种：</p>
-<ul>
-<li><p>1） 整型：使用 int 表示。（32 位）</p>
-</li>
-<li><p>2） 字节型：使用 byte 表示。（表示-128～127 之间的 256 个整数， 8 位）。</p>
-</li>
-<li><p>3）短整型：使用 short 表示。（16 位）</p>
-</li>
-<li><p>4）长整型：使用 long 表示。（64 位）</p>
-<a id="more"></a></li>
-<li><p>5）单精度浮点型：使用 float 表示。所谓浮点型，指的就是小数，也叫做实数，例如 1.2。</p>
-</li>
-<li><p>6）双精度浮点型：使用 double 表示。双精度浮点型表示的数据范围要比单精度浮点型大。</p>
-</li>
-<li><p>7）字符型：使用 char 表示（char 是 character 的缩写）。所谓字符，就是单个的字符表示，比如字母 a，或者中文张，外面用单引号包围上。比如 char a = ‘B’; char b = ‘张’;</p>
-</li>
-<li><p>8）布尔类型，使用 boolean 表示。布尔类型只有两种可能值，分别是 true 与 false。</p>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>2.Java 中的所有浮点类型默认情况下都是 double。不能将 double 类型的值赋给 float 类型的变量，即便该 double 类型的值处于 float 类型的范围内也是不可以的。总之，能否成功赋值取决于等号右边的值类型与等号左边的变量类型是否一致。</p>
-</li>
-<li><p>3.如何将 double 类型的值赋给 float 类型的变量？答案就是(1)强制类型转换，将 double 类型的值强制转换为 float 类型。(2)使用 java 预言的支持。</p>
-</li>
-</ul>
-<p><code>强制转换的语法： 类型 变量名 = （类型）变量值;</code></p>
-<ul>
-<li><p>4.变量在使用前必须要赋值；变量必须要声明其类型方可使用；变量在使用前必须要定义，并且只能定义一次。</p>
-</li>
-<li><p>5.如下代码无法通过编译：</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>; <span class="keyword">short</span> b = a;</span><br></pre></td></tr></table></figure>
-<p>a 是 int 类型，b 是 short 类型，int 类型表示的数据范围要比 short 类型大，不能将表示<br>范围大的值赋给表示范围小的变量。</p>
-<ul>
-<li>6.如下代码可以通过编译：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">short</span> a = <span class="number">1</span>; <span class="keyword">int</span> b = a;</span><br></pre></td></tr></table></figure>
-<p>a 是 short 类型，b 是 int 类型，int 类型表示的数据范围要比 short 类型大，可以将表示<br>范围小的值赋给表示范围大的变量。</p>
-<ul>
-<li>7.总结：可以将表示范围小的值赋给表示范围大的变量；但不能直接将表示范围大的值赋给表示范围小的变量，只能通过强制类型转换实现。</li>
-</ul>
-<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><blockquote>
-<p>Java中使用的是<code>中缀表达式</code>——其实就是和数学上的函数表达式的道理是一样的。</p>
-</blockquote>
-<p><strong>注意：</strong></p>
-<ul>
-<li><p>在<code>初级运算</code>中运算产生的数据的数据类型和参与运算的数据的数据类型是相同的。</p>
-</li>
-<li><p>‘+’、’-‘、’*’、’/‘ 都是被重载过的。</p>
-</li>
-<li><p><code>逻辑运算符</code>中，’！’优先级最高，之后是 ‘&amp;&amp;’ ，最后是 ‘||’ 。</p>
-</li>
-<li><p>相同优先级运算顺序从左往右。</p>
-</li>
-<li><p>在<code>类型转换</code>中，如果不损失信息，数值会自动提升为高等级的数据类型。前提是，你的运算中含有高等级的运算符。当需要向低类型转换时，会<strong>截断取整</strong>，而不是四舍五入。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Ubuntu+Windows双系统安装指南</title>
     <url>/2020/05/05/Ubuntu-Windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<h1 id="Ubuntu-Windows双系统安装指南"><a href="#Ubuntu-Windows双系统安装指南" class="headerlink" title="Ubuntu+Windows双系统安装指南"></a>Ubuntu+Windows双系统安装指南</h1><blockquote>
@@ -883,84 +915,6 @@ FileWriter(File filename,boolean append);
       </categories>
       <tags>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>QTDesigner</title>
-    <url>/2018/07/22/QTDesigner/</url>
-    <content><![CDATA[<h2 id="QT的安装"><a href="#QT的安装" class="headerlink" title="QT的安装"></a>QT的安装</h2><ul>
-<li>对于QT的安装，个人的推荐是参考<a href="http://blog.csdn.net/liang19890820/article/details/53931813" target="_blank" rel="noopener">QT5.7+VS2015安装教程</a>。这个教程写的很详细，而且也非常的nice。</li>
-</ul>
-<a id="more"></a>
-<h2 id="QT在VS2015中的使用"><a href="#QT在VS2015中的使用" class="headerlink" title="QT在VS2015中的使用"></a>QT在VS2015中的使用</h2><ul>
-<li><p>现在我们正式在VS2015中去使用QT，使用前，先需要创建一个QT的项目。</p>
-</li>
-<li><p>使用VS2015中文件——&gt;新建——&gt;项目。点击之后，会出现如下界面：</p>
-</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTCreate.png?raw=true" alt=""></p>
-<ul>
-<li>模板选择VisualC++下的Qt，选择QT GUI Application，上方的.NET Framework直接选择默认即可。</li>
-<li>选择之后点击下一步，会出现如下界面：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT1.png?raw=true" alt=""></p>
-<ul>
-<li>点击next之后会出现如下界面：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT2.png?raw=true" alt=""><br><strong>这里根据需要可以自己选择，如果是新手可以先直接下一步。</strong></p>
-<ul>
-<li>点击next之后会出现如下界面：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT3.png?raw=true" alt=""><br><strong>这里默认直接finish就可以，如果有什么需要的可以自行设置。</strong></p>
-<ul>
-<li>当创建好之后就会出现如下画面：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTFinish.png?raw=true" alt=""></p>
-<ul>
-<li>上面的画面就是我们需要进行操作的界面了。此时，<code>双击</code>QTTest.ui【位于:解决方案资源管理器-&gt;Form Files】</li>
-<li>双击进去之后就是我们需要进行ui设计的界面了（如下图所示）：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTDesigner.png?raw=true" alt=""></p>
-<ul>
-<li>在这里，你可以进行控件的拖动，直接拖到方框中去，然后再对象查看器（如下图所示）可以看到你控件所对应的类以及生成的对象。</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest1.png?raw=true" alt=""></p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest2.png?raw=true" alt=""></p>
-<ul>
-<li>创建好对象之后，点击左上角的文件-&gt;保存（Ctrl+S）</li>
-<li>然后关闭QT Designer，回到VS2015中，<code>右键QTTest.ui，选择编译（Ctrl+F7）</code>，如下图所示：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest3.png?raw=true" alt=""></p>
-<ul>
-<li>编译成功之后（一般情况下都是会编译成功的），<code>双击打开QTTest.cpp</code>,里面的代码是这样的：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>这个时候，在<code>ui.setupUi下输入ui.pushButton</code>即可获取到刚刚创建的button的实例。代码如下所示：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">	ui.pushButton;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>在QT中，控件与控件之间的数据传输是通过<code>信号与槽</code>的方式进行的，下面就演示其中一种的数据传输的方式：（代码如下：）</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">	connect(ui.pushButton, &amp;QPushButton::clicked, [this] &#123;</span><br><span class="line">		ui.label-&gt;setText(ui.label-&gt;text().replace(QRegExp(&quot;\\d+&quot;), &quot;25&quot;));</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>实现之后的效果为：</p>
-<ul>
-<li>未点击button之前：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/ClickBefore.png?raw=true" alt=""></p>
-<ul>
-<li>点击button之后：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/ClickAfter.png?raw=true" alt=""></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>QT</category>
-      </categories>
-      <tags>
-        <tag>QT</tag>
       </tags>
   </entry>
   <entry>
@@ -1041,6 +995,78 @@ FileWriter(File filename,boolean append);
       </categories>
       <tags>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java原生数据类型与表达式</title>
+    <url>/2020/05/12/Java%E5%8E%9F%E7%94%9F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<h1 id="原生数据类型与表达式"><a href="#原生数据类型与表达式" class="headerlink" title="原生数据类型与表达式"></a>原生数据类型与表达式</h1><h2 id="原生数据类型"><a href="#原生数据类型" class="headerlink" title="原生数据类型"></a>原生数据类型</h2><ul>
+<li><p>1.Java 中的原生数据类型共有 8 种：</p>
+<ul>
+<li><p>1） 整型：使用 int 表示。（32 位）</p>
+</li>
+<li><p>2） 字节型：使用 byte 表示。（表示-128～127 之间的 256 个整数， 8 位）。</p>
+</li>
+<li><p>3）短整型：使用 short 表示。（16 位）</p>
+</li>
+<li><p>4）长整型：使用 long 表示。（64 位）</p>
+<a id="more"></a></li>
+<li><p>5）单精度浮点型：使用 float 表示。所谓浮点型，指的就是小数，也叫做实数，例如 1.2。</p>
+</li>
+<li><p>6）双精度浮点型：使用 double 表示。双精度浮点型表示的数据范围要比单精度浮点型大。</p>
+</li>
+<li><p>7）字符型：使用 char 表示（char 是 character 的缩写）。所谓字符，就是单个的字符表示，比如字母 a，或者中文张，外面用单引号包围上。比如 char a = ‘B’; char b = ‘张’;</p>
+</li>
+<li><p>8）布尔类型，使用 boolean 表示。布尔类型只有两种可能值，分别是 true 与 false。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>2.Java 中的所有浮点类型默认情况下都是 double。不能将 double 类型的值赋给 float 类型的变量，即便该 double 类型的值处于 float 类型的范围内也是不可以的。总之，能否成功赋值取决于等号右边的值类型与等号左边的变量类型是否一致。</p>
+</li>
+<li><p>3.如何将 double 类型的值赋给 float 类型的变量？答案就是(1)强制类型转换，将 double 类型的值强制转换为 float 类型。(2)使用 java 预言的支持。</p>
+</li>
+</ul>
+<p><code>强制转换的语法： 类型 变量名 = （类型）变量值;</code></p>
+<ul>
+<li><p>4.变量在使用前必须要赋值；变量必须要声明其类型方可使用；变量在使用前必须要定义，并且只能定义一次。</p>
+</li>
+<li><p>5.如下代码无法通过编译：</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>; <span class="keyword">short</span> b = a;</span><br></pre></td></tr></table></figure>
+<p>a 是 int 类型，b 是 short 类型，int 类型表示的数据范围要比 short 类型大，不能将表示<br>范围大的值赋给表示范围小的变量。</p>
+<ul>
+<li>6.如下代码可以通过编译：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">short</span> a = <span class="number">1</span>; <span class="keyword">int</span> b = a;</span><br></pre></td></tr></table></figure>
+<p>a 是 short 类型，b 是 int 类型，int 类型表示的数据范围要比 short 类型大，可以将表示<br>范围小的值赋给表示范围大的变量。</p>
+<ul>
+<li>7.总结：可以将表示范围小的值赋给表示范围大的变量；但不能直接将表示范围大的值赋给表示范围小的变量，只能通过强制类型转换实现。</li>
+</ul>
+<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><blockquote>
+<p>Java中使用的是<code>中缀表达式</code>——其实就是和数学上的函数表达式的道理是一样的。</p>
+</blockquote>
+<p><strong>注意：</strong></p>
+<ul>
+<li><p>在<code>初级运算</code>中运算产生的数据的数据类型和参与运算的数据的数据类型是相同的。</p>
+</li>
+<li><p>‘+’、’-‘、’*’、’/‘ 都是被重载过的。</p>
+</li>
+<li><p><code>逻辑运算符</code>中，’！’优先级最高，之后是 ‘&amp;&amp;’ ，最后是 ‘||’ 。</p>
+</li>
+<li><p>相同优先级运算顺序从左往右。</p>
+</li>
+<li><p>在<code>类型转换</code>中，如果不损失信息，数值会自动提升为高等级的数据类型。前提是，你的运算中含有高等级的运算符。当需要向低类型转换时，会<strong>截断取整</strong>，而不是四舍五入。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
