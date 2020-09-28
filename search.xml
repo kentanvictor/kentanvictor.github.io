@@ -675,6 +675,33 @@
       </tags>
   </entry>
   <entry>
+    <title>重构-App研发</title>
+    <url>/2020/09/28/%E9%87%8D%E6%9E%84-App%E7%A0%94%E5%8F%91/</url>
+    <content><![CDATA[<h1 id="重构，夜未眠"><a href="#重构，夜未眠" class="headerlink" title="重构，夜未眠"></a>重构，夜未眠</h1><h2 id="为Activity定义新的生命周期"><a href="#为Activity定义新的生命周期" class="headerlink" title="为Activity定义新的生命周期"></a>为Activity定义新的生命周期</h2><p>重点：<code>单一职责</code>-&gt;一个类或者方法，只做一件事情</p>
+<a id="more"></a>
+<h3 id="重构一："><a href="#重构一：" class="headerlink" title="重构一："></a>重构一：</h3><ul>
+<li>原来的代码结构：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">onClickListener</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle saveInstanceState)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        Bundle bundle = getIntent().getExtras();</span><br><span class="line">        String strEmail = bundle.getString(AppConstants.Email);</span><br><span class="line"></span><br><span class="line">        etEmail = (EditText) findViewById(R.id.email);</span><br><span class="line">        etEmail.setText(strEmail);</span><br><span class="line">        etPassword = (EditText) findViewById(R.id.password);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//登录事件</span></span><br><span class="line">        Button btnLogin = (Button) findViewById(R.id.sign_in_button);</span><br><span class="line">        btnLogin.setOnClickListener(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取2个MobileAPI，获取天气数据，获取城市数据</span></span><br><span class="line">        loadWeatherData();</span><br><span class="line">        loadCityData();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从上面的Oncreate()方法中，可以看出，需要做的事情太多了，其实可以简化成三块：</p>
+<ul>
+<li><p>initVariables</p>
+</li>
+<li><p>initViews</p>
+</li>
+<li><p>loadData</p>
+</li>
+</ul>
+<p>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle saveInstanceState)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line"></span><br><span class="line">        initVariables();</span><br><span class="line">        initViews(savedInstanceState);</span><br><span class="line">        loadData();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">initVariables</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">initViews</span><span class="params">(Bundle savedInstanceState)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">loadData</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++并发的世界</title>
     <url>/2020/07/15/C++%E5%B9%B6%E5%8F%91%E7%9A%84%E4%B8%96%E7%95%8C/</url>
     <content><![CDATA[<h1 id="C-的并发世界"><a href="#C-的并发世界" class="headerlink" title="C++的并发世界"></a>C++的并发世界</h1><p>主要内容：</p>
