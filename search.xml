@@ -1,6 +1,1302 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Android心路历程</title>
+    <url>/2020/07/04/Android%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="Android学习心路历程"><a href="#Android学习心路历程" class="headerlink" title="Android学习心路历程"></a>Android学习心路历程</h1><p>前言：</p>
+<p>自从2016年加入了Android实验室，接触到了Android编程，购买了第一本Android开发相关的书《第一行代码》。我深深的被Android开发所吸引，可以说，在我学习编程的心路历程中，Android开发可以说是中间的一条线，一路贯穿了我的学习生涯。</p>
+<a id="more"></a>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Android%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.png?raw=true" alt="Android学习路线图"></p>
+<p><code>Android开发资源：</code></p>
+<ul>
+<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89.pdf" target="_blank" rel="noopener">第一行代码</a></p>
+</li>
+<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/Android%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97.pdf" target="_blank" rel="noopener">Android面试指南</a></p>
+</li>
+<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/Android%E7%BE%A4%E8%8B%B1%E4%BC%A0.pdf" target="_blank" rel="noopener">Android群英传</a></p>
+</li>
+</ul>
+<h2 id="2016年"><a href="#2016年" class="headerlink" title="2016年"></a>2016年</h2><ul>
+<li><p>在我大一刚进入学校的时候，对一切都是充满好奇的，那时候已经大三了的我的导员，就和我们科普了学校的Android实验室，身为学院团委副主席的他拥有特别强的个人能力。在他的宣传下，我也就抱着好奇的心态进入了Android实验室进行了学习。</p>
+</li>
+<li><p>在16年进入Android实验室时，通过一周的培训，我初略的学完了C语言，但还是需要学校课程的巩固。通过井超老师在课堂上的讲解，我真正的理解和明白了编程这条道路。</p>
+</li>
+<li><p>在16年，我不单单学会了C语言，也慢慢接触到了Java编程开发，因为Android开发实际上是使用Java语言去编写的（在当初，如今又有了kotlin）。因此我在跟随着Android实验室每周的培训期间，还在不断的去学习Java开发。在最后的寒假中，实验室针对每一位大一大二的同学的要求是要独立写出一个app，我也在寒假期间去实现了一个自己app。</p>
+</li>
+</ul>
+<p><code>Java基础：</code></p>
+<ul>
+<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/Head%20First%20Java%EF%BC%88%E4%B8%AD%E6%96%87%E7%89%88%EF%BC%89.pdf" target="_blank" rel="noopener">Head First Java</a></p>
+</li>
+<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98%EF%BC%88%E4%B8%AD%E6%96%87%E7%89%88%EF%BC%89.pdf" target="_blank" rel="noopener">Java并发编程实战</a></p>
+</li>
+<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/Effective%2BJava%2B%E4%B8%AD%E6%96%87%E7%AC%AC%E4%BA%8C%E7%89%88.pdf" target="_blank" rel="noopener">Effective Java</a></p>
+</li>
+<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3.pdf" target="_blank" rel="noopener">Java编程思想</a></p>
+</li>
+</ul>
+<h2 id="2017年"><a href="#2017年" class="headerlink" title="2017年"></a>2017年</h2><ul>
+<li><p>在2017年期间，应该算是我在Android学习方面最为突飞猛进的一年，在这一年间，学校的课程正好也开设了Java程序设计的课程，因此我不仅跟着实验室的学习进度还能够通过学校的课程巩固我的基础。在这期间，我也通过某宝的代写群尝试，第一次通过写代码，赚到了一笔钱。<strong>我还是十分不建议个人在上学期间去接这种外包项目，因为这样，你对于学习这件事情，味道就变了。</strong></p>
+</li>
+<li><p>在写Android客户端的代码的同时，我也学习了数据库、数据结构、C++等课程，并且学习了多线程、Android自定义控件，自己有去尝试将所学到的东西去仿照别人去写一个自己的项目。如：<a href="https://github.com/kentanvictor/AirScraftDemo" target="_blank" rel="noopener">飞机大战</a>，<a href="https://github.com/kentanvictor/CoolWeather" target="_blank" rel="noopener">天气app</a>等等。</p>
+</li>
+</ul>
+<p><code>程序员必备：</code></p>
+<ul>
+<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/GitHub%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5.pdf" target="_blank" rel="noopener">GitHub入门与实践</a></p>
+</li>
+<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8.pdf" target="_blank" rel="noopener">离散数学及其应用</a></p>
+</li>
+<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%95%B0%E5%AD%A6.pdf" target="_blank" rel="noopener">程序员的数学</a></p>
+</li>
+</ul>
+<h2 id="2018年"><a href="#2018年" class="headerlink" title="2018年"></a>2018年</h2><ul>
+<li><p>在我大三的时候，我又接触到了Android开发更加底层的东西，也通过学校的课程学会了计算机网络、操作系统、计算机组成原理、软件工程等课程，将这些课程中所学习到的内容通过写代码的方式去实现一些小的想法。我也尝试去开阔自己的眼界，去接触不同的编程语言或其他好玩的东西，如：<a href="https://github.com/kentanvictor/DjangoTest" target="_blank" rel="noopener">Django本地服务器</a>。但是Android还是依旧保持着学习与实践，如：<a href="https://github.com/kentanvictor/CarRepair" target="_blank" rel="noopener">汽车商城</a>。</p>
+</li>
+<li><p>Android传感器的相关开发我也有涉及，在这期间也是去完善了一个Android传感器相关的开发项目：<a href="https://github.com/kentanvictor/SensorMonitor" target="_blank" rel="noopener">Android传感器</a></p>
+</li>
+</ul>
+<p><code>基础：</code></p>
+<ul>
+<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.pdf" target="_blank" rel="noopener">大话设计模式</a></p>
+</li>
+<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/%E5%95%8A%E5%93%88%EF%BC%81%E7%AE%97%E6%B3%95%EF%BC%81.pdf" target="_blank" rel="noopener">啊哈！算法！</a></p>
+</li>
+<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/%E7%AE%97%E6%B3%95%EF%BC%88%E7%AC%AC%E5%9B%9B%E7%89%88%EF%BC%89.pdf" target="_blank" rel="noopener">算法</a></p>
+</li>
+</ul>
+<h2 id="2019年"><a href="#2019年" class="headerlink" title="2019年"></a>2019年</h2><ul>
+<li><p>2019年，我跟随着学校的课程，在井超老师的教导下学会了Java企业级应用开发，也接触到了Spring、SpringMVC、Mybatis、Springboots等用于后端开发的工具。我也能够更好的去为我的Android客户端项目进行一个整体的完善。Android相当于前端，而JavaEE去编写的，是后端服务器中的内容。</p>
+</li>
+<li><p>同年，我也在学习了网络编程的课程后，了解到了socket套接字通信，这让我在软硬件交互上更能够去进行交互，这也让我最终能够去接触到硬件相关的知识与开发。因为实验室需要参加比赛的缘故，我接触到了计算机视觉的相关知识，学习了OpenCV的使用与其中关于双目立体视觉的算法。</p>
+</li>
+</ul>
+<h2 id="2020年"><a href="#2020年" class="headerlink" title="2020年"></a>2020年</h2><ul>
+<li>我依旧在学习，在学习新知识的同时不断地回顾以前学习过的基础，作为一名程序员，最最重要的是数据结构、算法与编程语言的运用，从最初编程语言基础的学习，到进阶学习这门编程语言的独特之处，最终涉及到其底层的数据结构与算法相关的理解。慢慢地就会发现，原来编程是这么有趣的一件事情。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android生命周期的分析</title>
+    <url>/2018/09/04/Android%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<h1 id="activity的生命周期分析"><a href="#activity的生命周期分析" class="headerlink" title="activity的生命周期分析"></a>activity的生命周期分析</h1><ul>
+<li><p>activity的生命周期分为两部分内容</p>
+<ul>
+<li><p>典型情况下的生命周期</p>
+<blockquote>
+<p>在有用户参与的情况下，activity所经历过的生命周期的改变</p>
+</blockquote>
+</li>
+<li><p>异常情况下的生命周期</p>
+<blockquote>
+<p>指activity被系统回收或由于当前设备的Configuration发生改变从而导致activity被销毁重建</p>
+</blockquote>
+</li>
+</ul>
+<a id="more"></a>
+</li>
+</ul>
+<h2 id="典型情况下的生命周期分析"><a href="#典型情况下的生命周期分析" class="headerlink" title="典型情况下的生命周期分析"></a>典型情况下的生命周期分析</h2><h3 id="正常生命周期解析"><a href="#正常生命周期解析" class="headerlink" title="正常生命周期解析"></a>正常生命周期解析</h3><p>正常情况下，activity会经历如下生命周期</p>
+<ul>
+<li>onCreate：表示activity正在被创建。</li>
+</ul>
+<blockquote>
+<ul>
+<li>这是生命周期的第一个方法、在这个方法中，我们可以做一些初始化工作，比如调用setContentView去加载界面布局资源、初始化activity所需要的数据等等</li>
+<li>通过覆盖onCreate(Bundle)方法，activity可以预处理以下UI相关工作：</li>
+<li>实例化组件并将它们放置到屏幕上(调用setContentView(int)方法)</li>
+<li>引用已实例化的组件</li>
+<li>为组件设置监听器以处理用户交互</li>
+<li>访问外部模型数据</li>
+</ul>
+<ul>
+<li>onRestart：表示activity正在启动。<br>一般情况下，当当前的activity从不可见重新变为可见的状态时，onRestart就会被调用。<strong>这种情况一般都是用户导致的，当用户按Home键切换到桌面的或者用户打开了一个新的activity，这时当前的activity就会暂停，也就是onPause和onStop被执行，接着用户又回到了这个activity，就会出现这种情况</strong></li>
+<li>onStart：表示activity正在被启动，即将开始。<br>这时activity已经可见了，但是还没有出现在前台，还无法和用户交互。这个时候其实可以理解为activity已经显示出来了，但是我们还看不到</li>
+<li>onResume：表示activity已经可见了，并且出现在前台并开始活动。<br>要注意这个和onStart的对比，onStart和onResume都表示activity已经可见，但是onStart的时候activity还在后台，onResume的时候activity才显示到前台。</li>
+<li>onPause：表示activity正在停止，正常情况下，紧接着onStop就会被调用。<br>在特殊情况下， 如果这个时候快速地再回到当前activity，那么onResume会被调用。可以理解为这种属于极端的情况，用户操作很难重现这种场景。此时可以做一些存储数据、停止动画等工作，但是注意不能太耗时，因为这会影响到新的activity的显示，onPause必须先执行完，新activity的onPause才会执行。</li>
+<li>onStop：表示activity即将停止，可以做一些稍微重量级的回收工作，同样不能太耗时。</li>
+<li>onDestroy：表示activity即将被销毁。<br>这是activity生命周期中的最后的一个回调，在这里，我们可以做一些回收工作和最终的资源释放。</li>
+</ul>
+</blockquote>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/activity.png?raw=true" alt=""></p>
+<p><code>注：</code></p>
+<ul>
+<li>当一个<strong>activity</strong>第一次启动时，回调程序如下：onCreate()-&gt;onStart()-&gt;onResume()</li>
+<li>用户打开<strong>新的activity</strong>或<strong>切回桌面</strong>时，回调如下：onPause()-&gt;onStop()</li>
+<li>用户<strong>重新回到原activity</strong>，回调如下；onRestart()-&gt;onStart()-&gt;onResume()</li>
+<li><strong>back键</strong>回退时，回调如下：onPause()-&gt;onStop()-&gt;onDestroy()</li>
+</ul>
+<p><code>从整个生命周期来说：</code>onCreate()与onDestroy()配对。</p>
+<p><code>从activity是否可见来说：</code>onStart()与onStop()配对。</p>
+<p><code>从activity是否前台来说：</code>onResume()和onPause()配对。</p>
+<hr>
+<p><code>问题：</code>假设当前是activity A，如果用户这个时候打开一个activity B，那么是B的onResume()先执行还是A的onPause()先执行？</p>
+<p><code>结论：</code>旧的activity中onPause()先调用，新的activity中的onResume()才被执行。</p>
+<h2 id="异常情况下的生命周期分析"><a href="#异常情况下的生命周期分析" class="headerlink" title="异常情况下的生命周期分析"></a>异常情况下的生命周期分析</h2><h3 id="资源相关的系统配置发生变化导致activity被杀死进行重建"><a href="#资源相关的系统配置发生变化导致activity被杀死进行重建" class="headerlink" title="资源相关的系统配置发生变化导致activity被杀死进行重建"></a>资源相关的系统配置发生变化导致activity被杀死进行重建</h3><blockquote>
+<p>默认情况下，如果我们不对activity进行特殊处理，那么当系统配置或资源发生变化的时候，activity就会被销毁并重建。如：旋转手机屏幕等。</p>
+</blockquote>
+<p><code>注：</code></p>
+<ul>
+<li>activity被异常杀死重建，activity中onPause()、onStop()、onDestroy()都会被调用。</li>
+<li>系统会调用 <strong>onSaveInstanceState()</strong> 方法对当前activity的状态进行保存，调用位置位于onStop()之前，<strong>时序与onPause()无关</strong>。</li>
+<li>从时序上来说，<strong>onRestoreInstanceState()</strong> 是在onStart()之后。</li>
+</ul>
+<p>示例图如图所示：<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/Android%E5%BC%80%E5%8F%91%E6%8E%A2%E7%B4%A2/%E5%BC%82%E5%B8%B8%E6%83%85%E5%86%B5%E4%B8%8Bactivity%E9%87%8D%E5%BB%BA%E8%BF%87%E7%A8%8B.png?raw=true" alt=""></p>
+<ul>
+<li>在通过onSaveInstanceState和onRestoreInstanceState中进行数据传递时，接收onSaveInstanceState传递过来的参数可以有两个位置：1、onRestoreInstanceState；2、onCreate<ul>
+<li><code>注意：</code>onCreate如果是正常启动的话，<strong>其参数 Bundle savedInstanceState 为 null，</strong> 需要判断 savedInstanceState 是否为空。</li>
+</ul>
+</li>
+</ul>
+<h3 id="资源内存不足导致低优先级activity被杀死"><a href="#资源内存不足导致低优先级activity被杀死" class="headerlink" title="资源内存不足导致低优先级activity被杀死"></a>资源内存不足导致低优先级activity被杀死</h3><blockquote>
+<p>Activity优先级情况，从高到低可分为：</p>
+</blockquote>
+<ul>
+<li>前台activity——正在和用户交互的activity——优先级最高</li>
+<li>可见但非前台activity——比如弹出一个Dialog导致activity可见但不可交互</li>
+<li>后台activity——已被暂停的activity——优先级最低</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android自定义控件</title>
+    <url>/2018/07/23/Android%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/</url>
+    <content><![CDATA[<h3 id="Android属性动画的分类"><a href="#Android属性动画的分类" class="headerlink" title="Android属性动画的分类"></a>Android属性动画的分类</h3><ul>
+<li>View Animation(补间)</li>
+<li>Drawable Animation(帧动画)</li>
+<li>Property Animation(Android3.0新引入)</li>
+</ul>
+<a id="more"></a>
+<h4 id="View-Animation"><a href="#View-Animation" class="headerlink" title="View Animation"></a>View Animation</h4><ul>
+<li>基于view的渐变动画，只改变view的绘制效果，而实际属性值未该改变。</li>
+<li>比如：动画移动一个按钮位置，但按钮点击的实际位置仍未改变。</li>
+<li>代码中定义动画，可以参考<code>AnimationSet</code>类和<code>Animation</code>的子类。</li>
+<li>而如果使用XML，可以在res/anim/文件夹中定义XML文件。</li>
+<li>下面是一个实例<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">TranslateAnimation animation = <span class="keyword">new</span> TranslateAnimation(<span class="number">0</span>,iv_animation.getWidth(),<span class="number">0</span>,iv_animation.getHight());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">iv_animation是需要移动的图片的id</span></span><br><span class="line"><span class="comment">使用TranslateAnimation的构造方法，将图片从0(原始位置)移动图片长度的长度(iv_animation.getWidth);</span></span><br><span class="line"><span class="comment">高度的移动也是同样的道理</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">animation.setDuration(<span class="number">3000</span>);<span class="comment">//设置延迟效果</span></span><br><span class="line">animation.setFillAfter(<span class="keyword">true</span>);<span class="comment">//使得view不再复位</span></span><br><span class="line">iv_animation.startAnimation(animation);<span class="comment">//开始移动</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Drawable-Animation"><a href="#Drawable-Animation" class="headerlink" title="Drawable Animation"></a>Drawable Animation</h4><ul>
+<li>加载一系列Drawable资源来创建动画，这种传统动画某种程度上就是创建不同图片序列，顺序播放，就像电影胶片。</li>
+<li>在代码中定义动画帧，使用<code>AnimationDrawable</code>类。</li>
+<li>XML文件能更简单的组成动画帧，在<code>res/drawable</code>文件夹，使用<code>&lt;animation-list&gt;</code>采用<code>&lt;item&gt;</code>来定义不同的帧。</li>
+<li>注：感觉只能设置的属性是动画间隔时间。</li>
+</ul>
+<h4 id="Property-Animation-属性动画"><a href="#Property-Animation-属性动画" class="headerlink" title="Property Animation(属性动画)"></a>Property Animation(属性动画)</h4><ul>
+<li>动画的对象除了传统的view对象，还可以是Object对象，动画之后，Object对象的属性值就实实在在的改变了。</li>
+<li>Property Animation能够通过改变view对象的实际属性来实现view动画。</li>
+<li>任何时候view属性的改变，view能够自动调用invalidate()来试试刷新。</li>
+<li><p>下面是一个实例</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ObjectAnimator animator = ObjectAnimator.ofFloat(iv_animation,<span class="string">"translationX"</span>,<span class="number">0</span>,iv_animation.getWidth());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">使用ObjectAnimator的ofFloat进行平移</span></span><br><span class="line"><span class="comment">ofFloat(平移的id,“如何平移，如：(水平-&gt;translationX)”,初始位置,平移距离);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">ObjectAnimator animator2 = ObjectAnimator.ofFloat(iv_animation,<span class="string">"translationY"</span>,<span class="number">0</span>,iv_animation.getHight());</span><br><span class="line">AnimatorSet animatorSet = <span class="keyword">new</span> AnimatorSet();</span><br><span class="line">AnimatorSet.setDuration(<span class="number">2000</span>);</span><br><span class="line">AnimatorSet.setInterpolator(<span class="keyword">new</span> BounceInterpolator());</span><br><span class="line"><span class="comment">//两个动画一起播放</span></span><br><span class="line">animatorSet.playTogether(animator,animator2);</span><br><span class="line"><span class="comment">//开始播放</span></span><br><span class="line">animatorSet.start();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>另一种写法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">iv_animation.animate()</span><br><span class="line">            .translationXBy(iv_animation.getWidth())</span><br><span class="line">            .translationYBy(iv_animation.getHight())</span><br><span class="line">            .setDuration(<span class="number">2000</span>)</span><br><span class="line">            .setInterpolator(<span class="keyword">new</span> BounceInterpolator())</span><br><span class="line">            .start();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="ViewPager-广告条效果"><a href="#ViewPager-广告条效果" class="headerlink" title="ViewPager(广告条效果)"></a>ViewPager(广告条效果)</h3><ul>
+<li>ViewPager的使用</li>
+<li>广告条的基本功能</li>
+<li>ViewPager拓展</li>
+<li>改进成引导页面</li>
+</ul>
+<h4 id="ViewPager的使用"><a href="#ViewPager的使用" class="headerlink" title="ViewPager的使用"></a>ViewPager的使用</h4><ul>
+<li>第一：使用<code>android.support.v4.view.ViewPager</code>在布局文件中定义</li>
+<li>第二：在代码中实例化ViewPager</li>
+<li>第三：准备数据</li>
+<li>第四：设置适配器(PagerAdapter)-item-布局-绑定数据</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Django服务器部署到腾讯云</title>
+    <url>/2018/08/06/Django%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h1 id="Django服务器部署到腾讯云"><a href="#Django服务器部署到腾讯云" class="headerlink" title="Django服务器部署到腾讯云"></a>Django服务器部署到腾讯云</h1><ul>
+<li><p>配置腾讯云的服务器</p>
+<a id="more"></a>
+<ul>
+<li>配置的系统是Ubuntu Server 16.04.1 LTS 64位</li>
+<li>登录后界面如图：</li>
+</ul>
+<ul>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/TencentServerLogin.png?raw=true" alt=""></li>
+<li>之后进行django的安装<strong>注意版本号要和你在本地开发的一致</strong></li>
+<li>使用screen进行后台的django项目的运行。<strong>注意runserver后设置：0.0.0.0:端口号</strong></li>
+</ul>
+</li>
+<li><p>使用PyCharm进行远程连接腾讯云服务器</p>
+<ul>
+<li>Tools—&gt;Deployment—&gt;config呈现下面的界面</li>
+</ul>
+<ul>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAddServer.png?raw=true" alt=""><br>-<br>选择<strong>sftp</strong></li>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmDeployment.png?raw=true" alt=""></li>
+<li>在这里设置你的IP地址，然后点击<code>Test SFTP connection</code></li>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmTestConnection.png?raw=true" alt=""></li>
+<li>在这里设置你的<code>用户名</code>和<code>密码</code><strong>用户名与密码可以在腾讯云的更多中重置与设置</strong></li>
+<li>然后这个时候就连接上了</li>
+</ul>
+<ul>
+<li>此时，在你的PyCharm的右边，会出现服务器上的树目录结构(如图所示)</li>
+</ul>
+<ul>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAdmin.png?raw=true" alt=""></li>
+<li>进入到home—&gt;ubuntu下，在这里面，你具有权限，此时就可以将你的整个项目拖进去，然后在服务器端进入到项目中<strong>创建screen后台</strong>，运行<strong>manage.py runserver 0.0.0.0:端口号</strong>就可以使你的django一直保持运行的状态了。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>后端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++_正则表达式</title>
+    <url>/2020/06/30/C++%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等</p>
+<p><code>注：</code>在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 <code>#include&lt;regex&gt;</code> </p>
+<a id="more"></a>
+<h2 id="正则表达式中匹配的字符"><a href="#正则表达式中匹配的字符" class="headerlink" title="正则表达式中匹配的字符"></a>正则表达式中匹配的字符</h2><h3 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>特别字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$</td>
+<td>匹配输入字符串的结尾位置</td>
+</tr>
+<tr>
+<td>( )</td>
+<td>标记一个子表达式的开始和结束位置</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或多次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的子表达式一次或多次</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或多次。例如，zo<em> 能匹配 “z” 以及 “zoo”。</em> 等价于{0,}</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的子表达式一次或多次。例如，’zo+’ 能匹配 “zo” 以及 “zoo”，但不能匹配 “z”。+ 等价于 {1,}</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配前面的子表达式零次或一次。例如，”do(es)?” 可以匹配 “do” 、 “does” 中的 “does” 、 “doxy” 中的 “do” 。? 等价于 {0,1}</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n 是一个非负整数。匹配确定的 n 次。例如，’o{2}’ 不能匹配 “Bob” 中的 ‘o’，但是能匹配 “food” 中的两个 o</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n 是一个非负整数。至少匹配n 次。例如，’o{2,}’ 不能匹配 “Bob” 中的 ‘o’，但能匹配 “foooood” 中的所有 o。’o{1,}’ 等价于 ‘o+’。’o{0,}’ 则等价于 ‘o*’</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，”o{1,3}” 将匹配 “fooooood” 中的前三个 o。’o{0,1}’ 等价于 ‘o?’。请注意在逗号和两个数之间不能有空格</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="regex-match"><a href="#regex-match" class="headerlink" title="regex_match"></a>regex_match</h2><ul>
+<li>match为全文匹配，要求整个字符串符合匹配规则。</li>
+<li>返回值为bool值，匹配成功返回1。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_match(<span class="string">"123"</span>, regex(<span class="string">"\\d"</span>)) &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//结果为0</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_match(<span class="string">"123"</span>, regex(<span class="string">"\\d+"</span>)) &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//结果为1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">+ `\d`：匹配一个数字字符</span><br><span class="line">+ `+` ：匹配一次或多次</span><br><span class="line"></span><br><span class="line">regex_match函数还有一种重载方式：regex_match(str, result, pattern)。示例如下所示：</span><br><span class="line">```C++</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">"Hello_2018"</span>;</span><br><span class="line">    smatch result;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">"(.&#123;5&#125;)_(\\d&#123;4&#125;)"</span>)</span></span>;	<span class="comment">//匹配5个任意单字符 + 下划线 + 4个数字</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (regex_match(str, result, pattern))</span><br><span class="line">    &#123;</span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; result[<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//完整匹配结果，Hello_2018</span></span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; result[<span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//第一组匹配的数据，Hello</span></span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; result[<span class="number">2</span>] &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//第二组匹配的数据，2018</span></span><br><span class="line">	    <span class="built_in">cout</span>&lt;&lt;<span class="string">"结果显示形式2"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	    <span class="built_in">cout</span>&lt;&lt; result.str() &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//完整结果，Hello_2018</span></span><br><span class="line">	    <span class="built_in">cout</span>&lt;&lt; result.str(<span class="number">1</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//第一组匹配的数据，Hello</span></span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; result.str(<span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//第二组匹配的数据，2018</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历结果</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; result.size(); ++i)</span><br><span class="line">    &#123;</span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; result[i] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="regex-search"><a href="#regex-search" class="headerlink" title="regex_search"></a>regex_search</h2><ul>
+<li>search是搜索匹配，即搜索字符串中存在符合规则的子字符串<br>具体例子如下所示：<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">"Hello 2018, Bye 2017"</span>;</span><br><span class="line">    smatch result;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">"\\d&#123;4&#125;"</span>)</span></span>;	<span class="comment">//匹配四个数字</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//迭代器声明</span></span><br><span class="line">    <span class="built_in">string</span>::const_iterator iterStart = str.begin();</span><br><span class="line">    <span class="built_in">string</span>::const_iterator iterEnd = str.end();</span><br><span class="line">    <span class="built_in">string</span> temp;</span><br><span class="line">    <span class="keyword">while</span> (regex_search(iterStart, iterEnd, result, pattern))</span><br><span class="line">    &#123;</span><br><span class="line">	    temp = result[<span class="number">0</span>];</span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; temp &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	    iterStart = result[<span class="number">0</span>].second;	<span class="comment">//更新搜索起始位置,搜索剩下的字符串</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">输出结果：<span class="number">2018</span> <span class="number">2017</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="regex-replace"><a href="#regex-replace" class="headerlink" title="regex_replace"></a>regex_replace</h2><ul>
+<li><p>replace是替换匹配，即可以将符合匹配规则的子字符串替换为其他字符串</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">"Hello_2018!"</span>;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">"Hello"</span>)</span></span>;	</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_replace(str, pattern, <span class="string">""</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//输出：_2018，将Hello替换为""</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_replace(str, pattern, <span class="string">"Hi"</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//输出：Hi_2018，将Hello替换为Hi</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>除了直接替换以外，还有可以用来调整字符串内容（缩短、顺序等）</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">"Hello_2018!"</span>;	</span><br><span class="line">    <span class="function">regex <span class="title">pattern2</span><span class="params">(<span class="string">"(.&#123;3&#125;)(.&#123;2&#125;)_(\\d&#123;4&#125;)"</span>)</span></span>;				<span class="comment">//匹配3个任意字符+2个任意字符+下划线+4个数字</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_replace(str, pattern2, <span class="string">"$1$3"</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//输出：Hel2018，将字符串替换为第一个和第三个表达式匹配的内容</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_replace(str, pattern2, <span class="string">"$1$3$2"</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//输出：Hel2018lo，交换位置顺序</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>注：</code> $n用于表示第n组匹配数据</p>
+]]></content>
+      <categories>
+        <category>C&amp;C++</category>
+      </categories>
+      <tags>
+        <tag>C&amp;C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++并发的世界</title>
+    <url>/2020/07/15/C++%E5%B9%B6%E5%8F%91%E7%9A%84%E4%B8%96%E7%95%8C/</url>
+    <content><![CDATA[<h1 id="C-的并发世界"><a href="#C-的并发世界" class="headerlink" title="C++的并发世界"></a>C++的并发世界</h1><p>主要内容：</p>
+<ul>
+<li>什么是并发和多线程？</li>
+<li>为什么用并发和多线程？</li>
+<li>如何用并发和多线程？</li>
+</ul>
+<a id="more"></a>
+<h2 id="什么是并发？"><a href="#什么是并发？" class="headerlink" title="什么是并发？"></a>什么是并发？</h2><p>两个或更多独立的活动同时进行。在计算机领域中表现为：<strong>单个系统中同时执行多个独立的任务。</strong></p>
+<h3 id="单核任务切换VS多核硬件并发"><a href="#单核任务切换VS多核硬件并发" class="headerlink" title="单核任务切换VS多核硬件并发"></a>单核任务切换VS多核硬件并发</h3><ul>
+<li>单核任务切换</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/C%2B%2B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/%E5%8D%95%E6%A0%B8%E4%BB%BB%E5%8A%A1%E5%88%87%E6%8D%A2.png?raw=true" alt="单核切换"></p>
+<ul>
+<li>多核硬件并发</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/C%2B%2B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/%E5%A4%9A%E6%A0%B8%E7%A1%AC%E4%BB%B6%E5%B9%B6%E5%8F%91.png?raw=true" alt="多核硬件并发"></p>
+<h3 id="多进程并发"><a href="#多进程并发" class="headerlink" title="多进程并发"></a>多进程并发</h3><p>独立进程可通过进程间常规的通信渠道传递信息（信号、套接字、文件、管道等等）。</p>
+<p>缺点之一：运行进程所需的固定开销：需要时间启动进程，操作系统需要内部资源来管理进程等等。</p>
+<p>独立进程实现并发的额外优势：可通过远程连接在不同的机器上运行独立的进程。</p>
+<h3 id="多线程并发"><a href="#多线程并发" class="headerlink" title="多线程并发"></a>多线程并发</h3><p>每个线程相互独立运行，并共享地址空间，因此线程可以通过共享内存进行通信。</p>
+<p><strong>如果数据要被多个线程访问，那么必须保证每个线程所访问到的数据是一致的</strong></p>
+]]></content>
+      <categories>
+        <category>C&amp;C++</category>
+      </categories>
+      <tags>
+        <tag>C&amp;C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git</title>
+    <url>/2018/07/23/Git/</url>
+    <content><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="What-is-Git"><a href="#What-is-Git" class="headerlink" title="What is Git?"></a>What is Git?</h2><ul>
+<li>Git is the most advanced distributed version control system in the world.<a id="more"></a>
+<h2 id="What-is-the-different-between-the-SVN-Subversion-and-the-Git"><a href="#What-is-the-different-between-the-SVN-Subversion-and-the-Git" class="headerlink" title="What is the different between the SVN(Subversion) and the Git?"></a>What is the different between the SVN(Subversion) and the Git?</h2></li>
+<li>SVN is a centralized version control system which version library  centralized packed in the central server.So if you need to do your work,you must go to the central server to download the latest version.When you finished your work,you have to push on the central server.It’s so inconvenient.Actually the centralized version control system must accessible networking.<h5 id="just-like-this-photo"><a href="#just-like-this-photo" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/subversion.png?raw=true" alt=""></p>
+<ul>
+<li>Git is a distributed version control system,which advantaged is if it has not a central version,the LapTop is a rounded version library.because of this, you can work without using network.<h5 id="just-like-this-photo-1"><a href="#just-like-this-photo-1" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/git.png?raw=true" alt=""></p>
+<h2 id="there-are-some-useful-command-lines"><a href="#there-are-some-useful-command-lines" class="headerlink" title="there are some useful command lines :"></a>there are some useful command lines :</h2><ul>
+<li>mkdir: XX (Create an empty directory)/<em>XX refer to directory name</em>/</li>
+<li>pwd: (Show the path to the current directory)</li>
+<li>git: init (Change the current directory to a managed  Git repository,create a hidden file)</li>
+<li>git add XX (Add  XX file to working-storage section)</li>
+<li>git commit -m “XX” (Add a comment to a file)/<em>XX is the comment</em>/</li>
+<li>git status (View warehouse status)</li>
+<li>git log (View history)</li>
+<li>git diff XX (View XX file what are modified)</li>
+<li>git rm XX (Delete XX file)</li>
+<li>cat XX (View file contents)</li>
+<li>git checkout -b A  (Create a A branch and switch to A branch)</li>
+<li>git checkout master (back to master branch)</li>
+<li>git clone HTTPS (clone from online warehouse)</li>
+<li>git branch name (create a branch)</li>
+<li>git branch -d A (Delete A branch)</li>
+<li>git push origin master (push master branch to online warehouse)<h1 id="如何使用Git-Bash"><a href="#如何使用Git-Bash" class="headerlink" title="如何使用Git Bash"></a>如何使用Git Bash</h1><h2 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h2>当需要上传一个项目到Github时，这个时候你需要在自己的Github上新建一个项目<br>New repository<br>然后在右下角有一个Clone or download<br>点击之后有一个Clone with HTTPS<br>Use Git or checkout with SVN using the web URL.<br>复制地址之后<br>在需要上传的项目文件中<br>右键，点击Git Bash Here之后<br>先输入 git clone + 地址<br>会出现一个项目名称的文件夹<br>里面有隐藏文件.git与ReadMe.md<br>将具有项目名称的文件夹中的全部内容剪切到需要上传的项目的根目录下<br>之后在Git Bash中输入<br>git add .<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是GitHub上面：<br>git push origin master<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2>当需要更新已经上传的项目时<br>直接在已经写好的更新过的项目中<br>右键，点击Git Bash Here<br>然后在命令行中输入<br>git pull + 地址<br>上传跟新过之后，需要在命令行中输入<br>git add .<br>之后的步骤又是重复着之前的了<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是Github上面：<br>git push origin master</li>
+</ul>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS</title>
+    <url>/2018/09/08/CSS/</url>
+    <content><![CDATA[<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
+<li>选择器的样式：</li>
+</ul>
+<blockquote>
+<p><strong>选择器{ 属性:值; 属性:值 }</strong></p>
+</blockquote>
+<ul>
+<li><p>选择器：<strong>选择标签的过程</strong></p>
+</li>
+<li><p>选择器的种类：</p>
+</li>
+</ul>
+<a id="more"></a>
+<blockquote>
+<ul>
+<li>标签选择器</li>
+<li>类选择器</li>
+<li>ID选择器</li>
+<li>通配符选择器</li>
+<li>交集选择器（标签指定式）</li>
+<li>子代选择器</li>
+<li>并集选择器<blockquote>
+<ul>
+<li>补充选择器（C3）：</li>
+<li>伪类选择器</li>
+<li>属性选择器</li>
+<li>伪元素选择器</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h3 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h3><ul>
+<li><p>标签选择器的样式：</p>
+<blockquote>
+<p><strong>Html 标签名 { 属性:值;}</strong></p>
+</blockquote>
+</li>
+<li><p>常用的属性：</p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>color —&gt; 前景色（文字颜色）</li>
+<li>background-color —&gt; 背景色</li>
+<li>font-size —&gt; 字体大小</li>
+<li>width —&gt; 设置宽度</li>
+<li>height —&gt; 设置高度</li>
+</ul>
+</blockquote>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java原生数据类型与表达式</title>
+    <url>/2020/05/12/Java%E5%8E%9F%E7%94%9F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<h1 id="原生数据类型与表达式"><a href="#原生数据类型与表达式" class="headerlink" title="原生数据类型与表达式"></a>原生数据类型与表达式</h1><h2 id="原生数据类型"><a href="#原生数据类型" class="headerlink" title="原生数据类型"></a>原生数据类型</h2><ul>
+<li><p>1.Java 中的原生数据类型共有 8 种：</p>
+<ul>
+<li><p>1） 整型：使用 int 表示。（32 位）</p>
+</li>
+<li><p>2） 字节型：使用 byte 表示。（表示-128～127 之间的 256 个整数， 8 位）。</p>
+</li>
+<li><p>3）短整型：使用 short 表示。（16 位）</p>
+</li>
+<li><p>4）长整型：使用 long 表示。（64 位）</p>
+<a id="more"></a></li>
+<li><p>5）单精度浮点型：使用 float 表示。所谓浮点型，指的就是小数，也叫做实数，例如 1.2。</p>
+</li>
+<li><p>6）双精度浮点型：使用 double 表示。双精度浮点型表示的数据范围要比单精度浮点型大。</p>
+</li>
+<li><p>7）字符型：使用 char 表示（char 是 character 的缩写）。所谓字符，就是单个的字符表示，比如字母 a，或者中文张，外面用单引号包围上。比如 char a = ‘B’; char b = ‘张’;</p>
+</li>
+<li><p>8）布尔类型，使用 boolean 表示。布尔类型只有两种可能值，分别是 true 与 false。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>2.Java 中的所有浮点类型默认情况下都是 double。不能将 double 类型的值赋给 float 类型的变量，即便该 double 类型的值处于 float 类型的范围内也是不可以的。总之，能否成功赋值取决于等号右边的值类型与等号左边的变量类型是否一致。</p>
+</li>
+<li><p>3.如何将 double 类型的值赋给 float 类型的变量？答案就是(1)强制类型转换，将 double 类型的值强制转换为 float 类型。(2)使用 java 预言的支持。</p>
+</li>
+</ul>
+<p><code>强制转换的语法： 类型 变量名 = （类型）变量值;</code></p>
+<ul>
+<li><p>4.变量在使用前必须要赋值；变量必须要声明其类型方可使用；变量在使用前必须要定义，并且只能定义一次。</p>
+</li>
+<li><p>5.如下代码无法通过编译：</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>; <span class="keyword">short</span> b = a;</span><br></pre></td></tr></table></figure>
+<p>a 是 int 类型，b 是 short 类型，int 类型表示的数据范围要比 short 类型大，不能将表示<br>范围大的值赋给表示范围小的变量。</p>
+<ul>
+<li>6.如下代码可以通过编译：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">short</span> a = <span class="number">1</span>; <span class="keyword">int</span> b = a;</span><br></pre></td></tr></table></figure>
+<p>a 是 short 类型，b 是 int 类型，int 类型表示的数据范围要比 short 类型大，可以将表示<br>范围小的值赋给表示范围大的变量。</p>
+<ul>
+<li>7.总结：可以将表示范围小的值赋给表示范围大的变量；但不能直接将表示范围大的值赋给表示范围小的变量，只能通过强制类型转换实现。</li>
+</ul>
+<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><blockquote>
+<p>Java中使用的是<code>中缀表达式</code>——其实就是和数学上的函数表达式的道理是一样的。</p>
+</blockquote>
+<p><strong>注意：</strong></p>
+<ul>
+<li><p>在<code>初级运算</code>中运算产生的数据的数据类型和参与运算的数据的数据类型是相同的。</p>
+</li>
+<li><p>‘+’、’-‘、’*’、’/‘ 都是被重载过的。</p>
+</li>
+<li><p><code>逻辑运算符</code>中，’！’优先级最高，之后是 ‘&amp;&amp;’ ，最后是 ‘||’ 。</p>
+</li>
+<li><p>相同优先级运算顺序从左往右。</p>
+</li>
+<li><p>在<code>类型转换</code>中，如果不损失信息，数值会自动提升为高等级的数据类型。前提是，你的运算中含有高等级的运算符。当需要向低类型转换时，会<strong>截断取整</strong>，而不是四舍五入。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaIO</title>
+    <url>/2019/01/22/JavaIO/</url>
+    <content><![CDATA[<h1 id="javaIO"><a href="#javaIO" class="headerlink" title="javaIO"></a>javaIO</h1><p>标签： javaIO</p>
+<hr>
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="#流的概念和作用">什么是IO流</a><ul>
+<li><a href="#IO流的分类">IO流的分类</a></li>
+<li><a href="#字符流和字节流">字符流和字节流</a></li>
+</ul>
+</li>
+<li><a href="#文件字节、字符IO">文件字节、字符IO</a><ul>
+<li><a href="#文件字节IO流">文件字节IO流</a></li>
+<li><a href="#文件字符IO流">文件字符IO流</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<a id="more"></a>
+<h1 id="Java流图结构"><a href="#Java流图结构" class="headerlink" title="Java流图结构"></a>Java流图结构</h1><p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/JavaIO.jpg" alt=""></p>
+<h1 id="流的概念和作用"><a href="#流的概念和作用" class="headerlink" title="流的概念和作用"></a>流的概念和作用</h1><blockquote>
+<p>流是一组有顺序的，有起点和终点的字节集合，是对数据传输的总称或抽象。即数据在两设备间的传输称为流，流的本质是数据传输，根据数据传输特性将流抽象为各种类，方便更直观的进行数据操作。</p>
+</blockquote>
+<h2 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h2><ul>
+<li>根据处理数据类型的不同可以分为：字符流和字节流</li>
+<li>根据数据流向不同分为：输入流和输出流</li>
+</ul>
+<h2 id="字符流和字节流"><a href="#字符流和字节流" class="headerlink" title="字符流和字节流"></a>字符流和字节流</h2><blockquote>
+<p>字符流的由来： 因为数据编码的不同，而有了对字符进行高效操作的流对象。本质其实就是基于字节流读取时，去查了指定的码表。 字节流和字符流的区别：</p>
+<ul>
+<li><p>读写单位不同：字节流以字节（8bit）为单位，字符流以字符为单位，根据码表映射字符，一次可能读多个字节。</p>
+</li>
+<li><p>处理对象不同：字节流能处理所有类型的数据（如图片、avi等），而字符流只能处理字符类型的数据。</p>
+</li>
+<li><p>字节流：一次读入或读出是8位二进制。</p>
+</li>
+<li><p>字符流：一次读入或读出是16位二进制。</p>
+</li>
+</ul>
+<p><strong>设备上的数据无论是图片或者视频，文字，它们都以二进制存储的。二进制的最终都是以一个8位为数据单元进行体现，所以计算机中的最小数据单元就是字节。意味着，字节流可以处理设备上的所有数据，所以字节流一样可以处理字符数据。</strong></p>
+<p><strong><code>结论：只要是处理纯文本数据，就优先考虑使用字符流。 除此之外都使用字节流。</code></strong></p>
+</blockquote>
+<h1 id="文件字节、字符IO"><a href="#文件字节、字符IO" class="headerlink" title="文件字节、字符IO"></a>文件字节、字符IO</h1><blockquote>
+<p>Java程序可能经常需要获取磁盘上文件的有关信息或在磁盘上创建新的文件等，这就需要用到<code>File类</code>。</p>
+<h3 id="创建一个File对象的构造方法有3个："><a href="#创建一个File对象的构造方法有3个：" class="headerlink" title="创建一个File对象的构造方法有3个："></a>创建一个File对象的构造方法有3个：</h3><ul>
+<li>File(String filename);</li>
+<li>File(String directoryPath,String filename);</li>
+<li>File(File dir,String filename);</li>
+</ul>
+<p><em>filename—文件名字；directoryPath—文件路径；dir—一个目录；<code>使用File(String filename)创建文件时，该文件被认为与当前应用程序在同一个目录中。</code></em></p>
+<h3 id="文件的属性："><a href="#文件的属性：" class="headerlink" title="文件的属性："></a><strong>文件的属性：</strong></h3><p><pre>
+public String getName();            //获取文件的名字
+public boolean canRead();           //判断文件是否是可读的
+public boolean canWrite();          //判断文件是否可被写入
+public boolean exists();            //判断文件是否存在
+public long length();               //获取文件的长度（单位是字节）
+public String getAbsolutePath();    //获取文件的绝对路径
+public String getParent();          //获取文件的父目录
+public boolean isFile();            //判断文件是否是一个普通文件，而不是目录
+public boolean isDirectory();       //判断文件是否是一个目录
+public boolean isHidden();          //判断文件是否是隐藏文件
+public long lastModified();         //获取文件最后修改的时间（时间是从1970年午夜至文件最后修改时刻的毫秒数）
+</pre><br><strong>例子：使用上述方法获取某些文件的信息：</strong></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File f = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\IOTest"</span>,<span class="string">"newIO.txt"</span>);</span><br><span class="line">        System.out.println(f.getName() + <span class="string">"是可读的吗："</span> + f.canRead());</span><br><span class="line">        System.out.println(f.getName() + <span class="string">"的长度："</span> + f.length());</span><br><span class="line">        System.out.println(f.getName() + <span class="string">"的绝对路径："</span> + f.getAbsolutePath());</span><br><span class="line"></span><br><span class="line">        File newFile = <span class="keyword">new</span> File(<span class="string">"new.txt"</span>);</span><br><span class="line">        System.out.println(<span class="string">"在当前目录下创建新文件："</span> + newFile.getName());</span><br><span class="line">        <span class="keyword">if</span> (!newFile.exists())&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                newFile.createNewFile();    <span class="comment">//如果没有new.txt则创建一个</span></span><br><span class="line">                System.out.println(<span class="string">"创建成功！"</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a><strong>目录：</strong></h3><p>&gt;</p>
+<ul>
+<li>创建目录<blockquote>
+<p>File对象调用方法public boolean mkdir()创建一个目录，如果创建成功返回true，否则返回false（如果该目录已经存在将返回false）。</p>
+</blockquote>
+</li>
+<li>列出目录中的文件<blockquote>
+<p>如果File对象是一个目录，那么该对象调用下述方法列出目录下的文件和目录。<br><pre>
+public String[] list();             //用字符串形式返回目录下的全部文件
+public File[] listFiles();          //用File对象形式返回目录下的全部文件
+</pre><br>有时候需要列出目录下指定类型的文件，比如.java、.txt等扩展名的文件。可以使用File类的下述两个方法，列出指定类型的文件：<br><pre>
+public String[] list(FilenameFilter obj);           //该方法用字符串形式返回目录下的指定类型的所有文件
+public File[] listFiles(FilenameFilter obj);        //该方法用File对象形式返回目录下的指定类型的所有文件
+</pre><br>上述两个方法的参数FIlenameFilter是一个接口，该接口有个方法：<br><pre>
+public boolean accept(File dir,String name);
+</pre><br>File对象dirFile调用list方法时，需向该方法传递一个实现FilenameFilter接口的对象，list方法执行时，参数obj不断回调接口方法accept(File dir,String name)，该方法中的参数dir为调用list的当前目录dirFile，参数name被实例化为dirFile，参数name被实例化为dirFile目录中的一个文件名，当接口方法返回true时，list方法就将名字为name的文件存放到返回的数组中。</p>
+<p><strong>例子：列出当前目录下（应用程序所在的目录）下全部.java文件的名字：</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DirFileTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File dirFile = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\Singleton_pattern\\src\\com\\dell\\example\\IODemo\\FileTest"</span>);</span><br><span class="line">        FileAccept fileAccept = <span class="keyword">new</span> FileAccept();</span><br><span class="line">        fileAccept.setExtendName(<span class="string">"java"</span>);</span><br><span class="line">        String fileName[] = dirFile.list(fileAccept);</span><br><span class="line">        <span class="keyword">for</span> (String name : fileName)&#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileAccept</span> <span class="keyword">implements</span> <span class="title">FilenameFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String extendName;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setExtendName</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        extendName = <span class="string">"."</span> + s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">accept</span><span class="params">(File dir, String name)</span> </span>&#123;  <span class="comment">//重写接口中的方法</span></span><br><span class="line">        <span class="keyword">return</span> name.endsWith(extendName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="文件字节IO流"><a href="#文件字节IO流" class="headerlink" title="文件字节IO流"></a><strong>文件字节IO流</strong></h2><h3 id="文件字节输入流"><a href="#文件字节输入流" class="headerlink" title="文件字节输入流"></a>文件字节输入流</h3><p><code>使用输入流通常包括4个基本步骤：</code></p>
+<ul>
+<li>设定输入流的源</li>
+<li>创建指向源的输入流</li>
+<li>让输入流读取源中的数据</li>
+<li>关闭输入流</li>
+</ul>
+<p>如果对文件读取需求比较简单，那么可以使用<code>FileInputStream类（文件字节输入流）</code>，该类是InputStream类的子类（以字节为单位读取文件），该类的实例方法都是从InputStream继承来的。</p>
+<ul>
+<li><p>构造方法：</p>
+<p>  可以使用FileInputStream类的下列构造方法创建指向文件的输入流。</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">FileInputStream(String name);</span><br><span class="line">FileInputStream(File file);</span><br></pre></td></tr></table></figure>
+<p>  第一个构造方法使用给定的文件名name创建FileInputStream流，第二个构造方法使用File对象创建FileInputStream流。参数name和file指定的文件称为输入流的源。</p>
+<p>  <strong>注意：</strong> FileInputStream输入流打开一个到达文件的通道。当创建输入流的时候，可能会出现异常。</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileInputStream in = <span class="keyword">new</span> FileInputStream(<span class="string">"hello.txt"</span>);<span class="comment">//创建指向文件hello.txt的输入流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  或</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(<span class="string">"hello.txt"</span>); <span class="comment">//指定输入流的源</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileInputStream in = <span class="keyword">new</span> FileInputStream(f);    <span class="comment">//创建指向源的输入流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOEception e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用输入流读取字节</p>
+<p>  文件字节流可以调用从父类继承的<code>read方法</code>顺序地读取文件，只要不关闭流，每次调用read方法就顺序地读取文件中的其余内容，直到文件的末尾或文件字节输入流被关闭。</p>
+<p>  字节输入流的read方法以字节为单位读取源中的数据。</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span>                              <span class="comment">//输入流调用该方法从源中读取单个字节的数据，该方法返回字节值（0~255之间的一个整数），如果未读出字节就返回-1</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">byte</span> b[])</span>                      <span class="comment">//输入流调用该方法从源中试图读取b.length个字节到字节数组中，返回实际读取的字节数目，如果到达文件末尾则返回-1</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">byte</span> b[],<span class="keyword">int</span> off,<span class="keyword">int</span> len)</span>      <span class="comment">//输入流调用该方法从源中试图读取b.length个字节到字节数组中，返回实际读取的字节数目，如果到达文件末尾则返回-1，参数off指定从字节数组的某个位置开始存放读取的数据</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关闭流<br>  输入流都提供了关闭方法<code>close()</code>，尽管程序结束时会自动关闭所打开的流，但是当程序使用完流后，显式地关闭任何打开的流仍是一个好习惯。</p>
+</li>
+</ul>
+<p><strong>例子：使用文件字节流读文件内容：</strong><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">byte</span>[] a = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            File f = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\Singleton_pattern\\src\\com\\dell\\example\\IODemo\\InputStreamTest\\InputTest.java"</span>);</span><br><span class="line">            InputStream in = <span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">            <span class="keyword">while</span> ((n = in.read(a,<span class="number">0</span>,<span class="number">100</span>)) != -<span class="number">1</span>)&#123;</span><br><span class="line">                String s = <span class="keyword">new</span> String(a,<span class="number">0</span>,n);</span><br><span class="line">                System.out.println(s);</span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="文件字节输出流"><a href="#文件字节输出流" class="headerlink" title="文件字节输出流"></a>文件字节输出流</h3><p><code>使用输出流通常包括4个基本步骤：</code></p>
+<ul>
+<li>给出输出流的目的地</li>
+<li>创建指向目的地的输出流</li>
+<li>让输出流把数据写入到目的地</li>
+<li>关闭输出流</li>
+</ul>
+<p>如果对文件写入需求比较简单，那么可以使用<code>FileOutputStream类（文件字节输出流）</code>，该类是OutputStream类的子类（以字节为单位写入文件），该类的实例方法都是从OutputStream继承来的。</p>
+<ul>
+<li><p>构造方法：</p>
+<p>  可以使用FileOutputStream类的下列具有刷新功能的构造方法创建指向文件的输出流。</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">FileOutputStream(String name);</span><br><span class="line">FileOutputStream(File file);</span><br></pre></td></tr></table></figure>
+<p>  第一个构造方法使用给定的文件名name创建FileOutputStream流，第二个构造方法使用File对象创建FileOutputStream流。参数name和file指定的文件称为输出流的目的地。</p>
+<p>  <strong>注意：</strong> FileOutputStream输出流指向的文件不存在，java就会创建该文件，如果指向的文件是已存在的文件，输入流会刷新该文件（使文件长度为0）。创建输出流可能会出现异常。</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileOutputStream out = <span class="keyword">new</span> FileOutputStream(<span class="string">"androidlab.txt"</span>);<span class="comment">//创建指向文件androidlab.txt的输出流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  或</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(<span class="string">"androidlab.txt"</span>);                <span class="comment">//指定输出流的目的地</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileOutputStream in = <span class="keyword">new</span> FileOutputStream(f);    <span class="comment">//创建指向目的地的输出流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOEception e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用输出流写字节</p>
+<p>  文件字节流可以调用从父类继承的<code>write方法</code>顺序地写文件，只要不关闭流，每次调用write方法就顺序地写文件，直到流被关闭。</p>
+<p>  字节输出流的write方法以字节为单位向目的地写入数据。</p>
+  <pre>
+  void write(int n)                       //输出流调用该方法向目的地写入单个字节
+  void write(byte b[])                     //输出流调用该方法向目的地写入一个字节数组
+  void write(byte b[],int off,int len)     //给定字节数组中起始于偏移量off处取len个字节写入目的地
+  void close()                             //关闭输出流
+  </pre></li>
+<li>关闭流<br>  需要注意的是，在操作系统把程序所写到输出流上的那些字节保存到磁盘上之前，有时被存放在缓冲区中，通过调用<code>close()</code>方法，可以保证操作系统把缓冲区的内容写到它的目的地。</li>
+</ul>
+<p><strong>例子：使用文件字节流写入文件：</strong> 使用具有刷新功能的构造方法指向文件android.txt的输出流，并向里面写入“Android”，然后再选择使用不刷新文件的构造方法指向android.txt，并向文件中追加“Lab”。<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OutputTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span>[] a = <span class="string">"Android"</span>.getBytes();</span><br><span class="line">        <span class="keyword">byte</span>[] b = <span class="string">"Lab"</span>.getBytes();</span><br><span class="line">        File newFile = <span class="keyword">new</span> File(<span class="string">"android.txt"</span>);     <span class="comment">//输出目的地</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            OutputStream out = <span class="keyword">new</span> FileOutputStream(newFile);   <span class="comment">//指向目的地的输出流</span></span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">"的大小:"</span> + newFile.length() + <span class="string">"字节"</span>);</span><br><span class="line">            out.write(a);   <span class="comment">//向目的地写入数据</span></span><br><span class="line">            out.close();</span><br><span class="line">            out = <span class="keyword">new</span> FileOutputStream(newFile,<span class="keyword">true</span>);   <span class="comment">//准备向文件尾追加内容</span></span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">"的大小:"</span> + newFile.length() + <span class="string">"字节"</span>);</span><br><span class="line">            out.write(b,<span class="number">0</span>,b.length);</span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">"的大小:"</span> + newFile.length() + <span class="string">"字节"</span>);</span><br><span class="line">            out.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="文件字符IO流"><a href="#文件字符IO流" class="headerlink" title="文件字符IO流"></a><strong>文件字符IO流</strong></h2><p>文件字节输入、输出流的read和write方法使用字节数组读写数据，即以字节为单位处理数据。因此字节流不能很好地操作Unicode字符。<strong>一个汉字在文件中占两个字节，如果使用字节流读取不当会出现“乱码”现象。</strong></p>
+<p><pre>
+    字节            ------          字符
+FileInputStream     ------      FileReader
+FileOutputStream    ------      FileWriter
+</pre><br>FileReader和FileWriter分别是Reader和Writer的子类，其构造方法分别是：</p>
+<p><pre>
+FileReader(String filename);    FileReader(File filename);
+FileWriter(String filename);    FileWriter(File filename);
+FileWriter(String filename,boolean append);
+FileWriter(File filename,boolean append);
+</pre><br><strong>字符输入流和输出流的<code>read</code>和<code>write</code>方法使用字符数组读写数据，即以字符为基本单位处理数据。</strong></p>
+<ul>
+<li><strong>例子：用文件字符输入、输出流将文件“NotHelloWorld.txt”中的内容尾加到“AndroidLab.txt”中</strong><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RWTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File sourceFile = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\IOTest\\NotHelloWorld.txt"</span>);<span class="comment">//读取的文件</span></span><br><span class="line">        File targetFile = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\IOTest\\AndroidLab.txt"</span>);<span class="comment">//写入的文件</span></span><br><span class="line">        <span class="keyword">char</span> c[] = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            Writer out = <span class="keyword">new</span> FileWriter(targetFile,<span class="keyword">true</span>);   <span class="comment">//指向目的地的输出流</span></span><br><span class="line">            Reader in = <span class="keyword">new</span> FileReader(sourceFile);                 <span class="comment">//指向源的输入流</span></span><br><span class="line">            <span class="keyword">int</span> n = -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> ((n = in.read(c)) != -<span class="number">1</span>)&#123;</span><br><span class="line">                out.write(c,<span class="number">0</span>,n);</span><br><span class="line">            &#125;</span><br><span class="line">            out.flush();</span><br><span class="line">            out.close();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">            System.out.println(<span class="string">"Error "</span> + e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>QTDesigner</title>
+    <url>/2018/07/22/QTDesigner/</url>
+    <content><![CDATA[<h2 id="QT的安装"><a href="#QT的安装" class="headerlink" title="QT的安装"></a>QT的安装</h2><ul>
+<li>对于QT的安装，个人的推荐是参考<a href="http://blog.csdn.net/liang19890820/article/details/53931813" target="_blank" rel="noopener">QT5.7+VS2015安装教程</a>。这个教程写的很详细，而且也非常的nice。</li>
+</ul>
+<a id="more"></a>
+<h2 id="QT在VS2015中的使用"><a href="#QT在VS2015中的使用" class="headerlink" title="QT在VS2015中的使用"></a>QT在VS2015中的使用</h2><ul>
+<li><p>现在我们正式在VS2015中去使用QT，使用前，先需要创建一个QT的项目。</p>
+</li>
+<li><p>使用VS2015中文件——&gt;新建——&gt;项目。点击之后，会出现如下界面：</p>
+</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTCreate.png?raw=true" alt=""></p>
+<ul>
+<li>模板选择VisualC++下的Qt，选择QT GUI Application，上方的.NET Framework直接选择默认即可。</li>
+<li>选择之后点击下一步，会出现如下界面：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT1.png?raw=true" alt=""></p>
+<ul>
+<li>点击next之后会出现如下界面：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT2.png?raw=true" alt=""><br><strong>这里根据需要可以自己选择，如果是新手可以先直接下一步。</strong></p>
+<ul>
+<li>点击next之后会出现如下界面：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT3.png?raw=true" alt=""><br><strong>这里默认直接finish就可以，如果有什么需要的可以自行设置。</strong></p>
+<ul>
+<li>当创建好之后就会出现如下画面：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTFinish.png?raw=true" alt=""></p>
+<ul>
+<li>上面的画面就是我们需要进行操作的界面了。此时，<code>双击</code>QTTest.ui【位于:解决方案资源管理器-&gt;Form Files】</li>
+<li>双击进去之后就是我们需要进行ui设计的界面了（如下图所示）：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTDesigner.png?raw=true" alt=""></p>
+<ul>
+<li>在这里，你可以进行控件的拖动，直接拖到方框中去，然后再对象查看器（如下图所示）可以看到你控件所对应的类以及生成的对象。</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest1.png?raw=true" alt=""></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest2.png?raw=true" alt=""></p>
+<ul>
+<li>创建好对象之后，点击左上角的文件-&gt;保存（Ctrl+S）</li>
+<li>然后关闭QT Designer，回到VS2015中，<code>右键QTTest.ui，选择编译（Ctrl+F7）</code>，如下图所示：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest3.png?raw=true" alt=""></p>
+<ul>
+<li>编译成功之后（一般情况下都是会编译成功的），<code>双击打开QTTest.cpp</code>,里面的代码是这样的：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这个时候，在<code>ui.setupUi下输入ui.pushButton</code>即可获取到刚刚创建的button的实例。代码如下所示：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">	ui.pushButton;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>在QT中，控件与控件之间的数据传输是通过<code>信号与槽</code>的方式进行的，下面就演示其中一种的数据传输的方式：（代码如下：）</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">	connect(ui.pushButton, &amp;QPushButton::clicked, [this] &#123;</span><br><span class="line">		ui.label-&gt;setText(ui.label-&gt;text().replace(QRegExp(&quot;\\d+&quot;), &quot;25&quot;));</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>实现之后的效果为：</p>
+<ul>
+<li>未点击button之前：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/ClickBefore.png?raw=true" alt=""></p>
+<ul>
+<li>点击button之后：</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/ClickAfter.png?raw=true" alt=""></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>QT</category>
+      </categories>
+      <tags>
+        <tag>QT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu+Windows双系统安装指南</title>
+    <url>/2020/05/05/Ubuntu-Windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1 id="Ubuntu-Windows双系统安装指南"><a href="#Ubuntu-Windows双系统安装指南" class="headerlink" title="Ubuntu+Windows双系统安装指南"></a>Ubuntu+Windows双系统安装指南</h1><blockquote>
+<p>写在前面：非常感谢<a href="https://www.jianshu.com/c/01390ac22fa9" target="_blank" rel="noopener">Linux探索之旅</a>在最初的时候给我的安装教程的指南，自己按照这篇教程安装双系统折腾了将近一个月，期间更是将Windows也给装炸了。。。于是乎重装系统，直到现在可以稳定的使用Ubuntu和Windows双系统。</p>
+</blockquote>
+<hr>
+<ul>
+<li><a href="#Windows和Linux的区别">Windows和Linux的区别</a><ul>
+<li><a href="#观念">观念</a></li>
+<li><a href="#发布">发布</a></li>
+<li><a href="#内核API">内核API</a></li>
+</ul>
+</li>
+<li><a href="#Ubuntu系统安装">Ubuntu系统安装</a><ul>
+<li><a href="#下载">下载</a></li>
+<li><a href="#烧录">烧录</a></li>
+<li><a href="#使用USB方式进行安装">使用USB方式进行安装</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<a id="more"></a>
+<h2 id="Windows-和-Linux-的区别"><a href="#Windows-和-Linux-的区别" class="headerlink" title="Windows 和 Linux 的区别"></a>Windows 和 Linux 的区别</h2><p>对于 Windows 和 Linux 的区别，我在这里先使用一张直观的图让大家看一下。</p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Unix_Windows.jpg?raw=true" alt="内核区别"></p>
+<p>从上图中可以看到，Linux 与苹果的 Mac OS 是基于 Unix 系统下的操作系统，而 Windows 是基于MS-DOS的操作系统。下面的几个部分的内容，将分析 Windows 和 Linux 系统的区别。</p>
+<h3 id="观念"><a href="#观念" class="headerlink" title="观念"></a>观念</h3><p>商业模式与开源运作：</p>
+<p>众所周知，Windows 是一款商业级的操作系统，它的源代码是保密的，这也就导致想要看到Windows的源代码变成了一件十分困难的事情。这使得微软授权过的《WINDOWS INTERNALS》一书变得十分的畅销，因为这里面涉及到了部分 Windows 操作系统内部的构建细节。</p>
+<p>相对于 Linux 来说，Linux 是开源的,代码随时可见. 这对刚从 Windows 世界转过来的我是十分震撼的. 虽然我一直都知道这个事实, 但是当你发现了以前需要用尽各种方法,采用各种手段才可以得到只言片语的信息现在完全呈献在你面前的时候,你才能真正体会开源确实是一件伟大的工程。</p>
+<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>2进制与源代码：</p>
+<p>这里所指的2进制与源代码是集中在两者操作系统中在安装程序中的不同之处。</p>
+<p>在 Windows 世界，安装程序几乎全部都是以二进制形式发布的。也就是说，用户下载了一个程序，然后双击，一路 next 就可以了。这个方法很适合初学者。</p>
+<p>在 Linux 世界也有类似的机制，比如 YUM , APT-GET 等。不过 YUM 和 APT-GET 都是比较晚才出现的，在那之前，在 Linux 世界安装程序要更麻烦些。</p>
+<h3 id="内核API"><a href="#内核API" class="headerlink" title="内核API"></a>内核API</h3><p>固定与非固定：</p>
+<p> Windows 内核有一套固定的 API ，而且向后兼容。这使得 Windows 驱动的开发人员在不同版本之间移植时变得很容易。</p>
+<p>而 Linux 没有固定的内核API。2.4版本的内核模块在2.6几乎很大可能是不能兼容的。</p>
+<ul>
+<li>下面展示的是基于开源的 Linux 所分化出来的不同的分支系统。</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/LinuxBranch.jpg?raw=true" alt="Linux分支"></p>
+<hr>
+<h2 id="Ubuntu系统安装"><a href="#Ubuntu系统安装" class="headerlink" title="Ubuntu系统安装"></a>Ubuntu系统安装</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>Ubuntu的英文下载页面：<a href="http://www.ubuntu.com/download" target="_blank" rel="noopener">Ubuntu</a></p>
+<p>Ubuntu的中文下载页面：<a href="https://cn.ubuntu.com/" target="_blank" rel="noopener">Ubuntu国内官网</a></p>
+<p>优麒麟的下载页面：<a href="http://www.ubuntukylin.com/downloads/" target="_blank" rel="noopener">优麒麟</a></p>
+<p>在这里，能够下载到的最新版本是18.04.2LTS(Long Term Support)版本。<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/UbuntuDownLoad.png?raw=true" alt="Ubuntu18.04下载"></p>
+<h3 id="烧录"><a href="#烧录" class="headerlink" title="烧录"></a>烧录</h3><p>在电脑中插入一个空白的U盘（不空白也行，反正之后要格式化的），大小至少8GB。</p>
+<p>Universal USB Installer：<a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/" target="_blank" rel="noopener">下载</a></p>
+<p>下载好Universal USB Installer之后，打开它，在”Device”下拉菜单中选择你的U盘。然后点击创建。<code>对于右侧NTFS格式和Fat32格式，个人建议选择FAT32。</code></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Universal_Installer.png?raw=true" alt="选择ISOs和Drive"></p>
+<h3 id="使用USB方式进行安装"><a href="#使用USB方式进行安装" class="headerlink" title="使用USB方式进行安装"></a>使用USB方式进行安装</h3><blockquote>
+<p>前提：你需要先进入你的Boot Menu中，选择USB Storage Device。如下图所示：<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/USB_Storage_Device.jpg?raw=true" alt="USB Storage Device"></p>
+<p>如果发现没有USB Storage Device，那么选择Setup进入BIOS，或者重启按F2进入BIOS。切换到Boot，选择Secure Boot Control回车，改成Disabled，USB Boot Support设置成Enabled，Boot Mode改成Legacy。如下图所示：</p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/SecureBootControl.jpg?raw=true" alt="Secure Boot Control"></p>
+</blockquote>
+<p>在进入到下图所示界面的时候（pure EFI Boot），这里就出现了一个坑。</p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/EFIBoot.jpg?raw=true" alt="EFIBoot"></p>
+<p>在这个时候，可以选择第一项，你可以先体验一下Ubuntu，也可不体验，直接Install Ubuntu。但是，在具有<code>独立显卡</code>的笔记本或者是台式机上，你会发现界面是能够进去的，但是很快就会卡死。这是因为独立显卡与Ubuntu的集成显卡不兼容所产生的问题。</p>
+<p>这个时候，你需要再次回到pure EFI Boot界面，然后在<code>按E</code>进入到如图所示的界面：</p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/UbuntuNoModeSet.jpg?raw=true" alt="UbuntuNoModeSet"></p>
+<p>将原本<code>quiet splash</code>后面的内容修改为<code>nomodeset</code>。然后再<code>按F10</code>进入到安装界面安装即可。</p>
+<p>在到 <code>安装类型</code> 这一步骤时，如果你在上一步压缩完分区后，没有新建简单卷（保持未分配状态），那么就只需选择 安装 Ubuntu，与 Windows boot manager 共存 这一选项，将分区相关事宜交由 Ubuntu 处理。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MATLAB概述</title>
+    <url>/2018/07/22/MATLAB%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<h1 id="MATLAB概述"><a href="#MATLAB概述" class="headerlink" title="MATLAB概述"></a>MATLAB概述</h1><ul>
+<li>主要包括MATLAB和Simulink两大部分。<blockquote>
+<ul>
+<li>MATLAB基于矩阵(Matrix)的运算，全称为:MATreix LABoratory</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>MATLAB主要功能<blockquote>
+<ul>
+<li>技术计算—&gt;数学计算、分析、可视化和算法开发</li>
+<li>控制系统设计—&gt;控制系统基于模型的设计，包括嵌入式系统仿真、快速原型及代码生成等</li>
+<li>信号处理和通信—&gt;信号处理和通信系统基于模型的设计，包括仿真、代码生成和验证等</li>
+<li>图像处理—&gt;图像采集、分析、可视化和算法开发</li>
+<li>测试和测量—&gt;测试和测量应用中硬件连接性和数据分析</li>
+<li>计算你生物学—&gt;生物数据和系统分析、可视化与仿真</li>
+<li>计算金融—&gt;金融建模、分析及应用程序开发</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>MATLAB分析和访问数据</p>
+<ul>
+<li>数据分析</li>
+</ul>
+<blockquote>
+<p>MATLAB提供有一下一些用于数据分析运算的交互式工具和命令行函数</p>
+<ul>
+<li>内插和抽取</li>
+<li>抽取数据段、缩放和求平均值</li>
+<li>阈值和平滑处理</li>
+<li>相关性、傅里叶分析和筛选</li>
+<li>一维峰值、谷值以及零点查找</li>
+<li>基本统计数据和曲线拟合</li>
+<li>矩阵分析</li>
+</ul>
+</blockquote>
+<ul>
+<li>数据访问</li>
+</ul>
+<blockquote>
+<p>可以从各种常用文件格式(如Microsoft Excel)、ASCII文本或者二进制文件、图像、语音和视频文件，以及诸如HDF和HDF5等科学文件中读取数据</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>MATLAB实现数据可视化</p>
+<ul>
+<li><p>二维绘图</p>
+<blockquote>
+<p>使用二维绘图函数将数据向量可视化</p>
+<ul>
+<li>线图、区域图、条形图以及饼图</li>
+<li>方向图及速率图</li>
+<li>直方图</li>
+<li>多边形图和曲面图</li>
+<li>散点图/气泡图</li>
+<li>动画</li>
+</ul>
+</blockquote>
+</li>
+<li><p>三维绘图和卷可视化</p>
+<blockquote>
+<p>提供有将二维矩阵、三维向量和三维标量数据可视化的函数；还可以指定图形特性，例如：相机取景角度、透视图、灯光效果、光源位置以及透明度等等。<strong>三维绘图函数包括：</strong></p>
+<ul>
+<li>曲面图、轮廓图和网状图</li>
+<li>成像图</li>
+<li>锥形图、切割图、流程图以及等值面图</li>
+</ul>
+</blockquote>
+</li>
+<li><p>交互式创建和编译图形</p>
+<blockquote>
+<p>具有一些设计和修改图形的交互式工具。<strong>可执行的操作有：</strong></p>
+<ul>
+<li>将新的数据集拖放到图形上</li>
+<li>更改图形上任意对象的属性</li>
+<li>缩放、旋转、平移以及更改相机角度和灯光</li>
+<li>添加批注和数据提示</li>
+<li>绘制形状</li>
+<li>生成可供各种数据重复使用的MATLAB自带函数</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>MATLAB进行数值计算</p>
+<blockquote>
+<p>MATLAB提供以下类型函数用于数值计算与数值分析：</p>
+<ul>
+<li>矩阵操作和线性代数</li>
+<li>多项式和内插</li>
+<li>傅里叶分析和筛选</li>
+<li>数据分析和统计</li>
+<li>优化和数值积分</li>
+<li>常微分方程(ODE)</li>
+<li>偏微分方程(PDE)</li>
+<li>稀疏矩阵运算</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="MATLAB的安装"><a href="#MATLAB的安装" class="headerlink" title="MATLAB的安装"></a>MATLAB的安装</h3><blockquote>
+<p>感谢百度经验提供的教程</p>
+<p><a href="http://jingyan.baidu.com/article/3d69c551a2dbd7f0cf02d731.html" target="_blank" rel="noopener">MATLAB安装教程</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML</title>
+    <url>/2018/08/19/HTML/</url>
+    <content><![CDATA[<h1 id="HTML-CSS"><a href="#HTML-CSS" class="headerlink" title="HTML+CSS"></a>HTML+CSS</h1><ul>
+<li><p>外壳的框架</p>
+<a id="more"></a>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>/&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--下面的title写的是你的标签名--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--这里面写的是你想要显示的东西--&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&lt; p &gt;段落文本&lt; /p &gt;</p>
+</li>
+</ul>
+<p><strong>一个&lt; p &gt;代表一个段落，这个是插入段落文本用的</strong></p>
+<hr>
+<ul>
+<li>&lt; hx &gt;标题文本&lt; /hx &gt;(x为1~6)</li>
+</ul>
+<p><strong>hx中的x表示标签字号的大小，h1位最大，h6为最小</strong></p>
+<hr>
+<ul>
+<li>&lt; em &gt;斜体标签&lt; /em &gt;</li>
+<li>&lt; strong &gt;粗体标签&lt; /strong &gt;</li>
+</ul>
+<p><strong>在这两个标签中都是需要强调的文本，只不过这两种标签所强调出来的样式不一样，但是可以两者结合在一起使用</strong></p>
+<hr>
+<ul>
+<li>&lt; span &gt;标签&lt; /span &gt;</li>
+</ul>
+<p><strong>&lt; span &gt;标签是没有语义的，它的作用就是为了设计单独的样式用的，相当于自定义CSS</strong></p>
+<blockquote>
+<ul>
+<li>aqua 浅绿色</li>
+<li>black 黑色</li>
+<li>blue 蓝色</li>
+<li>fuchsia 紫红色</li>
+<li>gray 灰色</li>
+<li>green 绿色</li>
+<li>lime 绿黄色</li>
+<li>maroon 栗色</li>
+<li>navy 深蓝色</li>
+<li>olive 橄榄色</li>
+<li>purple 紫色</li>
+<li>red 红色</li>
+<li>silver 银白色</li>
+<li>teal 蓝绿色</li>
+<li>white 白色</li>
+<li>yellow 黄色</li>
+</ul>
+<p><strong><em>如果使用其它颜色的话，就应该使用十六进制的颜色值</em></strong></p>
+</blockquote>
+<p><strong>&lt; em &gt;&lt; /em &gt;和&lt; strong &gt;&lt; /strong &gt;标签是为了强调一句话中的关键作用，它们的语义是强调</strong></p>
+<p><strong>&lt; strong &gt;&lt; /strong &gt;和&lt; b &gt;&lt; /b &gt; 一样用法，语义是强调</strong></p>
+<hr>
+<ul>
+<li>&lt; q &gt;标签，短文本引用<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q</span>&gt;</span>引用文本<span class="tag">&lt;/<span class="name">q</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>就像引用别人说的话一样，为了标注，则需要加双引号，但是需要&lt; q &gt;&lt; /q &gt;这样的引用</strong></p>
+<p><strong>并且这种引用的文本是不需要加</strong>双引号<strong>的，浏览器会对q标签自动添加双引号</strong></p>
+<blockquote>
+<p>添加&lt; q &gt;之前，浏览器只知道一段文字和一些双引号在里面。</p>
+<blockquote>
+<p>添加&lt; q &gt;之后，浏览器知道这里是一段引用。</p>
+<blockquote>
+<p>如果浏览器有自己的优化(如对老人增大引用的字体及对其加粗)，或者你在CSS中安排了格式，这部分就有意义了。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr>
+<ul>
+<li>&lt; blockquote &gt;&lt; /blockquote &gt;<blockquote>
+<p>转指对长文本的引用，这个标签的解析是<strong>缩进样式</strong></p>
+</blockquote>
+</li>
+</ul>
+<p><strong>这个与上面的&lt; q &gt;&lt; /q &gt;不一样的地方是：第一、这个是用来表示引用长文本的；第二、这个是不会自动添加双引号，但是会缩进样式。(而&lt; q &gt;&lt; /q &gt;是不会缩进样式的)</strong></p>
+<hr>
+<ul>
+<li>&lt; br &gt;标签分行显示文本<blockquote>
+<p>用一个&lt; br &gt;&lt; /br &gt;就像是回车一样，进行了换行。<br><br><em><strong>这就意味着你在HTML代码中输入回车、空格都是没有作用的。在HTML文本中想要输入回车换行就必须输入&lt; br &gt;</strong></em><br><br><em><strong>而&lt; pre &gt;&lt; /pre &gt;可以保留文本中的空格和回车</strong></em></p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>输入 &amp; n b s p；就会在html中显示空格</li>
+</ul>
+<hr>
+<ul>
+<li>输入&lt; hr/ &gt;就是用来添加水平线的</li>
+</ul>
+<hr>
+<ul>
+<li>&lt; address &gt;标签，为网页加入地址信息<blockquote>
+<p>一般网页中会有一些网站的联系地址信息需要在网页中展示出来，这些联系地址信息如公司的地址就可以&lt; address &gt;标签。也可以定义一个地址（比如电子邮件地址）、签名或者文档的作者身份。</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>&lt; code &gt;&lt; /code &gt;进行添加代码<blockquote>
+<p><em><strong>目的是防止浏览器误认为是需要执行的代码，加了标签，浏览器就不会执行了<br><strong>这种只能添加一行代码，如果需要添加多行，就不能使用&lt; code &gt;标签，而需要使用&lt; pre &gt;</strong></strong></em></p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>使用&lt; ul &gt;添加新闻信息列表<blockquote>
+<p>模板：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  ……</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>使用&lt; ol &gt;添加列表标签序号<blockquote>
+<p><strong>这种与上面的区别就在于，下面的这一种就是由序号的，而上面的只有一个点</strong><br></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   ......</span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>&lt; div &gt;&lt; /div &gt;标签在排版中的作用<blockquote>
+<p>一个html页面可以看成一个家，而一个div你们可以看成家的每个小房间，房间有了当然没什么效果，但是一个家必须分成一个个小房间才能多姿多彩，但每个房间里怎么装饰就得你们自己放东西，当然装饰就得交给css了。</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>table标签写表格<blockquote>
+<p>用如下代码实现表格：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>认识table表标签<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>班级<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>学生数<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>平均成绩<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>一班<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>30<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>89<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>二班<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>35<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>85<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>三班<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>32<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>80<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p>上面的代码实现的样子就像下面的样子一样：</p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/table.png?raw=true" alt="table"></p>
+<hr>
+<ul>
+<li><h3>上面的代码可以添加一个CSS样式进行表格的变换</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>为表格添加边框<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">table tr td,th&#123;border:2px solid #342;&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li>summary与caption用来添加标题与摘要<blockquote>
+<p><strong>&lt; table summary=”摘要的内容”&gt;</strong><br><br>上面的summary添加的摘要与在html中添加注释的效果是一样的，目的是为了给程序员看，防止表格太多改错了。<br><br><strong>&lt; caption &gt;标题文本&lt; /caption &gt;</strong><br><br>上面的就是给表格添加标题(表头)的</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>&lt; a &gt;标签使用的超链接<blockquote>
+<p>使用</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"目标地址"</span> <span class="attr">title</span>=<span class="string">"鼠标滑过显示的文本"</span>&gt;</span>连接显示的文本<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><em>href：Hypertext Reference的缩写。意思是超文本引用。</em><br><br>title属性的作用，鼠标滑过链接文字时会显示这个属性的文本内容。<br><br><em><strong>注：只要文本加入a标签之后，文字的颜色就会自动变成蓝色（点击之后的文本颜色会变成紫色）</strong></em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>重构-App研发</title>
+    <url>/2020/09/28/%E9%87%8D%E6%9E%84-App%E7%A0%94%E5%8F%91/</url>
+    <content><![CDATA[<h1 id="重构，夜未眠"><a href="#重构，夜未眠" class="headerlink" title="重构，夜未眠"></a>重构，夜未眠</h1><h2 id="为Activity定义新的生命周期"><a href="#为Activity定义新的生命周期" class="headerlink" title="为Activity定义新的生命周期"></a>为Activity定义新的生命周期</h2><p>重点：<code>单一职责</code>-&gt;一个类或者方法，只做一件事情</p>
+<a id="more"></a>
+<h3 id="重构一："><a href="#重构一：" class="headerlink" title="重构一："></a>重构一：</h3><ul>
+<li>原来的代码结构：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">onClickListener</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle saveInstanceState)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        Bundle bundle = getIntent().getExtras();</span><br><span class="line">        String strEmail = bundle.getString(AppConstants.Email);</span><br><span class="line"></span><br><span class="line">        etEmail = (EditText) findViewById(R.id.email);</span><br><span class="line">        etEmail.setText(strEmail);</span><br><span class="line">        etPassword = (EditText) findViewById(R.id.password);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//登录事件</span></span><br><span class="line">        Button btnLogin = (Button) findViewById(R.id.sign_in_button);</span><br><span class="line">        btnLogin.setOnClickListener(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取2个MobileAPI，获取天气数据，获取城市数据</span></span><br><span class="line">        loadWeatherData();</span><br><span class="line">        loadCityData();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从上面的Oncreate()方法中，可以看出，需要做的事情太多了，其实可以简化成三块：</p>
+<ul>
+<li><p>initVariables</p>
+</li>
+<li><p>initViews</p>
+</li>
+<li><p>loadData</p>
+</li>
+</ul>
+<p>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle saveInstanceState)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line"></span><br><span class="line">        initVariables();</span><br><span class="line">        initViews(savedInstanceState);</span><br><span class="line">        loadData();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">initVariables</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">initViews</span><span class="params">(Bundle savedInstanceState)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">loadData</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="重构二："><a href="#重构二：" class="headerlink" title="重构二："></a>重构二：</h3><p>一般的，对点击事件的监听方式可以有以下两种：</p>
+<ul>
+<li>第一种：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span></span>&#123;</span><br><span class="line">        <span class="comment">//省略代码</span></span><br><span class="line"></span><br><span class="line">        Button btnLogin = (Button)findViewById(R.id.sign_in_button);</span><br><span class="line">        btnLogin.setOnClickListener(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span></span>&#123;</span><br><span class="line">        <span class="keyword">switch</span>(v.getId())&#123;</span><br><span class="line">            <span class="keyword">case</span> R.id.sign_in_button:</span><br><span class="line">                Intent intent = <span class="keyword">new</span> Intent(LoginActivity.<span class="keyword">this</span>,PersonCenterActivity.class);</span><br><span class="line">                startActivity(intent);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二种：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//登录事件</span></span><br><span class="line">btnLogin = (Button) findViewById(R.id.sign_in_button);</span><br><span class="line">btnLogin.setOnClickListener(<span class="keyword">new</span> View.OnClickListener&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span></span>&#123;</span><br><span class="line">        getoLoginActivity();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>书中更推荐使用<code>第二种</code>方式进行实现，其给出的原因是：</p>
+<p>第二种相比较于第一种：</p>
+<ul>
+<li>直接在btnLogin这个按钮对象上增加点击事件，是面向对象的写法。</li>
+<li>将onClick方面的实现，封装成一个gotoLoginActivity方法。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows虚拟环境在PyCharm中的使用</title>
+    <url>/2020/05/06/Windows%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%9C%A8PyCharm%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h1><blockquote>
+<p>网上对于Anaconda的安装是教程有很多，这里会为各位提供的是一个我当时安装时候所参考的链接地址。<a href="https://zhuanlan.zhihu.com/p/32925500" target="_blank" rel="noopener">Anaconda的介绍、安装及使用教程</a></p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Anaconda中创建虚拟环境（命令行模式）"><a href="#Anaconda中创建虚拟环境（命令行模式）" class="headerlink" title="Anaconda中创建虚拟环境（命令行模式）"></a>Anaconda中创建虚拟环境（命令行模式）</h2><blockquote>
+<p>在Anaconda中创建虚拟环境的方式：</p>
+<p>下面是创建python=3.6版本的环境，取名叫py36</p>
+<p>conda create -n py36 python=3.6</p>
+<p>删除环境</p>
+<p>conda remove -n py36 —all</p>
+<p>激活环境</p>
+<p>source activate py36</p>
+<p>退出环境</p>
+<p>source deactivate</p>
+</blockquote>
+<ul>
+<li><p>在创建虚拟环境的过程中，我遇到了一个问题，这个问题就是：<code>如果创建了多个python版本的环境，那么我应该如何去管理当中所安装的不同的包呢？并且与本机原本安装的python环境不起到冲突？</code></p>
+</li>
+<li><p>我解决Anaconda与本机办法是这样的：</p>
+<blockquote>
+<ul>
+<li>解决办法一：</li>
+</ul>
+<p>其实python 在安装的时候就为我们提供了两个版本的解决方案</p>
+<p>在C盘的windows 目录下有个 py.exe</p>
+<p>我们用py.exe 这个工具启动就能分辨出python的版本</p>
+<p>启动python2.7的pip</p>
+<p>直接在cmd 窗口里输入：py -2 -m pip install XXXX</p>
+<p>启动python3.6的pip</p>
+<p>直接在cmd 窗口里输入：py -3 -m pip install XXXX</p>
+<ul>
+<li>解决办法二：</li>
+</ul>
+<p>找到自己本机安装的Python路径（在Path中可以直接找到），然后找到自己的Python.exe文件，然后重命名即可。</p>
+<p>如：我对我本机的Python重命名为Python3，然后对Anaconda中安装的Python不重命名。</p>
+<p>之后需要对Anaconda中的python进行pip安装的时候，就输入：</p>
+<p>python -m pip install XXX</p>
+<p>然后对本机的python进行安装的时候，就输入：</p>
+<p>python3 -m pip install XXX</p>
+</blockquote>
+</li>
+<li><p>我解决Anaconda进入虚拟环境之后与Anaconda自身的Python冲突的问题：<br>&gt;</p>
+<blockquote>
+<p>根据上面启动虚拟环境的方法，我们能够启动已经创建的虚拟环境</p>
+<p>进入虚拟环境之后，输入：</p>
+<p>python -V</p>
+<p>就能够看到当前的虚拟环境中的python的版本号</p>
+<p>这个时候，输入：</p>
+<p>pip list</p>
+<p>你所看到的就是你当前环境下的pip所安装的包。</p>
+<p><code>如果你发现你的list还是Anaconda自带的list的话，就输入：</code></p>
+<p><code>python -m pip list</code></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Anaconda中创建虚拟环境（GUI模式）"><a href="#Anaconda中创建虚拟环境（GUI模式）" class="headerlink" title="Anaconda中创建虚拟环境（GUI模式）"></a>Anaconda中创建虚拟环境（GUI模式）</h2><p><code>当你安装好Anaconda之后，会出现一个Anaconda Mavigator，点击之后在里面也可以创建虚拟环境。</code></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/AnacondaNavigator.png?raw=true" alt="AnacondaMavigator"></p>
+<h1 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a>PyCharm</h1><ul>
+<li><p>在PyCharm中的<code>Settings</code>中的<code>Project Interpreter</code>进行python版本的选择。</p>
+</li>
+<li><p>找到你的<code>Anaconda</code>的<code>安装路径</code>。</p>
+</li>
+<li><p>然后在里面找到一个文件夹叫<code>envs</code>。</p>
+</li>
+<li><p>在这个文件夹里面有你创建的所有的虚拟环境。</p>
+</li>
+<li><p>选择你需要用到的虚拟环境，然后找到<code>python.exe</code>即可。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于双目摄像头的障碍物检测</title>
     <url>/2018/10/18/%E5%9F%BA%E4%BA%8E%E5%8F%8C%E7%9B%AE%E6%91%84%E5%83%8F%E5%A4%B4%E7%9A%84%E9%9A%9C%E7%A2%8D%E7%89%A9%E6%A3%80%E6%B5%8B/</url>
     <content><![CDATA[<h1 id="基于双目摄像头的障碍物检测"><a href="#基于双目摄像头的障碍物检测" class="headerlink" title="基于双目摄像头的障碍物检测"></a>基于双目摄像头的障碍物检测</h1><blockquote>
@@ -675,243 +1971,6 @@
       </tags>
   </entry>
   <entry>
-    <title>重构-App研发</title>
-    <url>/2020/09/28/%E9%87%8D%E6%9E%84-App%E7%A0%94%E5%8F%91/</url>
-    <content><![CDATA[<h1 id="重构，夜未眠"><a href="#重构，夜未眠" class="headerlink" title="重构，夜未眠"></a>重构，夜未眠</h1><h2 id="为Activity定义新的生命周期"><a href="#为Activity定义新的生命周期" class="headerlink" title="为Activity定义新的生命周期"></a>为Activity定义新的生命周期</h2><p>重点：<code>单一职责</code>-&gt;一个类或者方法，只做一件事情</p>
-<a id="more"></a>
-<h3 id="重构一："><a href="#重构一：" class="headerlink" title="重构一："></a>重构一：</h3><ul>
-<li>原来的代码结构：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">onClickListener</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle saveInstanceState)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        Bundle bundle = getIntent().getExtras();</span><br><span class="line">        String strEmail = bundle.getString(AppConstants.Email);</span><br><span class="line"></span><br><span class="line">        etEmail = (EditText) findViewById(R.id.email);</span><br><span class="line">        etEmail.setText(strEmail);</span><br><span class="line">        etPassword = (EditText) findViewById(R.id.password);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//登录事件</span></span><br><span class="line">        Button btnLogin = (Button) findViewById(R.id.sign_in_button);</span><br><span class="line">        btnLogin.setOnClickListener(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取2个MobileAPI，获取天气数据，获取城市数据</span></span><br><span class="line">        loadWeatherData();</span><br><span class="line">        loadCityData();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>从上面的Oncreate()方法中，可以看出，需要做的事情太多了，其实可以简化成三块：</p>
-<ul>
-<li><p>initVariables</p>
-</li>
-<li><p>initViews</p>
-</li>
-<li><p>loadData</p>
-</li>
-</ul>
-<p>代码如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle saveInstanceState)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line"></span><br><span class="line">        initVariables();</span><br><span class="line">        initViews(savedInstanceState);</span><br><span class="line">        loadData();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">initVariables</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">initViews</span><span class="params">(Bundle savedInstanceState)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">loadData</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++并发的世界</title>
-    <url>/2020/07/15/C++%E5%B9%B6%E5%8F%91%E7%9A%84%E4%B8%96%E7%95%8C/</url>
-    <content><![CDATA[<h1 id="C-的并发世界"><a href="#C-的并发世界" class="headerlink" title="C++的并发世界"></a>C++的并发世界</h1><p>主要内容：</p>
-<ul>
-<li>什么是并发和多线程？</li>
-<li>为什么用并发和多线程？</li>
-<li>如何用并发和多线程？</li>
-</ul>
-<a id="more"></a>
-<h2 id="什么是并发？"><a href="#什么是并发？" class="headerlink" title="什么是并发？"></a>什么是并发？</h2><p>两个或更多独立的活动同时进行。在计算机领域中表现为：<strong>单个系统中同时执行多个独立的任务。</strong></p>
-<h3 id="单核任务切换VS多核硬件并发"><a href="#单核任务切换VS多核硬件并发" class="headerlink" title="单核任务切换VS多核硬件并发"></a>单核任务切换VS多核硬件并发</h3><ul>
-<li>单核任务切换</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/C%2B%2B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/%E5%8D%95%E6%A0%B8%E4%BB%BB%E5%8A%A1%E5%88%87%E6%8D%A2.png?raw=true" alt="单核切换"></p>
-<ul>
-<li>多核硬件并发</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/C%2B%2B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/%E5%A4%9A%E6%A0%B8%E7%A1%AC%E4%BB%B6%E5%B9%B6%E5%8F%91.png?raw=true" alt="多核硬件并发"></p>
-<h3 id="多进程并发"><a href="#多进程并发" class="headerlink" title="多进程并发"></a>多进程并发</h3><p>独立进程可通过进程间常规的通信渠道传递信息（信号、套接字、文件、管道等等）。</p>
-<p>缺点之一：运行进程所需的固定开销：需要时间启动进程，操作系统需要内部资源来管理进程等等。</p>
-<p>独立进程实现并发的额外优势：可通过远程连接在不同的机器上运行独立的进程。</p>
-<h3 id="多线程并发"><a href="#多线程并发" class="headerlink" title="多线程并发"></a>多线程并发</h3><p>每个线程相互独立运行，并共享地址空间，因此线程可以通过共享内存进行通信。</p>
-<p><strong>如果数据要被多个线程访问，那么必须保证每个线程所访问到的数据是一致的</strong></p>
-]]></content>
-      <categories>
-        <category>C&amp;C++</category>
-      </categories>
-      <tags>
-        <tag>C&amp;C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Android心路历程</title>
-    <url>/2020/07/04/Android%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/</url>
-    <content><![CDATA[<h1 id="Android学习心路历程"><a href="#Android学习心路历程" class="headerlink" title="Android学习心路历程"></a>Android学习心路历程</h1><p>前言：</p>
-<p>自从2016年加入了Android实验室，接触到了Android编程，购买了第一本Android开发相关的书《第一行代码》。我深深的被Android开发所吸引，可以说，在我学习编程的心路历程中，Android开发可以说是中间的一条线，一路贯穿了我的学习生涯。</p>
-<a id="more"></a>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Android%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.png?raw=true" alt="Android学习路线图"></p>
-<p><code>Android开发资源：</code></p>
-<ul>
-<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89.pdf" target="_blank" rel="noopener">第一行代码</a></p>
-</li>
-<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/Android%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97.pdf" target="_blank" rel="noopener">Android面试指南</a></p>
-</li>
-<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/Android%E7%BE%A4%E8%8B%B1%E4%BC%A0.pdf" target="_blank" rel="noopener">Android群英传</a></p>
-</li>
-</ul>
-<h2 id="2016年"><a href="#2016年" class="headerlink" title="2016年"></a>2016年</h2><ul>
-<li><p>在我大一刚进入学校的时候，对一切都是充满好奇的，那时候已经大三了的我的导员，就和我们科普了学校的Android实验室，身为学院团委副主席的他拥有特别强的个人能力。在他的宣传下，我也就抱着好奇的心态进入了Android实验室进行了学习。</p>
-</li>
-<li><p>在16年进入Android实验室时，通过一周的培训，我初略的学完了C语言，但还是需要学校课程的巩固。通过井超老师在课堂上的讲解，我真正的理解和明白了编程这条道路。</p>
-</li>
-<li><p>在16年，我不单单学会了C语言，也慢慢接触到了Java编程开发，因为Android开发实际上是使用Java语言去编写的（在当初，如今又有了kotlin）。因此我在跟随着Android实验室每周的培训期间，还在不断的去学习Java开发。在最后的寒假中，实验室针对每一位大一大二的同学的要求是要独立写出一个app，我也在寒假期间去实现了一个自己app。</p>
-</li>
-</ul>
-<p><code>Java基础：</code></p>
-<ul>
-<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/Head%20First%20Java%EF%BC%88%E4%B8%AD%E6%96%87%E7%89%88%EF%BC%89.pdf" target="_blank" rel="noopener">Head First Java</a></p>
-</li>
-<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98%EF%BC%88%E4%B8%AD%E6%96%87%E7%89%88%EF%BC%89.pdf" target="_blank" rel="noopener">Java并发编程实战</a></p>
-</li>
-<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/Effective%2BJava%2B%E4%B8%AD%E6%96%87%E7%AC%AC%E4%BA%8C%E7%89%88.pdf" target="_blank" rel="noopener">Effective Java</a></p>
-</li>
-<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3.pdf" target="_blank" rel="noopener">Java编程思想</a></p>
-</li>
-</ul>
-<h2 id="2017年"><a href="#2017年" class="headerlink" title="2017年"></a>2017年</h2><ul>
-<li><p>在2017年期间，应该算是我在Android学习方面最为突飞猛进的一年，在这一年间，学校的课程正好也开设了Java程序设计的课程，因此我不仅跟着实验室的学习进度还能够通过学校的课程巩固我的基础。在这期间，我也通过某宝的代写群尝试，第一次通过写代码，赚到了一笔钱。<strong>我还是十分不建议个人在上学期间去接这种外包项目，因为这样，你对于学习这件事情，味道就变了。</strong></p>
-</li>
-<li><p>在写Android客户端的代码的同时，我也学习了数据库、数据结构、C++等课程，并且学习了多线程、Android自定义控件，自己有去尝试将所学到的东西去仿照别人去写一个自己的项目。如：<a href="https://github.com/kentanvictor/AirScraftDemo" target="_blank" rel="noopener">飞机大战</a>，<a href="https://github.com/kentanvictor/CoolWeather" target="_blank" rel="noopener">天气app</a>等等。</p>
-</li>
-</ul>
-<p><code>程序员必备：</code></p>
-<ul>
-<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/GitHub%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5.pdf" target="_blank" rel="noopener">GitHub入门与实践</a></p>
-</li>
-<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8.pdf" target="_blank" rel="noopener">离散数学及其应用</a></p>
-</li>
-<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E6%95%B0%E5%AD%A6.pdf" target="_blank" rel="noopener">程序员的数学</a></p>
-</li>
-</ul>
-<h2 id="2018年"><a href="#2018年" class="headerlink" title="2018年"></a>2018年</h2><ul>
-<li><p>在我大三的时候，我又接触到了Android开发更加底层的东西，也通过学校的课程学会了计算机网络、操作系统、计算机组成原理、软件工程等课程，将这些课程中所学习到的内容通过写代码的方式去实现一些小的想法。我也尝试去开阔自己的眼界，去接触不同的编程语言或其他好玩的东西，如：<a href="https://github.com/kentanvictor/DjangoTest" target="_blank" rel="noopener">Django本地服务器</a>。但是Android还是依旧保持着学习与实践，如：<a href="https://github.com/kentanvictor/CarRepair" target="_blank" rel="noopener">汽车商城</a>。</p>
-</li>
-<li><p>Android传感器的相关开发我也有涉及，在这期间也是去完善了一个Android传感器相关的开发项目：<a href="https://github.com/kentanvictor/SensorMonitor" target="_blank" rel="noopener">Android传感器</a></p>
-</li>
-</ul>
-<p><code>基础：</code></p>
-<ul>
-<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.pdf" target="_blank" rel="noopener">大话设计模式</a></p>
-</li>
-<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/%E5%95%8A%E5%93%88%EF%BC%81%E7%AE%97%E6%B3%95%EF%BC%81.pdf" target="_blank" rel="noopener">啊哈！算法！</a></p>
-</li>
-<li><p><a href="https://github.com/kentanvictor/STUDY/blob/master/PDF/%E7%AE%97%E6%B3%95%EF%BC%88%E7%AC%AC%E5%9B%9B%E7%89%88%EF%BC%89.pdf" target="_blank" rel="noopener">算法</a></p>
-</li>
-</ul>
-<h2 id="2019年"><a href="#2019年" class="headerlink" title="2019年"></a>2019年</h2><ul>
-<li><p>2019年，我跟随着学校的课程，在井超老师的教导下学会了Java企业级应用开发，也接触到了Spring、SpringMVC、Mybatis、Springboots等用于后端开发的工具。我也能够更好的去为我的Android客户端项目进行一个整体的完善。Android相当于前端，而JavaEE去编写的，是后端服务器中的内容。</p>
-</li>
-<li><p>同年，我也在学习了网络编程的课程后，了解到了socket套接字通信，这让我在软硬件交互上更能够去进行交互，这也让我最终能够去接触到硬件相关的知识与开发。因为实验室需要参加比赛的缘故，我接触到了计算机视觉的相关知识，学习了OpenCV的使用与其中关于双目立体视觉的算法。</p>
-</li>
-</ul>
-<h2 id="2020年"><a href="#2020年" class="headerlink" title="2020年"></a>2020年</h2><ul>
-<li>我依旧在学习，在学习新知识的同时不断地回顾以前学习过的基础，作为一名程序员，最最重要的是数据结构、算法与编程语言的运用，从最初编程语言基础的学习，到进阶学习这门编程语言的独特之处，最终涉及到其底层的数据结构与算法相关的理解。慢慢地就会发现，原来编程是这么有趣的一件事情。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++_正则表达式</title>
-    <url>/2020/06/30/C++%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等</p>
-<p><code>注：</code>在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 <code>#include&lt;regex&gt;</code> </p>
-<a id="more"></a>
-<h2 id="正则表达式中匹配的字符"><a href="#正则表达式中匹配的字符" class="headerlink" title="正则表达式中匹配的字符"></a>正则表达式中匹配的字符</h2><h3 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>特别字符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$</td>
-<td>匹配输入字符串的结尾位置</td>
-</tr>
-<tr>
-<td>( )</td>
-<td>标记一个子表达式的开始和结束位置</td>
-</tr>
-<tr>
-<td>*</td>
-<td>匹配前面的子表达式零次或多次</td>
-</tr>
-<tr>
-<td>+</td>
-<td>匹配前面的子表达式一次或多次</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>*</td>
-<td>匹配前面的子表达式零次或多次。例如，zo<em> 能匹配 “z” 以及 “zoo”。</em> 等价于{0,}</td>
-</tr>
-<tr>
-<td>+</td>
-<td>匹配前面的子表达式一次或多次。例如，’zo+’ 能匹配 “zo” 以及 “zoo”，但不能匹配 “z”。+ 等价于 {1,}</td>
-</tr>
-<tr>
-<td>?</td>
-<td>匹配前面的子表达式零次或一次。例如，”do(es)?” 可以匹配 “do” 、 “does” 中的 “does” 、 “doxy” 中的 “do” 。? 等价于 {0,1}</td>
-</tr>
-<tr>
-<td>{n}</td>
-<td>n 是一个非负整数。匹配确定的 n 次。例如，’o{2}’ 不能匹配 “Bob” 中的 ‘o’，但是能匹配 “food” 中的两个 o</td>
-</tr>
-<tr>
-<td>{n,}</td>
-<td>n 是一个非负整数。至少匹配n 次。例如，’o{2,}’ 不能匹配 “Bob” 中的 ‘o’，但能匹配 “foooood” 中的所有 o。’o{1,}’ 等价于 ‘o+’。’o{0,}’ 则等价于 ‘o*’</td>
-</tr>
-<tr>
-<td>{n,m}</td>
-<td>m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，”o{1,3}” 将匹配 “fooooood” 中的前三个 o。’o{0,1}’ 等价于 ‘o?’。请注意在逗号和两个数之间不能有空格</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="regex-match"><a href="#regex-match" class="headerlink" title="regex_match"></a>regex_match</h2><ul>
-<li>match为全文匹配，要求整个字符串符合匹配规则。</li>
-<li>返回值为bool值，匹配成功返回1。</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_match(<span class="string">"123"</span>, regex(<span class="string">"\\d"</span>)) &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//结果为0</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_match(<span class="string">"123"</span>, regex(<span class="string">"\\d+"</span>)) &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//结果为1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">+ `\d`：匹配一个数字字符</span><br><span class="line">+ `+` ：匹配一次或多次</span><br><span class="line"></span><br><span class="line">regex_match函数还有一种重载方式：regex_match(str, result, pattern)。示例如下所示：</span><br><span class="line">```C++</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">"Hello_2018"</span>;</span><br><span class="line">    smatch result;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">"(.&#123;5&#125;)_(\\d&#123;4&#125;)"</span>)</span></span>;	<span class="comment">//匹配5个任意单字符 + 下划线 + 4个数字</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (regex_match(str, result, pattern))</span><br><span class="line">    &#123;</span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; result[<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//完整匹配结果，Hello_2018</span></span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; result[<span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//第一组匹配的数据，Hello</span></span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; result[<span class="number">2</span>] &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//第二组匹配的数据，2018</span></span><br><span class="line">	    <span class="built_in">cout</span>&lt;&lt;<span class="string">"结果显示形式2"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	    <span class="built_in">cout</span>&lt;&lt; result.str() &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//完整结果，Hello_2018</span></span><br><span class="line">	    <span class="built_in">cout</span>&lt;&lt; result.str(<span class="number">1</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//第一组匹配的数据，Hello</span></span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; result.str(<span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//第二组匹配的数据，2018</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历结果</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; result.size(); ++i)</span><br><span class="line">    &#123;</span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; result[i] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="regex-search"><a href="#regex-search" class="headerlink" title="regex_search"></a>regex_search</h2><ul>
-<li>search是搜索匹配，即搜索字符串中存在符合规则的子字符串<br>具体例子如下所示：<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">"Hello 2018, Bye 2017"</span>;</span><br><span class="line">    smatch result;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">"\\d&#123;4&#125;"</span>)</span></span>;	<span class="comment">//匹配四个数字</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//迭代器声明</span></span><br><span class="line">    <span class="built_in">string</span>::const_iterator iterStart = str.begin();</span><br><span class="line">    <span class="built_in">string</span>::const_iterator iterEnd = str.end();</span><br><span class="line">    <span class="built_in">string</span> temp;</span><br><span class="line">    <span class="keyword">while</span> (regex_search(iterStart, iterEnd, result, pattern))</span><br><span class="line">    &#123;</span><br><span class="line">	    temp = result[<span class="number">0</span>];</span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; temp &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	    iterStart = result[<span class="number">0</span>].second;	<span class="comment">//更新搜索起始位置,搜索剩下的字符串</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">输出结果：<span class="number">2018</span> <span class="number">2017</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="regex-replace"><a href="#regex-replace" class="headerlink" title="regex_replace"></a>regex_replace</h2><ul>
-<li><p>replace是替换匹配，即可以将符合匹配规则的子字符串替换为其他字符串</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">"Hello_2018!"</span>;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">"Hello"</span>)</span></span>;	</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_replace(str, pattern, <span class="string">""</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//输出：_2018，将Hello替换为""</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_replace(str, pattern, <span class="string">"Hi"</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//输出：Hi_2018，将Hello替换为Hi</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>除了直接替换以外，还有可以用来调整字符串内容（缩短、顺序等）</p>
-</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">"Hello_2018!"</span>;	</span><br><span class="line">    <span class="function">regex <span class="title">pattern2</span><span class="params">(<span class="string">"(.&#123;3&#125;)(.&#123;2&#125;)_(\\d&#123;4&#125;)"</span>)</span></span>;				<span class="comment">//匹配3个任意字符+2个任意字符+下划线+4个数字</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_replace(str, pattern2, <span class="string">"$1$3"</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//输出：Hel2018，将字符串替换为第一个和第三个表达式匹配的内容</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_replace(str, pattern2, <span class="string">"$1$3$2"</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//输出：Hel2018lo，交换位置顺序</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>注：</code> $n用于表示第n组匹配数据</p>
-]]></content>
-      <categories>
-        <category>C&amp;C++</category>
-      </categories>
-      <tags>
-        <tag>C&amp;C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Android面经</title>
     <url>/2020/05/13/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8Android%E4%B8%80%E9%9D%A2%E9%9D%A2%E7%BB%8F/</url>
     <content><![CDATA[<h1 id="Android开发岗个人面经"><a href="#Android开发岗个人面经" class="headerlink" title="Android开发岗个人面经"></a>Android开发岗个人面经</h1><h2 id="2020-05-13-字节跳动一面"><a href="#2020-05-13-字节跳动一面" class="headerlink" title="2020-05-13 字节跳动一面"></a>2020-05-13 字节跳动一面</h2><blockquote>
@@ -998,1049 +2057,6 @@
       </categories>
       <tags>
         <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java原生数据类型与表达式</title>
-    <url>/2020/05/12/Java%E5%8E%9F%E7%94%9F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<h1 id="原生数据类型与表达式"><a href="#原生数据类型与表达式" class="headerlink" title="原生数据类型与表达式"></a>原生数据类型与表达式</h1><h2 id="原生数据类型"><a href="#原生数据类型" class="headerlink" title="原生数据类型"></a>原生数据类型</h2><ul>
-<li><p>1.Java 中的原生数据类型共有 8 种：</p>
-<ul>
-<li><p>1） 整型：使用 int 表示。（32 位）</p>
-</li>
-<li><p>2） 字节型：使用 byte 表示。（表示-128～127 之间的 256 个整数， 8 位）。</p>
-</li>
-<li><p>3）短整型：使用 short 表示。（16 位）</p>
-</li>
-<li><p>4）长整型：使用 long 表示。（64 位）</p>
-<a id="more"></a></li>
-<li><p>5）单精度浮点型：使用 float 表示。所谓浮点型，指的就是小数，也叫做实数，例如 1.2。</p>
-</li>
-<li><p>6）双精度浮点型：使用 double 表示。双精度浮点型表示的数据范围要比单精度浮点型大。</p>
-</li>
-<li><p>7）字符型：使用 char 表示（char 是 character 的缩写）。所谓字符，就是单个的字符表示，比如字母 a，或者中文张，外面用单引号包围上。比如 char a = ‘B’; char b = ‘张’;</p>
-</li>
-<li><p>8）布尔类型，使用 boolean 表示。布尔类型只有两种可能值，分别是 true 与 false。</p>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>2.Java 中的所有浮点类型默认情况下都是 double。不能将 double 类型的值赋给 float 类型的变量，即便该 double 类型的值处于 float 类型的范围内也是不可以的。总之，能否成功赋值取决于等号右边的值类型与等号左边的变量类型是否一致。</p>
-</li>
-<li><p>3.如何将 double 类型的值赋给 float 类型的变量？答案就是(1)强制类型转换，将 double 类型的值强制转换为 float 类型。(2)使用 java 预言的支持。</p>
-</li>
-</ul>
-<p><code>强制转换的语法： 类型 变量名 = （类型）变量值;</code></p>
-<ul>
-<li><p>4.变量在使用前必须要赋值；变量必须要声明其类型方可使用；变量在使用前必须要定义，并且只能定义一次。</p>
-</li>
-<li><p>5.如下代码无法通过编译：</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>; <span class="keyword">short</span> b = a;</span><br></pre></td></tr></table></figure>
-<p>a 是 int 类型，b 是 short 类型，int 类型表示的数据范围要比 short 类型大，不能将表示<br>范围大的值赋给表示范围小的变量。</p>
-<ul>
-<li>6.如下代码可以通过编译：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">short</span> a = <span class="number">1</span>; <span class="keyword">int</span> b = a;</span><br></pre></td></tr></table></figure>
-<p>a 是 short 类型，b 是 int 类型，int 类型表示的数据范围要比 short 类型大，可以将表示<br>范围小的值赋给表示范围大的变量。</p>
-<ul>
-<li>7.总结：可以将表示范围小的值赋给表示范围大的变量；但不能直接将表示范围大的值赋给表示范围小的变量，只能通过强制类型转换实现。</li>
-</ul>
-<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><blockquote>
-<p>Java中使用的是<code>中缀表达式</code>——其实就是和数学上的函数表达式的道理是一样的。</p>
-</blockquote>
-<p><strong>注意：</strong></p>
-<ul>
-<li><p>在<code>初级运算</code>中运算产生的数据的数据类型和参与运算的数据的数据类型是相同的。</p>
-</li>
-<li><p>‘+’、’-‘、’*’、’/‘ 都是被重载过的。</p>
-</li>
-<li><p><code>逻辑运算符</code>中，’！’优先级最高，之后是 ‘&amp;&amp;’ ，最后是 ‘||’ 。</p>
-</li>
-<li><p>相同优先级运算顺序从左往右。</p>
-</li>
-<li><p>在<code>类型转换</code>中，如果不损失信息，数值会自动提升为高等级的数据类型。前提是，你的运算中含有高等级的运算符。当需要向低类型转换时，会<strong>截断取整</strong>，而不是四舍五入。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows虚拟环境在PyCharm中的使用</title>
-    <url>/2020/05/06/Windows%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%9C%A8PyCharm%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h1><blockquote>
-<p>网上对于Anaconda的安装是教程有很多，这里会为各位提供的是一个我当时安装时候所参考的链接地址。<a href="https://zhuanlan.zhihu.com/p/32925500" target="_blank" rel="noopener">Anaconda的介绍、安装及使用教程</a></p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Anaconda中创建虚拟环境（命令行模式）"><a href="#Anaconda中创建虚拟环境（命令行模式）" class="headerlink" title="Anaconda中创建虚拟环境（命令行模式）"></a>Anaconda中创建虚拟环境（命令行模式）</h2><blockquote>
-<p>在Anaconda中创建虚拟环境的方式：</p>
-<p>下面是创建python=3.6版本的环境，取名叫py36</p>
-<p>conda create -n py36 python=3.6</p>
-<p>删除环境</p>
-<p>conda remove -n py36 —all</p>
-<p>激活环境</p>
-<p>source activate py36</p>
-<p>退出环境</p>
-<p>source deactivate</p>
-</blockquote>
-<ul>
-<li><p>在创建虚拟环境的过程中，我遇到了一个问题，这个问题就是：<code>如果创建了多个python版本的环境，那么我应该如何去管理当中所安装的不同的包呢？并且与本机原本安装的python环境不起到冲突？</code></p>
-</li>
-<li><p>我解决Anaconda与本机办法是这样的：</p>
-<blockquote>
-<ul>
-<li>解决办法一：</li>
-</ul>
-<p>其实python 在安装的时候就为我们提供了两个版本的解决方案</p>
-<p>在C盘的windows 目录下有个 py.exe</p>
-<p>我们用py.exe 这个工具启动就能分辨出python的版本</p>
-<p>启动python2.7的pip</p>
-<p>直接在cmd 窗口里输入：py -2 -m pip install XXXX</p>
-<p>启动python3.6的pip</p>
-<p>直接在cmd 窗口里输入：py -3 -m pip install XXXX</p>
-<ul>
-<li>解决办法二：</li>
-</ul>
-<p>找到自己本机安装的Python路径（在Path中可以直接找到），然后找到自己的Python.exe文件，然后重命名即可。</p>
-<p>如：我对我本机的Python重命名为Python3，然后对Anaconda中安装的Python不重命名。</p>
-<p>之后需要对Anaconda中的python进行pip安装的时候，就输入：</p>
-<p>python -m pip install XXX</p>
-<p>然后对本机的python进行安装的时候，就输入：</p>
-<p>python3 -m pip install XXX</p>
-</blockquote>
-</li>
-<li><p>我解决Anaconda进入虚拟环境之后与Anaconda自身的Python冲突的问题：<br>&gt;</p>
-<blockquote>
-<p>根据上面启动虚拟环境的方法，我们能够启动已经创建的虚拟环境</p>
-<p>进入虚拟环境之后，输入：</p>
-<p>python -V</p>
-<p>就能够看到当前的虚拟环境中的python的版本号</p>
-<p>这个时候，输入：</p>
-<p>pip list</p>
-<p>你所看到的就是你当前环境下的pip所安装的包。</p>
-<p><code>如果你发现你的list还是Anaconda自带的list的话，就输入：</code></p>
-<p><code>python -m pip list</code></p>
-</blockquote>
-</li>
-</ul>
-<h2 id="Anaconda中创建虚拟环境（GUI模式）"><a href="#Anaconda中创建虚拟环境（GUI模式）" class="headerlink" title="Anaconda中创建虚拟环境（GUI模式）"></a>Anaconda中创建虚拟环境（GUI模式）</h2><p><code>当你安装好Anaconda之后，会出现一个Anaconda Mavigator，点击之后在里面也可以创建虚拟环境。</code></p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/AnacondaNavigator.png?raw=true" alt="AnacondaMavigator"></p>
-<h1 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a>PyCharm</h1><ul>
-<li><p>在PyCharm中的<code>Settings</code>中的<code>Project Interpreter</code>进行python版本的选择。</p>
-</li>
-<li><p>找到你的<code>Anaconda</code>的<code>安装路径</code>。</p>
-</li>
-<li><p>然后在里面找到一个文件夹叫<code>envs</code>。</p>
-</li>
-<li><p>在这个文件夹里面有你创建的所有的虚拟环境。</p>
-</li>
-<li><p>选择你需要用到的虚拟环境，然后找到<code>python.exe</code>即可。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu+Windows双系统安装指南</title>
-    <url>/2020/05/05/Ubuntu-Windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="Ubuntu-Windows双系统安装指南"><a href="#Ubuntu-Windows双系统安装指南" class="headerlink" title="Ubuntu+Windows双系统安装指南"></a>Ubuntu+Windows双系统安装指南</h1><blockquote>
-<p>写在前面：非常感谢<a href="https://www.jianshu.com/c/01390ac22fa9" target="_blank" rel="noopener">Linux探索之旅</a>在最初的时候给我的安装教程的指南，自己按照这篇教程安装双系统折腾了将近一个月，期间更是将Windows也给装炸了。。。于是乎重装系统，直到现在可以稳定的使用Ubuntu和Windows双系统。</p>
-</blockquote>
-<hr>
-<ul>
-<li><a href="#Windows和Linux的区别">Windows和Linux的区别</a><ul>
-<li><a href="#观念">观念</a></li>
-<li><a href="#发布">发布</a></li>
-<li><a href="#内核API">内核API</a></li>
-</ul>
-</li>
-<li><a href="#Ubuntu系统安装">Ubuntu系统安装</a><ul>
-<li><a href="#下载">下载</a></li>
-<li><a href="#烧录">烧录</a></li>
-<li><a href="#使用USB方式进行安装">使用USB方式进行安装</a></li>
-</ul>
-</li>
-</ul>
-<hr>
-<a id="more"></a>
-<h2 id="Windows-和-Linux-的区别"><a href="#Windows-和-Linux-的区别" class="headerlink" title="Windows 和 Linux 的区别"></a>Windows 和 Linux 的区别</h2><p>对于 Windows 和 Linux 的区别，我在这里先使用一张直观的图让大家看一下。</p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Unix_Windows.jpg?raw=true" alt="内核区别"></p>
-<p>从上图中可以看到，Linux 与苹果的 Mac OS 是基于 Unix 系统下的操作系统，而 Windows 是基于MS-DOS的操作系统。下面的几个部分的内容，将分析 Windows 和 Linux 系统的区别。</p>
-<h3 id="观念"><a href="#观念" class="headerlink" title="观念"></a>观念</h3><p>商业模式与开源运作：</p>
-<p>众所周知，Windows 是一款商业级的操作系统，它的源代码是保密的，这也就导致想要看到Windows的源代码变成了一件十分困难的事情。这使得微软授权过的《WINDOWS INTERNALS》一书变得十分的畅销，因为这里面涉及到了部分 Windows 操作系统内部的构建细节。</p>
-<p>相对于 Linux 来说，Linux 是开源的,代码随时可见. 这对刚从 Windows 世界转过来的我是十分震撼的. 虽然我一直都知道这个事实, 但是当你发现了以前需要用尽各种方法,采用各种手段才可以得到只言片语的信息现在完全呈献在你面前的时候,你才能真正体会开源确实是一件伟大的工程。</p>
-<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>2进制与源代码：</p>
-<p>这里所指的2进制与源代码是集中在两者操作系统中在安装程序中的不同之处。</p>
-<p>在 Windows 世界，安装程序几乎全部都是以二进制形式发布的。也就是说，用户下载了一个程序，然后双击，一路 next 就可以了。这个方法很适合初学者。</p>
-<p>在 Linux 世界也有类似的机制，比如 YUM , APT-GET 等。不过 YUM 和 APT-GET 都是比较晚才出现的，在那之前，在 Linux 世界安装程序要更麻烦些。</p>
-<h3 id="内核API"><a href="#内核API" class="headerlink" title="内核API"></a>内核API</h3><p>固定与非固定：</p>
-<p> Windows 内核有一套固定的 API ，而且向后兼容。这使得 Windows 驱动的开发人员在不同版本之间移植时变得很容易。</p>
-<p>而 Linux 没有固定的内核API。2.4版本的内核模块在2.6几乎很大可能是不能兼容的。</p>
-<ul>
-<li>下面展示的是基于开源的 Linux 所分化出来的不同的分支系统。</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/LinuxBranch.jpg?raw=true" alt="Linux分支"></p>
-<hr>
-<h2 id="Ubuntu系统安装"><a href="#Ubuntu系统安装" class="headerlink" title="Ubuntu系统安装"></a>Ubuntu系统安装</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>Ubuntu的英文下载页面：<a href="http://www.ubuntu.com/download" target="_blank" rel="noopener">Ubuntu</a></p>
-<p>Ubuntu的中文下载页面：<a href="https://cn.ubuntu.com/" target="_blank" rel="noopener">Ubuntu国内官网</a></p>
-<p>优麒麟的下载页面：<a href="http://www.ubuntukylin.com/downloads/" target="_blank" rel="noopener">优麒麟</a></p>
-<p>在这里，能够下载到的最新版本是18.04.2LTS(Long Term Support)版本。<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/UbuntuDownLoad.png?raw=true" alt="Ubuntu18.04下载"></p>
-<h3 id="烧录"><a href="#烧录" class="headerlink" title="烧录"></a>烧录</h3><p>在电脑中插入一个空白的U盘（不空白也行，反正之后要格式化的），大小至少8GB。</p>
-<p>Universal USB Installer：<a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/" target="_blank" rel="noopener">下载</a></p>
-<p>下载好Universal USB Installer之后，打开它，在”Device”下拉菜单中选择你的U盘。然后点击创建。<code>对于右侧NTFS格式和Fat32格式，个人建议选择FAT32。</code></p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Universal_Installer.png?raw=true" alt="选择ISOs和Drive"></p>
-<h3 id="使用USB方式进行安装"><a href="#使用USB方式进行安装" class="headerlink" title="使用USB方式进行安装"></a>使用USB方式进行安装</h3><blockquote>
-<p>前提：你需要先进入你的Boot Menu中，选择USB Storage Device。如下图所示：<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/USB_Storage_Device.jpg?raw=true" alt="USB Storage Device"></p>
-<p>如果发现没有USB Storage Device，那么选择Setup进入BIOS，或者重启按F2进入BIOS。切换到Boot，选择Secure Boot Control回车，改成Disabled，USB Boot Support设置成Enabled，Boot Mode改成Legacy。如下图所示：</p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/SecureBootControl.jpg?raw=true" alt="Secure Boot Control"></p>
-</blockquote>
-<p>在进入到下图所示界面的时候（pure EFI Boot），这里就出现了一个坑。</p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/EFIBoot.jpg?raw=true" alt="EFIBoot"></p>
-<p>在这个时候，可以选择第一项，你可以先体验一下Ubuntu，也可不体验，直接Install Ubuntu。但是，在具有<code>独立显卡</code>的笔记本或者是台式机上，你会发现界面是能够进去的，但是很快就会卡死。这是因为独立显卡与Ubuntu的集成显卡不兼容所产生的问题。</p>
-<p>这个时候，你需要再次回到pure EFI Boot界面，然后在<code>按E</code>进入到如图所示的界面：</p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/UbuntuNoModeSet.jpg?raw=true" alt="UbuntuNoModeSet"></p>
-<p>将原本<code>quiet splash</code>后面的内容修改为<code>nomodeset</code>。然后再<code>按F10</code>进入到安装界面安装即可。</p>
-<p>在到 <code>安装类型</code> 这一步骤时，如果你在上一步压缩完分区后，没有新建简单卷（保持未分配状态），那么就只需选择 安装 Ubuntu，与 Windows boot manager 共存 这一选项，将分区相关事宜交由 Ubuntu 处理。</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaIO</title>
-    <url>/2019/01/22/JavaIO/</url>
-    <content><![CDATA[<h1 id="javaIO"><a href="#javaIO" class="headerlink" title="javaIO"></a>javaIO</h1><p>标签： javaIO</p>
-<hr>
-<p><strong>Contents</strong></p>
-<ul>
-<li><a href="#流的概念和作用">什么是IO流</a><ul>
-<li><a href="#IO流的分类">IO流的分类</a></li>
-<li><a href="#字符流和字节流">字符流和字节流</a></li>
-</ul>
-</li>
-<li><a href="#文件字节、字符IO">文件字节、字符IO</a><ul>
-<li><a href="#文件字节IO流">文件字节IO流</a></li>
-<li><a href="#文件字符IO流">文件字符IO流</a></li>
-</ul>
-</li>
-</ul>
-<hr>
-<a id="more"></a>
-<h1 id="Java流图结构"><a href="#Java流图结构" class="headerlink" title="Java流图结构"></a>Java流图结构</h1><p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/JavaIO.jpg" alt=""></p>
-<h1 id="流的概念和作用"><a href="#流的概念和作用" class="headerlink" title="流的概念和作用"></a>流的概念和作用</h1><blockquote>
-<p>流是一组有顺序的，有起点和终点的字节集合，是对数据传输的总称或抽象。即数据在两设备间的传输称为流，流的本质是数据传输，根据数据传输特性将流抽象为各种类，方便更直观的进行数据操作。</p>
-</blockquote>
-<h2 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h2><ul>
-<li>根据处理数据类型的不同可以分为：字符流和字节流</li>
-<li>根据数据流向不同分为：输入流和输出流</li>
-</ul>
-<h2 id="字符流和字节流"><a href="#字符流和字节流" class="headerlink" title="字符流和字节流"></a>字符流和字节流</h2><blockquote>
-<p>字符流的由来： 因为数据编码的不同，而有了对字符进行高效操作的流对象。本质其实就是基于字节流读取时，去查了指定的码表。 字节流和字符流的区别：</p>
-<ul>
-<li><p>读写单位不同：字节流以字节（8bit）为单位，字符流以字符为单位，根据码表映射字符，一次可能读多个字节。</p>
-</li>
-<li><p>处理对象不同：字节流能处理所有类型的数据（如图片、avi等），而字符流只能处理字符类型的数据。</p>
-</li>
-<li><p>字节流：一次读入或读出是8位二进制。</p>
-</li>
-<li><p>字符流：一次读入或读出是16位二进制。</p>
-</li>
-</ul>
-<p><strong>设备上的数据无论是图片或者视频，文字，它们都以二进制存储的。二进制的最终都是以一个8位为数据单元进行体现，所以计算机中的最小数据单元就是字节。意味着，字节流可以处理设备上的所有数据，所以字节流一样可以处理字符数据。</strong></p>
-<p><strong><code>结论：只要是处理纯文本数据，就优先考虑使用字符流。 除此之外都使用字节流。</code></strong></p>
-</blockquote>
-<h1 id="文件字节、字符IO"><a href="#文件字节、字符IO" class="headerlink" title="文件字节、字符IO"></a>文件字节、字符IO</h1><blockquote>
-<p>Java程序可能经常需要获取磁盘上文件的有关信息或在磁盘上创建新的文件等，这就需要用到<code>File类</code>。</p>
-<h3 id="创建一个File对象的构造方法有3个："><a href="#创建一个File对象的构造方法有3个：" class="headerlink" title="创建一个File对象的构造方法有3个："></a>创建一个File对象的构造方法有3个：</h3><ul>
-<li>File(String filename);</li>
-<li>File(String directoryPath,String filename);</li>
-<li>File(File dir,String filename);</li>
-</ul>
-<p><em>filename—文件名字；directoryPath—文件路径；dir—一个目录；<code>使用File(String filename)创建文件时，该文件被认为与当前应用程序在同一个目录中。</code></em></p>
-<h3 id="文件的属性："><a href="#文件的属性：" class="headerlink" title="文件的属性："></a><strong>文件的属性：</strong></h3><p><pre>
-public String getName();            //获取文件的名字
-public boolean canRead();           //判断文件是否是可读的
-public boolean canWrite();          //判断文件是否可被写入
-public boolean exists();            //判断文件是否存在
-public long length();               //获取文件的长度（单位是字节）
-public String getAbsolutePath();    //获取文件的绝对路径
-public String getParent();          //获取文件的父目录
-public boolean isFile();            //判断文件是否是一个普通文件，而不是目录
-public boolean isDirectory();       //判断文件是否是一个目录
-public boolean isHidden();          //判断文件是否是隐藏文件
-public long lastModified();         //获取文件最后修改的时间（时间是从1970年午夜至文件最后修改时刻的毫秒数）
-</pre><br><strong>例子：使用上述方法获取某些文件的信息：</strong></p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File f = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\IOTest"</span>,<span class="string">"newIO.txt"</span>);</span><br><span class="line">        System.out.println(f.getName() + <span class="string">"是可读的吗："</span> + f.canRead());</span><br><span class="line">        System.out.println(f.getName() + <span class="string">"的长度："</span> + f.length());</span><br><span class="line">        System.out.println(f.getName() + <span class="string">"的绝对路径："</span> + f.getAbsolutePath());</span><br><span class="line"></span><br><span class="line">        File newFile = <span class="keyword">new</span> File(<span class="string">"new.txt"</span>);</span><br><span class="line">        System.out.println(<span class="string">"在当前目录下创建新文件："</span> + newFile.getName());</span><br><span class="line">        <span class="keyword">if</span> (!newFile.exists())&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                newFile.createNewFile();    <span class="comment">//如果没有new.txt则创建一个</span></span><br><span class="line">                System.out.println(<span class="string">"创建成功！"</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a><strong>目录：</strong></h3><p>&gt;</p>
-<ul>
-<li>创建目录<blockquote>
-<p>File对象调用方法public boolean mkdir()创建一个目录，如果创建成功返回true，否则返回false（如果该目录已经存在将返回false）。</p>
-</blockquote>
-</li>
-<li>列出目录中的文件<blockquote>
-<p>如果File对象是一个目录，那么该对象调用下述方法列出目录下的文件和目录。<br><pre>
-public String[] list();             //用字符串形式返回目录下的全部文件
-public File[] listFiles();          //用File对象形式返回目录下的全部文件
-</pre><br>有时候需要列出目录下指定类型的文件，比如.java、.txt等扩展名的文件。可以使用File类的下述两个方法，列出指定类型的文件：<br><pre>
-public String[] list(FilenameFilter obj);           //该方法用字符串形式返回目录下的指定类型的所有文件
-public File[] listFiles(FilenameFilter obj);        //该方法用File对象形式返回目录下的指定类型的所有文件
-</pre><br>上述两个方法的参数FIlenameFilter是一个接口，该接口有个方法：<br><pre>
-public boolean accept(File dir,String name);
-</pre><br>File对象dirFile调用list方法时，需向该方法传递一个实现FilenameFilter接口的对象，list方法执行时，参数obj不断回调接口方法accept(File dir,String name)，该方法中的参数dir为调用list的当前目录dirFile，参数name被实例化为dirFile，参数name被实例化为dirFile目录中的一个文件名，当接口方法返回true时，list方法就将名字为name的文件存放到返回的数组中。</p>
-<p><strong>例子：列出当前目录下（应用程序所在的目录）下全部.java文件的名字：</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DirFileTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File dirFile = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\Singleton_pattern\\src\\com\\dell\\example\\IODemo\\FileTest"</span>);</span><br><span class="line">        FileAccept fileAccept = <span class="keyword">new</span> FileAccept();</span><br><span class="line">        fileAccept.setExtendName(<span class="string">"java"</span>);</span><br><span class="line">        String fileName[] = dirFile.list(fileAccept);</span><br><span class="line">        <span class="keyword">for</span> (String name : fileName)&#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileAccept</span> <span class="keyword">implements</span> <span class="title">FilenameFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String extendName;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setExtendName</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        extendName = <span class="string">"."</span> + s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">accept</span><span class="params">(File dir, String name)</span> </span>&#123;  <span class="comment">//重写接口中的方法</span></span><br><span class="line">        <span class="keyword">return</span> name.endsWith(extendName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="文件字节IO流"><a href="#文件字节IO流" class="headerlink" title="文件字节IO流"></a><strong>文件字节IO流</strong></h2><h3 id="文件字节输入流"><a href="#文件字节输入流" class="headerlink" title="文件字节输入流"></a>文件字节输入流</h3><p><code>使用输入流通常包括4个基本步骤：</code></p>
-<ul>
-<li>设定输入流的源</li>
-<li>创建指向源的输入流</li>
-<li>让输入流读取源中的数据</li>
-<li>关闭输入流</li>
-</ul>
-<p>如果对文件读取需求比较简单，那么可以使用<code>FileInputStream类（文件字节输入流）</code>，该类是InputStream类的子类（以字节为单位读取文件），该类的实例方法都是从InputStream继承来的。</p>
-<ul>
-<li><p>构造方法：</p>
-<p>  可以使用FileInputStream类的下列构造方法创建指向文件的输入流。</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">FileInputStream(String name);</span><br><span class="line">FileInputStream(File file);</span><br></pre></td></tr></table></figure>
-<p>  第一个构造方法使用给定的文件名name创建FileInputStream流，第二个构造方法使用File对象创建FileInputStream流。参数name和file指定的文件称为输入流的源。</p>
-<p>  <strong>注意：</strong> FileInputStream输入流打开一个到达文件的通道。当创建输入流的时候，可能会出现异常。</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileInputStream in = <span class="keyword">new</span> FileInputStream(<span class="string">"hello.txt"</span>);<span class="comment">//创建指向文件hello.txt的输入流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  或</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(<span class="string">"hello.txt"</span>); <span class="comment">//指定输入流的源</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileInputStream in = <span class="keyword">new</span> FileInputStream(f);    <span class="comment">//创建指向源的输入流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOEception e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用输入流读取字节</p>
-<p>  文件字节流可以调用从父类继承的<code>read方法</code>顺序地读取文件，只要不关闭流，每次调用read方法就顺序地读取文件中的其余内容，直到文件的末尾或文件字节输入流被关闭。</p>
-<p>  字节输入流的read方法以字节为单位读取源中的数据。</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span>                              <span class="comment">//输入流调用该方法从源中读取单个字节的数据，该方法返回字节值（0~255之间的一个整数），如果未读出字节就返回-1</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">byte</span> b[])</span>                      <span class="comment">//输入流调用该方法从源中试图读取b.length个字节到字节数组中，返回实际读取的字节数目，如果到达文件末尾则返回-1</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">byte</span> b[],<span class="keyword">int</span> off,<span class="keyword">int</span> len)</span>      <span class="comment">//输入流调用该方法从源中试图读取b.length个字节到字节数组中，返回实际读取的字节数目，如果到达文件末尾则返回-1，参数off指定从字节数组的某个位置开始存放读取的数据</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>关闭流<br>  输入流都提供了关闭方法<code>close()</code>，尽管程序结束时会自动关闭所打开的流，但是当程序使用完流后，显式地关闭任何打开的流仍是一个好习惯。</p>
-</li>
-</ul>
-<p><strong>例子：使用文件字节流读文件内容：</strong><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">byte</span>[] a = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            File f = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\Singleton_pattern\\src\\com\\dell\\example\\IODemo\\InputStreamTest\\InputTest.java"</span>);</span><br><span class="line">            InputStream in = <span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">            <span class="keyword">while</span> ((n = in.read(a,<span class="number">0</span>,<span class="number">100</span>)) != -<span class="number">1</span>)&#123;</span><br><span class="line">                String s = <span class="keyword">new</span> String(a,<span class="number">0</span>,n);</span><br><span class="line">                System.out.println(s);</span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="文件字节输出流"><a href="#文件字节输出流" class="headerlink" title="文件字节输出流"></a>文件字节输出流</h3><p><code>使用输出流通常包括4个基本步骤：</code></p>
-<ul>
-<li>给出输出流的目的地</li>
-<li>创建指向目的地的输出流</li>
-<li>让输出流把数据写入到目的地</li>
-<li>关闭输出流</li>
-</ul>
-<p>如果对文件写入需求比较简单，那么可以使用<code>FileOutputStream类（文件字节输出流）</code>，该类是OutputStream类的子类（以字节为单位写入文件），该类的实例方法都是从OutputStream继承来的。</p>
-<ul>
-<li><p>构造方法：</p>
-<p>  可以使用FileOutputStream类的下列具有刷新功能的构造方法创建指向文件的输出流。</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">FileOutputStream(String name);</span><br><span class="line">FileOutputStream(File file);</span><br></pre></td></tr></table></figure>
-<p>  第一个构造方法使用给定的文件名name创建FileOutputStream流，第二个构造方法使用File对象创建FileOutputStream流。参数name和file指定的文件称为输出流的目的地。</p>
-<p>  <strong>注意：</strong> FileOutputStream输出流指向的文件不存在，java就会创建该文件，如果指向的文件是已存在的文件，输入流会刷新该文件（使文件长度为0）。创建输出流可能会出现异常。</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileOutputStream out = <span class="keyword">new</span> FileOutputStream(<span class="string">"androidlab.txt"</span>);<span class="comment">//创建指向文件androidlab.txt的输出流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  或</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(<span class="string">"androidlab.txt"</span>);                <span class="comment">//指定输出流的目的地</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileOutputStream in = <span class="keyword">new</span> FileOutputStream(f);    <span class="comment">//创建指向目的地的输出流</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOEception e)&#123;</span><br><span class="line">    System.out.println(<span class="string">"File read error:"</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用输出流写字节</p>
-<p>  文件字节流可以调用从父类继承的<code>write方法</code>顺序地写文件，只要不关闭流，每次调用write方法就顺序地写文件，直到流被关闭。</p>
-<p>  字节输出流的write方法以字节为单位向目的地写入数据。</p>
-  <pre>
-  void write(int n)                       //输出流调用该方法向目的地写入单个字节
-  void write(byte b[])                     //输出流调用该方法向目的地写入一个字节数组
-  void write(byte b[],int off,int len)     //给定字节数组中起始于偏移量off处取len个字节写入目的地
-  void close()                             //关闭输出流
-  </pre></li>
-<li>关闭流<br>  需要注意的是，在操作系统把程序所写到输出流上的那些字节保存到磁盘上之前，有时被存放在缓冲区中，通过调用<code>close()</code>方法，可以保证操作系统把缓冲区的内容写到它的目的地。</li>
-</ul>
-<p><strong>例子：使用文件字节流写入文件：</strong> 使用具有刷新功能的构造方法指向文件android.txt的输出流，并向里面写入“Android”，然后再选择使用不刷新文件的构造方法指向android.txt，并向文件中追加“Lab”。<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OutputTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span>[] a = <span class="string">"Android"</span>.getBytes();</span><br><span class="line">        <span class="keyword">byte</span>[] b = <span class="string">"Lab"</span>.getBytes();</span><br><span class="line">        File newFile = <span class="keyword">new</span> File(<span class="string">"android.txt"</span>);     <span class="comment">//输出目的地</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            OutputStream out = <span class="keyword">new</span> FileOutputStream(newFile);   <span class="comment">//指向目的地的输出流</span></span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">"的大小:"</span> + newFile.length() + <span class="string">"字节"</span>);</span><br><span class="line">            out.write(a);   <span class="comment">//向目的地写入数据</span></span><br><span class="line">            out.close();</span><br><span class="line">            out = <span class="keyword">new</span> FileOutputStream(newFile,<span class="keyword">true</span>);   <span class="comment">//准备向文件尾追加内容</span></span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">"的大小:"</span> + newFile.length() + <span class="string">"字节"</span>);</span><br><span class="line">            out.write(b,<span class="number">0</span>,b.length);</span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">"的大小:"</span> + newFile.length() + <span class="string">"字节"</span>);</span><br><span class="line">            out.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="文件字符IO流"><a href="#文件字符IO流" class="headerlink" title="文件字符IO流"></a><strong>文件字符IO流</strong></h2><p>文件字节输入、输出流的read和write方法使用字节数组读写数据，即以字节为单位处理数据。因此字节流不能很好地操作Unicode字符。<strong>一个汉字在文件中占两个字节，如果使用字节流读取不当会出现“乱码”现象。</strong></p>
-<p><pre>
-    字节            ------          字符
-FileInputStream     ------      FileReader
-FileOutputStream    ------      FileWriter
-</pre><br>FileReader和FileWriter分别是Reader和Writer的子类，其构造方法分别是：</p>
-<p><pre>
-FileReader(String filename);    FileReader(File filename);
-FileWriter(String filename);    FileWriter(File filename);
-FileWriter(String filename,boolean append);
-FileWriter(File filename,boolean append);
-</pre><br><strong>字符输入流和输出流的<code>read</code>和<code>write</code>方法使用字符数组读写数据，即以字符为基本单位处理数据。</strong></p>
-<ul>
-<li><strong>例子：用文件字符输入、输出流将文件“NotHelloWorld.txt”中的内容尾加到“AndroidLab.txt”中</strong><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RWTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File sourceFile = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\IOTest\\NotHelloWorld.txt"</span>);<span class="comment">//读取的文件</span></span><br><span class="line">        File targetFile = <span class="keyword">new</span> File(<span class="string">"F:\\IDEA_code\\IOTest\\AndroidLab.txt"</span>);<span class="comment">//写入的文件</span></span><br><span class="line">        <span class="keyword">char</span> c[] = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            Writer out = <span class="keyword">new</span> FileWriter(targetFile,<span class="keyword">true</span>);   <span class="comment">//指向目的地的输出流</span></span><br><span class="line">            Reader in = <span class="keyword">new</span> FileReader(sourceFile);                 <span class="comment">//指向源的输入流</span></span><br><span class="line">            <span class="keyword">int</span> n = -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> ((n = in.read(c)) != -<span class="number">1</span>)&#123;</span><br><span class="line">                out.write(c,<span class="number">0</span>,n);</span><br><span class="line">            &#125;</span><br><span class="line">            out.flush();</span><br><span class="line">            out.close();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">            System.out.println(<span class="string">"Error "</span> + e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS</title>
-    <url>/2018/09/08/CSS/</url>
-    <content><![CDATA[<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
-<li>选择器的样式：</li>
-</ul>
-<blockquote>
-<p><strong>选择器{ 属性:值; 属性:值 }</strong></p>
-</blockquote>
-<ul>
-<li><p>选择器：<strong>选择标签的过程</strong></p>
-</li>
-<li><p>选择器的种类：</p>
-</li>
-</ul>
-<a id="more"></a>
-<blockquote>
-<ul>
-<li>标签选择器</li>
-<li>类选择器</li>
-<li>ID选择器</li>
-<li>通配符选择器</li>
-<li>交集选择器（标签指定式）</li>
-<li>子代选择器</li>
-<li>并集选择器<blockquote>
-<ul>
-<li>补充选择器（C3）：</li>
-<li>伪类选择器</li>
-<li>属性选择器</li>
-<li>伪元素选择器</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<h3 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h3><ul>
-<li><p>标签选择器的样式：</p>
-<blockquote>
-<p><strong>Html 标签名 { 属性:值;}</strong></p>
-</blockquote>
-</li>
-<li><p>常用的属性：</p>
-</li>
-</ul>
-<blockquote>
-<ul>
-<li>color —&gt; 前景色（文字颜色）</li>
-<li>background-color —&gt; 背景色</li>
-<li>font-size —&gt; 字体大小</li>
-<li>width —&gt; 设置宽度</li>
-<li>height —&gt; 设置高度</li>
-</ul>
-</blockquote>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Android生命周期的分析</title>
-    <url>/2018/09/04/Android%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<h1 id="activity的生命周期分析"><a href="#activity的生命周期分析" class="headerlink" title="activity的生命周期分析"></a>activity的生命周期分析</h1><ul>
-<li><p>activity的生命周期分为两部分内容</p>
-<ul>
-<li><p>典型情况下的生命周期</p>
-<blockquote>
-<p>在有用户参与的情况下，activity所经历过的生命周期的改变</p>
-</blockquote>
-</li>
-<li><p>异常情况下的生命周期</p>
-<blockquote>
-<p>指activity被系统回收或由于当前设备的Configuration发生改变从而导致activity被销毁重建</p>
-</blockquote>
-</li>
-</ul>
-<a id="more"></a>
-</li>
-</ul>
-<h2 id="典型情况下的生命周期分析"><a href="#典型情况下的生命周期分析" class="headerlink" title="典型情况下的生命周期分析"></a>典型情况下的生命周期分析</h2><h3 id="正常生命周期解析"><a href="#正常生命周期解析" class="headerlink" title="正常生命周期解析"></a>正常生命周期解析</h3><p>正常情况下，activity会经历如下生命周期</p>
-<ul>
-<li>onCreate：表示activity正在被创建。</li>
-</ul>
-<blockquote>
-<ul>
-<li>这是生命周期的第一个方法、在这个方法中，我们可以做一些初始化工作，比如调用setContentView去加载界面布局资源、初始化activity所需要的数据等等</li>
-<li>通过覆盖onCreate(Bundle)方法，activity可以预处理以下UI相关工作：</li>
-<li>实例化组件并将它们放置到屏幕上(调用setContentView(int)方法)</li>
-<li>引用已实例化的组件</li>
-<li>为组件设置监听器以处理用户交互</li>
-<li>访问外部模型数据</li>
-</ul>
-<ul>
-<li>onRestart：表示activity正在启动。<br>一般情况下，当当前的activity从不可见重新变为可见的状态时，onRestart就会被调用。<strong>这种情况一般都是用户导致的，当用户按Home键切换到桌面的或者用户打开了一个新的activity，这时当前的activity就会暂停，也就是onPause和onStop被执行，接着用户又回到了这个activity，就会出现这种情况</strong></li>
-<li>onStart：表示activity正在被启动，即将开始。<br>这时activity已经可见了，但是还没有出现在前台，还无法和用户交互。这个时候其实可以理解为activity已经显示出来了，但是我们还看不到</li>
-<li>onResume：表示activity已经可见了，并且出现在前台并开始活动。<br>要注意这个和onStart的对比，onStart和onResume都表示activity已经可见，但是onStart的时候activity还在后台，onResume的时候activity才显示到前台。</li>
-<li>onPause：表示activity正在停止，正常情况下，紧接着onStop就会被调用。<br>在特殊情况下， 如果这个时候快速地再回到当前activity，那么onResume会被调用。可以理解为这种属于极端的情况，用户操作很难重现这种场景。此时可以做一些存储数据、停止动画等工作，但是注意不能太耗时，因为这会影响到新的activity的显示，onPause必须先执行完，新activity的onPause才会执行。</li>
-<li>onStop：表示activity即将停止，可以做一些稍微重量级的回收工作，同样不能太耗时。</li>
-<li>onDestroy：表示activity即将被销毁。<br>这是activity生命周期中的最后的一个回调，在这里，我们可以做一些回收工作和最终的资源释放。</li>
-</ul>
-</blockquote>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/activity.png?raw=true" alt=""></p>
-<p><code>注：</code></p>
-<ul>
-<li>当一个<strong>activity</strong>第一次启动时，回调程序如下：onCreate()-&gt;onStart()-&gt;onResume()</li>
-<li>用户打开<strong>新的activity</strong>或<strong>切回桌面</strong>时，回调如下：onPause()-&gt;onStop()</li>
-<li>用户<strong>重新回到原activity</strong>，回调如下；onRestart()-&gt;onStart()-&gt;onResume()</li>
-<li><strong>back键</strong>回退时，回调如下：onPause()-&gt;onStop()-&gt;onDestroy()</li>
-</ul>
-<p><code>从整个生命周期来说：</code>onCreate()与onDestroy()配对。</p>
-<p><code>从activity是否可见来说：</code>onStart()与onStop()配对。</p>
-<p><code>从activity是否前台来说：</code>onResume()和onPause()配对。</p>
-<hr>
-<p><code>问题：</code>假设当前是activity A，如果用户这个时候打开一个activity B，那么是B的onResume()先执行还是A的onPause()先执行？</p>
-<p><code>结论：</code>旧的activity中onPause()先调用，新的activity中的onResume()才被执行。</p>
-<h2 id="异常情况下的生命周期分析"><a href="#异常情况下的生命周期分析" class="headerlink" title="异常情况下的生命周期分析"></a>异常情况下的生命周期分析</h2><h3 id="资源相关的系统配置发生变化导致activity被杀死进行重建"><a href="#资源相关的系统配置发生变化导致activity被杀死进行重建" class="headerlink" title="资源相关的系统配置发生变化导致activity被杀死进行重建"></a>资源相关的系统配置发生变化导致activity被杀死进行重建</h3><blockquote>
-<p>默认情况下，如果我们不对activity进行特殊处理，那么当系统配置或资源发生变化的时候，activity就会被销毁并重建。如：旋转手机屏幕等。</p>
-</blockquote>
-<p><code>注：</code></p>
-<ul>
-<li>activity被异常杀死重建，activity中onPause()、onStop()、onDestroy()都会被调用。</li>
-<li>系统会调用 <strong>onSaveInstanceState()</strong> 方法对当前activity的状态进行保存，调用位置位于onStop()之前，<strong>时序与onPause()无关</strong>。</li>
-<li>从时序上来说，<strong>onRestoreInstanceState()</strong> 是在onStart()之后。</li>
-</ul>
-<p>示例图如图所示：<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/Android%E5%BC%80%E5%8F%91%E6%8E%A2%E7%B4%A2/%E5%BC%82%E5%B8%B8%E6%83%85%E5%86%B5%E4%B8%8Bactivity%E9%87%8D%E5%BB%BA%E8%BF%87%E7%A8%8B.png?raw=true" alt=""></p>
-<ul>
-<li>在通过onSaveInstanceState和onRestoreInstanceState中进行数据传递时，接收onSaveInstanceState传递过来的参数可以有两个位置：1、onRestoreInstanceState；2、onCreate<ul>
-<li><code>注意：</code>onCreate如果是正常启动的话，<strong>其参数 Bundle savedInstanceState 为 null，</strong> 需要判断 savedInstanceState 是否为空。</li>
-</ul>
-</li>
-</ul>
-<h3 id="资源内存不足导致低优先级activity被杀死"><a href="#资源内存不足导致低优先级activity被杀死" class="headerlink" title="资源内存不足导致低优先级activity被杀死"></a>资源内存不足导致低优先级activity被杀死</h3><blockquote>
-<p>Activity优先级情况，从高到低可分为：</p>
-</blockquote>
-<ul>
-<li>前台activity——正在和用户交互的activity——优先级最高</li>
-<li>可见但非前台activity——比如弹出一个Dialog导致activity可见但不可交互</li>
-<li>后台activity——已被暂停的activity——优先级最低</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML</title>
-    <url>/2018/08/19/HTML/</url>
-    <content><![CDATA[<h1 id="HTML-CSS"><a href="#HTML-CSS" class="headerlink" title="HTML+CSS"></a>HTML+CSS</h1><ul>
-<li><p>外壳的框架</p>
-<a id="more"></a>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>/&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--下面的title写的是你的标签名--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--这里面写的是你想要显示的东西--&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&lt; p &gt;段落文本&lt; /p &gt;</p>
-</li>
-</ul>
-<p><strong>一个&lt; p &gt;代表一个段落，这个是插入段落文本用的</strong></p>
-<hr>
-<ul>
-<li>&lt; hx &gt;标题文本&lt; /hx &gt;(x为1~6)</li>
-</ul>
-<p><strong>hx中的x表示标签字号的大小，h1位最大，h6为最小</strong></p>
-<hr>
-<ul>
-<li>&lt; em &gt;斜体标签&lt; /em &gt;</li>
-<li>&lt; strong &gt;粗体标签&lt; /strong &gt;</li>
-</ul>
-<p><strong>在这两个标签中都是需要强调的文本，只不过这两种标签所强调出来的样式不一样，但是可以两者结合在一起使用</strong></p>
-<hr>
-<ul>
-<li>&lt; span &gt;标签&lt; /span &gt;</li>
-</ul>
-<p><strong>&lt; span &gt;标签是没有语义的，它的作用就是为了设计单独的样式用的，相当于自定义CSS</strong></p>
-<blockquote>
-<ul>
-<li>aqua 浅绿色</li>
-<li>black 黑色</li>
-<li>blue 蓝色</li>
-<li>fuchsia 紫红色</li>
-<li>gray 灰色</li>
-<li>green 绿色</li>
-<li>lime 绿黄色</li>
-<li>maroon 栗色</li>
-<li>navy 深蓝色</li>
-<li>olive 橄榄色</li>
-<li>purple 紫色</li>
-<li>red 红色</li>
-<li>silver 银白色</li>
-<li>teal 蓝绿色</li>
-<li>white 白色</li>
-<li>yellow 黄色</li>
-</ul>
-<p><strong><em>如果使用其它颜色的话，就应该使用十六进制的颜色值</em></strong></p>
-</blockquote>
-<p><strong>&lt; em &gt;&lt; /em &gt;和&lt; strong &gt;&lt; /strong &gt;标签是为了强调一句话中的关键作用，它们的语义是强调</strong></p>
-<p><strong>&lt; strong &gt;&lt; /strong &gt;和&lt; b &gt;&lt; /b &gt; 一样用法，语义是强调</strong></p>
-<hr>
-<ul>
-<li>&lt; q &gt;标签，短文本引用<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q</span>&gt;</span>引用文本<span class="tag">&lt;/<span class="name">q</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>就像引用别人说的话一样，为了标注，则需要加双引号，但是需要&lt; q &gt;&lt; /q &gt;这样的引用</strong></p>
-<p><strong>并且这种引用的文本是不需要加</strong>双引号<strong>的，浏览器会对q标签自动添加双引号</strong></p>
-<blockquote>
-<p>添加&lt; q &gt;之前，浏览器只知道一段文字和一些双引号在里面。</p>
-<blockquote>
-<p>添加&lt; q &gt;之后，浏览器知道这里是一段引用。</p>
-<blockquote>
-<p>如果浏览器有自己的优化(如对老人增大引用的字体及对其加粗)，或者你在CSS中安排了格式，这部分就有意义了。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<hr>
-<ul>
-<li>&lt; blockquote &gt;&lt; /blockquote &gt;<blockquote>
-<p>转指对长文本的引用，这个标签的解析是<strong>缩进样式</strong></p>
-</blockquote>
-</li>
-</ul>
-<p><strong>这个与上面的&lt; q &gt;&lt; /q &gt;不一样的地方是：第一、这个是用来表示引用长文本的；第二、这个是不会自动添加双引号，但是会缩进样式。(而&lt; q &gt;&lt; /q &gt;是不会缩进样式的)</strong></p>
-<hr>
-<ul>
-<li>&lt; br &gt;标签分行显示文本<blockquote>
-<p>用一个&lt; br &gt;&lt; /br &gt;就像是回车一样，进行了换行。<br><br><em><strong>这就意味着你在HTML代码中输入回车、空格都是没有作用的。在HTML文本中想要输入回车换行就必须输入&lt; br &gt;</strong></em><br><br><em><strong>而&lt; pre &gt;&lt; /pre &gt;可以保留文本中的空格和回车</strong></em></p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<ul>
-<li>输入 &amp; n b s p；就会在html中显示空格</li>
-</ul>
-<hr>
-<ul>
-<li>输入&lt; hr/ &gt;就是用来添加水平线的</li>
-</ul>
-<hr>
-<ul>
-<li>&lt; address &gt;标签，为网页加入地址信息<blockquote>
-<p>一般网页中会有一些网站的联系地址信息需要在网页中展示出来，这些联系地址信息如公司的地址就可以&lt; address &gt;标签。也可以定义一个地址（比如电子邮件地址）、签名或者文档的作者身份。</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<ul>
-<li>&lt; code &gt;&lt; /code &gt;进行添加代码<blockquote>
-<p><em><strong>目的是防止浏览器误认为是需要执行的代码，加了标签，浏览器就不会执行了<br><strong>这种只能添加一行代码，如果需要添加多行，就不能使用&lt; code &gt;标签，而需要使用&lt; pre &gt;</strong></strong></em></p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<ul>
-<li>使用&lt; ul &gt;添加新闻信息列表<blockquote>
-<p>模板：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  ……</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<hr>
-<ul>
-<li>使用&lt; ol &gt;添加列表标签序号<blockquote>
-<p><strong>这种与上面的区别就在于，下面的这一种就是由序号的，而上面的只有一个点</strong><br></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span>信息<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   ......</span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<hr>
-<ul>
-<li>&lt; div &gt;&lt; /div &gt;标签在排版中的作用<blockquote>
-<p>一个html页面可以看成一个家，而一个div你们可以看成家的每个小房间，房间有了当然没什么效果，但是一个家必须分成一个个小房间才能多姿多彩，但每个房间里怎么装饰就得你们自己放东西，当然装饰就得交给css了。</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<ul>
-<li>table标签写表格<blockquote>
-<p>用如下代码实现表格：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>认识table表标签<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>班级<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>学生数<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>平均成绩<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>一班<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>30<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>89<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>二班<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>35<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>85<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>三班<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>32<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>80<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<p>上面的代码实现的样子就像下面的样子一样：</p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/table.png?raw=true" alt="table"></p>
-<hr>
-<ul>
-<li><h3>上面的代码可以添加一个CSS样式进行表格的变换</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>为表格添加边框<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">table tr td,th&#123;border:2px solid #342;&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<ul>
-<li>summary与caption用来添加标题与摘要<blockquote>
-<p><strong>&lt; table summary=”摘要的内容”&gt;</strong><br><br>上面的summary添加的摘要与在html中添加注释的效果是一样的，目的是为了给程序员看，防止表格太多改错了。<br><br><strong>&lt; caption &gt;标题文本&lt; /caption &gt;</strong><br><br>上面的就是给表格添加标题(表头)的</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<ul>
-<li>&lt; a &gt;标签使用的超链接<blockquote>
-<p>使用</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"目标地址"</span> <span class="attr">title</span>=<span class="string">"鼠标滑过显示的文本"</span>&gt;</span>连接显示的文本<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p><em>href：Hypertext Reference的缩写。意思是超文本引用。</em><br><br>title属性的作用，鼠标滑过链接文字时会显示这个属性的文本内容。<br><br><em><strong>注：只要文本加入a标签之后，文字的颜色就会自动变成蓝色（点击之后的文本颜色会变成紫色）</strong></em></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Django服务器部署到腾讯云</title>
-    <url>/2018/08/06/Django%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<h1 id="Django服务器部署到腾讯云"><a href="#Django服务器部署到腾讯云" class="headerlink" title="Django服务器部署到腾讯云"></a>Django服务器部署到腾讯云</h1><ul>
-<li><p>配置腾讯云的服务器</p>
-<a id="more"></a>
-<ul>
-<li>配置的系统是Ubuntu Server 16.04.1 LTS 64位</li>
-<li>登录后界面如图：</li>
-</ul>
-<ul>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/TencentServerLogin.png?raw=true" alt=""></li>
-<li>之后进行django的安装<strong>注意版本号要和你在本地开发的一致</strong></li>
-<li>使用screen进行后台的django项目的运行。<strong>注意runserver后设置：0.0.0.0:端口号</strong></li>
-</ul>
-</li>
-<li><p>使用PyCharm进行远程连接腾讯云服务器</p>
-<ul>
-<li>Tools—&gt;Deployment—&gt;config呈现下面的界面</li>
-</ul>
-<ul>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAddServer.png?raw=true" alt=""><br>-<br>选择<strong>sftp</strong></li>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmDeployment.png?raw=true" alt=""></li>
-<li>在这里设置你的IP地址，然后点击<code>Test SFTP connection</code></li>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmTestConnection.png?raw=true" alt=""></li>
-<li>在这里设置你的<code>用户名</code>和<code>密码</code><strong>用户名与密码可以在腾讯云的更多中重置与设置</strong></li>
-<li>然后这个时候就连接上了</li>
-</ul>
-<ul>
-<li>此时，在你的PyCharm的右边，会出现服务器上的树目录结构(如图所示)</li>
-</ul>
-<ul>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAdmin.png?raw=true" alt=""></li>
-<li>进入到home—&gt;ubuntu下，在这里面，你具有权限，此时就可以将你的整个项目拖进去，然后在服务器端进入到项目中<strong>创建screen后台</strong>，运行<strong>manage.py runserver 0.0.0.0:端口号</strong>就可以使你的django一直保持运行的状态了。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>后端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git</title>
-    <url>/2018/07/23/Git/</url>
-    <content><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="What-is-Git"><a href="#What-is-Git" class="headerlink" title="What is Git?"></a>What is Git?</h2><ul>
-<li>Git is the most advanced distributed version control system in the world.<a id="more"></a>
-<h2 id="What-is-the-different-between-the-SVN-Subversion-and-the-Git"><a href="#What-is-the-different-between-the-SVN-Subversion-and-the-Git" class="headerlink" title="What is the different between the SVN(Subversion) and the Git?"></a>What is the different between the SVN(Subversion) and the Git?</h2></li>
-<li>SVN is a centralized version control system which version library  centralized packed in the central server.So if you need to do your work,you must go to the central server to download the latest version.When you finished your work,you have to push on the central server.It’s so inconvenient.Actually the centralized version control system must accessible networking.<h5 id="just-like-this-photo"><a href="#just-like-this-photo" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/subversion.png?raw=true" alt=""></p>
-<ul>
-<li>Git is a distributed version control system,which advantaged is if it has not a central version,the LapTop is a rounded version library.because of this, you can work without using network.<h5 id="just-like-this-photo-1"><a href="#just-like-this-photo-1" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/git.png?raw=true" alt=""></p>
-<h2 id="there-are-some-useful-command-lines"><a href="#there-are-some-useful-command-lines" class="headerlink" title="there are some useful command lines :"></a>there are some useful command lines :</h2><ul>
-<li>mkdir: XX (Create an empty directory)/<em>XX refer to directory name</em>/</li>
-<li>pwd: (Show the path to the current directory)</li>
-<li>git: init (Change the current directory to a managed  Git repository,create a hidden file)</li>
-<li>git add XX (Add  XX file to working-storage section)</li>
-<li>git commit -m “XX” (Add a comment to a file)/<em>XX is the comment</em>/</li>
-<li>git status (View warehouse status)</li>
-<li>git log (View history)</li>
-<li>git diff XX (View XX file what are modified)</li>
-<li>git rm XX (Delete XX file)</li>
-<li>cat XX (View file contents)</li>
-<li>git checkout -b A  (Create a A branch and switch to A branch)</li>
-<li>git checkout master (back to master branch)</li>
-<li>git clone HTTPS (clone from online warehouse)</li>
-<li>git branch name (create a branch)</li>
-<li>git branch -d A (Delete A branch)</li>
-<li>git push origin master (push master branch to online warehouse)<h1 id="如何使用Git-Bash"><a href="#如何使用Git-Bash" class="headerlink" title="如何使用Git Bash"></a>如何使用Git Bash</h1><h2 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h2>当需要上传一个项目到Github时，这个时候你需要在自己的Github上新建一个项目<br>New repository<br>然后在右下角有一个Clone or download<br>点击之后有一个Clone with HTTPS<br>Use Git or checkout with SVN using the web URL.<br>复制地址之后<br>在需要上传的项目文件中<br>右键，点击Git Bash Here之后<br>先输入 git clone + 地址<br>会出现一个项目名称的文件夹<br>里面有隐藏文件.git与ReadMe.md<br>将具有项目名称的文件夹中的全部内容剪切到需要上传的项目的根目录下<br>之后在Git Bash中输入<br>git add .<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是GitHub上面：<br>git push origin master<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2>当需要更新已经上传的项目时<br>直接在已经写好的更新过的项目中<br>右键，点击Git Bash Here<br>然后在命令行中输入<br>git pull + 地址<br>上传跟新过之后，需要在命令行中输入<br>git add .<br>之后的步骤又是重复着之前的了<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是Github上面：<br>git push origin master</li>
-</ul>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Android自定义控件</title>
-    <url>/2018/07/23/Android%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/</url>
-    <content><![CDATA[<h3 id="Android属性动画的分类"><a href="#Android属性动画的分类" class="headerlink" title="Android属性动画的分类"></a>Android属性动画的分类</h3><ul>
-<li>View Animation(补间)</li>
-<li>Drawable Animation(帧动画)</li>
-<li>Property Animation(Android3.0新引入)</li>
-</ul>
-<a id="more"></a>
-<h4 id="View-Animation"><a href="#View-Animation" class="headerlink" title="View Animation"></a>View Animation</h4><ul>
-<li>基于view的渐变动画，只改变view的绘制效果，而实际属性值未该改变。</li>
-<li>比如：动画移动一个按钮位置，但按钮点击的实际位置仍未改变。</li>
-<li>代码中定义动画，可以参考<code>AnimationSet</code>类和<code>Animation</code>的子类。</li>
-<li>而如果使用XML，可以在res/anim/文件夹中定义XML文件。</li>
-<li>下面是一个实例<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">TranslateAnimation animation = <span class="keyword">new</span> TranslateAnimation(<span class="number">0</span>,iv_animation.getWidth(),<span class="number">0</span>,iv_animation.getHight());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">iv_animation是需要移动的图片的id</span></span><br><span class="line"><span class="comment">使用TranslateAnimation的构造方法，将图片从0(原始位置)移动图片长度的长度(iv_animation.getWidth);</span></span><br><span class="line"><span class="comment">高度的移动也是同样的道理</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">animation.setDuration(<span class="number">3000</span>);<span class="comment">//设置延迟效果</span></span><br><span class="line">animation.setFillAfter(<span class="keyword">true</span>);<span class="comment">//使得view不再复位</span></span><br><span class="line">iv_animation.startAnimation(animation);<span class="comment">//开始移动</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="Drawable-Animation"><a href="#Drawable-Animation" class="headerlink" title="Drawable Animation"></a>Drawable Animation</h4><ul>
-<li>加载一系列Drawable资源来创建动画，这种传统动画某种程度上就是创建不同图片序列，顺序播放，就像电影胶片。</li>
-<li>在代码中定义动画帧，使用<code>AnimationDrawable</code>类。</li>
-<li>XML文件能更简单的组成动画帧，在<code>res/drawable</code>文件夹，使用<code>&lt;animation-list&gt;</code>采用<code>&lt;item&gt;</code>来定义不同的帧。</li>
-<li>注：感觉只能设置的属性是动画间隔时间。</li>
-</ul>
-<h4 id="Property-Animation-属性动画"><a href="#Property-Animation-属性动画" class="headerlink" title="Property Animation(属性动画)"></a>Property Animation(属性动画)</h4><ul>
-<li>动画的对象除了传统的view对象，还可以是Object对象，动画之后，Object对象的属性值就实实在在的改变了。</li>
-<li>Property Animation能够通过改变view对象的实际属性来实现view动画。</li>
-<li>任何时候view属性的改变，view能够自动调用invalidate()来试试刷新。</li>
-<li><p>下面是一个实例</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ObjectAnimator animator = ObjectAnimator.ofFloat(iv_animation,<span class="string">"translationX"</span>,<span class="number">0</span>,iv_animation.getWidth());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">使用ObjectAnimator的ofFloat进行平移</span></span><br><span class="line"><span class="comment">ofFloat(平移的id,“如何平移，如：(水平-&gt;translationX)”,初始位置,平移距离);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">ObjectAnimator animator2 = ObjectAnimator.ofFloat(iv_animation,<span class="string">"translationY"</span>,<span class="number">0</span>,iv_animation.getHight());</span><br><span class="line">AnimatorSet animatorSet = <span class="keyword">new</span> AnimatorSet();</span><br><span class="line">AnimatorSet.setDuration(<span class="number">2000</span>);</span><br><span class="line">AnimatorSet.setInterpolator(<span class="keyword">new</span> BounceInterpolator());</span><br><span class="line"><span class="comment">//两个动画一起播放</span></span><br><span class="line">animatorSet.playTogether(animator,animator2);</span><br><span class="line"><span class="comment">//开始播放</span></span><br><span class="line">animatorSet.start();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>另一种写法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">iv_animation.animate()</span><br><span class="line">            .translationXBy(iv_animation.getWidth())</span><br><span class="line">            .translationYBy(iv_animation.getHight())</span><br><span class="line">            .setDuration(<span class="number">2000</span>)</span><br><span class="line">            .setInterpolator(<span class="keyword">new</span> BounceInterpolator())</span><br><span class="line">            .start();</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="ViewPager-广告条效果"><a href="#ViewPager-广告条效果" class="headerlink" title="ViewPager(广告条效果)"></a>ViewPager(广告条效果)</h3><ul>
-<li>ViewPager的使用</li>
-<li>广告条的基本功能</li>
-<li>ViewPager拓展</li>
-<li>改进成引导页面</li>
-</ul>
-<h4 id="ViewPager的使用"><a href="#ViewPager的使用" class="headerlink" title="ViewPager的使用"></a>ViewPager的使用</h4><ul>
-<li>第一：使用<code>android.support.v4.view.ViewPager</code>在布局文件中定义</li>
-<li>第二：在代码中实例化ViewPager</li>
-<li>第三：准备数据</li>
-<li>第四：设置适配器(PagerAdapter)-item-布局-绑定数据</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>QTDesigner</title>
-    <url>/2018/07/22/QTDesigner/</url>
-    <content><![CDATA[<h2 id="QT的安装"><a href="#QT的安装" class="headerlink" title="QT的安装"></a>QT的安装</h2><ul>
-<li>对于QT的安装，个人的推荐是参考<a href="http://blog.csdn.net/liang19890820/article/details/53931813" target="_blank" rel="noopener">QT5.7+VS2015安装教程</a>。这个教程写的很详细，而且也非常的nice。</li>
-</ul>
-<a id="more"></a>
-<h2 id="QT在VS2015中的使用"><a href="#QT在VS2015中的使用" class="headerlink" title="QT在VS2015中的使用"></a>QT在VS2015中的使用</h2><ul>
-<li><p>现在我们正式在VS2015中去使用QT，使用前，先需要创建一个QT的项目。</p>
-</li>
-<li><p>使用VS2015中文件——&gt;新建——&gt;项目。点击之后，会出现如下界面：</p>
-</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTCreate.png?raw=true" alt=""></p>
-<ul>
-<li>模板选择VisualC++下的Qt，选择QT GUI Application，上方的.NET Framework直接选择默认即可。</li>
-<li>选择之后点击下一步，会出现如下界面：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT1.png?raw=true" alt=""></p>
-<ul>
-<li>点击next之后会出现如下界面：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT2.png?raw=true" alt=""><br><strong>这里根据需要可以自己选择，如果是新手可以先直接下一步。</strong></p>
-<ul>
-<li>点击next之后会出现如下界面：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QT3.png?raw=true" alt=""><br><strong>这里默认直接finish就可以，如果有什么需要的可以自行设置。</strong></p>
-<ul>
-<li>当创建好之后就会出现如下画面：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTFinish.png?raw=true" alt=""></p>
-<ul>
-<li>上面的画面就是我们需要进行操作的界面了。此时，<code>双击</code>QTTest.ui【位于:解决方案资源管理器-&gt;Form Files】</li>
-<li>双击进去之后就是我们需要进行ui设计的界面了（如下图所示）：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTDesigner.png?raw=true" alt=""></p>
-<ul>
-<li>在这里，你可以进行控件的拖动，直接拖到方框中去，然后再对象查看器（如下图所示）可以看到你控件所对应的类以及生成的对象。</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest1.png?raw=true" alt=""></p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest2.png?raw=true" alt=""></p>
-<ul>
-<li>创建好对象之后，点击左上角的文件-&gt;保存（Ctrl+S）</li>
-<li>然后关闭QT Designer，回到VS2015中，<code>右键QTTest.ui，选择编译（Ctrl+F7）</code>，如下图所示：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/QTTest3.png?raw=true" alt=""></p>
-<ul>
-<li>编译成功之后（一般情况下都是会编译成功的），<code>双击打开QTTest.cpp</code>,里面的代码是这样的：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>这个时候，在<code>ui.setupUi下输入ui.pushButton</code>即可获取到刚刚创建的button的实例。代码如下所示：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">	ui.pushButton;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>在QT中，控件与控件之间的数据传输是通过<code>信号与槽</code>的方式进行的，下面就演示其中一种的数据传输的方式：（代码如下：）</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;QTTest.h&quot;</span><br><span class="line"></span><br><span class="line">QTTest::QTTest(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">	ui.setupUi(this);</span><br><span class="line">	connect(ui.pushButton, &amp;QPushButton::clicked, [this] &#123;</span><br><span class="line">		ui.label-&gt;setText(ui.label-&gt;text().replace(QRegExp(&quot;\\d+&quot;), &quot;25&quot;));</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>实现之后的效果为：</p>
-<ul>
-<li>未点击button之前：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/ClickBefore.png?raw=true" alt=""></p>
-<ul>
-<li>点击button之后：</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/ClickAfter.png?raw=true" alt=""></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>QT</category>
-      </categories>
-      <tags>
-        <tag>QT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MATLAB概述</title>
-    <url>/2018/07/22/MATLAB%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h1 id="MATLAB概述"><a href="#MATLAB概述" class="headerlink" title="MATLAB概述"></a>MATLAB概述</h1><ul>
-<li>主要包括MATLAB和Simulink两大部分。<blockquote>
-<ul>
-<li>MATLAB基于矩阵(Matrix)的运算，全称为:MATreix LABoratory</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>MATLAB主要功能<blockquote>
-<ul>
-<li>技术计算—&gt;数学计算、分析、可视化和算法开发</li>
-<li>控制系统设计—&gt;控制系统基于模型的设计，包括嵌入式系统仿真、快速原型及代码生成等</li>
-<li>信号处理和通信—&gt;信号处理和通信系统基于模型的设计，包括仿真、代码生成和验证等</li>
-<li>图像处理—&gt;图像采集、分析、可视化和算法开发</li>
-<li>测试和测量—&gt;测试和测量应用中硬件连接性和数据分析</li>
-<li>计算你生物学—&gt;生物数据和系统分析、可视化与仿真</li>
-<li>计算金融—&gt;金融建模、分析及应用程序开发</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li><p>MATLAB分析和访问数据</p>
-<ul>
-<li>数据分析</li>
-</ul>
-<blockquote>
-<p>MATLAB提供有一下一些用于数据分析运算的交互式工具和命令行函数</p>
-<ul>
-<li>内插和抽取</li>
-<li>抽取数据段、缩放和求平均值</li>
-<li>阈值和平滑处理</li>
-<li>相关性、傅里叶分析和筛选</li>
-<li>一维峰值、谷值以及零点查找</li>
-<li>基本统计数据和曲线拟合</li>
-<li>矩阵分析</li>
-</ul>
-</blockquote>
-<ul>
-<li>数据访问</li>
-</ul>
-<blockquote>
-<p>可以从各种常用文件格式(如Microsoft Excel)、ASCII文本或者二进制文件、图像、语音和视频文件，以及诸如HDF和HDF5等科学文件中读取数据</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li><p>MATLAB实现数据可视化</p>
-<ul>
-<li><p>二维绘图</p>
-<blockquote>
-<p>使用二维绘图函数将数据向量可视化</p>
-<ul>
-<li>线图、区域图、条形图以及饼图</li>
-<li>方向图及速率图</li>
-<li>直方图</li>
-<li>多边形图和曲面图</li>
-<li>散点图/气泡图</li>
-<li>动画</li>
-</ul>
-</blockquote>
-</li>
-<li><p>三维绘图和卷可视化</p>
-<blockquote>
-<p>提供有将二维矩阵、三维向量和三维标量数据可视化的函数；还可以指定图形特性，例如：相机取景角度、透视图、灯光效果、光源位置以及透明度等等。<strong>三维绘图函数包括：</strong></p>
-<ul>
-<li>曲面图、轮廓图和网状图</li>
-<li>成像图</li>
-<li>锥形图、切割图、流程图以及等值面图</li>
-</ul>
-</blockquote>
-</li>
-<li><p>交互式创建和编译图形</p>
-<blockquote>
-<p>具有一些设计和修改图形的交互式工具。<strong>可执行的操作有：</strong></p>
-<ul>
-<li>将新的数据集拖放到图形上</li>
-<li>更改图形上任意对象的属性</li>
-<li>缩放、旋转、平移以及更改相机角度和灯光</li>
-<li>添加批注和数据提示</li>
-<li>绘制形状</li>
-<li>生成可供各种数据重复使用的MATLAB自带函数</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>MATLAB进行数值计算</p>
-<blockquote>
-<p>MATLAB提供以下类型函数用于数值计算与数值分析：</p>
-<ul>
-<li>矩阵操作和线性代数</li>
-<li>多项式和内插</li>
-<li>傅里叶分析和筛选</li>
-<li>数据分析和统计</li>
-<li>优化和数值积分</li>
-<li>常微分方程(ODE)</li>
-<li>偏微分方程(PDE)</li>
-<li>稀疏矩阵运算</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h3 id="MATLAB的安装"><a href="#MATLAB的安装" class="headerlink" title="MATLAB的安装"></a>MATLAB的安装</h3><blockquote>
-<p>感谢百度经验提供的教程</p>
-<p><a href="http://jingyan.baidu.com/article/3d69c551a2dbd7f0cf02d731.html" target="_blank" rel="noopener">MATLAB安装教程</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Matlab</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
       </tags>
   </entry>
 </search>
