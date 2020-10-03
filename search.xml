@@ -225,48 +225,35 @@
       </tags>
   </entry>
   <entry>
-    <title>Django服务器部署到腾讯云</title>
-    <url>/2018/08/06/Django%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<h1 id="Django服务器部署到腾讯云"><a href="#Django服务器部署到腾讯云" class="headerlink" title="Django服务器部署到腾讯云"></a>Django服务器部署到腾讯云</h1><ul>
-<li><p>配置腾讯云的服务器</p>
+    <title>C++并发的世界</title>
+    <url>/2020/07/15/C++%E5%B9%B6%E5%8F%91%E7%9A%84%E4%B8%96%E7%95%8C/</url>
+    <content><![CDATA[<h1 id="C-的并发世界"><a href="#C-的并发世界" class="headerlink" title="C++的并发世界"></a>C++的并发世界</h1><p>主要内容：</p>
+<ul>
+<li>什么是并发和多线程？</li>
+<li>为什么用并发和多线程？</li>
+<li>如何用并发和多线程？</li>
+</ul>
 <a id="more"></a>
+<h2 id="什么是并发？"><a href="#什么是并发？" class="headerlink" title="什么是并发？"></a>什么是并发？</h2><p>两个或更多独立的活动同时进行。在计算机领域中表现为：<strong>单个系统中同时执行多个独立的任务。</strong></p>
+<h3 id="单核任务切换VS多核硬件并发"><a href="#单核任务切换VS多核硬件并发" class="headerlink" title="单核任务切换VS多核硬件并发"></a>单核任务切换VS多核硬件并发</h3><ul>
+<li>单核任务切换</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/C%2B%2B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/%E5%8D%95%E6%A0%B8%E4%BB%BB%E5%8A%A1%E5%88%87%E6%8D%A2.png?raw=true" alt="单核切换"></p>
 <ul>
-<li>配置的系统是Ubuntu Server 16.04.1 LTS 64位</li>
-<li>登录后界面如图：</li>
+<li>多核硬件并发</li>
 </ul>
-<ul>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/TencentServerLogin.png?raw=true" alt=""></li>
-<li>之后进行django的安装<strong>注意版本号要和你在本地开发的一致</strong></li>
-<li>使用screen进行后台的django项目的运行。<strong>注意runserver后设置：0.0.0.0:端口号</strong></li>
-</ul>
-</li>
-<li><p>使用PyCharm进行远程连接腾讯云服务器</p>
-<ul>
-<li>Tools—&gt;Deployment—&gt;config呈现下面的界面</li>
-</ul>
-<ul>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAddServer.png?raw=true" alt=""><br>-<br>选择<strong>sftp</strong></li>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmDeployment.png?raw=true" alt=""></li>
-<li>在这里设置你的IP地址，然后点击<code>Test SFTP connection</code></li>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmTestConnection.png?raw=true" alt=""></li>
-<li>在这里设置你的<code>用户名</code>和<code>密码</code><strong>用户名与密码可以在腾讯云的更多中重置与设置</strong></li>
-<li>然后这个时候就连接上了</li>
-</ul>
-<ul>
-<li>此时，在你的PyCharm的右边，会出现服务器上的树目录结构(如图所示)</li>
-</ul>
-<ul>
-<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAdmin.png?raw=true" alt=""></li>
-<li>进入到home—&gt;ubuntu下，在这里面，你具有权限，此时就可以将你的整个项目拖进去，然后在服务器端进入到项目中<strong>创建screen后台</strong>，运行<strong>manage.py runserver 0.0.0.0:端口号</strong>就可以使你的django一直保持运行的状态了。</li>
-</ul>
-</li>
-</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/C%2B%2B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/%E5%A4%9A%E6%A0%B8%E7%A1%AC%E4%BB%B6%E5%B9%B6%E5%8F%91.png?raw=true" alt="多核硬件并发"></p>
+<h3 id="多进程并发"><a href="#多进程并发" class="headerlink" title="多进程并发"></a>多进程并发</h3><p>独立进程可通过进程间常规的通信渠道传递信息（信号、套接字、文件、管道等等）。</p>
+<p>缺点之一：运行进程所需的固定开销：需要时间启动进程，操作系统需要内部资源来管理进程等等。</p>
+<p>独立进程实现并发的额外优势：可通过远程连接在不同的机器上运行独立的进程。</p>
+<h3 id="多线程并发"><a href="#多线程并发" class="headerlink" title="多线程并发"></a>多线程并发</h3><p>每个线程相互独立运行，并共享地址空间，因此线程可以通过共享内存进行通信。</p>
+<p><strong>如果数据要被多个线程访问，那么必须保证每个线程所访问到的数据是一致的</strong></p>
 ]]></content>
       <categories>
-        <category>后端</category>
+        <category>C&amp;C++</category>
       </categories>
       <tags>
-        <tag>后端</tag>
+        <tag>C&amp;C++</tag>
       </tags>
   </entry>
   <entry>
@@ -366,77 +353,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C++并发的世界</title>
-    <url>/2020/07/15/C++%E5%B9%B6%E5%8F%91%E7%9A%84%E4%B8%96%E7%95%8C/</url>
-    <content><![CDATA[<h1 id="C-的并发世界"><a href="#C-的并发世界" class="headerlink" title="C++的并发世界"></a>C++的并发世界</h1><p>主要内容：</p>
-<ul>
-<li>什么是并发和多线程？</li>
-<li>为什么用并发和多线程？</li>
-<li>如何用并发和多线程？</li>
-</ul>
-<a id="more"></a>
-<h2 id="什么是并发？"><a href="#什么是并发？" class="headerlink" title="什么是并发？"></a>什么是并发？</h2><p>两个或更多独立的活动同时进行。在计算机领域中表现为：<strong>单个系统中同时执行多个独立的任务。</strong></p>
-<h3 id="单核任务切换VS多核硬件并发"><a href="#单核任务切换VS多核硬件并发" class="headerlink" title="单核任务切换VS多核硬件并发"></a>单核任务切换VS多核硬件并发</h3><ul>
-<li>单核任务切换</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/C%2B%2B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/%E5%8D%95%E6%A0%B8%E4%BB%BB%E5%8A%A1%E5%88%87%E6%8D%A2.png?raw=true" alt="单核切换"></p>
-<ul>
-<li>多核硬件并发</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/C%2B%2B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/%E5%A4%9A%E6%A0%B8%E7%A1%AC%E4%BB%B6%E5%B9%B6%E5%8F%91.png?raw=true" alt="多核硬件并发"></p>
-<h3 id="多进程并发"><a href="#多进程并发" class="headerlink" title="多进程并发"></a>多进程并发</h3><p>独立进程可通过进程间常规的通信渠道传递信息（信号、套接字、文件、管道等等）。</p>
-<p>缺点之一：运行进程所需的固定开销：需要时间启动进程，操作系统需要内部资源来管理进程等等。</p>
-<p>独立进程实现并发的额外优势：可通过远程连接在不同的机器上运行独立的进程。</p>
-<h3 id="多线程并发"><a href="#多线程并发" class="headerlink" title="多线程并发"></a>多线程并发</h3><p>每个线程相互独立运行，并共享地址空间，因此线程可以通过共享内存进行通信。</p>
-<p><strong>如果数据要被多个线程访问，那么必须保证每个线程所访问到的数据是一致的</strong></p>
-]]></content>
-      <categories>
-        <category>C&amp;C++</category>
-      </categories>
-      <tags>
-        <tag>C&amp;C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git</title>
-    <url>/2018/07/23/Git/</url>
-    <content><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="What-is-Git"><a href="#What-is-Git" class="headerlink" title="What is Git?"></a>What is Git?</h2><ul>
-<li>Git is the most advanced distributed version control system in the world.<a id="more"></a>
-<h2 id="What-is-the-different-between-the-SVN-Subversion-and-the-Git"><a href="#What-is-the-different-between-the-SVN-Subversion-and-the-Git" class="headerlink" title="What is the different between the SVN(Subversion) and the Git?"></a>What is the different between the SVN(Subversion) and the Git?</h2></li>
-<li>SVN is a centralized version control system which version library  centralized packed in the central server.So if you need to do your work,you must go to the central server to download the latest version.When you finished your work,you have to push on the central server.It’s so inconvenient.Actually the centralized version control system must accessible networking.<h5 id="just-like-this-photo"><a href="#just-like-this-photo" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/subversion.png?raw=true" alt=""></p>
-<ul>
-<li>Git is a distributed version control system,which advantaged is if it has not a central version,the LapTop is a rounded version library.because of this, you can work without using network.<h5 id="just-like-this-photo-1"><a href="#just-like-this-photo-1" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/git.png?raw=true" alt=""></p>
-<h2 id="there-are-some-useful-command-lines"><a href="#there-are-some-useful-command-lines" class="headerlink" title="there are some useful command lines :"></a>there are some useful command lines :</h2><ul>
-<li>mkdir: XX (Create an empty directory)/<em>XX refer to directory name</em>/</li>
-<li>pwd: (Show the path to the current directory)</li>
-<li>git: init (Change the current directory to a managed  Git repository,create a hidden file)</li>
-<li>git add XX (Add  XX file to working-storage section)</li>
-<li>git commit -m “XX” (Add a comment to a file)/<em>XX is the comment</em>/</li>
-<li>git status (View warehouse status)</li>
-<li>git log (View history)</li>
-<li>git diff XX (View XX file what are modified)</li>
-<li>git rm XX (Delete XX file)</li>
-<li>cat XX (View file contents)</li>
-<li>git checkout -b A  (Create a A branch and switch to A branch)</li>
-<li>git checkout master (back to master branch)</li>
-<li>git clone HTTPS (clone from online warehouse)</li>
-<li>git branch name (create a branch)</li>
-<li>git branch -d A (Delete A branch)</li>
-<li>git push origin master (push master branch to online warehouse)<h1 id="如何使用Git-Bash"><a href="#如何使用Git-Bash" class="headerlink" title="如何使用Git Bash"></a>如何使用Git Bash</h1><h2 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h2>当需要上传一个项目到Github时，这个时候你需要在自己的Github上新建一个项目<br>New repository<br>然后在右下角有一个Clone or download<br>点击之后有一个Clone with HTTPS<br>Use Git or checkout with SVN using the web URL.<br>复制地址之后<br>在需要上传的项目文件中<br>右键，点击Git Bash Here之后<br>先输入 git clone + 地址<br>会出现一个项目名称的文件夹<br>里面有隐藏文件.git与ReadMe.md<br>将具有项目名称的文件夹中的全部内容剪切到需要上传的项目的根目录下<br>之后在Git Bash中输入<br>git add .<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是GitHub上面：<br>git push origin master<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2>当需要更新已经上传的项目时<br>直接在已经写好的更新过的项目中<br>右键，点击Git Bash Here<br>然后在命令行中输入<br>git pull + 地址<br>上传跟新过之后，需要在命令行中输入<br>git add .<br>之后的步骤又是重复着之前的了<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是Github上面：<br>git push origin master</li>
-</ul>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS</title>
     <url>/2018/09/08/CSS/</url>
     <content><![CDATA[<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
@@ -495,6 +411,45 @@
       </categories>
       <tags>
         <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git</title>
+    <url>/2018/07/23/Git/</url>
+    <content><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="What-is-Git"><a href="#What-is-Git" class="headerlink" title="What is Git?"></a>What is Git?</h2><ul>
+<li>Git is the most advanced distributed version control system in the world.<a id="more"></a>
+<h2 id="What-is-the-different-between-the-SVN-Subversion-and-the-Git"><a href="#What-is-the-different-between-the-SVN-Subversion-and-the-Git" class="headerlink" title="What is the different between the SVN(Subversion) and the Git?"></a>What is the different between the SVN(Subversion) and the Git?</h2></li>
+<li>SVN is a centralized version control system which version library  centralized packed in the central server.So if you need to do your work,you must go to the central server to download the latest version.When you finished your work,you have to push on the central server.It’s so inconvenient.Actually the centralized version control system must accessible networking.<h5 id="just-like-this-photo"><a href="#just-like-this-photo" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/subversion.png?raw=true" alt=""></p>
+<ul>
+<li>Git is a distributed version control system,which advantaged is if it has not a central version,the LapTop is a rounded version library.because of this, you can work without using network.<h5 id="just-like-this-photo-1"><a href="#just-like-this-photo-1" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/git.png?raw=true" alt=""></p>
+<h2 id="there-are-some-useful-command-lines"><a href="#there-are-some-useful-command-lines" class="headerlink" title="there are some useful command lines :"></a>there are some useful command lines :</h2><ul>
+<li>mkdir: XX (Create an empty directory)/<em>XX refer to directory name</em>/</li>
+<li>pwd: (Show the path to the current directory)</li>
+<li>git: init (Change the current directory to a managed  Git repository,create a hidden file)</li>
+<li>git add XX (Add  XX file to working-storage section)</li>
+<li>git commit -m “XX” (Add a comment to a file)/<em>XX is the comment</em>/</li>
+<li>git status (View warehouse status)</li>
+<li>git log (View history)</li>
+<li>git diff XX (View XX file what are modified)</li>
+<li>git rm XX (Delete XX file)</li>
+<li>cat XX (View file contents)</li>
+<li>git checkout -b A  (Create a A branch and switch to A branch)</li>
+<li>git checkout master (back to master branch)</li>
+<li>git clone HTTPS (clone from online warehouse)</li>
+<li>git branch name (create a branch)</li>
+<li>git branch -d A (Delete A branch)</li>
+<li>git push origin master (push master branch to online warehouse)<h1 id="如何使用Git-Bash"><a href="#如何使用Git-Bash" class="headerlink" title="如何使用Git Bash"></a>如何使用Git Bash</h1><h2 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h2>当需要上传一个项目到Github时，这个时候你需要在自己的Github上新建一个项目<br>New repository<br>然后在右下角有一个Clone or download<br>点击之后有一个Clone with HTTPS<br>Use Git or checkout with SVN using the web URL.<br>复制地址之后<br>在需要上传的项目文件中<br>右键，点击Git Bash Here之后<br>先输入 git clone + 地址<br>会出现一个项目名称的文件夹<br>里面有隐藏文件.git与ReadMe.md<br>将具有项目名称的文件夹中的全部内容剪切到需要上传的项目的根目录下<br>之后在Git Bash中输入<br>git add .<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是GitHub上面：<br>git push origin master<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2>当需要更新已经上传的项目时<br>直接在已经写好的更新过的项目中<br>右键，点击Git Bash Here<br>然后在命令行中输入<br>git pull + 地址<br>上传跟新过之后，需要在命令行中输入<br>git add .<br>之后的步骤又是重复着之前的了<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是Github上面：<br>git push origin master</li>
+</ul>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -567,6 +522,51 @@
       </categories>
       <tags>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Django服务器部署到腾讯云</title>
+    <url>/2018/08/06/Django%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h1 id="Django服务器部署到腾讯云"><a href="#Django服务器部署到腾讯云" class="headerlink" title="Django服务器部署到腾讯云"></a>Django服务器部署到腾讯云</h1><ul>
+<li><p>配置腾讯云的服务器</p>
+<a id="more"></a>
+<ul>
+<li>配置的系统是Ubuntu Server 16.04.1 LTS 64位</li>
+<li>登录后界面如图：</li>
+</ul>
+<ul>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/TencentServerLogin.png?raw=true" alt=""></li>
+<li>之后进行django的安装<strong>注意版本号要和你在本地开发的一致</strong></li>
+<li>使用screen进行后台的django项目的运行。<strong>注意runserver后设置：0.0.0.0:端口号</strong></li>
+</ul>
+</li>
+<li><p>使用PyCharm进行远程连接腾讯云服务器</p>
+<ul>
+<li>Tools—&gt;Deployment—&gt;config呈现下面的界面</li>
+</ul>
+<ul>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAddServer.png?raw=true" alt=""><br>-<br>选择<strong>sftp</strong></li>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmDeployment.png?raw=true" alt=""></li>
+<li>在这里设置你的IP地址，然后点击<code>Test SFTP connection</code></li>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmTestConnection.png?raw=true" alt=""></li>
+<li>在这里设置你的<code>用户名</code>和<code>密码</code><strong>用户名与密码可以在腾讯云的更多中重置与设置</strong></li>
+<li>然后这个时候就连接上了</li>
+</ul>
+<ul>
+<li>此时，在你的PyCharm的右边，会出现服务器上的树目录结构(如图所示)</li>
+</ul>
+<ul>
+<li><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/PyCharmAdmin.png?raw=true" alt=""></li>
+<li>进入到home—&gt;ubuntu下，在这里面，你具有权限，此时就可以将你的整个项目拖进去，然后在服务器端进入到项目中<strong>创建screen后台</strong>，运行<strong>manage.py runserver 0.0.0.0:端口号</strong>就可以使你的django一直保持运行的状态了。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>后端</tag>
       </tags>
   </entry>
   <entry>
@@ -817,75 +817,6 @@ FileWriter(File filename,boolean append);
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu+Windows双系统安装指南</title>
-    <url>/2020/05/05/Ubuntu-Windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="Ubuntu-Windows双系统安装指南"><a href="#Ubuntu-Windows双系统安装指南" class="headerlink" title="Ubuntu+Windows双系统安装指南"></a>Ubuntu+Windows双系统安装指南</h1><blockquote>
-<p>写在前面：非常感谢<a href="https://www.jianshu.com/c/01390ac22fa9" target="_blank" rel="noopener">Linux探索之旅</a>在最初的时候给我的安装教程的指南，自己按照这篇教程安装双系统折腾了将近一个月，期间更是将Windows也给装炸了。。。于是乎重装系统，直到现在可以稳定的使用Ubuntu和Windows双系统。</p>
-</blockquote>
-<hr>
-<ul>
-<li><a href="#Windows和Linux的区别">Windows和Linux的区别</a><ul>
-<li><a href="#观念">观念</a></li>
-<li><a href="#发布">发布</a></li>
-<li><a href="#内核API">内核API</a></li>
-</ul>
-</li>
-<li><a href="#Ubuntu系统安装">Ubuntu系统安装</a><ul>
-<li><a href="#下载">下载</a></li>
-<li><a href="#烧录">烧录</a></li>
-<li><a href="#使用USB方式进行安装">使用USB方式进行安装</a></li>
-</ul>
-</li>
-</ul>
-<hr>
-<a id="more"></a>
-<h2 id="Windows-和-Linux-的区别"><a href="#Windows-和-Linux-的区别" class="headerlink" title="Windows 和 Linux 的区别"></a>Windows 和 Linux 的区别</h2><p>对于 Windows 和 Linux 的区别，我在这里先使用一张直观的图让大家看一下。</p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Unix_Windows.jpg?raw=true" alt="内核区别"></p>
-<p>从上图中可以看到，Linux 与苹果的 Mac OS 是基于 Unix 系统下的操作系统，而 Windows 是基于MS-DOS的操作系统。下面的几个部分的内容，将分析 Windows 和 Linux 系统的区别。</p>
-<h3 id="观念"><a href="#观念" class="headerlink" title="观念"></a>观念</h3><p>商业模式与开源运作：</p>
-<p>众所周知，Windows 是一款商业级的操作系统，它的源代码是保密的，这也就导致想要看到Windows的源代码变成了一件十分困难的事情。这使得微软授权过的《WINDOWS INTERNALS》一书变得十分的畅销，因为这里面涉及到了部分 Windows 操作系统内部的构建细节。</p>
-<p>相对于 Linux 来说，Linux 是开源的,代码随时可见. 这对刚从 Windows 世界转过来的我是十分震撼的. 虽然我一直都知道这个事实, 但是当你发现了以前需要用尽各种方法,采用各种手段才可以得到只言片语的信息现在完全呈献在你面前的时候,你才能真正体会开源确实是一件伟大的工程。</p>
-<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>2进制与源代码：</p>
-<p>这里所指的2进制与源代码是集中在两者操作系统中在安装程序中的不同之处。</p>
-<p>在 Windows 世界，安装程序几乎全部都是以二进制形式发布的。也就是说，用户下载了一个程序，然后双击，一路 next 就可以了。这个方法很适合初学者。</p>
-<p>在 Linux 世界也有类似的机制，比如 YUM , APT-GET 等。不过 YUM 和 APT-GET 都是比较晚才出现的，在那之前，在 Linux 世界安装程序要更麻烦些。</p>
-<h3 id="内核API"><a href="#内核API" class="headerlink" title="内核API"></a>内核API</h3><p>固定与非固定：</p>
-<p> Windows 内核有一套固定的 API ，而且向后兼容。这使得 Windows 驱动的开发人员在不同版本之间移植时变得很容易。</p>
-<p>而 Linux 没有固定的内核API。2.4版本的内核模块在2.6几乎很大可能是不能兼容的。</p>
-<ul>
-<li>下面展示的是基于开源的 Linux 所分化出来的不同的分支系统。</li>
-</ul>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/LinuxBranch.jpg?raw=true" alt="Linux分支"></p>
-<hr>
-<h2 id="Ubuntu系统安装"><a href="#Ubuntu系统安装" class="headerlink" title="Ubuntu系统安装"></a>Ubuntu系统安装</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>Ubuntu的英文下载页面：<a href="http://www.ubuntu.com/download" target="_blank" rel="noopener">Ubuntu</a></p>
-<p>Ubuntu的中文下载页面：<a href="https://cn.ubuntu.com/" target="_blank" rel="noopener">Ubuntu国内官网</a></p>
-<p>优麒麟的下载页面：<a href="http://www.ubuntukylin.com/downloads/" target="_blank" rel="noopener">优麒麟</a></p>
-<p>在这里，能够下载到的最新版本是18.04.2LTS(Long Term Support)版本。<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/UbuntuDownLoad.png?raw=true" alt="Ubuntu18.04下载"></p>
-<h3 id="烧录"><a href="#烧录" class="headerlink" title="烧录"></a>烧录</h3><p>在电脑中插入一个空白的U盘（不空白也行，反正之后要格式化的），大小至少8GB。</p>
-<p>Universal USB Installer：<a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/" target="_blank" rel="noopener">下载</a></p>
-<p>下载好Universal USB Installer之后，打开它，在”Device”下拉菜单中选择你的U盘。然后点击创建。<code>对于右侧NTFS格式和Fat32格式，个人建议选择FAT32。</code></p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Universal_Installer.png?raw=true" alt="选择ISOs和Drive"></p>
-<h3 id="使用USB方式进行安装"><a href="#使用USB方式进行安装" class="headerlink" title="使用USB方式进行安装"></a>使用USB方式进行安装</h3><blockquote>
-<p>前提：你需要先进入你的Boot Menu中，选择USB Storage Device。如下图所示：<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/USB_Storage_Device.jpg?raw=true" alt="USB Storage Device"></p>
-<p>如果发现没有USB Storage Device，那么选择Setup进入BIOS，或者重启按F2进入BIOS。切换到Boot，选择Secure Boot Control回车，改成Disabled，USB Boot Support设置成Enabled，Boot Mode改成Legacy。如下图所示：</p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/SecureBootControl.jpg?raw=true" alt="Secure Boot Control"></p>
-</blockquote>
-<p>在进入到下图所示界面的时候（pure EFI Boot），这里就出现了一个坑。</p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/EFIBoot.jpg?raw=true" alt="EFIBoot"></p>
-<p>在这个时候，可以选择第一项，你可以先体验一下Ubuntu，也可不体验，直接Install Ubuntu。但是，在具有<code>独立显卡</code>的笔记本或者是台式机上，你会发现界面是能够进去的，但是很快就会卡死。这是因为独立显卡与Ubuntu的集成显卡不兼容所产生的问题。</p>
-<p>这个时候，你需要再次回到pure EFI Boot界面，然后在<code>按E</code>进入到如图所示的界面：</p>
-<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/UbuntuNoModeSet.jpg?raw=true" alt="UbuntuNoModeSet"></p>
-<p>将原本<code>quiet splash</code>后面的内容修改为<code>nomodeset</code>。然后再<code>按F10</code>进入到安装界面安装即可。</p>
-<p>在到 <code>安装类型</code> 这一步骤时，如果你在上一步压缩完分区后，没有新建简单卷（保持未分配状态），那么就只需选择 安装 Ubuntu，与 Windows boot manager 共存 这一选项，将分区相关事宜交由 Ubuntu 处理。</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MATLAB概述</title>
     <url>/2018/07/22/MATLAB%E6%A6%82%E8%BF%B0/</url>
     <content><![CDATA[<h1 id="MATLAB概述"><a href="#MATLAB概述" class="headerlink" title="MATLAB概述"></a>MATLAB概述</h1><ul>
@@ -1003,6 +934,75 @@ FileWriter(File filename,boolean append);
       </categories>
       <tags>
         <tag>Matlab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu+Windows双系统安装指南</title>
+    <url>/2020/05/05/Ubuntu-Windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1 id="Ubuntu-Windows双系统安装指南"><a href="#Ubuntu-Windows双系统安装指南" class="headerlink" title="Ubuntu+Windows双系统安装指南"></a>Ubuntu+Windows双系统安装指南</h1><blockquote>
+<p>写在前面：非常感谢<a href="https://www.jianshu.com/c/01390ac22fa9" target="_blank" rel="noopener">Linux探索之旅</a>在最初的时候给我的安装教程的指南，自己按照这篇教程安装双系统折腾了将近一个月，期间更是将Windows也给装炸了。。。于是乎重装系统，直到现在可以稳定的使用Ubuntu和Windows双系统。</p>
+</blockquote>
+<hr>
+<ul>
+<li><a href="#Windows和Linux的区别">Windows和Linux的区别</a><ul>
+<li><a href="#观念">观念</a></li>
+<li><a href="#发布">发布</a></li>
+<li><a href="#内核API">内核API</a></li>
+</ul>
+</li>
+<li><a href="#Ubuntu系统安装">Ubuntu系统安装</a><ul>
+<li><a href="#下载">下载</a></li>
+<li><a href="#烧录">烧录</a></li>
+<li><a href="#使用USB方式进行安装">使用USB方式进行安装</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<a id="more"></a>
+<h2 id="Windows-和-Linux-的区别"><a href="#Windows-和-Linux-的区别" class="headerlink" title="Windows 和 Linux 的区别"></a>Windows 和 Linux 的区别</h2><p>对于 Windows 和 Linux 的区别，我在这里先使用一张直观的图让大家看一下。</p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Unix_Windows.jpg?raw=true" alt="内核区别"></p>
+<p>从上图中可以看到，Linux 与苹果的 Mac OS 是基于 Unix 系统下的操作系统，而 Windows 是基于MS-DOS的操作系统。下面的几个部分的内容，将分析 Windows 和 Linux 系统的区别。</p>
+<h3 id="观念"><a href="#观念" class="headerlink" title="观念"></a>观念</h3><p>商业模式与开源运作：</p>
+<p>众所周知，Windows 是一款商业级的操作系统，它的源代码是保密的，这也就导致想要看到Windows的源代码变成了一件十分困难的事情。这使得微软授权过的《WINDOWS INTERNALS》一书变得十分的畅销，因为这里面涉及到了部分 Windows 操作系统内部的构建细节。</p>
+<p>相对于 Linux 来说，Linux 是开源的,代码随时可见. 这对刚从 Windows 世界转过来的我是十分震撼的. 虽然我一直都知道这个事实, 但是当你发现了以前需要用尽各种方法,采用各种手段才可以得到只言片语的信息现在完全呈献在你面前的时候,你才能真正体会开源确实是一件伟大的工程。</p>
+<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>2进制与源代码：</p>
+<p>这里所指的2进制与源代码是集中在两者操作系统中在安装程序中的不同之处。</p>
+<p>在 Windows 世界，安装程序几乎全部都是以二进制形式发布的。也就是说，用户下载了一个程序，然后双击，一路 next 就可以了。这个方法很适合初学者。</p>
+<p>在 Linux 世界也有类似的机制，比如 YUM , APT-GET 等。不过 YUM 和 APT-GET 都是比较晚才出现的，在那之前，在 Linux 世界安装程序要更麻烦些。</p>
+<h3 id="内核API"><a href="#内核API" class="headerlink" title="内核API"></a>内核API</h3><p>固定与非固定：</p>
+<p> Windows 内核有一套固定的 API ，而且向后兼容。这使得 Windows 驱动的开发人员在不同版本之间移植时变得很容易。</p>
+<p>而 Linux 没有固定的内核API。2.4版本的内核模块在2.6几乎很大可能是不能兼容的。</p>
+<ul>
+<li>下面展示的是基于开源的 Linux 所分化出来的不同的分支系统。</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/LinuxBranch.jpg?raw=true" alt="Linux分支"></p>
+<hr>
+<h2 id="Ubuntu系统安装"><a href="#Ubuntu系统安装" class="headerlink" title="Ubuntu系统安装"></a>Ubuntu系统安装</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>Ubuntu的英文下载页面：<a href="http://www.ubuntu.com/download" target="_blank" rel="noopener">Ubuntu</a></p>
+<p>Ubuntu的中文下载页面：<a href="https://cn.ubuntu.com/" target="_blank" rel="noopener">Ubuntu国内官网</a></p>
+<p>优麒麟的下载页面：<a href="http://www.ubuntukylin.com/downloads/" target="_blank" rel="noopener">优麒麟</a></p>
+<p>在这里，能够下载到的最新版本是18.04.2LTS(Long Term Support)版本。<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/UbuntuDownLoad.png?raw=true" alt="Ubuntu18.04下载"></p>
+<h3 id="烧录"><a href="#烧录" class="headerlink" title="烧录"></a>烧录</h3><p>在电脑中插入一个空白的U盘（不空白也行，反正之后要格式化的），大小至少8GB。</p>
+<p>Universal USB Installer：<a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/" target="_blank" rel="noopener">下载</a></p>
+<p>下载好Universal USB Installer之后，打开它，在”Device”下拉菜单中选择你的U盘。然后点击创建。<code>对于右侧NTFS格式和Fat32格式，个人建议选择FAT32。</code></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Universal_Installer.png?raw=true" alt="选择ISOs和Drive"></p>
+<h3 id="使用USB方式进行安装"><a href="#使用USB方式进行安装" class="headerlink" title="使用USB方式进行安装"></a>使用USB方式进行安装</h3><blockquote>
+<p>前提：你需要先进入你的Boot Menu中，选择USB Storage Device。如下图所示：<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/USB_Storage_Device.jpg?raw=true" alt="USB Storage Device"></p>
+<p>如果发现没有USB Storage Device，那么选择Setup进入BIOS，或者重启按F2进入BIOS。切换到Boot，选择Secure Boot Control回车，改成Disabled，USB Boot Support设置成Enabled，Boot Mode改成Legacy。如下图所示：</p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/SecureBootControl.jpg?raw=true" alt="Secure Boot Control"></p>
+</blockquote>
+<p>在进入到下图所示界面的时候（pure EFI Boot），这里就出现了一个坑。</p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/EFIBoot.jpg?raw=true" alt="EFIBoot"></p>
+<p>在这个时候，可以选择第一项，你可以先体验一下Ubuntu，也可不体验，直接Install Ubuntu。但是，在具有<code>独立显卡</code>的笔记本或者是台式机上，你会发现界面是能够进去的，但是很快就会卡死。这是因为独立显卡与Ubuntu的集成显卡不兼容所产生的问题。</p>
+<p>这个时候，你需要再次回到pure EFI Boot界面，然后在<code>按E</code>进入到如图所示的界面：</p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/UbuntuNoModeSet.jpg?raw=true" alt="UbuntuNoModeSet"></p>
+<p>将原本<code>quiet splash</code>后面的内容修改为<code>nomodeset</code>。然后再<code>按F10</code>进入到安装界面安装即可。</p>
+<p>在到 <code>安装类型</code> 这一步骤时，如果你在上一步压缩完分区后，没有新建简单卷（保持未分配状态），那么就只需选择 安装 Ubuntu，与 Windows boot manager 共存 这一选项，将分区相关事宜交由 Ubuntu 处理。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1174,6 +1174,95 @@ FileWriter(File filename,boolean append);
       </tags>
   </entry>
   <entry>
+    <title>Android面经</title>
+    <url>/2020/05/13/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8Android%E4%B8%80%E9%9D%A2%E9%9D%A2%E7%BB%8F/</url>
+    <content><![CDATA[<h1 id="Android开发岗个人面经"><a href="#Android开发岗个人面经" class="headerlink" title="Android开发岗个人面经"></a>Android开发岗个人面经</h1><h2 id="2020-05-13-字节跳动一面"><a href="#2020-05-13-字节跳动一面" class="headerlink" title="2020-05-13 字节跳动一面"></a>2020-05-13 字节跳动一面</h2><blockquote>
+<p>这也是我人生中第一次经历的面试，也是第一次的线上面试，总的来说，真的很慌张，而且其实自己也知道准备的是不充分的，但是还是硬着头皮参加了，也算是一种人生经历吧。下面是字节跳动一面时候问到的问题，先列举出来，然后进行一个知识总结与概括：</p>
+<ul>
+<li>操作系统中死锁的概念</li>
+<li>产生死锁的方式</li>
+<li>排序，谈谈有什么排序算法，讲一讲时间复杂度，以及排序的“稳定性”</li>
+<li>Java中 synchronized 与 Lock 区别</li>
+<li>单例模式实现，两种，多线程情况下的考虑</li>
+<li>Android生命周期解析</li>
+<li>Activity 之间的跳转生命周期是怎么变化的</li>
+<li>Android中Handler与Message机制在多线程环境下的消息传输</li>
+<li>算法题：排序，有序的数组中找到某一目标值首次出现的下标，如：111122223334455666，问6第一次出现的数组下标为？（不可以用暴力）</li>
+</ul>
+</blockquote>
+<p><strong>下面是针对面试中提出的问题进行的知识上的储备。</strong><br><a id="more"></a></p>
+<h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><p>两个或多个进程被无限期地阻塞、相互等待的一种状态。</p>
+<p>产生的<code>主要原因</code>：</p>
+<ul>
+<li>系统资源不足</li>
+<li>进程推进顺序非法</li>
+</ul>
+<p>产生死锁的<code>必要条件</code>：</p>
+<ul>
+<li>1、互斥条件，一个资源每次只能被一个进程使用。</li>
+<li>2、不可抢占条件，进程已获得资源，在未使用完之前不被强行剥夺。</li>
+<li>3、占有并等待条件，一个进程因请求资源而阻塞时，对已获得的资源保持不放。</li>
+<li>4、环形等待条件，若干进程之间形成一种首尾相接的循环等待资源关系。</li>
+</ul>
+<p><code>注：</code>这四个条件缺一不可，只有都满足了，才能够发生死锁。</p>
+<p>所以，如何解除死锁的问题，就是只需要破坏上述四个条件中其中一个就可以解决了。</p>
+<p><code>解决方案</code>：</p>
+<ul>
+<li><p>打破互斥条件：允许进程同时访问某些资源。————这个方法受制于实际场景，不推荐。</p>
+</li>
+<li><p>打破不可抢占条件：允许进程强行从占有者进程夺取某些资源。简单理解：占有资源的进程不能再申请占有其他资源，必须释放了手上拥有的资源后才能够发起申请。————相同的，不容易找到适用场景。</p>
+</li>
+<li><p>进程再运行前申请得到所有的资源，否则该进程不能进入准备执行状态。————缺点：资源利用率低，并发性低。</p>
+</li>
+<li><p>避免资源申请环路，即事先对资源进行分类编号，按号分配。————优点：有效提高资源的利用率和系统的吞吐量。缺点：加大系统开销，增大了进程对资源的占用时间。</p>
+</li>
+</ul>
+<p><code>消除死锁的方式</code>：</p>
+<ul>
+<li><p>重启系统。————这个代价太大了…………</p>
+</li>
+<li><p>撤销进程，剥夺资源。终止参与死锁的进程，收回他们的资源。这里又分两种情况：</p>
+<ul>
+<li>一次性撤销参与死锁的全部进程，剥夺全部资源。</li>
+<li>逐步撤销参与的进程，逐步回收死锁进程占有的资源。</li>
+</ul>
+</li>
+<li><p>进程回退策略，即让参与死锁的进程回退到没有发生死锁前某一点处，并由此点继续执行，以求再次执行时不发生死锁。</p>
+</li>
+</ul>
+<h3 id="synchronized详解、Lock详解"><a href="#synchronized详解、Lock详解" class="headerlink" title="synchronized详解、Lock详解"></a>synchronized详解、Lock详解</h3><h4 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h4><p><strong>作用：</strong> 利用锁的机制来实现同步的。</p>
+<p><code>锁机制特性：</code></p>
+<p>互斥性：同一时间只允许一个线程持有某个对象锁。————往往称为操作的原子性。</p>
+<p>可见性：必须确保在锁被释放之前，对共享变量所做的修改，对于随后获得该锁的另一个线程是可见的（即在获得锁时应获得最新共享变量的值），否则另一个线程可能是在本地缓存的某个副本上继续操作从而引起不一致。</p>
+<h5 id="对象锁和类锁"><a href="#对象锁和类锁" class="headerlink" title="对象锁和类锁"></a>对象锁和类锁</h5><ul>
+<li><p>对象锁：在Java中，每个对象都会有一个monitor对象，这个就是Java对象的锁————又叫内置锁/对象锁。每个对象都有一个独立的内置锁，互不干扰。</p>
+</li>
+<li><p>类锁：每个类都有一个类锁。</p>
+</li>
+</ul>
+<h5 id="synchronized用法"><a href="#synchronized用法" class="headerlink" title="synchronized用法"></a>synchronized用法</h5><ul>
+<li><p>根据修饰对象分类：</p>
+<ul>
+<li>修饰代码块</li>
+<li>修饰方法</li>
+</ul>
+</li>
+<li><p>根据获取的锁分类：</p>
+<ul>
+<li>获取对象锁</li>
+<li>获取类锁</li>
+</ul>
+</li>
+</ul>
+<h4 id="synchronized用法详解"><a href="#synchronized用法详解" class="headerlink" title="synchronized用法详解"></a>synchronized用法详解</h4><h3 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h3>]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>重构-App研发</title>
     <url>/2020/09/28/%E9%87%8D%E6%9E%84-App%E7%A0%94%E5%8F%91/</url>
     <content><![CDATA[<h1 id="重构，夜未眠"><a href="#重构，夜未眠" class="headerlink" title="重构，夜未眠"></a>重构，夜未眠</h1><h2 id="为Activity定义新的生命周期"><a href="#为Activity定义新的生命周期" class="headerlink" title="为Activity定义新的生命周期"></a>为Activity定义新的生命周期</h2><p>重点：<code>单一职责</code>-&gt;一个类或者方法，只做一件事情</p>
@@ -1208,7 +1297,7 @@ FileWriter(File filename,boolean append);
 <li>直接在btnLogin这个按钮对象上增加点击事件，是面向对象的写法。</li>
 <li>将onClick方面的实现，封装成一个gotoLoginActivity方法。</li>
 </ul>
-]]></content>
+<h2 id="实体化编程"><a href="#实体化编程" class="headerlink" title="实体化编程"></a>实体化编程</h2>]]></content>
       <categories>
         <category>Android</category>
       </categories>
@@ -1968,95 +2057,6 @@ FileWriter(File filename,boolean append);
       </categories>
       <tags>
         <tag>计算机视觉</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Android面经</title>
-    <url>/2020/05/13/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8Android%E4%B8%80%E9%9D%A2%E9%9D%A2%E7%BB%8F/</url>
-    <content><![CDATA[<h1 id="Android开发岗个人面经"><a href="#Android开发岗个人面经" class="headerlink" title="Android开发岗个人面经"></a>Android开发岗个人面经</h1><h2 id="2020-05-13-字节跳动一面"><a href="#2020-05-13-字节跳动一面" class="headerlink" title="2020-05-13 字节跳动一面"></a>2020-05-13 字节跳动一面</h2><blockquote>
-<p>这也是我人生中第一次经历的面试，也是第一次的线上面试，总的来说，真的很慌张，而且其实自己也知道准备的是不充分的，但是还是硬着头皮参加了，也算是一种人生经历吧。下面是字节跳动一面时候问到的问题，先列举出来，然后进行一个知识总结与概括：</p>
-<ul>
-<li>操作系统中死锁的概念</li>
-<li>产生死锁的方式</li>
-<li>排序，谈谈有什么排序算法，讲一讲时间复杂度，以及排序的“稳定性”</li>
-<li>Java中 synchronized 与 Lock 区别</li>
-<li>单例模式实现，两种，多线程情况下的考虑</li>
-<li>Android生命周期解析</li>
-<li>Activity 之间的跳转生命周期是怎么变化的</li>
-<li>Android中Handler与Message机制在多线程环境下的消息传输</li>
-<li>算法题：排序，有序的数组中找到某一目标值首次出现的下标，如：111122223334455666，问6第一次出现的数组下标为？（不可以用暴力）</li>
-</ul>
-</blockquote>
-<p><strong>下面是针对面试中提出的问题进行的知识上的储备。</strong><br><a id="more"></a></p>
-<h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><p>两个或多个进程被无限期地阻塞、相互等待的一种状态。</p>
-<p>产生的<code>主要原因</code>：</p>
-<ul>
-<li>系统资源不足</li>
-<li>进程推进顺序非法</li>
-</ul>
-<p>产生死锁的<code>必要条件</code>：</p>
-<ul>
-<li>1、互斥条件，一个资源每次只能被一个进程使用。</li>
-<li>2、不可抢占条件，进程已获得资源，在未使用完之前不被强行剥夺。</li>
-<li>3、占有并等待条件，一个进程因请求资源而阻塞时，对已获得的资源保持不放。</li>
-<li>4、环形等待条件，若干进程之间形成一种首尾相接的循环等待资源关系。</li>
-</ul>
-<p><code>注：</code>这四个条件缺一不可，只有都满足了，才能够发生死锁。</p>
-<p>所以，如何解除死锁的问题，就是只需要破坏上述四个条件中其中一个就可以解决了。</p>
-<p><code>解决方案</code>：</p>
-<ul>
-<li><p>打破互斥条件：允许进程同时访问某些资源。————这个方法受制于实际场景，不推荐。</p>
-</li>
-<li><p>打破不可抢占条件：允许进程强行从占有者进程夺取某些资源。简单理解：占有资源的进程不能再申请占有其他资源，必须释放了手上拥有的资源后才能够发起申请。————相同的，不容易找到适用场景。</p>
-</li>
-<li><p>进程再运行前申请得到所有的资源，否则该进程不能进入准备执行状态。————缺点：资源利用率低，并发性低。</p>
-</li>
-<li><p>避免资源申请环路，即事先对资源进行分类编号，按号分配。————优点：有效提高资源的利用率和系统的吞吐量。缺点：加大系统开销，增大了进程对资源的占用时间。</p>
-</li>
-</ul>
-<p><code>消除死锁的方式</code>：</p>
-<ul>
-<li><p>重启系统。————这个代价太大了…………</p>
-</li>
-<li><p>撤销进程，剥夺资源。终止参与死锁的进程，收回他们的资源。这里又分两种情况：</p>
-<ul>
-<li>一次性撤销参与死锁的全部进程，剥夺全部资源。</li>
-<li>逐步撤销参与的进程，逐步回收死锁进程占有的资源。</li>
-</ul>
-</li>
-<li><p>进程回退策略，即让参与死锁的进程回退到没有发生死锁前某一点处，并由此点继续执行，以求再次执行时不发生死锁。</p>
-</li>
-</ul>
-<h3 id="synchronized详解、Lock详解"><a href="#synchronized详解、Lock详解" class="headerlink" title="synchronized详解、Lock详解"></a>synchronized详解、Lock详解</h3><h4 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h4><p><strong>作用：</strong> 利用锁的机制来实现同步的。</p>
-<p><code>锁机制特性：</code></p>
-<p>互斥性：同一时间只允许一个线程持有某个对象锁。————往往称为操作的原子性。</p>
-<p>可见性：必须确保在锁被释放之前，对共享变量所做的修改，对于随后获得该锁的另一个线程是可见的（即在获得锁时应获得最新共享变量的值），否则另一个线程可能是在本地缓存的某个副本上继续操作从而引起不一致。</p>
-<h5 id="对象锁和类锁"><a href="#对象锁和类锁" class="headerlink" title="对象锁和类锁"></a>对象锁和类锁</h5><ul>
-<li><p>对象锁：在Java中，每个对象都会有一个monitor对象，这个就是Java对象的锁————又叫内置锁/对象锁。每个对象都有一个独立的内置锁，互不干扰。</p>
-</li>
-<li><p>类锁：每个类都有一个类锁。</p>
-</li>
-</ul>
-<h5 id="synchronized用法"><a href="#synchronized用法" class="headerlink" title="synchronized用法"></a>synchronized用法</h5><ul>
-<li><p>根据修饰对象分类：</p>
-<ul>
-<li>修饰代码块</li>
-<li>修饰方法</li>
-</ul>
-</li>
-<li><p>根据获取的锁分类：</p>
-<ul>
-<li>获取对象锁</li>
-<li>获取类锁</li>
-</ul>
-</li>
-</ul>
-<h4 id="synchronized用法详解"><a href="#synchronized用法详解" class="headerlink" title="synchronized用法详解"></a>synchronized用法详解</h4><h3 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h3>]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
       </tags>
   </entry>
 </search>
