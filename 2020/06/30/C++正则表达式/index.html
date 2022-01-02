@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.7.1">
+<meta name="generator" content="Hexo 6.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"kentanvictor.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="正则表达式正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等 注：在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 #include&amp;lt;regex&amp;gt;">
-<meta name="keywords" content="C&amp;C++">
+  <meta name="description" content="正则表达式正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等 注：在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 #include&lt;regex&gt;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++_正则表达式">
-<meta property="og:url" content="https://kentanvictor.github.io/2020/06/30/C++正则表达式/index.html">
+<meta property="og:url" content="https://kentanvictor.github.io/2020/06/30/C++%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
 <meta property="og:site_name" content="ZoeTam&#39;s Blog">
-<meta property="og:description" content="正则表达式正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等 注：在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 #include&amp;lt;regex&amp;gt;">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-06-30T09:21:32.181Z">
+<meta property="og:description" content="正则表达式正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等 注：在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 #include&lt;regex&gt;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-30T13:13:55.000Z">
+<meta property="article:modified_time" content="2020-06-30T09:21:32.181Z">
+<meta property="article:author" content="ZoeTam">
+<meta property="article:tag" content="C&amp;C++">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++_正则表达式">
-<meta name="twitter:description" content="正则表达式正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等 注：在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 #include&amp;lt;regex&amp;gt;">
 
-<link rel="canonical" href="https://kentanvictor.github.io/2020/06/30/C++正则表达式/">
+<link rel="canonical" href="https://kentanvictor.github.io/2020/06/30/C++%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
 
 
 <script id="page-configurations">
@@ -42,7 +42,7 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'zh-CN'
+    lang   : 'en'
   };
 </script>
 
@@ -86,7 +86,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
+    <div class="toggle" aria-label="Toggle navigation bar">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -116,31 +116,31 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">11</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">11</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">18</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">18</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
       </li>
   </ul>
@@ -156,7 +156,7 @@
   </span>
   <div class="search-input-container">
     <input autocomplete="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
+           placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
@@ -197,8 +197,8 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kentanvictor.github.io/2020/06/30/C++正则表达式/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kentanvictor.github.io/2020/06/30/C++%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://github.com/kentanvictor/STUDY/blob/Image/logo.png?raw=true">
@@ -221,27 +221,27 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="创建时间：2020-06-30 17:13:55 / 修改时间：17:21:32" itemprop="dateCreated datePublished" datetime="2020-06-30T17:13:55+08:00">2020-06-30</time>
+              <time title="Created: 2020-06-30 17:13:55 / Modified: 13:21:32" itemprop="dateCreated datePublished" datetime="2020-06-30T17:13:55+04:00">2020-06-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/C-C/" itemprop="url" rel="index"><span itemprop="name">C&C++</span></a>
                 </span>
             </span>
 
           
-            <span id="/2020/06/30/C++正则表达式/" class="post-meta-item leancloud_visitors" data-flag-title="C++_正则表达式" title="阅读次数">
+            <span id="/2020/06/30/C++%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-meta-item leancloud_visitors" data-flag-title="C++_正则表达式" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
-              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="post-meta-item-text">Views: </span>
               <span class="leancloud-visitors-count"></span>
             </span>
   
@@ -250,10 +250,10 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-comment-o"></i>
       </span>
-      <span class="post-meta-item-text">Valine：</span>
+      <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2020/06/30/C++正则表达式/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/30/C++正则表达式/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/06/30/C++%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/30/C++%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -270,7 +270,7 @@
       
         <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等</p>
 <p><code>注：</code>在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 <code>#include&lt;regex&gt;</code> </p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="正则表达式中匹配的字符"><a href="#正则表达式中匹配的字符" class="headerlink" title="正则表达式中匹配的字符"></a>正则表达式中匹配的字符</h2><h3 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h3><div class="table-container">
 <table>
 <thead>
@@ -339,19 +339,23 @@
 <li>match为全文匹配，要求整个字符串符合匹配规则。</li>
 <li>返回值为bool值，匹配成功返回1。</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_match(<span class="string">"123"</span>, regex(<span class="string">"\\d"</span>)) &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//结果为0</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_match(<span class="string">"123"</span>, regex(<span class="string">"\\d+"</span>)) &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//结果为1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">+ `\d`：匹配一个数字字符</span><br><span class="line">+ `+` ：匹配一次或多次</span><br><span class="line"></span><br><span class="line">regex_match函数还有一种重载方式：regex_match(str, result, pattern)。示例如下所示：</span><br><span class="line">```C++</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">"Hello_2018"</span>;</span><br><span class="line">    smatch result;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">"(.&#123;5&#125;)_(\\d&#123;4&#125;)"</span>)</span></span>;	<span class="comment">//匹配5个任意单字符 + 下划线 + 4个数字</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (regex_match(str, result, pattern))</span><br><span class="line">    &#123;</span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; result[<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//完整匹配结果，Hello_2018</span></span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; result[<span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//第一组匹配的数据，Hello</span></span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; result[<span class="number">2</span>] &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//第二组匹配的数据，2018</span></span><br><span class="line">	    <span class="built_in">cout</span>&lt;&lt;<span class="string">"结果显示形式2"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	    <span class="built_in">cout</span>&lt;&lt; result.str() &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//完整结果，Hello_2018</span></span><br><span class="line">	    <span class="built_in">cout</span>&lt;&lt; result.str(<span class="number">1</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//第一组匹配的数据，Hello</span></span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; result.str(<span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//第二组匹配的数据，2018</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历结果</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; result.size(); ++i)</span><br><span class="line">    &#123;</span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; result[i] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="regex-search"><a href="#regex-search" class="headerlink" title="regex_search"></a>regex_search</h2><ul>
-<li>search是搜索匹配，即搜索字符串中存在符合规则的子字符串<br>具体例子如下所示：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">"Hello 2018, Bye 2017"</span>;</span><br><span class="line">    smatch result;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">"\\d&#123;4&#125;"</span>)</span></span>;	<span class="comment">//匹配四个数字</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//迭代器声明</span></span><br><span class="line">    <span class="built_in">string</span>::const_iterator iterStart = str.begin();</span><br><span class="line">    <span class="built_in">string</span>::const_iterator iterEnd = str.end();</span><br><span class="line">    <span class="built_in">string</span> temp;</span><br><span class="line">    <span class="keyword">while</span> (regex_search(iterStart, iterEnd, result, pattern))</span><br><span class="line">    &#123;</span><br><span class="line">	    temp = result[<span class="number">0</span>];</span><br><span class="line">	    <span class="built_in">cout</span> &lt;&lt; temp &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	    iterStart = result[<span class="number">0</span>].second;	<span class="comment">//更新搜索起始位置,搜索剩下的字符串</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">输出结果：<span class="number">2018</span> <span class="number">2017</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="built_in">regex_match</span>(<span class="string">&quot;123&quot;</span>, <span class="built_in">regex</span>(<span class="string">&quot;\\d&quot;</span>)) &lt;&lt; endl;		<span class="comment">//结果为0</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">regex_match</span>(<span class="string">&quot;123&quot;</span>, <span class="built_in">regex</span>(<span class="string">&quot;\\d+&quot;</span>)) &lt;&lt; endl;		<span class="comment">//结果为1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>\d</code>：匹配一个数字字符</li>
+<li><code>+</code> ：匹配一次或多次</li>
 </ul>
-<h2 id="regex-replace"><a href="#regex-replace" class="headerlink" title="regex_replace"></a>regex_replace</h2><ul>
+<p>regex_match函数还有一种重载方式：regex_match(str, result, pattern)。示例如下所示：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string str = <span class="string">&quot;Hello_2018&quot;</span>;</span><br><span class="line">    smatch result;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">&quot;(.&#123;5&#125;)_(\\d&#123;4&#125;)&quot;</span>)</span></span>;	<span class="comment">//匹配5个任意单字符 + 下划线 + 4个数字</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">regex_match</span>(str, result, pattern))</span><br><span class="line">    &#123;</span><br><span class="line">	    cout &lt;&lt; result[<span class="number">0</span>] &lt;&lt; endl;		<span class="comment">//完整匹配结果，Hello_2018</span></span><br><span class="line">	    cout &lt;&lt; result[<span class="number">1</span>] &lt;&lt; endl;		<span class="comment">//第一组匹配的数据，Hello</span></span><br><span class="line">	    cout &lt;&lt; result[<span class="number">2</span>] &lt;&lt; endl;		<span class="comment">//第二组匹配的数据，2018</span></span><br><span class="line">	    cout&lt;&lt;<span class="string">&quot;结果显示形式2&quot;</span>&lt;&lt;endl;</span><br><span class="line">	    cout&lt;&lt; result.<span class="built_in">str</span>() &lt;&lt; endl;	<span class="comment">//完整结果，Hello_2018</span></span><br><span class="line">	    cout&lt;&lt; result.<span class="built_in">str</span>(<span class="number">1</span>) &lt;&lt; endl;	<span class="comment">//第一组匹配的数据，Hello</span></span><br><span class="line">	    cout &lt;&lt; result.<span class="built_in">str</span>(<span class="number">2</span>) &lt;&lt; endl;	<span class="comment">//第二组匹配的数据，2018</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历结果</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; result.<span class="built_in">size</span>(); ++i)</span><br><span class="line">    &#123;</span><br><span class="line">	    cout &lt;&lt; result[i] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h2 id="regex-search"><a href="#regex-search" class="headerlink" title="regex_search"></a>regex_search</h2><ul>
+<li><p>search是搜索匹配，即搜索字符串中存在符合规则的子字符串<br>具体例子如下所示：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string str = <span class="string">&quot;Hello 2018, Bye 2017&quot;</span>;</span><br><span class="line">    smatch result;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">&quot;\\d&#123;4&#125;&quot;</span>)</span></span>;	<span class="comment">//匹配四个数字</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//迭代器声明</span></span><br><span class="line">    string::const_iterator iterStart = str.<span class="built_in">begin</span>();</span><br><span class="line">    string::const_iterator iterEnd = str.<span class="built_in">end</span>();</span><br><span class="line">    string temp;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">regex_search</span>(iterStart, iterEnd, result, pattern))</span><br><span class="line">    &#123;</span><br><span class="line">	    temp = result[<span class="number">0</span>];</span><br><span class="line">	    cout &lt;&lt; temp &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	    iterStart = result[<span class="number">0</span>].second;	<span class="comment">//更新搜索起始位置,搜索剩下的字符串</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">输出结果：<span class="number">2018</span> <span class="number">2017</span></span><br></pre></td></tr></table></figure>
+<h2 id="regex-replace"><a href="#regex-replace" class="headerlink" title="regex_replace"></a>regex_replace</h2></li>
 <li><p>replace是替换匹配，即可以将符合匹配规则的子字符串替换为其他字符串</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">"Hello_2018!"</span>;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">"Hello"</span>)</span></span>;	</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_replace(str, pattern, <span class="string">""</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//输出：_2018，将Hello替换为""</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_replace(str, pattern, <span class="string">"Hi"</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//输出：Hi_2018，将Hello替换为Hi</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string str = <span class="string">&quot;Hello_2018!&quot;</span>;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">&quot;Hello&quot;</span>)</span></span>;	</span><br><span class="line">    cout &lt;&lt; <span class="built_in">regex_replace</span>(str, pattern, <span class="string">&quot;&quot;</span>) &lt;&lt; endl;	<span class="comment">//输出：_2018，将Hello替换为&quot;&quot;</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">regex_replace</span>(str, pattern, <span class="string">&quot;Hi&quot;</span>) &lt;&lt; endl;	<span class="comment">//输出：Hi_2018，将Hello替换为Hi</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>除了直接替换以外，还有可以用来调整字符串内容（缩短、顺序等）</p>
 </li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">"Hello_2018!"</span>;	</span><br><span class="line">    <span class="function">regex <span class="title">pattern2</span><span class="params">(<span class="string">"(.&#123;3&#125;)(.&#123;2&#125;)_(\\d&#123;4&#125;)"</span>)</span></span>;				<span class="comment">//匹配3个任意字符+2个任意字符+下划线+4个数字</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_replace(str, pattern2, <span class="string">"$1$3"</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//输出：Hel2018，将字符串替换为第一个和第三个表达式匹配的内容</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; regex_replace(str, pattern2, <span class="string">"$1$3$2"</span>) &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//输出：Hel2018lo，交换位置顺序</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string str = <span class="string">&quot;Hello_2018!&quot;</span>;	</span><br><span class="line">    <span class="function">regex <span class="title">pattern2</span><span class="params">(<span class="string">&quot;(.&#123;3&#125;)(.&#123;2&#125;)_(\\d&#123;4&#125;)&quot;</span>)</span></span>;				<span class="comment">//匹配3个任意字符+2个任意字符+下划线+4个数字</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">regex_replace</span>(str, pattern2, <span class="string">&quot;$1$3&quot;</span>) &lt;&lt; endl;	<span class="comment">//输出：Hel2018，将字符串替换为第一个和第三个表达式匹配的内容</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">regex_replace</span>(str, pattern2, <span class="string">&quot;$1$3$2&quot;</span>) &lt;&lt; endl;	<span class="comment">//输出：Hel2018lo，交换位置顺序</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>注：</code> $n用于表示第n组匹配数据</p>
 
     </div>
@@ -376,11 +380,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/13/字节跳动Android一面面经/" rel="prev" title="Android面经">
+    <a href="/2020/05/13/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8Android%E4%B8%80%E9%9D%A2%E9%9D%A2%E7%BB%8F/" rel="prev" title="Android面经">
       <i class="fa fa-chevron-left"></i> Android面经
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/07/04/Android心路历程/" rel="next" title="Android心路历程">
+    <a href="/2020/07/04/Android%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/" rel="next" title="Android心路历程">
       Android心路历程 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -446,16 +450,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          文章目录
+          Table of Contents
         </li>
         <li class="sidebar-nav-overview">
-          站点概览
+          Overview
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式中匹配的字符"><span class="nav-number">1.1.</span> <span class="nav-text">正则表达式中匹配的字符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊字符"><span class="nav-number">1.1.1.</span> <span class="nav-text">特殊字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限定符"><span class="nav-number">1.1.2.</span> <span class="nav-text">限定符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regex-match"><span class="nav-number">1.2.</span> <span class="nav-text">regex_match</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regex-search"><span class="nav-number">1.3.</span> <span class="nav-text">regex_search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regex-replace"><span class="nav-number">1.4.</span> <span class="nav-text">regex_replace</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E5%8C%B9%E9%85%8D%E7%9A%84%E5%AD%97%E7%AC%A6"><span class="nav-number">1.1.</span> <span class="nav-text">正则表达式中匹配的字符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="nav-number">1.1.1.</span> <span class="nav-text">特殊字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%90%E5%AE%9A%E7%AC%A6"><span class="nav-number">1.1.2.</span> <span class="nav-text">限定符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regex-match"><span class="nav-number">1.2.</span> <span class="nav-text">regex_match</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regex-search"><span class="nav-number">1.3.</span> <span class="nav-text">regex_search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regex-replace"><span class="nav-number">1.4.</span> <span class="nav-text">regex_replace</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -472,20 +476,20 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">18</span>
-          <span class="site-state-item-name">日志</span>
+          <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">11</span>
-        <span class="site-state-item-name">分类</span></a>
+        <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">11</span>
-        <span class="site-state-item-name">标签</span></a>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
@@ -495,7 +499,7 @@
   </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/kentanvictor" title="github → https://github.com/kentanvictor" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>github</a>
+        <a href="https://github.com/kentanvictor" title="github → https:&#x2F;&#x2F;github.com&#x2F;kentanvictor" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>github</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:kentanvictor@foxmail.com" title="E-Mail → mailto:kentanvictor@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
@@ -523,7 +527,7 @@
 <div class="copyright">
   
   &copy; 2016 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -547,9 +551,19 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
-<script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
 
 
 
@@ -578,7 +592,9 @@
   }
   </script>
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 
@@ -608,7 +624,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'kentanvictor.github.io',
       owner       : 'kentanvictor',
       admin       : ['kentanvictor'],
-      id          : 'a158ac2b92b7b5d2dfdd0c49d8f0b12b',
+      id          : 'db738ee73187869981bc7fb33a24ff80',
         language: '',
       distractionFreeMode: true
     });
