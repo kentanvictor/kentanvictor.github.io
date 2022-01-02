@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"kentanvictor.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Obstacle detection based on binocular camera 前言：关于双目摄像头的障碍物检测以及基于OpenCV的障碍物检测在CSDN以及博客园上都有几篇相关的文章。然而，相当一部分的关于障碍物检测的文章多偏向于理论，而有实践的文章却少之又少。在这里，我将按照我从网上学习到的例子进行整合并加入了我自己的理解。希望能为大家在障碍物检测方面起到一定的参考作用。">
+  <meta name="description" content="Obstacle detection based on binocular camera Preface: There are several related articles on the obstacle detection of binocular cameras and the obstacle detection based on OpenCV on CSDN and blog gard">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Obstacle detection based on binocular camera">
 <meta property="og:url" content="https://kentanvictor.github.io/2018/10/18/Obstacle%20detection%20based%20on%20binocular%20camera/index.html">
 <meta property="og:site_name" content="ZoeTam&#39;s Blog">
-<meta property="og:description" content="Obstacle detection based on binocular camera 前言：关于双目摄像头的障碍物检测以及基于OpenCV的障碍物检测在CSDN以及博客园上都有几篇相关的文章。然而，相当一部分的关于障碍物检测的文章多偏向于理论，而有实践的文章却少之又少。在这里，我将按照我从网上学习到的例子进行整合并加入了我自己的理解。希望能为大家在障碍物检测方面起到一定的参考作用。">
+<meta property="og:description" content="Obstacle detection based on binocular camera Preface: There are several related articles on the obstacle detection of binocular cameras and the obstacle detection based on OpenCV on CSDN and blog gard">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/camera.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/Calibration_board.jpg">
@@ -70,7 +70,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/CalibResultsStereo.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/StereoPhoto.png">
 <meta property="article:published_time" content="2018-10-18T16:31:23.000Z">
-<meta property="article:modified_time" content="2022-01-02T19:38:10.439Z">
+<meta property="article:modified_time" content="2022-01-02T20:28:58.760Z">
 <meta property="article:author" content="ZoeTam">
 <meta property="article:tag" content="Computer Vision">
 <meta name="twitter:card" content="summary">
@@ -277,7 +277,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-02 23:38:10" itemprop="dateModified" datetime="2022-01-02T23:38:10+04:00">2022-01-02</time>
+                <time title="Modified: 2022-01-03 00:28:58" itemprop="dateModified" datetime="2022-01-03T00:28:58+04:00">2022-01-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -322,52 +322,46 @@
 
       
         <h1 id="Obstacle-detection-based-on-binocular-camera"><a href="#Obstacle-detection-based-on-binocular-camera" class="headerlink" title="Obstacle detection based on binocular camera"></a>Obstacle detection based on binocular camera</h1><blockquote>
-<p>前言：关于双目摄像头的障碍物检测以及基于OpenCV的障碍物检测在CSDN以及博客园上都有几篇相关的文章。然而，相当一部分的关于障碍物检测的文章多偏向于理论，而有实践的文章却少之又少。在这里，我将按照我从网上学习到的例子进行整合并加入了我自己的理解。希望能为大家在障碍物检测方面起到一定的参考作用。</p>
+<p>Preface: There are several related articles on the obstacle detection of binocular cameras and the obstacle detection based on OpenCV on CSDN and blog garden. However, a considerable part of the articles on obstacle detection tend to be theoretical, and there are few practical articles. Here, I will follow the examples I learned from the Internet to integrate and add my own understanding. I hope it can play a certain reference role for everyone in obstacle detection.</p>
 </blockquote>
 <span id="more"></span>
 <blockquote>
-<p><strong>特别鸣谢：<br/><a target="_blank" rel="noopener" href="http://www.cnblogs.com/daihengchen/p/5686272.html">亦轩Dhc的博客</a><br/><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhouqianq/article/details/78580173">琪其齐奇旗棋的CSDN</a><br/><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixinhum/article/details/78161567">_寒潭雁影的CSDN</a></strong></p>
+<p><strong>Special thanks: <br/><a target="_blank" rel="noopener" href="http://www.cnblogs.com/daihengchen/p/5686272.html">亦轩Dhc’s Blog</a><br/><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhouqianq/article/details/78580173">琪其齐奇旗棋’s Blog</a><br/><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixinhum/article/details/78161567">_寒潭雁影的’s Blog</a></strong></p>
 </blockquote>
-<h2 id="下面开始进入正题啦！"><a href="#下面开始进入正题啦！" class="headerlink" title="下面开始进入正题啦！"></a>下面开始进入正题啦！</h2><h3 id="前期准备："><a href="#前期准备：" class="headerlink" title="前期准备："></a>前期准备：</h3><ul>
-<li>这里我使用的是一个双目摄像头进行的障碍物检测。该双目摄像头如图所示：<br><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/camera.png" alt=""></li>
+<h2 id="Now-let’s-get-to-the-main-topic"><a href="#Now-let’s-get-to-the-main-topic" class="headerlink" title="Now let’s get to the main topic!"></a>Now let’s get to the main topic!</h2><h3 id="Preliminary-preparation"><a href="#Preliminary-preparation" class="headerlink" title="Preliminary preparation:"></a>Preliminary preparation:</h3><ul>
+<li>Here I am using a binocular camera to detect obstacles. The binocular camera is shown in the figure:<br><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/camera.png" alt=""></li>
 </ul>
-<h3 id="前期知识点："><a href="#前期知识点：" class="headerlink" title="前期知识点："></a>前期知识点：</h3><ul>
-<li>双目摄像头的标定</li>
-<li>使用OpenCV获取图片</li>
-<li>双目校正</li>
-<li>立体匹配</li>
+<h3 id="Preliminary-knowledge-points"><a href="#Preliminary-knowledge-points" class="headerlink" title="Preliminary knowledge points:"></a>Preliminary knowledge points:</h3><ul>
+<li>Calibration of binocular camera</li>
+<li>Use OpenCV to get pictures</li>
+<li>Binocular correction</li>
+<li>Stereo matching</li>
 </ul>
-<h4 id="双目摄像头的标定的前期知识点："><a href="#双目摄像头的标定的前期知识点：" class="headerlink" title="双目摄像头的标定的前期知识点："></a>双目摄像头的标定的前期知识点：</h4><blockquote>
-<p>在这里，我使用的标定方法是<strong>张正友标定法</strong>。</p>
+<h4 id="Preliminary-knowledge-points-of-binocular-camera-calibration"><a href="#Preliminary-knowledge-points-of-binocular-camera-calibration" class="headerlink" title="Preliminary knowledge points of binocular camera calibration:"></a>Preliminary knowledge points of binocular camera calibration:</h4><blockquote>
+<p>Here, the calibration method I use is <strong>Zhang Zhengyou Calibration Method</strong>。</p>
 <ul>
-<li>首先你需要明确，对于一个摄像头来说，分为<em>内参</em>和<em>外参</em></li>
+<li>First of all, you need to be clear, for a camera, it is divided into <em>internal parameters</em> and <em>external parameters</em></li>
+<li>There are five internal parameters:</li>
 <li><ul>
-<li>内参分别有五个：</li>
+<li>The mapping relationship between the object captured by the camera and the actual object on the x, y axis (two parameters).</li>
 </ul>
 </li>
 <li><ul>
-<li>摄像头拍摄到的物体和实际物体在x,y轴上的映射关系（两个参数）。</li>
+<li>The offset relationship between the center of the camera and the center of the image (two parameters).</li>
 </ul>
 </li>
 <li><ul>
-<li>摄像头中心和图像中心的偏移关系（两个参数）。</li>
+<li>The installation of the camera and the lens is not completely vertical, and there is an angular deviation. (One parameter).</li>
 </ul>
 </li>
+<li>There are six external parameters: </li>
 <li><ul>
-<li>摄像头和镜头安装非完全垂直，存在一个角度的偏差。（一个参数）。</li>
-</ul>
-</li>
-<li><ul>
-<li>外参有六个：</li>
-</ul>
-</li>
-<li><ul>
-<li>分别是x，y，z方向上的平移和旋转。<br>只要有了上面的两种参数，我们基本上就知道了摄像头拍摄到的图像和现实事物的对应关系了。然而， 摄像头拍摄图像与现实事物中还是会有“<strong>畸变</strong>”上的误差。这是由于镜头质量等原因导致的2D点的偏移。</li>
+<li>They are translation and rotation in the x, y, and z directions, respectively.<br>As long as we have the above two parameters, we basically know the correspondence between the image captured by the camera and the real thing. However, there will still be errors in “<strong>distortion</strong>“ between the image captured by the camera and the real thing. This is due to the 2D point shift caused by lens quality and other reasons.</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<p><strong><em>因此，我们使用张正友标定法对摄像头进行内外参数以及畸变参数的标定。</em></strong></p>
+<p><strong><em>Therefore, we use the Zhang Zhengyou calibration method to calibrate the camera’s internal and external parameters and distortion parameters.</em></strong></p>
 <h2 id="张正友标定法"><a href="#张正友标定法" class="headerlink" title="张正友标定法"></a>张正友标定法</h2><blockquote>
 <p>前言：张正友标定又称“张氏标定”。是张正友教授在1998年提出的单平面棋盘格的摄像机标定法。</p>
 <ul>
@@ -1086,7 +1080,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Obstacle-detection-based-on-binocular-camera"><span class="nav-number">1.</span> <span class="nav-text">Obstacle detection based on binocular camera</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E9%9D%A2%E5%BC%80%E5%A7%8B%E8%BF%9B%E5%85%A5%E6%AD%A3%E9%A2%98%E5%95%A6%EF%BC%81"><span class="nav-number">1.1.</span> <span class="nav-text">下面开始进入正题啦！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">前期准备：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%9C%9F%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">前期知识点：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E7%9B%AE%E6%91%84%E5%83%8F%E5%A4%B4%E7%9A%84%E6%A0%87%E5%AE%9A%E7%9A%84%E5%89%8D%E6%9C%9F%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%9A"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">双目摄像头的标定的前期知识点：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E6%AD%A3%E5%8F%8B%E6%A0%87%E5%AE%9A%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">张正友标定法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenCV%E4%B8%8B%E7%9A%84%E5%BC%A0%E6%AD%A3%E5%8F%8B%E6%A0%87%E5%AE%9A%E6%B3%95"><span class="nav-number">1.2.1.</span> <span class="nav-text">OpenCV下的张正友标定法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#matlab%E4%B8%8B%E7%9A%84%E5%BC%A0%E6%AD%A3%E5%8F%8B%E6%A0%87%E5%AE%9A%E6%B3%95"><span class="nav-number">1.2.2.</span> <span class="nav-text">matlab下的张正友标定法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E7%9B%AE%E6%A0%87%E5%AE%9A"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">单目标定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E7%9B%AE%E6%B5%8B%E5%AE%9A"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">双目测定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenCV%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87"><span class="nav-number">1.3.</span> <span class="nav-text">OpenCV获取图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%9B%BE%E7%89%87%E8%BF%9B%E8%A1%8C%E7%AB%8B%E4%BD%93%E7%9F%AB%E6%AD%A3"><span class="nav-number">1.4.</span> <span class="nav-text">对图片进行立体矫正</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%8B%E4%BD%93%E5%8C%B9%E9%85%8D"><span class="nav-number">1.5.</span> <span class="nav-text">立体匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-1"><span class="nav-number">1.6.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Obstacle-detection-based-on-binocular-camera"><span class="nav-number">1.</span> <span class="nav-text">Obstacle detection based on binocular camera</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Now-let%E2%80%99s-get-to-the-main-topic"><span class="nav-number">1.1.</span> <span class="nav-text">Now let’s get to the main topic!</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Preliminary-preparation"><span class="nav-number">1.1.1.</span> <span class="nav-text">Preliminary preparation:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Preliminary-knowledge-points"><span class="nav-number">1.1.2.</span> <span class="nav-text">Preliminary knowledge points:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Preliminary-knowledge-points-of-binocular-camera-calibration"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Preliminary knowledge points of binocular camera calibration:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E6%AD%A3%E5%8F%8B%E6%A0%87%E5%AE%9A%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">张正友标定法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenCV%E4%B8%8B%E7%9A%84%E5%BC%A0%E6%AD%A3%E5%8F%8B%E6%A0%87%E5%AE%9A%E6%B3%95"><span class="nav-number">1.2.1.</span> <span class="nav-text">OpenCV下的张正友标定法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#matlab%E4%B8%8B%E7%9A%84%E5%BC%A0%E6%AD%A3%E5%8F%8B%E6%A0%87%E5%AE%9A%E6%B3%95"><span class="nav-number">1.2.2.</span> <span class="nav-text">matlab下的张正友标定法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E7%9B%AE%E6%A0%87%E5%AE%9A"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">单目标定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E7%9B%AE%E6%B5%8B%E5%AE%9A"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">双目测定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenCV%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87"><span class="nav-number">1.3.</span> <span class="nav-text">OpenCV获取图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%9B%BE%E7%89%87%E8%BF%9B%E8%A1%8C%E7%AB%8B%E4%BD%93%E7%9F%AB%E6%AD%A3"><span class="nav-number">1.4.</span> <span class="nav-text">对图片进行立体矫正</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%8B%E4%BD%93%E5%8C%B9%E9%85%8D"><span class="nav-number">1.5.</span> <span class="nav-text">立体匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-1"><span class="nav-number">1.6.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -4,52 +4,46 @@
     <title>Obstacle detection based on binocular camera</title>
     <url>/2018/10/18/Obstacle%20detection%20based%20on%20binocular%20camera/</url>
     <content><![CDATA[<h1 id="Obstacle-detection-based-on-binocular-camera"><a href="#Obstacle-detection-based-on-binocular-camera" class="headerlink" title="Obstacle detection based on binocular camera"></a>Obstacle detection based on binocular camera</h1><blockquote>
-<p>前言：关于双目摄像头的障碍物检测以及基于OpenCV的障碍物检测在CSDN以及博客园上都有几篇相关的文章。然而，相当一部分的关于障碍物检测的文章多偏向于理论，而有实践的文章却少之又少。在这里，我将按照我从网上学习到的例子进行整合并加入了我自己的理解。希望能为大家在障碍物检测方面起到一定的参考作用。</p>
+<p>Preface: There are several related articles on the obstacle detection of binocular cameras and the obstacle detection based on OpenCV on CSDN and blog garden. However, a considerable part of the articles on obstacle detection tend to be theoretical, and there are few practical articles. Here, I will follow the examples I learned from the Internet to integrate and add my own understanding. I hope it can play a certain reference role for everyone in obstacle detection.</p>
 </blockquote>
 <span id="more"></span>
 <blockquote>
-<p><strong>特别鸣谢：<br/><a href="http://www.cnblogs.com/daihengchen/p/5686272.html">亦轩Dhc的博客</a><br/><a href="https://blog.csdn.net/zhouqianq/article/details/78580173">琪其齐奇旗棋的CSDN</a><br/><a href="https://blog.csdn.net/weixinhum/article/details/78161567">_寒潭雁影的CSDN</a></strong></p>
+<p><strong>Special thanks: <br/><a href="http://www.cnblogs.com/daihengchen/p/5686272.html">亦轩Dhc’s Blog</a><br/><a href="https://blog.csdn.net/zhouqianq/article/details/78580173">琪其齐奇旗棋’s Blog</a><br/><a href="https://blog.csdn.net/weixinhum/article/details/78161567">_寒潭雁影的’s Blog</a></strong></p>
 </blockquote>
-<h2 id="下面开始进入正题啦！"><a href="#下面开始进入正题啦！" class="headerlink" title="下面开始进入正题啦！"></a>下面开始进入正题啦！</h2><h3 id="前期准备："><a href="#前期准备：" class="headerlink" title="前期准备："></a>前期准备：</h3><ul>
-<li>这里我使用的是一个双目摄像头进行的障碍物检测。该双目摄像头如图所示：<br><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/camera.png" alt=""></li>
+<h2 id="Now-let’s-get-to-the-main-topic"><a href="#Now-let’s-get-to-the-main-topic" class="headerlink" title="Now let’s get to the main topic!"></a>Now let’s get to the main topic!</h2><h3 id="Preliminary-preparation"><a href="#Preliminary-preparation" class="headerlink" title="Preliminary preparation:"></a>Preliminary preparation:</h3><ul>
+<li>Here I am using a binocular camera to detect obstacles. The binocular camera is shown in the figure:<br><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/camera.png" alt=""></li>
 </ul>
-<h3 id="前期知识点："><a href="#前期知识点：" class="headerlink" title="前期知识点："></a>前期知识点：</h3><ul>
-<li>双目摄像头的标定</li>
-<li>使用OpenCV获取图片</li>
-<li>双目校正</li>
-<li>立体匹配</li>
+<h3 id="Preliminary-knowledge-points"><a href="#Preliminary-knowledge-points" class="headerlink" title="Preliminary knowledge points:"></a>Preliminary knowledge points:</h3><ul>
+<li>Calibration of binocular camera</li>
+<li>Use OpenCV to get pictures</li>
+<li>Binocular correction</li>
+<li>Stereo matching</li>
 </ul>
-<h4 id="双目摄像头的标定的前期知识点："><a href="#双目摄像头的标定的前期知识点：" class="headerlink" title="双目摄像头的标定的前期知识点："></a>双目摄像头的标定的前期知识点：</h4><blockquote>
-<p>在这里，我使用的标定方法是<strong>张正友标定法</strong>。</p>
+<h4 id="Preliminary-knowledge-points-of-binocular-camera-calibration"><a href="#Preliminary-knowledge-points-of-binocular-camera-calibration" class="headerlink" title="Preliminary knowledge points of binocular camera calibration:"></a>Preliminary knowledge points of binocular camera calibration:</h4><blockquote>
+<p>Here, the calibration method I use is <strong>Zhang Zhengyou Calibration Method</strong>。</p>
 <ul>
-<li>首先你需要明确，对于一个摄像头来说，分为<em>内参</em>和<em>外参</em></li>
+<li>First of all, you need to be clear, for a camera, it is divided into <em>internal parameters</em> and <em>external parameters</em></li>
+<li>There are five internal parameters:</li>
 <li><ul>
-<li>内参分别有五个：</li>
+<li>The mapping relationship between the object captured by the camera and the actual object on the x, y axis (two parameters).</li>
 </ul>
 </li>
 <li><ul>
-<li>摄像头拍摄到的物体和实际物体在x,y轴上的映射关系（两个参数）。</li>
+<li>The offset relationship between the center of the camera and the center of the image (two parameters).</li>
 </ul>
 </li>
 <li><ul>
-<li>摄像头中心和图像中心的偏移关系（两个参数）。</li>
+<li>The installation of the camera and the lens is not completely vertical, and there is an angular deviation. (One parameter).</li>
 </ul>
 </li>
+<li>There are six external parameters: </li>
 <li><ul>
-<li>摄像头和镜头安装非完全垂直，存在一个角度的偏差。（一个参数）。</li>
-</ul>
-</li>
-<li><ul>
-<li>外参有六个：</li>
-</ul>
-</li>
-<li><ul>
-<li>分别是x，y，z方向上的平移和旋转。<br>只要有了上面的两种参数，我们基本上就知道了摄像头拍摄到的图像和现实事物的对应关系了。然而， 摄像头拍摄图像与现实事物中还是会有“<strong>畸变</strong>”上的误差。这是由于镜头质量等原因导致的2D点的偏移。</li>
+<li>They are translation and rotation in the x, y, and z directions, respectively.<br>As long as we have the above two parameters, we basically know the correspondence between the image captured by the camera and the real thing. However, there will still be errors in “<strong>distortion</strong>“ between the image captured by the camera and the real thing. This is due to the 2D point shift caused by lens quality and other reasons.</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<p><strong><em>因此，我们使用张正友标定法对摄像头进行内外参数以及畸变参数的标定。</em></strong></p>
+<p><strong><em>Therefore, we use the Zhang Zhengyou calibration method to calibrate the camera’s internal and external parameters and distortion parameters.</em></strong></p>
 <h2 id="张正友标定法"><a href="#张正友标定法" class="headerlink" title="张正友标定法"></a>张正友标定法</h2><blockquote>
 <p>前言：张正友标定又称“张氏标定”。是张正友教授在1998年提出的单平面棋盘格的摄像机标定法。</p>
 <ul>
