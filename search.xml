@@ -688,65 +688,65 @@
 <span id="more"></span>
 </li>
 </ul>
-<h2 id="典型情况下的生命周期分析"><a href="#典型情况下的生命周期分析" class="headerlink" title="典型情况下的生命周期分析"></a>典型情况下的生命周期分析</h2><h3 id="正常生命周期解析"><a href="#正常生命周期解析" class="headerlink" title="正常生命周期解析"></a>正常生命周期解析</h3><p>正常情况下，activity会经历如下生命周期</p>
+<h2 id="Lifecycle-Analysis-in-Typical-Scenarios"><a href="#Lifecycle-Analysis-in-Typical-Scenarios" class="headerlink" title="Lifecycle Analysis in Typical Scenarios"></a>Lifecycle Analysis in Typical Scenarios</h2><h3 id="Normal-life-cycle-analysis"><a href="#Normal-life-cycle-analysis" class="headerlink" title="Normal life cycle analysis"></a>Normal life cycle analysis</h3><p>Under normal circumstances, an activity will go through the following life cycle</p>
 <ul>
-<li>onCreate：表示activity正在被创建。</li>
+<li>onCreate: Indicates that the activity is being created.</li>
 </ul>
 <blockquote>
 <ul>
-<li>这是生命周期的第一个方法、在这个方法中，我们可以做一些初始化工作，比如调用setContentView去加载界面布局资源、初始化activity所需要的数据等等</li>
-<li>通过覆盖onCreate(Bundle)方法，activity可以预处理以下UI相关工作：</li>
-<li>实例化组件并将它们放置到屏幕上(调用setContentView(int)方法)</li>
-<li>引用已实例化的组件</li>
-<li>为组件设置监听器以处理用户交互</li>
-<li>访问外部模型数据</li>
+<li>This is the first method of the life cycle. In this method, we can do some initialization work, such as calling setContentView to load interface layout resources, initialize the data required by activity, etc.</li>
+<li>By overriding the onCreate(Bundle) method, the activity can preprocess the following UI related work:</li>
+<li>Instantiate components and place them on screen (call setContentView(int) method)</li>
+<li>reference to the instantiated component</li>
+<li>Set up listeners for components to handle user interactions</li>
+<li>access external model data</li>
 </ul>
 <ul>
-<li>onRestart：表示activity正在启动。<br>一般情况下，当当前的activity从不可见重新变为可见的状态时，onRestart就会被调用。<strong>这种情况一般都是用户导致的，当用户按Home键切换到桌面的或者用户打开了一个新的activity，这时当前的activity就会暂停，也就是onPause和onStop被执行，接着用户又回到了这个activity，就会出现这种情况</strong></li>
-<li>onStart：表示activity正在被启动，即将开始。<br>这时activity已经可见了，但是还没有出现在前台，还无法和用户交互。这个时候其实可以理解为activity已经显示出来了，但是我们还看不到</li>
-<li>onResume：表示activity已经可见了，并且出现在前台并开始活动。<br>要注意这个和onStart的对比，onStart和onResume都表示activity已经可见，但是onStart的时候activity还在后台，onResume的时候activity才显示到前台。</li>
-<li>onPause：表示activity正在停止，正常情况下，紧接着onStop就会被调用。<br>在特殊情况下， 如果这个时候快速地再回到当前activity，那么onResume会被调用。可以理解为这种属于极端的情况，用户操作很难重现这种场景。此时可以做一些存储数据、停止动画等工作，但是注意不能太耗时，因为这会影响到新的activity的显示，onPause必须先执行完，新activity的onPause才会执行。</li>
-<li>onStop：表示activity即将停止，可以做一些稍微重量级的回收工作，同样不能太耗时。</li>
-<li>onDestroy：表示activity即将被销毁。<br>这是activity生命周期中的最后的一个回调，在这里，我们可以做一些回收工作和最终的资源释放。</li>
+<li>onRestart: Indicates that the activity is starting.<br>In general, onRestart is called when the current activity is changed from invisible to visible again. <strong>This situation is generally caused by the user. When the user presses the Home button to switch to the desktop or the user opens a new activity, the current activity will be paused, that is, onPause and onStop are executed, and then the user restarts. Back to this activity, this will happen</strong></li>
+<li>onStart: Indicates that the activity is being started and is about to start.<br>At this time, the activity is already visible, but it has not yet appeared in the foreground and cannot interact with the user. At this time, it can actually be understood that the activity has been displayed, but we can’t see it yet</li>
+<li>onResume: Indicates that the activity is already visible, and appears in the foreground and starts the activity.<br>Pay attention to the contrast between this and onStart. Both onStart and onResume indicate that the activity is already visible, but the activity is still in the background when onStart, and the activity is displayed in the foreground when onResume.</li>
+<li>onPause: Indicates that the activity is being stopped. Under normal circumstances, onStop will be called immediately.<br>In special cases, if you quickly return to the current activity at this time, then onResume will be called. It can be understood that this is an extreme situation, and it is difficult for user operations to reproduce this scenario. At this time, you can do some work such as storing data, stopping animation, etc., but be careful not to take too long, because this will affect the display of the new activity, onPause must be executed first, and the onPause of the new activity will be executed.</li>
+<li>onStop: Indicates that the activity is about to stop, you can do some heavyweight recycling work, and it can’t be too time-consuming.</li>
+<li>onDestroy: Indicates that the activity is about to be destroyed.<br>This is the last callback in the activity’s life cycle, where we can do some recycling and final resource release.</li>
 </ul>
 </blockquote>
 <p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/activity.png?raw=true" alt=""></p>
-<p><code>注：</code></p>
+<p><code>Note:</code></p>
 <ul>
-<li>当一个<strong>activity</strong>第一次启动时，回调程序如下：onCreate()-&gt;onStart()-&gt;onResume()</li>
-<li>用户打开<strong>新的activity</strong>或<strong>切回桌面</strong>时，回调如下：onPause()-&gt;onStop()</li>
-<li>用户<strong>重新回到原activity</strong>，回调如下；onRestart()-&gt;onStart()-&gt;onResume()</li>
-<li><strong>back键</strong>回退时，回调如下：onPause()-&gt;onStop()-&gt;onDestroy()</li>
+<li>When an <strong>activity</strong> starts for the first time, the callback procedure is as follows: onCreate()-&gt;onStart()-&gt;onResume()</li>
+<li>When the user opens a <strong>new activity</strong> or <strong>switches back to the desktop</strong>, the callback is as follows: onPause()-&gt;onStop()</li>
+<li>The user <strong>returns to the original activity</strong>, the callback is as follows; onRestart()-&gt;onStart()-&gt;onResume()</li>
+<li><strong>back key</strong> When going back, the callback is as follows: onPause()-&gt;onStop()-&gt;onDestroy()</li>
 </ul>
-<p><code>从整个生命周期来说：</code>onCreate()与onDestroy()配对。</p>
-<p><code>从activity是否可见来说：</code>onStart()与onStop()配对。</p>
-<p><code>从activity是否前台来说：</code>onResume()和onPause()配对。</p>
+<p><code>From the whole life cycle:</code>onCreate() is paired with onDestroy().</p>
+<p><code>In terms of whether the activity is visible:</code>onStart() is paired with onStop().</p>
+<p><code>From whether the activity is in the foreground:</code>onResume() and onPause() are paired.</p>
 <hr>
-<p><code>问题：</code>假设当前是activity A，如果用户这个时候打开一个activity B，那么是B的onResume()先执行还是A的onPause()先执行？</p>
-<p><code>结论：</code>旧的activity中onPause()先调用，新的activity中的onResume()才被执行。</p>
-<h2 id="异常情况下的生命周期分析"><a href="#异常情况下的生命周期分析" class="headerlink" title="异常情况下的生命周期分析"></a>异常情况下的生命周期分析</h2><h3 id="资源相关的系统配置发生变化导致activity被杀死进行重建"><a href="#资源相关的系统配置发生变化导致activity被杀死进行重建" class="headerlink" title="资源相关的系统配置发生变化导致activity被杀死进行重建"></a>资源相关的系统配置发生变化导致activity被杀死进行重建</h3><blockquote>
-<p>默认情况下，如果我们不对activity进行特殊处理，那么当系统配置或资源发生变化的时候，activity就会被销毁并重建。如：旋转手机屏幕等。</p>
+<p><code>Question:</code>Assuming that it is currently activity A, if the user opens an activity B at this time, is B’s onResume() executed first or A’s onPause() executed first?</p>
+<p><code>Conclusion:</code>OnPause() in the old activity is called first, and onResume() in the new activity is executed.</p>
+<h2 id="Lifecycle-Analysis-in-Exceptional-Situations"><a href="#Lifecycle-Analysis-in-Exceptional-Situations" class="headerlink" title="Lifecycle Analysis in Exceptional Situations"></a>Lifecycle Analysis in Exceptional Situations</h2><h3 id="Resource-related-system-configuration-changes-cause-the-activity-to-be-killed-and-rebuilt"><a href="#Resource-related-system-configuration-changes-cause-the-activity-to-be-killed-and-rebuilt" class="headerlink" title="Resource-related system configuration changes cause the activity to be killed and rebuilt"></a>Resource-related system configuration changes cause the activity to be killed and rebuilt</h3><blockquote>
+<p>By default, if we don’t do special handling of the activity, then when the system configuration or resources change, the activity will be destroyed and rebuilt. Such as: rotating the phone screen, etc.</p>
 </blockquote>
-<p><code>注：</code></p>
+<p><code>Note:</code></p>
 <ul>
-<li>activity被异常杀死重建，activity中onPause()、onStop()、onDestroy()都会被调用。</li>
-<li>系统会调用 <strong>onSaveInstanceState()</strong> 方法对当前activity的状态进行保存，调用位置位于onStop()之前，<strong>时序与onPause()无关</strong>。</li>
-<li>从时序上来说，<strong>onRestoreInstanceState()</strong> 是在onStart()之后。</li>
+<li>The activity is killed and rebuilt abnormally, and onPause(), onStop(), and onDestroy() in the activity will be called.</li>
+<li>The system will call the <strong>onSaveInstanceState()</strong> method to save the state of the current activity. The calling position is before onStop(), <strong>sequence has nothing to do with onPause()</strong>.</li>
+<li>In terms of timing, <strong>onRestoreInstanceState()</strong> is after onStart().</li>
 </ul>
-<p>示例图如图所示：<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/Android%E5%BC%80%E5%8F%91%E6%8E%A2%E7%B4%A2/%E5%BC%82%E5%B8%B8%E6%83%85%E5%86%B5%E4%B8%8Bactivity%E9%87%8D%E5%BB%BA%E8%BF%87%E7%A8%8B.png?raw=true" alt=""></p>
+<p>An example diagram is shown in the figure:<br><img src="https://github.com/kentanvictor/STUDY/blob/Image/Android%E5%BC%80%E5%8F%91%E6%8E%A2%E7%B4%A2/%E5%BC%82%E5%B8%B8%E6%83%85%E5%86%B5%E4%B8%8Bactivity%E9%87%8D%E5%BB%BA%E8%BF%87%E7%A8%8B.png?raw=true" alt=""></p>
 <ul>
-<li>在通过onSaveInstanceState和onRestoreInstanceState中进行数据传递时，接收onSaveInstanceState传递过来的参数可以有两个位置：1、onRestoreInstanceState；2、onCreate<ul>
-<li><code>注意：</code>onCreate如果是正常启动的话，<strong>其参数 Bundle savedInstanceState 为 null，</strong> 需要判断 savedInstanceState 是否为空。</li>
+<li>When transferring data through onSaveInstanceState and onRestoreInstanceState, there are two locations for receiving parameters passed by onSaveInstanceState: 1. onRestoreInstanceState; 2. onCreate<ul>
+<li><code>Note: If</code>onCreate is started normally, <strong> its parameter Bundle savedInstanceState is null, </strong> you need to judge whether savedInstanceState is empty.</li>
 </ul>
 </li>
 </ul>
-<h3 id="资源内存不足导致低优先级activity被杀死"><a href="#资源内存不足导致低优先级activity被杀死" class="headerlink" title="资源内存不足导致低优先级activity被杀死"></a>资源内存不足导致低优先级activity被杀死</h3><blockquote>
-<p>Activity优先级情况，从高到低可分为：</p>
+<h3 id="Insufficient-resource-memory-causes-low-priority-activity-to-be-killed"><a href="#Insufficient-resource-memory-causes-low-priority-activity-to-be-killed" class="headerlink" title="Insufficient resource memory causes low priority activity to be killed"></a>Insufficient resource memory causes low priority activity to be killed</h3><blockquote>
+<p>Activity priority situation, from high to low, can be divided into:</p>
 </blockquote>
 <ul>
-<li>前台activity——正在和用户交互的activity——优先级最高</li>
-<li>可见但非前台activity——比如弹出一个Dialog导致activity可见但不可交互</li>
-<li>后台activity——已被暂停的activity——优先级最低</li>
+<li>foreground activity - the activity that is interacting with the user - the highest priority</li>
+<li>Visible but not foreground activity - such as popping up a Dialog causing the activity to be visible but not interactive</li>
+<li>Background activity - suspended activity - lowest priority</li>
 </ul>
 ]]></content>
       <categories>
