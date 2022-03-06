@@ -1255,29 +1255,29 @@
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu+Windows双系统安装指南</title>
+    <title>Ubuntu+Windows Dual System Installation Guide</title>
     <url>/2020/05/05/Ubuntu-Windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="Ubuntu-Windows双系统安装指南"><a href="#Ubuntu-Windows双系统安装指南" class="headerlink" title="Ubuntu+Windows双系统安装指南"></a>Ubuntu+Windows双系统安装指南</h1><blockquote>
-<p>写在前面：非常感谢<a href="https://www.jianshu.com/c/01390ac22fa9">Linux探索之旅</a>在最初的时候给我的安装教程的指南，自己按照这篇教程安装双系统折腾了将近一个月，期间更是将Windows也给装炸了。。。于是乎重装系统，直到现在可以稳定的使用Ubuntu和Windows双系统。</p>
+    <content><![CDATA[<h1 id="Ubuntu-Windows-dual-system-installation-guide"><a href="#Ubuntu-Windows-dual-system-installation-guide" class="headerlink" title="Ubuntu+Windows dual system installation guide"></a>Ubuntu+Windows dual system installation guide</h1><blockquote>
+<p>Written in the front: I am very grateful to <a href="https://www.jianshu.com/c/01390ac22fa9">Linux Discovery Tour</a> for giving me the guide of the installation tutorial at the beginning, and I followed this tutorial to install dual systems. For nearly a month, during this period, Windows was also blown up. . . So I reinstalled the system, until now I can use Ubuntu and Windows dual system stably.</p>
 </blockquote>
 <hr>
 <ul>
-<li><a href="#Windows和Linux的区别">Windows和Linux的区别</a><ul>
-<li><a href="#观念">观念</a></li>
-<li><a href="#发布">发布</a></li>
-<li><a href="#内核API">内核API</a></li>
+<li>[The difference between Windows and Linux] (#The difference between Windows and Linux)<ul>
+<li><a href="#idea">idea</a></li>
+<li><a href="#post">post</a></li>
+<li><a href="#kernel API">kernel API</a></li>
 </ul>
 </li>
-<li><a href="#Ubuntu系统安装">Ubuntu系统安装</a><ul>
-<li><a href="#下载">下载</a></li>
-<li><a href="#烧录">烧录</a></li>
-<li><a href="#使用USB方式进行安装">使用USB方式进行安装</a></li>
+<li>[Ubuntu system installation] (#Ubuntu system installation)<ul>
+<li><a href="#download">download</a></li>
+<li><a href="#burning">burning</a></li>
+<li><a href="#Install via USB">Install via USB</a></li>
 </ul>
 </li>
 </ul>
 <hr>
 <span id="more"></span>
-<h2 id="Windows-和-Linux-的区别"><a href="#Windows-和-Linux-的区别" class="headerlink" title="Windows 和 Linux 的区别"></a>Windows 和 Linux 的区别</h2><p>对于 Windows 和 Linux 的区别，我在这里先使用一张直观的图让大家看一下。</p>
+<h2 id="Difference-between-Windows-and-Linux"><a href="#Difference-between-Windows-and-Linux" class="headerlink" title="Difference between Windows and Linux"></a>Difference between Windows and Linux</h2><p>对于 Windows 和 Linux 的区别，我在这里先使用一张直观的图让大家看一下。</p>
 <p><img src="https://github.com/kentanvictor/STUDY/blob/Image/Unix_Windows.jpg?raw=true" alt="内核区别"></p>
 <p>从上图中可以看到，Linux 与苹果的 Mac OS 是基于 Unix 系统下的操作系统，而 Windows 是基于MS-DOS的操作系统。下面的几个部分的内容，将分析 Windows 和 Linux 系统的区别。</p>
 <h3 id="观念"><a href="#观念" class="headerlink" title="观念"></a>观念</h3><p>商业模式与开源运作：</p>
