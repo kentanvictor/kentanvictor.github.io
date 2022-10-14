@@ -669,6 +669,17 @@
       </tags>
   </entry>
   <entry>
+    <title>Tile Geotiff Format File</title>
+    <url>/2022/10/14/Research%20of%20Geotiff%20Format%20File%20Tile/</url>
+    <content><![CDATA[<h1 id="Research-of-Geotiff-Format-File-Tile"><a href="#Research-of-Geotiff-Format-File-Tile" class="headerlink" title="Research of Geotiff Format File Tile"></a>Research of Geotiff Format File Tile</h1><blockquote>
+<p>It is relatively easy to slice GeoTiff type files using the python language, and the main investigation and research here is an attempt to slice Geotiff using the Java language.</p>
+</blockquote>
+<h2 id="What-is-GeoTiff-File"><a href="#What-is-GeoTiff-File" class="headerlink" title="What is GeoTiff File?"></a>What is GeoTiff File?</h2><h2 id="Implementations-of-Geotiff-File-Tile"><a href="#Implementations-of-Geotiff-File-Tile" class="headerlink" title="Implementations of Geotiff File Tile"></a>Implementations of Geotiff File Tile</h2><h3 id="ImageMagick"><a href="#ImageMagick" class="headerlink" title="ImageMagick"></a>ImageMagick</h3><h3 id="Gdal"><a href="#Gdal" class="headerlink" title="Gdal"></a>Gdal</h3><h3 id="Geotools"><a href="#Geotools" class="headerlink" title="Geotools"></a>Geotools</h3>]]></content>
+      <tags>
+        <tag>Map</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>The analysis of android lifecycle</title>
     <url>/2022/10/14/The%20analysis%20of%20android%20lifecycle/</url>
     <content><![CDATA[<h1 id="The-analysis-of-android-lifecycle"><a href="#The-analysis-of-android-lifecycle" class="headerlink" title="The analysis of android lifecycle"></a>The analysis of android lifecycle</h1><ul>
