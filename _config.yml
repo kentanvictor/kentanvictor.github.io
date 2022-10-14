@@ -91,4 +91,4 @@ stylus:
 deploy:
   type: git
   repository: git@github.com:kentanvictor/kentanvictor.github.io.git
-  branch: master
+  branch: hexo
