@@ -1,6 +1,6 @@
 ---
 title: The analysis of android lifecycle
-date: 2018-09-04 22：11：30
+date: 2018-09-04 22:11:30
 tags: Android
 categories: Android
 ---
