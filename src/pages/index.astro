@@ -1,0 +1,33 @@
+---
+// The root address picks a language: the one chosen before, otherwise the browser's.
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zoe Tam</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" hreflang="zh-CN" href="https://kentanvictor.github.io/zh/" />
+    <link rel="alternate" hreflang="en" href="https://kentanvictor.github.io/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://kentanvictor.github.io/" />
+    <script is:inline>
+      (function () {
+        var lang;
+        try { lang = localStorage.getItem('lang'); } catch (e) {}
+        if (lang !== 'zh' && lang !== 'en') {
+          lang = /^zh\b/i.test(navigator.language || '') ? 'zh' : 'en';
+        }
+        location.replace('/' + lang + '/');
+      })();
+    </script>
+    <style>
+      body { font-family: system-ui, sans-serif; display: grid; place-items: center; min-height: 100vh; margin: 0; }
+      a { margin: 0 12px; color: #0e6b68; }
+    </style>
+  </head>
+  <body>
+    <p><a href="/zh/">中文</a> · <a href="/en/">English</a></p>
+  </body>
+</html>

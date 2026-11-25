@@ -1,0 +1,59 @@
+---
+import { ui, type Lang } from '../i18n';
+import { tagHref, tagSlug, type Post } from '../posts';
+
+interface Props {
+  posts: Post[];
+  lang: Lang;
+  current?: string;
+}
+const { posts, lang, current } = Astro.props;
+const counts = new Map<string, number>();
+for (const p of posts) for (const tag of p.data.tags) counts.set(tag, (counts.get(tag) ?? 0) + 1);
+const tags = [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+---
+
+<ul class="cloud">
+  {tags.map(([tag, n]) => (
+    <li>
+      <a href={tagHref(lang, tag)} aria-current={current && tagSlug(current) === tagSlug(tag) ? 'page' : undefined}>
+        {tag}<span>{n}</span>
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 14.5px;
+  }
+  a:hover,
+  a[aria-current='page'] {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  a[aria-current='page'] {
+    background: var(--accent-soft);
+  }
+  span {
+    color: var(--faint);
+    font-size: 12.5px;
+    font-variant-numeric: tabular-nums;
+  }
+</style>

@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { ui, switchPath, otherLang, SITE, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+  /** The same page in the other language, when it is not the default mapping. */
+  altPath?: string;
+}
+
+const { lang, title, description, altPath } = Astro.props;
+const t = ui[lang];
+const fullTitle = title ? `${title} | ${SITE.name}` : `${SITE.name} · ${t.tagline}`;
+const desc = description || t.siteDescription;
+const path = Astro.url.pathname;
+const altHref = new URL(altPath ?? switchPath(path, lang), Astro.site).href;
+---
+
+<!doctype html>
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+    <meta name="author" content={SITE.name} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={new URL(path, Astro.site).href} />
+    <link rel="alternate" hreflang={t.htmlLang} href={new URL(path, Astro.site).href} />
+    <link rel="alternate" hreflang={ui[otherLang(lang)].htmlLang} href={altHref} />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name} (${t.langName})`} href={`/${lang}/rss.xml`} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={new URL('/images/avatar.png', Astro.site).href} />
+    <meta name="theme-color" content="#fafaf8" />
+    <script is:inline>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <script is:inline define:vars={{ lang }}>
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <Header lang={lang} altPath={altPath} />
+    <main>
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>

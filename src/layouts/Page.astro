@@ -1,0 +1,30 @@
+---
+import Base from './Base.astro';
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description?: string;
+}
+const { lang, title, description } = Astro.props;
+---
+
+<Base lang={lang} title={title} description={description}>
+  <div class="container narrow page">
+    <h1>{title}</h1>
+    <div class="prose">
+      <slot />
+    </div>
+  </div>
+</Base>
+
+<style>
+  .page {
+    padding-top: 56px;
+  }
+  h1 {
+    font-size: clamp(30px, 4vw, 40px);
+    margin: 0 0 32px;
+  }
+</style>

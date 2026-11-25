@@ -1,0 +1,68 @@
+---
+import Base from '../../../layouts/Base.astro';
+import PostList from '../../../components/PostList.astro';
+import TagCloud from '../../../components/TagCloud.astro';
+import { LANGS, ui, type Lang } from '../../../i18n';
+import { getPosts } from '../../../posts';
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const t = ui[lang].blog;
+const posts = await getPosts(lang);
+const recent = posts.filter((p) => !p.data.legacy);
+const legacy = posts.filter((p) => p.data.legacy);
+---
+
+<Base lang={lang} title={t.title} description={t.lead}>
+  <div class="container narrow page">
+    <h1>{t.title}</h1>
+    <p class="lead">{t.lead}</p>
+    <div class="cloud">
+      <TagCloud posts={posts} lang={lang} />
+    </div>
+
+    {recent.length > 0 && (
+      <section>
+        <h2 class="section-title">{t.recent}</h2>
+        <PostList posts={recent} lang={lang} />
+      </section>
+    )}
+
+    {legacy.length > 0 && (
+      <section>
+        <h2 class="section-title">{t.legacy} · {legacy.length}</h2>
+        <p class="note">{t.legacyNote}</p>
+        <PostList posts={legacy} lang={lang} compact />
+      </section>
+    )}
+  </div>
+</Base>
+
+<style>
+  .page {
+    padding-top: 56px;
+  }
+  h1 {
+    font-size: clamp(30px, 4vw, 40px);
+    margin: 0 0 10px;
+  }
+  .lead {
+    color: var(--muted);
+    font-size: 17px;
+    margin: 0 0 24px;
+  }
+  .cloud {
+    margin-bottom: 48px;
+  }
+  section + section {
+    margin-top: 64px;
+  }
+  .note {
+    color: var(--muted);
+    font-size: 15px;
+    margin: -8px 0 20px;
+  }
+</style>

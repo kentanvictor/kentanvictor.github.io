@@ -1,0 +1,90 @@
+---
+import { formatDate, type Lang } from '../i18n';
+import { postHref, type Post } from '../posts';
+
+interface Props {
+  posts: Post[];
+  lang: Lang;
+  compact?: boolean;
+}
+const { posts, lang, compact = false } = Astro.props;
+---
+
+<ul class:list={['post-list', { compact }]}>
+  {posts.map((post) => (
+    <li>
+      <a href={postHref(post)}>
+        <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date, lang)}</time>
+        <span class="title">{post.data.title}</span>
+        {!compact && post.data.description && <span class="desc">{post.data.description}</span>}
+        {post.data.tags.length > 0 && (
+          <span class="tags">{post.data.tags.map((tag) => <span class="tag">{tag}</span>)}</span>
+        )}
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .post-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--border);
+  }
+  li {
+    border-bottom: 1px solid var(--border);
+  }
+  a {
+    display: grid;
+    grid-template-columns: 128px 1fr;
+    column-gap: 24px;
+    row-gap: 6px;
+    padding: 20px 4px;
+    color: var(--text);
+  }
+  a:hover .title {
+    color: var(--accent);
+  }
+  time {
+    grid-row: span 3;
+    color: var(--faint);
+    font-size: 14px;
+    padding-top: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .title {
+    font-weight: 600;
+    font-size: 17.5px;
+    line-height: 1.45;
+    transition: color 0.15s;
+  }
+  .desc {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .compact a {
+    padding: 16px 4px;
+  }
+  .compact time {
+    grid-row: span 2;
+  }
+
+  @media (max-width: 640px) {
+    a {
+      grid-template-columns: 1fr;
+    }
+    time,
+    .compact time {
+      grid-row: auto;
+      font-size: 13px;
+      padding: 0;
+    }
+  }
+</style>

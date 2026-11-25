@@ -1,0 +1,281 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import Icon from '../../components/Icon.astro';
+import { LANGS, ui, SITE, type Lang } from '../../i18n';
+import { getPosts } from '../../posts';
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const t = ui[lang];
+const latest = (await getPosts(lang)).slice(0, 4);
+---
+
+<Base lang={lang}>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">{t.hero.eyebrow}</p>
+        <h1>{t.hero.title}</h1>
+        <p class="lead">{t.hero.lead}</p>
+        <div class="actions">
+          <a class="btn btn-primary" href={`/${lang}/mentoring/`}>
+            {t.hero.primary}
+            <Icon name="arrow" size={18} />
+          </a>
+          <a class="btn btn-ghost" href={SITE.linkedin} target="_blank" rel="me noopener">
+            <Icon name="linkedin" size={18} />
+            LinkedIn
+          </a>
+          <a class="btn btn-ghost" href={`/${lang}/blog/`}>{t.hero.secondary}</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="/images/avatar.png" alt={SITE.name} width="400" height="400" />
+      </div>
+    </div>
+    <div class="container">
+      <dl class="facts">
+        {t.facts.map((f) => (
+          <div>
+            <dt>{f.value}</dt>
+            <dd>{f.label}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section class="container block">
+    <h2 class="section-title">{t.workTitle}</h2>
+    <div class="cards">
+      {t.work.map((w) => (
+        <article class="card">
+          <span class="card-icon"><Icon name={w.icon} /></span>
+          <h3>{w.title}</h3>
+          <p>{w.text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="container block">
+    <div class="mentor">
+      <div>
+        <h2>{t.mentor.title}</h2>
+        <p>{t.mentor.text}</p>
+        <a class="btn btn-primary" href={`/${lang}/mentoring/`}>
+          {t.mentor.cta}
+          <Icon name="arrow" size={18} />
+        </a>
+      </div>
+      <ul>
+        {t.mentor.items.map((item) => (
+          <li><Icon name="check" size={18} />{item}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="container block">
+    <div class="block-head">
+      <h2 class="section-title">{t.latest}</h2>
+      <a href={`/${lang}/blog/`} class="more">{t.allPosts} →</a>
+    </div>
+    <PostList posts={latest} lang={lang} compact />
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding: 72px 0 8px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 56px;
+    align-items: center;
+  }
+  .eyebrow {
+    display: inline-block;
+    margin: 0 0 18px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: clamp(32px, 4.6vw, 50px);
+    margin: 0 0 20px;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+  .lead {
+    font-size: 18px;
+    color: var(--muted);
+    margin: 0 0 30px;
+    max-width: 600px;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .hero-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 64px 0 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    overflow: hidden;
+  }
+  .facts > div {
+    padding: 22px 24px;
+  }
+  .facts > div + div {
+    border-left: 1px solid var(--border);
+  }
+  dt {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  dd {
+    margin: 2px 0 0;
+    color: var(--muted);
+    font-size: 14.5px;
+  }
+  .block {
+    margin-top: 80px;
+  }
+  .block-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .more {
+    font-size: 14.5px;
+    font-weight: 600;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .card {
+    padding: 24px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .card-icon {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  .card h3 {
+    font-size: 18px;
+    margin: 16px 0 6px;
+  }
+  .card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+  }
+  .mentor {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 40px;
+    border-radius: 20px;
+    background: var(--accent-soft);
+    border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+  .mentor h2 {
+    font-size: 28px;
+    margin: 0 0 10px;
+  }
+  .mentor p {
+    margin: 0 0 24px;
+    color: var(--muted);
+    font-size: 16.5px;
+  }
+  .mentor ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+  .mentor li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    font-weight: 500;
+  }
+  .mentor li :global(svg) {
+    color: var(--accent);
+    flex: none;
+  }
+
+  @media (max-width: 860px) {
+    .hero {
+      padding-top: 40px;
+    }
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .hero-photo {
+      order: -1;
+    }
+    .hero-photo img {
+      width: 120px;
+      border-radius: 50%;
+    }
+    .facts {
+      grid-template-columns: 1fr;
+      margin-top: 40px;
+    }
+    .facts > div + div {
+      border-left: 0;
+      border-top: 1px solid var(--border);
+    }
+    .cards,
+    .mentor {
+      grid-template-columns: 1fr;
+    }
+    .mentor {
+      padding: 28px 22px;
+      gap: 24px;
+    }
+    .block {
+      margin-top: 56px;
+    }
+  }
+</style>

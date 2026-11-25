@@ -1,0 +1,22 @@
+---
+import { getCollection, render } from 'astro:content';
+import Page from '../../layouts/Page.astro';
+import type { Lang } from '../../i18n';
+
+// About and Mentoring, from src/content/pages/<lang>/<page>.md
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+  return pages.map((entry) => {
+    const [lang, page] = entry.id.split('/');
+    return { params: { lang, page }, props: { entry } };
+  });
+}
+
+const { entry } = Astro.props;
+const lang = Astro.params.lang as Lang;
+const { Content } = await render(entry);
+---
+
+<Page lang={lang} title={entry.data.title}>
+  <Content />
+</Page>

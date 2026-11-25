@@ -1,0 +1,96 @@
+---
+// Redirect pages for addresses of the old Hexo site, so saved links and
+// search results keep working. Each page sends the visitor to the new page
+// in their language (last choice, else browser language).
+import { getCollection } from 'astro:content';
+import { postLang, postSlug, tagSlug } from '../posts';
+
+interface Target {
+  zh: string;
+  en: string;
+}
+
+export async function getStaticPaths() {
+  const routes: Record<string, Target> = {};
+  const same = (path: string): Target => ({ zh: path, en: path });
+
+  // Posts: /2020/05/05/<Hexo file name>/
+  for (const post of await getCollection('blog', (p) => postLang(p) === 'zh')) {
+    if (!post.data.hexoUrl) continue;
+    routes[post.data.hexoUrl] = same(`blog/${postSlug(post)}/`);
+    // Monthly archive pages: /archives/2020/05/
+    const [, year, month] = post.data.hexoUrl.split('/');
+    routes[`/archives/${year}/${month}/`] = same('blog/');
+  }
+
+  // Pages and listings
+  Object.assign(routes, {
+    '/about/': same('about/'),
+    '/mentoring/': same('mentoring/'),
+    '/archives/': same('blog/'),
+    '/tags/': same('tags/'),
+    '/categories/': same('tags/'),
+    '/page/2/': same(''),
+    '/archives/page/2/': same('blog/'),
+  });
+  for (const year of ['2018', '2019', '2020', '2022']) routes[`/archives/${year}/`] = same('blog/');
+
+  // Old tag and category pages -> new tag pages
+  const oldTags: Record<string, [string, string]> = {
+    Android: ['Android', 'Android'],
+    'C-C': ['C&C++', 'C&C++'],
+    'Computer-Vision': ['Computer Vision', 'Computer Vision'],
+    Java: ['Java', 'Java'],
+    Linux: ['Linux', 'Linux'],
+    Map: ['GIS', 'GIS'],
+    Matlab: ['MATLAB', 'MATLAB'],
+    Python: ['Python', 'Python'],
+    QT: ['Qt', 'Qt'],
+    git: ['Git', 'Git'],
+    前端: ['前端', 'Frontend'],
+    后端: ['后端', 'Backend'],
+  };
+  for (const [old, [zh, en]] of Object.entries(oldTags)) {
+    for (const kind of ['tags', 'categories']) {
+      routes[`/${kind}/${old}/`] = { zh: `tags/${tagSlug(zh)}/`, en: `tags/${tagSlug(en)}/` };
+    }
+  }
+
+  return Object.entries(routes).map(([from, to]) => ({
+    params: { legacy: from.replace(/^\/|\/$/g, '') },
+    props: { to },
+  }));
+}
+
+const { to } = Astro.props as { to: Target };
+const site = Astro.site!.origin;
+const zhHref = `/zh/${to.zh}`;
+const enHref = `/en/${to.en}`;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Zoe Tam</title>
+    <link rel="canonical" href={site + zhHref} />
+    <script is:inline define:vars={{ zhHref, enHref }}>
+      var lang;
+      try { lang = localStorage.getItem('lang'); } catch (e) {}
+      if (lang !== 'zh' && lang !== 'en') {
+        lang = /^zh\b/i.test(navigator.language || '') ? 'zh' : 'en';
+      }
+      location.replace(lang === 'zh' ? zhHref : enHref);
+    </script>
+    <meta http-equiv="refresh" content={`3; url=${zhHref}`} />
+    <style>
+      body { font-family: system-ui, sans-serif; display: grid; place-items: center; min-height: 100vh; margin: 0; }
+      a { margin: 0 12px; color: #0e6b68; }
+    </style>
+  </head>
+  <body>
+    <p><a href={zhHref}>中文</a> · <a href={enHref}>English</a></p>
+  </body>
+</html>

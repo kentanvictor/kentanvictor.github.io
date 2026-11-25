@@ -1,0 +1,71 @@
+---
+import Base from '../../../layouts/Base.astro';
+import PostList from '../../../components/PostList.astro';
+import TagCloud from '../../../components/TagCloud.astro';
+import { LANGS, ui, otherLang, type Lang } from '../../../i18n';
+import { getPosts, tagSlug } from '../../../posts';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const lang of LANGS) {
+    const posts = await getPosts(lang);
+    const otherTags = new Set((await getPosts(otherLang(lang))).flatMap((p) => p.data.tags.map(tagSlug)));
+    const tags = new Set(posts.flatMap((p) => p.data.tags));
+    for (const tag of tags) {
+      paths.push({
+        params: { lang, tag: tagSlug(tag) },
+        props: {
+          tag,
+          posts: posts.filter((p) => p.data.tags.includes(tag)),
+          all: posts,
+          // Tags like 前端 / Frontend differ between languages: fall back to the tag list.
+          altPath: `/${otherLang(lang)}/tags/${otherTags.has(tagSlug(tag)) ? tagSlug(tag) + '/' : ''}`,
+        },
+      });
+    }
+  }
+  return paths;
+}
+
+const lang = Astro.params.lang as Lang;
+const { tag, posts, all, altPath } = Astro.props;
+const t = ui[lang].tags;
+---
+
+<Base lang={lang} title={t.tagged(tag)} altPath={altPath}>
+  <div class="container narrow page">
+    <a class="back" href={`/${lang}/tags/`}>← {t.all}</a>
+    <h1>{t.tagged(tag)}</h1>
+    <p class="lead">{t.count(posts.length)}</p>
+    <PostList posts={posts} lang={lang} />
+    <div class="others">
+      <TagCloud posts={all} lang={lang} current={tag} />
+    </div>
+  </div>
+</Base>
+
+<style>
+  .page {
+    padding-top: 40px;
+  }
+  .back {
+    display: inline-block;
+    font-size: 14.5px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .back:hover {
+    color: var(--accent);
+  }
+  h1 {
+    font-size: clamp(28px, 4vw, 38px);
+    margin: 0 0 6px;
+  }
+  .lead {
+    color: var(--muted);
+    margin: 0 0 28px;
+  }
+  .others {
+    margin-top: 48px;
+  }
+</style>
