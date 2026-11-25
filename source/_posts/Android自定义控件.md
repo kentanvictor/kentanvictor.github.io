@@ -1,19 +1,28 @@
-
 ---
 title: Android自定义控件
+title_en: Android Custom Views
 date: 2018-07-23 10:45:23
 tags: Android
 categories: Android
 ---
 
-
+{% zh %}
 ### Android属性动画的分类
 + View Animation(补间)
 + Drawable Animation(帧动画)
 + Property Animation(Android3.0新引入)
+{% endzh %}
+
+{% en %}
+### Types of Android animation
++ View Animation (tweened)
++ Drawable Animation (frame-by-frame)
++ Property Animation (new in Android 3.0)
+{% enden %}
 
 <!--more-->
 
+{% zh %}
 #### View Animation
 + 基于view的渐变动画，只改变view的绘制效果，而实际属性值未该改变。
 + 比如：动画移动一个按钮位置，但按钮点击的实际位置仍未改变。
@@ -78,3 +87,71 @@ iv_animation.animate()
 + 第二：在代码中实例化ViewPager
 + 第三：准备数据
 + 第四：设置适配器(PagerAdapter)-item-布局-绑定数据
+{% endzh %}
+
+{% en %}
+#### View Animation
++ Tweened animation on a view. It only changes how the view is drawn; the actual property values do not change.
++ For example: if you animate a button to a new position, the area you actually click on stays where it was.
++ To define the animation in code, see the `AnimationSet` class and the subclasses of `Animation`.
++ If you use XML, you can define XML files in the res/anim/ folder.
++ Here is an example
+```java
+TranslateAnimation animation = new TranslateAnimation(0,iv_animation.getWidth(),0,iv_animation.getHight());
+/*
+iv_animation is the id of the image to move
+The TranslateAnimation constructor moves the image from 0 (its original position) by the image's width (iv_animation.getWidth);
+the vertical movement works the same way
+*/
+animation.setDuration(3000);//set the duration
+animation.setFillAfter(true);//keep the view where it ends instead of resetting it
+iv_animation.startAnimation(animation);//start moving
+```
+
+#### Drawable Animation
++ Loads a series of Drawable resources to create an animation. This traditional kind of animation is basically a sequence of images played in order, like a film reel.
++ To define the frames in code, use the `AnimationDrawable` class.
++ XML makes it easier to put frames together: in the `res/drawable` folder, use `<animation-list>` with `<item>` elements to define each frame.
++ Note: it seems the only property you can set is the interval between frames.
+
+#### Property Animation
++ Besides traditional view objects, the animated target can be any Object. After the animation, the Object's property values really have changed.
++ Property Animation animates a view by changing the view object's actual properties.
++ Whenever a view property changes, the view automatically calls invalidate() to refresh.
++ Here is an example
+```java
+ObjectAnimator animator = ObjectAnimator.ofFloat(iv_animation,"translationX",0,iv_animation.getWidth());
+/*
+Use ObjectAnimator.ofFloat to translate
+ofFloat(target, "how to move, e.g. horizontally -> translationX", start position, distance);
+*/
+ObjectAnimator animator2 = ObjectAnimator.ofFloat(iv_animation,"translationY",0,iv_animation.getHight());
+AnimatorSet animatorSet = new AnimatorSet();
+AnimatorSet.setDuration(2000);
+AnimatorSet.setInterpolator(new BounceInterpolator());
+//play both animations together
+animatorSet.playTogether(animator,animator2);
+//start playing
+animatorSet.start();
+```
++ Another way to write it
+```java
+iv_animation.animate()
+            .translationXBy(iv_animation.getWidth())
+            .translationYBy(iv_animation.getHight())
+            .setDuration(2000)
+            .setInterpolator(new BounceInterpolator())
+            .start();
+```
+### ViewPager (banner effect)
++ Using ViewPager
++ Basic features of a banner
++ Extending ViewPager
++ Turning it into an onboarding screen
+
+#### Using ViewPager
++ First: define `android.support.v4.view.ViewPager` in the layout file
++ Second: instantiate the ViewPager in code
++ Third: prepare the data
++ Fourth: set the adapter (PagerAdapter) - item - layout - bind the data
+{% enden %}

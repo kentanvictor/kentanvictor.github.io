@@ -1,10 +1,12 @@
 ---
 title: Java原生数据类型与表达式
+title_en: Java Primitive Data Types and Expressions
 date: 2020-05-12 20:41:51
 tags: Java
 categories: Java
 ---
 
+{% zh %}
 # 原生数据类型与表达式
 
 ## 原生数据类型
@@ -18,7 +20,27 @@ categories: Java
   + 3）短整型：使用 short 表示。（16 位）
   
   + 4）长整型：使用 long 表示。（64 位）
-  <!--more-->
+{% endzh %}
+
+{% en %}
+# Primitive Data Types and Expressions
+
+## Primitive data types
+
++ 1.Java has 8 primitive data types:
+
+  + 1) Integer: `int` (32 bits)
+  
+  + 2) Byte: `byte` (256 integers from -128 to 127, 8 bits)
+  
+  + 3) Short integer: `short` (16 bits)
+  
+  + 4) Long integer: `long` (64 bits)
+{% enden %}
+
+<!--more-->
+
+{% zh %}
   + 5）单精度浮点型：使用 float 表示。所谓浮点型，指的就是小数，也叫做实数，例如 1.2。
   
   + 6）双精度浮点型：使用 double 表示。双精度浮点型表示的数据范围要比单精度浮点型大。
@@ -71,3 +93,59 @@ a 是 short 类型，b 是 int 类型，int 类型表示的数据范围要比 sh
 + 相同优先级运算顺序从左往右。
 
 + 在`类型转换`中，如果不损失信息，数值会自动提升为高等级的数据类型。前提是，你的运算中含有高等级的运算符。当需要向低类型转换时，会**截断取整**，而不是四舍五入。
+{% endzh %}
+
+{% en %}
+  + 5) Single-precision floating point: `float`. Floating-point numbers are decimals, also called real numbers, such as 1.2.
+  
+  + 6) Double-precision floating point: `double`. A double covers a larger range than a float.
+  
+  + 7) Character: `char` (short for character). A char holds a single character, such as the letter a or the Chinese character 张, wrapped in single quotes. For example: char a = 'B'; char b = '张';
+  
+  + 8) Boolean: `boolean`. A boolean has only two possible values: true and false.
+  
+
++ 2.In Java, every floating-point literal is a double by default. You cannot assign a double value to a float variable, even if the value is within the range of float. In short, whether an assignment compiles depends on whether the type of the value on the right matches the type of the variable on the left.
+
++ 3.How do you assign a double value to a float variable? (1) Use a cast to convert the double value to float. (2) Use the language's own support (for example, the `f` suffix on literals).
+
+`Cast syntax: type variableName = (type) value;`
+
++ 4.A variable must be assigned before it is used; it must be declared with a type before it is used; and it must be defined before use, and only once.
+
++ 5.The following code does not compile:
+
+```Java
+int a = 1; short b = a;
+```
+
+a is an int and b is a short. int covers a larger range than short, and you cannot assign a value of a wider type
+to a variable of a narrower type.
+
++ 6.The following code compiles:
+
+```Java
+short a = 1; int b = a;
+```
+
+a is a short and b is an int. int covers a larger range than short, so you can assign a value of a narrower type
+to a variable of a wider type.
+
++ 7.Summary: you can assign a value of a narrower type to a variable of a wider type, but you cannot directly assign a value of a wider type to a variable of a narrower type. That only works with a cast.
+
+## Expressions
+
+> Java uses `infix expressions`, which work just like expressions in mathematics.
+
+**Notes:**
+
++ In `basic arithmetic`, the result has the same data type as the operands.
+
++ '+', '-', '*' and '/' are all overloaded.
+
++ Among the `logical operators`, '!' has the highest precedence, then '&&', and finally '||'.
+
++ Operators with the same precedence are evaluated from left to right.
+
++ In `type conversion`, if no information is lost, a value is automatically promoted to a higher-ranked type, provided the operation involves an operand of that higher type. When converting to a lower type, the value is **truncated**, not rounded.
+{% enden %}

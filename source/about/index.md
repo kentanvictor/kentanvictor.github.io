@@ -1,9 +1,31 @@
 ---
-title: about
+title: 关于
+title_en: About
 date: 2018-07-21 21:33:51
 tags:
 ---
 
+{% zh %}
+# 码出人生
+
+## 学习经历
+
++ C语言
+> 我从2016年6月高考结束后开始学习C语言。在我的笔记里，整理过一份我们大学C语言考试的题库。我也在实验室给大一新生做过C语言的培训。
+
++ Java学习
+> 我的Java学习从2016年9月开始。那时我加入了学校的Android实验室，在实验室学长带领新生学习的过程中，我逐渐学到了很多Java知识。现在，我已经能用Java实现一些小项目了。
+
++ Android学习
+> 正是因为加入了Android实验室，我跟着师兄的脚步参加了他们的培训，并在12月开始接触Android的学习。Android的学习是在Java学习的基础上开始的。不过，我学到的Android知识还只是皮毛，并不是特别扎实，还有很多东西需要学习。
+
+## 关于我
+
++ `GITHUB`: [MyGitHub](https://github.com/kentanvictor)
++ `Email`: zxt010@student.bham.ac.uk
+{% endzh %}
+
+{% en %}
 # Coding the life
 
 ## learning experience
@@ -21,3 +43,4 @@ tags:
 
 + `GITHUB`: [MyGitHub](https://github.com/kentanvictor)
 + `Email`: zxt010@student.bham.ac.uk
+{% enden %}

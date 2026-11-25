@@ -1,7 +1,7 @@
 <header class="post-header">
 
 <h1 class="post-title" itemprop="name headline">
-  {{- page.title }}
+  {{- bi_title(page) }}
   {{- post_edit(page.source) }}
 </h1>
 

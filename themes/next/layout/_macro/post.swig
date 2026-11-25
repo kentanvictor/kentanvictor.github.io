@@ -33,9 +33,9 @@
                 <i class="fa fa-thumb-tack"></i>
               </span>
             {%- endif %}
-            {{ next_url(post.path, post.title or __('post.untitled'), {class: 'post-title-link', itemprop: 'url'}) }}
+            {{ next_url(post.path, bi_title(post, __('post.untitled')), {class: 'post-title-link', itemprop: 'url'}) }}
           {%- else %}
-            {{- post.title }}
+            {{- bi_title(post) }}
             {{- post_edit(post.source) }}
           {%- endif %}
         </{%- if is_index %}h2{% else %}h1{%- endif %}>
@@ -44,7 +44,7 @@
 
           {% if post.top %}
             <i class="fa fa-thumb-tack"></i>
-            <font color=7D26CD>置顶</font>
+            <font color=7D26CD><span class="bi-zh">置顶</span><span class="bi-en">Pinned</span></font>
             <span class="post-meta-divider">|</span>
           {% endif %}
 
@@ -57,7 +57,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">{{ __('post.posted') }}</span>
+              <span class="post-meta-item-text">{{ bi__('post.posted') }}</span>
 
               {%- if not date_diff and time_diff and theme.post_meta.updated_at.enable and theme.post_meta.updated_at.another_day %}
                 {%- set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) + ' / ' + __('post.modified') + __('symbol.colon') + time(post.updated) %}
@@ -77,7 +77,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">{{ __('post.edited') }}</span>
+                <span class="post-meta-item-text">{{ bi__('post.edited') }}</span>
                 <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{{ date(post.updated) }}</time>
               </span>
             {%- endif %}
@@ -88,7 +88,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">{{ __('post.in') }}</span>
+              <span class="post-meta-item-text">{{ bi__('post.in') }}</span>
               {%- for cat in post.categories.toArray() %}
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a>
@@ -189,7 +189,7 @@
           {%- if theme.read_more_btn %}
             <div class="post-button">
               <a class="btn" href="{{ url_for(post.path) }}">
-                {{ __('post.read_more') }} &raquo;
+                {{ bi__('post.read_more') }} &raquo;
               </a>
             </div>
           {%- endif %}
@@ -200,7 +200,7 @@
           {%- if theme.read_more_btn %}
             <div class="post-button">
               <a class="btn" href="{{ url_for(post.path) }}#more" rel="contents">
-                {{ __('post.read_more') }} &raquo;
+                {{ bi__('post.read_more') }} &raquo;
               </a>
             </div>
           {%- endif %}
