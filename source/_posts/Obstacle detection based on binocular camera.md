@@ -4,7 +4,6 @@ title_en: Obstacle detection based on binocular camera
 date: 2018-10-18 20:31:23
 tags: Computer Vision
 categories: Computer Vision
-top: true
 ---
 
 {% zh %}

@@ -65,8 +65,8 @@ footer:
     color: "#808080"
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
-  author: ZoeTam
-  copyright: ZoeTam
+  author: Zoe Tam
+  copyright: Zoe Tam
 
   # Powered by Hexo & NexT
   powered: false
@@ -120,6 +120,7 @@ darkmode: false
 menu:
   home: / || home
   about: /about/ || user
+  mentoring: /mentoring/ || graduation-cap
   tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
@@ -165,11 +166,11 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: https://github.com/kentanvictor/STUDY/blob/Image/logo.png?raw=true #/images/avatar.gif
+  url: /images/avatar.png
   # If true, the avatar will be dispalyed in circle.
   rounded: true
   # If true, the avatar will be rotated with the cursor.
-  rotated: true
+  rotated: false
 
 # Posts / Categories / Tags in sidebar.
 site_state: true
@@ -179,7 +180,8 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  github: https://github.com/kentanvictor || github
+  GitHub: https://github.com/kentanvictor || github
+  LinkedIn: https://www.linkedin.com/in/tanzhuo/ || linkedin
   #GitHub: https://github.com/yourname || github
   E-Mail: mailto:kentanvictor@foxmail.com || envelope
   #E-Mail: mailto:yourname@gmail.com || envelope

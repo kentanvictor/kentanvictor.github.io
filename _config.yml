@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: ZoeTam's Blog
-subtitle:
-description: Sometimes life is going to hit you in the head with a brick. Don't lose faith.
-keywords:
-author: ZoeTam
+title: Zoe Tam
+subtitle: Software Engineer · Backend · System Design · GIS · FinTech · AI
+description: Software engineer with ~5 years of experience in backend development, system design, GIS, FinTech risk systems and AI applications. Notes, project write-ups and SDE career mentoring.
+keywords: Software Engineer, Backend, System Design, GIS, Geospatial, FinTech, Risk Management, AI Applications, SDE Interview, Mock Interview, Mentoring, Python, Java, SQL
+author: Zoe Tam
 language: en
 timezone:
 
