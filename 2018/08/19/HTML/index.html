@@ -20,16 +20,17 @@
     var CONFIG = {"hostname":"kentanvictor.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="HTML+CSS 外壳的框架">
+  <meta name="description" content="HTML+CSS 外壳的框架   HTML+CSS The basic page skeleton">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML">
 <meta property="og:url" content="https://kentanvictor.github.io/2018/08/19/HTML/index.html">
 <meta property="og:site_name" content="ZoeTam&#39;s Blog">
-<meta property="og:description" content="HTML+CSS 外壳的框架">
+<meta property="og:description" content="HTML+CSS 外壳的框架   HTML+CSS The basic page skeleton">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/old_image/table.png?raw=true">
+<meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/old_image/table.png?raw=true">
 <meta property="article:published_time" content="2018-08-19T07:52:34.000Z">
-<meta property="article:modified_time" content="2026-11-24T20:06:21.987Z">
+<meta property="article:modified_time" content="2026-11-24T20:21:46.687Z">
 <meta property="article:author" content="ZoeTam">
 <meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
@@ -47,6 +48,35 @@
     lang   : 'en'
   };
 </script>
+<meta name="bi-title-en" content="HTML | ZoeTam&#39;s Blog">
+<script>
+(function () {
+  var lang;
+  try { lang = localStorage.getItem('bi-lang'); } catch (e) {}
+  if (lang !== 'zh' && lang !== 'en') {
+    lang = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+  }
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+})();
+</script>
+<style>
+html[data-lang="en"] .bi-zh,
+html:not([data-lang="en"]) .bi-en { display: none !important; }
+.bi-toggle {
+  position: fixed; top: 14px; right: 92px; z-index: 1100;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border: 1px solid #ddd; border-radius: 999px;
+  background: rgba(255, 255, 255, .92); color: #555;
+  font-size: 13px; line-height: 1.2; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  transition: border-color .2s, color .2s;
+}
+.bi-toggle:hover, .bi-toggle:focus-visible { border-color: #222; color: #222; outline: none; }
+.bi-toggle .bi-opt { opacity: .45; }
+.bi-toggle .bi-opt.is-on { opacity: 1; font-weight: 600; }
+@media (max-width: 767px) { .bi-toggle { top: auto; bottom: 16px; right: 16px; } }
+</style>
 
   <title>HTML | ZoeTam's Blog</title>
   
@@ -118,31 +148,31 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i><span class="bi-zh">首页</span><span class="bi-en">Home</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i><span class="bi-zh">关于</span><span class="bi-en">About</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">12</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i><span class="bi-zh">标签</span><span class="bi-en">Tags</span><span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">11</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i><span class="bi-zh">分类</span><span class="bi-en">Categories</span><span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">19</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i><span class="bi-zh">归档</span><span class="bi-en">Archives</span><span class="badge">19</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i><span class="bi-zh">搜索</span><span class="bi-en">Search</span>
         </a>
       </li>
   </ul>
@@ -213,7 +243,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          HTML
+          <span class="bi-zh">HTML</span><span class="bi-en">HTML</span>
         </h1>
 
         <div class="post-meta">
@@ -223,7 +253,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2018-08-19 11:52:34" itemprop="dateCreated datePublished" datetime="2018-08-19T11:52:34+04:00">2018-08-19</time>
             </span>
@@ -231,14 +261,14 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:21:46" itemprop="dateModified" datetime="2026-11-25T00:21:46+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
                 </span>
@@ -276,9 +306,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="HTML-CSS"><a href="#HTML-CSS" class="headerlink" title="HTML+CSS"></a>HTML+CSS</h1><ul>
-<li>外壳的框架<span id="more"></span>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Content-Type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/html; charset=utf-8&quot;</span>/&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--下面的title写的是你的标签名--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--这里面写的是你想要显示的东西--&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+        <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h1 id="HTML-CSS"><a href="#HTML-CSS" class="headerlink" title="HTML+CSS"></a>HTML+CSS</h1><ul>
+<li>外壳的框架</li>
+</ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h1 id="en-HTML-CSS"><a href="#en-HTML-CSS" class="headerlink" title="HTML+CSS"></a>HTML+CSS</h1><ul>
+<li>The basic page skeleton</li>
+</ul>
+<!--/bi:en--></div>
+<span id="more"></span>
+<div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Content-Type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/html; charset=utf-8&quot;</span>/&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--下面的title写的是你的标签名--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--这里面写的是你想要显示的东西--&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
 <li>&lt; p &gt;段落文本&lt; /p &gt;</li>
 </ul>
 <p><strong>一个&lt; p &gt;代表一个段落，这个是插入段落文本用的</strong></p>
@@ -428,6 +466,159 @@
 </blockquote>
 </li>
 </ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Content-Type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/html; charset=utf-8&quot;</span>/&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--The title below is the name shown on the browser tab--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--Put what you want to display in here--&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>&lt; p &gt;paragraph text&lt; /p &gt;</li>
+</ul>
+<p><strong>Each &lt; p &gt; is one paragraph. Use it to insert paragraph text.</strong></p>
+<hr>
+<ul>
+<li>&lt; hx &gt;heading text&lt; /hx &gt; (x is 1~6)</li>
+</ul>
+<p><strong>The x in hx is the heading size: h1 is the largest and h6 the smallest.</strong></p>
+<hr>
+<ul>
+<li>&lt; em &gt;italic tag&lt; /em &gt;</li>
+<li>&lt; strong &gt;bold tag&lt; /strong &gt;</li>
+</ul>
+<p><strong>Both tags mark text that needs emphasis. They just display the emphasis in different styles, and you can combine the two.</strong></p>
+<hr>
+<ul>
+<li>&lt; span &gt;tag&lt; /span &gt;</li>
+</ul>
+<p><strong>The &lt; span &gt; tag has no meaning of its own. It exists so you can give something its own style, like a custom CSS hook.</strong></p>
+<blockquote>
+<ul>
+<li>aqua: aqua</li>
+<li>black: black</li>
+<li>blue: blue</li>
+<li>fuchsia: fuchsia</li>
+<li>gray: gray</li>
+<li>green: green</li>
+<li>lime: lime</li>
+<li>maroon: maroon</li>
+<li>navy: navy</li>
+<li>olive: olive</li>
+<li>purple: purple</li>
+<li>red: red</li>
+<li>silver: silver</li>
+<li>teal: teal</li>
+<li>white: white</li>
+<li>yellow: yellow</li>
+</ul>
+<p><strong><em>For any other color, use a hexadecimal color value.</em></strong></p>
+</blockquote>
+<p><strong>The &lt; em &gt;&lt; /em &gt; and &lt; strong &gt;&lt; /strong &gt; tags highlight the key part of a sentence; their meaning is emphasis.</strong></p>
+<p><strong>&lt; strong &gt;&lt; /strong &gt; is used the same way as &lt; b &gt;&lt; /b &gt;; its meaning is emphasis.</strong></p>
+<hr>
+<ul>
+<li>The &lt; q &gt; tag, for short quotations<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q</span>&gt;</span>quoted text<span class="tag">&lt;/<span class="name">q</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>When you quote what someone said, you would normally mark it with double quotes, but in HTML you should use &lt; q &gt;&lt; /q &gt; instead.</strong></p>
+<p><strong>Text quoted this way does not need </strong>double quotes<strong>, because the browser adds them to q tags automatically.</strong></p>
+<blockquote>
+<p>Before adding &lt; q &gt;, the browser only sees some text with double quotes in it.</p>
+<blockquote>
+<p>After adding &lt; q &gt;, the browser knows this is a quotation.</p>
+<blockquote>
+<p>If the browser has its own enhancements (such as enlarging and bolding quotations for older readers), or if you style it in CSS, this starts to matter.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr>
+<ul>
+<li>&lt; blockquote &gt;&lt; /blockquote &gt;<blockquote>
+<p>Used for quoting long passages. This tag is rendered with an <strong>indented style</strong>.</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>How it differs from &lt; q &gt;&lt; /q &gt; above: first, it is for long quotations; second, it does not add double quotes automatically, but it is indented (&lt; q &gt;&lt; /q &gt; is not indented).</strong></p>
+<hr>
+<ul>
+<li>The &lt; br &gt; tag breaks text onto a new line<blockquote>
+<p>A &lt; br &gt;&lt; /br &gt; works like pressing Enter: it starts a new line.<br/><br><em><strong>This means that pressing Enter or typing spaces in HTML code has no effect. To start a new line in HTML text, you must use &lt; br &gt;</strong></em><br/><br><em><strong>while &lt; pre &gt;&lt; /pre &gt; keeps the spaces and line breaks in the text</strong></em></p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Typing &amp; n b s p; displays a space in HTML</li>
+</ul>
+<hr>
+<ul>
+<li>Typing &lt; hr/ &gt; adds a horizontal line</li>
+</ul>
+<hr>
+<ul>
+<li>The &lt; address &gt; tag adds address information to a page<blockquote>
+<p>Pages often need to show the site’s contact information, such as a company address. Use the &lt; address &gt; tag for this. It can also mark an address (such as an email address), a signature, or the author of a document.</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Use &lt; code &gt;&lt; /code &gt; to add code<blockquote>
+<p><em><strong>This stops the browser from treating the code as something to execute. With the tag, the browser will not run it.<br/><strong>It only works for a single line of code. For multiple lines, use &lt; pre &gt; instead of &lt; code &gt;</strong></p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Use &lt; ul &gt; to add a list of news items<blockquote>
+<p>Template:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  ……</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Use &lt; ol &gt; to add a numbered list<blockquote>
+<p><strong>The difference from the one above is that this list is numbered, while the one above only has bullet points</strong><br/></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span>item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span>item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   ......</span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>What the &lt; div &gt;&lt; /div &gt; tag does for layout<blockquote>
+<p>Think of an HTML page as a home, and each div as a small room in it. A room on its own does not do much, but a home has to be divided into rooms before it can come to life. How each room is decorated is up to you, and the decorating is the job of CSS.</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Writing tables with the table tag<blockquote>
+<p>The following code creates a table:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">HTML</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Content-Type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/html; charset=utf-8&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Getting to know the table tag<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>Class<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>Students<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>Average score<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>Class 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>30<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>89<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>Class 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>35<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>85<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>Class 3<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>32<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>80<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>The code above produces a table like this:</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/table.png?raw=true" alt="table"></p>
+<hr>
+<ul>
+<li><h3>You can add a CSS style to change how the table looks</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Add borders to a table<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css"><span class="selector-tag">table</span> <span class="selector-tag">tr</span> <span class="selector-tag">td</span>,<span class="selector-tag">th</span>&#123;<span class="attribute">border</span>:<span class="number">2px</span> solid <span class="number">#342</span>;&#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li>summary and caption add a summary and a title<blockquote>
+<p><strong>&lt; table summary=”summary text”&gt;</strong><br/><br>The summary above works like a comment in HTML. It is meant for programmers, so they do not edit the wrong table when there are many.<br/><br><strong>&lt; caption &gt;title text&lt; /caption &gt;</strong><br/><br>This adds a title (caption) to the table</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Hyperlinks with the &lt; a &gt; tag<blockquote>
+<p>Usage</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;target URL&quot;</span> <span class="attr">title</span>=<span class="string">&quot;text shown on hover&quot;</span>&gt;</span>link text<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><em>href: short for Hypertext Reference.</em><br/><br>The title attribute: its text appears when the mouse hovers over the link.<br/><br><em><strong>Note: once text is wrapped in an a tag, it automatically turns blue (and purple after it has been clicked)</strong></em></p>
+</blockquote>
+</li>
+</ul>
+<!--/bi:en--></div>
 
     </div>
 
@@ -455,8 +646,8 @@
       <i class="fa fa-chevron-left"></i> Django服务器部署到腾讯云
     </a></div>
       <div class="post-nav-item">
-    <a href="/2018/09/04/The%20analysis%20of%20android%20lifecycle/" rel="next" title="The analysis of android lifecycle">
-      The analysis of android lifecycle <i class="fa fa-chevron-right"></i>
+    <a href="/2018/09/04/The%20analysis%20of%20android%20lifecycle/" rel="next" title="Android生命周期的分析">
+      Android生命周期的分析 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -521,16 +712,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          <span class="bi-zh">文章目录</span><span class="bi-en">Table of Contents</span>
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          <span class="bi-zh">站点概览</span><span class="bi-en">Overview</span>
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-CSS"><span class="nav-number">1.</span> <span class="nav-text">HTML+CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.0.1.</span> <span class="nav-text">上面的代码可以添加一个CSS样式进行表格的变换</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><div class="bi-zh"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-CSS"><span class="nav-number">1.</span> <span class="nav-text">HTML+CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.0.1.</span> <span class="nav-text">上面的代码可以添加一个CSS样式进行表格的变换</span></a></li></ol></li></ol></li></ol></div><div class="bi-en"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#en-HTML-CSS"><span class="nav-number">1.</span> <span class="nav-text">HTML+CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.0.1.</span> <span class="nav-text">You can add a CSS style to change how the table looks</span></a></li></ol></li></ol></li></ol></div></div>
       </div>
       <!--/noindex-->
 
@@ -683,6 +874,40 @@
   
 
   
+
+<button type="button" class="bi-toggle" aria-label="切换语言 / Switch language" title="切换语言 / Switch language">
+  <span class="bi-opt" data-l="zh">中</span><span aria-hidden="true">/</span><span class="bi-opt" data-l="en">EN</span>
+</button>
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.querySelector('.bi-toggle');
+  var titleZh = document.title;
+  var metaEn = document.querySelector('meta[name="bi-title-en"]');
+  var titleEn = metaEn ? metaEn.getAttribute('content') : titleZh;
+
+  function apply(lang) {
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+    document.title = lang === 'en' ? titleEn : titleZh;
+    btn.querySelectorAll('.bi-opt').forEach(function (el) {
+      el.classList.toggle('is-on', el.getAttribute('data-l') === lang);
+    });
+    btn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+  }
+
+  apply(root.getAttribute('data-lang') === 'en' ? 'en' : 'zh');
+
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-lang') === 'en' ? 'zh' : 'en';
+    try { localStorage.setItem('bi-lang', next); } catch (e) {}
+    apply(next);
+    // 正文高度变了，让目录高亮和侧边栏重新计算位置
+    window.dispatchEvent(new Event('scroll'));
+    window.dispatchEvent(new Event('resize'));
+  });
+})();
+</script>
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 

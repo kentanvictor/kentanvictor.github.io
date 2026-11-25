@@ -20,17 +20,19 @@
     var CONFIG = {"hostname":"kentanvictor.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="GitWhat is Git? Git is the most advanced distributed version control system in the world.">
+  <meta name="description" content="GitGit是什么？ Git是目前世界上最先进的分布式版本控制系统。   GitWhat is Git? Git is the most advanced distributed version control system in the world.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git">
 <meta property="og:url" content="https://kentanvictor.github.io/2018/07/23/Git/index.html">
 <meta property="og:site_name" content="ZoeTam&#39;s Blog">
-<meta property="og:description" content="GitWhat is Git? Git is the most advanced distributed version control system in the world.">
+<meta property="og:description" content="GitGit是什么？ Git是目前世界上最先进的分布式版本控制系统。   GitWhat is Git? Git is the most advanced distributed version control system in the world.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/old_image/subversion.png?raw=true">
 <meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/old_image/git.png?raw=true">
+<meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/old_image/subversion.png?raw=true">
+<meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/old_image/git.png?raw=true">
 <meta property="article:published_time" content="2018-07-23T06:45:46.000Z">
-<meta property="article:modified_time" content="2026-11-24T20:06:21.987Z">
+<meta property="article:modified_time" content="2026-11-24T20:19:59.712Z">
 <meta property="article:author" content="ZoeTam">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -48,6 +50,35 @@
     lang   : 'en'
   };
 </script>
+<meta name="bi-title-en" content="Git | ZoeTam&#39;s Blog">
+<script>
+(function () {
+  var lang;
+  try { lang = localStorage.getItem('bi-lang'); } catch (e) {}
+  if (lang !== 'zh' && lang !== 'en') {
+    lang = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+  }
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+})();
+</script>
+<style>
+html[data-lang="en"] .bi-zh,
+html:not([data-lang="en"]) .bi-en { display: none !important; }
+.bi-toggle {
+  position: fixed; top: 14px; right: 92px; z-index: 1100;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border: 1px solid #ddd; border-radius: 999px;
+  background: rgba(255, 255, 255, .92); color: #555;
+  font-size: 13px; line-height: 1.2; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  transition: border-color .2s, color .2s;
+}
+.bi-toggle:hover, .bi-toggle:focus-visible { border-color: #222; color: #222; outline: none; }
+.bi-toggle .bi-opt { opacity: .45; }
+.bi-toggle .bi-opt.is-on { opacity: 1; font-weight: 600; }
+@media (max-width: 767px) { .bi-toggle { top: auto; bottom: 16px; right: 16px; } }
+</style>
 
   <title>Git | ZoeTam's Blog</title>
   
@@ -119,31 +150,31 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i><span class="bi-zh">首页</span><span class="bi-en">Home</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i><span class="bi-zh">关于</span><span class="bi-en">About</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">12</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i><span class="bi-zh">标签</span><span class="bi-en">Tags</span><span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">11</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i><span class="bi-zh">分类</span><span class="bi-en">Categories</span><span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">19</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i><span class="bi-zh">归档</span><span class="bi-en">Archives</span><span class="badge">19</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i><span class="bi-zh">搜索</span><span class="bi-en">Search</span>
         </a>
       </li>
   </ul>
@@ -214,7 +245,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Git
+          <span class="bi-zh">Git</span><span class="bi-en">Git</span>
         </h1>
 
         <div class="post-meta">
@@ -224,7 +255,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2018-07-23 10:45:46" itemprop="dateCreated datePublished" datetime="2018-07-23T10:45:46+04:00">2018-07-23</time>
             </span>
@@ -232,14 +263,14 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:19:59" itemprop="dateModified" datetime="2026-11-25T00:19:59+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
                 </span>
@@ -277,34 +308,69 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="What-is-Git"><a href="#What-is-Git" class="headerlink" title="What is Git?"></a>What is Git?</h2><ul>
-<li>Git is the most advanced distributed version control system in the world.<span id="more"></span>
-<h2 id="What-is-the-different-between-the-SVN-Subversion-and-the-Git"><a href="#What-is-the-different-between-the-SVN-Subversion-and-the-Git" class="headerlink" title="What is the different between the SVN(Subversion) and the Git?"></a>What is the different between the SVN(Subversion) and the Git?</h2></li>
-<li>SVN is a centralized version control system which version library  centralized packed in the central server.So if you need to do your work,you must go to the central server to download the latest version.When you finished your work,you have to push on the central server.It’s so inconvenient.Actually the centralized version control system must accessible networking.<h5 id="just-like-this-photo"><a href="#just-like-this-photo" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
+        <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="Git是什么？"><a href="#Git是什么？" class="headerlink" title="Git是什么？"></a>Git是什么？</h2><ul>
+<li>Git是目前世界上最先进的分布式版本控制系统。</li>
+</ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h1 id="en-Git"><a href="#en-Git" class="headerlink" title="Git"></a>Git</h1><h2 id="en-What-is-Git"><a href="#en-What-is-Git" class="headerlink" title="What is Git?"></a>What is Git?</h2><ul>
+<li>Git is the most advanced distributed version control system in the world.</li>
+</ul>
+<!--/bi:en--></div>
+<span id="more"></span>
+<div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h2 id="SVN-Subversion-和Git有什么区别？"><a href="#SVN-Subversion-和Git有什么区别？" class="headerlink" title="SVN(Subversion)和Git有什么区别？"></a>SVN(Subversion)和Git有什么区别？</h2><ul>
+<li>SVN是集中式版本控制系统，版本库集中存放在中央服务器上。所以干活的时候，必须先从中央服务器下载最新的版本；干完活之后，还得再推送回中央服务器，非常不方便。而且集中式版本控制系统必须联网才能工作。<h5 id="就像这张图这样"><a href="#就像这张图这样" class="headerlink" title="就像这张图这样"></a>就像这张图这样</h5></li>
 </ul>
 <p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/subversion.png?raw=true" alt=""></p>
 <ul>
-<li>Git is a distributed version control system,which advantaged is if it has not a central version,the LapTop is a rounded version library.because of this, you can work without using network.<h5 id="just-like-this-photo-1"><a href="#just-like-this-photo-1" class="headerlink" title="just like this photo"></a>just like this photo</h5></li>
+<li>Git是分布式版本控制系统，它的优点在于没有中央版本库，每台电脑上都是一个完整的版本库，因此不联网也可以工作。<h5 id="就像这张图这样-1"><a href="#就像这张图这样-1" class="headerlink" title="就像这张图这样"></a>就像这张图这样</h5></li>
 </ul>
 <p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/git.png?raw=true" alt=""></p>
-<h2 id="there-are-some-useful-command-lines"><a href="#there-are-some-useful-command-lines" class="headerlink" title="there are some useful command lines :"></a>there are some useful command lines :</h2><ul>
-<li>mkdir: XX (Create an empty directory)/<em>XX refer to directory name</em>/</li>
-<li>pwd: (Show the path to the current directory)</li>
-<li>git: init (Change the current directory to a managed  Git repository,create a hidden file)</li>
-<li>git add XX (Add  XX file to working-storage section)</li>
-<li>git commit -m “XX” (Add a comment to a file)/<em>XX is the comment</em>/</li>
-<li>git status (View warehouse status)</li>
-<li>git log (View history)</li>
-<li>git diff XX (View XX file what are modified)</li>
-<li>git rm XX (Delete XX file)</li>
-<li>cat XX (View file contents)</li>
-<li>git checkout -b A  (Create a A branch and switch to A branch)</li>
-<li>git checkout master (back to master branch)</li>
-<li>git clone HTTPS (clone from online warehouse)</li>
-<li>git branch name (create a branch)</li>
-<li>git branch -d A (Delete A branch)</li>
-<li>git push origin master (push master branch to online warehouse)<h1 id="如何使用Git-Bash"><a href="#如何使用Git-Bash" class="headerlink" title="如何使用Git Bash"></a>如何使用Git Bash</h1><h2 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h2>当需要上传一个项目到Github时，这个时候你需要在自己的Github上新建一个项目<br>New repository<br>然后在右下角有一个Clone or download<br>点击之后有一个Clone with HTTPS<br>Use Git or checkout with SVN using the web URL.<br>复制地址之后<br>在需要上传的项目文件中<br>右键，点击Git Bash Here之后<br>先输入 git clone + 地址<br>会出现一个项目名称的文件夹<br>里面有隐藏文件.git与ReadMe.md<br>将具有项目名称的文件夹中的全部内容剪切到需要上传的项目的根目录下<br>之后在Git Bash中输入<br>git add .<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是GitHub上面：<br>git push origin master<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2>当需要更新已经上传的项目时<br>直接在已经写好的更新过的项目中<br>右键，点击Git Bash Here<br>然后在命令行中输入<br>git pull + 地址<br>上传跟新过之后，需要在命令行中输入<br>git add .<br>之后的步骤又是重复着之前的了<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是Github上面：<br>git push origin master</li>
+<h2 id="一些常用的命令："><a href="#一些常用的命令：" class="headerlink" title="一些常用的命令："></a>一些常用的命令：</h2><ul>
+<li>mkdir: XX （创建一个空目录）/<em>XX指目录名</em>/</li>
+<li>pwd: （显示当前目录的路径）</li>
+<li>git: init （把当前目录变成Git可以管理的仓库，会生成一个隐藏文件）</li>
+<li>git add XX （把XX文件添加到暂存区）</li>
+<li>git commit -m “XX” （提交并添加说明）/<em>XX是说明内容</em>/</li>
+<li>git status （查看仓库状态）</li>
+<li>git log （查看历史记录）</li>
+<li>git diff XX （查看XX文件修改了哪些内容）</li>
+<li>git rm XX （删除XX文件）</li>
+<li>cat XX （查看文件内容）</li>
+<li>git checkout -b A （创建A分支并切换到A分支）</li>
+<li>git checkout master （切回master分支）</li>
+<li>git clone HTTPS （从远程仓库克隆）</li>
+<li>git branch name （创建一个分支）</li>
+<li>git branch -d A （删除A分支）</li>
+<li>git push origin master （把master分支推送到远程仓库）<h1 id="如何使用Git-Bash"><a href="#如何使用Git-Bash" class="headerlink" title="如何使用Git Bash"></a>如何使用Git Bash</h1><h2 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h2>当需要上传一个项目到Github时，这个时候你需要在自己的Github上新建一个项目<br>New repository<br>然后在右下角有一个Clone or download<br>点击之后有一个Clone with HTTPS<br>Use Git or checkout with SVN using the web URL.<br>复制地址之后<br>在需要上传的项目文件中<br>右键，点击Git Bash Here之后<br>先输入 git clone + 地址<br>会出现一个项目名称的文件夹<br>里面有隐藏文件.git与ReadMe.md<br>将具有项目名称的文件夹中的全部内容剪切到需要上传的项目的根目录下<br>之后在Git Bash中输入<br>git add .<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是GitHub上面：<br>git push origin master<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2>当需要更新已经上传的项目时<br>直接在已经写好的更新过的项目中<br>右键，点击Git Bash Here<br>然后在命令行中输入<br>git pull + 地址<br>上传跟新过之后，需要在命令行中输入<br>git add .<br>之后的步骤又是重复着之前的了<br>然后在本地执行提交操作<br>git commit -m “//在这里面输入你的内容，比如：First commit.”<br>最后将提交的内容同步到远程版本库，也就是Github上面：<br>git push origin master</li>
 </ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h2 id="en-What-is-the-difference-between-SVN-Subversion-and-Git"><a href="#en-What-is-the-difference-between-SVN-Subversion-and-Git" class="headerlink" title="What is the difference between SVN (Subversion) and Git?"></a>What is the difference between SVN (Subversion) and Git?</h2><ul>
+<li>SVN is a centralized version control system: the repository is kept in one place, on a central server. So before you start working, you have to download the latest version from the central server, and when you finish, you have to push your work back to it. That is very inconvenient. A centralized version control system also only works when you are connected to the network.<h5 id="en-Just-like-this-picture"><a href="#en-Just-like-this-picture" class="headerlink" title="Just like this picture"></a>Just like this picture</h5></li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/subversion.png?raw=true" alt=""></p>
+<ul>
+<li>Git is a distributed version control system. Its advantage is that there is no central repository: every laptop holds a complete repository, so you can work without a network connection.<h5 id="en-Just-like-this-picture-1"><a href="#en-Just-like-this-picture-1" class="headerlink" title="Just like this picture"></a>Just like this picture</h5></li>
+</ul>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/git.png?raw=true" alt=""></p>
+<h2 id="en-Some-useful-commands"><a href="#en-Some-useful-commands" class="headerlink" title="Some useful commands:"></a>Some useful commands:</h2><ul>
+<li>mkdir: XX (create an empty directory)/<em>XX is the directory name</em>/</li>
+<li>pwd: (show the path of the current directory)</li>
+<li>git: init (turn the current directory into a Git repository; this creates a hidden folder)</li>
+<li>git add XX (add file XX to the staging area)</li>
+<li>git commit -m “XX” (commit with a message)/<em>XX is the message</em>/</li>
+<li>git status (show the repository status)</li>
+<li>git log (show the history)</li>
+<li>git diff XX (show what has changed in file XX)</li>
+<li>git rm XX (delete file XX)</li>
+<li>cat XX (show the file contents)</li>
+<li>git checkout -b A (create branch A and switch to it)</li>
+<li>git checkout master (go back to the master branch)</li>
+<li>git clone HTTPS (clone from a remote repository)</li>
+<li>git branch name (create a branch)</li>
+<li>git branch -d A (delete branch A)</li>
+<li>git push origin master (push the master branch to the remote repository)<h1 id="en-How-to-use-Git-Bash"><a href="#en-How-to-use-Git-Bash" class="headerlink" title="How to use Git Bash"></a>How to use Git Bash</h1><h2 id="en-Create"><a href="#en-Create" class="headerlink" title="Create"></a>Create</h2>When you want to upload a project to GitHub, first create a new project on your GitHub account<br>New repository<br>Then there is a Clone or download button at the bottom right<br>Click it and you will see Clone with HTTPS<br>Use Git or checkout with SVN using the web URL.<br>Copy the address<br>In the folder of the project you want to upload<br>right-click and choose Git Bash Here<br>First type git clone + address<br>A folder with the project name will appear<br>It contains the hidden .git folder and ReadMe.md<br>Cut everything in that folder into the root directory of the project you want to upload<br>Then type in Git Bash<br>git add .<br>Then commit locally<br>git commit -m “//type your message here, e.g. First commit.”<br>Finally, sync the commit to the remote repository, that is, GitHub:<br>git push origin master<h2 id="en-Update"><a href="#en-Update" class="headerlink" title="Update"></a>Update</h2>When you need to update a project you have already uploaded<br>go to the updated project<br>right-click and choose Git Bash Here<br>then type in the command line<br>git pull + address<br>After pulling the updates, type in the command line<br>git add .<br>and repeat the same steps as before<br>Commit locally<br>git commit -m “//type your message here, e.g. First commit.”<br>Finally, sync the commit to the remote repository, that is, GitHub:<br>git push origin master</li>
+</ul>
+<!--/bi:en--></div>
 
     </div>
 
@@ -398,16 +464,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          <span class="bi-zh">文章目录</span><span class="bi-en">Table of Contents</span>
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          <span class="bi-zh">站点概览</span><span class="bi-en">Overview</span>
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-Git"><span class="nav-number">1.1.</span> <span class="nav-text">What is Git?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-the-different-between-the-SVN-Subversion-and-the-Git"><span class="nav-number">1.2.</span> <span class="nav-text">What is the different between the SVN(Subversion) and the Git?</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#just-like-this-photo"><span class="nav-number">1.2.0.0.1.</span> <span class="nav-text">just like this photo</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#just-like-this-photo-1"><span class="nav-number">1.2.0.0.2.</span> <span class="nav-text">just like this photo</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#there-are-some-useful-command-lines"><span class="nav-number">1.3.</span> <span class="nav-text">there are some useful command lines :</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Git-Bash"><span class="nav-number">2.</span> <span class="nav-text">如何使用Git Bash</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA"><span class="nav-number">2.1.</span> <span class="nav-text">新建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0"><span class="nav-number">2.2.</span> <span class="nav-text">更新</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><div class="bi-zh"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">Git是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN-Subversion-%E5%92%8CGit%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">SVN(Subversion)和Git有什么区别？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B0%B1%E5%83%8F%E8%BF%99%E5%BC%A0%E5%9B%BE%E8%BF%99%E6%A0%B7"><span class="nav-number">1.2.0.0.1.</span> <span class="nav-text">就像这张图这样</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B0%B1%E5%83%8F%E8%BF%99%E5%BC%A0%E5%9B%BE%E8%BF%99%E6%A0%B7-1"><span class="nav-number">1.2.0.0.2.</span> <span class="nav-text">就像这张图这样</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">一些常用的命令：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Git-Bash"><span class="nav-number">2.</span> <span class="nav-text">如何使用Git Bash</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA"><span class="nav-number">2.1.</span> <span class="nav-text">新建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0"><span class="nav-number">2.2.</span> <span class="nav-text">更新</span></a></li></ol></li></ol></div><div class="bi-en"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#en-Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-What-is-Git"><span class="nav-number">1.1.</span> <span class="nav-text">What is Git?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-What-is-the-difference-between-SVN-Subversion-and-Git"><span class="nav-number">1.2.</span> <span class="nav-text">What is the difference between SVN (Subversion) and Git?</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#en-Just-like-this-picture"><span class="nav-number">1.2.0.0.1.</span> <span class="nav-text">Just like this picture</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#en-Just-like-this-picture-1"><span class="nav-number">1.2.0.0.2.</span> <span class="nav-text">Just like this picture</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Some-useful-commands"><span class="nav-number">1.3.</span> <span class="nav-text">Some useful commands:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#en-How-to-use-Git-Bash"><span class="nav-number">2.</span> <span class="nav-text">How to use Git Bash</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Create"><span class="nav-number">2.1.</span> <span class="nav-text">Create</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Update"><span class="nav-number">2.2.</span> <span class="nav-text">Update</span></a></li></ol></li></ol></div></div>
       </div>
       <!--/noindex-->
 
@@ -560,6 +626,40 @@
   
 
   
+
+<button type="button" class="bi-toggle" aria-label="切换语言 / Switch language" title="切换语言 / Switch language">
+  <span class="bi-opt" data-l="zh">中</span><span aria-hidden="true">/</span><span class="bi-opt" data-l="en">EN</span>
+</button>
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.querySelector('.bi-toggle');
+  var titleZh = document.title;
+  var metaEn = document.querySelector('meta[name="bi-title-en"]');
+  var titleEn = metaEn ? metaEn.getAttribute('content') : titleZh;
+
+  function apply(lang) {
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+    document.title = lang === 'en' ? titleEn : titleZh;
+    btn.querySelectorAll('.bi-opt').forEach(function (el) {
+      el.classList.toggle('is-on', el.getAttribute('data-l') === lang);
+    });
+    btn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+  }
+
+  apply(root.getAttribute('data-lang') === 'en' ? 'en' : 'zh');
+
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-lang') === 'en' ? 'zh' : 'en';
+    try { localStorage.setItem('bi-lang', next); } catch (e) {}
+    apply(next);
+    // 正文高度变了，让目录高亮和侧边栏重新计算位置
+    window.dispatchEvent(new Event('scroll'));
+    window.dispatchEvent(new Event('resize'));
+  });
+})();
+</script>
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 

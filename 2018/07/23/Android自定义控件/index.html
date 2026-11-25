@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"kentanvictor.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Android属性动画的分类 View Animation(补间) Drawable Animation(帧动画) Property Animation(Android3.0新引入)">
+  <meta name="description" content="Android属性动画的分类 View Animation(补间) Drawable Animation(帧动画) Property Animation(Android3.0新引入)   Types of Android animation View Animation (tweened) Drawable Animation (frame-by-frame) Property Animation">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android自定义控件">
 <meta property="og:url" content="https://kentanvictor.github.io/2018/07/23/Android%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/index.html">
 <meta property="og:site_name" content="ZoeTam&#39;s Blog">
-<meta property="og:description" content="Android属性动画的分类 View Animation(补间) Drawable Animation(帧动画) Property Animation(Android3.0新引入)">
+<meta property="og:description" content="Android属性动画的分类 View Animation(补间) Drawable Animation(帧动画) Property Animation(Android3.0新引入)   Types of Android animation View Animation (tweened) Drawable Animation (frame-by-frame) Property Animation">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-07-23T06:45:23.000Z">
-<meta property="article:modified_time" content="2026-11-24T20:06:21.986Z">
+<meta property="article:modified_time" content="2026-11-24T20:21:45.813Z">
 <meta property="article:author" content="ZoeTam">
 <meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
@@ -45,6 +45,35 @@
     lang   : 'en'
   };
 </script>
+<meta name="bi-title-en" content="Android Custom Views | ZoeTam&#39;s Blog">
+<script>
+(function () {
+  var lang;
+  try { lang = localStorage.getItem('bi-lang'); } catch (e) {}
+  if (lang !== 'zh' && lang !== 'en') {
+    lang = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+  }
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+})();
+</script>
+<style>
+html[data-lang="en"] .bi-zh,
+html:not([data-lang="en"]) .bi-en { display: none !important; }
+.bi-toggle {
+  position: fixed; top: 14px; right: 92px; z-index: 1100;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border: 1px solid #ddd; border-radius: 999px;
+  background: rgba(255, 255, 255, .92); color: #555;
+  font-size: 13px; line-height: 1.2; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  transition: border-color .2s, color .2s;
+}
+.bi-toggle:hover, .bi-toggle:focus-visible { border-color: #222; color: #222; outline: none; }
+.bi-toggle .bi-opt { opacity: .45; }
+.bi-toggle .bi-opt.is-on { opacity: 1; font-weight: 600; }
+@media (max-width: 767px) { .bi-toggle { top: auto; bottom: 16px; right: 16px; } }
+</style>
 
   <title>Android自定义控件 | ZoeTam's Blog</title>
   
@@ -116,31 +145,31 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i><span class="bi-zh">首页</span><span class="bi-en">Home</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i><span class="bi-zh">关于</span><span class="bi-en">About</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">12</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i><span class="bi-zh">标签</span><span class="bi-en">Tags</span><span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">11</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i><span class="bi-zh">分类</span><span class="bi-en">Categories</span><span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">19</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i><span class="bi-zh">归档</span><span class="bi-en">Archives</span><span class="badge">19</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i><span class="bi-zh">搜索</span><span class="bi-en">Search</span>
         </a>
       </li>
   </ul>
@@ -211,7 +240,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Android自定义控件
+          <span class="bi-zh">Android自定义控件</span><span class="bi-en">Android Custom Views</span>
         </h1>
 
         <div class="post-meta">
@@ -221,7 +250,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2018-07-23 10:45:23" itemprop="dateCreated datePublished" datetime="2018-07-23T10:45:23+04:00">2018-07-23</time>
             </span>
@@ -229,14 +258,14 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:21:45" itemprop="dateModified" datetime="2026-11-25T00:21:45+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
                 </span>
@@ -274,13 +303,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="Android属性动画的分类"><a href="#Android属性动画的分类" class="headerlink" title="Android属性动画的分类"></a>Android属性动画的分类</h3><ul>
+        <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h3 id="Android属性动画的分类"><a href="#Android属性动画的分类" class="headerlink" title="Android属性动画的分类"></a>Android属性动画的分类</h3><ul>
 <li>View Animation(补间)</li>
 <li>Drawable Animation(帧动画)</li>
 <li>Property Animation(Android3.0新引入)</li>
 </ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h3 id="en-Types-of-Android-animation"><a href="#en-Types-of-Android-animation" class="headerlink" title="Types of Android animation"></a>Types of Android animation</h3><ul>
+<li>View Animation (tweened)</li>
+<li>Drawable Animation (frame-by-frame)</li>
+<li>Property Animation (new in Android 3.0)</li>
+</ul>
+<!--/bi:en--></div>
 <span id="more"></span>
-<h4 id="View-Animation"><a href="#View-Animation" class="headerlink" title="View Animation"></a>View Animation</h4><ul>
+<div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h4 id="View-Animation"><a href="#View-Animation" class="headerlink" title="View Animation"></a>View Animation</h4><ul>
 <li>基于view的渐变动画，只改变view的绘制效果，而实际属性值未该改变。</li>
 <li>比如：动画移动一个按钮位置，但按钮点击的实际位置仍未改变。</li>
 <li>代码中定义动画，可以参考<code>AnimationSet</code>类和<code>Animation</code>的子类。</li>
@@ -312,6 +348,40 @@
 <li>第三：准备数据</li>
 <li>第四：设置适配器(PagerAdapter)-item-布局-绑定数据</li>
 </ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h4 id="en-View-Animation"><a href="#en-View-Animation" class="headerlink" title="View Animation"></a>View Animation</h4><ul>
+<li>Tweened animation on a view. It only changes how the view is drawn; the actual property values do not change.</li>
+<li>For example: if you animate a button to a new position, the area you actually click on stays where it was.</li>
+<li>To define the animation in code, see the <code>AnimationSet</code> class and the subclasses of <code>Animation</code>.</li>
+<li>If you use XML, you can define XML files in the res/anim/ folder.</li>
+<li>Here is an example<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">TranslateAnimation animation = <span class="keyword">new</span> TranslateAnimation(<span class="number">0</span>,iv_animation.getWidth(),<span class="number">0</span>,iv_animation.getHight());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">iv_animation is the id of the image to move</span></span><br><span class="line"><span class="comment">The TranslateAnimation constructor moves the image from 0 (its original position) by the image&#x27;s width (iv_animation.getWidth);</span></span><br><span class="line"><span class="comment">the vertical movement works the same way</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">animation.setDuration(<span class="number">3000</span>);<span class="comment">//set the duration</span></span><br><span class="line">animation.setFillAfter(<span class="keyword">true</span>);<span class="comment">//keep the view where it ends instead of resetting it</span></span><br><span class="line">iv_animation.startAnimation(animation);<span class="comment">//start moving</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="en-Drawable-Animation"><a href="#en-Drawable-Animation" class="headerlink" title="Drawable Animation"></a>Drawable Animation</h4><ul>
+<li>Loads a series of Drawable resources to create an animation. This traditional kind of animation is basically a sequence of images played in order, like a film reel.</li>
+<li>To define the frames in code, use the <code>AnimationDrawable</code> class.</li>
+<li>XML makes it easier to put frames together: in the <code>res/drawable</code> folder, use <code>&lt;animation-list&gt;</code> with <code>&lt;item&gt;</code> elements to define each frame.</li>
+<li>Note: it seems the only property you can set is the interval between frames.</li>
+</ul>
+<h4 id="en-Property-Animation"><a href="#en-Property-Animation" class="headerlink" title="Property Animation"></a>Property Animation</h4><ul>
+<li>Besides traditional view objects, the animated target can be any Object. After the animation, the Object’s property values really have changed.</li>
+<li>Property Animation animates a view by changing the view object’s actual properties.</li>
+<li>Whenever a view property changes, the view automatically calls invalidate() to refresh.</li>
+<li>Here is an example<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ObjectAnimator animator = ObjectAnimator.ofFloat(iv_animation,<span class="string">&quot;translationX&quot;</span>,<span class="number">0</span>,iv_animation.getWidth());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Use ObjectAnimator.ofFloat to translate</span></span><br><span class="line"><span class="comment">ofFloat(target, &quot;how to move, e.g. horizontally -&gt; translationX&quot;, start position, distance);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">ObjectAnimator animator2 = ObjectAnimator.ofFloat(iv_animation,<span class="string">&quot;translationY&quot;</span>,<span class="number">0</span>,iv_animation.getHight());</span><br><span class="line">AnimatorSet animatorSet = <span class="keyword">new</span> AnimatorSet();</span><br><span class="line">AnimatorSet.setDuration(<span class="number">2000</span>);</span><br><span class="line">AnimatorSet.setInterpolator(<span class="keyword">new</span> BounceInterpolator());</span><br><span class="line"><span class="comment">//play both animations together</span></span><br><span class="line">animatorSet.playTogether(animator,animator2);</span><br><span class="line"><span class="comment">//start playing</span></span><br><span class="line">animatorSet.start();</span><br></pre></td></tr></table></figure></li>
+<li>Another way to write it<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">iv_animation.animate()</span><br><span class="line">            .translationXBy(iv_animation.getWidth())</span><br><span class="line">            .translationYBy(iv_animation.getHight())</span><br><span class="line">            .setDuration(<span class="number">2000</span>)</span><br><span class="line">            .setInterpolator(<span class="keyword">new</span> BounceInterpolator())</span><br><span class="line">            .start();</span><br></pre></td></tr></table></figure>
+<h3 id="en-ViewPager-banner-effect"><a href="#en-ViewPager-banner-effect" class="headerlink" title="ViewPager (banner effect)"></a>ViewPager (banner effect)</h3></li>
+<li>Using ViewPager</li>
+<li>Basic features of a banner</li>
+<li>Extending ViewPager</li>
+<li>Turning it into an onboarding screen</li>
+</ul>
+<h4 id="en-Using-ViewPager"><a href="#en-Using-ViewPager" class="headerlink" title="Using ViewPager"></a>Using ViewPager</h4><ul>
+<li>First: define <code>android.support.v4.view.ViewPager</code> in the layout file</li>
+<li>Second: instantiate the ViewPager in code</li>
+<li>Third: prepare the data</li>
+<li>Fourth: set the adapter (PagerAdapter) - item - layout - bind the data</li>
+</ul>
+<!--/bi:en--></div>
 
     </div>
 
@@ -405,16 +475,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          <span class="bi-zh">文章目录</span><span class="bi-en">Table of Contents</span>
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          <span class="bi-zh">站点概览</span><span class="bi-en">Overview</span>
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">Android属性动画的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#View-Animation"><span class="nav-number">1.1.</span> <span class="nav-text">View Animation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Drawable-Animation"><span class="nav-number">1.2.</span> <span class="nav-text">Drawable Animation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Property-Animation-%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB"><span class="nav-number">1.3.</span> <span class="nav-text">Property Animation(属性动画)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ViewPager-%E5%B9%BF%E5%91%8A%E6%9D%A1%E6%95%88%E6%9E%9C"><span class="nav-number">2.</span> <span class="nav-text">ViewPager(广告条效果)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ViewPager%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">2.1.</span> <span class="nav-text">ViewPager的使用</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><div class="bi-zh"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">Android属性动画的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#View-Animation"><span class="nav-number">1.1.</span> <span class="nav-text">View Animation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Drawable-Animation"><span class="nav-number">1.2.</span> <span class="nav-text">Drawable Animation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Property-Animation-%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB"><span class="nav-number">1.3.</span> <span class="nav-text">Property Animation(属性动画)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ViewPager-%E5%B9%BF%E5%91%8A%E6%9D%A1%E6%95%88%E6%9E%9C"><span class="nav-number">2.</span> <span class="nav-text">ViewPager(广告条效果)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ViewPager%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">2.1.</span> <span class="nav-text">ViewPager的使用</span></a></li></ol></li></ol></div><div class="bi-en"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-Types-of-Android-animation"><span class="nav-number">1.</span> <span class="nav-text">Types of Android animation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#en-View-Animation"><span class="nav-number">1.1.</span> <span class="nav-text">View Animation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#en-Drawable-Animation"><span class="nav-number">1.2.</span> <span class="nav-text">Drawable Animation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#en-Property-Animation"><span class="nav-number">1.3.</span> <span class="nav-text">Property Animation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-ViewPager-banner-effect"><span class="nav-number">2.</span> <span class="nav-text">ViewPager (banner effect)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#en-Using-ViewPager"><span class="nav-number">2.1.</span> <span class="nav-text">Using ViewPager</span></a></li></ol></li></ol></div></div>
       </div>
       <!--/noindex-->
 
@@ -567,6 +637,40 @@
   
 
   
+
+<button type="button" class="bi-toggle" aria-label="切换语言 / Switch language" title="切换语言 / Switch language">
+  <span class="bi-opt" data-l="zh">中</span><span aria-hidden="true">/</span><span class="bi-opt" data-l="en">EN</span>
+</button>
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.querySelector('.bi-toggle');
+  var titleZh = document.title;
+  var metaEn = document.querySelector('meta[name="bi-title-en"]');
+  var titleEn = metaEn ? metaEn.getAttribute('content') : titleZh;
+
+  function apply(lang) {
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+    document.title = lang === 'en' ? titleEn : titleZh;
+    btn.querySelectorAll('.bi-opt').forEach(function (el) {
+      el.classList.toggle('is-on', el.getAttribute('data-l') === lang);
+    });
+    btn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+  }
+
+  apply(root.getAttribute('data-lang') === 'en' ? 'en' : 'zh');
+
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-lang') === 'en' ? 'zh' : 'en';
+    try { localStorage.setItem('bi-lang', next); } catch (e) {}
+    apply(next);
+    // 正文高度变了，让目录高亮和侧边栏重新计算位置
+    window.dispatchEvent(new Event('scroll'));
+    window.dispatchEvent(new Event('resize'));
+  });
+})();
+</script>
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 

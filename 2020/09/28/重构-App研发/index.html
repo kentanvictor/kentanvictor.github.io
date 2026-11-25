@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"kentanvictor.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="重构，夜未眠为Activity定义新的生命周期重点：单一职责-&gt;一个类或者方法，只做一件事情">
+  <meta name="description" content="重构，夜未眠为Activity定义新的生命周期重点：单一职责-&gt;一个类或者方法，只做一件事情  Refactoring, Sleepless NightsDefining a new lifecycle for ActivityKey point: single responsibility -&gt; a class or a method should do only one thing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="重构-App研发">
 <meta property="og:url" content="https://kentanvictor.github.io/2020/09/28/%E9%87%8D%E6%9E%84-App%E7%A0%94%E5%8F%91/index.html">
 <meta property="og:site_name" content="ZoeTam&#39;s Blog">
-<meta property="og:description" content="重构，夜未眠为Activity定义新的生命周期重点：单一职责-&gt;一个类或者方法，只做一件事情">
+<meta property="og:description" content="重构，夜未眠为Activity定义新的生命周期重点：单一职责-&gt;一个类或者方法，只做一件事情  Refactoring, Sleepless NightsDefining a new lifecycle for ActivityKey point: single responsibility -&gt; a class or a method should do only one thing">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-28T18:33:35.000Z">
-<meta property="article:modified_time" content="2026-11-24T20:06:21.990Z">
+<meta property="article:modified_time" content="2026-11-24T20:21:47.913Z">
 <meta property="article:author" content="ZoeTam">
 <meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
@@ -45,6 +45,35 @@
     lang   : 'en'
   };
 </script>
+<meta name="bi-title-en" content="Refactoring - App Development | ZoeTam&#39;s Blog">
+<script>
+(function () {
+  var lang;
+  try { lang = localStorage.getItem('bi-lang'); } catch (e) {}
+  if (lang !== 'zh' && lang !== 'en') {
+    lang = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+  }
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+})();
+</script>
+<style>
+html[data-lang="en"] .bi-zh,
+html:not([data-lang="en"]) .bi-en { display: none !important; }
+.bi-toggle {
+  position: fixed; top: 14px; right: 92px; z-index: 1100;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border: 1px solid #ddd; border-radius: 999px;
+  background: rgba(255, 255, 255, .92); color: #555;
+  font-size: 13px; line-height: 1.2; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  transition: border-color .2s, color .2s;
+}
+.bi-toggle:hover, .bi-toggle:focus-visible { border-color: #222; color: #222; outline: none; }
+.bi-toggle .bi-opt { opacity: .45; }
+.bi-toggle .bi-opt.is-on { opacity: 1; font-weight: 600; }
+@media (max-width: 767px) { .bi-toggle { top: auto; bottom: 16px; right: 16px; } }
+</style>
 
   <title>重构-App研发 | ZoeTam's Blog</title>
   
@@ -116,31 +145,31 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i><span class="bi-zh">首页</span><span class="bi-en">Home</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i><span class="bi-zh">关于</span><span class="bi-en">About</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">12</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i><span class="bi-zh">标签</span><span class="bi-en">Tags</span><span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">11</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i><span class="bi-zh">分类</span><span class="bi-en">Categories</span><span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">19</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i><span class="bi-zh">归档</span><span class="bi-en">Archives</span><span class="badge">19</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i><span class="bi-zh">搜索</span><span class="bi-en">Search</span>
         </a>
       </li>
   </ul>
@@ -211,7 +240,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          重构-App研发
+          <span class="bi-zh">重构-App研发</span><span class="bi-en">Refactoring - App Development</span>
         </h1>
 
         <div class="post-meta">
@@ -221,7 +250,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2020-09-28 22:33:35" itemprop="dateCreated datePublished" datetime="2020-09-28T22:33:35+04:00">2020-09-28</time>
             </span>
@@ -229,14 +258,14 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:21:47" itemprop="dateModified" datetime="2026-11-25T00:21:47+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
                 </span>
@@ -274,9 +303,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="重构，夜未眠"><a href="#重构，夜未眠" class="headerlink" title="重构，夜未眠"></a>重构，夜未眠</h1><h2 id="为Activity定义新的生命周期"><a href="#为Activity定义新的生命周期" class="headerlink" title="为Activity定义新的生命周期"></a>为Activity定义新的生命周期</h2><p>重点：<code>单一职责</code>-&gt;一个类或者方法，只做一件事情</p>
+        <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h1 id="重构，夜未眠"><a href="#重构，夜未眠" class="headerlink" title="重构，夜未眠"></a>重构，夜未眠</h1><h2 id="为Activity定义新的生命周期"><a href="#为Activity定义新的生命周期" class="headerlink" title="为Activity定义新的生命周期"></a>为Activity定义新的生命周期</h2><p>重点：<code>单一职责</code>-&gt;一个类或者方法，只做一件事情</p>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h1 id="en-Refactoring-Sleepless-Nights"><a href="#en-Refactoring-Sleepless-Nights" class="headerlink" title="Refactoring, Sleepless Nights"></a>Refactoring, Sleepless Nights</h1><h2 id="en-Defining-a-new-lifecycle-for-Activity"><a href="#en-Defining-a-new-lifecycle-for-Activity" class="headerlink" title="Defining a new lifecycle for Activity"></a>Defining a new lifecycle for Activity</h2><p>Key point: <code>single responsibility</code> -&gt; a class or a method should do only one thing</p>
+<!--/bi:en--></div>
 <span id="more"></span>
-<h3 id="重构一："><a href="#重构一：" class="headerlink" title="重构一："></a>重构一：</h3><ul>
+<div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h3 id="重构一："><a href="#重构一：" class="headerlink" title="重构一："></a>重构一：</h3><ul>
 <li>原来的代码结构：</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">onClickListener</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle saveInstanceState)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        Bundle bundle = getIntent().getExtras();</span><br><span class="line">        String strEmail = bundle.getString(AppConstants.Email);</span><br><span class="line"></span><br><span class="line">        etEmail = (EditText) findViewById(R.id.email);</span><br><span class="line">        etEmail.setText(strEmail);</span><br><span class="line">        etPassword = (EditText) findViewById(R.id.password);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//登录事件</span></span><br><span class="line">        Button btnLogin = (Button) findViewById(R.id.sign_in_button);</span><br><span class="line">        btnLogin.setOnClickListener(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取2个MobileAPI，获取天气数据，获取城市数据</span></span><br><span class="line">        loadWeatherData();</span><br><span class="line">        loadCityData();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -306,7 +338,39 @@
 <li>直接在btnLogin这个按钮对象上增加点击事件，是面向对象的写法。</li>
 <li>将onClick方面的实现，封装成一个gotoLoginActivity方法。</li>
 </ul>
-<h2 id="实体化编程"><a href="#实体化编程" class="headerlink" title="实体化编程"></a>实体化编程</h2>
+<h2 id="实体化编程"><a href="#实体化编程" class="headerlink" title="实体化编程"></a>实体化编程</h2><!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h3 id="en-Refactoring-1"><a href="#en-Refactoring-1" class="headerlink" title="Refactoring 1:"></a>Refactoring 1:</h3><ul>
+<li>The original code:</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">onClickListener</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle saveInstanceState)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        Bundle bundle = getIntent().getExtras();</span><br><span class="line">        String strEmail = bundle.getString(AppConstants.Email);</span><br><span class="line"></span><br><span class="line">        etEmail = (EditText) findViewById(R.id.email);</span><br><span class="line">        etEmail.setText(strEmail);</span><br><span class="line">        etPassword = (EditText) findViewById(R.id.password);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Login event</span></span><br><span class="line">        Button btnLogin = (Button) findViewById(R.id.sign_in_button);</span><br><span class="line">        btnLogin.setOnClickListener(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Call 2 MobileAPIs: fetch weather data and fetch city data</span></span><br><span class="line">        loadWeatherData();</span><br><span class="line">        loadCityData();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>The onCreate() method above clearly does too many things. It can be simplified into three parts:</p>
+<ul>
+<li><p>initVariables</p>
+</li>
+<li><p>initViews</p>
+</li>
+<li><p>loadData</p>
+</li>
+</ul>
+<p>The code:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle saveInstanceState)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line"></span><br><span class="line">        initVariables();</span><br><span class="line">        initViews(savedInstanceState);</span><br><span class="line">        loadData();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">initVariables</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">initViews</span><span class="params">(Bundle savedInstanceState)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">loadData</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="en-Refactoring-2"><a href="#en-Refactoring-2" class="headerlink" title="Refactoring 2:"></a>Refactoring 2:</h3><p>There are generally two ways to listen for click events:</p>
+<ul>
+<li>Option 1:</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span></span>&#123;</span><br><span class="line">        <span class="comment">//Code omitted</span></span><br><span class="line"></span><br><span class="line">        Button btnLogin = (Button)findViewById(R.id.sign_in_button);</span><br><span class="line">        btnLogin.setOnClickListener(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span></span>&#123;</span><br><span class="line">        <span class="keyword">switch</span>(v.getId())&#123;</span><br><span class="line">            <span class="keyword">case</span> R.id.sign_in_button:</span><br><span class="line">                Intent intent = <span class="keyword">new</span> Intent(LoginActivity.<span class="keyword">this</span>,PersonCenterActivity.class);</span><br><span class="line">                startActivity(intent);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Option 2:</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//Login event</span></span><br><span class="line">btnLogin = (Button) findViewById(R.id.sign_in_button);</span><br><span class="line">btnLogin.setOnClickListener(<span class="keyword">new</span> View.OnClickListener&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span></span>&#123;</span><br><span class="line">        getoLoginActivity();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>The book recommends <code>option 2</code>, for these reasons.</p>
+<p>Compared with option 1, option 2:</p>
+<ul>
+<li>Adds the click listener directly on the btnLogin button object, which is the object-oriented way to write it.</li>
+<li>Wraps the onClick logic in its own gotoLoginActivity method.</li>
+</ul>
+<h2 id="en-Entity-based-programming"><a href="#en-Entity-based-programming" class="headerlink" title="Entity-based programming"></a>Entity-based programming</h2><!--/bi:en--></div>
+
     </div>
 
     
@@ -333,8 +397,8 @@
       <i class="fa fa-chevron-left"></i> C++并发的世界
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/10/14/Research%20of%20Geotiff%20Format%20File%20Tile/" rel="next" title="Tile Geotiff Format File">
-      Tile Geotiff Format File <i class="fa fa-chevron-right"></i>
+    <a href="/2022/10/14/Research%20of%20Geotiff%20Format%20File%20Tile/" rel="next" title="GeoTiff格式文件切片">
+      GeoTiff格式文件切片 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -399,16 +463,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          <span class="bi-zh">文章目录</span><span class="bi-en">Table of Contents</span>
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          <span class="bi-zh">站点概览</span><span class="bi-en">Overview</span>
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8D%E6%9E%84%EF%BC%8C%E5%A4%9C%E6%9C%AA%E7%9C%A0"><span class="nav-number">1.</span> <span class="nav-text">重构，夜未眠</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BAActivity%E5%AE%9A%E4%B9%89%E6%96%B0%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">1.1.</span> <span class="nav-text">为Activity定义新的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E6%9E%84%E4%B8%80%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">重构一：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E6%9E%84%E4%BA%8C%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">重构二：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E4%BD%93%E5%8C%96%E7%BC%96%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">实体化编程</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><div class="bi-zh"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8D%E6%9E%84%EF%BC%8C%E5%A4%9C%E6%9C%AA%E7%9C%A0"><span class="nav-number">1.</span> <span class="nav-text">重构，夜未眠</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BAActivity%E5%AE%9A%E4%B9%89%E6%96%B0%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">1.1.</span> <span class="nav-text">为Activity定义新的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E6%9E%84%E4%B8%80%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">重构一：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E6%9E%84%E4%BA%8C%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">重构二：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E4%BD%93%E5%8C%96%E7%BC%96%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">实体化编程</span></a></li></ol></li></ol></div><div class="bi-en"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#en-Refactoring-Sleepless-Nights"><span class="nav-number">1.</span> <span class="nav-text">Refactoring, Sleepless Nights</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Defining-a-new-lifecycle-for-Activity"><span class="nav-number">1.1.</span> <span class="nav-text">Defining a new lifecycle for Activity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-Refactoring-1"><span class="nav-number">1.1.1.</span> <span class="nav-text">Refactoring 1:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-Refactoring-2"><span class="nav-number">1.1.2.</span> <span class="nav-text">Refactoring 2:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Entity-based-programming"><span class="nav-number">1.2.</span> <span class="nav-text">Entity-based programming</span></a></li></ol></li></ol></div></div>
       </div>
       <!--/noindex-->
 
@@ -561,6 +625,40 @@
   
 
   
+
+<button type="button" class="bi-toggle" aria-label="切换语言 / Switch language" title="切换语言 / Switch language">
+  <span class="bi-opt" data-l="zh">中</span><span aria-hidden="true">/</span><span class="bi-opt" data-l="en">EN</span>
+</button>
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.querySelector('.bi-toggle');
+  var titleZh = document.title;
+  var metaEn = document.querySelector('meta[name="bi-title-en"]');
+  var titleEn = metaEn ? metaEn.getAttribute('content') : titleZh;
+
+  function apply(lang) {
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+    document.title = lang === 'en' ? titleEn : titleZh;
+    btn.querySelectorAll('.bi-opt').forEach(function (el) {
+      el.classList.toggle('is-on', el.getAttribute('data-l') === lang);
+    });
+    btn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+  }
+
+  apply(root.getAttribute('data-lang') === 'en' ? 'en' : 'zh');
+
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-lang') === 'en' ? 'zh' : 'en';
+    try { localStorage.setItem('bi-lang', next); } catch (e) {}
+    apply(next);
+    // 正文高度变了，让目录高亮和侧边栏重新计算位置
+    window.dispatchEvent(new Event('scroll'));
+    window.dispatchEvent(new Event('resize'));
+  });
+})();
+</script>
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 

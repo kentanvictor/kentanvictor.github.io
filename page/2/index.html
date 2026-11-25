@@ -43,6 +43,35 @@
   };
 </script>
 
+<script>
+(function () {
+  var lang;
+  try { lang = localStorage.getItem('bi-lang'); } catch (e) {}
+  if (lang !== 'zh' && lang !== 'en') {
+    lang = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+  }
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+})();
+</script>
+<style>
+html[data-lang="en"] .bi-zh,
+html:not([data-lang="en"]) .bi-en { display: none !important; }
+.bi-toggle {
+  position: fixed; top: 14px; right: 92px; z-index: 1100;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border: 1px solid #ddd; border-radius: 999px;
+  background: rgba(255, 255, 255, .92); color: #555;
+  font-size: 13px; line-height: 1.2; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  transition: border-color .2s, color .2s;
+}
+.bi-toggle:hover, .bi-toggle:focus-visible { border-color: #222; color: #222; outline: none; }
+.bi-toggle .bi-opt { opacity: .45; }
+.bi-toggle .bi-opt.is-on { opacity: 1; font-weight: 600; }
+@media (max-width: 767px) { .bi-toggle { top: auto; bottom: 16px; right: 16px; } }
+</style>
+
   <title>ZoeTam's Blog</title>
   
 
@@ -113,31 +142,31 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i><span class="bi-zh">首页</span><span class="bi-en">Home</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i><span class="bi-zh">关于</span><span class="bi-en">About</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">12</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i><span class="bi-zh">标签</span><span class="bi-en">Tags</span><span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">11</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i><span class="bi-zh">分类</span><span class="bi-en">Categories</span><span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">19</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i><span class="bi-zh">归档</span><span class="bi-en">Archives</span><span class="badge">19</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i><span class="bi-zh">搜索</span><span class="bi-en">Search</span>
         </a>
       </li>
   </ul>
@@ -208,7 +237,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/01/22/JavaIO/" class="post-title-link" itemprop="url">JavaIO</a>
+            <a href="/2019/01/22/JavaIO/" class="post-title-link" itemprop="url"><span class="bi-zh">JavaIO</span><span class="bi-en">Java IO</span></a>
         </h2>
 
         <div class="post-meta">
@@ -218,7 +247,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2019-01-22 09:47:51" itemprop="dateCreated datePublished" datetime="2019-01-22T09:47:51+04:00">2019-01-22</time>
             </span>
@@ -226,14 +255,14 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:21:46" itemprop="dateModified" datetime="2026-11-25T00:21:46+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
                 </span>
@@ -271,7 +300,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="javaIO"><a href="#javaIO" class="headerlink" title="javaIO"></a>javaIO</h1><p>标签： javaIO</p>
+          <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h1 id="javaIO"><a href="#javaIO" class="headerlink" title="javaIO"></a>javaIO</h1><p>标签： javaIO</p>
 <hr>
 <p><strong>Contents</strong></p>
 <ul>
@@ -287,10 +316,28 @@
 </li>
 </ul>
 <hr>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h1 id="en-Java-IO"><a href="#en-Java-IO" class="headerlink" title="Java IO"></a>Java IO</h1><p>Tags: javaIO</p>
+<hr>
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="#en-The-concept-and-role-of-streams">What are IO streams</a><ul>
+<li><a href="#en-Types-of-IO-streams">Types of IO streams</a></li>
+<li><a href="#en-Character-streams-and-byte-streams">Character streams and byte streams</a></li>
+</ul>
+</li>
+<li><a href="#en-File-byte-and-character-IO">File byte and character IO</a><ul>
+<li><a href="#en-File-byte-IO-streams">File byte IO streams</a></li>
+<li><a href="#en-File-character-IO-streams">File character IO streams</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<!--/bi:en--></div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/01/22/JavaIO/#more" rel="contents">
-                Read more &raquo;
+                <span class="bi-zh">阅读全文</span><span class="bi-en">Read more</span> &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -327,7 +374,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2018/09/08/CSS/" class="post-title-link" itemprop="url">CSS</a>
+            <a href="/2018/09/08/CSS/" class="post-title-link" itemprop="url"><span class="bi-zh">CSS</span><span class="bi-en">CSS</span></a>
         </h2>
 
         <div class="post-meta">
@@ -337,7 +384,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2018-09-08 21:54:20" itemprop="dateCreated datePublished" datetime="2018-09-08T21:54:20+04:00">2018-09-08</time>
             </span>
@@ -345,14 +392,14 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:21:46" itemprop="dateModified" datetime="2026-11-25T00:21:46+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
                 </span>
@@ -390,7 +437,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
+          <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
 <li>选择器的样式：</li>
 </ul>
 <blockquote>
@@ -402,10 +449,24 @@
 <li><p>选择器的种类：</p>
 </li>
 </ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h1 id="en-CSS"><a href="#en-CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="en-Selectors"><a href="#en-Selectors" class="headerlink" title="Selectors"></a>Selectors</h2><ul>
+<li>Selector syntax:</li>
+</ul>
+<blockquote>
+<p><strong>selector { property: value; property: value }</strong></p>
+</blockquote>
+<ul>
+<li><p>Selector: <strong>the process of choosing which tags to style</strong></p>
+</li>
+<li><p>Types of selectors:</p>
+</li>
+</ul>
+<!--/bi:en--></div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/09/08/CSS/#more" rel="contents">
-                Read more &raquo;
+                <span class="bi-zh">阅读全文</span><span class="bi-en">Read more</span> &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -442,7 +503,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2018/09/04/The%20analysis%20of%20android%20lifecycle/" class="post-title-link" itemprop="url">The analysis of android lifecycle</a>
+            <a href="/2018/09/04/The%20analysis%20of%20android%20lifecycle/" class="post-title-link" itemprop="url"><span class="bi-zh">Android生命周期的分析</span><span class="bi-en">The analysis of android lifecycle</span></a>
         </h2>
 
         <div class="post-meta">
@@ -452,7 +513,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2018-09-04 22:11:30" itemprop="dateCreated datePublished" datetime="2018-09-04T22:11:30+04:00">2018-09-04</time>
             </span>
@@ -460,21 +521,21 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:08:06" itemprop="dateModified" datetime="2026-11-25T00:08:06+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:18:15" itemprop="dateModified" datetime="2026-11-25T00:18:15+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
                 </span>
             </span>
 
           
-            <span id="/2018/09/04/The%20analysis%20of%20android%20lifecycle/" class="post-meta-item leancloud_visitors" data-flag-title="The analysis of android lifecycle" title="Views">
+            <span id="/2018/09/04/The%20analysis%20of%20android%20lifecycle/" class="post-meta-item leancloud_visitors" data-flag-title="Android生命周期的分析" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -505,7 +566,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="The-analysis-of-android-lifecycle"><a href="#The-analysis-of-android-lifecycle" class="headerlink" title="The analysis of android lifecycle"></a>The analysis of android lifecycle</h1><ul>
+          <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h1 id="activity的生命周期分析"><a href="#activity的生命周期分析" class="headerlink" title="activity的生命周期分析"></a>activity的生命周期分析</h1><ul>
+<li><p>activity的生命周期分为两部分内容</p>
+<ul>
+<li><p>典型情况下的生命周期</p>
+<blockquote>
+<p>在有用户参与的情况下，activity所经历过的生命周期的改变</p>
+</blockquote>
+</li>
+<li><p>异常情况下的生命周期</p>
+<blockquote>
+<p>指activity被系统回收或由于当前设备的Configuration发生改变从而导致activity被销毁重建</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h1 id="en-The-analysis-of-android-lifecycle"><a href="#en-The-analysis-of-android-lifecycle" class="headerlink" title="The analysis of android lifecycle"></a>The analysis of android lifecycle</h1><ul>
 <li><p>The lifecycle of activity is divided into two parts</p>
 <ul>
 <li><p>Typical lifecycle</p>
@@ -519,10 +597,13 @@
 </blockquote>
 </li>
 </ul>
+</li>
+</ul>
+<!--/bi:en--></div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/09/04/The%20analysis%20of%20android%20lifecycle/#more" rel="contents">
-                Read more &raquo;
+                <span class="bi-zh">阅读全文</span><span class="bi-en">Read more</span> &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -559,7 +640,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2018/08/19/HTML/" class="post-title-link" itemprop="url">HTML</a>
+            <a href="/2018/08/19/HTML/" class="post-title-link" itemprop="url"><span class="bi-zh">HTML</span><span class="bi-en">HTML</span></a>
         </h2>
 
         <div class="post-meta">
@@ -569,7 +650,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2018-08-19 11:52:34" itemprop="dateCreated datePublished" datetime="2018-08-19T11:52:34+04:00">2018-08-19</time>
             </span>
@@ -577,14 +658,14 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:21:46" itemprop="dateModified" datetime="2026-11-25T00:21:46+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
                 </span>
@@ -622,12 +703,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="HTML-CSS"><a href="#HTML-CSS" class="headerlink" title="HTML+CSS"></a>HTML+CSS</h1><ul>
-<li>外壳的框架
+          <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h1 id="HTML-CSS"><a href="#HTML-CSS" class="headerlink" title="HTML+CSS"></a>HTML+CSS</h1><ul>
+<li>外壳的框架</li>
+</ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h1 id="en-HTML-CSS"><a href="#en-HTML-CSS" class="headerlink" title="HTML+CSS"></a>HTML+CSS</h1><ul>
+<li>The basic page skeleton</li>
+</ul>
+<!--/bi:en--></div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/08/19/HTML/#more" rel="contents">
-                Read more &raquo;
+                <span class="bi-zh">阅读全文</span><span class="bi-en">Read more</span> &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -664,7 +751,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2018/08/06/Django%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/" class="post-title-link" itemprop="url">Django服务器部署到腾讯云</a>
+            <a href="/2018/08/06/Django%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/" class="post-title-link" itemprop="url"><span class="bi-zh">Django服务器部署到腾讯云</span><span class="bi-en">Deploying a Django Server to Tencent Cloud</span></a>
         </h2>
 
         <div class="post-meta">
@@ -674,7 +761,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2018-08-06 23:42:30" itemprop="dateCreated datePublished" datetime="2018-08-06T23:42:30+04:00">2018-08-06</time>
             </span>
@@ -682,14 +769,14 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:21:46" itemprop="dateModified" datetime="2026-11-25T00:21:46+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
                 </span>
@@ -727,12 +814,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Django服务器部署到腾讯云"><a href="#Django服务器部署到腾讯云" class="headerlink" title="Django服务器部署到腾讯云"></a>Django服务器部署到腾讯云</h1><ul>
-<li><p>配置腾讯云的服务器</p>
+          <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h1 id="Django服务器部署到腾讯云"><a href="#Django服务器部署到腾讯云" class="headerlink" title="Django服务器部署到腾讯云"></a>Django服务器部署到腾讯云</h1><ul>
+<li>配置腾讯云的服务器</li>
+</ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h1 id="en-Deploying-a-Django-Server-to-Tencent-Cloud"><a href="#en-Deploying-a-Django-Server-to-Tencent-Cloud" class="headerlink" title="Deploying a Django Server to Tencent Cloud"></a>Deploying a Django Server to Tencent Cloud</h1><ul>
+<li>Set up the Tencent Cloud server</li>
+</ul>
+<!--/bi:en--></div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/08/06/Django%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/#more" rel="contents">
-                Read more &raquo;
+                <span class="bi-zh">阅读全文</span><span class="bi-en">Read more</span> &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -769,7 +862,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2018/07/23/Git/" class="post-title-link" itemprop="url">Git</a>
+            <a href="/2018/07/23/Git/" class="post-title-link" itemprop="url"><span class="bi-zh">Git</span><span class="bi-en">Git</span></a>
         </h2>
 
         <div class="post-meta">
@@ -779,7 +872,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2018-07-23 10:45:46" itemprop="dateCreated datePublished" datetime="2018-07-23T10:45:46+04:00">2018-07-23</time>
             </span>
@@ -787,14 +880,14 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:19:59" itemprop="dateModified" datetime="2026-11-25T00:19:59+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
                 </span>
@@ -832,12 +925,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="What-is-Git"><a href="#What-is-Git" class="headerlink" title="What is Git?"></a>What is Git?</h2><ul>
-<li>Git is the most advanced distributed version control system in the world.
+          <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="Git是什么？"><a href="#Git是什么？" class="headerlink" title="Git是什么？"></a>Git是什么？</h2><ul>
+<li>Git是目前世界上最先进的分布式版本控制系统。</li>
+</ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h1 id="en-Git"><a href="#en-Git" class="headerlink" title="Git"></a>Git</h1><h2 id="en-What-is-Git"><a href="#en-What-is-Git" class="headerlink" title="What is Git?"></a>What is Git?</h2><ul>
+<li>Git is the most advanced distributed version control system in the world.</li>
+</ul>
+<!--/bi:en--></div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/07/23/Git/#more" rel="contents">
-                Read more &raquo;
+                <span class="bi-zh">阅读全文</span><span class="bi-en">Read more</span> &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -874,7 +973,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2018/07/23/Android%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/" class="post-title-link" itemprop="url">Android自定义控件</a>
+            <a href="/2018/07/23/Android%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/" class="post-title-link" itemprop="url"><span class="bi-zh">Android自定义控件</span><span class="bi-en">Android Custom Views</span></a>
         </h2>
 
         <div class="post-meta">
@@ -884,7 +983,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2018-07-23 10:45:23" itemprop="dateCreated datePublished" datetime="2018-07-23T10:45:23+04:00">2018-07-23</time>
             </span>
@@ -892,14 +991,14 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:21:45" itemprop="dateModified" datetime="2026-11-25T00:21:45+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
                 </span>
@@ -937,15 +1036,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Android属性动画的分类"><a href="#Android属性动画的分类" class="headerlink" title="Android属性动画的分类"></a>Android属性动画的分类</h3><ul>
+          <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h3 id="Android属性动画的分类"><a href="#Android属性动画的分类" class="headerlink" title="Android属性动画的分类"></a>Android属性动画的分类</h3><ul>
 <li>View Animation(补间)</li>
 <li>Drawable Animation(帧动画)</li>
 <li>Property Animation(Android3.0新引入)</li>
 </ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h3 id="en-Types-of-Android-animation"><a href="#en-Types-of-Android-animation" class="headerlink" title="Types of Android animation"></a>Types of Android animation</h3><ul>
+<li>View Animation (tweened)</li>
+<li>Drawable Animation (frame-by-frame)</li>
+<li>Property Animation (new in Android 3.0)</li>
+</ul>
+<!--/bi:en--></div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/07/23/Android%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/#more" rel="contents">
-                Read more &raquo;
+                <span class="bi-zh">阅读全文</span><span class="bi-en">Read more</span> &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -982,7 +1088,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2018/07/22/QTDesigner/" class="post-title-link" itemprop="url">QTDesigner</a>
+            <a href="/2018/07/22/QTDesigner/" class="post-title-link" itemprop="url"><span class="bi-zh">QTDesigner</span><span class="bi-en">Qt Designer</span></a>
         </h2>
 
         <div class="post-meta">
@@ -992,7 +1098,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2018-07-22 12:11:59" itemprop="dateCreated datePublished" datetime="2018-07-22T12:11:59+04:00">2018-07-22</time>
             </span>
@@ -1000,14 +1106,14 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:16:03" itemprop="dateModified" datetime="2026-11-25T00:16:03+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/QT/" itemprop="url" rel="index"><span itemprop="name">QT</span></a>
                 </span>
@@ -1045,13 +1151,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="QT的安装"><a href="#QT的安装" class="headerlink" title="QT的安装"></a>QT的安装</h2><ul>
+          <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h2 id="QT的安装"><a href="#QT的安装" class="headerlink" title="QT的安装"></a>QT的安装</h2><ul>
 <li>对于QT的安装，个人的推荐是参考<a target="_blank" rel="noopener" href="http://blog.csdn.net/liang19890820/article/details/53931813">QT5.7+VS2015安装教程</a>。这个教程写的很详细，而且也非常的nice。</li>
 </ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h2 id="en-Installing-Qt"><a href="#en-Installing-Qt" class="headerlink" title="Installing Qt"></a>Installing Qt</h2><ul>
+<li>For installing Qt, I recommend following this <a target="_blank" rel="noopener" href="http://blog.csdn.net/liang19890820/article/details/53931813">Qt 5.7 + VS2015 installation guide</a> (in Chinese). It is very detailed and really helpful.</li>
+</ul>
+<!--/bi:en--></div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/07/22/QTDesigner/#more" rel="contents">
-                Read more &raquo;
+                <span class="bi-zh">阅读全文</span><span class="bi-en">Read more</span> &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -1088,7 +1199,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2018/07/22/MATLAB%E6%A6%82%E8%BF%B0/" class="post-title-link" itemprop="url">MATLAB概述</a>
+            <a href="/2018/07/22/MATLAB%E6%A6%82%E8%BF%B0/" class="post-title-link" itemprop="url"><span class="bi-zh">MATLAB概述</span><span class="bi-en">MATLAB Overview</span></a>
         </h2>
 
         <div class="post-meta">
@@ -1098,7 +1209,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2018-07-22 10:47:51" itemprop="dateCreated datePublished" datetime="2018-07-22T10:47:51+04:00">2018-07-22</time>
             </span>
@@ -1106,14 +1217,14 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:21:47" itemprop="dateModified" datetime="2026-11-25T00:21:47+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Matlab/" itemprop="url" rel="index"><span itemprop="name">Matlab</span></a>
                 </span>
@@ -1151,7 +1262,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="MATLAB概述"><a href="#MATLAB概述" class="headerlink" title="MATLAB概述"></a>MATLAB概述</h1><ul>
+          <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h1 id="MATLAB概述"><a href="#MATLAB概述" class="headerlink" title="MATLAB概述"></a>MATLAB概述</h1><ul>
 <li>主要包括MATLAB和Simulink两大部分。<blockquote>
 <ul>
 <li>MATLAB基于矩阵(Matrix)的运算，全称为:MATreix LABoratory</li>
@@ -1159,10 +1270,20 @@
 </blockquote>
 </li>
 </ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h1 id="en-MATLAB-Overview"><a href="#en-MATLAB-Overview" class="headerlink" title="MATLAB Overview"></a>MATLAB Overview</h1><ul>
+<li>MATLAB consists of two main parts: MATLAB and Simulink.<blockquote>
+<ul>
+<li>MATLAB is built on matrix operations. Its full name is MATrix LABoratory.</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<!--/bi:en--></div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/07/22/MATLAB%E6%A6%82%E8%BF%B0/#more" rel="contents">
-                Read more &raquo;
+                <span class="bi-zh">阅读全文</span><span class="bi-en">Read more</span> &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -1228,10 +1349,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          <span class="bi-zh">文章目录</span><span class="bi-en">Table of Contents</span>
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          <span class="bi-zh">站点概览</span><span class="bi-en">Overview</span>
         </li>
       </ul>
 
@@ -1389,6 +1510,40 @@
   
 
   
+
+<button type="button" class="bi-toggle" aria-label="切换语言 / Switch language" title="切换语言 / Switch language">
+  <span class="bi-opt" data-l="zh">中</span><span aria-hidden="true">/</span><span class="bi-opt" data-l="en">EN</span>
+</button>
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.querySelector('.bi-toggle');
+  var titleZh = document.title;
+  var metaEn = document.querySelector('meta[name="bi-title-en"]');
+  var titleEn = metaEn ? metaEn.getAttribute('content') : titleZh;
+
+  function apply(lang) {
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+    document.title = lang === 'en' ? titleEn : titleZh;
+    btn.querySelectorAll('.bi-opt').forEach(function (el) {
+      el.classList.toggle('is-on', el.getAttribute('data-l') === lang);
+    });
+    btn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+  }
+
+  apply(root.getAttribute('data-lang') === 'en' ? 'en' : 'zh');
+
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-lang') === 'en' ? 'zh' : 'en';
+    try { localStorage.setItem('bi-lang', next); } catch (e) {}
+    apply(next);
+    // 正文高度变了，让目录高亮和侧边栏重新计算位置
+    window.dispatchEvent(new Event('scroll'));
+    window.dispatchEvent(new Event('resize'));
+  });
+})();
+</script>
 
 
 

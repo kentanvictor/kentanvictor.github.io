@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"kentanvictor.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="正则表达式正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等 注：在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 #include&lt;regex&gt;">
+  <meta name="description" content="正则表达式正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等 注：在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 #include&lt;regex&gt;  Regular ExpressionsA regular expression is a pattern for matching s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++_正则表达式">
 <meta property="og:url" content="https://kentanvictor.github.io/2020/06/30/C++%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
 <meta property="og:site_name" content="ZoeTam&#39;s Blog">
-<meta property="og:description" content="正则表达式正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等 注：在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 #include&lt;regex&gt;">
+<meta property="og:description" content="正则表达式正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等 注：在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 #include&lt;regex&gt;  Regular ExpressionsA regular expression is a pattern for matching s">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-30T13:13:55.000Z">
-<meta property="article:modified_time" content="2026-11-24T20:06:21.987Z">
+<meta property="article:modified_time" content="2026-11-24T20:21:46.144Z">
 <meta property="article:author" content="ZoeTam">
 <meta property="article:tag" content="C&amp;C++">
 <meta name="twitter:card" content="summary">
@@ -45,6 +45,35 @@
     lang   : 'en'
   };
 </script>
+<meta name="bi-title-en" content="C++ Regular Expressions | ZoeTam&#39;s Blog">
+<script>
+(function () {
+  var lang;
+  try { lang = localStorage.getItem('bi-lang'); } catch (e) {}
+  if (lang !== 'zh' && lang !== 'en') {
+    lang = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+  }
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+})();
+</script>
+<style>
+html[data-lang="en"] .bi-zh,
+html:not([data-lang="en"]) .bi-en { display: none !important; }
+.bi-toggle {
+  position: fixed; top: 14px; right: 92px; z-index: 1100;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border: 1px solid #ddd; border-radius: 999px;
+  background: rgba(255, 255, 255, .92); color: #555;
+  font-size: 13px; line-height: 1.2; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  transition: border-color .2s, color .2s;
+}
+.bi-toggle:hover, .bi-toggle:focus-visible { border-color: #222; color: #222; outline: none; }
+.bi-toggle .bi-opt { opacity: .45; }
+.bi-toggle .bi-opt.is-on { opacity: 1; font-weight: 600; }
+@media (max-width: 767px) { .bi-toggle { top: auto; bottom: 16px; right: 16px; } }
+</style>
 
   <title>C++_正则表达式 | ZoeTam's Blog</title>
   
@@ -116,31 +145,31 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i><span class="bi-zh">首页</span><span class="bi-en">Home</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i><span class="bi-zh">关于</span><span class="bi-en">About</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">12</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i><span class="bi-zh">标签</span><span class="bi-en">Tags</span><span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">11</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i><span class="bi-zh">分类</span><span class="bi-en">Categories</span><span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">19</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i><span class="bi-zh">归档</span><span class="bi-en">Archives</span><span class="badge">19</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i><span class="bi-zh">搜索</span><span class="bi-en">Search</span>
         </a>
       </li>
   </ul>
@@ -211,7 +240,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          C++_正则表达式
+          <span class="bi-zh">C++_正则表达式</span><span class="bi-en">C++ Regular Expressions</span>
         </h1>
 
         <div class="post-meta">
@@ -221,7 +250,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2020-06-30 17:13:55" itemprop="dateCreated datePublished" datetime="2020-06-30T17:13:55+04:00">2020-06-30</time>
             </span>
@@ -229,14 +258,14 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:21:46" itemprop="dateModified" datetime="2026-11-25T00:21:46+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/C-C/" itemprop="url" rel="index"><span itemprop="name">C&C++</span></a>
                 </span>
@@ -274,10 +303,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等</p>
-<p><code>注：</code>在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 <code>#include&lt;regex&gt;</code> </p>
+        <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>正则表达式是一种字符串匹配的一种模式，可以用于检测一个字符串是否包含某串、将匹配的字符串进行替换或者从一个字符串中提取符合某个条件的的子串等等</p>
+<p><code>注：</code>在C++中使用正则表达式进行字符串操作的时候，需要添加头文件 <code>#include&lt;regex&gt;</code></p>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h1 id="en-Regular-Expressions"><a href="#en-Regular-Expressions" class="headerlink" title="Regular Expressions"></a>Regular Expressions</h1><p>A regular expression is a pattern for matching strings. You can use it to check whether a string contains a certain substring, to replace the matched parts, or to extract substrings that meet a condition, and so on.</p>
+<p><code>Note:</code> to work with regular expressions in C++, you need to include the header <code>#include&lt;regex&gt;</code></p>
+<!--/bi:en--></div>
 <span id="more"></span>
-<h2 id="正则表达式中匹配的字符"><a href="#正则表达式中匹配的字符" class="headerlink" title="正则表达式中匹配的字符"></a>正则表达式中匹配的字符</h2><h3 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h3><div class="table-container">
+<div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h2 id="正则表达式中匹配的字符"><a href="#正则表达式中匹配的字符" class="headerlink" title="正则表达式中匹配的字符"></a>正则表达式中匹配的字符</h2><h3 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -363,6 +396,94 @@
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string str = <span class="string">&quot;Hello_2018!&quot;</span>;	</span><br><span class="line">    <span class="function">regex <span class="title">pattern2</span><span class="params">(<span class="string">&quot;(.&#123;3&#125;)(.&#123;2&#125;)_(\\d&#123;4&#125;)&quot;</span>)</span></span>;				<span class="comment">//匹配3个任意字符+2个任意字符+下划线+4个数字</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">regex_replace</span>(str, pattern2, <span class="string">&quot;$1$3&quot;</span>) &lt;&lt; endl;	<span class="comment">//输出：Hel2018，将字符串替换为第一个和第三个表达式匹配的内容</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">regex_replace</span>(str, pattern2, <span class="string">&quot;$1$3$2&quot;</span>) &lt;&lt; endl;	<span class="comment">//输出：Hel2018lo，交换位置顺序</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>注：</code> $n用于表示第n组匹配数据</p>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h2 id="en-Characters-matched-in-regular-expressions"><a href="#en-Characters-matched-in-regular-expressions" class="headerlink" title="Characters matched in regular expressions"></a>Characters matched in regular expressions</h2><h3 id="en-Special-characters"><a href="#en-Special-characters" class="headerlink" title="Special characters"></a>Special characters</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Special character</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$</td>
+<td>Matches the end of the input string</td>
+</tr>
+<tr>
+<td>( )</td>
+<td>Marks the start and end of a subexpression</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Matches the preceding subexpression zero or more times</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Matches the preceding subexpression one or more times</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="en-Quantifiers"><a href="#en-Quantifiers" class="headerlink" title="Quantifiers"></a>Quantifiers</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>Matches the preceding subexpression zero or more times. For example, zo<em> matches “z” and “zoo”. </em> is equivalent to {0,}</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Matches the preceding subexpression one or more times. For example, ‘zo+’ matches “zo” and “zoo”, but not “z”. + is equivalent to {1,}</td>
+</tr>
+<tr>
+<td>?</td>
+<td>Matches the preceding subexpression zero or one time. For example, “do(es)?” matches “do”, the “does” in “does”, and the “do” in “doxy”. ? is equivalent to {0,1}</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n is a non-negative integer. Matches exactly n times. For example, ‘o{2}’ does not match the ‘o’ in “Bob”, but matches the two o’s in “food”</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n is a non-negative integer. Matches at least n times. For example, ‘o{2,}’ does not match the ‘o’ in “Bob”, but matches all the o’s in “foooood”. ‘o{1,}’ is equivalent to ‘o+’, and ‘o{0,}’ is equivalent to ‘o*’</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>m and n are non-negative integers with n &lt;= m. Matches at least n and at most m times. For example, “o{1,3}” matches the first three o’s in “fooooood”. ‘o{0,1}’ is equivalent to ‘o?’. Note that there must be no spaces between the comma and the two numbers</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="en-regex-match"><a href="#en-regex-match" class="headerlink" title="regex_match"></a>regex_match</h2><ul>
+<li>match is a full match: the whole string must match the pattern.</li>
+<li>It returns a bool; a successful match returns 1.</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="built_in">regex_match</span>(<span class="string">&quot;123&quot;</span>, <span class="built_in">regex</span>(<span class="string">&quot;\\d&quot;</span>)) &lt;&lt; endl;		<span class="comment">//result: 0</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">regex_match</span>(<span class="string">&quot;123&quot;</span>, <span class="built_in">regex</span>(<span class="string">&quot;\\d+&quot;</span>)) &lt;&lt; endl;		<span class="comment">//result: 1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>\d</code>: matches one digit</li>
+<li><code>+</code> : matches one or more times</li>
+</ul>
+<p>regex_match has another overload: regex_match(str, result, pattern). For example:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string str = <span class="string">&quot;Hello_2018&quot;</span>;</span><br><span class="line">    smatch result;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">&quot;(.&#123;5&#125;)_(\\d&#123;4&#125;)&quot;</span>)</span></span>;	<span class="comment">//matches any 5 characters + underscore + 4 digits</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">regex_match</span>(str, result, pattern))</span><br><span class="line">    &#123;</span><br><span class="line">	    cout &lt;&lt; result[<span class="number">0</span>] &lt;&lt; endl;		<span class="comment">//full match, Hello_2018</span></span><br><span class="line">	    cout &lt;&lt; result[<span class="number">1</span>] &lt;&lt; endl;		<span class="comment">//first group, Hello</span></span><br><span class="line">	    cout &lt;&lt; result[<span class="number">2</span>] &lt;&lt; endl;		<span class="comment">//second group, 2018</span></span><br><span class="line">	    cout&lt;&lt;<span class="string">&quot;Another way to show the results&quot;</span>&lt;&lt;endl;</span><br><span class="line">	    cout&lt;&lt; result.<span class="built_in">str</span>() &lt;&lt; endl;	<span class="comment">//full match, Hello_2018</span></span><br><span class="line">	    cout&lt;&lt; result.<span class="built_in">str</span>(<span class="number">1</span>) &lt;&lt; endl;	<span class="comment">//first group, Hello</span></span><br><span class="line">	    cout &lt;&lt; result.<span class="built_in">str</span>(<span class="number">2</span>) &lt;&lt; endl;	<span class="comment">//second group, 2018</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//iterate over the results</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; result.<span class="built_in">size</span>(); ++i)</span><br><span class="line">    &#123;</span><br><span class="line">	    cout &lt;&lt; result[i] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h2 id="en-regex-search"><a href="#en-regex-search" class="headerlink" title="regex_search"></a>regex_search</h2><ul>
+<li><p>search looks for a match anywhere: it finds substrings in the string that match the pattern<br>For example:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string str = <span class="string">&quot;Hello 2018, Bye 2017&quot;</span>;</span><br><span class="line">    smatch result;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">&quot;\\d&#123;4&#125;&quot;</span>)</span></span>;	<span class="comment">//matches four digits</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//declare the iterators</span></span><br><span class="line">    string::const_iterator iterStart = str.<span class="built_in">begin</span>();</span><br><span class="line">    string::const_iterator iterEnd = str.<span class="built_in">end</span>();</span><br><span class="line">    string temp;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">regex_search</span>(iterStart, iterEnd, result, pattern))</span><br><span class="line">    &#123;</span><br><span class="line">	    temp = result[<span class="number">0</span>];</span><br><span class="line">	    cout &lt;&lt; temp &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	    iterStart = result[<span class="number">0</span>].second;	<span class="comment">//move the search start forward to search the rest of the string</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Output: <span class="number">2018</span> <span class="number">2017</span></span><br></pre></td></tr></table></figure>
+<h2 id="en-regex-replace"><a href="#en-regex-replace" class="headerlink" title="regex_replace"></a>regex_replace</h2></li>
+<li><p>replace substitutes matches: it replaces the substrings that match the pattern with another string</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string str = <span class="string">&quot;Hello_2018!&quot;</span>;</span><br><span class="line">    <span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">&quot;Hello&quot;</span>)</span></span>;	</span><br><span class="line">    cout &lt;&lt; <span class="built_in">regex_replace</span>(str, pattern, <span class="string">&quot;&quot;</span>) &lt;&lt; endl;	<span class="comment">//output: _2018, replaces Hello with &quot;&quot;</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">regex_replace</span>(str, pattern, <span class="string">&quot;Hi&quot;</span>) &lt;&lt; endl;	<span class="comment">//output: Hi_2018, replaces Hello with Hi</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Besides plain replacement, you can also use it to rearrange the string (shorten it, reorder it, etc.)</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosteam&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;regrex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string str = <span class="string">&quot;Hello_2018!&quot;</span>;	</span><br><span class="line">    <span class="function">regex <span class="title">pattern2</span><span class="params">(<span class="string">&quot;(.&#123;3&#125;)(.&#123;2&#125;)_(\\d&#123;4&#125;)&quot;</span>)</span></span>;				<span class="comment">//matches 3 any characters + 2 any characters + underscore + 4 digits</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">regex_replace</span>(str, pattern2, <span class="string">&quot;$1$3&quot;</span>) &lt;&lt; endl;	<span class="comment">//output: Hel2018, keeps only what groups 1 and 3 matched</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">regex_replace</span>(str, pattern2, <span class="string">&quot;$1$3$2&quot;</span>) &lt;&lt; endl;	<span class="comment">//output: Hel2018lo, swaps the order</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Note:</code> $n refers to the n-th matched group</p>
+<!--/bi:en--></div>
 
     </div>
 
@@ -390,8 +511,8 @@
       <i class="fa fa-chevron-left"></i> Android面经
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/07/04/Android%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/" rel="next" title="Android mental journey">
-      Android mental journey <i class="fa fa-chevron-right"></i>
+    <a href="/2020/07/04/Android%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/" rel="next" title="Android心路历程">
+      Android心路历程 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -456,16 +577,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          <span class="bi-zh">文章目录</span><span class="bi-en">Table of Contents</span>
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          <span class="bi-zh">站点概览</span><span class="bi-en">Overview</span>
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E5%8C%B9%E9%85%8D%E7%9A%84%E5%AD%97%E7%AC%A6"><span class="nav-number">1.1.</span> <span class="nav-text">正则表达式中匹配的字符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="nav-number">1.1.1.</span> <span class="nav-text">特殊字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%90%E5%AE%9A%E7%AC%A6"><span class="nav-number">1.1.2.</span> <span class="nav-text">限定符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regex-match"><span class="nav-number">1.2.</span> <span class="nav-text">regex_match</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regex-search"><span class="nav-number">1.3.</span> <span class="nav-text">regex_search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regex-replace"><span class="nav-number">1.4.</span> <span class="nav-text">regex_replace</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><div class="bi-zh"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E5%8C%B9%E9%85%8D%E7%9A%84%E5%AD%97%E7%AC%A6"><span class="nav-number">1.1.</span> <span class="nav-text">正则表达式中匹配的字符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="nav-number">1.1.1.</span> <span class="nav-text">特殊字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%90%E5%AE%9A%E7%AC%A6"><span class="nav-number">1.1.2.</span> <span class="nav-text">限定符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regex-match"><span class="nav-number">1.2.</span> <span class="nav-text">regex_match</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regex-search"><span class="nav-number">1.3.</span> <span class="nav-text">regex_search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regex-replace"><span class="nav-number">1.4.</span> <span class="nav-text">regex_replace</span></a></li></ol></li></ol></div><div class="bi-en"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#en-Regular-Expressions"><span class="nav-number">1.</span> <span class="nav-text">Regular Expressions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Characters-matched-in-regular-expressions"><span class="nav-number">1.1.</span> <span class="nav-text">Characters matched in regular expressions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-Special-characters"><span class="nav-number">1.1.1.</span> <span class="nav-text">Special characters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-Quantifiers"><span class="nav-number">1.1.2.</span> <span class="nav-text">Quantifiers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-regex-match"><span class="nav-number">1.2.</span> <span class="nav-text">regex_match</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-regex-search"><span class="nav-number">1.3.</span> <span class="nav-text">regex_search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-regex-replace"><span class="nav-number">1.4.</span> <span class="nav-text">regex_replace</span></a></li></ol></li></ol></div></div>
       </div>
       <!--/noindex-->
 
@@ -618,6 +739,40 @@
   
 
   
+
+<button type="button" class="bi-toggle" aria-label="切换语言 / Switch language" title="切换语言 / Switch language">
+  <span class="bi-opt" data-l="zh">中</span><span aria-hidden="true">/</span><span class="bi-opt" data-l="en">EN</span>
+</button>
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.querySelector('.bi-toggle');
+  var titleZh = document.title;
+  var metaEn = document.querySelector('meta[name="bi-title-en"]');
+  var titleEn = metaEn ? metaEn.getAttribute('content') : titleZh;
+
+  function apply(lang) {
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+    document.title = lang === 'en' ? titleEn : titleZh;
+    btn.querySelectorAll('.bi-opt').forEach(function (el) {
+      el.classList.toggle('is-on', el.getAttribute('data-l') === lang);
+    });
+    btn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+  }
+
+  apply(root.getAttribute('data-lang') === 'en' ? 'en' : 'zh');
+
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-lang') === 'en' ? 'zh' : 'en';
+    try { localStorage.setItem('bi-lang', next); } catch (e) {}
+    apply(next);
+    // 正文高度变了，让目录高亮和侧边栏重新计算位置
+    window.dispatchEvent(new Event('scroll'));
+    window.dispatchEvent(new Event('resize'));
+  });
+})();
+</script>
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 

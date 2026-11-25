@@ -20,16 +20,17 @@
     var CONFIG = {"hostname":"kentanvictor.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Anaconda 网上对于Anaconda的安装是教程有很多，这里会为各位提供的是一个我当时安装时候所参考的链接地址。Anaconda的介绍、安装及使用教程">
+  <meta name="description" content="Anaconda 网上对于Anaconda的安装是教程有很多，这里会为各位提供的是一个我当时安装时候所参考的链接地址。Anaconda的介绍、安装及使用教程   Anaconda There are plenty of Anaconda installation tutorials online. Here is the link I followed when I installed it: I">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows虚拟环境在PyCharm中的使用">
 <meta property="og:url" content="https://kentanvictor.github.io/2020/05/06/Windows%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%9C%A8PyCharm%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="ZoeTam&#39;s Blog">
-<meta property="og:description" content="Anaconda 网上对于Anaconda的安装是教程有很多，这里会为各位提供的是一个我当时安装时候所参考的链接地址。Anaconda的介绍、安装及使用教程">
+<meta property="og:description" content="Anaconda 网上对于Anaconda的安装是教程有很多，这里会为各位提供的是一个我当时安装时候所参考的链接地址。Anaconda的介绍、安装及使用教程   Anaconda There are plenty of Anaconda installation tutorials online. Here is the link I followed when I installed it: I">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/old_image/AnacondaNavigator.png?raw=true">
+<meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/old_image/AnacondaNavigator.png?raw=true">
 <meta property="article:published_time" content="2020-05-06T07:09:42.000Z">
-<meta property="article:modified_time" content="2026-11-24T20:06:21.990Z">
+<meta property="article:modified_time" content="2026-11-24T20:21:47.574Z">
 <meta property="article:author" content="ZoeTam">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -47,6 +48,35 @@
     lang   : 'en'
   };
 </script>
+<meta name="bi-title-en" content="Using Windows Virtual Environments in PyCharm | ZoeTam&#39;s Blog">
+<script>
+(function () {
+  var lang;
+  try { lang = localStorage.getItem('bi-lang'); } catch (e) {}
+  if (lang !== 'zh' && lang !== 'en') {
+    lang = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+  }
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+})();
+</script>
+<style>
+html[data-lang="en"] .bi-zh,
+html:not([data-lang="en"]) .bi-en { display: none !important; }
+.bi-toggle {
+  position: fixed; top: 14px; right: 92px; z-index: 1100;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border: 1px solid #ddd; border-radius: 999px;
+  background: rgba(255, 255, 255, .92); color: #555;
+  font-size: 13px; line-height: 1.2; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  transition: border-color .2s, color .2s;
+}
+.bi-toggle:hover, .bi-toggle:focus-visible { border-color: #222; color: #222; outline: none; }
+.bi-toggle .bi-opt { opacity: .45; }
+.bi-toggle .bi-opt.is-on { opacity: 1; font-weight: 600; }
+@media (max-width: 767px) { .bi-toggle { top: auto; bottom: 16px; right: 16px; } }
+</style>
 
   <title>Windows虚拟环境在PyCharm中的使用 | ZoeTam's Blog</title>
   
@@ -118,31 +148,31 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i><span class="bi-zh">首页</span><span class="bi-en">Home</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i><span class="bi-zh">关于</span><span class="bi-en">About</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">12</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i><span class="bi-zh">标签</span><span class="bi-en">Tags</span><span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">11</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i><span class="bi-zh">分类</span><span class="bi-en">Categories</span><span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">19</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i><span class="bi-zh">归档</span><span class="bi-en">Archives</span><span class="badge">19</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i><span class="bi-zh">搜索</span><span class="bi-en">Search</span>
         </a>
       </li>
   </ul>
@@ -213,7 +243,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Windows虚拟环境在PyCharm中的使用
+          <span class="bi-zh">Windows虚拟环境在PyCharm中的使用</span><span class="bi-en">Using Windows Virtual Environments in PyCharm</span>
         </h1>
 
         <div class="post-meta">
@@ -223,7 +253,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2020-05-06 11:09:42" itemprop="dateCreated datePublished" datetime="2020-05-06T11:09:42+04:00">2020-05-06</time>
             </span>
@@ -231,14 +261,14 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:21:47" itemprop="dateModified" datetime="2026-11-25T00:21:47+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
                 </span>
@@ -276,11 +306,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h1><blockquote>
+        <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h1 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h1><blockquote>
 <p>网上对于Anaconda的安装是教程有很多，这里会为各位提供的是一个我当时安装时候所参考的链接地址。<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32925500">Anaconda的介绍、安装及使用教程</a></p>
 </blockquote>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h1 id="en-Anaconda"><a href="#en-Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h1><blockquote>
+<p>There are plenty of Anaconda installation tutorials online. Here is the link I followed when I installed it: <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32925500">Introduction, installation and usage of Anaconda (in Chinese)</a></p>
+</blockquote>
+<!--/bi:en--></div>
 <span id="more"></span>
-<h2 id="Anaconda中创建虚拟环境（命令行模式）"><a href="#Anaconda中创建虚拟环境（命令行模式）" class="headerlink" title="Anaconda中创建虚拟环境（命令行模式）"></a>Anaconda中创建虚拟环境（命令行模式）</h2><blockquote>
+<div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h2 id="Anaconda中创建虚拟环境（命令行模式）"><a href="#Anaconda中创建虚拟环境（命令行模式）" class="headerlink" title="Anaconda中创建虚拟环境（命令行模式）"></a>Anaconda中创建虚拟环境（命令行模式）</h2><blockquote>
 <p>在Anaconda中创建虚拟环境的方式：</p>
 <p>下面是创建python=3.6版本的环境，取名叫py36</p>
 <p>conda create -n py36 python=3.6</p>
@@ -345,6 +380,73 @@
 <li><p>选择你需要用到的虚拟环境，然后找到<code>python.exe</code>即可。</p>
 </li>
 </ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h2 id="en-Creating-a-virtual-environment-in-Anaconda-command-line"><a href="#en-Creating-a-virtual-environment-in-Anaconda-command-line" class="headerlink" title="Creating a virtual environment in Anaconda (command line)"></a>Creating a virtual environment in Anaconda (command line)</h2><blockquote>
+<p>How to create a virtual environment in Anaconda:</p>
+<p>The following creates an environment with python=3.6, named py36</p>
+<p>conda create -n py36 python=3.6</p>
+<p>Remove the environment</p>
+<p>conda remove -n py36 —all</p>
+<p>Activate the environment</p>
+<p>source activate py36</p>
+<p>Leave the environment</p>
+<p>source deactivate</p>
+</blockquote>
+<ul>
+<li><p>While creating virtual environments I ran into a problem: <code>if I create environments for several Python versions, how do I manage the different packages installed in each, without conflicting with the Python already installed on my machine?</code></p>
+</li>
+<li><p>Here is how I kept Anaconda and the machine’s own Python apart:</p>
+<blockquote>
+<ul>
+<li>Solution 1:</li>
+</ul>
+<p>Python actually ships with a way to handle two versions when you install it.</p>
+<p>There is a py.exe in the windows folder on the C drive.</p>
+<p>Starting Python through py.exe lets you choose the version.</p>
+<p>To run pip for Python 2.7</p>
+<p>type this in the cmd window: py -2 -m pip install XXXX</p>
+<p>To run pip for Python 3.6</p>
+<p>type this in the cmd window: py -3 -m pip install XXXX</p>
+<ul>
+<li>Solution 2:</li>
+</ul>
+<p>Find where Python is installed on your machine (you can see it in Path), find your Python.exe file, and rename it.</p>
+<p>For example, I renamed my machine’s Python to Python3 and left the Python installed by Anaconda as it was.</p>
+<p>Then, to install packages with pip for Anaconda’s Python, type:</p>
+<p>python -m pip install XXX</p>
+<p>And to install packages for the machine’s Python, type:</p>
+<p>python3 -m pip install XXX</p>
+</blockquote>
+</li>
+<li><p>How I fixed the conflict between a virtual environment and Anaconda’s own Python after entering the environment:<br>&gt;</p>
+<blockquote>
+<p>Using the activation command above, we can enter a virtual environment we have created.</p>
+<p>Once inside, type:</p>
+<p>python -V</p>
+<p>to see the Python version of the current virtual environment.</p>
+<p>Then type:</p>
+<p>pip list</p>
+<p>What you see are the packages installed by pip in the current environment.</p>
+<p><code>If the list is still Anaconda&#39;s own list, type:</code></p>
+<p><code>python -m pip list</code></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="en-Creating-a-virtual-environment-in-Anaconda-GUI"><a href="#en-Creating-a-virtual-environment-in-Anaconda-GUI" class="headerlink" title="Creating a virtual environment in Anaconda (GUI)"></a>Creating a virtual environment in Anaconda (GUI)</h2><p><code>After installing Anaconda you get Anaconda Navigator. You can also create virtual environments inside it.</code></p>
+<p><img src="https://github.com/kentanvictor/STUDY/blob/Image/old_image/AnacondaNavigator.png?raw=true" alt="AnacondaMavigator"></p>
+<h1 id="en-PyCharm"><a href="#en-PyCharm" class="headerlink" title="PyCharm"></a>PyCharm</h1><ul>
+<li><p>In PyCharm, go to <code>Settings</code> -&gt; <code>Project Interpreter</code> to choose the Python version.</p>
+</li>
+<li><p>Find the <code>installation path</code> of your <code>Anaconda</code>.</p>
+</li>
+<li><p>Inside it, find a folder called <code>envs</code>.</p>
+</li>
+<li><p>This folder contains all the virtual environments you have created.</p>
+</li>
+<li><p>Pick the virtual environment you want to use, and select its <code>python.exe</code>.</p>
+</li>
+</ul>
+<!--/bi:en--></div>
 
     </div>
 
@@ -368,8 +470,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/05/Ubuntu-Windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" rel="prev" title="Ubuntu+Windows Dual System Installation Guide">
-      <i class="fa fa-chevron-left"></i> Ubuntu+Windows Dual System Installation Guide
+    <a href="/2020/05/05/Ubuntu-Windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" rel="prev" title="Ubuntu+Windows双系统安装指南">
+      <i class="fa fa-chevron-left"></i> Ubuntu+Windows双系统安装指南
     </a></div>
       <div class="post-nav-item">
     <a href="/2020/05/12/Java%E5%8E%9F%E7%94%9F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="next" title="Java原生数据类型与表达式">
@@ -438,16 +540,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          <span class="bi-zh">文章目录</span><span class="bi-en">Table of Contents</span>
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          <span class="bi-zh">站点概览</span><span class="bi-en">Overview</span>
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Anaconda"><span class="nav-number">1.</span> <span class="nav-text">Anaconda</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Anaconda%E4%B8%AD%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%EF%BC%88%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">Anaconda中创建虚拟环境（命令行模式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Anaconda%E4%B8%AD%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%EF%BC%88GUI%E6%A8%A1%E5%BC%8F%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">Anaconda中创建虚拟环境（GUI模式）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PyCharm"><span class="nav-number">2.</span> <span class="nav-text">PyCharm</span></a></li></ol></div>
+          <div class="post-toc motion-element"><div class="bi-zh"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Anaconda"><span class="nav-number">1.</span> <span class="nav-text">Anaconda</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Anaconda%E4%B8%AD%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%EF%BC%88%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">Anaconda中创建虚拟环境（命令行模式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Anaconda%E4%B8%AD%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%EF%BC%88GUI%E6%A8%A1%E5%BC%8F%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">Anaconda中创建虚拟环境（GUI模式）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PyCharm"><span class="nav-number">2.</span> <span class="nav-text">PyCharm</span></a></li></ol></div><div class="bi-en"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#en-Anaconda"><span class="nav-number">1.</span> <span class="nav-text">Anaconda</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Creating-a-virtual-environment-in-Anaconda-command-line"><span class="nav-number">1.1.</span> <span class="nav-text">Creating a virtual environment in Anaconda (command line)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Creating-a-virtual-environment-in-Anaconda-GUI"><span class="nav-number">1.2.</span> <span class="nav-text">Creating a virtual environment in Anaconda (GUI)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#en-PyCharm"><span class="nav-number">2.</span> <span class="nav-text">PyCharm</span></a></li></ol></div></div>
       </div>
       <!--/noindex-->
 
@@ -600,6 +702,40 @@
   
 
   
+
+<button type="button" class="bi-toggle" aria-label="切换语言 / Switch language" title="切换语言 / Switch language">
+  <span class="bi-opt" data-l="zh">中</span><span aria-hidden="true">/</span><span class="bi-opt" data-l="en">EN</span>
+</button>
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.querySelector('.bi-toggle');
+  var titleZh = document.title;
+  var metaEn = document.querySelector('meta[name="bi-title-en"]');
+  var titleEn = metaEn ? metaEn.getAttribute('content') : titleZh;
+
+  function apply(lang) {
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+    document.title = lang === 'en' ? titleEn : titleZh;
+    btn.querySelectorAll('.bi-opt').forEach(function (el) {
+      el.classList.toggle('is-on', el.getAttribute('data-l') === lang);
+    });
+    btn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+  }
+
+  apply(root.getAttribute('data-lang') === 'en' ? 'en' : 'zh');
+
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-lang') === 'en' ? 'zh' : 'en';
+    try { localStorage.setItem('bi-lang', next); } catch (e) {}
+    apply(next);
+    // 正文高度变了，让目录高亮和侧边栏重新计算位置
+    window.dispatchEvent(new Event('scroll'));
+    window.dispatchEvent(new Event('resize'));
+  });
+})();
+</script>
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 

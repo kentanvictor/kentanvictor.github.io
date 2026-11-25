@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"kentanvictor.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Obstacle detection based on binocular camera Preface: There are several related articles on the obstacle detection of binocular cameras and the obstacle detection based on OpenCV on CSDN and blog gard">
+  <meta name="description" content="基于双目摄像头的障碍物检测 前言：关于双目摄像头的障碍物检测以及基于OpenCV的障碍物检测在CSDN以及博客园上都有几篇相关的文章。然而，相当一部分的关于障碍物检测的文章多偏向于理论，而有实践的文章却少之又少。在这里，我将按照我从网上学习到的例子进行整合并加入了我自己的理解。希望能为大家在障碍物检测方面起到一定的参考作用。   Obstacle detection based on binocu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Obstacle detection based on binocular camera">
+<meta property="og:title" content="基于双目摄像头的障碍物检测">
 <meta property="og:url" content="https://kentanvictor.github.io/2018/10/18/Obstacle%20detection%20based%20on%20binocular%20camera/index.html">
 <meta property="og:site_name" content="ZoeTam&#39;s Blog">
-<meta property="og:description" content="Obstacle detection based on binocular camera Preface: There are several related articles on the obstacle detection of binocular cameras and the obstacle detection based on OpenCV on CSDN and blog gard">
+<meta property="og:description" content="基于双目摄像头的障碍物检测 前言：关于双目摄像头的障碍物检测以及基于OpenCV的障碍物检测在CSDN以及博客园上都有几篇相关的文章。然而，相当一部分的关于障碍物检测的文章多偏向于理论，而有实践的文章却少之又少。在这里，我将按照我从网上学习到的例子进行整合并加入了我自己的理解。希望能为大家在障碍物检测方面起到一定的参考作用。   Obstacle detection based on binocu">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/camera.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/Calibration_board.jpg">
@@ -69,8 +69,50 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/SaveStereoCalibResults.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/CalibResultsStereo.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/StereoPhoto.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/camera.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/Calibration_board.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/True_Calibration_board.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ToolBox.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/StandardVersion.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ToolBoxStandard.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ImageNames.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/Calib_Results.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/LoadImage.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/20Images.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ExtractGridCorners.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/Wintx_Winty.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ClickOnTheFourExtemeCorners.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ExtremeCorners.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/WrongPicture.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/CornerExtraction.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/Feature2.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/Feature1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/feature3.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/calib_data.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/calibration.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/calibrationResult.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ShowExtrinsic.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/IO.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/AnalyseError.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/Error.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/WindowSize.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/save.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/CalibResults.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/UndistortImage.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/RightResults.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/StereoCameraToolbox.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/LoadLeftRightFiles.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/LoadingFiles.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/LoadResults.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/RunStereoCalibration.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/StereoCalibrationResults.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ShowExtrinsicsOfStereoRig.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ExtrinsicParameters.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/SaveStereoCalibResults.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/CalibResultsStereo.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/StereoPhoto.png">
 <meta property="article:published_time" content="2018-10-18T16:31:23.000Z">
-<meta property="article:modified_time" content="2026-11-24T20:06:21.990Z">
+<meta property="article:modified_time" content="2026-11-24T20:27:01.912Z">
 <meta property="article:author" content="ZoeTam">
 <meta property="article:tag" content="Computer Vision">
 <meta name="twitter:card" content="summary">
@@ -88,8 +130,37 @@
     lang   : 'en'
   };
 </script>
+<meta name="bi-title-en" content="Obstacle detection based on binocular camera | ZoeTam&#39;s Blog">
+<script>
+(function () {
+  var lang;
+  try { lang = localStorage.getItem('bi-lang'); } catch (e) {}
+  if (lang !== 'zh' && lang !== 'en') {
+    lang = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+  }
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+})();
+</script>
+<style>
+html[data-lang="en"] .bi-zh,
+html:not([data-lang="en"]) .bi-en { display: none !important; }
+.bi-toggle {
+  position: fixed; top: 14px; right: 92px; z-index: 1100;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border: 1px solid #ddd; border-radius: 999px;
+  background: rgba(255, 255, 255, .92); color: #555;
+  font-size: 13px; line-height: 1.2; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  transition: border-color .2s, color .2s;
+}
+.bi-toggle:hover, .bi-toggle:focus-visible { border-color: #222; color: #222; outline: none; }
+.bi-toggle .bi-opt { opacity: .45; }
+.bi-toggle .bi-opt.is-on { opacity: 1; font-weight: 600; }
+@media (max-width: 767px) { .bi-toggle { top: auto; bottom: 16px; right: 16px; } }
+</style>
 
-  <title>Obstacle detection based on binocular camera | ZoeTam's Blog</title>
+  <title>基于双目摄像头的障碍物检测 | ZoeTam's Blog</title>
   
 
 
@@ -159,31 +230,31 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i><span class="bi-zh">首页</span><span class="bi-en">Home</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i><span class="bi-zh">关于</span><span class="bi-en">About</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">12</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i><span class="bi-zh">标签</span><span class="bi-en">Tags</span><span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">11</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i><span class="bi-zh">分类</span><span class="bi-en">Categories</span><span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">19</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i><span class="bi-zh">归档</span><span class="bi-en">Archives</span><span class="badge">19</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i><span class="bi-zh">搜索</span><span class="bi-en">Search</span>
         </a>
       </li>
   </ul>
@@ -254,21 +325,21 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Obstacle detection based on binocular camera
+          <span class="bi-zh">基于双目摄像头的障碍物检测</span><span class="bi-en">Obstacle detection based on binocular camera</span>
         </h1>
 
         <div class="post-meta">
 
           
             <i class="fa fa-thumb-tack"></i>
-            <font color=7D26CD>置顶</font>
+            <font color=7D26CD><span class="bi-zh">置顶</span><span class="bi-en">Pinned</span></font>
             <span class="post-meta-divider">|</span>
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2018-10-18 20:31:23" itemprop="dateCreated datePublished" datetime="2018-10-18T20:31:23+04:00">2018-10-18</time>
             </span>
@@ -276,21 +347,21 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:27:01" itemprop="dateModified" datetime="2026-11-25T00:27:01+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Computer-Vision/" itemprop="url" rel="index"><span itemprop="name">Computer Vision</span></a>
                 </span>
             </span>
 
           
-            <span id="/2018/10/18/Obstacle%20detection%20based%20on%20binocular%20camera/" class="post-meta-item leancloud_visitors" data-flag-title="Obstacle detection based on binocular camera" title="Views">
+            <span id="/2018/10/18/Obstacle%20detection%20based%20on%20binocular%20camera/" class="post-meta-item leancloud_visitors" data-flag-title="基于双目摄像头的障碍物检测" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -321,47 +392,58 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Obstacle-detection-based-on-binocular-camera"><a href="#Obstacle-detection-based-on-binocular-camera" class="headerlink" title="Obstacle detection based on binocular camera"></a>Obstacle detection based on binocular camera</h1><blockquote>
+        <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h1 id="基于双目摄像头的障碍物检测"><a href="#基于双目摄像头的障碍物检测" class="headerlink" title="基于双目摄像头的障碍物检测"></a>基于双目摄像头的障碍物检测</h1><blockquote>
+<p>前言：关于双目摄像头的障碍物检测以及基于OpenCV的障碍物检测在CSDN以及博客园上都有几篇相关的文章。然而，相当一部分的关于障碍物检测的文章多偏向于理论，而有实践的文章却少之又少。在这里，我将按照我从网上学习到的例子进行整合并加入了我自己的理解。希望能为大家在障碍物检测方面起到一定的参考作用。</p>
+</blockquote>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h1 id="en-Obstacle-detection-based-on-binocular-camera"><a href="#en-Obstacle-detection-based-on-binocular-camera" class="headerlink" title="Obstacle detection based on binocular camera"></a>Obstacle detection based on binocular camera</h1><blockquote>
 <p>Preface: There are several related articles on the obstacle detection of binocular cameras and the obstacle detection based on OpenCV on CSDN and blog garden. However, a considerable part of the articles on obstacle detection tend to be theoretical, and there are few practical articles. Here, I will follow the examples I learned from the Internet to integrate and add my own understanding. I hope it can play a certain reference role for everyone in obstacle detection.</p>
 </blockquote>
+<!--/bi:en--></div>
 <span id="more"></span>
-<blockquote>
-<p><strong>Special thanks: <br/><a target="_blank" rel="noopener" href="http://www.cnblogs.com/daihengchen/p/5686272.html">亦轩Dhc’s Blog</a><br/><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhouqianq/article/details/78580173">琪其齐奇旗棋’s Blog</a><br/><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixinhum/article/details/78161567">_寒潭雁影的’s Blog</a></strong></p>
+<div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><blockquote>
+<p><strong>特别鸣谢：<br/><a target="_blank" rel="noopener" href="http://www.cnblogs.com/daihengchen/p/5686272.html">亦轩Dhc的博客</a><br/><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhouqianq/article/details/78580173">琪其齐奇旗棋的CSDN</a><br/><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixinhum/article/details/78161567">_寒潭雁影的CSDN</a></strong></p>
 </blockquote>
-<h2 id="Now-let’s-get-to-the-main-topic"><a href="#Now-let’s-get-to-the-main-topic" class="headerlink" title="Now let’s get to the main topic!"></a>Now let’s get to the main topic!</h2><h3 id="Preliminary-preparation"><a href="#Preliminary-preparation" class="headerlink" title="Preliminary preparation:"></a>Preliminary preparation:</h3><ul>
-<li>Here I am using a binocular camera to detect obstacles. The binocular camera is shown in the figure:<br><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/camera.png" alt=""></li>
+<h2 id="下面开始进入正题啦！"><a href="#下面开始进入正题啦！" class="headerlink" title="下面开始进入正题啦！"></a>下面开始进入正题啦！</h2><h3 id="前期准备："><a href="#前期准备：" class="headerlink" title="前期准备："></a>前期准备：</h3><ul>
+<li>这里我使用的是一个双目摄像头进行的障碍物检测。该双目摄像头如图所示：<br><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/camera.png" alt=""></li>
 </ul>
-<h3 id="Preliminary-knowledge-points"><a href="#Preliminary-knowledge-points" class="headerlink" title="Preliminary knowledge points:"></a>Preliminary knowledge points:</h3><ul>
-<li>Calibration of binocular camera</li>
-<li>Use OpenCV to get pictures</li>
-<li>Binocular correction</li>
-<li>Stereo matching</li>
+<h3 id="前期知识点："><a href="#前期知识点：" class="headerlink" title="前期知识点："></a>前期知识点：</h3><ul>
+<li>双目摄像头的标定</li>
+<li>使用OpenCV获取图片</li>
+<li>双目校正</li>
+<li>立体匹配</li>
 </ul>
-<h4 id="Preliminary-knowledge-points-of-binocular-camera-calibration"><a href="#Preliminary-knowledge-points-of-binocular-camera-calibration" class="headerlink" title="Preliminary knowledge points of binocular camera calibration:"></a>Preliminary knowledge points of binocular camera calibration:</h4><blockquote>
-<p>Here, the calibration method I use is <strong>Zhang Zhengyou Calibration Method</strong>。</p>
+<h4 id="双目摄像头的标定的前期知识点："><a href="#双目摄像头的标定的前期知识点：" class="headerlink" title="双目摄像头的标定的前期知识点："></a>双目摄像头的标定的前期知识点：</h4><blockquote>
+<p>在这里，我使用的标定方法是<strong>张正友标定法</strong>。</p>
 <ul>
-<li>First of all, you need to be clear, for a camera, it is divided into <em>internal parameters</em> and <em>external parameters</em></li>
-<li>There are five internal parameters:</li>
+<li>首先你需要明确，对于一个摄像头来说，分为<em>内参</em>和<em>外参</em></li>
 <li><ul>
-<li>The mapping relationship between the object captured by the camera and the actual object on the x, y axis (two parameters).</li>
+<li>内参分别有五个：</li>
 </ul>
 </li>
 <li><ul>
-<li>The offset relationship between the center of the camera and the center of the image (two parameters).</li>
+<li>摄像头拍摄到的物体和实际物体在x,y轴上的映射关系（两个参数）。</li>
 </ul>
 </li>
 <li><ul>
-<li>The installation of the camera and the lens is not completely vertical, and there is an angular deviation. (One parameter).</li>
+<li>摄像头中心和图像中心的偏移关系（两个参数）。</li>
 </ul>
 </li>
-<li>There are six external parameters: </li>
 <li><ul>
-<li>They are translation and rotation in the x, y, and z directions, respectively.<br>As long as we have the above two parameters, we basically know the correspondence between the image captured by the camera and the real thing. However, there will still be errors in “<strong>distortion</strong>“ between the image captured by the camera and the real thing. This is due to the 2D point shift caused by lens quality and other reasons.</li>
+<li>摄像头和镜头安装非完全垂直，存在一个角度的偏差。（一个参数）。</li>
+</ul>
+</li>
+<li><ul>
+<li>外参有六个：</li>
+</ul>
+</li>
+<li><ul>
+<li>分别是x，y，z方向上的平移和旋转。<br>只要有了上面的两种参数，我们基本上就知道了摄像头拍摄到的图像和现实事物的对应关系了。然而， 摄像头拍摄图像与现实事物中还是会有“<strong>畸变</strong>”上的误差。这是由于镜头质量等原因导致的2D点的偏移。</li>
 </ul>
 </li>
 </ul>
 </blockquote>
-<p><strong><em>Therefore, we use the Zhang Zhengyou calibration method to calibrate the camera’s internal and external parameters and distortion parameters.</em></strong></p>
+<p><strong><em>因此，我们使用张正友标定法对摄像头进行内外参数以及畸变参数的标定。</em></strong></p>
 <h2 id="张正友标定法"><a href="#张正友标定法" class="headerlink" title="张正友标定法"></a>张正友标定法</h2><blockquote>
 <p>前言：张正友标定又称“张氏标定”。是张正友教授在1998年提出的单平面棋盘格的摄像机标定法。</p>
 <ul>
@@ -978,6 +1060,661 @@
 </ul>
 </li>
 </ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><blockquote>
+<p><strong>Special thanks: <br/><a target="_blank" rel="noopener" href="http://www.cnblogs.com/daihengchen/p/5686272.html">亦轩Dhc’s Blog</a><br/><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhouqianq/article/details/78580173">琪其齐奇旗棋’s Blog</a><br/><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixinhum/article/details/78161567">_寒潭雁影的’s Blog</a></strong></p>
+</blockquote>
+<h2 id="en-Now-let’s-get-to-the-main-topic"><a href="#en-Now-let’s-get-to-the-main-topic" class="headerlink" title="Now let’s get to the main topic!"></a>Now let’s get to the main topic!</h2><h3 id="en-Preliminary-preparation"><a href="#en-Preliminary-preparation" class="headerlink" title="Preliminary preparation:"></a>Preliminary preparation:</h3><ul>
+<li>Here I am using a binocular camera to detect obstacles. The binocular camera is shown in the figure:<br><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/camera.png" alt=""></li>
+</ul>
+<h3 id="en-Preliminary-knowledge-points"><a href="#en-Preliminary-knowledge-points" class="headerlink" title="Preliminary knowledge points:"></a>Preliminary knowledge points:</h3><ul>
+<li>Calibration of binocular camera</li>
+<li>Use OpenCV to get pictures</li>
+<li>Binocular correction</li>
+<li>Stereo matching</li>
+</ul>
+<h4 id="en-Preliminary-knowledge-points-of-binocular-camera-calibration"><a href="#en-Preliminary-knowledge-points-of-binocular-camera-calibration" class="headerlink" title="Preliminary knowledge points of binocular camera calibration:"></a>Preliminary knowledge points of binocular camera calibration:</h4><blockquote>
+<p>Here, the calibration method I use is <strong>Zhang Zhengyou Calibration Method</strong>。</p>
+<ul>
+<li>First of all, you need to be clear, for a camera, it is divided into <em>internal parameters</em> and <em>external parameters</em></li>
+<li>There are five internal parameters:</li>
+<li><ul>
+<li>The mapping relationship between the object captured by the camera and the actual object on the x, y axis (two parameters).</li>
+</ul>
+</li>
+<li><ul>
+<li>The offset relationship between the center of the camera and the center of the image (two parameters).</li>
+</ul>
+</li>
+<li><ul>
+<li>The installation of the camera and the lens is not completely vertical, and there is an angular deviation. (One parameter).</li>
+</ul>
+</li>
+<li>There are six external parameters: </li>
+<li><ul>
+<li>They are translation and rotation in the x, y, and z directions, respectively.<br>As long as we have the above two parameters, we basically know the correspondence between the image captured by the camera and the real thing. However, there will still be errors in “<strong>distortion</strong>“ between the image captured by the camera and the real thing. This is due to the 2D point shift caused by lens quality and other reasons.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><strong><em>Therefore, we use the Zhang Zhengyou calibration method to calibrate the camera’s internal and external parameters and distortion parameters.</em></strong></p>
+<h2 id="en-Zhang-Zhengyou’s-calibration-method"><a href="#en-Zhang-Zhengyou’s-calibration-method" class="headerlink" title="Zhang Zhengyou’s calibration method"></a>Zhang Zhengyou’s calibration method</h2><blockquote>
+<p>Preface: Zhang Zhengyou’s calibration, also called “Zhang’s calibration”, is a camera calibration method using a single planar chessboard, proposed by Professor Zhang Zhengyou in 1998.</p>
+<ul>
+<li>Preparation:</li>
+<li><ul>
+<li>Calibration board</li>
+</ul>
+</li>
+<li><ul>
+<li><blockquote>
+<p>You need to prepare a calibration board yourself. It looks roughly like this:</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/Calibration_board.jpg" alt=""></p>
+<ul>
+<li><ul>
+<li>A photo of the board taken in a real scene looks like this:</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/True_Calibration_board.jpg" alt=""></p>
+<ul>
+<li>There are two ways to get this kind of calibration board:</li>
+<li><ul>
+<li>Option 1: download it directly from the OpenCV website: <a target="_blank" rel="noopener" href="https://docs.opencv.org/2.4/_downloads/pattern.png">calibration board download</a></li>
+</ul>
+</li>
+<li><ul>
+<li>Option 2: generate a chessboard image with Python + OpenCV:<br>&gt;<blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="keyword">import</span> cv2 </span><br><span class="line">&gt;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">&gt;width = <span class="number">350</span></span><br><span class="line">&gt;height = <span class="number">500</span></span><br><span class="line">&gt;length = <span class="number">50</span></span><br><span class="line"></span><br><span class="line">&gt;image = np.zeros((width,height),dtype = np.uint8)</span><br><span class="line">&gt;<span class="built_in">print</span>(image.shape[<span class="number">0</span>],image.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">&gt;<span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(height):</span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(width):</span><br><span class="line">       <span class="keyword">if</span>((<span class="built_in">int</span>)(i/length) + (<span class="built_in">int</span>)(j/length))%<span class="number">2</span>:</span><br><span class="line">           image[i,j] = <span class="number">255</span>;</span><br><span class="line">&gt;cv2.imwrite(<span class="string">&quot;pic/chess.jpg&quot;</span>,image)</span><br><span class="line">&gt;cv2.imshow(<span class="string">&quot;chess&quot;</span>,image)</span><br><span class="line">&gt;cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>The generated image has the same specification as the one downloaded from the OpenCV website.</strong></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="en-Zhang’s-calibration-method-in-OpenCV"><a href="#en-Zhang’s-calibration-method-in-OpenCV" class="headerlink" title="Zhang’s calibration method in OpenCV"></a>Zhang’s calibration method in OpenCV</h3><ul>
+<li>Corner extraction</li>
+</ul>
+<p><strong>Function 1:</strong> <strong><em>bool findChessboardCorners(InputArray image,Size atternSIze,OutputArray corners,int flags=CALIB_CB_ADAPTIVE_THRESH+CALIB_CB_NORMALIZE_IMAGE);</em></strong></p>
+<blockquote>
+<p><em>Purpose: extracts the inner corners of the calibration board, that is, the corners in the middle of every four black and white squares in the example image.</em></p>
+<ul>
+<li>Parameters:</li>
+<li><ul>
+<li>image: the captured chessboard image;</li>
+</ul>
+</li>
+<li><ul>
+<li>patternSize: the number of inner corners on the chessboard (for the board above, Size(9,6), i.e. 9 corners per row and 6 per column);</li>
+</ul>
+</li>
+<li><ul>
+<li>corners: stores the image coordinates of the detected inner corners (usually a vector of Point2f);</li>
+</ul>
+</li>
+<li><ul>
+<li>flags: defines different ways of searching for the inner corners on the chessboard.</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>Returns a bool indicating whether the corners were found in the image.</strong></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><strong>Function 2:</strong> <strong><em>bool find4QuadCornerSubpix(InputArray img,InputOutputArray corners,Size region_size);</em></strong></p>
+<blockquote>
+<p><em>Purpose: refines the initially extracted corners to sub-pixel accuracy to reduce calibration error. This method is designed specifically for getting the exact positions of the inner corners on a chessboard. (<strong>cornerSubPix is sometimes used instead</strong>)</em></p>
+<ul>
+<li>Parameters:</li>
+<li><ul>
+<li>img: the input Mat, preferably an 8-bit grayscale image;</li>
+</ul>
+</li>
+<li><ul>
+<li>corners: the initial corner coordinates, which also receive the sub-pixel positions as output, so they must be floating point, usually a vector of Point2f/Point2d. <em>That is, pass in the third parameter of findChessboardCorners above</em>;</li>
+</ul>
+</li>
+<li><ul>
+<li>region_size: the size of the corner search window;</li>
+</ul>
+</li>
+<li><em>In general, cornerSubPix is used more often, but since we are using a chessboard here,<br>find4QuadCornerSubpix is the one made specifically for getting the exact positions of the inner corners on a chessboard.</em></li>
+</ul>
+</blockquote>
+<p><strong>Function 3:</strong> <strong><em>drawChessboardCorners( InputOutputArray image, Size patternSize, InputArray corners, bool patternWasFound);</em></strong></p>
+<blockquote>
+<p><em>Purpose: draws the detected inner corners on the chessboard.</em></p>
+<ul>
+<li>Parameters:</li>
+<li><ul>
+<li>image: an 8-bit grayscale or color image.</li>
+</ul>
+</li>
+<li><ul>
+<li>patternSize: the number of rows and columns of inner corners on each calibration board, i.e. the second parameter of findChessboardCorners;</li>
+</ul>
+</li>
+<li><ul>
+<li>corners: the corner coordinates; you can pass in the output of the second parameter of find4QuadCornerSubpix;</li>
+</ul>
+</li>
+<li><ul>
+<li>patternWasFound: a flag indicating whether all the inner corners were detected. true means they were all found, and the function connects all the inner corners with lines as a whole; false means some corners were not found, and the function marks the detected corners with (red) circles;</li>
+</ul>
+</li>
+<li><ul>
+<li>Example code for finding the corners looks roughly like this:<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Mat imageInput = <span class="built_in">imread</span>(<span class="string">&quot;chess.jpg&quot;</span>);</span><br><span class="line">Size board_size = <span class="built_in">Size</span>(<span class="number">9</span>, <span class="number">6</span>);<span class="comment">//number of corners per row and column on the board</span></span><br><span class="line">vector&lt;Point2f&gt; image_points_buf;<span class="comment">//buffers the corners detected in each image</span></span><br><span class="line"><span class="comment">/*extract corners*/</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">findChessboardCorners</span>(imageInput, board_size, image_points_buf))</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;can not find chessboard corners!\n&quot;</span>; <span class="comment">//corners not found  </span></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    Mat view_gray;</span><br><span class="line">    <span class="built_in">cvtColor</span>(imageInput, view_gray, CV_RGB2GRAY);</span><br><span class="line">    <span class="comment">/*sub-pixel refinement*/</span></span><br><span class="line">    <span class="built_in">find4QuadCornerSubpix</span>(view_gray, image_points_buf, <span class="built_in">Size</span>(<span class="number">5</span>, <span class="number">5</span>)); <span class="comment">//refine the roughly extracted corners  </span></span><br><span class="line">    <span class="built_in">drawChessboardCorners</span>(view_gray, board_size, image_points_buf, <span class="literal">true</span>); <span class="comment">//mark the corners in the image  </span></span><br><span class="line">    <span class="built_in">imshow</span>(<span class="string">&quot;Camera Calibration&quot;</span>, view_gray);<span class="comment">//show the image  </span></span><br><span class="line">    <span class="built_in">waitKey</span>(<span class="number">0</span>);     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>Camera calibration<blockquote>
+<p>With the image corners obtained above (in theory three images, i.e. three sets of data, are enough; in practice 10~20 is best because the error is smaller), you can calibrate the camera with calibrateCamera and compute its intrinsic parameters, extrinsic parameters and distortion parameters.</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>Function 1:</strong> <strong><em>double calibrateCamera(InputArrays objectPoints,InputAttaysOfArrays imagePoints,Size imageSize,CV_OUT InputOutputArray cameraMatrix,CV_OUT InputOutputArray distCoeffs,OutputArrayOfArrays rvecs,OutputArrayOfArrays tvecs,int flags=0,TermCriteria criteria = TermCriteria(TermCriteria::COUNT+TermCriteria::EPS,30,DBL_EPSILON));</em></strong></p>
+<blockquote>
+<ul>
+<li>Parameters:</li>
+<li><ul>
+<li>objectPoints: the 3D points in the world coordinate system. Pass in a collection of vectors of 3D points. We usually assume the calibration board lies on the z=0 plane, and then compute the world coordinates of each inner corner from the size of a single square on the board (you can also just use 10 if you do not need an exact mapping to real-world units).</li>
+</ul>
+</li>
+<li><ul>
+<li>imagePoints: the image coordinates corresponding to each inner corner, i.e. the corner sets found for each image above.</li>
+</ul>
+</li>
+<li><ul>
+<li>imageSize: the pixel size of the image, needed when computing the camera’s intrinsic and distortion matrices.</li>
+</ul>
+</li>
+<li><ul>
+<li>cameraMatrix: the camera’s intrinsic matrix. Just pass in a Mat cameraMatrix, e.g. Mat cameraMatrix=Mat(3,3,CV_32FC1,Scalar::all(0)).</li>
+</ul>
+</li>
+<li><ul>
+<li>distCoeffs: the distortion matrix. Just pass in Mat distCoffs=Mat(1,5,CV_32FC1,Scalar::all(0));</li>
+</ul>
+</li>
+<li><ul>
+<li>rvecs: the rotation vectors. Pass in a vector of Mat, i.e. vector<Mat>rvecs;</li>
+</ul>
+</li>
+<li><ul>
+<li>tvecs: the translation vectors. Like rvecs, it should be vector<Mat> tvecs;</li>
+</ul>
+</li>
+<li><ul>
+<li>flags: the algorithm used for calibration. flags can take the following values (if omitted, the behavior described for “not set” below applies):</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>CV_CALIB_USE_INTRINSIC_GUESS: when set, cameraMatrix should contain estimates of fx, fy, u0, v0. Otherwise (u0, v0) is initialized to the center of the image and fx, fy are estimated with least squares.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>CV_CALIB_FIX_PRINCIPAL_POINT: keeps the principal point fixed during optimization. When CV_CALIB_USE_INTRINSIC_GUESS is set, the principal point stays at the center or at the given input value.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>CV_CALIB_FIX_ASPECT_RATIO: fixes the ratio fx/fy and only treats fy as a variable during optimization. When CV_CALIB_USE_INTRINSIC_GUESS is not set, fx and fy are ignored and only the ratio fx/fy is used in the computation.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>CV_CALIB_ZERO_TANGENT_DIST: sets the tangential distortion parameters (p1, p2) to zero.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>CV_CALIB_FIX_K1,…,CV_CALIB_FIX_K6: keeps the corresponding radial distortion coefficient unchanged during optimization.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>CV_CALIB_RATIONAL_MODEL: computes the three distortion parameters k4, k5, k6. If not set, only the other 5 distortion parameters are computed.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>criteria: the termination criteria for the iterative optimization.</li>
+</ul>
+</li>
+</ul>
+<p><em>Before calibrating with this function, initialize the spatial coordinates of each corner on the chessboard (i.e. assign values to them). The function computes the camera’s intrinsic matrix and distortion, and each image also gets its own translation and rotation vectors.</em></p>
+<p><code>The implementation looks roughly like this:</code><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">Size image_size;<span class="comment">//image size</span></span><br><span class="line">Size board_size = <span class="built_in">Size</span>(<span class="number">9</span>, <span class="number">6</span>);     <span class="comment">//number of corners per row and column on the board</span></span><br><span class="line">vector&lt;Point2f&gt; image_points_buf;  <span class="comment">//buffers the corners detected in each image</span></span><br><span class="line">vector&lt;vector&lt;Point2f&gt;&gt; image_points_seq; <span class="comment">//stores all the detected corners</span></span><br><span class="line"><span class="comment">/*extract corners*/</span></span><br><span class="line"><span class="keyword">char</span> filename[<span class="number">10</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">size_t</span> image_num = <span class="number">1</span>; image_num &lt;= IMGCOUNT; image_num++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">sprintf_s</span>(filename, <span class="string">&quot;%d.jpg&quot;</span>, image_num);</span><br><span class="line">    Mat imageInput = <span class="built_in">imread</span>(filename);</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">findChessboardCorners</span>(imageInput, board_size, image_points_buf))</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;can not find chessboard corners!\n&quot;</span>;<span class="comment">//corners not found  </span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        Mat view_gray;</span><br><span class="line">        <span class="built_in">cvtColor</span>(imageInput, view_gray, CV_RGB2GRAY);</span><br><span class="line">        <span class="comment">/*sub-pixel refinement*/</span></span><br><span class="line">        <span class="built_in">find4QuadCornerSubpix</span>(view_gray, image_points_buf, <span class="built_in">Size</span>(<span class="number">5</span>, <span class="number">5</span>));<span class="comment">//refine the roughly extracted corners  </span></span><br><span class="line">        <span class="built_in">drawChessboardCorners</span>(view_gray, board_size, image_points_buf, <span class="literal">true</span>);<span class="comment">//mark the corners in the image  </span></span><br><span class="line">        image_points_seq.<span class="built_in">push_back</span>(image_points_buf);<span class="comment">//save the sub-pixel corners  </span></span><br><span class="line">        <span class="built_in">imshow</span>(<span class="string">&quot;Camera Calibration&quot;</span>, view_gray);<span class="comment">//show the image  </span></span><br><span class="line">        <span class="comment">//waitKey(500);//pause for half a second</span></span><br><span class="line">    &#125;</span><br><span class="line">    image_size.width = imageInput.cols;</span><br><span class="line">    image_size.height = imageInput.rows;</span><br><span class="line">    imageInput.<span class="built_in">release</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*camera calibration*/</span></span><br><span class="line">vector&lt;vector&lt;Point3f&gt;&gt; object_points; <span class="comment">//3D coordinates of the corners on the board; the first parameter of the calibration function</span></span><br><span class="line">Size square_size = <span class="built_in">Size</span>(<span class="number">10</span>, <span class="number">10</span>);<span class="comment">//the measured size of each square on the board; I did not actually measure it and just assumed a value, which does not seem to matter much; to be studied later</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> t = <span class="number">0</span>; t&lt;IMGCOUNT; t++)</span><br><span class="line">&#123;</span><br><span class="line">    vector&lt;Point3f&gt; tempPointSet;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;board_size.height; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j&lt;board_size.width; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            Point3f realPoint;</span><br><span class="line">            <span class="comment">//assume the board lies on the z=0 plane of the world coordinate system</span></span><br><span class="line">            realPoint.x = i*square_size.width;</span><br><span class="line">            realPoint.y = j*square_size.height;</span><br><span class="line">            realPoint.z = <span class="number">0</span>;</span><br><span class="line">            tempPointSet.<span class="built_in">push_back</span>(realPoint);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    object_points.<span class="built_in">push_back</span>(tempPointSet);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//intrinsic and extrinsic parameter objects</span></span><br><span class="line">Mat cameraMatrix = <span class="built_in">Mat</span>(<span class="number">3</span>, <span class="number">3</span>, CV_32FC1, Scalar::<span class="built_in">all</span>(<span class="number">0</span>));<span class="comment">//camera intrinsic matrix</span></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; point_counts;<span class="comment">// number of corners in each image  </span></span><br><span class="line">Mat distCoeffs = <span class="built_in">Mat</span>(<span class="number">1</span>, <span class="number">5</span>, CV_32FC1, Scalar::<span class="built_in">all</span>(<span class="number">0</span>));<span class="comment">//the camera&#x27;s 5 distortion coefficients: k1,k2,p1,p2,k3</span></span><br><span class="line">vector&lt;Mat&gt; tvecsMat;<span class="comment">//rotation vector of each image</span></span><br><span class="line">vector&lt;Mat&gt; rvecsMat;<span class="comment">//translation vector of each image</span></span><br><span class="line"><span class="built_in">calibrateCamera</span>(object_points, image_points_seq, image_size, cameraMatrix, distCoeffs, rvecsMat, tvecsMat, <span class="number">0</span>);<span class="comment">//calibrate the camera</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>Image correction:<blockquote>
+<p>Now that calibration has given us all the camera parameters, we can use them to correct the camera’s images.</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>Function:</strong> <strong><em>void undistort(InputArray src, OutputArray dst,InputArray cameraMatrix,InputArray distCoeffs,InputArray newCameraMatrix=noArray());</em></strong></p>
+<blockquote>
+<ul>
+<li>Parameters:</li>
+<li><ul>
+<li>src: input, the original distorted image;</li>
+</ul>
+</li>
+<li><ul>
+<li>dst: the corrected output image, with the same type and size as the input;</li>
+</ul>
+</li>
+<li><ul>
+<li>cameraMatrix: the camera intrinsic matrix obtained earlier;</li>
+</ul>
+</li>
+<li><ul>
+<li>distCoeffs: the camera distortion matrix obtained earlier;</li>
+</ul>
+</li>
+<li><ul>
+<li>newCameraMatrix: same as cameraMatrix by default;</li>
+</ul>
+</li>
+</ul>
+<p><code>Example usage:</code><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*correct the images using the calibration results*/</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">size_t</span> image_num = <span class="number">1</span>; image_num &lt;= IMGCOUNT; image_num++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">sprintf_s</span>(filename, <span class="string">&quot;%d.jpg&quot;</span>, image_num);</span><br><span class="line">    Mat imageSource = <span class="built_in">imread</span>(filename);</span><br><span class="line">    Mat newimage = imageSource.<span class="built_in">clone</span>();</span><br><span class="line">    <span class="built_in">undistort</span>(imageSource, newimage, cameraMatrix, distCoeffs);</span><br><span class="line">    <span class="built_in">imshow</span>(<span class="string">&quot;source&quot;</span>, imageSource);<span class="comment">//show the image </span></span><br><span class="line">    <span class="built_in">imshow</span>(<span class="string">&quot;drc&quot;</span>, newimage);<span class="comment">//show the image  </span></span><br><span class="line">    <span class="built_in">waitKey</span>(<span class="number">500</span>);<span class="comment">//pause for half a second</span></span><br><span class="line">    imageSource.<span class="built_in">release</span>();</span><br><span class="line">    newimage.<span class="built_in">release</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="en-Zhang’s-calibration-method-in-MATLAB"><a href="#en-Zhang’s-calibration-method-in-MATLAB" class="headerlink" title="Zhang’s calibration method in MATLAB"></a>Zhang’s calibration method in MATLAB</h3><blockquote>
+<p>Preparation: <a target="_blank" rel="noopener" href="http://www.vision.caltech.edu/bouguetj/calib_doc/download/index.html">toolbox download</a></p>
+<p>Installation:</p>
+<ul>
+<li>Unzip the downloaded toolbox file toolbox_calib.zip and copy the toolbox_calib folder into the MATLAB directory (or any other directory).</li>
+<li>Start MATLAB and add the location of the TOOLBOX_calib folder to the MATLAB path.</li>
+<li>To do this: File-&gt;Set Path-&gt;Add Folder, find the folder<br>TOOLBOX_calib you just placed, and click Save.</li>
+<li>Capture images: name the captured images consistently and copy them into the toolbox_calib folder. The naming rule is a base name followed by a number. The base name comes first, immediately followed by the number, which has at most 3 decimal digits.<h4 id="en-Single-camera-calibration"><a href="#en-Single-camera-calibration" class="headerlink" title="Single camera calibration"></a>Single camera calibration</h4></li>
+<li>Preparation</li>
+</ul>
+<p>Make the folder containing the left and right images taken by the binocular camera MATLAB’s current folder. My images are named like L1, L2…, R1, R2… (Note: image names follow the format letters + number, letters first and number after.)</p>
+<ul>
+<li>Type calib_gui in the MATLAB command window and press Enter. The following window appears:</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ToolBox.jpg" alt=""></p>
+<ul>
+<li>Choose the first option <img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/StandardVersion.jpg" alt="">, and the main window below appears:</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ToolBoxStandard.jpg" alt=""></p>
+<ul>
+<li><p><code>Notes:</code></p>
+</li>
+<li><ul>
+<li>“Image names” button: specify the base name and format of the images, and read the matching images into memory.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Read names” button: read the images with the given base name and format into memory.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Extract grid corners” button: extract the grid corners.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Calibration” button: calibrate the intrinsic parameters.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Show Extrinsic” button: show the relationship between the camera and the calibration target graphically.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Project on images” button: using the camera’s intrinsic and extrinsic parameters (i.e. the transform from the target coordinate system to the camera coordinate system), reproject the grid corners from their Cartesian coordinates back into image space. </li>
+</ul>
+</li>
+<li><ul>
+<li>“Analyse error” button: analyze the error in image space</li>
+</ul>
+</li>
+<li><ul>
+<li>“Recomp. corners” button: re-extract the grid corners.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Add/Suppress images” button: add or remove images.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Save” button: save the calibration results. The intrinsic results and the extrinsic parameters between the camera and the target are saved as the m-file Calib_results.m in the toolbox_calib folder.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Load” button: load calibration results from the file Calib_results.mat in the toolbox_calib folder.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Exit” button: exit calibration.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Comp. Extrinsic” button: compute the extrinsic parameters. </li>
+</ul>
+</li>
+<li><ul>
+<li>“Undistort image” button: generate and save undistorted images. </li>
+</ul>
+</li>
+<li><ul>
+<li>“Export calib data” button: export the calibration data. For each target image, the corners are saved as two text files, one with planar coordinates in the target coordinate system and one with image coordinates.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Show calib results” button: show the calibration results.</li>
+</ul>
+</li>
+<li><p>Choose the first button <img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ImageNames.jpg" alt="">. The command window shows everything in the current folder:</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/Calib_Results.jpg" alt=""></p>
+<p>It then prompts “Basename camera calibration images (without number norsuffix):”. For my image names, when calibrating the left images I enter: L. For the image format, choose j. After pressing Enter, all the loaded images are shown.</p>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/LoadImage.jpg" alt=""></p>
+<p>20 images were read in total</p>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/20Images.jpg" alt=""></p>
+<ul>
+<li>Go back to the main window and choose the third option <img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ExtractGridCorners.jpg" alt="">. The command window shows the following prompts; accept the defaults by pressing Enter:</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/Wintx_Winty.png" alt=""></p>
+<ul>
+<li><code>Notes:</code></li>
+<li><ul>
+<li>a: At the “wintx ([] = 5) =” and “winty ([] = 5) =” prompts, enter the half-width m and half-height n of the corner extraction window. m and n are positive integers in pixels, 5 pixels by default. Once m and n are chosen, the command window shows the window size (2n+1)x(2m+1). For example, with the defaults the corner extraction window is 11x11 pixels.</li>
+</ul>
+</li>
+<li><ul>
+<li>b: At “Do you want to use the automatic square counting mechanism (0=[]=default) or do you always want to enter the number of squares manually (1,other)?”, the default 0 counts the rows and columns of squares in the selected area of the chessboard automatically, and 1 means you count and enter them yourself.</li>
+</ul>
+</li>
+<li><p>After pressing Enter, the first chessboard image appears and you extract the corners: click the 4 outer corners of the chessboard with the mouse. The first point you click is the origin O; click the others in order (clockwise or counterclockwise), as shown:</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ClickOnTheFourExtemeCorners.jpg" alt=""> <img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ExtremeCorners.jpg" alt=""></p>
+<ul>
+<li><p><code>Note:</code></p>
+</li>
+<li><ul>
+<li>1) Some guides say you should click the inner corners, as shown in the picture. I checked many sources and found no clear requirement, but after comparing, I personally think it depends on the calibration board.</li>
+</ul>
+</li>
+<li><ul>
+<li><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/WrongPicture.jpg" alt=""></li>
+</ul>
+</li>
+<li><ul>
+<li>2) The sides of the quadrilateral you form should be roughly parallel to the grid lines of the chessboard. Otherwise the accuracy of corner extraction suffers, and the corners may even be extracted wrongly.</li>
+</ul>
+</li>
+<li><p>Go back to the command window and enter the chessboard information:</p>
+</li>
+</ul>
+<p>“Number of squares along the X direction ([]=10) =” enter the number of squares in the X direction: 7</p>
+<p>“Number of squares along the Y direction ([]=10) =” enter the number of squares in the Y direction: 9</p>
+<p>“Size dX of each square along the X direction ([]=100mm) =” enter the length of a square in the X direction (mm): 29. The squares on my chessboard are 29mm in both the X and Y directions.</p>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/CornerExtraction.jpg" alt=""></p>
+<p>After pressing Enter, the extracted corners are shown. (My chessboard was printed and stuck onto a cardboard box, so it is not perfectly flat, and some corners are slightly off from their real positions.)</p>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/Feature2.jpg" alt=""></p>
+<ul>
+<li><code>Notes:</code></li>
+</ul>
+<p>When the MATLAB command window shows “Need of an initial guess for distortion? ([]=no, other=yes)”, choosing no means you do not enter an initial distortion value, and choosing yes means you do. The initial value you enter is assigned to all 5 distortion coefficients to be estimated: the radial distortion coefficients kc(1), kc(2), kc(5) and the tangential distortion coefficients kc(3), kc(4). If the 6th-order radial distortion coefficient kc(5) is not estimated, kc(5) is set to 0.</p>
+<ul>
+<li>Repeat this for each of the remaining images (I had 20)</li>
+</ul>
+<p>Note: once you fill in the information for the first image, the second image uses it as the default, so you only need to press Enter. But be aware that the X and Y directions depend only on the first corner you click. For example:</p>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/Feature1.jpg" alt=""><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/feature3.jpg" alt=""></p>
+<p>The chessboard has the same orientation (landscape) in both images, but I clicked a different first corner, so the origin O and the X and Y directions are different. To avoid re-entering the chessboard information every time, always choose the same position for the first corner. (If the chessboard appears in different orientations, both landscape and portrait, then the first point should be the one at the same position relative to the chessboard. I learned that the hard way.)</p>
+<ul>
+<li>After corner extraction, run the calibration. A .mat file appears in the folder. (It is best to rename it to calib_data_left.mat so it is not overwritten when you calibrate the right images later.)</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/calib_data.png" alt=""></p>
+<p>Go back to the main window and choose the fourth option <img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/calibration.jpg" alt="">:</p>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/calibrationResult.jpg" alt=""></p>
+<ul>
+<li>Show the relationship between the camera and the calibration board:</li>
+</ul>
+<p>Click <img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ShowExtrinsic.jpg" alt=""> in the main window to show the relationship between the camera and the calibration target in a new figure window:</p>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/IO.jpg" alt=""></p>
+<ul>
+<li>Error analysis:</li>
+</ul>
+<p>Click <img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/AnalyseError.jpg" alt=""> to show, in a new figure window, the image-coordinate error of all calibration corners reprojected into image space, as shown:</p>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/Error.jpg" alt=""></p>
+<p>In the figure window shown, you can move the crosshair with the mouse to select a corner, and the command window shows that corner’s information: which image it belongs to, its index, its coordinates in units of squares, its image coordinates, the reprojection error, and the half-width m and half-height n of the corner extraction window.</p>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/WindowSize.jpg" alt=""></p>
+<ul>
+<li>Click <img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/save.jpg" alt="">, and the following files appear in the folder:</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/CalibResults.jpg" alt=""></p>
+<ul>
+<li><p><code>Note:</code> the Result.mat file is used in stereo calibration. Rename “Calib_Results.mat” to “Calib_Results_left.mat “.</p>
+</li>
+<li><p>Click “Undistort image” to remove distortion from the images. Choose whether to process one image or all of them (all by default). The undistorted images are then saved.</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/UndistortImage.jpg" alt=""></p>
+<h4 id="en-Stereo-calibration"><a href="#en-Stereo-calibration" class="headerlink" title="Stereo calibration"></a>Stereo calibration</h4><ul>
+<li>Process the images from the right camera the same way.</li>
+</ul>
+<p>Calibration results:</p>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/RightResults.jpg" alt=""></p>
+<ul>
+<li>Once each camera has been calibrated on its own, you can run the stereo calibration. Type <code>stereo_gui</code> in the MATLAB command window, and the following window appears:</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/StereoCameraToolbox.jpg" alt=""></p>
+<ul>
+<li>Click <img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/LoadLeftRightFiles.jpg" alt="">. The command window asks for the names of the .mat files. Press Enter to accept the default names (Calib_Result_left.mat and Calib_Result_right.mat), or type your own file names.</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/LoadingFiles.png" alt=""></p>
+<ul>
+<li>After loading the files, the command window shows the parameters of the left and right cameras:</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/LoadResults.jpg" alt=""></p>
+<ul>
+<li><p><code>Notes:</code></p>
+</li>
+<li><p>fc_left is the scale factor of the left camera, i.e. the factor that maps image points on the focal-length-normalized image plane to image coordinates. cc_left is the principal point of the left camera, in pixels. alpha_c_left is the angle between the actual y axis and the ideal y axis of the left camera, in radians, 0 by default. kc_left is the distortion coefficients of the left camera. fc_right is the scale factor of the right camera, i.e. the factor that maps image points on the focal-length-normalized image plane to image coordinates. cc_right is the principal point of the right camera, in pixels. alpha_c_right is the angle between the actual y axis and the ideal y axis of the right camera, in radians, 0 by default. kc_right is the distortion coefficients of the right camera. om is the Rodrigues rotation vector of the left camera’s orientation relative to the right camera; the rodrigues function converts it into an orientation matrix. T is the translation vector of the left camera relative to the right camera, i.e. the position of the left camera’s origin in the right camera’s coordinate system, in mm.</p>
+</li>
+<li><p>Click <img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/RunStereoCalibration.png" alt=""> to compute the optimized extrinsic parameters. The command window outputs the intrinsic parameters of the left and right cameras and the optimized extrinsic parameters, as shown below:</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/StereoCalibrationResults.jpg" alt=""></p>
+<ul>
+<li>Click <img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ShowExtrinsicsOfStereoRig.jpg" alt=""> to show the position of the calibration target relative to the binocular camera:</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/ExtrinsicParameters.jpg" alt=""></p>
+<ul>
+<li><p>Click <img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/SaveStereoCalibResults.png" alt=""> to save the calibration results as the file <img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/CalibResultsStereo.png" alt=""></p>
+</li>
+<li><p><code>Notes:</code></p>
+</li>
+<li><p>What each stereo calibration button does:</p>
+</li>
+<li><ul>
+<li>“Load left and right calibration files” button: loads the calibration results of the left and right cameras and makes an initial estimate of the pose of the left camera relative to the right camera.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Run stereo calibration” button: computes the optimized extrinsic parameters. </li>
+</ul>
+</li>
+<li><ul>
+<li>“Show Extrinsics of stereo rig” button: shows the pose of the target relative to the cameras.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Show Intrinsic parameters” button: shows the intrinsic parameters of the left and right cameras and the optimized extrinsic parameters in the MATLAB command window.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Save stereo calib results” button: saves the calibration results as Calib_Results_stereo.mat in the toolbox_calib folder.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Load stereo calib results” button: loads the calibration results from Calib_Results_stereo.mat in the toolbox_calib folder.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Rectify the calibration images” button: processes all target images captured by the left and right cameras using the distortion coefficients, and saves the undistorted images in the toolbox_calib folder. Each undistorted image is named after the original, with _rectified inserted between the base name and the number.</li>
+</ul>
+</li>
+<li><ul>
+<li>“Exit” button: exits stereo calibration.</li>
+</ul>
+</li>
+</ul>
+<h4 id="en-Summary"><a href="#en-Summary" class="headerlink" title="Summary:"></a>Summary:</h4><p><code>Things to watch out for when calibrating with the MATLAB toolbox:</code></p>
+<ul>
+<li>Intrinsic calibration </li>
+<li><ul>
+<li>Take special care when making the chessboard target: the black and white squares must be the same size, and all squares must be exactly the same size. The target should not have too few squares; more than 10 rows and columns is best. The squares should be neither too large nor too small: in the captured image, each square should be at least 20 pixels on a side.</li>
+</ul>
+</li>
+<li><ul>
+<li>Take special care when capturing target images: capture several images of the target from different angles and positions. The images must be sharp, and the target should take up about 1/3~3/4 of the whole image. Ideally the target appears in different parts of the image across the set, rather than always in the same area. The distance between the target and the camera should ideally be the main working distance of the vision system. The angle of the target relative to the camera should vary widely, including large rotations around all three axes, preferably at least 30 degrees. Do not capture too few images; 10~20 target images is recommended. </li>
+</ul>
+</li>
+<li><ul>
+<li>Do not change the camera’s focal length while capturing images. The focal length is one of the camera’s intrinsic parameters, so images taken at different focal lengths imply different intrinsic parameters, and calibrating them together will not give correct results. </li>
+</ul>
+</li>
+<li><ul>
+<li>Name all target images consistently with a base name and a number, such as Image1~Image15. All target images must use the same data format. </li>
+</ul>
+</li>
+<li><ul>
+<li>When extracting corners, click in the figure window to define the selected area of the chessboard target. The first corner you click becomes the origin of the target coordinate system; click the 4 corners in order to form a quadrilateral. Two consecutively clicked corners should lie on the same grid line, so that the sides of the quadrilateral are roughly parallel to the grid lines of the chessboard. To click the corners more accurately, maximize the window showing the target image and use the mouse crosshair to click the 4 corners as precisely as possible.</li>
+</ul>
+</li>
+<li><ul>
+<li>Whether the angle alpha_c between the camera’s actual y axis and ideal y axis is calibrated is controlled by the est_alpha flag. With est_alpha=1, alpha_c is calibrated; with est_alpha=0, it is not.</li>
+</ul>
+</li>
+<li><ul>
+<li>The array est_dist(1:5) flags whether each distortion coefficient kc(1:5) is calibrated. Only coefficients whose flag is 1 are calibrated; those with flag 0 are not. The default is est_dist(1:5)=[1 1 1 1 0], i.e. kc1~kc4 are calibrated and kc5 is not (kc5=0).</li>
+</ul>
+</li>
+<li><ul>
+<li>After running calib_gui, MATLAB is busy and the command window does not respond to other commands. Only after you click “Exit” in the calibration toolbox does the command window respond again.</li>
+</ul>
+</li>
+<li>Extrinsic calibration </li>
+<li><ul>
+<li>You must enter the actual size of the squares</li>
+</ul>
+</li>
+<li><ul>
+<li>When extracting corners, the first corner you click in the figure window becomes the origin of the target coordinate system. The resulting extrinsic parameters are the pose of the target coordinate system in the camera coordinate system</li>
+</ul>
+</li>
+<li><ul>
+<li>The Rodrigues rotation vector omc_ext and the orientation matrix Rc_ext can be converted into each other with the rodrigues function: omc_ext=rodrigues(Rc_ext), Rc_ext=rodrigues(omc_ext)</li>
+</ul>
+</li>
+<li>Stereo calibration</li>
+<li><ul>
+<li>When extracting corners, the first corner you click in the figure window becomes the origin of the target coordinate system. For each pair of target images from the left and right cameras, choose the same first corner as the origin. The other 3 corners should also be the same in the left and right images.</li>
+</ul>
+</li>
+<li><ul>
+<li>The left and right cameras must capture the same number of images. Left and right images with the same number are taken with the target in the same pose, and together they form one stereo pair of target images.</li>
+</ul>
+</li>
+<li><ul>
+<li>The resulting extrinsic parameters are the pose of the left camera relative to the right camera, i.e. the pose of the left camera’s coordinate system in the right camera’s coordinate system.</li>
+</ul>
+</li>
+<li><ul>
+<li>After running stereo_gui, the MATLAB command window still responds to other commands.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="en-Capturing-images-with-OpenCV"><a href="#en-Capturing-images-with-OpenCV" class="headerlink" title="Capturing images with OpenCV"></a>Capturing images with OpenCV</h2><blockquote>
+<p>There are two versions of the code for capturing images with OpenCV, one in Python and one in C++, but the idea is the same: <code>read the video first, then grab frames</code>.</p>
+</blockquote>
+<ul>
+<li>Python code:</li>
+<li><code>Note: set the save path according to your own computer. Here I just use the paths on my machine for taking and saving photos</code>.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">shot</span>(<span class="params">pos, frame</span>):</span></span><br><span class="line">    <span class="keyword">global</span> counter</span><br><span class="line">    path = folder + pos + <span class="string">&quot;_&quot;</span> + <span class="built_in">str</span>(counter) + <span class="string">&quot;.jpg&quot;</span></span><br><span class="line">    cv2.imwrite(path, frame)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;snapshot saved into: &quot;</span> + path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    AUTO = <span class="literal">True</span>  <span class="comment"># take photos automatically, or manually by pressing s</span></span><br><span class="line">    INTERVAL = <span class="number">1</span>  <span class="comment"># interval between automatic photos</span></span><br><span class="line"></span><br><span class="line">    cv2.namedWindow(<span class="string">&quot;middle&quot;</span>)</span><br><span class="line">    cv2.moveWindow(<span class="string">&quot;middle&quot;</span>, <span class="number">400</span>, <span class="number">0</span>)</span><br><span class="line">    middle_camera = cv2.VideoCapture(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    counter = <span class="number">0</span></span><br><span class="line">    utc = time.time()</span><br><span class="line">    pattern = (<span class="number">12</span>, <span class="number">8</span>)  <span class="comment"># chessboard size</span></span><br><span class="line">    folder = <span class="string">&quot;F:/PyCharm_code/OpenCVDemo/snapshot/&quot;</span>  <span class="comment"># folder for the photos (change it to your own path)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="comment"># ret, left_frame = left_camera.read()</span></span><br><span class="line">        ret, middle_frame = middle_camera.read()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># cv2.imshow(&quot;left&quot;, left_frame)</span></span><br><span class="line">        cv2.imshow(<span class="string">&quot;middle&quot;</span>, middle_frame)</span><br><span class="line"></span><br><span class="line">        now = time.time()</span><br><span class="line">        <span class="keyword">if</span> AUTO <span class="keyword">and</span> now - utc &gt;= INTERVAL:</span><br><span class="line">            shot(<span class="string">&quot;middle&quot;</span>, middle_frame)</span><br><span class="line">            img = Image.<span class="built_in">open</span>(folder + <span class="string">&quot;middle&quot;</span> + <span class="string">&quot;_&quot;</span> + <span class="built_in">str</span>(counter) + <span class="string">&quot;.jpg&quot;</span>)</span><br><span class="line">            width, height = img.size</span><br><span class="line">            w = width * <span class="number">0.5</span></span><br><span class="line">            right_box = (<span class="number">0</span>, <span class="number">0</span>, w, height)</span><br><span class="line">            left_box = (w, <span class="number">0</span>, width, height)</span><br><span class="line">            right_region = img.crop(right_box)</span><br><span class="line">            left_region = img.crop(left_box)</span><br><span class="line">            right_region.save(folder + <span class="string">&quot;RightTest&quot;</span> + <span class="string">&quot;/&quot;</span> + <span class="built_in">str</span>(counter) + <span class="string">&quot;.jpg&quot;</span>)</span><br><span class="line">            left_region.save(folder + <span class="string">&quot;LeftTest&quot;</span> + <span class="string">&quot;/&quot;</span> + <span class="built_in">str</span>(counter) + <span class="string">&quot;.jpg&quot;</span>)</span><br><span class="line"></span><br><span class="line">            counter += <span class="number">1</span></span><br><span class="line">            utc = now</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        key = cv2.waitKey(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> key == <span class="built_in">ord</span>(<span class="string">&quot;q&quot;</span>):</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">elif</span> key == <span class="built_in">ord</span>(<span class="string">&quot;s&quot;</span>):</span><br><span class="line">            shot(<span class="string">&quot;middle&quot;</span>, middle_frame)</span><br><span class="line">            counter += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    middle_camera.release()</span><br><span class="line">    cv2.destroyWindow(<span class="string">&quot;middle&quot;</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><code>Note:</code> my binocular camera shows the left and right cameras side by side in one frame when taking photos, so there is an extra step that splits the image. The splitting code:</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">img = Image.<span class="built_in">open</span>(folder + <span class="string">&quot;middle&quot;</span> + <span class="string">&quot;_&quot;</span> + <span class="built_in">str</span>(counter) + <span class="string">&quot;.jpg&quot;</span>)</span><br><span class="line">width, height = img.size</span><br><span class="line">w = width * <span class="number">0.5</span></span><br><span class="line">right_box = (<span class="number">0</span>, <span class="number">0</span>, w, height)</span><br><span class="line">left_box = (w, <span class="number">0</span>, width, height)</span><br><span class="line">right_region = img.crop(right_box)</span><br><span class="line">left_region = img.crop(left_box)</span><br><span class="line">right_region.save(folder + <span class="string">&quot;RightTest&quot;</span> + <span class="string">&quot;/&quot;</span> + <span class="built_in">str</span>(counter) + <span class="string">&quot;.jpg&quot;</span>)</span><br><span class="line">left_region.save(folder + <span class="string">&quot;LeftTest&quot;</span> + <span class="string">&quot;/&quot;</span> + <span class="built_in">str</span>(counter) + <span class="string">&quot;.jpg&quot;</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>Read the image, split it, then save both halves.</li>
+<li>C++ code:<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">   <span class="function">VideoCapture <span class="title">capture</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">Mat frame;</span><br><span class="line"><span class="keyword">if</span> (!capture.<span class="built_in">isOpened</span>())</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Failed to open the camera&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">char</span> key;</span><br><span class="line"><span class="keyword">char</span> filename[<span class="number">200</span>] = <span class="string">&quot;F:\VisualStudioProject\OpencvTest\srcPicture&quot;</span>;<span class="comment">//set this path for your own computer</span></span><br><span class="line"><span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">namedWindow</span>(<span class="string">&quot;[Video]&quot;</span>, <span class="number">1</span>);</span><br><span class="line"><span class="built_in">namedWindow</span>(<span class="string">&quot;[Photo]&quot;</span>, <span class="number">1</span>);</span><br><span class="line"><span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">	key = <span class="built_in">waitKey</span>(<span class="number">30</span>);</span><br><span class="line">	capture &gt;&gt; frame;</span><br><span class="line">	<span class="built_in">imshow</span>(<span class="string">&quot;[Video]&quot;</span>, frame);</span><br><span class="line">	<span class="comment">/*imwrite(filename, frame);*/</span></span><br><span class="line">	<span class="keyword">if</span> (key == <span class="number">27</span>)</span><br><span class="line">		<span class="keyword">break</span>;<span class="comment">//press ESC to exit  </span></span><br><span class="line">	<span class="keyword">if</span> (key == <span class="number">32</span>)<span class="comment">//press Space to take a photo  </span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">sprintf_s</span>(filename, <span class="string">&quot;%d.jpg&quot;</span>, ++count);</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;Done&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="built_in">imwrite</span>(filename, frame);<span class="comment">//save the photo in the project folder  </span></span><br><span class="line">		<span class="built_in">imshow</span>(<span class="string">&quot;[Photo]&quot;</span>, frame);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="en-Stereo-rectification-of-the-images"><a href="#en-Stereo-rectification-of-the-images" class="headerlink" title="Stereo rectification of the images"></a>Stereo rectification of the images</h2></li>
+</ul>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*stereo rectification*/</span></span><br><span class="line"><span class="built_in">Rodrigues</span>(rec, R); <span class="comment">//Rodrigues transform</span></span><br><span class="line"><span class="built_in">stereoRectify</span>(cameraMatrixL, distCoeffL, cameraMatrixR, distCoeffR,imageSize, R, T, Rl, Rr, Pl, Pr, Q, CALIB_ZERO_DISPARITY,<span class="number">0</span>, imageSize, &amp;validROIL, &amp;validROIR);</span><br><span class="line"><span class="built_in">initUndistortRectifyMap</span>(cameraMatrixL, distCoeffL,Rl,Pr,imageSize,CV_32FC1, mapLx, mapLy);</span><br><span class="line"><span class="built_in">initUndistortRectifyMap</span>(cameraMatrixR, distCoeffR,Rr,Pr,imageSize,CV_32FC1, mapRx, mapRy);</span><br></pre></td></tr></table></figure>
+<h2 id="en-Stereo-matching"><a href="#en-Stereo-matching" class="headerlink" title="Stereo matching"></a>Stereo matching</h2><blockquote>
+<p>Stereo matching uses the Block Matching algorithm. Block Matching uses the SAD method, which is fast but gives average results.</p>
+</blockquote>
+<p><code>Parameter settings:</code></p>
+<ul>
+<li>MinDisparity is set to 0, because the two cameras face forward in parallel, so the same object is always further right in the left image than in the right image. If you angle the two cameras inward to get a larger overlapping area, you need to take this parameter into account. </li>
+<li>UniquenessRatio mainly prevents false matches, and it has a big effect on the final result. In stereo matching, it is better to leave an area unmatched than to match it wrongly. False matches cause a lot of trouble in applications like obstacle detection. The value cannot be negative; something around 5-15 is usually appropriate. int.</li>
+<li>BlockSize: the SAD window size. The allowed range is [5,255], and it should generally be between 5x5 and 21x21. It must be odd. int.</li>
+<li>NumDisparities: the disparity window, i.e. the difference between the maximum and minimum disparity. The window size must be a multiple of 16. int. </li>
+<li>Among the BM parameters, the ones that affect the disparity result most are BlockSize, NumDisparities and UniquenessRatio. Usually you only need to tune these three and leave the rest at their defaults. </li>
+</ul>
+<p><code>How a binocular camera works:</code></p>
+<p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/StereoPhoto.png" alt=""></p>
+<blockquote>
+<p>The disparity disp computed by BM is in CV_16S format. You need disp.convertTo(disp8, CV_8U, 255/(numberOfDisparities*16.)) to get the real disparity values.<br>Then reprojectImageTo3D converts the disparity matrix into a matrix of real physical coordinates. When computing actual distances, the X / W, Y / W, Z / W produced by reprojectImageTo3D must all be multiplied by 16 (i.e. W divided by 16) to get the correct 3D coordinates. </p>
+</blockquote>
+<ul>
+<li>Stereo matching code:<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*****stereo matching*****/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">stereo_match</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">void</span>*)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	bm-&gt;<span class="built_in">setBlockSize</span>(<span class="number">2</span> * blockSize + <span class="number">5</span>);     <span class="comment">//SAD window size, ideally between 5 and 21</span></span><br><span class="line">	bm-&gt;<span class="built_in">setROI1</span>(validROIL);</span><br><span class="line">	bm-&gt;<span class="built_in">setROI2</span>(validROIR);</span><br><span class="line">	bm-&gt;<span class="built_in">setPreFilterCap</span>(<span class="number">31</span>);</span><br><span class="line">	bm-&gt;<span class="built_in">setMinDisparity</span>(<span class="number">0</span>);  <span class="comment">//minimum disparity, 0 by default, can be negative, int</span></span><br><span class="line">	bm-&gt;<span class="built_in">setNumDisparities</span>(numDisparities * <span class="number">16</span> + <span class="number">16</span>);<span class="comment">//disparity window, i.e. max disparity minus min disparity; must be a multiple of 16, int</span></span><br><span class="line">	bm-&gt;<span class="built_in">setTextureThreshold</span>(<span class="number">10</span>);</span><br><span class="line">	bm-&gt;<span class="built_in">setUniquenessRatio</span>(uniquenessRatio);<span class="comment">//uniquenessRatio mainly prevents false matches</span></span><br><span class="line">	bm-&gt;<span class="built_in">setSpeckleWindowSize</span>(<span class="number">100</span>);</span><br><span class="line">	bm-&gt;<span class="built_in">setSpeckleRange</span>(<span class="number">32</span>);</span><br><span class="line">	bm-&gt;<span class="built_in">setDisp12MaxDiff</span>(<span class="number">-1</span>);</span><br><span class="line">	Mat disp, disp8,copyImage;</span><br><span class="line">	bm-&gt;<span class="built_in">compute</span>(rectifyImageL, rectifyImageR, disp);<span class="comment">//input images must be grayscale</span></span><br><span class="line">	disp.<span class="built_in">convertTo</span>(disp8, CV_8U, <span class="number">255</span> / ((numDisparities * <span class="number">16</span> + <span class="number">16</span>)*<span class="number">16.</span>));<span class="comment">//the computed disparity is in CV_16S format</span></span><br><span class="line">	<span class="built_in">reprojectImageTo3D</span>(disp, xyz, Q, <span class="literal">true</span>); <span class="comment">//when computing actual distances, X / W, Y / W, Z / W from ReprojectTo3D must be multiplied by 16 (i.e. W divided by 16) to get the correct 3D coordinates.</span></span><br><span class="line">	xyz = xyz * <span class="number">16</span>;</span><br><span class="line">	<span class="built_in">imshow</span>(<span class="string">&quot;disparity&quot;</span>, disp8);</span><br><span class="line">	copyImage = disp8.<span class="built_in">clone</span>();</span><br><span class="line">	<span class="built_in">imshow</span>(<span class="string">&quot;contour&quot;</span>, copyImage);</span><br><span class="line">	<span class="comment">//draw convex hulls based on the disparity map</span></span><br><span class="line">	Mat threshold_output;</span><br><span class="line">	vector&lt;vector&lt;Point&gt; &gt; contours;</span><br><span class="line">	vector&lt;Vec4i&gt; hierarchy;</span><br><span class="line">	<span class="function">RNG <span class="title">rng</span><span class="params">(<span class="number">12345</span>)</span></span>;</span><br><span class="line">	<span class="built_in">threshold</span>(copyImage, threshold_output, <span class="number">20</span>, <span class="number">255</span>, CV_THRESH_BINARY);<span class="comment">//binarize</span></span><br><span class="line">	<span class="built_in">findContours</span>(threshold_output, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, <span class="built_in">Point</span>(<span class="number">0</span>, <span class="number">0</span>));<span class="comment">//find contours</span></span><br><span class="line">	<span class="comment">/// compute the convex hull of each contour</span></span><br><span class="line">	vector&lt;vector&lt;Point&gt; &gt;<span class="built_in">hull</span>(contours.<span class="built_in">size</span>());</span><br><span class="line">	vector&lt;vector&lt;Point&gt; &gt; result;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; contours.<span class="built_in">size</span>(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">convexHull</span>(<span class="built_in">Mat</span>(contours[i]), hull[i], <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/// draw the contours and their convex hulls</span></span><br><span class="line">	Mat drawing = Mat::<span class="built_in">zeros</span>(threshold_output.<span class="built_in">size</span>(), CV_8UC3);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; contours.<span class="built_in">size</span>(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">contourArea</span>(contours[i]) &lt; <span class="number">500</span>)<span class="comment">//hulls smaller than this area can be ignored</span></span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		result.<span class="built_in">push_back</span>(hull[i]);</span><br><span class="line">		Scalar color = <span class="built_in">Scalar</span>(rng.<span class="built_in">uniform</span>(<span class="number">0</span>, <span class="number">255</span>), rng.<span class="built_in">uniform</span>(<span class="number">0</span>, <span class="number">255</span>), rng.<span class="built_in">uniform</span>(<span class="number">0</span>, <span class="number">255</span>));</span><br><span class="line">		<span class="built_in">drawContours</span>(drawing, contours, i, color, <span class="number">1</span>, <span class="number">8</span>, vector&lt;Vec4i&gt;(), <span class="number">0</span>, <span class="built_in">Point</span>());</span><br><span class="line">		<span class="built_in">drawContours</span>(drawing, hull, i, color, <span class="number">1</span>, <span class="number">8</span>, vector&lt;Vec4i&gt;(), <span class="number">0</span>, <span class="built_in">Point</span>());</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">imshow</span>(<span class="string">&quot;contours&quot;</span>, drawing);<span class="comment">//convex hull size</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="en-Summary-1"><a href="#en-Summary-1" class="headerlink" title="Summary:"></a>Summary:</h2><blockquote>
+<p>Use MATLAB or OpenCV to determine the intrinsic and extrinsic parameters, fill the measured values into the code, then run stereo rectification and stereo matching. This gives you a depth map, and running the disparity computation on it gives you the disparity map.</p>
+<ul>
+<li>The complete code:<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2\opencv.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;opencv2/imgproc/imgproc.hpp&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/core/core.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/highgui/highgui.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> imageWidth = <span class="number">320</span>;                             <span class="comment">//camera resolution  </span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> imageHeight = <span class="number">240</span>;</span><br><span class="line">Size imageSize = <span class="built_in">Size</span>(imageWidth, imageHeight);</span><br><span class="line"></span><br><span class="line">Mat rgbImageL, grayImageL;</span><br><span class="line">Mat rgbImageR, grayImageR;</span><br><span class="line">Mat rectifyImageL, rectifyImageR;</span><br><span class="line"></span><br><span class="line">Rect validROIL;<span class="comment">//after rectification the image is cropped; validROI is the area left after cropping  </span></span><br><span class="line">Rect validROIR;</span><br><span class="line"></span><br><span class="line">Mat mapLx, mapLy, mapRx, mapRy;     <span class="comment">//lookup maps  </span></span><br><span class="line">Mat Rl, Rr, Pl, Pr, Q;              <span class="comment">//rectification rotation matrix R, projection matrix P, reprojection matrix Q</span></span><br><span class="line">Mat xyz;							<span class="comment">//3D coordinates</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Point origin;					<span class="comment">//start point where the mouse was pressed</span></span><br><span class="line">Rect selection;					<span class="comment">//selection rectangle</span></span><br><span class="line"><span class="keyword">bool</span> selectObject = <span class="literal">false</span>;		<span class="comment">//whether an object is being selected</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> blockSize = <span class="number">7</span>, uniquenessRatio = <span class="number">20</span>, numDisparities = <span class="number">0</span>;</span><br><span class="line">Ptr&lt;StereoBM&gt; bm = StereoBM::<span class="built_in">create</span>(<span class="number">16</span>, <span class="number">9</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">camera parameters calibrated beforehand</span></span><br><span class="line"><span class="comment">fx 0 cx</span></span><br><span class="line"><span class="comment">0 fy cy</span></span><br><span class="line"><span class="comment">0 0  1</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">Mat cameraMatrixL = (Mat_&lt;<span class="keyword">double</span>&gt;(<span class="number">3</span>, <span class="number">3</span>) &lt;&lt; <span class="number">248.32797</span>, <span class="number">0</span>, <span class="number">248.24842</span>,</span><br><span class="line">	<span class="number">0</span>, <span class="number">150.87402</span>, <span class="number">114.30813</span>,</span><br><span class="line">	<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">Mat distCoeffL = (Mat_&lt;<span class="keyword">double</span>&gt;(<span class="number">5</span>, <span class="number">1</span>) &lt;&lt; <span class="number">0.04477</span>, <span class="number">-0.10081</span>, <span class="number">0.01026</span>, <span class="number">0.00132</span>, <span class="number">0.00000</span>);</span><br><span class="line"></span><br><span class="line">Mat cameraMatrixR = (Mat_&lt;<span class="keyword">double</span>&gt;(<span class="number">3</span>, <span class="number">3</span>) &lt;&lt; <span class="number">248.74867</span>, <span class="number">0</span>, <span class="number">248.84978</span>,</span><br><span class="line">	<span class="number">0</span>, <span class="number">152.62972</span>, <span class="number">98.07575</span>,</span><br><span class="line">	<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">Mat distCoeffR = (Mat_&lt;<span class="keyword">double</span>&gt;(<span class="number">5</span>, <span class="number">1</span>) &lt;&lt; <span class="number">-0.04158</span>, <span class="number">0.08338</span>, <span class="number">-0.00584</span>, <span class="number">0.00611</span>, <span class="number">0.00000</span>);</span><br><span class="line"></span><br><span class="line">Mat T = (Mat_&lt;<span class="keyword">double</span>&gt;(<span class="number">3</span>, <span class="number">1</span>) &lt;&lt; <span class="number">182.44004</span>, <span class="number">0.20804</span>, <span class="number">0.41865</span>);<span class="comment">//T: translation vector</span></span><br><span class="line">Mat rec = (Mat_&lt;<span class="keyword">double</span>&gt;(<span class="number">3</span>, <span class="number">1</span>) &lt;&lt; <span class="number">-0.05347</span>, <span class="number">-0.00229</span>, <span class="number">-0.00203</span>);<span class="comment">//rec: rotation vector</span></span><br><span class="line">Mat R;<span class="comment">//R: rotation matrix</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*****stereo matching*****/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">stereo_match</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">void</span>*)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	bm-&gt;<span class="built_in">setBlockSize</span>(<span class="number">2</span> * blockSize + <span class="number">5</span>);     <span class="comment">//SAD window size, ideally between 5 and 21</span></span><br><span class="line">	bm-&gt;<span class="built_in">setROI1</span>(validROIL);</span><br><span class="line">	bm-&gt;<span class="built_in">setROI2</span>(validROIR);</span><br><span class="line">	bm-&gt;<span class="built_in">setPreFilterCap</span>(<span class="number">31</span>);</span><br><span class="line">	bm-&gt;<span class="built_in">setMinDisparity</span>(<span class="number">0</span>);  <span class="comment">//minimum disparity, 0 by default, can be negative, int</span></span><br><span class="line">	bm-&gt;<span class="built_in">setNumDisparities</span>(numDisparities * <span class="number">16</span> + <span class="number">16</span>);<span class="comment">//disparity window, i.e. max disparity minus min disparity; must be a multiple of 16, int</span></span><br><span class="line">	bm-&gt;<span class="built_in">setTextureThreshold</span>(<span class="number">10</span>);</span><br><span class="line">	bm-&gt;<span class="built_in">setUniquenessRatio</span>(uniquenessRatio);<span class="comment">//uniquenessRatio mainly prevents false matches</span></span><br><span class="line">	bm-&gt;<span class="built_in">setSpeckleWindowSize</span>(<span class="number">100</span>);</span><br><span class="line">	bm-&gt;<span class="built_in">setSpeckleRange</span>(<span class="number">32</span>);</span><br><span class="line">	bm-&gt;<span class="built_in">setDisp12MaxDiff</span>(<span class="number">-1</span>);</span><br><span class="line">	Mat disp, disp8,copyImage;</span><br><span class="line">	bm-&gt;<span class="built_in">compute</span>(rectifyImageL, rectifyImageR, disp);<span class="comment">//input images must be grayscale</span></span><br><span class="line">	disp.<span class="built_in">convertTo</span>(disp8, CV_8U, <span class="number">255</span> / ((numDisparities * <span class="number">16</span> + <span class="number">16</span>)*<span class="number">16.</span>));<span class="comment">//the computed disparity is in CV_16S format</span></span><br><span class="line">	<span class="built_in">reprojectImageTo3D</span>(disp, xyz, Q, <span class="literal">true</span>); <span class="comment">//when computing actual distances, X / W, Y / W, Z / W from ReprojectTo3D must be multiplied by 16 (i.e. W divided by 16) to get the correct 3D coordinates.</span></span><br><span class="line">	xyz = xyz * <span class="number">16</span>;</span><br><span class="line">	<span class="built_in">imshow</span>(<span class="string">&quot;disparity&quot;</span>, disp8);</span><br><span class="line">	copyImage = disp8.<span class="built_in">clone</span>();</span><br><span class="line">	<span class="built_in">imshow</span>(<span class="string">&quot;contour&quot;</span>, copyImage);</span><br><span class="line">	<span class="comment">//draw convex hulls based on the disparity map</span></span><br><span class="line">	Mat threshold_output;</span><br><span class="line">	vector&lt;vector&lt;Point&gt; &gt; contours;</span><br><span class="line">	vector&lt;Vec4i&gt; hierarchy;</span><br><span class="line">	<span class="function">RNG <span class="title">rng</span><span class="params">(<span class="number">12345</span>)</span></span>;</span><br><span class="line">	<span class="built_in">threshold</span>(copyImage, threshold_output, <span class="number">20</span>, <span class="number">255</span>, CV_THRESH_BINARY);<span class="comment">//binarize</span></span><br><span class="line">	<span class="built_in">findContours</span>(threshold_output, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, <span class="built_in">Point</span>(<span class="number">0</span>, <span class="number">0</span>));<span class="comment">//find contours</span></span><br><span class="line">	<span class="comment">/// compute the convex hull of each contour</span></span><br><span class="line">	vector&lt;vector&lt;Point&gt; &gt;<span class="built_in">hull</span>(contours.<span class="built_in">size</span>());</span><br><span class="line">	vector&lt;vector&lt;Point&gt; &gt; result;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; contours.<span class="built_in">size</span>(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">convexHull</span>(<span class="built_in">Mat</span>(contours[i]), hull[i], <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/// draw the contours and their convex hulls</span></span><br><span class="line">	Mat drawing = Mat::<span class="built_in">zeros</span>(threshold_output.<span class="built_in">size</span>(), CV_8UC3);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; contours.<span class="built_in">size</span>(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">contourArea</span>(contours[i]) &lt; <span class="number">500</span>)<span class="comment">//hulls smaller than this area can be ignored</span></span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		result.<span class="built_in">push_back</span>(hull[i]);</span><br><span class="line">		Scalar color = <span class="built_in">Scalar</span>(rng.<span class="built_in">uniform</span>(<span class="number">0</span>, <span class="number">255</span>), rng.<span class="built_in">uniform</span>(<span class="number">0</span>, <span class="number">255</span>), rng.<span class="built_in">uniform</span>(<span class="number">0</span>, <span class="number">255</span>));</span><br><span class="line">		<span class="built_in">drawContours</span>(drawing, contours, i, color, <span class="number">1</span>, <span class="number">8</span>, vector&lt;Vec4i&gt;(), <span class="number">0</span>, <span class="built_in">Point</span>());</span><br><span class="line">		<span class="built_in">drawContours</span>(drawing, hull, i, color, <span class="number">1</span>, <span class="number">8</span>, vector&lt;Vec4i&gt;(), <span class="number">0</span>, <span class="built_in">Point</span>());</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">imshow</span>(<span class="string">&quot;contours&quot;</span>, drawing);<span class="comment">//convex hull size</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*****mouse callback*****/</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">onMouse</span><span class="params">(<span class="keyword">int</span> event, <span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span>, <span class="keyword">void</span>*)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (selectObject)</span><br><span class="line">	&#123;</span><br><span class="line">		selection.x = <span class="built_in">MIN</span>(x, origin.x);</span><br><span class="line">		selection.y = <span class="built_in">MIN</span>(y, origin.y);</span><br><span class="line">		selection.width = std::<span class="built_in">abs</span>(x - origin.x);</span><br><span class="line">		selection.height = std::<span class="built_in">abs</span>(y - origin.y);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in"><span class="keyword">switch</span></span> (event)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">case</span> EVENT_LBUTTONDOWN:   <span class="comment">//left mouse button pressed</span></span><br><span class="line">		origin = <span class="built_in">Point</span>(x, y);</span><br><span class="line">		selection = <span class="built_in">Rect</span>(x, y, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">		selectObject = <span class="literal">true</span>;</span><br><span class="line">		cout &lt;&lt; origin &lt;&lt; <span class="string">&quot;in world coordinate is: &quot;</span> &lt;&lt; xyz.at&lt;Vec3f&gt;(origin) &lt;&lt; endl;</span><br><span class="line">		<span class="comment">/*cout &lt;&lt; origin &lt;&lt; &quot; depth: &quot; &lt;&lt; xyz.at&lt;Vec3f&gt;(origin) &lt;&lt; endl;*/</span></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> EVENT_LBUTTONUP:    <span class="comment">//left mouse button released</span></span><br><span class="line">		selectObject = <span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">if</span> (selection.width &gt; <span class="number">0</span> &amp;&amp; selection.height &gt; <span class="number">0</span>)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">VideoCapture <span class="title">capture</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">	Mat frame;</span><br><span class="line">	<span class="keyword">if</span> (!capture.<span class="built_in">isOpened</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;Failed to open the camera&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">char</span> key;</span><br><span class="line">	<span class="keyword">char</span> filename[<span class="number">200</span>] = <span class="string">&quot;F:\VisualStudioProject\OpencvTest\srcPicture&quot;</span>;</span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">namedWindow</span>(<span class="string">&quot;[Video]&quot;</span>, <span class="number">1</span>);</span><br><span class="line">	<span class="built_in">namedWindow</span>(<span class="string">&quot;[Photo]&quot;</span>, <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">		key = <span class="built_in">waitKey</span>(<span class="number">30</span>);</span><br><span class="line">		capture &gt;&gt; frame;</span><br><span class="line">		<span class="built_in">imshow</span>(<span class="string">&quot;[Video]&quot;</span>, frame);</span><br><span class="line">		<span class="comment">/*imwrite(filename, frame);*/</span></span><br><span class="line">		<span class="keyword">if</span> (key == <span class="number">27</span>)</span><br><span class="line">			<span class="keyword">break</span>;<span class="comment">//press ESC to exit  </span></span><br><span class="line">		<span class="keyword">if</span> (key == <span class="number">32</span>)<span class="comment">//press Space to take a photo  </span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">sprintf_s</span>(filename, <span class="string">&quot;%d.jpg&quot;</span>, ++count);</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;Done&quot;</span> &lt;&lt; endl;</span><br><span class="line">			<span class="built_in">imwrite</span>(filename, frame);<span class="comment">//save the photo in the project folder  </span></span><br><span class="line">			<span class="built_in">imshow</span>(<span class="string">&quot;[Photo]&quot;</span>, frame);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	stereo rectification</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	<span class="built_in">Rodrigues</span>(rec, R); <span class="comment">//Rodrigues transform</span></span><br><span class="line">	<span class="built_in">stereoRectify</span>(cameraMatrixL, distCoeffL, cameraMatrixR, distCoeffR, imageSize, R, T, Rl, Rr, Pl, Pr, Q, CALIB_ZERO_DISPARITY,</span><br><span class="line">		<span class="number">0</span>, imageSize, &amp;validROIL, &amp;validROIR);</span><br><span class="line">	<span class="built_in">initUndistortRectifyMap</span>(cameraMatrixL, distCoeffL, Rl, Pr, imageSize, CV_32FC1, mapLx, mapLy);</span><br><span class="line">	<span class="built_in">initUndistortRectifyMap</span>(cameraMatrixR, distCoeffR, Rr, Pr, imageSize, CV_32FC1, mapRx, mapRy);</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	read the images</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	string left_test = <span class="string">&quot;F:\\VisualStudioProject\\OpencvTest\\LeftPicture\\LDemo.jpg&quot;</span>;</span><br><span class="line">	string right_test = <span class="string">&quot;F:\\VisualStudioProject\\OpencvTest\\RightPicture\\RDemo.jpg&quot;</span>;</span><br><span class="line">	rgbImageL = <span class="built_in">imread</span>(left_test, CV_LOAD_IMAGE_COLOR);</span><br><span class="line">	<span class="built_in">cvtColor</span>(rgbImageL, grayImageL, CV_BGR2GRAY);</span><br><span class="line">	rgbImageR = <span class="built_in">imread</span>(right_test, CV_LOAD_IMAGE_COLOR);</span><br><span class="line">	<span class="built_in">cvtColor</span>(rgbImageR, grayImageR, CV_BGR2GRAY);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">imshow</span>(<span class="string">&quot;ImageL Before Rectify&quot;</span>, grayImageL);</span><br><span class="line">	<span class="built_in">imshow</span>(<span class="string">&quot;ImageR Before Rectify&quot;</span>, grayImageR);</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	after remap, the left and right images are coplanar and row-aligned</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	<span class="built_in">remap</span>(grayImageL, rectifyImageL, mapLx, mapLy, INTER_LINEAR);</span><br><span class="line">	<span class="built_in">remap</span>(grayImageR, rectifyImageR, mapRx, mapRy, INTER_LINEAR);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	show the rectification result</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	Mat rgbRectifyImageL, rgbRectifyImageR;</span><br><span class="line">	<span class="built_in">cvtColor</span>(rectifyImageL, rgbRectifyImageL, CV_GRAY2BGR);  <span class="comment">//pseudo-color image</span></span><br><span class="line">	<span class="built_in">cvtColor</span>(rectifyImageR, rgbRectifyImageR, CV_GRAY2BGR);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//show separately</span></span><br><span class="line">	<span class="comment">//rectangle(rgbRectifyImageL, validROIL, Scalar(0, 0, 255), 3, 8);</span></span><br><span class="line">	<span class="comment">//rectangle(rgbRectifyImageR, validROIR, Scalar(0, 0, 255), 3, 8);</span></span><br><span class="line">	<span class="built_in">imshow</span>(<span class="string">&quot;ImageL After Rectify&quot;</span>, rgbRectifyImageL);</span><br><span class="line">	<span class="built_in">imshow</span>(<span class="string">&quot;ImageR After Rectify&quot;</span>, rgbRectifyImageR);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//show both in one image</span></span><br><span class="line">	Mat canvas;</span><br><span class="line">	<span class="keyword">double</span> sf;</span><br><span class="line">	<span class="keyword">int</span> w, h;</span><br><span class="line">	sf = <span class="number">600.</span> / <span class="built_in">MAX</span>(imageSize.width, imageSize.height);</span><br><span class="line">	w = <span class="built_in">cvRound</span>(imageSize.width * sf);</span><br><span class="line">	h = <span class="built_in">cvRound</span>(imageSize.height * sf);</span><br><span class="line">	canvas.<span class="built_in">create</span>(h, w * <span class="number">2</span>, CV_8UC3);   <span class="comment">//mind the channels</span></span><br><span class="line"></span><br><span class="line">										<span class="comment">//draw the left image on the canvas</span></span><br><span class="line">	Mat canvasPart = <span class="built_in">canvas</span>(<span class="built_in">Rect</span>(w * <span class="number">0</span>, <span class="number">0</span>, w, h));                                <span class="comment">//get one part of the canvas  </span></span><br><span class="line">	<span class="built_in">resize</span>(rgbRectifyImageL, canvasPart, canvasPart.<span class="built_in">size</span>(), <span class="number">0</span>, <span class="number">0</span>, INTER_AREA);     <span class="comment">//scale the image to the size of canvasPart  </span></span><br><span class="line">	<span class="function">Rect <span class="title">vroiL</span><span class="params">(cvRound(validROIL.x*sf), cvRound(validROIL.y*sf),                <span class="comment">//get the cropped area    </span></span></span></span><br><span class="line"><span class="params"><span class="function">		cvRound(validROIL.width*sf), cvRound(validROIL.height*sf))</span></span>;</span><br><span class="line">	<span class="comment">//rectangle(canvasPart, vroiL, Scalar(0, 0, 255), 3, 8);                      //draw a rectangle  </span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Painted ImageL&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//draw the right image on the canvas</span></span><br><span class="line">	canvasPart = <span class="built_in">canvas</span>(<span class="built_in">Rect</span>(w, <span class="number">0</span>, w, h));                                      <span class="comment">//get the other part of the canvas  </span></span><br><span class="line">	<span class="built_in">resize</span>(rgbRectifyImageR, canvasPart, canvasPart.<span class="built_in">size</span>(), <span class="number">0</span>, <span class="number">0</span>, INTER_LINEAR);</span><br><span class="line">	<span class="function">Rect <span class="title">vroiR</span><span class="params">(cvRound(validROIR.x * sf), cvRound(validROIR.y*sf),</span></span></span><br><span class="line"><span class="params"><span class="function">		cvRound(validROIR.width * sf), cvRound(validROIR.height * sf))</span></span>;</span><br><span class="line">	<span class="comment">//rectangle(canvasPart, vroiR, Scalar(0, 0, 255), 3, 8);</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Painted ImageR&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//draw the matching lines</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; canvas.rows; i += <span class="number">16</span>)</span><br><span class="line">		<span class="built_in">line</span>(canvas, <span class="built_in">Point</span>(<span class="number">0</span>, i), <span class="built_in">Point</span>(canvas.cols, i), <span class="built_in">Scalar</span>(<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>), <span class="number">1</span>, <span class="number">8</span>);</span><br><span class="line">	<span class="built_in">imshow</span>(<span class="string">&quot;rectified&quot;</span>, canvas);</span><br><span class="line">	<span class="comment">//find_obstacle(grayImageL, 20, 255, 500);</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	stereo matching</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	<span class="built_in">namedWindow</span>(<span class="string">&quot;disparity&quot;</span>, CV_WINDOW_AUTOSIZE);</span><br><span class="line">	<span class="comment">// create the SAD window trackbar</span></span><br><span class="line">	<span class="built_in">createTrackbar</span>(<span class="string">&quot;BlockSize:\n&quot;</span>, <span class="string">&quot;disparity&quot;</span>, &amp;blockSize, <span class="number">8</span>, stereo_match);</span><br><span class="line">	<span class="comment">// create the disparity uniqueness percentage trackbar</span></span><br><span class="line">	<span class="built_in">createTrackbar</span>(<span class="string">&quot;UniquenessRatio:\n&quot;</span>, <span class="string">&quot;disparity&quot;</span>, &amp;uniquenessRatio, <span class="number">50</span>, stereo_match);</span><br><span class="line">	<span class="comment">// create the disparity window trackbar</span></span><br><span class="line">	<span class="built_in">createTrackbar</span>(<span class="string">&quot;NumDisparities:\n&quot;</span>, <span class="string">&quot;disparity&quot;</span>, &amp;numDisparities, <span class="number">16</span>, stereo_match);</span><br><span class="line">	<span class="comment">//mouse callback: setMouseCallback(window name, callback function, argument passed to the callback, usually 0)</span></span><br><span class="line">	<span class="built_in">setMouseCallback</span>(<span class="string">&quot;disparity&quot;</span>, onMouse, <span class="number">0</span>);</span><br><span class="line">	<span class="built_in">stereo_match</span>(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">waitKey</span>(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p><code>Notes:</code></p>
+<ul>
+<li>In the code above, you need to fill in the following yourself:</li>
+<li><ul>
+<li>The measured intrinsic and extrinsic parameters of your camera</li>
+</ul>
+</li>
+<li><ul>
+<li>The paths for saving and reading images</li>
+</ul>
+</li>
+</ul>
+<!--/bi:en--></div>
 
     </div>
 
@@ -1071,16 +1808,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          <span class="bi-zh">文章目录</span><span class="bi-en">Table of Contents</span>
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          <span class="bi-zh">站点概览</span><span class="bi-en">Overview</span>
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Obstacle-detection-based-on-binocular-camera"><span class="nav-number">1.</span> <span class="nav-text">Obstacle detection based on binocular camera</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Now-let%E2%80%99s-get-to-the-main-topic"><span class="nav-number">1.1.</span> <span class="nav-text">Now let’s get to the main topic!</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Preliminary-preparation"><span class="nav-number">1.1.1.</span> <span class="nav-text">Preliminary preparation:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Preliminary-knowledge-points"><span class="nav-number">1.1.2.</span> <span class="nav-text">Preliminary knowledge points:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Preliminary-knowledge-points-of-binocular-camera-calibration"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Preliminary knowledge points of binocular camera calibration:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E6%AD%A3%E5%8F%8B%E6%A0%87%E5%AE%9A%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">张正友标定法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenCV%E4%B8%8B%E7%9A%84%E5%BC%A0%E6%AD%A3%E5%8F%8B%E6%A0%87%E5%AE%9A%E6%B3%95"><span class="nav-number">1.2.1.</span> <span class="nav-text">OpenCV下的张正友标定法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#matlab%E4%B8%8B%E7%9A%84%E5%BC%A0%E6%AD%A3%E5%8F%8B%E6%A0%87%E5%AE%9A%E6%B3%95"><span class="nav-number">1.2.2.</span> <span class="nav-text">matlab下的张正友标定法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E7%9B%AE%E6%A0%87%E5%AE%9A"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">单目标定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E7%9B%AE%E6%B5%8B%E5%AE%9A"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">双目测定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenCV%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87"><span class="nav-number">1.3.</span> <span class="nav-text">OpenCV获取图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%9B%BE%E7%89%87%E8%BF%9B%E8%A1%8C%E7%AB%8B%E4%BD%93%E7%9F%AB%E6%AD%A3"><span class="nav-number">1.4.</span> <span class="nav-text">对图片进行立体矫正</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%8B%E4%BD%93%E5%8C%B9%E9%85%8D"><span class="nav-number">1.5.</span> <span class="nav-text">立体匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-1"><span class="nav-number">1.6.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><div class="bi-zh"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%8F%8C%E7%9B%AE%E6%91%84%E5%83%8F%E5%A4%B4%E7%9A%84%E9%9A%9C%E7%A2%8D%E7%89%A9%E6%A3%80%E6%B5%8B"><span class="nav-number">1.</span> <span class="nav-text">基于双目摄像头的障碍物检测</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E9%9D%A2%E5%BC%80%E5%A7%8B%E8%BF%9B%E5%85%A5%E6%AD%A3%E9%A2%98%E5%95%A6%EF%BC%81"><span class="nav-number">1.1.</span> <span class="nav-text">下面开始进入正题啦！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">前期准备：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%9C%9F%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">前期知识点：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E7%9B%AE%E6%91%84%E5%83%8F%E5%A4%B4%E7%9A%84%E6%A0%87%E5%AE%9A%E7%9A%84%E5%89%8D%E6%9C%9F%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%9A"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">双目摄像头的标定的前期知识点：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E6%AD%A3%E5%8F%8B%E6%A0%87%E5%AE%9A%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">张正友标定法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenCV%E4%B8%8B%E7%9A%84%E5%BC%A0%E6%AD%A3%E5%8F%8B%E6%A0%87%E5%AE%9A%E6%B3%95"><span class="nav-number">1.2.1.</span> <span class="nav-text">OpenCV下的张正友标定法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#matlab%E4%B8%8B%E7%9A%84%E5%BC%A0%E6%AD%A3%E5%8F%8B%E6%A0%87%E5%AE%9A%E6%B3%95"><span class="nav-number">1.2.2.</span> <span class="nav-text">matlab下的张正友标定法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E7%9B%AE%E6%A0%87%E5%AE%9A"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">单目标定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E7%9B%AE%E6%B5%8B%E5%AE%9A"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">双目测定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenCV%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87"><span class="nav-number">1.3.</span> <span class="nav-text">OpenCV获取图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%9B%BE%E7%89%87%E8%BF%9B%E8%A1%8C%E7%AB%8B%E4%BD%93%E7%9F%AB%E6%AD%A3"><span class="nav-number">1.4.</span> <span class="nav-text">对图片进行立体矫正</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%8B%E4%BD%93%E5%8C%B9%E9%85%8D"><span class="nav-number">1.5.</span> <span class="nav-text">立体匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-1"><span class="nav-number">1.6.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></div><div class="bi-en"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#en-Obstacle-detection-based-on-binocular-camera"><span class="nav-number">1.</span> <span class="nav-text">Obstacle detection based on binocular camera</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Now-let%E2%80%99s-get-to-the-main-topic"><span class="nav-number">1.1.</span> <span class="nav-text">Now let’s get to the main topic!</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-Preliminary-preparation"><span class="nav-number">1.1.1.</span> <span class="nav-text">Preliminary preparation:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-Preliminary-knowledge-points"><span class="nav-number">1.1.2.</span> <span class="nav-text">Preliminary knowledge points:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#en-Preliminary-knowledge-points-of-binocular-camera-calibration"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Preliminary knowledge points of binocular camera calibration:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Zhang-Zhengyou%E2%80%99s-calibration-method"><span class="nav-number">1.2.</span> <span class="nav-text">Zhang Zhengyou’s calibration method</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-Zhang%E2%80%99s-calibration-method-in-OpenCV"><span class="nav-number">1.2.1.</span> <span class="nav-text">Zhang’s calibration method in OpenCV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-Zhang%E2%80%99s-calibration-method-in-MATLAB"><span class="nav-number">1.2.2.</span> <span class="nav-text">Zhang’s calibration method in MATLAB</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#en-Single-camera-calibration"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">Single camera calibration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#en-Stereo-calibration"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">Stereo calibration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#en-Summary"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">Summary:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Capturing-images-with-OpenCV"><span class="nav-number">1.3.</span> <span class="nav-text">Capturing images with OpenCV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Stereo-rectification-of-the-images"><span class="nav-number">1.4.</span> <span class="nav-text">Stereo rectification of the images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Stereo-matching"><span class="nav-number">1.5.</span> <span class="nav-text">Stereo matching</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Summary-1"><span class="nav-number">1.6.</span> <span class="nav-text">Summary:</span></a></li></ol></li></ol></div></div>
       </div>
       <!--/noindex-->
 
@@ -1233,6 +1970,40 @@
   
 
   
+
+<button type="button" class="bi-toggle" aria-label="切换语言 / Switch language" title="切换语言 / Switch language">
+  <span class="bi-opt" data-l="zh">中</span><span aria-hidden="true">/</span><span class="bi-opt" data-l="en">EN</span>
+</button>
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.querySelector('.bi-toggle');
+  var titleZh = document.title;
+  var metaEn = document.querySelector('meta[name="bi-title-en"]');
+  var titleEn = metaEn ? metaEn.getAttribute('content') : titleZh;
+
+  function apply(lang) {
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+    document.title = lang === 'en' ? titleEn : titleZh;
+    btn.querySelectorAll('.bi-opt').forEach(function (el) {
+      el.classList.toggle('is-on', el.getAttribute('data-l') === lang);
+    });
+    btn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+  }
+
+  apply(root.getAttribute('data-lang') === 'en' ? 'en' : 'zh');
+
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-lang') === 'en' ? 'zh' : 'en';
+    try { localStorage.setItem('bi-lang', next); } catch (e) {}
+    apply(next);
+    // 正文高度变了，让目录高亮和侧边栏重新计算位置
+    window.dispatchEvent(new Event('scroll'));
+    window.dispatchEvent(new Event('resize'));
+  });
+})();
+</script>
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 

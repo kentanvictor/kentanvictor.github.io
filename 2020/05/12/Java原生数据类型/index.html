@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"kentanvictor.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="原生数据类型与表达式原生数据类型 1.Java 中的原生数据类型共有 8 种：  1） 整型：使用 int 表示。（32 位）  2） 字节型：使用 byte 表示。（表示-128～127 之间的 256 个整数， 8 位）。  3）短整型：使用 short 表示。（16 位）  4）长整型：使用 long 表示。（64 位）">
+  <meta name="description" content="原生数据类型与表达式原生数据类型 1.Java 中的原生数据类型共有 8 种：  1） 整型：使用 int 表示。（32 位）  2） 字节型：使用 byte 表示。（表示-128～127 之间的 256 个整数， 8 位）。  3）短整型：使用 short 表示。（16 位）  4）长整型：使用 long 表示。（64 位）      Primitive Data Types and Expre">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java原生数据类型与表达式">
 <meta property="og:url" content="https://kentanvictor.github.io/2020/05/12/Java%E5%8E%9F%E7%94%9F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="ZoeTam&#39;s Blog">
-<meta property="og:description" content="原生数据类型与表达式原生数据类型 1.Java 中的原生数据类型共有 8 种：  1） 整型：使用 int 表示。（32 位）  2） 字节型：使用 byte 表示。（表示-128～127 之间的 256 个整数， 8 位）。  3）短整型：使用 short 表示。（16 位）  4）长整型：使用 long 表示。（64 位）">
+<meta property="og:description" content="原生数据类型与表达式原生数据类型 1.Java 中的原生数据类型共有 8 种：  1） 整型：使用 int 表示。（32 位）  2） 字节型：使用 byte 表示。（表示-128～127 之间的 256 个整数， 8 位）。  3）短整型：使用 short 表示。（16 位）  4）长整型：使用 long 表示。（64 位）      Primitive Data Types and Expre">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-12T16:41:51.000Z">
-<meta property="article:modified_time" content="2026-11-24T20:06:21.990Z">
+<meta property="article:modified_time" content="2026-11-24T20:21:47.029Z">
 <meta property="article:author" content="ZoeTam">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -45,6 +45,35 @@
     lang   : 'en'
   };
 </script>
+<meta name="bi-title-en" content="Java Primitive Data Types and Expressions | ZoeTam&#39;s Blog">
+<script>
+(function () {
+  var lang;
+  try { lang = localStorage.getItem('bi-lang'); } catch (e) {}
+  if (lang !== 'zh' && lang !== 'en') {
+    lang = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+  }
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+})();
+</script>
+<style>
+html[data-lang="en"] .bi-zh,
+html:not([data-lang="en"]) .bi-en { display: none !important; }
+.bi-toggle {
+  position: fixed; top: 14px; right: 92px; z-index: 1100;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border: 1px solid #ddd; border-radius: 999px;
+  background: rgba(255, 255, 255, .92); color: #555;
+  font-size: 13px; line-height: 1.2; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  transition: border-color .2s, color .2s;
+}
+.bi-toggle:hover, .bi-toggle:focus-visible { border-color: #222; color: #222; outline: none; }
+.bi-toggle .bi-opt { opacity: .45; }
+.bi-toggle .bi-opt.is-on { opacity: 1; font-weight: 600; }
+@media (max-width: 767px) { .bi-toggle { top: auto; bottom: 16px; right: 16px; } }
+</style>
 
   <title>Java原生数据类型与表达式 | ZoeTam's Blog</title>
   
@@ -116,31 +145,31 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i><span class="bi-zh">首页</span><span class="bi-en">Home</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i><span class="bi-zh">关于</span><span class="bi-en">About</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">12</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i><span class="bi-zh">标签</span><span class="bi-en">Tags</span><span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">11</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i><span class="bi-zh">分类</span><span class="bi-en">Categories</span><span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">19</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i><span class="bi-zh">归档</span><span class="bi-en">Archives</span><span class="badge">19</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i><span class="bi-zh">搜索</span><span class="bi-en">Search</span>
         </a>
       </li>
   </ul>
@@ -211,7 +240,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Java原生数据类型与表达式
+          <span class="bi-zh">Java原生数据类型与表达式</span><span class="bi-en">Java Primitive Data Types and Expressions</span>
         </h1>
 
         <div class="post-meta">
@@ -221,7 +250,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2020-05-12 20:41:51" itemprop="dateCreated datePublished" datetime="2020-05-12T20:41:51+04:00">2020-05-12</time>
             </span>
@@ -229,14 +258,14 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:21:47" itemprop="dateModified" datetime="2026-11-25T00:21:47+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
                 </span>
@@ -274,7 +303,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="原生数据类型与表达式"><a href="#原生数据类型与表达式" class="headerlink" title="原生数据类型与表达式"></a>原生数据类型与表达式</h1><h2 id="原生数据类型"><a href="#原生数据类型" class="headerlink" title="原生数据类型"></a>原生数据类型</h2><ul>
+        <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h1 id="原生数据类型与表达式"><a href="#原生数据类型与表达式" class="headerlink" title="原生数据类型与表达式"></a>原生数据类型与表达式</h1><h2 id="原生数据类型"><a href="#原生数据类型" class="headerlink" title="原生数据类型"></a>原生数据类型</h2><ul>
 <li><p>1.Java 中的原生数据类型共有 8 种：</p>
 <ul>
 <li><p>1） 整型：使用 int 表示。（32 位）</p>
@@ -284,7 +313,28 @@
 <li><p>3）短整型：使用 short 表示。（16 位）</p>
 </li>
 <li><p>4）长整型：使用 long 表示。（64 位）</p>
-<span id="more"></span></li>
+</li>
+</ul>
+</li>
+</ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h1 id="en-Primitive-Data-Types-and-Expressions"><a href="#en-Primitive-Data-Types-and-Expressions" class="headerlink" title="Primitive Data Types and Expressions"></a>Primitive Data Types and Expressions</h1><h2 id="en-Primitive-data-types"><a href="#en-Primitive-data-types" class="headerlink" title="Primitive data types"></a>Primitive data types</h2><ul>
+<li><p>1.Java has 8 primitive data types:</p>
+<ul>
+<li><p>1) Integer: <code>int</code> (32 bits)</p>
+</li>
+<li><p>2) Byte: <code>byte</code> (256 integers from -128 to 127, 8 bits)</p>
+</li>
+<li><p>3) Short integer: <code>short</code> (16 bits)</p>
+</li>
+<li><p>4) Long integer: <code>long</code> (64 bits)</p>
+</li>
+</ul>
+</li>
+</ul>
+<!--/bi:en--></div>
+<span id="more"></span>
+<div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><ul>
 <li><p>5）单精度浮点型：使用 float 表示。所谓浮点型，指的就是小数，也叫做实数，例如 1.2。</p>
 </li>
 <li><p>6）双精度浮点型：使用 double 表示。双精度浮点型表示的数据范围要比单精度浮点型大。</p>
@@ -292,8 +342,6 @@
 <li><p>7）字符型：使用 char 表示（char 是 character 的缩写）。所谓字符，就是单个的字符表示，比如字母 a，或者中文张，外面用单引号包围上。比如 char a = ‘B’; char b = ‘张’;</p>
 </li>
 <li><p>8）布尔类型，使用 boolean 表示。布尔类型只有两种可能值，分别是 true 与 false。</p>
-</li>
-</ul>
 </li>
 </ul>
 <ul>
@@ -335,6 +383,57 @@
 <li><p>在<code>类型转换</code>中，如果不损失信息，数值会自动提升为高等级的数据类型。前提是，你的运算中含有高等级的运算符。当需要向低类型转换时，会<strong>截断取整</strong>，而不是四舍五入。</p>
 </li>
 </ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><ul>
+<li><p>5) Single-precision floating point: <code>float</code>. Floating-point numbers are decimals, also called real numbers, such as 1.2.</p>
+</li>
+<li><p>6) Double-precision floating point: <code>double</code>. A double covers a larger range than a float.</p>
+</li>
+<li><p>7) Character: <code>char</code> (short for character). A char holds a single character, such as the letter a or the Chinese character 张, wrapped in single quotes. For example: char a = ‘B’; char b = ‘张’;</p>
+</li>
+<li><p>8) Boolean: <code>boolean</code>. A boolean has only two possible values: true and false.</p>
+</li>
+</ul>
+<ul>
+<li><p>2.In Java, every floating-point literal is a double by default. You cannot assign a double value to a float variable, even if the value is within the range of float. In short, whether an assignment compiles depends on whether the type of the value on the right matches the type of the variable on the left.</p>
+</li>
+<li><p>3.How do you assign a double value to a float variable? (1) Use a cast to convert the double value to float. (2) Use the language’s own support (for example, the <code>f</code> suffix on literals).</p>
+</li>
+</ul>
+<p><code>Cast syntax: type variableName = (type) value;</code></p>
+<ul>
+<li><p>4.A variable must be assigned before it is used; it must be declared with a type before it is used; and it must be defined before use, and only once.</p>
+</li>
+<li><p>5.The following code does not compile:</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>; <span class="keyword">short</span> b = a;</span><br></pre></td></tr></table></figure>
+<p>a is an int and b is a short. int covers a larger range than short, and you cannot assign a value of a wider type<br>to a variable of a narrower type.</p>
+<ul>
+<li>6.The following code compiles:</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> a = <span class="number">1</span>; <span class="keyword">int</span> b = a;</span><br></pre></td></tr></table></figure>
+<p>a is a short and b is an int. int covers a larger range than short, so you can assign a value of a narrower type<br>to a variable of a wider type.</p>
+<ul>
+<li>7.Summary: you can assign a value of a narrower type to a variable of a wider type, but you cannot directly assign a value of a wider type to a variable of a narrower type. That only works with a cast.</li>
+</ul>
+<h2 id="en-Expressions"><a href="#en-Expressions" class="headerlink" title="Expressions"></a>Expressions</h2><blockquote>
+<p>Java uses <code>infix expressions</code>, which work just like expressions in mathematics.</p>
+</blockquote>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><p>In <code>basic arithmetic</code>, the result has the same data type as the operands.</p>
+</li>
+<li><p>‘+’, ‘-‘, ‘*’ and ‘/‘ are all overloaded.</p>
+</li>
+<li><p>Among the <code>logical operators</code>, ‘!’ has the highest precedence, then ‘&amp;&amp;’, and finally ‘||’.</p>
+</li>
+<li><p>Operators with the same precedence are evaluated from left to right.</p>
+</li>
+<li><p>In <code>type conversion</code>, if no information is lost, a value is automatically promoted to a higher-ranked type, provided the operation involves an operand of that higher type. When converting to a lower type, the value is <strong>truncated</strong>, not rounded.</p>
+</li>
+</ul>
+<!--/bi:en--></div>
 
     </div>
 
@@ -428,16 +527,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          <span class="bi-zh">文章目录</span><span class="bi-en">Table of Contents</span>
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          <span class="bi-zh">站点概览</span><span class="bi-en">Overview</span>
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%9F%E7%94%9F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">原生数据类型与表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%94%9F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">原生数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">表达式</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><div class="bi-zh"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%9F%E7%94%9F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">原生数据类型与表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%94%9F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">原生数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">表达式</span></a></li></ol></li></ol></div><div class="bi-en"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#en-Primitive-Data-Types-and-Expressions"><span class="nav-number">1.</span> <span class="nav-text">Primitive Data Types and Expressions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Primitive-data-types"><span class="nav-number">1.1.</span> <span class="nav-text">Primitive data types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Expressions"><span class="nav-number">1.2.</span> <span class="nav-text">Expressions</span></a></li></ol></li></ol></div></div>
       </div>
       <!--/noindex-->
 
@@ -590,6 +689,40 @@
   
 
   
+
+<button type="button" class="bi-toggle" aria-label="切换语言 / Switch language" title="切换语言 / Switch language">
+  <span class="bi-opt" data-l="zh">中</span><span aria-hidden="true">/</span><span class="bi-opt" data-l="en">EN</span>
+</button>
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.querySelector('.bi-toggle');
+  var titleZh = document.title;
+  var metaEn = document.querySelector('meta[name="bi-title-en"]');
+  var titleEn = metaEn ? metaEn.getAttribute('content') : titleZh;
+
+  function apply(lang) {
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+    document.title = lang === 'en' ? titleEn : titleZh;
+    btn.querySelectorAll('.bi-opt').forEach(function (el) {
+      el.classList.toggle('is-on', el.getAttribute('data-l') === lang);
+    });
+    btn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+  }
+
+  apply(root.getAttribute('data-lang') === 'en' ? 'en' : 'zh');
+
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-lang') === 'en' ? 'zh' : 'en';
+    try { localStorage.setItem('bi-lang', next); } catch (e) {}
+    apply(next);
+    // 正文高度变了，让目录高亮和侧边栏重新计算位置
+    window.dispatchEvent(new Event('scroll'));
+    window.dispatchEvent(new Event('resize'));
+  });
+})();
+</script>
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 

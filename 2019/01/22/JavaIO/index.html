@@ -20,16 +20,17 @@
     var CONFIG = {"hostname":"kentanvictor.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="javaIO标签： javaIO  Contents  什么是IO流 IO流的分类 字符流和字节流   文件字节、字符IO 文件字节IO流 文件字符IO流">
+  <meta name="description" content="javaIO标签： javaIO  Contents  什么是IO流 IO流的分类 字符流和字节流   文件字节、字符IO 文件字节IO流 文件字符IO流      Java IOTags: javaIO  Contents  What are IO streams Types of IO streams Character streams and byte streams   File byte">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaIO">
 <meta property="og:url" content="https://kentanvictor.github.io/2019/01/22/JavaIO/index.html">
 <meta property="og:site_name" content="ZoeTam&#39;s Blog">
-<meta property="og:description" content="javaIO标签： javaIO  Contents  什么是IO流 IO流的分类 字符流和字节流   文件字节、字符IO 文件字节IO流 文件字符IO流">
+<meta property="og:description" content="javaIO标签： javaIO  Contents  什么是IO流 IO流的分类 字符流和字节流   文件字节、字符IO 文件字节IO流 文件字符IO流      Java IOTags: javaIO  Contents  What are IO streams Types of IO streams Character streams and byte streams   File byte">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/JavaIO.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/JavaIO.jpg">
 <meta property="article:published_time" content="2019-01-22T05:47:51.000Z">
-<meta property="article:modified_time" content="2026-11-24T20:06:21.989Z">
+<meta property="article:modified_time" content="2026-11-24T20:21:46.854Z">
 <meta property="article:author" content="ZoeTam">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -47,6 +48,35 @@
     lang   : 'en'
   };
 </script>
+<meta name="bi-title-en" content="Java IO | ZoeTam&#39;s Blog">
+<script>
+(function () {
+  var lang;
+  try { lang = localStorage.getItem('bi-lang'); } catch (e) {}
+  if (lang !== 'zh' && lang !== 'en') {
+    lang = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+  }
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+})();
+</script>
+<style>
+html[data-lang="en"] .bi-zh,
+html:not([data-lang="en"]) .bi-en { display: none !important; }
+.bi-toggle {
+  position: fixed; top: 14px; right: 92px; z-index: 1100;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border: 1px solid #ddd; border-radius: 999px;
+  background: rgba(255, 255, 255, .92); color: #555;
+  font-size: 13px; line-height: 1.2; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  transition: border-color .2s, color .2s;
+}
+.bi-toggle:hover, .bi-toggle:focus-visible { border-color: #222; color: #222; outline: none; }
+.bi-toggle .bi-opt { opacity: .45; }
+.bi-toggle .bi-opt.is-on { opacity: 1; font-weight: 600; }
+@media (max-width: 767px) { .bi-toggle { top: auto; bottom: 16px; right: 16px; } }
+</style>
 
   <title>JavaIO | ZoeTam's Blog</title>
   
@@ -118,31 +148,31 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i><span class="bi-zh">首页</span><span class="bi-en">Home</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i><span class="bi-zh">关于</span><span class="bi-en">About</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">12</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i><span class="bi-zh">标签</span><span class="bi-en">Tags</span><span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">11</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i><span class="bi-zh">分类</span><span class="bi-en">Categories</span><span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">19</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i><span class="bi-zh">归档</span><span class="bi-en">Archives</span><span class="badge">19</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i><span class="bi-zh">搜索</span><span class="bi-en">Search</span>
         </a>
       </li>
   </ul>
@@ -213,7 +243,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JavaIO
+          <span class="bi-zh">JavaIO</span><span class="bi-en">Java IO</span>
         </h1>
 
         <div class="post-meta">
@@ -223,7 +253,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text"><span class="bi-zh">发表于</span><span class="bi-en">Posted on</span></span>
 
               <time title="Created: 2019-01-22 09:47:51" itemprop="dateCreated datePublished" datetime="2019-01-22T09:47:51+04:00">2019-01-22</time>
             </span>
@@ -231,14 +261,14 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-11-25 00:06:21" itemprop="dateModified" datetime="2026-11-25T00:06:21+04:00">2026-11-25</time>
+                <span class="post-meta-item-text"><span class="bi-zh">更新于</span><span class="bi-en">Edited on</span></span>
+                <time title="Modified: 2026-11-25 00:21:46" itemprop="dateModified" datetime="2026-11-25T00:21:46+04:00">2026-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text"><span class="bi-zh">分类于</span><span class="bi-en">In</span></span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
                 </span>
@@ -276,7 +306,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="javaIO"><a href="#javaIO" class="headerlink" title="javaIO"></a>javaIO</h1><p>标签： javaIO</p>
+        <div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h1 id="javaIO"><a href="#javaIO" class="headerlink" title="javaIO"></a>javaIO</h1><p>标签： javaIO</p>
 <hr>
 <p><strong>Contents</strong></p>
 <ul>
@@ -292,8 +322,26 @@
 </li>
 </ul>
 <hr>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h1 id="en-Java-IO"><a href="#en-Java-IO" class="headerlink" title="Java IO"></a>Java IO</h1><p>Tags: javaIO</p>
+<hr>
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="#en-The-concept-and-role-of-streams">What are IO streams</a><ul>
+<li><a href="#en-Types-of-IO-streams">Types of IO streams</a></li>
+<li><a href="#en-Character-streams-and-byte-streams">Character streams and byte streams</a></li>
+</ul>
+</li>
+<li><a href="#en-File-byte-and-character-IO">File byte and character IO</a><ul>
+<li><a href="#en-File-byte-IO-streams">File byte IO streams</a></li>
+<li><a href="#en-File-character-IO-streams">File character IO streams</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<!--/bi:en--></div>
 <span id="more"></span>
-<h1 id="Java流图结构"><a href="#Java流图结构" class="headerlink" title="Java流图结构"></a>Java流图结构</h1><p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/JavaIO.jpg" alt=""></p>
+<div class="bi bi-zh" lang="zh-CN"><!--bi:zh--><h1 id="Java流图结构"><a href="#Java流图结构" class="headerlink" title="Java流图结构"></a>Java流图结构</h1><p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/JavaIO.jpg" alt=""></p>
 <h1 id="流的概念和作用"><a href="#流的概念和作用" class="headerlink" title="流的概念和作用"></a>流的概念和作用</h1><blockquote>
 <p>流是一组有顺序的，有起点和终点的字节集合，是对数据传输的总称或抽象。即数据在两设备间的传输称为流，流的本质是数据传输，根据数据传输特性将流抽象为各种类，方便更直观的进行数据操作。</p>
 </blockquote>
@@ -427,9 +475,146 @@ FileWriter(String filename,boolean append);
 FileWriter(File filename,boolean append);
 </pre><br><strong>字符输入流和输出流的<code>read</code>和<code>write</code>方法使用字符数组读写数据，即以字符为基本单位处理数据。</strong></p>
 <ul>
-<li><strong>例子：用文件字符输入、输出流将文件“NotHelloWorld.txt”中的内容尾加到“AndroidLab.txt”中</strong><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RWTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File sourceFile = <span class="keyword">new</span> File(<span class="string">&quot;F:\\IDEA_code\\IOTest\\NotHelloWorld.txt&quot;</span>);<span class="comment">//读取的文件</span></span><br><span class="line">        File targetFile = <span class="keyword">new</span> File(<span class="string">&quot;F:\\IDEA_code\\IOTest\\AndroidLab.txt&quot;</span>);<span class="comment">//写入的文件</span></span><br><span class="line">        <span class="keyword">char</span> c[] = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            Writer out = <span class="keyword">new</span> FileWriter(targetFile,<span class="keyword">true</span>);   <span class="comment">//指向目的地的输出流</span></span><br><span class="line">            Reader in = <span class="keyword">new</span> FileReader(sourceFile);                 <span class="comment">//指向源的输入流</span></span><br><span class="line">            <span class="keyword">int</span> n = -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> ((n = in.read(c)) != -<span class="number">1</span>)&#123;</span><br><span class="line">                out.write(c,<span class="number">0</span>,n);</span><br><span class="line">            &#125;</span><br><span class="line">            out.flush();</span><br><span class="line">            out.close();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Error &quot;</span> + e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><strong>例子：用文件字符输入、输出流将文件“NotHelloWorld.txt”中的内容尾加到“AndroidLab.txt”中</strong><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RWTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File sourceFile = <span class="keyword">new</span> File(<span class="string">&quot;F:\\IDEA_code\\IOTest\\NotHelloWorld.txt&quot;</span>);<span class="comment">//读取的文件</span></span><br><span class="line">        File targetFile = <span class="keyword">new</span> File(<span class="string">&quot;F:\\IDEA_code\\IOTest\\AndroidLab.txt&quot;</span>);<span class="comment">//写入的文件</span></span><br><span class="line">        <span class="keyword">char</span> c[] = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            Writer out = <span class="keyword">new</span> FileWriter(targetFile,<span class="keyword">true</span>);   <span class="comment">//指向目的地的输出流</span></span><br><span class="line">            Reader in = <span class="keyword">new</span> FileReader(sourceFile);                 <span class="comment">//指向源的输入流</span></span><br><span class="line">            <span class="keyword">int</span> n = -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> ((n = in.read(c)) != -<span class="number">1</span>)&#123;</span><br><span class="line">                out.write(c,<span class="number">0</span>,n);</span><br><span class="line">            &#125;</span><br><span class="line">            out.flush();</span><br><span class="line">            out.close();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Error &quot;</span> + e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<!--/bi:zh--></div>
+<div class="bi bi-en" lang="en"><!--bi:en--><h1 id="en-Java-stream-class-hierarchy"><a href="#en-Java-stream-class-hierarchy" class="headerlink" title="Java stream class hierarchy"></a>Java stream class hierarchy</h1><p><img src="https://raw.githubusercontent.com/kentanvictor/STUDY/Image/JavaIO.jpg" alt=""></p>
+<h1 id="en-The-concept-and-role-of-streams"><a href="#en-The-concept-and-role-of-streams" class="headerlink" title="The concept and role of streams"></a>The concept and role of streams</h1><blockquote>
+<p>A stream is an ordered collection of bytes with a beginning and an end. It is the general term, or abstraction, for data transfer: data moving between two devices is called a stream. In essence, a stream is data transfer. Based on the characteristics of the transfer, streams are abstracted into various classes so that data can be handled more intuitively.</p>
+</blockquote>
+<h2 id="en-Types-of-IO-streams"><a href="#en-Types-of-IO-streams" class="headerlink" title="Types of IO streams"></a>Types of IO streams</h2><ul>
+<li>By the type of data they handle: character streams and byte streams</li>
+<li>By the direction of the data: input streams and output streams</li>
+</ul>
+<h2 id="en-Character-streams-and-byte-streams"><a href="#en-Character-streams-and-byte-streams" class="headerlink" title="Character streams and byte streams"></a>Character streams and byte streams</h2><blockquote>
+<p>Why character streams exist: because data can be encoded in different ways, there are stream objects that work efficiently with characters. In essence, a character stream reads through a byte stream and looks up the specified character table along the way. The differences between byte streams and character streams:</p>
+<ul>
+<li><p>Different units: byte streams read and write in bytes (8 bits). Character streams work in characters, mapped through a character table, so one read may consume several bytes.</p>
+</li>
+<li><p>Different data: byte streams can handle any type of data (images, avi files, etc.), while character streams can only handle character data.</p>
+</li>
+<li><p>Byte stream: reads or writes 8 bits of binary at a time.</p>
+</li>
+<li><p>Character stream: reads or writes 16 bits of binary at a time.</p>
 </li>
 </ul>
+<p><strong>Whether it is an image, a video or text, data on a device is stored as binary. Binary is ultimately expressed in units of 8 bits, so the smallest unit of data in a computer is the byte. This means byte streams can handle all data on a device, including character data.</strong></p>
+<p><strong><code>Conclusion: when you are handling plain text, prefer character streams. For everything else, use byte streams.</code></strong></p>
+</blockquote>
+<h1 id="en-File-byte-and-character-IO"><a href="#en-File-byte-and-character-IO" class="headerlink" title="File byte and character IO"></a>File byte and character IO</h1><blockquote>
+<p>Java programs often need to get information about files on disk or create new files on disk. For this you use the <code>File class</code>.</p>
+<h3 id="en-There-are-3-constructors-for-creating-a-File-object"><a href="#en-There-are-3-constructors-for-creating-a-File-object" class="headerlink" title="There are 3 constructors for creating a File object:"></a>There are 3 constructors for creating a File object:</h3><ul>
+<li>File(String filename);</li>
+<li>File(String directoryPath,String filename);</li>
+<li>File(File dir,String filename);</li>
+</ul>
+<p><em>filename: the file name; directoryPath: the file path; dir: a directory. <code>When you create a file with File(String filename), the file is assumed to be in the same directory as the current application.</code></em></p>
+<h3 id="en-File-properties"><a href="#en-File-properties" class="headerlink" title="File properties:"></a><strong>File properties:</strong></h3><p><pre>
+public String getName();            //get the file name
+public boolean canRead();           //check whether the file is readable
+public boolean canWrite();          //check whether the file is writable
+public boolean exists();            //check whether the file exists
+public long length();               //get the file length (in bytes)
+public String getAbsolutePath();    //get the absolute path of the file
+public String getParent();          //get the parent directory of the file
+public boolean isFile();            //check whether it is a regular file, not a directory
+public boolean isDirectory();       //check whether it is a directory
+public boolean isHidden();          //check whether the file is hidden
+public long lastModified();         //get the last modified time (milliseconds from midnight 1970 to the last modification)
+</pre><br><strong>Example: use the methods above to get information about some files:</strong></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File f = <span class="keyword">new</span> File(<span class="string">&quot;F:\\IDEA_code\\IOTest&quot;</span>,<span class="string">&quot;newIO.txt&quot;</span>);</span><br><span class="line">        System.out.println(f.getName() + <span class="string">&quot; readable: &quot;</span> + f.canRead());</span><br><span class="line">        System.out.println(f.getName() + <span class="string">&quot; length: &quot;</span> + f.length());</span><br><span class="line">        System.out.println(f.getName() + <span class="string">&quot; absolute path: &quot;</span> + f.getAbsolutePath());</span><br><span class="line"></span><br><span class="line">        File newFile = <span class="keyword">new</span> File(<span class="string">&quot;new.txt&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;Create a new file in the current directory: &quot;</span> + newFile.getName());</span><br><span class="line">        <span class="keyword">if</span> (!newFile.exists())&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                newFile.createNewFile();    <span class="comment">//create new.txt if it does not exist</span></span><br><span class="line">                System.out.println(<span class="string">&quot;Created!&quot;</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="en-Directories"><a href="#en-Directories" class="headerlink" title="Directories:"></a><strong>Directories:</strong></h3><p>&gt;</p>
+<ul>
+<li>Create a directory<blockquote>
+<p>A File object calls public boolean mkdir() to create a directory. It returns true on success and false otherwise (it also returns false if the directory already exists).</p>
+</blockquote>
+</li>
+<li>List the files in a directory<blockquote>
+<p>If the File object is a directory, it can call the methods below to list the files and directories inside it.<br><pre>
+public String[] list();             //return all files in the directory as strings
+public File[] listFiles();          //return all files in the directory as File objects
+</pre><br>Sometimes you only want files of a certain type, such as files with the .java or .txt extension. You can use these two File methods to list files of a given type:<br><pre>
+public String[] list(FilenameFilter obj);           //return all files of the given type in the directory as strings
+public File[] listFiles(FilenameFilter obj);        //return all files of the given type in the directory as File objects
+</pre><br>The parameter FilenameFilter of the two methods above is an interface with one method:<br><pre>
+public boolean accept(File dir,String name);
+</pre><br>When the File object dirFile calls list, you pass it an object that implements the FilenameFilter interface. While list runs, it keeps calling back the interface method accept(File dir,String name) on obj. The parameter dir is dirFile, the current directory list was called on, and name is set to the name of a file in the dirFile directory. Whenever the interface method returns true, list puts the file called name into the array it returns.</p>
+<p><strong>Example: list the names of all .java files in the current directory (the directory of the application):</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DirFileTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File dirFile = <span class="keyword">new</span> File(<span class="string">&quot;F:\\IDEA_code\\Singleton_pattern\\src\\com\\dell\\example\\IODemo\\FileTest&quot;</span>);</span><br><span class="line">        FileAccept fileAccept = <span class="keyword">new</span> FileAccept();</span><br><span class="line">        fileAccept.setExtendName(<span class="string">&quot;java&quot;</span>);</span><br><span class="line">        String fileName[] = dirFile.list(fileAccept);</span><br><span class="line">        <span class="keyword">for</span> (String name : fileName)&#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileAccept</span> <span class="keyword">implements</span> <span class="title">FilenameFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String extendName;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setExtendName</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        extendName = <span class="string">&quot;.&quot;</span> + s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">accept</span><span class="params">(File dir, String name)</span> </span>&#123;  <span class="comment">//override the interface method</span></span><br><span class="line">        <span class="keyword">return</span> name.endsWith(extendName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="en-File-byte-IO-streams"><a href="#en-File-byte-IO-streams" class="headerlink" title="File byte IO streams"></a><strong>File byte IO streams</strong></h2><h3 id="en-File-byte-input-stream"><a href="#en-File-byte-input-stream" class="headerlink" title="File byte input stream"></a>File byte input stream</h3><p><code>Using an input stream usually takes 4 basic steps:</code></p>
+<ul>
+<li>Set the source of the input stream</li>
+<li>Create an input stream that points to the source</li>
+<li>Let the input stream read data from the source</li>
+<li>Close the input stream</li>
+</ul>
+<p>If your file reading needs are simple, you can use the <code>FileInputStream class (file byte input stream)</code>. It is a subclass of InputStream (it reads files byte by byte), and its instance methods are all inherited from InputStream.</p>
+<ul>
+<li><p>Constructors:</p>
+<p>  You can create an input stream that points to a file with these FileInputStream constructors.</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FileInputStream(String name);</span><br><span class="line">FileInputStream(File file);</span><br></pre></td></tr></table></figure>
+<p>  The first constructor creates a FileInputStream from the given file name, and the second creates one from a File object. The file specified by name or file is called the source of the input stream.</p>
+<p>  <strong>Note:</strong> a FileInputStream opens a channel to the file. Creating the input stream may throw an exception.</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileInputStream in = <span class="keyword">new</span> FileInputStream(<span class="string">&quot;hello.txt&quot;</span>);<span class="comment">//create an input stream pointing to hello.txt</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;File read error:&quot;</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  or</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(<span class="string">&quot;hello.txt&quot;</span>); <span class="comment">//set the source of the input stream</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileInputStream in = <span class="keyword">new</span> FileInputStream(f);    <span class="comment">//create an input stream pointing to the source</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOEception e)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;File read error:&quot;</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>Read bytes with the input stream</p>
+<p>  A file byte stream can call the <code>read method</code> inherited from its parent class to read a file in order. As long as the stream is not closed, each call to read continues with the rest of the file, until the end of the file or until the stream is closed.</p>
+<p>  The read methods of a byte input stream read data from the source in bytes.</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span>                              <span class="comment">//reads a single byte from the source and returns its value (an integer from 0 to 255), or -1 if no byte was read</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">byte</span> b[])</span>                      <span class="comment">//tries to read b.length bytes from the source into the byte array, and returns the number of bytes actually read, or -1 at the end of the file</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">(<span class="keyword">byte</span> b[],<span class="keyword">int</span> off,<span class="keyword">int</span> len)</span>      <span class="comment">//tries to read bytes from the source into the byte array and returns the number of bytes actually read, or -1 at the end of the file; off is the position in the array where the data starts being stored</span></span></span><br></pre></td></tr></table></figure></li>
+<li>Close the stream<br>  Every input stream provides a <code>close()</code> method. Although open streams are closed automatically when the program ends, it is still good practice to explicitly close any stream once you are done with it.</li>
+</ul>
+<p><strong>Example: read a file with a file byte stream:</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">byte</span>[] a = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            File f = <span class="keyword">new</span> File(<span class="string">&quot;F:\\IDEA_code\\Singleton_pattern\\src\\com\\dell\\example\\IODemo\\InputStreamTest\\InputTest.java&quot;</span>);</span><br><span class="line">            InputStream in = <span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">            <span class="keyword">while</span> ((n = in.read(a,<span class="number">0</span>,<span class="number">100</span>)) != -<span class="number">1</span>)&#123;</span><br><span class="line">                String s = <span class="keyword">new</span> String(a,<span class="number">0</span>,n);</span><br><span class="line">                System.out.println(s);</span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="en-File-byte-output-stream"><a href="#en-File-byte-output-stream" class="headerlink" title="File byte output stream"></a>File byte output stream</h3><p><code>Using an output stream usually takes 4 basic steps:</code></p>
+<ul>
+<li>Specify the destination of the output stream</li>
+<li>Create an output stream that points to the destination</li>
+<li>Let the output stream write data to the destination</li>
+<li>Close the output stream</li>
+</ul>
+<p>If your file writing needs are simple, you can use the <code>FileOutputStream class (file byte output stream)</code>. It is a subclass of OutputStream (it writes files byte by byte), and its instance methods are all inherited from OutputStream.</p>
+<ul>
+<li><p>Constructors:</p>
+<p>  You can create an output stream that points to a file with these FileOutputStream constructors, which truncate the file.</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FileOutputStream(String name);</span><br><span class="line">FileOutputStream(File file);</span><br></pre></td></tr></table></figure>
+<p>  The first constructor creates a FileOutputStream from the given file name, and the second creates one from a File object. The file specified by name or file is called the destination of the output stream.</p>
+<p>  <strong>Note:</strong> if the file the FileOutputStream points to does not exist, Java creates it. If the file already exists, the stream truncates it (sets its length to 0). Creating the output stream may throw an exception.</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileOutputStream out = <span class="keyword">new</span> FileOutputStream(<span class="string">&quot;androidlab.txt&quot;</span>);<span class="comment">//create an output stream pointing to androidlab.txt</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOException e)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;File read error:&quot;</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  or</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(<span class="string">&quot;androidlab.txt&quot;</span>);                <span class="comment">//set the destination of the output stream</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    FileOutputStream in = <span class="keyword">new</span> FileOutputStream(f);    <span class="comment">//create an output stream pointing to the destination</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(IOEception e)&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;File read error:&quot;</span> + e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>Write bytes with the output stream</p>
+<p>  A file byte stream can call the <code>write method</code> inherited from its parent class to write a file in order. As long as the stream is not closed, each call to write continues writing to the file, until the stream is closed.</p>
+<p>  The write methods of a byte output stream write data to the destination in bytes.</p>
+  <pre>
+  void write(int n)                       //writes a single byte to the destination
+  void write(byte b[])                     //writes a byte array to the destination
+  void write(byte b[],int off,int len)     //writes len bytes from the array, starting at offset off, to the destination
+  void close()                             //closes the output stream
+  </pre></li>
+<li>Close the stream<br>  Note that before the operating system saves the bytes written to the output stream to disk, they are sometimes kept in a buffer. Calling <code>close()</code> makes sure the operating system writes the buffer’s contents to the destination.</li>
+</ul>
+<p><strong>Example: write to a file with a file byte stream:</strong> use the truncating constructor to create an output stream pointing to android.txt and write “Android” into it, then use the constructor that does not truncate the file to point to android.txt again and append “Lab”.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OutputTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span>[] a = <span class="string">&quot;Android&quot;</span>.getBytes();</span><br><span class="line">        <span class="keyword">byte</span>[] b = <span class="string">&quot;Lab&quot;</span>.getBytes();</span><br><span class="line">        File newFile = <span class="keyword">new</span> File(<span class="string">&quot;android.txt&quot;</span>);     <span class="comment">//output destination</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            OutputStream out = <span class="keyword">new</span> FileOutputStream(newFile);   <span class="comment">//output stream pointing to the destination</span></span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">&quot; size: &quot;</span> + newFile.length() + <span class="string">&quot; bytes&quot;</span>);</span><br><span class="line">            out.write(a);   <span class="comment">//write data to the destination</span></span><br><span class="line">            out.close();</span><br><span class="line">            out = <span class="keyword">new</span> FileOutputStream(newFile,<span class="keyword">true</span>);   <span class="comment">//prepare to append to the end of the file</span></span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">&quot; size: &quot;</span> + newFile.length() + <span class="string">&quot; bytes&quot;</span>);</span><br><span class="line">            out.write(b,<span class="number">0</span>,b.length);</span><br><span class="line">            System.out.println(newFile.getName() + <span class="string">&quot; size: &quot;</span> + newFile.length() + <span class="string">&quot; bytes&quot;</span>);</span><br><span class="line">            out.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="en-File-character-IO-streams"><a href="#en-File-character-IO-streams" class="headerlink" title="File character IO streams"></a><strong>File character IO streams</strong></h2><p>The read and write methods of file byte input and output streams use byte arrays, so they handle data byte by byte. That is why byte streams do not handle Unicode characters well. <strong>A Chinese character takes two bytes in a file, so reading it incorrectly with a byte stream produces garbled text.</strong></p>
+<p><pre>
+    Byte            ------          Character
+FileInputStream     ------      FileReader
+FileOutputStream    ------      FileWriter
+</pre><br>FileReader and FileWriter are subclasses of Reader and Writer. Their constructors are:</p>
+<p><pre>
+FileReader(String filename);    FileReader(File filename);
+FileWriter(String filename);    FileWriter(File filename);
+FileWriter(String filename,boolean append);
+FileWriter(File filename,boolean append);
+</pre><br><strong>The <code>read</code> and <code>write</code> methods of character input and output streams use character arrays, so they handle data character by character.</strong></p>
+<ul>
+<li><strong>Example: use file character input and output streams to append the contents of “NotHelloWorld.txt” to “AndroidLab.txt”</strong><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RWTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File sourceFile = <span class="keyword">new</span> File(<span class="string">&quot;F:\\IDEA_code\\IOTest\\NotHelloWorld.txt&quot;</span>);<span class="comment">//file to read</span></span><br><span class="line">        File targetFile = <span class="keyword">new</span> File(<span class="string">&quot;F:\\IDEA_code\\IOTest\\AndroidLab.txt&quot;</span>);<span class="comment">//file to write</span></span><br><span class="line">        <span class="keyword">char</span> c[] = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">100</span>];</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            Writer out = <span class="keyword">new</span> FileWriter(targetFile,<span class="keyword">true</span>);   <span class="comment">//output stream pointing to the destination</span></span><br><span class="line">            Reader in = <span class="keyword">new</span> FileReader(sourceFile);                 <span class="comment">//input stream pointing to the source</span></span><br><span class="line">            <span class="keyword">int</span> n = -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> ((n = in.read(c)) != -<span class="number">1</span>)&#123;</span><br><span class="line">                out.write(c,<span class="number">0</span>,n);</span><br><span class="line">            &#125;</span><br><span class="line">            out.flush();</span><br><span class="line">            out.close();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Error &quot;</span> + e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<!--/bi:en--></div>
 
     </div>
 
@@ -453,12 +638,12 @@ FileWriter(File filename,boolean append);
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2018/10/18/Obstacle%20detection%20based%20on%20binocular%20camera/" rel="prev" title="Obstacle detection based on binocular camera">
-      <i class="fa fa-chevron-left"></i> Obstacle detection based on binocular camera
+    <a href="/2018/10/18/Obstacle%20detection%20based%20on%20binocular%20camera/" rel="prev" title="基于双目摄像头的障碍物检测">
+      <i class="fa fa-chevron-left"></i> 基于双目摄像头的障碍物检测
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/05/05/Ubuntu-Windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" rel="next" title="Ubuntu+Windows Dual System Installation Guide">
-      Ubuntu+Windows Dual System Installation Guide <i class="fa fa-chevron-right"></i>
+    <a href="/2020/05/05/Ubuntu-Windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" rel="next" title="Ubuntu+Windows双系统安装指南">
+      Ubuntu+Windows双系统安装指南 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -523,16 +708,16 @@ FileWriter(File filename,boolean append);
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          <span class="bi-zh">文章目录</span><span class="bi-en">Table of Contents</span>
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          <span class="bi-zh">站点概览</span><span class="bi-en">Overview</span>
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#javaIO"><span class="nav-number">1.</span> <span class="nav-text">javaIO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E6%B5%81%E5%9B%BE%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">Java流图结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%81%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E4%BD%9C%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">流的概念和作用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IO%E6%B5%81%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">3.1.</span> <span class="nav-text">IO流的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E6%B5%81%E5%92%8C%E5%AD%97%E8%8A%82%E6%B5%81"><span class="nav-number">3.2.</span> <span class="nav-text">字符流和字节流</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%AD%97%E8%8A%82%E3%80%81%E5%AD%97%E7%AC%A6IO"><span class="nav-number">4.</span> <span class="nav-text">文件字节、字符IO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAFile%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E6%9C%893%E4%B8%AA%EF%BC%9A"><span class="nav-number">4.0.1.</span> <span class="nav-text">创建一个File对象的构造方法有3个：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="nav-number">4.0.2.</span> <span class="nav-text">文件的属性：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%EF%BC%9A"><span class="nav-number">4.0.3.</span> <span class="nav-text">目录：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%AD%97%E8%8A%82IO%E6%B5%81"><span class="nav-number">4.1.</span> <span class="nav-text">文件字节IO流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%AD%97%E8%8A%82%E8%BE%93%E5%85%A5%E6%B5%81"><span class="nav-number">4.1.1.</span> <span class="nav-text">文件字节输入流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%AD%97%E8%8A%82%E8%BE%93%E5%87%BA%E6%B5%81"><span class="nav-number">4.1.2.</span> <span class="nav-text">文件字节输出流</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%AD%97%E7%AC%A6IO%E6%B5%81"><span class="nav-number">4.2.</span> <span class="nav-text">文件字符IO流</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><div class="bi-zh"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#javaIO"><span class="nav-number">1.</span> <span class="nav-text">javaIO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E6%B5%81%E5%9B%BE%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">Java流图结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%81%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E4%BD%9C%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">流的概念和作用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IO%E6%B5%81%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">3.1.</span> <span class="nav-text">IO流的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E6%B5%81%E5%92%8C%E5%AD%97%E8%8A%82%E6%B5%81"><span class="nav-number">3.2.</span> <span class="nav-text">字符流和字节流</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%AD%97%E8%8A%82%E3%80%81%E5%AD%97%E7%AC%A6IO"><span class="nav-number">4.</span> <span class="nav-text">文件字节、字符IO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAFile%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E6%9C%893%E4%B8%AA%EF%BC%9A"><span class="nav-number">4.0.1.</span> <span class="nav-text">创建一个File对象的构造方法有3个：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="nav-number">4.0.2.</span> <span class="nav-text">文件的属性：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%EF%BC%9A"><span class="nav-number">4.0.3.</span> <span class="nav-text">目录：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%AD%97%E8%8A%82IO%E6%B5%81"><span class="nav-number">4.1.</span> <span class="nav-text">文件字节IO流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%AD%97%E8%8A%82%E8%BE%93%E5%85%A5%E6%B5%81"><span class="nav-number">4.1.1.</span> <span class="nav-text">文件字节输入流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%AD%97%E8%8A%82%E8%BE%93%E5%87%BA%E6%B5%81"><span class="nav-number">4.1.2.</span> <span class="nav-text">文件字节输出流</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%AD%97%E7%AC%A6IO%E6%B5%81"><span class="nav-number">4.2.</span> <span class="nav-text">文件字符IO流</span></a></li></ol></li></ol></div><div class="bi-en"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#en-Java-IO"><span class="nav-number">1.</span> <span class="nav-text">Java IO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#en-Java-stream-class-hierarchy"><span class="nav-number">2.</span> <span class="nav-text">Java stream class hierarchy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#en-The-concept-and-role-of-streams"><span class="nav-number">3.</span> <span class="nav-text">The concept and role of streams</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Types-of-IO-streams"><span class="nav-number">3.1.</span> <span class="nav-text">Types of IO streams</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Character-streams-and-byte-streams"><span class="nav-number">3.2.</span> <span class="nav-text">Character streams and byte streams</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#en-File-byte-and-character-IO"><span class="nav-number">4.</span> <span class="nav-text">File byte and character IO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-There-are-3-constructors-for-creating-a-File-object"><span class="nav-number">4.0.1.</span> <span class="nav-text">There are 3 constructors for creating a File object:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-File-properties"><span class="nav-number">4.0.2.</span> <span class="nav-text">File properties:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-Directories"><span class="nav-number">4.0.3.</span> <span class="nav-text">Directories:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-File-byte-IO-streams"><span class="nav-number">4.1.</span> <span class="nav-text">File byte IO streams</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-File-byte-input-stream"><span class="nav-number">4.1.1.</span> <span class="nav-text">File byte input stream</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-File-byte-output-stream"><span class="nav-number">4.1.2.</span> <span class="nav-text">File byte output stream</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-File-character-IO-streams"><span class="nav-number">4.2.</span> <span class="nav-text">File character IO streams</span></a></li></ol></li></ol></div></div>
       </div>
       <!--/noindex-->
 
@@ -685,6 +870,40 @@ FileWriter(File filename,boolean append);
   
 
   
+
+<button type="button" class="bi-toggle" aria-label="切换语言 / Switch language" title="切换语言 / Switch language">
+  <span class="bi-opt" data-l="zh">中</span><span aria-hidden="true">/</span><span class="bi-opt" data-l="en">EN</span>
+</button>
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.querySelector('.bi-toggle');
+  var titleZh = document.title;
+  var metaEn = document.querySelector('meta[name="bi-title-en"]');
+  var titleEn = metaEn ? metaEn.getAttribute('content') : titleZh;
+
+  function apply(lang) {
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+    document.title = lang === 'en' ? titleEn : titleZh;
+    btn.querySelectorAll('.bi-opt').forEach(function (el) {
+      el.classList.toggle('is-on', el.getAttribute('data-l') === lang);
+    });
+    btn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+  }
+
+  apply(root.getAttribute('data-lang') === 'en' ? 'en' : 'zh');
+
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-lang') === 'en' ? 'zh' : 'en';
+    try { localStorage.setItem('bi-lang', next); } catch (e) {}
+    apply(next);
+    // 正文高度变了，让目录高亮和侧边栏重新计算位置
+    window.dispatchEvent(new Event('scroll'));
+    window.dispatchEvent(new Event('resize'));
+  });
+})();
+</script>
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 
