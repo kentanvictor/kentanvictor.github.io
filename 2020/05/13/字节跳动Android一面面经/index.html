@@ -24,12 +24,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android面经">
 <meta property="og:url" content="https://kentanvictor.github.io/2020/05/13/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8Android%E4%B8%80%E9%9D%A2%E9%9D%A2%E7%BB%8F/index.html">
-<meta property="og:site_name" content="ZoeTam&#39;s Blog">
+<meta property="og:site_name" content="Zoe Tam">
 <meta property="og:description" content="Android开发岗个人面经2020-05-13 字节跳动一面 这也是我人生中第一次经历的面试，也是第一次的线上面试，总的来说，真的很慌张，而且其实自己也知道准备的是不充分的，但是还是硬着头皮参加了，也算是一种人生经历吧。下面是字节跳动一面时候问到的问题，先列举出来，然后进行一个知识总结与概括：  操作系统中死锁的概念 产生死锁的方式 排序，谈谈有什么排序算法，讲一讲时间复杂度，以及排序的“稳定性">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-13T13:05:23.000Z">
 <meta property="article:modified_time" content="2026-11-24T20:21:47.743Z">
-<meta property="article:author" content="ZoeTam">
+<meta property="article:author" content="Zoe Tam">
 <meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
 
@@ -45,7 +45,7 @@
     lang   : 'en'
   };
 </script>
-<meta name="bi-title-en" content="Android Interview Notes | ZoeTam&#39;s Blog">
+<meta name="bi-title-en" content="Android Interview Notes | Zoe Tam">
 <script>
 (function () {
   var lang;
@@ -75,7 +75,7 @@ html:not([data-lang="en"]) .bi-en { display: none !important; }
 @media (max-width: 767px) { .bi-toggle { top: auto; bottom: 16px; right: 16px; } }
 </style>
 
-  <title>Android面经 | ZoeTam's Blog</title>
+  <title>Android面经 | Zoe Tam</title>
   
 
 
@@ -126,9 +126,10 @@ html:not([data-lang="en"]) .bi-en { display: none !important; }
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">ZoeTam's Blog</h1>
+      <h1 class="site-title">Zoe Tam</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">Software Engineer · Backend · System Design · GIS · FinTech · AI</p>
   </div>
 
   <div class="site-nav-right">
@@ -151,6 +152,11 @@ html:not([data-lang="en"]) .bi-en { display: none !important; }
         <li class="menu-item menu-item-about">
 
     <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i><span class="bi-zh">关于</span><span class="bi-en">About</span></a>
+
+  </li>
+        <li class="menu-item menu-item-mentoring">
+
+    <a href="/mentoring/" rel="section"><i class="fa fa-fw fa-graduation-cap"></i><span class="bi-zh">辅导服务</span><span class="bi-en">Mentoring</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -230,13 +236,13 @@ html:not([data-lang="en"]) .bi-en { display: none !important; }
     <link itemprop="mainEntityOfPage" href="https://kentanvictor.github.io/2020/05/13/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8Android%E4%B8%80%E9%9D%A2%E9%9D%A2%E7%BB%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://github.com/kentanvictor/STUDY/blob/Image/logo.png?raw=true">
-      <meta itemprop="name" content="ZoeTam">
-      <meta itemprop="description" content="Sometimes life is going to hit you in the head with a brick. Don't lose faith.">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Zoe Tam">
+      <meta itemprop="description" content="Software engineer with ~5 years of experience in backend development, system design, GIS, FinTech risk systems and AI applications. Notes, project write-ups and SDE career mentoring.">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZoeTam's Blog">
+      <meta itemprop="name" content="Zoe Tam">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -584,10 +590,10 @@ html:not([data-lang="en"]) .bi-en { display: none !important; }
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="ZoeTam"
-      src="https://github.com/kentanvictor/STUDY/blob/Image/logo.png?raw=true">
-  <p class="site-author-name" itemprop="name">ZoeTam</p>
-  <div class="site-description" itemprop="description">Sometimes life is going to hit you in the head with a brick. Don't lose faith.</div>
+    <img class="site-author-image" itemprop="image" alt="Zoe Tam"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Zoe Tam</p>
+  <div class="site-description" itemprop="description">Software engineer with ~5 years of experience in backend development, system design, GIS, FinTech risk systems and AI applications. Notes, project write-ups and SDE career mentoring.</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -618,7 +624,10 @@ html:not([data-lang="en"]) .bi-en { display: none !important; }
   </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/kentanvictor" title="github → https:&#x2F;&#x2F;github.com&#x2F;kentanvictor" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>github</a>
+        <a href="https://github.com/kentanvictor" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kentanvictor" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/tanzhuo/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;tanzhuo&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:kentanvictor@foxmail.com" title="E-Mail → mailto:kentanvictor@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
@@ -650,7 +659,7 @@ html:not([data-lang="en"]) .bi-en { display: none !important; }
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">ZoeTam</span>
+  <span class="author" itemprop="copyrightHolder">Zoe Tam</span>
 </div>
 
         

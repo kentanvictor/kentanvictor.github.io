@@ -24,7 +24,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android生命周期的分析">
 <meta property="og:url" content="https://kentanvictor.github.io/2018/09/04/The%20analysis%20of%20android%20lifecycle/index.html">
-<meta property="og:site_name" content="ZoeTam&#39;s Blog">
+<meta property="og:site_name" content="Zoe Tam">
 <meta property="og:description" content="activity的生命周期分析 activity的生命周期分为两部分内容  典型情况下的生命周期  在有用户参与的情况下，activity所经历过的生命周期的改变   异常情况下的生命周期  指activity被系统回收或由于当前设备的Configuration发生改变从而导致activity被销毁重建       The analysis of android lifecycle The lif">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/old_image/activity.png?raw=true">
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://github.com/kentanvictor/STUDY/blob/Image/Android%E5%BC%80%E5%8F%91%E6%8E%A2%E7%B4%A2/%E5%BC%82%E5%B8%B8%E6%83%85%E5%86%B5%E4%B8%8Bactivity%E9%87%8D%E5%BB%BA%E8%BF%87%E7%A8%8B.png?raw=true">
 <meta property="article:published_time" content="2018-09-04T18:11:30.000Z">
 <meta property="article:modified_time" content="2026-11-24T20:18:15.753Z">
-<meta property="article:author" content="ZoeTam">
+<meta property="article:author" content="Zoe Tam">
 <meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://github.com/kentanvictor/STUDY/blob/Image/old_image/activity.png?raw=true">
@@ -50,7 +50,7 @@
     lang   : 'en'
   };
 </script>
-<meta name="bi-title-en" content="The analysis of android lifecycle | ZoeTam&#39;s Blog">
+<meta name="bi-title-en" content="The analysis of android lifecycle | Zoe Tam">
 <script>
 (function () {
   var lang;
@@ -80,7 +80,7 @@ html:not([data-lang="en"]) .bi-en { display: none !important; }
 @media (max-width: 767px) { .bi-toggle { top: auto; bottom: 16px; right: 16px; } }
 </style>
 
-  <title>Android生命周期的分析 | ZoeTam's Blog</title>
+  <title>Android生命周期的分析 | Zoe Tam</title>
   
 
 
@@ -131,9 +131,10 @@ html:not([data-lang="en"]) .bi-en { display: none !important; }
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">ZoeTam's Blog</h1>
+      <h1 class="site-title">Zoe Tam</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">Software Engineer · Backend · System Design · GIS · FinTech · AI</p>
   </div>
 
   <div class="site-nav-right">
@@ -156,6 +157,11 @@ html:not([data-lang="en"]) .bi-en { display: none !important; }
         <li class="menu-item menu-item-about">
 
     <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i><span class="bi-zh">关于</span><span class="bi-en">About</span></a>
+
+  </li>
+        <li class="menu-item menu-item-mentoring">
+
+    <a href="/mentoring/" rel="section"><i class="fa fa-fw fa-graduation-cap"></i><span class="bi-zh">辅导服务</span><span class="bi-en">Mentoring</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -235,13 +241,13 @@ html:not([data-lang="en"]) .bi-en { display: none !important; }
     <link itemprop="mainEntityOfPage" href="https://kentanvictor.github.io/2018/09/04/The%20analysis%20of%20android%20lifecycle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://github.com/kentanvictor/STUDY/blob/Image/logo.png?raw=true">
-      <meta itemprop="name" content="ZoeTam">
-      <meta itemprop="description" content="Sometimes life is going to hit you in the head with a brick. Don't lose faith.">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Zoe Tam">
+      <meta itemprop="description" content="Software engineer with ~5 years of experience in backend development, system design, GIS, FinTech risk systems and AI applications. Notes, project write-ups and SDE career mentoring.">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZoeTam's Blog">
+      <meta itemprop="name" content="Zoe Tam">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -573,10 +579,10 @@ html:not([data-lang="en"]) .bi-en { display: none !important; }
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="ZoeTam"
-      src="https://github.com/kentanvictor/STUDY/blob/Image/logo.png?raw=true">
-  <p class="site-author-name" itemprop="name">ZoeTam</p>
-  <div class="site-description" itemprop="description">Sometimes life is going to hit you in the head with a brick. Don't lose faith.</div>
+    <img class="site-author-image" itemprop="image" alt="Zoe Tam"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Zoe Tam</p>
+  <div class="site-description" itemprop="description">Software engineer with ~5 years of experience in backend development, system design, GIS, FinTech risk systems and AI applications. Notes, project write-ups and SDE career mentoring.</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -607,7 +613,10 @@ html:not([data-lang="en"]) .bi-en { display: none !important; }
   </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/kentanvictor" title="github → https:&#x2F;&#x2F;github.com&#x2F;kentanvictor" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>github</a>
+        <a href="https://github.com/kentanvictor" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kentanvictor" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/tanzhuo/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;tanzhuo&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:kentanvictor@foxmail.com" title="E-Mail → mailto:kentanvictor@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
@@ -639,7 +648,7 @@ html:not([data-lang="en"]) .bi-en { display: none !important; }
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">ZoeTam</span>
+  <span class="author" itemprop="copyrightHolder">Zoe Tam</span>
 </div>
 
         
